@@ -109,12 +109,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const revealObserver = new IntersectionObserver(revealCallback, {
       root: null, // use viewport
-      threshold: 0.15, // trigger when 15% of the element is visible
-      rootMargin: '0px 0px -50px 0px' // offset to trigger slightly early/late
+      threshold: 0.05, // Lower threshold (5%) to ensure large elements trigger on mobile viewports
+      rootMargin: '0px 0px -20px 0px'
     });
 
     revealElements.forEach(element => {
       revealObserver.observe(element);
     });
+
+    // Fail-safe: Force activate all reveal elements after 800ms to guarantee no blank content on mobile layout bugs
+    setTimeout(() => {
+      revealElements.forEach(element => {
+        if (!element.classList.contains('active')) {
+          element.classList.add('active');
+        }
+      });
+    }, 800);
   }
 });
