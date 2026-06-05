@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!-- 
+  王浩智的个人学术网页项目文件
+  【语言切换说明】：用 class="lang-cn" 包裹中文，用 class="lang-en" 包裹英文。
+  浏览器会自动检索语言偏好（中文系统默认为中文，其他默认为英文），并允许通过按钮手动切换，系统会自动保存选择。
+-->
+<html lang="zh-CN" data-theme="light" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王浩智 Haozhi Wang | Personal Homepage</title>
+  
+  <!-- SEO元标签 (SEO Meta Tags) -->
+  <meta name="description" content="王浩智 (Haozhi Wang) 的个人学术主页。山东大学基础医学院。">
+  <meta name="author" content="王浩智 Haozhi Wang">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <div class="app-container">
+    
+    <!-- ========================================== -->
+    <!-- 左侧信息栏 (SIDEBAR: PROFILE & QUICK INFO) -->
+    <!-- ========================================== -->
+    <aside class="sidebar">
+      <div class="card profile-card">
+        
+        <!-- 
+          【修改头像】：如果你更换了照片，请把新照片放到个人网站文件夹，
+          命名为 avatar.png 或者在此修改 src="..." 的文件名。
+          头像容器已调整为 Squircle 倒角矩形（border-radius: 24px），不会截断图片底部的文字。
+        -->
+        <div class="avatar-container">
+          <img src="avatar.png" alt="王浩智 Haozhi Wang" class="avatar-image">
+        </div>
+        
+        <!-- 【姓名修改】：中文和英文姓名 -->
+        <h1 class="profile-name-zh">
+          <span class="lang-cn">王浩智</span>
+          <span class="lang-en" style="font-size: 1.8rem; display: block;">Haozhi Wang</span>
+        </h1>
+        
+        <div class="profile-name-en">
+          <span class="lang-cn">Haozhi Wang</span>
+          <span class="lang-en">School of Basic Medical Sciences</span>
+        </div>
+        
+        <!-- 【单位/院系修改】 -->
+        <div class="profile-title">
+          <span class="lang-cn">山东大学 基础医学院</span>
+          <span class="lang-en">Shandong University</span>
+        </div>
+        
+        <!-- 快捷联系入口 -->
+        <div class="quick-contacts">
+          <!-- 邮箱 1 (学校邮箱) -->
+          <a href="mailto:wanghaozhi@mail.sdu.edu.cn" class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>wanghaozhi@mail.sdu.edu.cn</span>
+          </a>
+          <!-- ORCID 链接 -->
+          <a href="https://orcid.org/0009-0004-8960-6304" target="_blank" rel="noopener" class="contact-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-3.418 17.168H7.316V6.828h1.266v10.34zm-.633-11.455c-.443 0-.8-.358-.8-.8s.357-.8.8-.8.8.358.8.8-.357.8-.8.8zm8.797 6.467c0 2.457-1.196 3.822-3.41 3.822h-2.12V6.828h2.366c2.096 0 3.164 1.134 3.164 3.208 0 1.57-.756 2.56-2.002 2.91 1.348.315 2.002 1.403 2.002 3.232zm-4.264-5.91h-1.026v4.062h1.026c1.233 0 1.884-.6 1.884-2.016-.001-1.428-.652-2.046-1.884-2.046zm0 5.127h-1.026v4.116h1.026c1.328 0 1.986-.684 1.986-2.054 0-1.39-.658-2.062-1.986-2.062z"/></svg>
+            <span>ORCID iD</span>
+          </a>
+          <!-- 电话 -->
+          <a href="tel:+8615628963651" class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>+86 156 2896 3651</span>
+          </a>
+        </div>
+
+        <!-- 主题切换和语言切换区域 (Theme & Language Toggles) -->
+        <div class="theme-toggle-container" style="gap: 0.5rem;">
+          <button id="themeToggleBtn" class="theme-btn" aria-label="切换主题">
+            <!-- 图标和文字由 Javascript 动态加载 -->
+          </button>
+          <button id="langToggleBtn" class="theme-btn" aria-label="切换语言">
+            <!-- 语言图标和文字由 Javascript 动态加载 -->
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ========================================== -->
+    <!-- 右侧内容区 (MAIN CONTENT AREA)             -->
+    <!-- ========================================== -->
+    <main class="main-content">
+      
+      <!-- 模块 1: 关于我 (ABOUT ME & INTERESTS) -->
+      <section id="about" class="card reveal">
+        <h2 class="section-title">
+          <span class="section-title-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </span>
+          <span class="lang-cn">关于我</span>
+          <span class="lang-en">About Me</span>
+        </h2>
+        
+        <!-- 个人简介（中文） -->
+        <div class="lang-cn">
+          <p class="bio-text">
+            您好！我是王浩智 (Haozhi Wang)，目前就读于山东大学基础医学院。我的主要学术方向集中在基础医学和生命科学领域，致力于探讨和理解人类复杂疾病的发生、发展机制。我热衷于分子生物学、细胞生物学及相关的交叉学科研究。
+          </p>
+          <p class="bio-text">
+            在此个人主页中，我将分享我的学术经历、最新研究兴趣以及临时演示报告。如果您对我的研究方向感兴趣或有合作意向，非常欢迎通过页面下方的联系方式与我取得联系。
+          </p>
+        </div>
+
+        <!-- 个人简介（英文） -->
+        <div class="lang-en">
+          <p class="bio-text">
+            Hello! I am Haozhi Wang, currently studying at the School of Basic Medical Sciences, Shandong University. My research interests mainly focus on basic medicine and life sciences, dedicated to exploring and understanding the pathological mechanisms of complex human diseases. I am passionate about molecular biology, cell biology, and related interdisciplinary research.
+          </p>
+          <p class="bio-text">
+            On this personal homepage, I will share my academic background, research interests, and temporary presentations. If you are interested in my work or wish to collaborate, please feel free to reach out via the contact channels listed below.
+          </p>
+        </div>
+
+        <!-- 学术兴趣标签栏 -->
+        <h3 class="interests-title">
+          <span class="lang-cn">学术兴趣</span>
+          <span class="lang-en">Research Interests</span>
+        </h3>
+        
+        <!-- 
+          【修改学术兴趣标签】：
+          如果你要添加或删除学术兴趣，只需参考下面的标签格式：
+          在 <div class="interests-tags"> 中添加或修改下面的 <span> 元素。
+          里面的 <span class="lang-cn"> 填中文名称，<span class="lang-en"> 填英文名称。
+        -->
+        <div class="interests-tags">
+          <span class="interest-tag">
+            <span class="lang-cn">基础医学</span>
+            <span class="lang-en">Basic Medicine</span>
+          </span>
+          <span class="interest-tag">
+            <span class="lang-cn">分子生物学</span>
+            <span class="lang-en">Molecular Biology</span>
+          </span>
+          <span class="interest-tag">
+            <span class="lang-cn">细胞生物学</span>
+            <span class="lang-en">Cell Biology</span>
+          </span>
+          <span class="interest-tag">
+            <span class="lang-cn">免疫学</span>
+            <span class="lang-en">Immunology</span>
+          </span>
+          <span class="interest-tag">
+            <span class="lang-cn">基因组学</span>
+            <span class="lang-en">Genomics</span>
+          </span>
+        </div>
+      </section>
+
+      <!-- 模块 2: 教育背景 (EDUCATION) -->
+      <section id="education" class="card reveal">
+        <h2 class="section-title">
+          <span class="section-title-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+          </span>
+          <span class="lang-cn">教育背景</span>
+          <span class="lang-en">Education</span>
+        </h2>
+        <div class="education-list">
+          
+          <!-- 
+            【增加教育历史记录】：
+            如果你今后要添加新的教育记录，可以直接复制下面整个 <div class="edu-item"> 块，
+            修改里面的起止年份、学位以及学校即可。
+          -->
+          <div class="edu-item">
+            <!-- 起止年份 -->
+            <div class="edu-duration">
+              <span class="lang-cn">至今</span>
+              <span class="lang-en">Present</span>
+            </div>
+            <!-- 专业与学位 -->
+            <div class="edu-degree">
+              <span class="lang-cn">基础医学 (本科生/研究生)</span>
+              <span class="lang-en">Basic Medicine (Undergraduate/Graduate)</span>
+            </div>
+            <!-- 学校及院系 -->
+            <div class="edu-school">
+              <span class="lang-cn">山东大学，基础医学院</span>
+              <span class="lang-en">School of Basic Medical Sciences, Shandong University</span>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- 模块 3: 联系方式卡片 (CONTACT DETAILS) -->
+      <section id="contact" class="card reveal">
+        <h2 class="section-title">
+          <span class="section-title-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </span>
+          <span class="lang-cn">联系方式</span>
+          <span class="lang-en">Contact</span>
+        </h2>
+        
+        <!-- 网格排版联系方式 -->
+        <div class="contact-grid">
+          
+          <!-- 山大官方邮箱 -->
+          <div class="contact-card-item">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>
+                <span class="lang-cn">学校邮箱</span>
+                <span class="lang-en">Academic Email</span>
+              </h4>
+              <p><a href="mailto:wanghaozhi@mail.sdu.edu.cn">wanghaozhi@mail.sdu.edu.cn</a></p>
+            </div>
+          </div>
+
+          <!-- Gmail 个人邮箱 -->
+          <div class="contact-card-item">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>
+                <span class="lang-cn">个人邮箱</span>
+                <span class="lang-en">Personal Email</span>
+              </h4>
+              <p><a href="mailto:wanghaozhisdu@gmail.com">wanghaozhisdu@gmail.com</a></p>
+            </div>
+          </div>
+
+          <!-- 联系电话 -->
+          <div class="contact-card-item">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>
+                <span class="lang-cn">联系电话</span>
+                <span class="lang-en">Telephone</span>
+              </h4>
+              <p><a href="tel:+8615628963651">+86 156 2896 3651</a></p>
+            </div>
+          </div>
+
+          <!-- ORCID 标识 -->
+          <div class="contact-card-item">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-3.418 17.168H7.316V6.828h1.266v10.34zm-.633-11.455c-.443 0-.8-.358-.8-.8s.357-.8.8-.8.8.358.8.8-.357.8-.8.8zm8.797 6.467c0 2.457-1.196 3.822-3.41 3.822h-2.12V6.828h2.366c2.096 0 3.164 1.134 3.164 3.208 0 1.57-.756 2.56-2.002 2.91 1.348.315 2.002 1.403 2.002 3.232zm-4.264-5.91h-1.026v4.062h1.026c1.233 0 1.884-.6 1.884-2.016-.001-1.428-.652-2.046-1.884-2.046zm0 5.127h-1.026v4.116h1.026c1.328 0 1.986-.684 1.986-2.054 0-1.39-.658-2.062-1.986-2.062z"/></svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>ORCID iD</h4>
+              <p><a href="https://orcid.org/0009-0004-8960-6304" target="_blank" rel="noopener">0009-0004-8960-6304</a></p>
+            </div>
+          </div>
+
+          <!-- 通讯地址 -->
+          <div class="contact-card-item" style="grid-column: 1 / -1;">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>
+                <span class="lang-cn">通讯地址</span>
+                <span class="lang-en">Mailing Address</span>
+              </h4>
+              <p class="lang-cn">山东省济南市历下区文化西路44号，山东大学基础医学院；邮编: 250012</p>
+              <p class="lang-en">44 Wenhua Xi Road, School of Basic Medical Sciences, Shandong University, Ji'nan, P.R.China; 250012</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 页脚区 (FOOTER & SECRET PORTAL) -->
+      <footer class="footer">
+        <div>
+          &copy; 2026 王浩智 Haozhi Wang. 
+          <span class="lang-cn">保留所有权利.</span>
+          <span class="lang-en">All rights reserved.</span>
+        </div>
+        <div>
+          <!-- Subtle presentation portal link -->
+          <a href="presentations.html" class="secret-link" title="演示报告入口 / Presentation Portal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;vertical-align:middle;margin-right:2px;"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            <span class="lang-cn">报告集入口</span>
+            <span class="lang-en">Portal</span>
+          </a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
