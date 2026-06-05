@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PE & DIC Pathophysiological Analysis | 王浩智 Haozhi Wang</title>
+  <meta name="description" content="An interactive, deep pathophysiological analysis of a clinical case presenting massive pulmonary embolism (PE) and secondary disseminated intravascular coagulation (DIC).">
+  <!-- Import global styles -->
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Page Specific Theme Variables */
+    :root {
+      --color-danger: hsl(354, 70%, 54%);
+      --color-danger-light: hsl(354, 70%, 95%);
+      --color-warning: hsl(45, 100%, 45%);
+      --color-warning-light: hsl(45, 100%, 95%);
+      --triad-stasis: hsl(205, 80%, 40%);
+      --triad-endothelial: hsl(350, 75%, 45%);
+      --triad-coag: hsl(42, 85%, 45%);
+    }
+
+    [data-theme="dark"] {
+      --color-danger: hsl(354, 85%, 65%);
+      --color-danger-light: hsl(354, 30%, 15%);
+      --color-warning: hsl(45, 100%, 65%);
+      --color-warning-light: hsl(45, 20%, 15%);
+    }
+
+    /* Layout Adjustments */
+    .pres-container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Clinical Alert Box */
+    .clinical-banner {
+      background: linear-gradient(135deg, var(--color-danger-light), var(--primary-light));
+      border-left: 6px solid var(--color-danger);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+
+    .banner-icon {
+      background: var(--color-danger);
+      color: white;
+      padding: 0.6rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .banner-text h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .banner-text p {
+      font-size: 0.95rem;
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Dashboard Grid */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 850px) {
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Virchow Triad Interactivity */
+    .triad-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .triad-svg-container {
+      width: 280px;
+      height: 260px;
+      position: relative;
+      margin: 1rem 0;
+    }
+
+    .triad-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .triad-node {
+      cursor: pointer;
+      transition: all var(--transition-normal);
+    }
+
+    .triad-node circle {
+      transition: r 0.3s, fill 0.3s, filter 0.3s;
+    }
+
+    .triad-node:hover circle, .triad-node.active circle {
+      r: 22;
+      filter: drop-shadow(0 0 8px currentColor);
+    }
+
+    .triad-node text {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 11px;
+      text-anchor: middle;
+      fill: var(--text);
+      transition: fill 0.3s;
+    }
+
+    .triad-edge {
+      stroke: var(--border);
+      stroke-width: 4;
+      stroke-dasharray: 6 4;
+      animation: dash 30s linear infinite;
+      transition: stroke 0.3s, stroke-width 0.3s;
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -1000;
+      }
+    }
+
+    .triad-edge.active {
+      stroke-width: 6;
+      stroke-dasharray: none;
+    }
+
+    .triad-detail-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .triad-detail-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .triad-detail-body {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    /* Cascade Timeline Styles */
+    .timeline-container {
+      margin-bottom: 3rem;
+    }
+
+    .timeline-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-track {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-track {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+      }
+    }
+
+    .timeline-step {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1.2rem;
+      text-align: center;
+      cursor: pointer;
+      z-index: 2;
+      transition: all var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+    }
+
+    /* Active state changes from green to a lighter red */
+    .timeline-step:hover, .timeline-step.active {
+      transform: translateY(-4px);
+      border-color: var(--color-danger);
+      box-shadow: var(--shadow-md);
+    }
+
+    .timeline-step.active {
+      background: var(--color-danger-light);
+      border-color: var(--color-danger);
+    }
+
+    .step-number {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      border: 3px solid var(--card-bg);
+      transition: all var(--transition-normal);
+    }
+
+    .timeline-step.active .step-number {
+      background: var(--color-danger);
+      color: white;
+      border-color: var(--color-danger-light);
+    }
+
+    .step-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* Connecting arrows for timeline steps */
+    .timeline-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-danger);
+      font-weight: bold;
+      font-size: 1.6rem;
+      animation: arrowPulse 2s infinite;
+      user-select: none;
+    }
+
+    .arrow-vertical {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-arrow {
+        margin: 0.2rem 0;
+      }
+      .arrow-horizontal {
+        display: none;
+      }
+      .arrow-vertical {
+        display: block;
+      }
+    }
+
+    @keyframes arrowPulse {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+
+    /* Timeline Content Card - Stacks vertically for massive images */
+    .timeline-content-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      min-height: 160px;
+      transition: opacity 0.3s ease;
+    }
+
+    .timeline-content-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .timeline-content-text {
+      width: 100%;
+    }
+
+    .timeline-content-image {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      background: var(--primary-light);
+      cursor: zoom-in;
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .timeline-content-image:hover {
+      transform: scale(1.01);
+      border-color: var(--color-danger);
+    }
+
+    .timeline-content-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* Mechanism Tab Section */
+    .tab-section {
+      margin-bottom: 3rem;
+    }
+
+    .tab-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.8rem;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .tab-btn:hover {
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .tab-btn.active {
+      color: white;
+      background: var(--primary);
+    }
+
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Clinical Tables */
+    .medical-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      box-shadow: var(--shadow-sm);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .medical-table th {
+      background-color: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 0.8rem 1.2rem;
+      font-weight: 600;
+    }
+
+    .medical-table td {
+      padding: 0.8rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+    }
+
+    .medical-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .medical-table tr:nth-child(even) td {
+      background: var(--primary-light);
+      opacity: 0.95;
+    }
+
+    .value-abnormal {
+      color: var(--color-danger);
+      font-weight: 700;
+    }
+
+    .value-high {
+      color: var(--color-danger);
+      font-weight: 700;
+    }
+
+    .value-low {
+      color: var(--triad-stasis);
+      font-weight: 700;
+    }
+
+    /* Pathway Flowchart Box */
+    .flowchart-container {
+      background: var(--primary-light);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid var(--border);
+    }
+
+    .flowchart-step {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .flowchart-step:last-child {
+      margin-bottom: 0;
+    }
+
+    .flowchart-step:not(:last-child)::after {
+      content: "↓";
+      position: absolute;
+      bottom: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      color: var(--accent);
+      font-weight: bold;
+      z-index: 5;
+    }
+
+    .flowchart-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .flowchart-row {
+        grid-template-columns: 1fr;
+      }
+      .flowchart-step:not(:last-child)::after {
+        display: none;
+      }
+      .flowchart-step {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    /* Zoom modal styling for large readable images */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 40px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(10, 14, 23, 0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 90%;
+      max-width: 1100px;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      animation: modalZoom 0.25s ease;
+      cursor: zoom-out;
+    }
+
+    @keyframes modalZoom {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: 500;
+      transition: color 0.2s;
+      cursor: pointer;
+      user-select: none;
+      z-index: 1010;
+    }
+
+    .modal-close:hover {
+      color: var(--color-danger);
+    }
+
+    .modal-fullscreen-btn {
+      position: absolute;
+      top: 20px;
+      left: 35px;
+      color: #fff;
+      font-size: 0.95rem;
+      cursor: pointer;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      background: var(--color-danger);
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: none;
+      box-shadow: var(--shadow-sm);
+      transition: background 0.2s, transform 0.2s;
+      z-index: 1010;
+    }
+
+    .modal-fullscreen-btn:hover {
+      background: hsl(354, 85%, 45%);
+      transform: scale(1.05);
+    }
+
+    .modal-caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 800px;
+      text-align: center;
+      color: #eee;
+      padding: 15px 0;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pres-container reveal">
+    
+    <!-- Presentation Header -->
+    <header class="pres-header">
+      <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <a href="../presentations.html" class="back-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12,19 5,12 12,5"></polyline></svg>
+          <span class="lang-cn">返回报告列表</span>
+          <span class="lang-en">Back to Presentations</span>
+        </a>
+        
+        <div style="display: flex; gap: 0.5rem;">
+          <button id="themeToggleBtn" class="theme-btn" aria-label="Toggle Theme"></button>
+          <button id="langToggleBtn" class="theme-btn" aria-label="Toggle Language"></button>
+        </div>
+      </div>
+      
+      <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading); line-height: 1.3;">
+        <span class="lang-cn">急性肺栓塞（PE）与继发性弥散性血管内凝血（DIC）的临床病理生理学分析</span>
+        <span class="lang-en">Pathophysiological Analysis of Acute Pulmonary Embolism (PE) & Secondary Disseminated Intravascular Coagulation (DIC)</span>
+      </h1>
+      
+      <div class="pres-header-meta">
+        <span>
+          <span class="lang-cn">报告人：王浩智</span>
+          <span class="lang-en">Presenter: Haozhi Wang</span>
+        </span>
+        <span>
+          <span class="lang-cn">日期：2026年6月</span>
+          <span class="lang-en">Date: June 2026</span>
+        </span>
+        <span>
+          <span class="lang-cn">课题：输尿管阴道瘘修补术并发症：从肺栓塞到DIC的病例分析</span>
+          <span class="lang-en">Topic: Complications of Ureterovaginal Fistula Repair: From PE to DIC, a case analysis</span>
+        </span>
+      </div>
+    </header>
+
+    <!-- Clinical Case Summary Box -->
+    <div class="clinical-banner" style="margin-bottom: 2.5rem; flex-direction: column; gap: 0;">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start; width: 100%;">
+        <div class="banner-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:24px;height:24px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        </div>
+        <div class="banner-text" style="flex: 1;">
+          <h3 class="lang-cn">临床危重案例背景</h3>
+          <h3 class="lang-en">Critical Clinical Case Background</h3>
+          <p class="lang-cn">
+            患者张大姐，因巨大子宫肌瘤行子宫切除术后，并发左侧输尿管阴道瘘。于省医院行修补术，术后复苏期突发心跳呼吸骤停，经抢救复苏后出现毁灭性的大出血与弥散性血管内凝血（DIC）。这是一例由多重血栓高危因素在短时间内序贯叠加，最终在术后诱发大块骑跨性肺栓塞（PE）并点燃全身终末期 DIC 风暴的经典且极其凶险的临床病理生理过程。
+          </p>
+          <p class="lang-en">
+            The patient, suffering from long-term anemia due to a massive uterine fibroid, underwent laparoscopic total hysterectomy, complicated by a postoperative left ureterovaginal fistula. During recovery from a subsequent fistula repair surgery, she suffered sudden cardiopulmonary arrest. Resuscitation restored her heartbeat but triggered catastrophic disseminated intravascular coagulation (DIC) and hemorrhagic shock. This classic, life-threatening clinical scenario highlights how multiple risk factors stacked up sequentially, culminating in a massive saddle pulmonary embolism (PE) and terminal DIC storm.
+          </p>
+        </div>
+      </div>
+      <!-- Case Background Image embedded inside the card box -->
+      <div style="width: 100%; margin-top: 1.5rem; text-align: center;">
+        <div class="timeline-content-image" style="max-width: 900px; margin: 0 auto;" onclick="openModal('images/0.png', 'Clinical Case Background')">
+          <img src="images/0.png" alt="Clinical Case Background" style="max-height: 480px; width: 100%; object-fit: contain;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 1: Virchow's Triad Interactive Dashboard -->
+    <h2 class="section-title">
+      <span class="section-title-icon">01</span>
+      <span class="lang-cn">维尔肖血栓三联征互动解析</span>
+      <span class="lang-en">Virchow's Triad Interactive Analysis</span>
+    </h2>
+
+    <div class="card" style="margin-bottom: 3rem;">
+      <div class="dashboard-grid" style="margin-bottom: 1rem;">
+        <!-- Interactive SVG Diagram Area -->
+        <div class="triad-card">
+          
+          <div class="triad-svg-container">
+            <svg class="triad-svg" viewBox="0 0 200 200">
+              <!-- Connecting dashed edges representing blood stasis/injury links -->
+              <line id="edge-coag-stasis" class="triad-edge" x1="100" y1="35" x2="160" y2="140" />
+              <line id="edge-stasis-injury" class="triad-edge" x1="160" y1="140" x2="40" y2="140" />
+              <line id="edge-injury-coag" class="triad-edge" x1="40" y1="140" x2="100" y2="35" />
+              
+              <!-- Nodes -->
+              <!-- 1. Hypercoagulability (Top) -->
+              <g id="node-hypercoag" class="triad-node" style="color: var(--triad-coag);" onclick="selectTriad('hypercoag')">
+                <circle cx="100" cy="35" r="16" fill="var(--card-bg)" stroke="currentColor" stroke-width="4" />
+                <text x="100" y="39">H</text>
+              </g>
+              <!-- 2. Abnormal Blood Flow / Stasis (Right) -->
+              <g id="node-stasis" class="triad-node" style="color: var(--triad-stasis);" onclick="selectTriad('stasis')">
+                <circle cx="160" cy="140" r="16" fill="var(--card-bg)" stroke="currentColor" stroke-width="4" />
+                <text x="160" y="144">S</text>
+              </g>
+              <!-- 3. Endothelial Injury (Left) -->
+              <g id="node-injury" class="triad-node active" style="color: var(--triad-endothelial);" onclick="selectTriad('injury')">
+                <circle cx="40" cy="140" r="16" fill="var(--card-bg)" stroke="currentColor" stroke-width="4" />
+                <text x="40" y="144">I</text>
+              </g>
+            </svg>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; font-size: 0.75rem; font-weight: bold; justify-content: center; width: 100%;">
+            <span style="color: var(--triad-endothelial)">I: Injury</span>
+            <span style="color: var(--triad-stasis)">S: Stasis / Flow</span>
+            <span style="color: var(--triad-coag)">H: Hypercoagulability</span>
+          </div>
+        </div>
+
+        <!-- Detail Panel updating via JS -->
+        <div class="triad-detail-panel" id="triadDetailPanel">
+          <!-- Content injected by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Full Width Centered Image below dashboard grid for classroom viewing -->
+      <div id="triadImageContainer" style="border-top: 1px solid var(--border); padding-top: 1.5rem;">
+        <!-- Large image content injected by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Section 2: Pathophysiology Cascade Timeline -->
+    <h2 class="section-title">
+      <span class="section-title-icon">02</span>
+      <span class="lang-cn">病理演变四阶段</span>
+      <span class="lang-en">Pathophysiological Cascade (4 Stages)</span>
+    </h2>
+
+    <div class="timeline-container">
+      <div class="timeline-track">
+        <!-- Step 1 -->
+        <div class="timeline-step active" onclick="selectStep(1)" id="step-btn-1">
+          <div class="step-number">I</div>
+          <div class="step-title lang-cn">高凝之躯</div>
+          <div class="step-title lang-en">Hypercoagulable State</div>
+        </div>
+        <!-- Arrow 1 -->
+        <div class="timeline-arrow">
+          <span class="arrow-horizontal">→</span>
+          <span class="arrow-vertical">↓</span>
+        </div>
+        <!-- Step 2 -->
+        <div class="timeline-step" onclick="selectStep(2)" id="step-btn-2">
+          <div class="step-number">II</div>
+          <div class="step-title lang-cn">内皮重创</div>
+          <div class="step-title lang-en">Surgical Trauma & Infection</div>
+        </div>
+        <!-- Arrow 2 -->
+        <div class="timeline-arrow">
+          <span class="arrow-horizontal">→</span>
+          <span class="arrow-vertical">↓</span>
+        </div>
+        <!-- Step 3 -->
+        <div class="timeline-step" onclick="selectStep(3)" id="step-btn-3">
+          <div class="step-number">III</div>
+          <div class="step-title lang-cn">血栓凝聚</div>
+          <div class="step-title lang-en">Thrombus Formation</div>
+        </div>
+        <!-- Arrow 3 -->
+        <div class="timeline-arrow">
+          <span class="arrow-horizontal">→</span>
+          <span class="arrow-vertical">↓</span>
+        </div>
+        <!-- Step 4 -->
+        <div class="timeline-step" onclick="selectStep(4)" id="step-btn-4">
+          <div class="step-number">IV</div>
+          <div class="step-title lang-cn">风暴爆发</div>
+          <div class="step-title lang-en">DIC Storm</div>
+        </div>
+      </div>
+
+      <!-- Detail Content Card for Timeline (Vertical Stack for giant illustrations) -->
+      <div class="timeline-content-card" id="timelineContentCard">
+        <!-- Content injected by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Section 3: Deep Mechanism Q&A (Tabs) -->
+    <h2 class="section-title">
+      <span class="section-title-icon">03</span>
+      <span class="lang-cn">深度病理生理机制追问</span>
+      <span class="lang-en">Deep Pathophysiological Mechanism Q&A</span>
+    </h2>
+
+    <div class="tab-section">
+      <nav class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab(1)" id="tab-btn-1">
+          <span>Q1</span>
+          <span class="lang-cn">贫血与血小板增多</span>
+          <span class="lang-en">Anemia & Platelets</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab(2)" id="tab-btn-2">
+          <span>Q2</span>
+          <span class="lang-cn">Hcy与内皮重创</span>
+          <span class="lang-en">Hcy & Endothelium</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab(3)" id="tab-btn-3">
+          <span>Q3</span>
+          <span class="lang-cn">休克与DIC分期</span>
+          <span class="lang-en">Shock & DIC Stages</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab(4)" id="tab-btn-4">
+          <span>Q4</span>
+          <span class="lang-cn">血气指标解码</span>
+          <span class="lang-en">Blood Gas Decode</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab(5)" id="tab-btn-5">
+          <span>Q5</span>
+          <span class="lang-cn">器官功能衰竭</span>
+          <span class="lang-en">MODS Etiology</span>
+        </button>
+      </nav>
+
+      <!-- Panel 1: Anemia & Thrombocytosis -->
+      <div class="card tab-panel active" id="tab-panel-1">
+        <h3 style="margin-bottom:1rem; color:var(--primary);">
+          <span class="lang-cn">1. 为什么长期贫血会导致血小板骤增？其他血细胞为何正常？</span>
+          <span class="lang-en">1. Why does chronic anemia trigger reactive thrombocytosis, while other blood cell lines remain normal?</span>
+        </h3>
+        
+        <div class="lang-cn">
+          <p>患者因巨大子宫肌瘤长期慢性失血，血小板计数飙升至 <strong>652×10⁹/L</strong>。这属于经典的<strong>反应性/继发性血小板增多症（Reactive Thrombocytosis）</strong>，其核心骨髓发生机制如下：</p>
+          
+          <ul style="margin-left: 2rem; margin-bottom: 1.5rem; list-style-type: square;">
+            <li style="margin-bottom: 0.8rem;">
+              <strong>促红细胞生成素（EPO）的“同源交叉驱动”机制：</strong>
+              <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: var(--text-muted);">
+                慢性失血导致组织长期严重缺氧，肾脏受刺激释放海量红细胞生成素（EPO）。在骨髓造血早期，红系祖细胞与巨核系祖细胞均起源于共同的<strong>双能造血祖细胞（Megakaryocyte-Erythroid Progenitor, MEP）</strong>。由于 EPO 与调节血小板成熟的<strong>促血小板生成素（TPO）</strong>在三级立体结构上具有高度同源性，极高水平的 EPO 会交叉结合巨核细胞表面的 TPO 受体（MPL），激活下游 JAK2-STAT5/AKT 信号通路，从而错误地加速巨核细胞分裂、成熟与血小板解体生成。
+              </p>
+            </li>
+            <li style="margin-bottom: 0.8rem;">
+              <strong>铁缺乏解除巨核系增殖抑制：</strong>
+              <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: var(--text-muted);">
+                铁离子（Fe²⁺）对骨髓巨核系统的内源性有丝分裂具有一定的生理抑制效应。当长期慢性出血导致体内铁储备完全耗竭时，这种抑制反馈解除，骨髓巨核细胞失去“分化刹车”，代偿性过度分裂，产生大量成熟、高聚集活性的幼稚血小板。
+              </p>
+            </li>
+          </ul>
+
+          <h4 style="margin: 1.5rem 0 0.5rem 0; color: var(--text);">骨髓代偿增生为何“靶向精准”，不波及白细胞？</h4>
+          <p>骨髓的代偿反应是极其靶向性的，受特定细胞因子精密调控，而非全系盲目滥增：</p>
+          <ol style="margin-left: 2rem; margin-bottom: 1rem;">
+            <li style="margin-bottom: 0.5rem;"><strong>缺乏特异性白细胞生长因子：</strong> 白细胞（特别是中性粒细胞和单核细胞）的增殖成熟高度依赖粒细胞集落刺激因子（G-CSF）或 GM-CSF。这些因子只在细菌内毒素、免疫复合物或全身重度急性炎症时才会大量释放。在患者的慢性失血阶段，体内并没有爆发全身性的急性炎症因子，因此白细胞系的“启动开关”仍处于关闭状态。</li>
+            <li style="margin-bottom: 0.5rem;"><strong>分化路径的“截流效应”与造血微环境竞争：</strong> 骨髓多能造血干细胞（HSC）在向下分化时，由于缺氧 and 高 EPO 信号的持续刺激，分化通路的转录因子表达倾向被定向拦截在 MEP 路径（红系/巨核系）上。有限的骨髓造血原料和空间被红系与巨核细胞优先瓜分抢占，这使得粒细胞系和淋巴细胞系的造血活动维持原有的正常基线水平。</li>
+          </ol>
+        </div>
+        
+        <div class="lang-en">
+          <p>The patient's platelet count surged to <strong>652×10⁹/L</strong> secondary to long-term chronic bleeding. This is a classic presentation of <strong>reactive/secondary thrombocytosis</strong>. The core bone marrow mechanisms are:</p>
+          
+          <ul style="margin-left: 2rem; margin-bottom: 1.5rem; list-style-type: square;">
+            <li style="margin-bottom: 0.8rem;">
+              <strong>EPO-TPO Cross-Reactivity via Shared Progenitor (MEP) Path:</strong>
+              <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: var(--text-muted);">
+                Chronic tissue hypoxia from uterine myoma-induced bleeding stimulates the kidneys to release massive amounts of Erythropoietin (EPO). In early hematopoiesis, red blood cells and megakaryocytes share a common precursor: the <strong>Megakaryocyte-Erythroid Progenitor (MEP)</strong>. Because EPO shares structural homology with Thrombopoietin (TPO), pathologically high EPO concentrations cross-react with and weakly activate the TPO receptor (MPL) on megakaryocytes, accelerating their maturation and platelet production via downstream JAK2-STAT5 pathways.
+              </p>
+            </li>
+            <li style="margin-bottom: 0.8rem;">
+              <strong>Loss of Iron-Mediated Feedback Inhibition:</strong>
+              <p style="margin: 0.3rem 0 0 0; font-size: 0.95rem; color: var(--text-muted);">
+                Intracellular iron reserves exert a negative feedback effect on megakaryocytic endomitosis and maturation. Depletion of iron reserves removes this physiological "brake," allowing megakaryocytes to undergo uncontrolled endomitosis and release a high volume of active, younger platelets into the circulation.
+              </p>
+            </li>
+          </ul>
+
+          <h4 style="margin: 1.5rem 0 0.5rem 0; color: var(--text);">Why is the bone marrow response selective, leaving White Blood Cells (WBC) unaffected?</h4>
+          <p>Compensatory hematopoiesis is highly lineage-specific:</p>
+          <ol style="margin-left: 2rem; margin-bottom: 1rem;">
+            <li style="margin-bottom: 0.5rem;"><strong>Specificity of Growth Factors:</strong> Granulocyte and monocyte lineages require G-CSF and GM-CSF, which are only triggered by acute inflammation or bacterial endotoxins. Since these inflammatory signals were absent during her chronic bleeding phase, the WBC count remained stable.</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Lineage Commitment Sequestration:</strong> Hematopoietic stem cells were biased towards the MEP pathway due to hypoxic signaling. The bone marrow niche was occupied by erythrocytic and megakaryocytic cells, leaving granulocytic and lymphocytic lines untouched due to lack of GM-CSF signaling.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Panel 2: Hcy Mechanism -->
+      <div class="card tab-panel" id="tab-panel-2">
+        <h3 style="margin-bottom:1rem; color:var(--primary);">
+          <span class="lang-cn">2. 详细解释高 Hcy 的成因及其对凝血功能的重创机制</span>
+          <span class="lang-en">2. Mechanisms of hyperhomocysteinemia (Hcy) development and its destruction of coagulation balance</span>
+        </h3>
+        
+        <div class="lang-cn">
+          <p>患者术前化验显示同型半胱氨酸（Hcy）升高至 <strong>20.0 μmol/L</strong>。高 Hcy 升高成因及其破坏凝血的机制解析：</p>
+          
+          <h4 style="color:var(--text); margin-bottom: 0.5rem;">高 Hcy 升高原因：</h4>
+          <p>慢性失血与长期贫血极易伴随维生素 B₆、B₁₂ 及叶酸的营养吸收不足或损耗。由于这三者是 Hcy 重新甲基化为蛋氨酸以及转硫代为半胱氨酸的关键辅酶，一旦缺乏，将直接阻断 Hcy 的代谢通路，导致其蓄积入血。此外，贫血及瘘管引起的感染也会破坏小肠微循环，影响辅酶吸收，加之肾脏灌注不足导致排泄减少，进一步拉高了外周血 Hcy 浓度。</p>
+
+          <h4 style="color:var(--text); margin-top: 1.5rem; margin-bottom: 0.5rem;">Hcy 对凝血及纤溶的四重重创机制：</h4>
+          <p>Hcy 是血管内皮细胞（VEC）的强效毒素。它能通过自身氧化产生大量活性氧自由基（ROS），造成内皮细胞脂质过氧化受损、剥脱，将原本光滑抗凝的血管壁转化为强烈的促凝表面：</p>
+        </div>
+
+        <div class="lang-en">
+          <p>The pre-operative Hcy level was elevated at <strong>20.0 μmol/L</strong>. Below is the mechanism of Hcy accumulation and its four-fold destruction of the vascular endothelial cell (VEC) barrier:</p>
+          
+          <h4 style="color:var(--text); margin-bottom: 0.5rem;">Why was Hcy elevated?</h4>
+          <p>Chronic bleeding and anemia deplete crucial cofactors required for Hcy metabolism (Vitamin B₆, B₁₂, and Folate). This halts the re-methylation of Hcy into methionine and its trans-sulfuration into cysteine, causing Hcy accumulation. Additionally, poor renal perfusion associated with severe chronic anemia reduces renal clearance of Hcy, driving blood levels up.</p>
+
+          <h4 style="color:var(--text); margin-top: 1.5rem; margin-bottom: 0.5rem;">Homocysteine's Four-Fold Attack on Coagulation:</h4>
+          <p>Hcy generates highly reactive oxygen species (ROS) that directly damage endothelial cells. It disrupts the endothelial barrier, converting a highly anti-thrombotic surface into a highly pro-thrombotic surface through the following steps:</p>
+        </div>
+
+        <!-- Flowchart representing Hcy mechanisms -->
+        <div class="flowchart-container">
+          <div class="flowchart-step">
+            <strong style="color: var(--color-danger);">
+              <span class="lang-cn">1. 严重削弱机体最核心的抗凝系统 (Thrombomodulin, TM)</span>
+              <span class="lang-en">1. Disruption of the Thrombomodulin (TM) - Protein C System</span>
+            </strong>
+            <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem; color: var(--text-muted);">
+              <span class="lang-cn">Hcy 通过介导内皮氧化损伤，下调内皮表面 TM 的基因转录与表达，阻止其与凝血酶结合。TM 废弃导致蛋白C (PC) 无法被激活，机体丧失了灭活辅因子 Va 和 VIIIa 的关键“刹车”，使凝血反应反应链成倍放大。</span>
+              <span class="lang-en">Hcy downregulates TM expression on VECs via oxidative stress, preventing it from binding thrombin. Without active TM, Protein C (PC) cannot be activated to degrade active factors Va and VIIIa, disabling the body's primary clotting brake.</span>
+            </p>
+          </div>
+          <div class="flowchart-step">
+            <strong style="color: var(--color-danger);">
+              <span class="lang-cn">2. 抑制内皮表面糖胺聚糖 (Heparan Sulfate, HS) 的合成</span>
+              <span class="lang-en">2. Suppression of Heparan Sulfate (HS) Synthesis</span>
+            </strong>
+            <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem; color: var(--text-muted);">
+              <span class="lang-cn">内皮表面的 HS 能结合并活化抗凝血酶 (AT-III)。Hcy 抑制 HS 合成使局部 AT-III 失去活性增强锚点，导致游离的凝血酶和 Xa 因子不能被及时清除，局部微血栓极易滋生。</span>
+              <span class="lang-en">Heparan sulfate cofactor activates Antithrombin III (AT-III). Hcy blocks HS synthesis, rendering AT-III unable to neutralize circulating thrombin and factor Xa, leading to local clot formation.</span>
+            </p>
+          </div>
+          <div class="flowchart-step">
+            <strong style="color: var(--color-danger);">
+              <span class="lang-cn">3. 异常诱导组织因子 (Tissue Factor, TF) 表达</span>
+              <span class="lang-en">3. Induction of Tissue Factor (TF) Expression</span>
+            </strong>
+            <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem; color: var(--text-muted);">
+              <span class="lang-cn">Hcy 刺激内皮细胞与单核细胞的核转录因子 NF-κB，诱导其异常表达跨膜组织因子（TF）。TF 作为外源性凝血的“电闸”，与 VIIa 因子结合形成复合物，主动启动外源性凝血系统。</span>
+              <span class="lang-en">Hcy stimulates transcription factor NF-κB, inducing damaged endothelium and monocytes to express TF. Under normal conditions, TF is sequestered from blood; its exposure triggers the extrinsic coagulation pathway.</span>
+            </p>
+          </div>
+          <div class="flowchart-step">
+            <strong style="color: var(--color-danger);">
+              <span class="lang-cn">4. 暴露出皮下胶原纤维，触发血小板海量黏附聚集并抑制 NO 释放</span>
+              <span class="lang-en">4. Collagen Exposure and Platelet Activation & NO Inhibition</span>
+            </strong>
+            <p style="margin: 0.3rem 0 0 0; font-size: 0.9rem; color: var(--text-muted);">
+              <span class="lang-cn">Hcy 导致的内皮剥脱剥离暴露出皮下胶原。这让血液中原本就因贫血而异常增多（652×10⁹/L）的血小板快速黏附聚集；同时 Hcy 会抑制一氧化氮合酶（eNOS），阻断血管舒张与抑制血小板聚集的 NO 信号，极度促进血栓凝集。</span>
+              <span class="lang-en">Endothelial desquamation exposes subendothelial collagen, attracting the high concentration of circulating platelets (652×10⁹/L). Concurrently, Hcy inhibits eNOS activity, suppressing NO release and promoting unchecked platelet clotting.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Shock & DIC Stages -->
+      <div class="card tab-panel" id="tab-panel-3">
+        <h3 style="margin-bottom:1rem; color:var(--primary);">
+          <span class="lang-cn">3. 出事时处于休克和 DIC 的什么时期？术前化验正常的谜底是什么？</span>
+          <span class="lang-en">3. What were the stages of shock and DIC during the crisis? Why did pre-op lab values appear normal?</span>
+        </h3>
+        
+        <div class="lang-cn">
+          <h4 style="color: var(--text); margin-bottom: 0.5rem;">DIC与休克时期的精准划分：</h4>
+          <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+            <li style="margin-bottom: 0.5rem;">
+              <strong>DIC分期：消耗性低凝期向继发性纤溶亢进期恶性过渡。</strong>
+              <p style="margin: 0.2rem 0 0 0; font-size: 0.95rem; color: var(--text-muted);">
+                依据：化验单呈现典型的“毁灭性耗竭”：纤维蛋白原（FIB）近乎耗干（&lt;0.60 g/L，严重低于正常的 2.0-4.0 g/L），凝血酶原时间极度延长（PT 105.8秒，APTT 175.9秒），提示大量凝血因子已被微血管内广泛血栓形成消耗殆尽；同时 D-二聚体爆发式增高（&gt;20.00 mg/L），证实体内纤溶酶全面激活，正疯狂切割已经形成的纤维蛋白网。
+              </p>
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+              <strong>休克分期：微循环衰竭期（弥散性血管内凝血期 / 难治性休克期 / 可逆性休克晚期）。</strong>
+              <p style="margin: 0.2rem 0 0 0; font-size: 0.95rem; color: var(--text-muted);">
+                依据：患者心跳呼吸骤停，发生严重阻塞性休克，外周灌注完全丧失。血气提示乳酸（Lac 15.80 mmol/L）呈灾难性堆积，伴随极度严重的全身失代偿性代谢性酸中毒（pH 7.05），这是微循环广泛淤血、血管麻痹以及全身重度组织细胞无氧酵解的典型晚期表现。
+              </p>
+            </li>
+          </ul>
+
+          <h4 style="color: var(--text); margin-top: 1.5rem; margin-bottom: 0.5rem;">为何第二次去医院（手术前）凝血指标完全正常？</h4>
+          <p>
+            术前各项化验（PT、APTT、FIB正常）经常蒙蔽临床医生，但这符合 DIC 的隐匿发展规律：
+          </p>
+          <ol style="margin-left: 2rem; margin-bottom: 1rem;">
+            <li style="margin-bottom: 0.5rem;">
+              <strong>术前处于隐匿的“临床前期 / 高凝期”：</strong> 此时凝血因子尚未被大量消耗，但在高血小板（652×10⁹/L）与局部输尿管瘘化学刺激、盆腔感染炎症（白细胞 11.77×10⁹/L）的持续夹击下，受损血管内皮已广泛表达组织因子（TF）。患者实质上是一个潜伏的高危“血栓制造厂”。
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+              <strong>急性大块肺栓塞（PE）充当了超级物理与病理激活剂：</strong> 术后随患者翻身等体位改变，盆腔/下肢新形成的巨大血栓瞬间脱落并卡死肺动脉主干。
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+              <strong>剪切力造成二次灾难性损害，引爆 TF 核弹：</strong> 巨大血栓在冲过右心室、卡入肺动脉主干的瞬间产生恐怖的机械剪切力，导致右心和肺循环内皮细胞大面积、灾难性撕裂与碎裂，释放出大量膜结合的<strong>组织因子（TF）</strong>。
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+              <strong>雪崩效应吞噬凝血因子：</strong> 极高浓度的 TF 与 VIIa 结合，在全身血液中激发起狂暴的凝血酶风暴，网罗海量血小板在全身微血管形成微血栓，在几十分钟内将体内的凝血因子和纤维蛋白原彻底抽干，使指标从“完全正常”瞬间砸向“消耗性低凝”。
+            </li>
+          </ol>
+        </div>
+
+        <div class="lang-en">
+          <h4 style="color: var(--text); margin-bottom: 0.5rem;">Pathophysiological Stage Classification:</h4>
+          <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+            <li style="margin-bottom: 0.5rem;">
+              <strong>DIC Stage: Consumptive Hypocoagulability transitioning to Secondary Hyperfibrinolysis.</strong>
+              <p style="margin: 0.2rem 0 0 0; font-size: 0.95rem; color: var(--text-muted);">
+                Evidence: Fibrinogen was depleted (&lt;0.60 g/L, far below normal 2.0-4.0 g/L), and PT (105.8s) and APTT (175.9s) were extremely prolonged, showing that clotting factors had been consumed in systemic microthrombi. Simultaneously, D-dimer was &gt;20.00 mg/L, proving secondary hyperactivation of plasmin.
+              </p>
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+              <strong>Shock Stage: Microcirculatory Failure / Refractory Stage.</strong>
+              <p style="margin: 0.2rem 0 0 0; font-size: 0.95rem; color: var(--text-muted);">
+                Evidence: The patient suffered cardiac arrest and profound systemic hypoperfusion. Lactate was extremely elevated (15.80 mmol/L) with severe acidemia (pH 7.05). This reflects systemic microvascular stasis and widespread anaerobic glycolysis.
+              </p>
+            </li>
+          </ul>
+
+          <h4 style="color: var(--text); margin-top: 1.5rem; margin-bottom: 0.5rem;">Why did pre-operative coagulation profiles appear normal?</h4>
+          <p>
+            Normal pre-op tests (PT, APTT, FIB) often mislead clinicians. The transition occurred as follows:
+          </p>
+          <ol style="margin-left: 2rem; margin-bottom: 1rem;">
+            <li style="margin-bottom: 0.5rem;">
+              <strong>Pre-operative Silent "Hypercoagulable State":</strong> Clotting factors had not yet been consumed. However, the presence of high platelets (652×10⁹/L) combined with pelvic inflammation (WBC 11.77×10⁹/L) and ureterovaginal fistula leak had pre-activated the endothelium.
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+              <strong>Massive PE as a Tragic Trigger:</strong> After the second surgery, patient movement caused the massive pelvic/DVT clot to dislodge and lodge in the main pulmonary artery.
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+              <strong>Mechanical Shear Stress Exposing Vast TF:</strong> The impact of the giant embolus as it wedged into the pulmonary vasculature generated extreme shear stress, shredding the endothelial lining of the right heart and pulmonary bed, releasing massive amounts of membrane-bound <strong>Tissue Factor (TF)</strong>.
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+              <strong>The Systemic Avalanche:</strong> The exposed TF formed complexes with factor VIIa, triggering a systemic thrombin storm. This rapidly consumed platelets and coagulation proteins within minutes, driving the lab values from normal to consumptive hypocoagulability.
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Panel 4: Blood Gas Decode -->
+      <div class="card tab-panel" id="tab-panel-4">
+        <h3 style="margin-bottom:1rem; color:var(--primary);">
+          <span class="lang-cn">4. 为什么肺栓塞抢救后会出现：pH极低、pCO₂极低，但 pO₂极高？</span>
+          <span class="lang-en">4. Why did blood gas show extreme acidemia (low pH, low pCO₂) but extremely high pO₂ after PE resuscitation?</span>
+        </h3>
+        
+        <div class="lang-cn">
+          <p>抢救后的血气分析看似充满矛盾：极低 pH (7.05) 伴低 pCO₂, 却有超高 pO₂。这其实是经典的<strong>重度代谢性酸中毒合并呼吸性碱中毒</strong>表现：</p>
+        </div>
+        <div class="lang-en">
+          <p>The post-resuscitation blood gas seems paradoxical: extreme acidemia (pH 7.05) and low pCO₂, yet high pO₂. This represents a classic <strong>mixed severe metabolic acidosis and respiratory alkalosis</strong>:</p>
+        </div>
+
+        <table class="medical-table">
+          <thead>
+            <tr>
+              <th><span class="lang-cn">血气指标</span><span class="lang-en">Blood Gas Parameter</span></th>
+              <th><span class="lang-cn">测得值</span><span class="lang-en">Measured Value</span></th>
+              <th><span class="lang-cn">正常范围</span><span class="lang-en">Reference Range</span></th>
+              <th><span class="lang-cn">病理生理机制解码</span><span class="lang-en">Pathophysiological Mechanism</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>pH</strong></td>
+              <td class="value-low">7.05</td>
+              <td>7.35 - 7.45</td>
+              <td>
+                <span class="lang-cn"><strong>严重酸血症：</strong> 大块肺栓塞导致心输出量骤减（阻塞性休克）并引发心跳骤停，全身组织严重缺血缺氧，无氧酵解产生海量乳酸，击溃缓冲系统。</span>
+                <span class="lang-en"><strong>Severe Acidemia:</strong> Massive PE cut off pulmonary blood flow, causing cardiac arrest. Widespread tissue hypoxia triggered severe anaerobic metabolism and lactic acid buildup.</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Lac (Lactate)</strong></td>
+              <td class="value-high">15.80 mmol/L</td>
+              <td>0.5 - 2.2 mmol/L</td>
+              <td>
+                <span class="lang-cn"><strong>严重组织灌注不足：</strong> 细胞在无氧状态下进行糖酵解，产生大量乳酸并在血液中病理性堆积。</span>
+                <span class="lang-en"><strong>Lactic Acidosis:</strong> Profound systemic hypoperfusion forced cells to rely on anaerobic glycolysis, leading to accumulation of lactate.</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>pCO₂</strong></td>
+              <td class="value-low">31 mmHg (偏低)</td>
+              <td>35 - 45 mmHg</td>
+              <td>
+                <span class="lang-cn"><strong>呼吸性碱中毒（过度通气）：</strong> 骤停前濒死缺氧引起强烈的呼吸中枢兴奋；抢救期间使用简易呼吸器或呼吸机进行高频过度通气，将体内的 CO₂ 强制“洗出”（Blow off）。</span>
+                <span class="lang-en"><strong>Hyperventilation (Alkalosis):</strong> High-frequency mechanical ventilation during CPR forcibly washed out (blew off) CO₂ from the blood, dropping pCO₂.</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>pO₂</strong></td>
+              <td class="value-high">350 mmHg (极高)</td>
+              <td>80 - 100 mmHg</td>
+              <td>
+                <span class="lang-cn"><strong>纯氧吸入的物理弥散效应：</strong> 并不代表组织不缺氧！抢救时输入 100% 纯氧，在强大的气体分压下，氧气被强行压入仅存的通气肺泡血管中物理溶解。但由于心脏泵血功能衰竭，这些高氧血无法输送给外周细胞。</span>
+                <span class="lang-en"><strong>Hyperoxia from 100% FiO₂:</strong> Does not mean tissues are oxygenated! High-pressure ventilation with 100% oxygen forced O₂ to dissolve into remaining blood. However, because of cardiogenic shock, this oxygen could not be delivered to tissues.</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>HCO₃⁻ & BE</strong></td>
+              <td class="value-low">显著降低 / Low (-18.0)</td>
+              <td>HCO₃⁻: 22-27 mmol/L<br>BE: -3 - +3 mmol/L</td>
+              <td>
+                <span class="lang-cn"><strong>碱储备耗竭：</strong> 机体为了中和组织严重无氧代谢产生的大量 H⁺，疯狂消耗 HCO₃⁻（缓冲反应），导致剩余碱（BE）负值急剧增大（-18.0 mmol/L），总二氧化碳（TCO₂）也被彻底掏空，碱储备枯竭。</span>
+                <span class="lang-en"><strong>Bicarbonate Depletion:</strong> The body consumed HCO₃⁻ to buffer H⁺ ions generated by lactic acid. This depleted the alkaline reserve, causing BE to drop to -18.0 mmol/L.</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Panel 5: MODS Root Cause -->
+      <div class="card tab-panel" id="tab-panel-5">
+        <h3 style="margin-bottom:1rem; color:var(--primary);">
+          <span class="lang-cn">5. 为什么最后的肝肾功能、心肌酶全面崩盘？是肺栓塞导致的吗？</span>
+          <span class="lang-en">5. What caused the collapse of hepatic, renal, and cardiac enzymes? Was it due to the pulmonary embolism?</span>
+        </h3>
+        
+        <div class="lang-cn">
+          <p><strong>是的，这完全是急性大块肺栓塞引发的恶性循环。</strong> 这是大块 PE 导致的阻塞性休克/心脏骤停与全身 DIC 微血栓形成，夹击各脏器引发的<strong>多器官功能障碍综合征（MODS）</strong>的必然结局：</p>
+          
+          <div class="flowchart-row">
+            <div class="contact-card-item" style="border-left: 4px solid var(--color-danger);">
+              <div class="contact-card-content">
+                <h4 style="color:var(--color-danger);">1. 心脏损伤（心肌酶飙升）</h4>
+                <p style="font-size:0.9rem; margin-top:0.3rem;">
+                  大块血栓完全堵塞肺动脉，导致右心室面临无法逾越的压力后负荷，右心急性扩张、心肌张力极限增高，引起微血管受压破裂。心跳骤停导致全心发生严重的“缺血-再灌注损伤”；同时，全身 DIC 形成的微血栓直接堵塞冠状动脉微循环，心肌细胞成片坏死释出大量心肌酶。
+                </p>
+              </div>
+            </div>
+            
+            <div class="contact-card-item" style="border-left: 4px solid var(--triad-stasis);">
+              <div class="contact-card-content">
+                <h4 style="color:var(--triad-stasis);">2. 肝脏损伤（Shock Liver / 转氨酶暴发）</h4>
+                <p style="font-size:0.9rem; margin-top:0.3rem;">
+                  肝脏是对缺氧极敏感的“大血窦”器官。肺栓塞导致系统循环血压骤降，肝动脉灌注几乎中断；同时，右心衰竭导致下腔静脉严重淤血，肝静脉回流受阻。这种<strong>急性严重缺氧 + 剧烈淤血</strong>的双重打击，诱发了急性“淤血性/缺氧性肝坏死（休克肝）”，肝细胞在数小时内大面积坏死，转氨酶流水般释放入血。
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-card-item" style="border-left: 4px solid var(--accent); grid-column: 1 / -1;">
+              <div class="contact-card-content">
+                <h4 style="color:var(--accent);">3. 肾脏损伤（急性肾皮质坏死 / 尿毒症）</h4>
+                <p style="font-size:0.9rem; margin-top:0.3rem;">
+                  休克状态下，机体为了保障脑、心供血，肾血管发生强烈痉挛，肾血流量骤减，引发急性肾小管坏死（ATN）。更致命的是，全身性 Shwartzman 反应（GSR）被激活，全身 DIC 产生的纤维蛋白微血栓将双侧肾小球毛细血管网完全死死堵塞，导致典型的<strong>双侧肾皮质坏死</strong>，肾脏滤过功能瞬间崩溃，肌酐与尿素氮急剧拉升。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-en">
+          <p><strong>Yes, this was the direct consequence of massive PE.</strong> The severe systemic collapse of organ systems represents <strong>Multiple Organ Dysfunction Syndrome (MODS)</strong> triggered by a combination of cardiogenic/obstructive shock and DIC microthrombosis:</p>
+          
+          <div class="flowchart-row">
+            <div class="contact-card-item" style="border-left: 4px solid var(--color-danger);">
+              <div class="contact-card-content">
+                <h4 style="color:var(--color-danger);">1. Cardiac Collapse (Myocardial Enzyme Surge)</h4>
+                <p style="font-size:0.9rem; margin-top:0.3rem;">
+                  The saddle embolism blocked right ventricular outflow, placing an overwhelming afterload on the right heart. This caused acute right ventricular dilation and wall tension, compressing myocardial microvessels. Following cardiac arrest, the myocardium suffered global ischemia-reperfusion injury. Under DIC, microthrombi obstructed coronary microcirculation, destroying cardiomyocytes and releasing intracellular myocardial enzymes.
+                </p>
+              </div>
+            </div>
+            
+            <div class="contact-card-item" style="border-left: 4px solid var(--triad-stasis);">
+              <div class="contact-card-content">
+                <h4 style="color:var(--triad-stasis);">2. Hepatic Failure (Shock Liver)</h4>
+                <p style="font-size:0.9rem; margin-top:0.3rem;">
+                  The liver is highly sensitive to hypoxia. The PE induced severe arterial hypotension, cutting off hepatic arterial supply. Concurrently, acute right heart failure caused severe systemic venous congestion, blocking hepatic venous outflow. This dual blow of <strong>hypoxia and congestion</strong> triggered "shock liver" (ischemic hepatitis), leading to necrosis of hepatocytes and leakage of transaminases (ALT/AST).
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-card-item" style="border-left: 4px solid var(--accent); grid-column: 1 / -1;">
+              <div class="contact-card-content">
+                <h4 style="color:var(--accent);">3. Renal Failure (Renal Cortical Necrosis)</h4>
+                <p style="font-size:0.9rem; margin-top:0.3rem;">
+                  During shock, renal vasoconstriction shunted blood to the brain and heart, reducing renal blood flow and causing acute tubular necrosis (ATN). Furthermore, the Generalized Shwartzman-like reaction under DIC led to widespread fibrin microthrombi plugging glomerular capillaries. This resulted in bilateral renal cortical necrosis, shutting down glomerular filtration and causing creatinine and BUN to skyrocket.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Presentation Footer -->
+    <footer class="footer">
+      <div>
+        &copy; 2026 王浩智 Haozhi Wang. 
+        <span class="lang-cn">山东大学基础医学院</span>
+        <span class="lang-en">School of Basic Medical Sciences, SDU</span>
+      </div>
+      <div>
+        <a href="../presentations.html" style="font-size: 0.85rem; color: var(--primary);">
+          <span class="lang-cn">返回报告列表</span>
+          <span class="lang-en">Back to List</span>
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Image Modal for full screen view -->
+  <div id="imageModal" class="modal">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <button class="modal-fullscreen-btn" onclick="toggleFullscreen()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+      <span class="lang-cn">投影全屏模式</span>
+      <span class="lang-en">Projector Fullscreen</span>
+    </button>
+    <img class="modal-content" id="modalImg" alt="Zoomed view" onclick="closeModal()">
+    <div id="modalCaption" class="modal-caption"></div>
+  </div>
+
+  <!-- Import global scripts -->
+  <script src="../script.js"></script>
+  
+  <!-- Interactive Presentation Script -->
+  <script>
+    // 1. Virchow Triad Data
+    const triadData = {
+      hypercoag: {
+        titleCn: "血液高凝状态 (Hypercoagulability)",
+        titleEn: "Hypercoagulability State",
+        descCn: "<ul><li><strong>血小板显著增多 (PLT 652×10⁹/L)：</strong> 慢性缺铁性贫血代偿性刺激骨髓巨核系统，产生海量成熟血小板，极大地增加了血液粘稠度与聚集倾向。</li><li><strong>高同型半胱氨酸血症 (Hcy 20.0μmol/L)：</strong> 蓄积的 Hcy 破坏了血管内皮抗凝调节机制（TM 活性受损，蛋白 C 活化受抑制），使血液处于极易启动凝血的病理状态。</li></ul>",
+        descEn: "<ul><li><strong>Thrombocytosis (PLT 652×10⁹/L):</strong> Chronic iron-deficiency anemia stimulated megakaryopoiesis, producing massive platelets that elevated blood viscosity.</li><li><strong>Hyperhomocysteinemia (Hcy 20.0μmol/L):</strong> High Hcy levels disrupted the endothelial Thrombomodulin-Protein C pathway, preventing anti-thrombotic signaling and keeping the blood primed for clotting.</li></ul>",
+        imgSrc: "images/PE and DIC_04.jpg"
+      },
+      stasis: {
+        titleCn: "异常血流 / 淤滞 (Abnormal Blood Flow / Stasis)",
+        titleEn: "Abnormal Blood Flow & Stasis",
+        descCn: "<ul><li><strong>全麻与术中制动：</strong> 第二次修补手术期间，全麻使骨骼肌松弛，下肢静脉的“肌肉泵”作用彻底丧失，血流速度极度减慢。</li><li><strong>血流动力学紊乱与涡流：</strong> 静脉血流变慢，且在盆腔大静脉分支或静脉瓣膜附近容易形成局限性“涡流”，这使得高度活跃的血小板更容易脱离轴流、黏附于受损的内皮表面，促使局限性大血栓（DVT）迅速凝聚。</li></ul>",
+        descEn: "<ul><li><strong>General Anesthesia & Immobilization:</strong> During the second surgery, muscle relaxation disabled the lower extremity venous pump, causing blood velocity to plunge.</li><li><strong>Turbulent Vortexes:</strong> Sluggish flow near venous valves and pelvic venous bifurcations formed vortices, allowing hyperactive platelets to adhere to the subendothelial matrix and form a large Deep Vein Thrombosis (DVT).</li></ul>",
+        imgSrc: "images/PE and DIC_05.jpg"
+      },
+      injury: {
+        titleCn: "血管内皮损伤 (Endothelial Injury)",
+        titleEn: "Vascular Endothelial Injury",
+        descCn: "<ul><li><strong>手术器械创伤：</strong> 第一次全子宫切除术和第二次修补术中，局部手术机械剥离、牵拉，直接撕裂和损毁大面积盆腔血管内皮。</li><li><strong>尿外渗与持续盆腔感染：</strong> 输尿管瘘导致具有化学刺激性的尿液持续渗漏入阴道和盆腔，伴发局部严重感染（WBC 11.77×10⁹/L），促炎因子（IL-1, TNF）在盆腔深静脉周围制造了长期的、高强度的局部炎症反应，深度损害静脉内皮，并大量暴露胶原。</li></ul>",
+        descEn: "<ul><li><strong>Surgical Dissection & Trauma:</strong> Mechanical manipulation during the initial hysterectomy and subsequent fistula repair tore and denuded pelvic venous endothelium.</li><li><strong>Urine Leakage & Chronic Inflammation:</strong> The ureterovaginal fistula leaked toxic urine into the pelvis, triggering bacterial infection and chronic localized inflammation (WBC 11.77×10⁹/L). Inflammatory cytokines (IL-1, TNF) continuously damaged adjacent venous linings, exposing collagen.</li></ul>",
+        imgSrc: "images/PE and DIC_03.jpg"
+      }
+    };
+
+    function selectTriad(type) {
+      // Update active nodes styling
+      document.querySelectorAll('.triad-node').forEach(node => {
+        node.classList.remove('active');
+      });
+      document.getElementById(`node-${type}`).classList.add('active');
+
+      // Update active edges
+      document.querySelectorAll('.triad-edge').forEach(edge => {
+        edge.classList.remove('active');
+      });
+      if(type === 'hypercoag') {
+        document.getElementById('edge-coag-stasis').classList.add('active');
+        document.getElementById('edge-injury-coag').classList.add('active');
+      } else if (type === 'stasis') {
+        document.getElementById('edge-coag-stasis').classList.add('active');
+        document.getElementById('edge-stasis-injury').classList.add('active');
+      } else {
+        document.getElementById('edge-injury-coag').classList.add('active');
+        document.getElementById('edge-stasis-injury').classList.add('active');
+      }
+
+      // Update Detail panel text
+      const data = triadData[type];
+      const panel = document.getElementById('triadDetailPanel');
+      panel.innerHTML = `
+        <div class="triad-detail-title">
+          <span class="lang-cn">${data.titleCn}</span>
+          <span class="lang-en">${data.titleEn}</span>
+        </div>
+        <div class="triad-detail-body">
+          <div class="lang-cn">${data.descCn}</div>
+          <div class="lang-en">${data.descEn}</div>
+        </div>
+      `;
+
+      // Update large image panel below the grid for high visibility (removed help prompt)
+      const imgContainer = document.getElementById('triadImageContainer');
+      imgContainer.innerHTML = `
+        <div class="timeline-content-image" style="max-width: 900px; margin: 0 auto;" onclick="openModal('${data.imgSrc}', '${data.titleEn}')">
+          <img src="${data.imgSrc}" alt="${data.titleEn}" style="max-height: 480px; width: 100%; object-fit: contain;">
+        </div>
+      `;
+    }
+
+    // Initialize triad dashboard with default view
+    selectTriad('injury');
+
+    // 2. Timeline Cascade Data
+    const stepsData = {
+      1: {
+        titleCn: "阶段一：蓄势待发 —— 原发病导致的“高凝之躯”",
+        titleEn: "Stage I: Primed — Chronic Disease leading to a Hypercoagulable Niche",
+        descCn: "<p><strong>病理起源：</strong>巨大子宫肌瘤引发长期慢性失血。慢性失血不仅造成了缺铁性贫血，更由于机体代偿，红系/巨核系共用的祖细胞（MEP）被肾脏大量释放的 EPO 交叉刺激，且缺铁解除了对巨核系统的反馈抑制，导致血小板计数暴增至 <strong>652×10⁹/L</strong>。</p><p>与此同时，伴随贫血出现的叶酸及维生素缺乏阻断了 Hcy 的正常代谢通路，导致<strong>同型半胱氨酸升高至 20.0μmol/L</strong>，这对血管内皮造成了最初的隐形化学性损伤，埋下了血栓引线。</p>",
+        descEn: "<p><strong>Origin of Risk:</strong> Giant uterine fibroids caused long-term menstrual blood loss. Severe blood loss led to iron-deficiency anemia. The kidney released high amounts of EPO due to tissue hypoxia. Due to homology, EPO cross-activated TPO receptors on shared Megakaryocyte-Erythroid Progenitors (MEPs), and iron deficiency lifted brakes on megakaryopoiesis, skyrocketing platelets to <strong>652×10⁹/L</strong>.</p><p>Simultaneously, nutritional deficiencies blocked Hcy metabolism, leading to <strong>hyperhomocysteinemia (20.0μmol/L)</strong>, which caused baseline chemical damage to the vascular lining, priming the patient for thrombosis.</p>",
+        imgSrc: "images/stage1.png"
+      },
+      2: {
+        titleCn: "阶段二：雪上加霜 —— 第一次手术与瘘管感染（局部炎症与内皮重创）",
+        titleEn: "Stage II: Compounded — Surgical Trauma & Infection",
+        descCn: "<p><strong>病理加重：</strong>县医院进行的腹腔镜全子宫切除术直接切断并撕裂了盆腔血管内皮，释放出大量促凝组织因子。随后不幸并发左侧输尿管阴道瘘，大量具有化学刺激性的尿液外渗积聚在盆腔，并继发化脓性感染（反复发热，白细胞升至 <strong>11.77×10⁹/L</strong>）。</p><p>长期的局部感染与化学性尿液浸泡，在盆腔深静脉周围引发了持续的恶性炎症，导致静脉内皮细胞大面积坏死脱落并呈高黏附状态，使局部血栓极易安家落户。</p>",
+        descEn: "<p><strong>Progression of Risk:</strong> Laparoscopic total hysterectomy at the local clinic cut and sheared pelvic vessel walls, releasing pro-coagulant tissue factors. It was complicated by a left ureterovaginal fistula. Urine leaked continuously into the vaginal/pelvic space, triggering severe bacterial infection (fever, WBC <strong>11.77×10⁹/L</strong>).</p><p>Pelvic urine exposure and severe infection provoked localized inflammation around pelvic deep veins, denuding venous endothelium, exposing collagen, and creating an ideal environment for thrombosis.</p>",
+        imgSrc: "images/stage2.png"
+      },
+      3: {
+        titleCn: "阶段三：风暴凝聚 —— 第二次修补手术（血流异常的极限放大）",
+        titleEn: "Stage III: Consolidation — Fistula Repair Surgery and Extremity Blood Stasis",
+        descCn: "<p><strong>血栓形成：</strong>患者在极高血小板、局部盆腔内皮损伤与盆腔重度炎症的夹击下，前往省医院接受修补手术。手术期间进行全身麻醉，使患者骨骼肌彻底丧失了肌肉收缩的泵血作用，导致下肢及盆腔静脉血流几近停滞。</p><p>血流减慢甚至形成局限性涡流，使高度聚集的血小板能轻易黏附在受损暴露出胶原的静脉内皮上。在静脉瓣膜处，高浓度的凝血酶迅速形成，将红细胞网罗，在下肢或盆腔深静脉中迅速凝聚成了一个巨大的、极易脱落的<strong>深静脉血栓（DVT）</strong>。</p>",
+        descEn: "<p><strong>Thrombus Formation:</strong> The patient underwent fistula repair under general anesthesia. Muscle relaxants paralyzed the lower extremity 'muscle pump,' causing pelvic and deep leg venous flow to stagnate.</p><p>Sluggish flow and local eddies allowed the highly concentrated platelets to adhere to the exposed collagen of injured vessel walls. At venous valves, thrombin reached critical levels, capturing RBCs and forming a large, fresh, highly unstable <strong>Deep Vein Thrombosis (DVT)</strong> in the deep pelvic or leg veins.</p>",
+        imgSrc: "images/stage3.png"
+      },
+      4: {
+        titleCn: "阶段四：风暴爆发 —— 血栓脱落冲入肺动脉并引爆全身终末期 DIC",
+        titleEn: "Stage IV: Catastrophe — Embolus Detachment, Saddle PE, and Terminal DIC Storm",
+        descCn: "<p><strong>致命一击：</strong>手术顺利结束后，患者苏醒、说话、翻身。随着体位改变和呼吸加深，腹压骤变，原本黏附不牢固的巨大血栓瞬间整体脱落。血栓随静脉回流途径（深静脉→下腔静脉→右心房→右心室）冲入肺动脉主干，形成巨大的<strong>骑跨性肺栓塞</strong>。</p><p>肺循环瞬间受阻，引发右心急性衰竭与心跳呼吸骤停。大面积血管壁由于高剪切力发生剧烈撕裂，大范围暴露出膜结合<strong>组织因子（TF）</strong>。TF 大量入血瞬间点燃了全身外源性凝血瀑布，网罗了高达 <strong>652×10⁹/L</strong> 的血小板，几十分钟内榨干了体内的凝血因子和纤维蛋白原，使患者瞬间进入大出血与微血管广泛血栓共存的终末期 <strong>DIC 爆发状态</strong>。</p>",
+        descEn: "<p><strong>Fatal Impact:</strong> After surgery, the patient woke and moved. The posture change and deep breathing increased abdominal pressure, dislodging the massive, fragile clot. The embolus traveled through the venous system (deep veins → IVC → right atrium → right ventricle) and lodged in the bifurcation of the main pulmonary artery (saddle PE).</p><p>This blocked pulmonary circulation, causing acute right heart failure and cardiac arrest. The extreme friction and impact tore the endothelial lining of the pulmonary bed, exposing vast quantities of <strong>Tissue Factor (TF)</strong>. TF exposure activated the extrinsic clotting cascade, consuming the massive pool of <strong>652×10⁹/L</strong> platelets and all clotting factors within minutes, plunging the patient into terminal, hemorrhagic <strong>DIC</strong>.</p>",
+        imgSrc: "images/stage4.png"
+      }
+    };
+
+    function selectStep(stepNum) {
+      // Remove active classes
+      document.querySelectorAll('.timeline-step').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      // Add active class to clicked button
+      document.getElementById(`step-btn-${stepNum}`).classList.add('active');
+
+      // Update card content
+      const data = stepsData[stepNum];
+      const contentCard = document.getElementById('timelineContentCard');
+      contentCard.style.opacity = '0';
+      
+      setTimeout(() => {
+        contentCard.innerHTML = `
+          <div class="timeline-content-layout">
+            <div class="timeline-content-text">
+              <h3 style="margin-bottom: 0.8rem; color: var(--primary); font-size: 1.35rem;">
+                <span class="lang-cn">${data.titleCn}</span>
+                <span class="lang-en">${data.titleEn}</span>
+              </h3>
+              <div class="lang-cn" style="font-size:1.05rem; line-height:1.7;">${data.descCn}</div>
+              <div class="lang-en" style="font-size:1.05rem; line-height:1.7;">${data.descEn}</div>
+            </div>
+            <!-- Large Image (removed help prompt) -->
+            <div class="timeline-content-image" onclick="openModal('${data.imgSrc}', '${data.titleEn}')">
+              <img src="${data.imgSrc}" alt="${data.titleEn}" style="max-height: 520px; width: 100%; object-fit: contain;">
+            </div>
+          </div>
+        `;
+        contentCard.style.opacity = '1';
+      }, 150);
+    }
+
+    // Initialize timeline with Step 1
+    selectStep(1);
+
+    // 3. Mechanism Q&A Tabs logic
+    function switchTab(tabNum) {
+      // Update active tabs styling
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.getElementById(`tab-btn-${tabNum}`).classList.add('active');
+
+      // Update active panel
+      document.querySelectorAll('.tab-panel').forEach(panel => {
+        panel.classList.remove('active');
+      });
+      document.getElementById(`tab-panel-${tabNum}`).classList.add('active');
+    }
+
+    // 4. Zoom & Fullscreen Modal functions for lecture hall projectors
+    function openModal(imgSrc, captionText) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImg");
+      const caption = document.getElementById("modalCaption");
+      modal.style.display = "block";
+      modalImg.src = imgSrc;
+      caption.innerHTML = captionText || "";
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("imageModal");
+      modal.style.display = "none";
+      if (document.fullscreenElement) {
+        document.exitFullscreen().catch(err => console.error(err));
+      }
+    }
+
+    function toggleFullscreen() {
+      const modal = document.getElementById("imageModal");
+      if (!document.fullscreenElement) {
+        modal.requestFullscreen().catch(err => {
+          console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen().catch(err => console.error(err));
+      }
+    }
+  </script>
+</body>
+</html>

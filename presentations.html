@@ -91,33 +91,69 @@
         </div>
       </article>
 
-      <!-- 卡片 2：空缺位置提示卡片 (若要启用它，可删除 dashed 边框和 opacity，修改其链接并恢复 view-pres-link) -->
-      <article class="card pres-card reveal" style="border-style: dashed; opacity: 0.85;">
+      <article class="card pres-card reveal">
         <div>
           <div class="pres-meta">
-            <span style="color: var(--text-muted);">
-              <span class="lang-cn">待添加</span>
-              <span class="lang-en">Pending</span>
+            <!-- 修改汇报时间 -->
+            <span>
+              <span class="lang-cn">2026年6月</span>
+              <span class="lang-en">June 2026</span>
             </span>
-            <span style="color: var(--text-muted);">
-              <span class="lang-cn">演示报告 #1</span>
-              <span class="lang-en">Presentation #1</span>
+            <!-- 修改汇报分类 -->
+            <span>
+              <span class="lang-cn">学术会议</span>
+              <span class="lang-en">Seminar</span>
             </span>
           </div>
-          <h2 class="pres-title" style="color: var(--text-muted);">
-            <span class="lang-cn">您的新演示文件</span>
-            <span class="lang-en">Your New Presentation</span>
+          <!-- 修改卡片标题 -->
+          <h2 class="pres-title">
+            <span class="lang-cn">我的第一篇文献解读汇报</span>
+            <span class="lang-en">My First Journal Club Presentation</span>
+          </h2>
+          <!-- 修改卡片简介 -->
+          <p class="pres-desc">
+            <span class="lang-cn">这是关于XX基因在免疫细胞中表达调控的文献解读展示。</span>
+            <span class="lang-en">Literature review on the regulatory mechanism of XX gene in immune cells.</span>
+          </p>
+        </div>
+        <!-- 修改跳转链接：将 template.html 改为你刚才创建 of 2026-seminar.html -->
+        <div class="pres-action-bar">
+          <a href="presentations/2026-seminar.html" class="view-pres-link" target="_blank">
+            <span class="lang-cn">查看演示</span>
+            <span class="lang-en">View Slides</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 2: PE & DIC Case Study -->
+      <article class="card pres-card reveal">
+        <div>
+          <div class="pres-meta">
+            <span>
+              <span class="lang-cn">2026年6月</span>
+              <span class="lang-en">June 2026</span>
+            </span>
+            <span>
+              <span class="lang-cn">病理生理学</span>
+              <span class="lang-en">Pathophysiology</span>
+            </span>
+          </div>
+          <h2 class="pres-title">
+            <span class="lang-cn">急性肺栓塞（PE）与继发性弥散性血管内凝血（DIC）病理机制分析</span>
+            <span class="lang-en">Acute Pulmonary Embolism (PE) & Secondary Disseminated Intravascular Coagulation (DIC) Pathophysiology</span>
           </h2>
           <p class="pres-desc">
-            <span class="lang-cn">在 personal-website 目录的 presentations 文件夹中放入您的 HTML 文件，并在 presentations.html 中添加卡片链接，即可在这里展示。</span>
-            <span class="lang-en">Place your slide HTML in the presentations/ directory, add a card here in presentations.html, and showcase it instantly.</span>
+            <span class="lang-cn">基于 Virchow 血栓三联征与临床病例，深度解析慢性贫血、高 Hcy、手术制动对凝血平衡的重创，并解码抢救后血气指标及器官功能衰竭机制。</span>
+            <span class="lang-en">An interactive case study dissecting the sequential risk factors in pelvic surgery that triggered deep vein thrombosis, massive saddle PE, and terminal consumptive DIC.</span>
           </p>
         </div>
         <div class="pres-action-bar">
-          <span class="view-pres-link" style="color: var(--text-muted); cursor: not-allowed;">
-            <span class="lang-cn">未激活</span>
-            <span class="lang-en">Not Active</span>
-          </span>
+          <a href="presentations/pe-dic-analysis.html" class="view-pres-link" target="_blank">
+            <span class="lang-cn">查看分析</span>
+            <span class="lang-en">View Analysis</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
+          </a>
         </div>
       </article>
 
