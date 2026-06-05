@@ -83,7 +83,7 @@
       }
     }
 
-    /* Virchow Triad Interactivity */
+    /* Virchow Triad Interactive SVG Container */
     .triad-card {
       display: flex;
       flex-direction: column;
@@ -94,8 +94,10 @@
     }
 
     .triad-svg-container {
-      width: 280px;
-      height: 260px;
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      aspect-ratio: 280 / 260;
       position: relative;
       margin: 1rem 0;
     }
@@ -168,6 +170,27 @@
       font-size: 0.95rem;
       line-height: 1.6;
       color: var(--text);
+    }
+
+    .triad-detail-body ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .triad-detail-body li {
+      margin-bottom: 0.6rem;
+    }
+
+    @media (max-width: 480px) {
+      .triad-card {
+        padding: 1.5rem 0.5rem;
+      }
+      .triad-detail-panel {
+        padding: 0.5rem;
+      }
+      .triad-detail-body ul {
+        padding-left: 1rem;
+      }
     }
 
     /* Cascade Timeline Styles */
@@ -387,10 +410,20 @@
     }
 
     /* Clinical Tables */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      -webkit-overflow-scrolling: touch;
+    }
+
     .medical-table {
       width: 100%;
+      min-width: 600px; /* Force minimum width on mobile to keep headers and details readable */
       border-collapse: collapse;
-      margin: 1.5rem 0;
+      margin: 0;
       font-size: 0.95rem;
       box-shadow: var(--shadow-sm);
       border-radius: 12px;
@@ -726,8 +759,8 @@
         <!-- Step 2 -->
         <div class="timeline-step" onclick="selectStep(2)" id="step-btn-2">
           <div class="step-number">II</div>
-          <div class="step-title lang-cn">内皮重创</div>
-          <div class="step-title lang-en">Surgical Trauma & Infection</div>
+          <div class="step-title lang-cn">创伤与感染</div>
+          <div class="step-title lang-en">Trauma & Infection</div>
         </div>
         <!-- Arrow 2 -->
         <div class="timeline-arrow">
@@ -1023,63 +1056,65 @@
           <p>The post-resuscitation blood gas seems paradoxical: extreme acidemia (pH 7.05) and low pCO₂, yet high pO₂. This represents a classic <strong>mixed severe metabolic acidosis and respiratory alkalosis</strong>:</p>
         </div>
 
-        <table class="medical-table">
-          <thead>
-            <tr>
-              <th><span class="lang-cn">血气指标</span><span class="lang-en">Blood Gas Parameter</span></th>
-              <th><span class="lang-cn">测得值</span><span class="lang-en">Measured Value</span></th>
-              <th><span class="lang-cn">正常范围</span><span class="lang-en">Reference Range</span></th>
-              <th><span class="lang-cn">病理生理机制解码</span><span class="lang-en">Pathophysiological Mechanism</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>pH</strong></td>
-              <td class="value-low">7.05</td>
-              <td>7.35 - 7.45</td>
-              <td>
-                <span class="lang-cn"><strong>严重酸血症：</strong> 大块肺栓塞导致心输出量骤减（阻塞性休克）并引发心跳骤停，全身组织严重缺血缺氧，无氧酵解产生海量乳酸，击溃缓冲系统。</span>
-                <span class="lang-en"><strong>Severe Acidemia:</strong> Massive PE cut off pulmonary blood flow, causing cardiac arrest. Widespread tissue hypoxia triggered severe anaerobic metabolism and lactic acid buildup.</span>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>Lac (Lactate)</strong></td>
-              <td class="value-high">15.80 mmol/L</td>
-              <td>0.5 - 2.2 mmol/L</td>
-              <td>
-                <span class="lang-cn"><strong>严重组织灌注不足：</strong> 细胞在无氧状态下进行糖酵解，产生大量乳酸并在血液中病理性堆积。</span>
-                <span class="lang-en"><strong>Lactic Acidosis:</strong> Profound systemic hypoperfusion forced cells to rely on anaerobic glycolysis, leading to accumulation of lactate.</span>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>pCO₂</strong></td>
-              <td class="value-low">31 mmHg (偏低)</td>
-              <td>35 - 45 mmHg</td>
-              <td>
-                <span class="lang-cn"><strong>呼吸性碱中毒（过度通气）：</strong> 骤停前濒死缺氧引起强烈的呼吸中枢兴奋；抢救期间使用简易呼吸器或呼吸机进行高频过度通气，将体内的 CO₂ 强制“洗出”（Blow off）。</span>
-                <span class="lang-en"><strong>Hyperventilation (Alkalosis):</strong> High-frequency mechanical ventilation during CPR forcibly washed out (blew off) CO₂ from the blood, dropping pCO₂.</span>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>pO₂</strong></td>
-              <td class="value-high">350 mmHg (极高)</td>
-              <td>80 - 100 mmHg</td>
-              <td>
-                <span class="lang-cn"><strong>纯氧吸入的物理弥散效应：</strong> 并不代表组织不缺氧！抢救时输入 100% 纯氧，在强大的气体分压下，氧气被强行压入仅存的通气肺泡血管中物理溶解。但由于心脏泵血功能衰竭，这些高氧血无法输送给外周细胞。</span>
-                <span class="lang-en"><strong>Hyperoxia from 100% FiO₂:</strong> Does not mean tissues are oxygenated! High-pressure ventilation with 100% oxygen forced O₂ to dissolve into remaining blood. However, because of cardiogenic shock, this oxygen could not be delivered to tissues.</span>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>HCO₃⁻ & BE</strong></td>
-              <td class="value-low">显著降低 / Low (-18.0)</td>
-              <td>HCO₃⁻: 22-27 mmol/L<br>BE: -3 - +3 mmol/L</td>
-              <td>
-                <span class="lang-cn"><strong>碱储备耗竭：</strong> 机体为了中和组织严重无氧代谢产生的大量 H⁺，疯狂消耗 HCO₃⁻（缓冲反应），导致剩余碱（BE）负值急剧增大（-18.0 mmol/L），总二氧化碳（TCO₂）也被彻底掏空，碱储备枯竭。</span>
-                <span class="lang-en"><strong>Bicarbonate Depletion:</strong> The body consumed HCO₃⁻ to buffer H⁺ ions generated by lactic acid. This depleted the alkaline reserve, causing BE to drop to -18.0 mmol/L.</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-container">
+          <table class="medical-table">
+            <thead>
+              <tr>
+                <th><span class="lang-cn">血气指标</span><span class="lang-en">Blood Gas Parameter</span></th>
+                <th><span class="lang-cn">测得值</span><span class="lang-en">Measured Value</span></th>
+                <th><span class="lang-cn">正常范围</span><span class="lang-en">Reference Range</span></th>
+                <th><span class="lang-cn">病理生理机制解码</span><span class="lang-en">Pathophysiological Mechanism</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>pH</strong></td>
+                <td class="value-low">7.05</td>
+                <td>7.35 - 7.45</td>
+                <td>
+                  <span class="lang-cn"><strong>严重酸血症：</strong> 大块肺栓塞导致心输出量骤减（阻塞性休克）并引发心跳骤停，全身组织严重缺血缺氧，无氧酵解产生海量乳酸，击溃缓冲系统。</span>
+                  <span class="lang-en"><strong>Severe Acidemia:</strong> Massive PE cut off pulmonary blood flow, causing cardiac arrest. Widespread tissue hypoxia triggered severe anaerobic metabolism and lactic acid buildup.</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Lac (Lactate)</strong></td>
+                <td class="value-high">15.80 mmol/L</td>
+                <td>0.5 - 2.2 mmol/L</td>
+                <td>
+                  <span class="lang-cn"><strong>严重组织灌注不足：</strong> 细胞在无氧状态下进行糖酵解，产生大量乳酸并在血液中病理性堆积。</span>
+                  <span class="lang-en"><strong>Lactic Acidosis:</strong> Profound systemic hypoperfusion forced cells to rely on anaerobic glycolysis, leading to accumulation of lactate.</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>pCO₂</strong></td>
+                <td class="value-low">31 mmHg (偏低)</td>
+                <td>35 - 45 mmHg</td>
+                <td>
+                  <span class="lang-cn"><strong>呼吸性碱中毒（过度通气）：</strong> 骤停前濒死缺氧引起强烈的呼吸中枢兴奋；抢救期间使用简易呼吸器或呼吸机进行高频过度通气，将体内的 CO₂ 强制“洗出”（Blow off）。</span>
+                  <span class="lang-en"><strong>Hyperventilation (Alkalosis):</strong> High-frequency mechanical ventilation during CPR forcibly washed out (blew off) CO₂ from the blood, dropping pCO₂.</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>pO₂</strong></td>
+                <td class="value-high">350 mmHg (极高)</td>
+                <td>80 - 100 mmHg</td>
+                <td>
+                  <span class="lang-cn"><strong>纯氧吸入的物理弥散效应：</strong> 并不代表组织不缺氧！抢救时输入 100% 纯氧，在强大的气体分压下，氧气被强行压入仅存的通气肺泡血管中物理溶解。但由于心脏泵血功能衰竭，这些高氧血无法输送给外周细胞。</span>
+                  <span class="lang-en"><strong>Hyperoxia from 100% FiO₂:</strong> Does not mean tissues are oxygenated! High-pressure ventilation with 100% oxygen forced O₂ to dissolve into remaining blood. However, because of cardiogenic shock, this oxygen could not be delivered to tissues.</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>HCO₃⁻ & BE</strong></td>
+                <td class="value-low">显著降低 / Low (-18.0)</td>
+                <td>HCO₃⁻: 22-27 mmol/L<br>BE: -3 - +3 mmol/L</td>
+                <td>
+                  <span class="lang-cn"><strong>碱储备耗竭：</strong> 机体为了中和组织严重无氧代谢产生的大量 H⁺，疯狂消耗 HCO₃⁻（缓冲反应），导致剩余碱（BE）负值急剧增大（-18.0 mmol/L），总二氧化碳（TCO₂）也被彻底掏空，碱储备枯竭。</span>
+                  <span class="lang-en"><strong>Bicarbonate Depletion:</strong> The body consumed HCO₃⁻ to buffer H⁺ ions generated by lactic acid. This depleted the alkaline reserve, causing BE to drop to -18.0 mmol/L.</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <!-- Panel 5: MODS Root Cause -->
@@ -1274,8 +1309,8 @@
         imgSrc: "images/stage1.png"
       },
       2: {
-        titleCn: "阶段二：雪上加霜 —— 第一次手术与瘘管感染（局部炎症与内皮重创）",
-        titleEn: "Stage II: Compounded — Surgical Trauma & Infection",
+        titleCn: "阶段二：雪上加霜 —— 手术创伤与局部感染",
+        titleEn: "Stage II: Compounded — Trauma & Infection",
         descCn: "<p><strong>病理加重：</strong>县医院进行的腹腔镜全子宫切除术直接切断并撕裂了盆腔血管内皮，释放出大量促凝组织因子。随后不幸并发左侧输尿管阴道瘘，大量具有化学刺激性的尿液外渗积聚在盆腔，并继发化脓性感染（反复发热，白细胞升至 <strong>11.77×10⁹/L</strong>）。</p><p>长期的局部感染与化学性尿液浸泡，在盆腔深静脉周围引发了持续的恶性炎症，导致静脉内皮细胞大面积坏死脱落并呈高黏附状态，使局部血栓极易安家落户。</p>",
         descEn: "<p><strong>Progression of Risk:</strong> Laparoscopic total hysterectomy at the local clinic cut and sheared pelvic vessel walls, releasing pro-coagulant tissue factors. It was complicated by a left ureterovaginal fistula. Urine leaked continuously into the vaginal/pelvic space, triggering severe bacterial infection (fever, WBC <strong>11.77×10⁹/L</strong>).</p><p>Pelvic urine exposure and severe infection provoked localized inflammation around pelvic deep veins, denuding venous endothelium, exposing collagen, and creating an ideal environment for thrombosis.</p>",
         imgSrc: "images/stage2.png"
