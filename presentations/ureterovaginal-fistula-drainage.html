@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输尿管阴道瘘修补术后引流管的临床意义</title>
+    <!-- CSS Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES (THEME)
+           =========================================== */
+        :root {
+            --stage-bg: #111111;
+            --slide-bg: #FDFAE7;
+            --text-primary: #111111;
+            --text-secondary: #3A3A3A;
+            --text-light: #7E7E7E;
+            
+            /* Core Accents */
+            --accent: #1E2BFA; /* Cobalt Blue */
+            --accent-green: #059669; /* Emerald Green */
+            --accent-red: #DC2626; /* Crimson Red */
+            
+            --accent-light: rgba(30, 43, 250, 0.04);
+            --border-color: rgba(30, 43, 250, 0.15);
+            
+            --font-display: 'Arial', 'Microsoft YaHei', '微软雅黑', sans-serif;
+            --font-body: 'Arial', 'Microsoft YaHei', '微软雅黑', sans-serif;
+            
+            /* Typography scale for 1920x1080 stage */
+            --title-size: 56px;
+            --subtitle-size: 34px;
+            --body-size: 32px; /* 24pt */
+            --meta-size: 24px;
+            
+            --slide-padding: 80px 100px;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --duration-normal: 0.8s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ===========================================
+           FIXED 16:9 STAGE: MANDATORY BASE STYLES
+           =========================================== */
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            background: var(--stage-bg);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .deck-viewport {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            background: var(--stage-bg);
+        }
+        
+        .deck-stage {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            transform-origin: 0 0;
+            background: var(--slide-bg);
+        }
+        
+        /* Keynote style slide transitions */
+        .slide {
+            position: absolute;
+            inset: 0;
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            display: block;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            background: var(--slide-bg);
+            transform: scale(0.96) translateX(80px);
+            filter: blur(5px);
+            transition: opacity var(--duration-normal) var(--ease-out-expo),
+                        transform var(--duration-normal) var(--ease-out-expo),
+                        filter var(--duration-normal) var(--ease-out-expo),
+                        visibility var(--duration-normal);
+        }
+        
+        .slide.active,
+        .slide.visible {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+            transform: scale(1) translateX(0);
+            filter: blur(0);
+            z-index: 2;
+        }
+        
+        img,
+        video,
+        canvas,
+        svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* ===========================================
+           ANIMATIONS & REVEAL SYSTEM
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity var(--duration-normal) var(--ease-out-expo),
+                        transform var(--duration-normal) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered Reveals */
+        .slide.visible .reveal:nth-child(1) { transition-delay: 0.1s; }
+        .slide.visible .reveal:nth-child(2) { transition-delay: 0.25s; }
+        .slide.visible .reveal:nth-child(3) { transition-delay: 0.4s; }
+        .slide.visible .reveal:nth-child(4) { transition-delay: 0.55s; }
+        .slide.visible .reveal:nth-child(5) { transition-delay: 0.7s; }
+
+        /* ===========================================
+           SLIDE CONTAINER AND GENERAL CHROME
+           =========================================== */
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            padding: var(--slide-padding);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Slide Header (Enlarged, Casing Unlocked per user request) */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 26px;
+            font-weight: bold;
+            color: var(--accent);
+            border-bottom: 2.5px solid var(--border-color);
+            padding-bottom: 24px;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            background: var(--accent-light);
+            border: 2px solid var(--border-color);
+            padding: 8px 24px;
+            border-radius: 100px;
+            font-size: 24px;
+        }
+
+        .header-badge::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+
+        /* Green Theme Badges */
+        .header-badge.green-badge {
+            background: rgba(5, 150, 105, 0.04);
+            border-color: rgba(5, 150, 105, 0.2);
+            color: var(--accent-green);
+        }
+
+        .header-badge.green-badge::before {
+            background-color: var(--accent-green);
+        }
+
+        .header-case-name {
+            font-weight: bold;
+            color: var(--text-secondary);
+            font-size: 24px;
+            letter-spacing: 1.5px;
+        }
+
+        /* Slide Footer */
+        .slide-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            color: var(--text-light);
+            border-top: 2px solid var(--border-color);
+            padding-top: 24px;
+            font-weight: 600;
+        }
+
+        /* Slide Main Body Area */
+        .slide-body {
+            flex-grow: 1;
+            margin: 40px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide-title {
+            font-size: var(--title-size);
+            font-weight: bold;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        /* Grid Layouts */
+        .split-2 {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 60px;
+            align-items: center;
+            height: 100%;
+        }
+
+        /* Content elements with stagger animation */
+        ul.bullet-list {
+            list-style: none;
+        }
+
+        ul.bullet-list li {
+            font-size: var(--body-size);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 22px;
+            position: relative;
+            padding-left: 32px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s var(--ease-out-expo),
+                        transform 0.7s var(--ease-out-expo);
+        }
+
+        .slide.visible ul.bullet-list li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide.visible ul.bullet-list li:nth-child(1) { transition-delay: 0.2s; }
+        .slide.visible ul.bullet-list li:nth-child(2) { transition-delay: 0.35s; }
+        .slide.visible ul.bullet-list li:nth-child(3) { transition-delay: 0.5s; }
+        .slide.visible ul.bullet-list li:nth-child(4) { transition-delay: 0.65s; }
+
+        ul.bullet-list li strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        ul.bullet-list li::before {
+            content: '■';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 22px;
+            top: 2px;
+        }
+
+        /* Green Theme Lists */
+        ul.bullet-list.green-theme-list li::before {
+            color: var(--accent-green);
+        }
+
+        /* Cards and containers with click-to-zoom and lift-up animations */
+        .image-card {
+            background: #ffffff;
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(30, 43, 250, 0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 480px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            transition: border-color 0.4s var(--ease-out-expo),
+                        box-shadow 0.4s var(--ease-out-expo);
+        }
+
+        .image-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(30, 43, 250, 0.08);
+        }
+
+        .image-card.green-hover:hover {
+            border-color: var(--accent-green);
+            box-shadow: 0 20px 40px rgba(5, 150, 105, 0.08);
+        }
+
+        /* Hover Zoom Indicator */
+        .zoom-indicator {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(30, 43, 250, 0.9);
+            color: #ffffff;
+            padding: 6px 14px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            opacity: 0;
+            transform: translateY(-5px);
+            transition: opacity 0.3s var(--ease-out-expo), transform 0.3s var(--ease-out-expo);
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .image-card.green-hover .zoom-indicator {
+            background: rgba(5, 150, 105, 0.9);
+        }
+
+        .image-card:hover .zoom-indicator {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            cursor: zoom-in;
+        }
+
+        .image-caption {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-top: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Table styles with hover effects (Enlarged per user request) */
+        .clinical-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(30, 43, 250, 0.04);
+            border: 2px solid var(--border-color);
+            transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+        }
+
+        .clinical-table:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(30, 43, 250, 0.08);
+        }
+
+        .clinical-table th {
+            background-color: var(--accent);
+            color: #ffffff;
+            font-size: 26px; /* Enlarged from 24px */
+            font-weight: bold;
+            padding: 18px 24px;
+            text-align: left;
+        }
+
+        .clinical-table td {
+            font-size: 26px; /* Enlarged from 22px */
+            color: var(--text-secondary);
+            padding: 18px 24px;
+            border-bottom: 2px solid var(--border-color);
+            line-height: 1.4;
+            transition: background-color 0.2s ease;
+        }
+
+        .clinical-table tr:hover td {
+            background-color: rgba(30, 43, 250, 0.03);
+            color: var(--text-primary);
+        }
+
+        .clinical-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .clinical-table tr:nth-child(even) {
+            background-color: var(--accent-light);
+        }
+
+        .clinical-table td strong {
+            color: var(--text-primary);
+        }
+
+        .clinical-table .highlight-row td {
+            background-color: rgba(30, 43, 250, 0.08);
+            font-weight: bold;
+        }
+
+        /* ===========================================
+           SLIDE 4 REDESIGN: ASYMMETRIC COLOR GRID
+           =========================================== */
+        .card-grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 36px;
+        }
+
+        .grid-card {
+            background: #ffffff;
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px 40px; /* Reduced top/bottom padding to fit larger text */
+            box-shadow: 0 10px 30px rgba(30, 43, 250, 0.04);
+            height: 480px; /* Taller card to prevent overflow */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s var(--ease-out-expo),
+                        transform 0.8s var(--ease-out-expo),
+                        box-shadow 0.4s var(--ease-out-expo),
+                        border-color 0.4s var(--ease-out-expo);
+        }
+
+        .slide.visible .grid-card {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide.visible .grid-card:nth-child(1) { transition-delay: 0.15s; }
+        .slide.visible .grid-card:nth-child(2) { transition-delay: 0.3s; }
+        .slide.visible .grid-card:nth-child(3) { transition-delay: 0.45s; }
+
+        /* Huge subtle background numbers */
+        .grid-card::before {
+            content: attr(data-num);
+            position: absolute;
+            bottom: -20px;
+            right: 15px;
+            font-size: 170px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 900;
+            line-height: 0.8;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .grid-card h3,
+        .grid-card p {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Asymmetric Card 1: Solid Cobalt Blue */
+        .grid-card.blue-card {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 12px 35px rgba(30, 43, 250, 0.2);
+        }
+        
+        .grid-card.blue-card h3 {
+            color: #ffffff;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .grid-card.blue-card p {
+            color: #FDFAE7;
+        }
+
+        .grid-card.blue-card::before {
+            color: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Asymmetric Card 2: Solid Medical Green */
+        .grid-card.green-card {
+            background-color: var(--accent-green);
+            border-color: var(--accent-green);
+            color: #ffffff;
+            box-shadow: 0 12px 35px rgba(5, 150, 105, 0.2);
+        }
+
+        .grid-card.green-card h3 {
+            color: #ffffff;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .grid-card.green-card p {
+            color: #FDFAE7;
+        }
+
+        .grid-card.green-card::before {
+            color: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Asymmetric Card 3: Cream White */
+        .grid-card.white-card {
+            background-color: #ffffff;
+            border-color: var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .grid-card.white-card h3 {
+            color: var(--accent);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .grid-card.white-card p {
+            color: var(--text-secondary);
+        }
+
+        .grid-card.white-card::before {
+            color: rgba(30, 43, 250, 0.05);
+        }
+
+        /* Hover actions on cards */
+        .grid-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(30, 43, 250, 0.09);
+        }
+
+        .grid-card.blue-card:hover {
+            box-shadow: 0 20px 45px rgba(30, 43, 250, 0.35);
+        }
+
+        .grid-card.green-card:hover {
+            box-shadow: 0 20px 45px rgba(5, 150, 105, 0.35);
+        }
+
+        .grid-card h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+        }
+
+        /* Card Text size enlarged to at least 32px (24pt) */
+        .grid-card p {
+            font-size: var(--body-size); /* 32px / 24pt */
+            line-height: 1.6;
+        }
+
+        /* ===========================================
+           SLIDE 6 TIMELINE & DETAILS
+           =========================================== */
+        .timeline-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .timeline-step {
+            background: #ffffff;
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 36px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(30, 43, 250, 0.04);
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.8s var(--ease-out-expo),
+                        transform 0.8s var(--ease-out-expo),
+                        box-shadow 0.4s var(--ease-out-expo),
+                        border-color 0.4s var(--ease-out-expo);
+        }
+
+        .slide.visible .timeline-step {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide.visible .timeline-step:nth-child(1) { transition-delay: 0.15s; }
+        .slide.visible .timeline-step:nth-child(2) { transition-delay: 0.3s; }
+        .slide.visible .timeline-step:nth-child(3) { transition-delay: 0.45s; }
+
+        .timeline-step:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(30, 43, 250, 0.08);
+            border-color: var(--accent);
+        }
+
+        .timeline-step .step-num {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            font-size: 36px;
+            font-weight: 900;
+            color: rgba(30, 43, 250, 0.15);
+        }
+
+        .timeline-step h4 {
+            font-size: 32px; /* Enlarged from 30px */
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        /* Timeline Step text enlarged to 32px (24pt) */
+        .timeline-step p {
+            font-size: var(--body-size); /* 32px / 24pt */
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .catastrophe-box {
+            background: rgba(220, 38, 38, 0.04);
+            border: 2px solid #DC2626;
+            border-radius: 16px;
+            padding: 30px 40px;
+            margin-top: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s 0.6s var(--ease-out-expo),
+                        transform 0.8s 0.6s var(--ease-out-expo);
+        }
+
+        .slide.visible .catastrophe-box {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .catastrophe-box h4 {
+            color: #DC2626;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        /* Catastrophe Box text enlarged to 32px (24pt) */
+        .catastrophe-box p {
+            color: var(--text-primary);
+            font-size: var(--body-size); /* 32px / 24pt */
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* Takeaway Slide 7 Styles */
+        .centered-callout {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .big-quote-card {
+            background: #ffffff;
+            border: 2.5px solid var(--accent);
+            border-radius: 20px;
+            padding: 60px 80px;
+            box-shadow: 0 15px 40px rgba(30, 43, 250, 0.06);
+            margin-bottom: 40px;
+            position: relative;
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+
+        .big-quote-card:hover {
+            transform: scale(1.015);
+        }
+
+        .big-quote-card::before {
+            content: '“';
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            font-size: 130px;
+            line-height: 1;
+            color: rgba(30, 43, 250, 0.08);
+            font-family: Georgia, serif;
+        }
+
+        .big-quote-card p {
+            font-size: 44px;
+            font-weight: bold;
+            color: var(--text-primary);
+            line-height: 1.5;
+            position: relative;
+            z-index: 2;
+        }
+
+        .thinking-card {
+            background: var(--accent-light);
+            border: 2px dashed var(--accent);
+            border-radius: 16px;
+            padding: 36px 60px;
+            width: 100%;
+        }
+
+        .thinking-card.green-theme {
+            background: rgba(5, 150, 105, 0.04);
+            border-color: var(--accent-green);
+        }
+
+        .thinking-card h4 {
+            font-size: 30px;
+            color: var(--accent);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .thinking-card.green-theme h4 {
+            color: var(--accent-green);
+        }
+
+        .thinking-card p {
+            font-size: var(--body-size);
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* ===========================================
+           NEW TECH SHOWCASE: CUSTOM CURSOR & CANVAS
+           =========================================== */
+        /* Custom mouse cursor */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 200000;
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+        
+        .cursor-ring {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 199999;
+            transition: width 0.3s, height 0.3s, border-color 0.3s, background-color 0.3s;
+        }
+
+        body.hover-interactive .cursor-dot {
+            width: 4px;
+            height: 4px;
+            background-color: #ffffff;
+        }
+        
+        body.hover-interactive .cursor-ring {
+            width: 64px;
+            height: 64px;
+            background-color: rgba(30, 43, 250, 0.12);
+            border-color: rgba(30, 43, 250, 0.8);
+        }
+
+        /* Canvas Particle Background */
+        #particleCanvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.35;
+        }
+
+        /* Counter Styling (Key clinical numbers Red & Enlarged) */
+        .counter {
+            font-family: 'Space Grotesk', var(--font-display);
+            font-weight: 900;
+            color: var(--accent-red);
+            font-size: 1.25em; /* 1 size larger */
+            display: inline-block;
+            text-shadow: 0 2px 10px rgba(220, 38, 38, 0.1);
+        }
+
+        /* ===========================================
+           IMAGE ZOOM LIGHTBOX MODAL
+           =========================================== */
+        .zoom-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(11, 11, 11, 0.95);
+            z-index: 100000;
+            opacity: 0;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.4s var(--ease-out-expo);
+        }
+        
+        .zoom-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .zoom-overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transform: scale(0.9);
+            transition: transform 0.4s var(--ease-out-expo);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+        }
+        
+        .zoom-overlay.active img {
+            transform: scale(1);
+        }
+        
+        .zoom-close-btn {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 60px;
+            line-height: 1;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.2s, transform 0.2s;
+            z-index: 100001;
+        }
+        
+        .zoom-close-btn:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* ===========================================
+           INLINE EDITING UI
+           =========================================== */
+        .edit-hotzone {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            z-index: 10000;
+            cursor: pointer;
+        }
+
+        .edit-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1.5px solid var(--border-color);
+            color: var(--accent);
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.2s ease;
+            z-index: 10001;
+        }
+
+        .edit-toggle:hover {
+            transform: scale(1.1);
+            background: var(--accent-light);
+        }
+
+        .edit-toggle.show,
+        .edit-toggle.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .edit-toggle.active {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+        }
+
+        [contenteditable="true"] {
+            outline: 2px dashed var(--accent);
+            background-color: rgba(30, 43, 250, 0.02);
+            border-radius: 4px;
+            padding: 2px 6px;
+        }
+
+        /* Save Button for editing */
+        .save-btn {
+            position: fixed;
+            top: 20px;
+            left: 76px;
+            height: 44px;
+            padding: 0 20px;
+            border-radius: 22px;
+            background: #22c55e;
+            border: 1px solid #16a34a;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 10001;
+        }
+
+        .save-btn.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .save-btn:hover {
+            background: #16a34a;
+        }
+
+        /* Global Progress indicator */
+        .deck-progress-indicator {
+            position: fixed;
+            right: 30px;
+            bottom: 24px;
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--text-light);
+            z-index: 900;
+        }
+    </style>
+</head>
+<body>
+    <!-- New Tech Features: Interactive Cursor Follower -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <div class="deck-viewport">
+        <!-- Edit controls -->
+        <div class="edit-hotzone"></div>
+        <button class="edit-toggle" id="editToggle" title="编辑模式 (E)">✏️</button>
+        <button class="save-btn" id="saveFileBtn" title="保存修改至文件">💾 保存修改</button>
+        
+        <!-- Deck Progress -->
+        <div class="deck-progress-indicator" id="deckProgress">1 / 7</div>
+
+        <!-- Fullscreen Zoom Lightbox Overlay -->
+        <div class="zoom-overlay" id="zoomOverlay">
+            <button class="zoom-close-btn">&times;</button>
+            <img id="zoomImage" src="" alt="Zoomed Image">
+        </div>
+
+        <main class="deck-stage" id="deckStage">
+            <!-- New Tech Features: Interactive Particle Canvas Background -->
+            <canvas id="particleCanvas"></canvas>
+            
+            <!-- Slide 1: Cover (封面) -->
+            <section class="slide active visible" id="slide-1">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div class="header-badge">Clinical Case Study // PBL Case</div>
+                        <div class="header-case-name">危险的手术</div>
+                    </div>
+
+                    <div class="slide-body">
+                        <div style="max-width: 1400px; margin: 0 auto; text-align: center;">
+                            <div class="reveal eyebrow" style="font-size: 24px; letter-spacing: 4px; color: var(--accent); margin-bottom: 24px; font-weight: bold;">PBL CASE STUDY</div>
+                            <h1 class="reveal main-title editable" contenteditable="false" data-key="s1-title" style="font-size: 80px; margin-bottom: 36px; line-height: 1.2;">输尿管阴道瘘修补术后<br>引流管的临床意义</h1>
+                            <p class="reveal subtitle editable" contenteditable="false" data-key="s1-subtitle" style="display: inline-block; font-size: 34px; color: var(--text-secondary); border-top: 2px solid var(--border-color); padding-top: 24px;">从病例剖析引流管的逻辑与灾难性并发症的警示</p>
+                        </div>
+                    </div>
+
+                    <div class="slide-footer">
+                        <div class="editable" contenteditable="false" data-key="s1-department">人体结构与功能学 IV &middot; 临床案例</div>
+                        <div class="editable" contenteditable="false" data-key="s1-term">2025-2026学年第二学期</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 2: Case Background & Core Issue -->
+            <section class="slide" id="slide-2">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div class="header-badge">Act 1: Case Background</div>
+                        <div class="header-case-name">危险的手术</div>
+                    </div>
+
+                    <div class="slide-body">
+                        <h2 class="slide-title editable" contenteditable="false" data-key="s2-title">病例背景与核心问题</h2>
+                        <div class="split-2">
+                            <div>
+                                <ul class="bullet-list">
+                                    <li class="editable" contenteditable="false" data-key="s2-bullet1"><strong>患者主诉</strong>：行腹腔镜下子宫切除术后出院，突发发热、腰痛，伴阴道持续流出无色清亮液体。</li>
+                                    <li class="editable" contenteditable="false" data-key="s2-bullet2"><strong>检查诊断</strong>：左肾积水、输尿管扩张，盆腔见异常瘘道，膀胱镜无异常。确诊为<strong>左侧输尿管阴道瘘</strong>。</li>
+                                    <li class="editable" contenteditable="false" data-key="s2-bullet3"><strong>病理机制</strong>：肾脏产生的尿液经受损的输尿管瘘口，不经过膀胱而直接自阴道漏出。</li>
+                                    <li class="editable" contenteditable="false" data-key="s2-bullet4"><strong>核心问题</strong>：第二幕输尿管修复术后，第三幕中引流袋中突发引流出 <strong>“<span class="counter" data-target="2000" data-decimals="0">0</span> mL 红色血性液体”</strong> 意味着什么？</li>
+                                </ul>
+                            </div>
+                            <div class="reveal">
+                                <div class="image-card">
+                                    <div class="zoom-indicator">🔍 点击放大</div>
+                                    <img src="assets/ureterovaginal fistula anatomy diagram.png" alt="Ureterovaginal Fistula Anatomy Diagram">
+                                    <div class="image-caption editable" contenteditable="false" data-key="s2-caption">图1：输尿管阴道瘘解剖与尿漏路径示意图</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide-footer">
+                        <div>PAGE 02/07</div>
+                        <div>输尿管修复与管道逻辑</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Tube Identification -->
+            <section class="slide" id="slide-3">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div class="header-badge">Act 3: Tube Identification</div>
+                        <div class="header-case-name">危险的手术</div>
+                    </div>
+
+                    <div class="slide-body">
+                        <h2 class="slide-title editable" contenteditable="false" data-key="s3-title">管道鉴别：第三幕的引流管“引流哪里”？</h2>
+                        <div class="split-2">
+                            <div class="reveal">
+                                <table class="clinical-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="editable" contenteditable="false" data-key="s3-th1">管道名称</th>
+                                            <th class="editable" contenteditable="false" data-key="s3-th2">放置位置</th>
+                                            <th class="editable" contenteditable="false" data-key="s3-th3">主要引流内容</th>
+                                            <th class="editable" contenteditable="false" data-key="s3-th4">本例符合度</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="highlight-row">
+                                            <td class="editable" contenteditable="false" data-key="s3-r1c1">盆腔/腹腔引流管</td>
+                                            <td class="editable" contenteditable="false" data-key="s3-r1c2">盆腔创面及修补区附近</td>
+                                            <td class="editable" contenteditable="false" data-key="s3-r1c3">渗血、渗液、尿漏或感染性脓液</td>
+                                            <td class="editable" contenteditable="false" data-key="s3-r1c4"><strong>完全符合 (引流袋<span class="counter" data-target="2000" data-decimals="0">0</span>mL血性液)</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="editable" contenteditable="false" data-key="s3-r2c1">双 J 管 (Double-J)</td>
+                                            <td class="editable" contenteditable="false" data-key="s3-r2c2">上至肾盂、下至膀胱的输尿管内</td>
+                                            <td class="editable" contenteditable="false" data-key="s3-r2c3">维持通道，引导尿液由肾流入膀胱</td>
+                                            <td class="editable" contenteditable="false" data-key="s3-r2c4">不符合 (完全在体内，不外接引流袋)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="editable" contenteditable="false" data-key="s3-r3c1">Foley 导尿管</td>
+                                            <td class="editable" contenteditable="false" data-key="s3-r3c2">经尿道置于膀胱内部</td>
+                                            <td class="editable" contenteditable="false" data-key="s3-r3c3">引流膀胱尿液，降低集合系统压力</td>
+                                            <td class="editable" contenteditable="false" data-key="s3-r3c4">不符合 (通常用于排出和计量尿液)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="editable" contenteditable="false" data-key="s3-r4c1">肾造瘘管</td>
+                                            <td class="editable" contenteditable="false" data-key="s3-r4c2">经皮穿刺进入患侧肾盂</td>
+                                            <td class="editable" contenteditable="false" data-key="s3-r4c3">引流肾盂内尿液进行上尿路分流</td>
+                                            <td class="editable" contenteditable="false" data-key="s3-r4c4">不符合 (病例第三幕未提到此项)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="reveal">
+                                <div class="image-card">
+                                    <div class="zoom-indicator">🔍 点击放大</div>
+                                    <img src="assets/urological catheter drainage.jpg" alt="Urological Catheter Drainage Diagram">
+                                    <div class="image-caption editable" contenteditable="false" data-key="s3-caption">图2：泌尿系统及盆腔临床常用管道对比示意图</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide-footer">
+                        <div>PAGE 03/07</div>
+                        <div>管道对比鉴别</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Why Place a Drainage Tube? -->
+            <section class="slide" id="slide-4">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div class="header-badge">Clinical Principles</div>
+                        <div class="header-case-name">危险的手术</div>
+                    </div>
+
+                    <div class="slide-body">
+                        <h2 class="slide-title editable" contenteditable="false" data-key="s4-title">为什么要放引流管？（适应症与目的）</h2>
+                        <div class="card-grid-3">
+                            <div class="grid-card blue-card" data-num="01">
+                                <h3 class="editable" contenteditable="false" data-key="s4-h1">1. 监测与排出渗血</h3>
+                                <p class="editable" contenteditable="false" data-key="s4-p1">输尿管阴道瘘修补术属于盆腔深部操作，术野紧邻复杂的盆腔血管丛。术后早期易发生渗血，引流管可引导盆腔积血及时排出，便于医生直观计量并监测是否存在活动性大出血。</p>
+                            </div>
+                            <div class="grid-card green-card" data-num="02">
+                                <h3 class="editable" contenteditable="false" data-key="s4-h2">2. 早期监测尿漏</h3>
+                                <p class="editable" contenteditable="false" data-key="s4-p2">输尿管吻合口或修补段术后最怕发生吻合口瘘。引流管可使漏出的尿液及时流出，避免其在盆腔内积聚形成<strong>尿性囊肿 (Urinoma)</strong>，从而预防尿性腹膜炎及后续狭窄的发生。</p>
+                            </div>
+                            <div class="grid-card white-card" data-num="03">
+                                <h3 class="editable" contenteditable="false" data-key="s4-h3">3. 预防死腔与感染</h3>
+                                <p class="editable" contenteditable="false" data-key="s4-p3">术后盆腔死腔易聚集渗血渗液，提供细菌滋生温床。保持低位通畅引流可显著降低盆腔脓肿、血肿及继发感染的风险。依据 <strong>AUA/EAU 指南</strong>，对于高尿漏风险的手术强烈建议放置。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide-footer">
+                        <div>PAGE 04/07</div>
+                        <div>放置引流管的临床意义</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Clinical Practice & Monitoring -->
+            <section class="slide" id="slide-5">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div class="header-badge green-badge">Clinical Practice & Monitoring</div>
+                        <div class="header-case-name">危险的手术</div>
+                    </div>
+
+                    <div class="slide-body">
+                        <h2 class="slide-title editable" contenteditable="false" data-key="s5-title">临床实操与监测要点</h2>
+                        <div class="split-2">
+                            <div>
+                                <ul class="bullet-list green-theme-list">
+                                    <li class="editable" contenteditable="false" data-key="s5-bullet1"><strong>放置原则</strong>：管头应靠近输尿管吻合口或瘘修补区，但<strong>绝对禁止直接压迫吻合口</strong>或缝合线，防止影响局部血供，刺激导致破裂。</li>
+                                    <li class="editable" contenteditable="false" data-key="s5-bullet2"><strong>引流量监测</strong>：每小时密切监测并记录引流量。引流量的突然增加常为出血或漏尿的早期信号。</li>
+                                    <li class="editable" contenteditable="false" data-key="s5-bullet3"><strong>引流液性质观察</strong>：观察液体的物理性状，鲜红色提示活动性出血，清亮多尿样液体则强提示吻合口尿漏。</li>
+                                    <li class="editable" contenteditable="false" data-key="s5-bullet4"><strong>生化测定金标准</strong>：若怀疑尿漏，应测定<strong>引流液肌酐</strong>。如其水平显著高于患者血清肌酐，即可确诊为尿漏。</li>
+                                </ul>
+                            </div>
+                            <div class="reveal">
+                                <div class="image-card green-hover">
+                                    <div class="zoom-indicator">🔍 点击放大</div>
+                                    <img src="assets/Jackson-Pratt drain diagram.webp" alt="Jackson-Pratt closed drainage system">
+                                    <div class="image-caption editable" contenteditable="false" data-key="s5-caption">图3：外科闭式重力/负压引流系统操作示意图</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide-footer">
+                        <div>PAGE 05/07</div>
+                        <div>临床操作与生化监测</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: From Drainage to Catastrophe -->
+            <section class="slide" id="slide-6">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div class="header-badge">Pathophysiology & Catastrophe</div>
+                        <div class="header-case-name">危险的手术</div>
+                    </div>
+
+                    <div class="slide-body">
+                        <h2 class="slide-title editable" contenteditable="false" data-key="s6-title">本例重难点：从“引流”到“灾难”的转折</h2>
+                        <div>
+                            <div class="timeline-container">
+                                <div class="timeline-step">
+                                    <div class="step-num">01</div>
+                                    <h4 class="editable" contenteditable="false" data-key="s6-s1h">突发危重状态</h4>
+                                    <p class="editable" contenteditable="false" data-key="s6-s1p">张大姐术后突发浑身抽搐、呼吸困难，随后发生心跳呼吸骤停。经过长达 <strong><span class="counter" data-target="50" data-decimals="0">0</span> 分钟</strong> 的持续心肺复苏抢救才恢复自主心律。</p>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-num">02</div>
+                                    <h4 class="editable" contenteditable="false" data-key="s6-s2h">原发病因判定</h4>
+                                    <p class="editable" contenteditable="false" data-key="s6-s2p">D-二聚体极度升高(>20 μg/ml)，心电图现典型SⅠQⅢTⅢ表现，CT排除脑出血/梗死。专家会诊高度考虑原发病为<strong>急性肺栓塞 (PE)</strong>。</p>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-num">03</div>
+                                    <h4 class="editable" contenteditable="false" data-key="s6-s3h">消耗性凝血障碍</h4>
+                                    <p class="editable" contenteditable="false" data-key="s6-s3p">凝血机制崩溃，凝血酶原时间极度延长(PT <strong><span class="counter" data-target="105.8" data-decimals="1">0.0</span>s</strong>)，纤维蛋白原极低(Fib < <strong><span class="counter" data-target="0.6" data-decimals="2">0.00</span>g/L</strong>)，符合<strong>弥散性血管内凝血 (DIC)</strong> 诊断。</p>
+                                </div>
+                            </div>
+
+                            <div class="catastrophe-box">
+                                <h4 class="editable" contenteditable="false" data-key="s6-boxh">⚠️ 引流液 <span class="counter" data-target="2000" data-decimals="0">0</span> mL 红色血性液体的本质</h4>
+                                <p class="editable" contenteditable="false" data-key="s6-boxp">引流管本身并不是导致病人病情急剧恶化的病因。相反，它是<strong>最直接反映全身系统性崩溃的“窗口”</strong>。急性肺栓塞与心跳骤停导致机体发生重度缺氧，激活了严重的全身性 DIC，致使全手术野创面发生弥漫性非血管性大渗血，通过引流管显露出来。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide-footer">
+                        <div>PAGE 06/07</div>
+                        <div>病理转折与危重症警示</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 7: Summary & Takeaways -->
+            <section class="slide" id="slide-7">
+                <div class="slide-container">
+                    <div class="slide-header">
+                        <div class="header-badge">Clinical Reflections</div>
+                        <div class="header-case-name">危险的手术</div>
+                    </div>
+
+                    <div class="slide-body">
+                        <h2 class="slide-title editable" contenteditable="false" data-key="s7-title" style="text-align: center; margin-bottom: 40px;">总结与启示</h2>
+                        <div class="reveal centered-callout">
+                            <div class="big-quote-card">
+                                <p class="editable" contenteditable="false" data-key="s7-quote">"异常的引流量往往是全身系统性灾难（如 DIC）的直接窗口。"</p>
+                            </div>
+                            
+                            <div class="thinking-card green-theme">
+                                <h4 class="editable" contenteditable="false" data-key="s7-thinkh">临床整体思维</h4>
+                                <p class="editable" contenteditable="false" data-key="s7-thinkp">我们在临床实践中要时刻关注管道指标，但更要“跳出管道看全身”。当出现异常血性引流量时，不要仅局限于局部的吻合口血管破裂出血，必须同步评估患者的凝血功能、血压、心率以及脏器灌注等全身宏观重症信号，及时进行干预抢救。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide-footer">
+                        <div>PAGE 07/07</div>
+                        <div>总结启示与临床思维</div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ===========================================
+       SLIDE PRESENTATION CONTROLLER & EDIT SCRIPTS
+       =========================================== -->
+    <script>
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.currentSlide = 0;
+                this.stage = document.getElementById('deckStage');
+                this.progress = document.getElementById('deckProgress');
+                
+                this.setupStageScale();
+                this.setupKeyboardNav();
+                this.setupTouchNav();
+                this.setupWheelNav();
+                
+                // Initialize URL parameter slide state if exists
+                const hash = window.location.hash;
+                if (hash && hash.startsWith('#slide-')) {
+                    const slideNum = parseInt(hash.replace('#slide-', '')) - 1;
+                    if (!isNaN(slideNum) && slideNum >= 0 && slideNum < this.slides.length) {
+                        this.currentSlide = slideNum;
+                    }
+                }
+                
+                this.showSlide(this.currentSlide);
+            }
+
+            setupStageScale() {
+                const scale = () => {
+                    const factor = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+                    const x = (window.innerWidth - 1920 * factor) / 2;
+                    const y = (window.innerHeight - 1080 * factor) / 2;
+                    this.stage.style.transform = `translate(${x}px, ${y}px) scale(${factor})`;
+                };
+                scale();
+                window.addEventListener('resize', scale);
+            }
+
+            setupKeyboardNav() {
+                document.addEventListener('keydown', (e) => {
+                    if (document.activeElement && document.activeElement.getAttribute('contenteditable') === 'true') {
+                        return;
+                    }
+                    
+                    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                        this.nextSlide();
+                    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                        this.prevSlide();
+                    }
+                });
+            }
+
+            setupTouchNav() {
+                let startX = 0;
+                let startY = 0;
+                
+                document.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    startY = e.touches[0].clientY;
+                }, { passive: true });
+
+                document.addEventListener('touchend', (e) => {
+                    if (document.activeElement && document.activeElement.getAttribute('contenteditable') === 'true') {
+                        return;
+                    }
+                    
+                    let diffX = e.changedTouches[0].clientX - startX;
+                    let diffY = e.changedTouches[0].clientY - startY;
+                    
+                    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                        if (diffX < 0) {
+                            this.nextSlide();
+                        } else {
+                            this.prevSlide();
+                        }
+                    }
+                }, { passive: true });
+            }
+
+            setupWheelNav() {
+                let lastScrollTime = 0;
+                document.addEventListener('wheel', (e) => {
+                    if (document.activeElement && document.activeElement.getAttribute('contenteditable') === 'true') {
+                        return;
+                    }
+                    
+                    const now = new Date().getTime();
+                    if (now - lastScrollTime < 800) return; // Debounce scroll
+                    
+                    if (Math.abs(e.deltaY) > 20) {
+                        lastScrollTime = now;
+                        if (e.deltaY > 0) {
+                            this.nextSlide();
+                        } else {
+                            this.prevSlide();
+                        }
+                    }
+                }, { passive: true });
+            }
+
+            nextSlide() {
+                if (this.currentSlide < this.slides.length - 1) {
+                    this.showSlide(this.currentSlide + 1);
+                }
+            }
+
+            prevSlide() {
+                if (this.currentSlide > 0) {
+                    this.showSlide(this.currentSlide - 1);
+                }
+            }
+
+            showSlide(index) {
+                this.currentSlide = index;
+                window.location.hash = `slide-${this.currentSlide + 1}`;
+                
+                this.slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === this.currentSlide);
+                    if (i === this.currentSlide) {
+                        setTimeout(() => {
+                            slide.classList.add('visible');
+                            this.animateCounters(slide);
+                        }, 50);
+                    } else {
+                        slide.classList.remove('visible');
+                    }
+                });
+                
+                this.progress.textContent = `${this.currentSlide + 1} / ${this.slides.length}`;
+            }
+
+            // Metric counter animation trigger
+            animateCounters(slide) {
+                const counters = slide.querySelectorAll('.counter');
+                counters.forEach(c => {
+                    const target = parseFloat(c.getAttribute('data-target'));
+                    const decimals = c.getAttribute('data-decimals') ? parseInt(c.getAttribute('data-decimals')) : 0;
+                    const duration = 1200; // Animation duration in milliseconds
+                    const startTime = performance.now();
+
+                    function update(now) {
+                        const elapsed = now - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        // Easing: easeOutExpo
+                        const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                        const current = ease * target;
+                        
+                        c.textContent = current.toFixed(decimals);
+
+                        if (progress < 1) {
+                            requestAnimationFrame(update);
+                        } else {
+                            c.textContent = target.toFixed(decimals);
+                        }
+                    }
+                    requestAnimationFrame(update);
+                });
+            }
+        }
+
+        // ===========================================
+        // NEW TECH SHOWCASE: PARTICLE SYSTEM
+        // ===========================================
+        class ParticleSystem {
+            constructor() {
+                this.canvas = document.getElementById('particleCanvas');
+                if (!this.canvas) return;
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                
+                this.resize();
+                this.init();
+                this.animate();
+                
+                window.addEventListener('resize', () => this.resize());
+            }
+
+            resize() {
+                this.canvas.width = 1920;
+                this.canvas.height = 1080;
+            }
+
+            init() {
+                const count = 50;
+                for (let i = 0; i < count; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        radius: Math.random() * 2.5 + 1,
+                        vx: (Math.random() - 0.5) * 0.4,
+                        vy: (Math.random() - 0.5) * 0.4,
+                        alpha: Math.random() * 0.4 + 0.1
+                    });
+                }
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                this.particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0 || p.x > this.canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > this.canvas.height) p.vy *= -1;
+
+                    this.ctx.beginPath();
+                    this.ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    this.ctx.fillStyle = `rgba(30, 43, 250, ${p.alpha})`;
+                    this.ctx.fill();
+                });
+
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // ===========================================
+        // NEW TECH SHOWCASE: 3D CARD TILT
+        // ===========================================
+        class TiltEffect {
+            constructor(elements) {
+                elements.forEach(elem => {
+                    elem.style.transformStyle = 'preserve-3d';
+                    elem.style.perspective = '1000px';
+                    
+                    elem.addEventListener('mousemove', (e) => {
+                        const rect = elem.getBoundingClientRect();
+                        const x = (e.clientX - rect.left) / rect.width - 0.5;
+                        const y = (e.clientY - rect.top) / rect.height - 0.5;
+                        
+                        elem.style.transform = `translateY(-10px) rotateY(${x * 12}deg) rotateX(${-y * 12}deg) scale(1.02)`;
+                    });
+                    
+                    elem.addEventListener('mouseleave', () => {
+                        elem.style.transform = 'translateY(0) rotateY(0) rotateX(0) scale(1)';
+                    });
+                });
+            }
+        }
+
+        // ===========================================
+        // NEW TECH SHOWCASE: DESIGNER MOUSE CURSOR
+        // ===========================================
+        class CustomCursor {
+            constructor() {
+                this.dot = document.getElementById('cursorDot');
+                this.ring = document.getElementById('cursorRing');
+                this.mouseX = 0;
+                this.mouseY = 0;
+                this.ringX = 0;
+                this.ringY = 0;
+                
+                this.setupMouseEvents();
+                this.animate();
+            }
+
+            setupMouseEvents() {
+                document.addEventListener('mousemove', (e) => {
+                    this.mouseX = e.clientX;
+                    this.mouseY = e.clientY;
+                    this.dot.style.left = this.mouseX + 'px';
+                    this.dot.style.top = this.mouseY + 'px';
+                });
+
+                // Attach hover states to interactive elements
+                const updateInteractives = () => {
+                    const elements = document.querySelectorAll('button, table, tr, img, .grid-card, .timeline-step, .editable, .zoom-close-btn');
+                    elements.forEach(elem => {
+                        if (elem.dataset.cursorBound) return;
+                        elem.dataset.cursorBound = "true";
+                        
+                        elem.addEventListener('mouseenter', () => document.body.classList.add('hover-interactive'));
+                        elem.addEventListener('mouseleave', () => document.body.classList.remove('hover-interactive'));
+                    });
+                };
+
+                updateInteractives();
+                setInterval(updateInteractives, 1000);
+            }
+
+            animate() {
+                const delay = 6; // Smoothness lag factor
+                this.ringX += (this.mouseX - this.ringX) / delay;
+                this.ringY += (this.mouseY - this.ringY) / delay;
+                
+                this.ring.style.left = this.ringX + 'px';
+                this.ring.style.top = this.ringY + 'px';
+                
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // ===========================================
+        // IMAGE ZOOM LIGHTBOX CONTROLLER
+        // ===========================================
+        class ImageZoom {
+            constructor() {
+                this.overlay = document.getElementById('zoomOverlay');
+                this.zoomImg = document.getElementById('zoomImage');
+                this.closeBtn = document.querySelector('.zoom-close-btn');
+                this.images = document.querySelectorAll('.image-card img');
+                
+                this.setupEvents();
+            }
+
+            setupEvents() {
+                this.images.forEach(img => {
+                    img.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.open(img.src);
+                    });
+                });
+
+                this.overlay.addEventListener('click', () => this.close());
+                this.closeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.close();
+                });
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') this.close();
+                });
+            }
+
+            open(src) {
+                this.zoomImg.src = src;
+                this.overlay.classList.add('active');
+            }
+
+            close() {
+                this.overlay.classList.remove('active');
+            }
+        }
+
+        // ===========================================
+        // INLINE EDITING CONTROLLER
+        // ===========================================
+        class InlineEditor {
+            constructor() {
+                this.isActive = false;
+                this.editToggle = document.getElementById('editToggle');
+                this.saveBtn = document.getElementById('saveFileBtn');
+                this.hotzone = document.querySelector('.edit-hotzone');
+                this.editables = document.querySelectorAll('.editable');
+                
+                this.setupHoverControls();
+                this.setupKeyboardShortcut();
+                this.loadSavedContent();
+                this.setupSaveToFile();
+            }
+
+            setupHoverControls() {
+                let hideTimeout = null;
+                
+                const showControls = () => {
+                    clearTimeout(hideTimeout);
+                    this.editToggle.classList.add('show');
+                    if (this.isActive) this.saveBtn.classList.add('show');
+                };
+
+                const hideControls = () => {
+                    hideTimeout = setTimeout(() => {
+                        if (!this.isActive) {
+                            this.editToggle.classList.remove('show');
+                            this.saveBtn.classList.remove('show');
+                        }
+                    }, 400);
+                };
+
+                this.hotzone.addEventListener('mouseenter', showControls);
+                this.hotzone.addEventListener('mouseleave', hideControls);
+                this.editToggle.addEventListener('mouseenter', showControls);
+                this.editToggle.addEventListener('mouseleave', hideControls);
+                this.saveBtn.addEventListener('mouseenter', showControls);
+                this.saveBtn.addEventListener('mouseleave', hideControls);
+                
+                this.editToggle.addEventListener('click', () => this.toggleEditMode());
+                this.hotzone.addEventListener('click', () => {
+                    if (!this.isActive) this.toggleEditMode();
+                });
+            }
+
+            setupKeyboardShortcut() {
+                document.addEventListener('keydown', (e) => {
+                    if ((e.key === 'e' || e.key === 'E') && !e.target.getAttribute('contenteditable')) {
+                        e.preventDefault();
+                        this.toggleEditMode();
+                    }
+                });
+            }
+
+            toggleEditMode() {
+                this.isActive = !this.isActive;
+                this.editToggle.classList.toggle('active', this.isActive);
+                this.saveBtn.classList.toggle('show', this.isActive);
+                
+                this.editables.forEach(elem => {
+                    elem.setAttribute('contenteditable', this.isActive ? 'true' : 'false');
+                });
+                
+                if (this.isActive) {
+                    console.log('编辑模式已启用。点击任何被虚线框出的文本即可直接修改。');
+                } else {
+                    this.saveToLocalStorage();
+                    console.log('编辑已保存到浏览器本地缓存 (localStorage)。');
+                }
+            }
+
+            saveToLocalStorage() {
+                const data = {};
+                this.editables.forEach(elem => {
+                    const key = elem.getAttribute('data-key');
+                    if (key) {
+                        data[key] = elem.innerHTML;
+                    }
+                });
+                localStorage.setItem('presentation_edits', JSON.stringify(data));
+            }
+
+            loadSavedContent() {
+                const saved = localStorage.getItem('presentation_edits');
+                if (saved) {
+                    try {
+                        const data = JSON.parse(saved);
+                        this.editables.forEach(elem => {
+                            const key = elem.getAttribute('data-key');
+                            if (key && data[key]) {
+                                elem.innerHTML = data[key];
+                            }
+                        });
+                    } catch (e) {
+                        console.error('无法读取本地缓存的修改数据: ', e);
+                    }
+                }
+            }
+
+            setupSaveToFile() {
+                this.saveBtn.addEventListener('click', () => {
+                    this.saveToLocalStorage();
+                    
+                    const cloneDoc = document.documentElement.cloneNode(true);
+                    
+                    const cloneEditables = cloneDoc.querySelectorAll('.editable');
+                    cloneEditables.forEach(elem => {
+                        elem.removeAttribute('contenteditable');
+                        const key = elem.getAttribute('data-key');
+                        const liveElem = document.querySelector(`[data-key="${key}"]`);
+                        if (liveElem) {
+                            elem.innerHTML = liveElem.innerHTML;
+                        }
+                    });
+                    
+                    const cloneDot = cloneDoc.querySelector('#cursorDot');
+                    if (cloneDot) cloneDot.remove();
+                    const cloneRing = cloneDoc.querySelector('#cursorRing');
+                    if (cloneRing) cloneRing.remove();
+                    
+                    const cloneToggle = cloneDoc.querySelector('#editToggle');
+                    if (cloneToggle) cloneToggle.classList.remove('active', 'show');
+                    
+                    const cloneSave = cloneDoc.querySelector('#saveFileBtn');
+                    if (cloneSave) cloneSave.classList.remove('show');
+                    
+                    const htmlContent = '<!DOCTYPE html>\n' + cloneDoc.outerHTML;
+                    
+                    const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = '输尿管阴道瘘术后引流管的临床意义_修改版.html';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    
+                    alert('已导出修改后的演示文稿为 HTML 文件！\n请将该文件替换原有的 HTML，或者直接双击它以运行包含修改内容的新版本。');
+                });
+            }
+        }
+
+        // Initialize presentation controllers and new tech features
+        const presentation = new SlidePresentation();
+        const particles = new ParticleSystem();
+        const tilt = new TiltEffect(document.querySelectorAll('.grid-card, .image-card, .timeline-step'));
+        const cursor = new CustomCursor();
+        const zoom = new ImageZoom();
+        const editor = new InlineEditor();
+    </script>
+</body>
+</html>
