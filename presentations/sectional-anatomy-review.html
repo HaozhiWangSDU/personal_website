@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>断层解剖学期末复习智能指南</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Dark Theme (Default) */
+      --bg-primary: #0b0f19;
+      --bg-secondary: #111827;
+      --bg-card: rgba(17, 24, 39, 0.7);
+      --bg-card-hover: rgba(31, 41, 55, 0.8);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-color-hover: rgba(6, 182, 212, 0.4);
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      
+      --accent-primary: #06b6d4; /* Cyan */
+      --accent-primary-glow: rgba(6, 182, 212, 0.15);
+      --accent-secondary: #a855f7; /* Purple */
+      --accent-secondary-glow: rgba(168, 85, 247, 0.15);
+      --accent-success: #10b981; /* Green */
+      --accent-success-glow: rgba(16, 185, 129, 0.15);
+      --accent-warning: #f59e0b; /* Gold */
+      --accent-warning-glow: rgba(245, 158, 11, 0.15);
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-glow: 0 0 20px rgba(6, 182, 212, 0.15);
+      
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      
+      --transition-fast: 0.15s ease;
+      --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #f1f5f9;
+      --bg-card: rgba(255, 255, 255, 0.85);
+      --bg-card-hover: rgba(255, 255, 255, 0.95);
+      --border-color: rgba(0, 0, 0, 0.08);
+      --border-color-hover: rgba(8, 145, 178, 0.4);
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      
+      --accent-primary: #0891b2;
+      --accent-primary-glow: rgba(8, 145, 178, 0.1);
+      --accent-secondary: #9333ea;
+      --accent-secondary-glow: rgba(147, 51, 234, 0.1);
+      --accent-success: #059669;
+      --accent-success-glow: rgba(5, 150, 105, 0.1);
+      --accent-warning: #d97706;
+      --accent-warning-glow: rgba(217, 119, 6, 0.1);
+      
+      --shadow-glow: 0 0 15px rgba(8, 145, 178, 0.08);
+    }
+
+    [data-theme="cyberpunk"] {
+      --bg-primary: #05050a;
+      --bg-secondary: #0a0a16;
+      --bg-card: rgba(10, 10, 26, 0.8);
+      --bg-card-hover: rgba(18, 18, 38, 0.9);
+      --border-color: #ff007f;
+      --border-color-hover: #00ffff;
+      --text-primary: #00ffff;
+      --text-secondary: #ff007f;
+      --text-muted: #8b5cf6;
+      
+      --accent-primary: #00ffff;
+      --accent-primary-glow: rgba(0, 255, 255, 0.2);
+      --accent-secondary: #ff007f;
+      --accent-secondary-glow: rgba(255, 0, 127, 0.2);
+      --accent-success: #39ff14;
+      --accent-success-glow: rgba(57, 255, 20, 0.2);
+      --accent-warning: #ffff00;
+      --accent-warning-glow: rgba(255, 255, 0, 0.2);
+      
+      --shadow-glow: 0 0 25px rgba(255, 0, 127, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+      overflow-x: hidden;
+    }
+
+    /* Grid Background Effect (Dark Mode only) */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(var(--border-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: -1;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-primary);
+    }
+
+    /* Container */
+    .app-container {
+      display: flex;
+      flex: 1;
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 20px;
+      gap: 24px;
+      position: relative;
+    }
+
+    /* Sidebar */
+    aside {
+      width: 320px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sticky-sidebar {
+      position: sticky;
+      top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-height: calc(100vh - 40px);
+    }
+
+    /* Main Area */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      min-width: 0;
+    }
+
+    /* Common Card Styles */
+    .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-normal);
+    }
+
+    .glass-card:hover {
+      border-color: var(--border-color-hover);
+      box-shadow: var(--shadow-glow), var(--shadow-lg);
+    }
+
+    /* Brand / Header */
+    .brand-section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .brand-title {
+      font-family: 'Outfit', 'Noto Sans SC', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+    }
+
+    /* Progress Widget */
+    .progress-widget {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .progress-bar-bg {
+      height: 8px;
+      background: var(--border-color);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-primary), var(--accent-success));
+      width: 0%;
+      border-radius: 4px;
+      transition: width var(--transition-slow);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    .stat-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      text-align: center;
+      transition: all var(--transition-fast);
+    }
+
+    [data-theme="light"] .stat-box {
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    .stat-box.active {
+      border-color: var(--accent-warning);
+      background: var(--accent-warning-glow);
+    }
+
+    .stat-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    /* Region Selector Menu */
+    .region-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      overflow-y: auto;
+      max-height: 400px;
+      padding-right: 5px;
+    }
+
+    .region-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: var(--radius-md);
+      color: var(--text-secondary);
+      cursor: pointer;
+      text-align: left;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all var(--transition-normal);
+    }
+
+    .region-item:hover {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-primary);
+    }
+
+    [data-theme="light"] .region-item:hover {
+      background: rgba(0, 0, 0, 0.03);
+    }
+
+    .region-item.active {
+      background: var(--accent-primary-glow);
+      border-color: rgba(6, 182, 212, 0.3);
+      color: var(--accent-primary);
+    }
+
+    .region-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .region-badge {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      background: var(--border-color);
+      color: var(--text-secondary);
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: all var(--transition-fast);
+    }
+
+    .region-item.active .region-badge {
+      background: var(--accent-primary);
+      color: #000;
+    }
+
+    /* Main Toolbar */
+    .toolbar {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .toolbar-row-1 {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .search-wrapper {
+      position: relative;
+      flex: 1;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+      width: 18px;
+      height: 18px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 14px 16px 14px 48px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
+      font-size: 15px;
+      outline: none;
+      transition: all var(--transition-normal);
+    }
+
+    [data-theme="light"] .search-input {
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-primary);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 0 3px var(--accent-primary-glow);
+    }
+
+    /* Filter Segments */
+    .segmented-control {
+      display: flex;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border-color);
+      padding: 4px;
+      border-radius: var(--radius-md);
+      gap: 4px;
+    }
+
+    [data-theme="light"] .segmented-control {
+      background: rgba(0, 0, 0, 0.04);
+    }
+
+    .segment-btn {
+      padding: 10px 16px;
+      background: transparent;
+      border: none;
+      border-radius: var(--radius-sm);
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all var(--transition-normal);
+    }
+
+    .segment-btn:hover {
+      color: var(--text-primary);
+    }
+
+    .segment-btn.active {
+      background: var(--bg-card);
+      color: var(--accent-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Toolbar Actions Row */
+    .toolbar-row-2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .mode-selector {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mode-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: transparent;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+    }
+
+    .mode-btn:hover {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-primary);
+    }
+
+    [data-theme="light"] .mode-btn:hover {
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    .mode-btn.active {
+      border-color: var(--accent-primary);
+      background: var(--accent-primary-glow);
+      color: var(--accent-primary);
+    }
+
+    .mode-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .action-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-icon {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-normal);
+    }
+
+    .btn-icon:hover {
+      border-color: var(--text-primary);
+      color: var(--text-primary);
+    }
+
+    .btn-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    /* Card Details */
+    .study-card {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .study-card.mastered {
+      opacity: 0.65;
+      border-color: rgba(16, 185, 129, 0.2);
+    }
+
+    .study-card.mastered:hover {
+      opacity: 1;
+      border-color: var(--accent-success);
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-badges {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .badge-tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-term {
+      background: var(--accent-primary-glow);
+      color: var(--accent-primary);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .badge-question {
+      background: var(--accent-secondary-glow);
+      color: var(--accent-secondary);
+      border: 1px solid rgba(168, 85, 247, 0.2);
+    }
+
+    .badge-region {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+    }
+
+    [data-theme="light"] .badge-region {
+      background: rgba(0, 0, 0, 0.03);
+    }
+
+    .card-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-action-btn {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid var(--border-color);
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .card-action-btn:hover {
+      color: var(--text-primary);
+      border-color: var(--text-secondary);
+    }
+
+    .card-action-btn.star-btn:hover,
+    .card-action-btn.star-btn.active {
+      color: var(--accent-warning);
+      border-color: rgba(245, 158, 11, 0.4);
+      background: var(--accent-warning-glow);
+    }
+
+    .card-action-btn.check-btn:hover,
+    .card-action-btn.check-btn.active {
+      color: var(--accent-success);
+      border-color: rgba(16, 185, 129, 0.4);
+      background: var(--accent-success-glow);
+    }
+
+    .card-action-btn svg {
+      width: 15px;
+      height: 15px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    .card-action-btn.active svg {
+      fill: currentColor;
+    }
+
+    /* Content Area */
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .english-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .card-body {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+      transition: max-height var(--transition-normal), opacity var(--transition-normal);
+    }
+
+    .card-body strong {
+      color: var(--text-primary);
+      font-weight: 600;
+      background: linear-gradient(120deg, var(--accent-primary-glow) 0%, var(--accent-primary-glow) 100%);
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+
+    .card-body ul, .card-body ol {
+      padding-left: 20px;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .card-body li {
+      margin-bottom: 4px;
+    }
+
+    /* Active Recall / Hide mode styling */
+    .card-body.hidden-answer {
+      max-height: 0;
+      padding-top: 0;
+      border-top-color: transparent;
+      opacity: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .flashcard-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px dashed var(--border-color);
+      border-radius: var(--radius-md);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all var(--transition-normal);
+      user-select: none;
+    }
+
+    [data-theme="light"] .flashcard-placeholder {
+      background: rgba(0, 0, 0, 0.01);
+    }
+
+    .flashcard-placeholder:hover {
+      color: var(--accent-primary);
+      border-color: var(--accent-primary);
+      background: var(--accent-primary-glow);
+    }
+
+    /* Single Quiz Panel */
+    .quiz-view-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      min-height: 400px;
+    }
+
+    .quiz-card-wrapper {
+      width: 100%;
+      max-width: 700px;
+      perspective: 1000px;
+    }
+
+    .quiz-card {
+      width: 100%;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .quiz-actions-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      width: 100%;
+      max-width: 700px;
+      margin-top: 10px;
+    }
+
+    .quiz-btn {
+      flex: 1;
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all var(--transition-normal);
+    }
+
+    .quiz-btn-primary {
+      background: var(--accent-primary);
+      color: #000;
+      border: none;
+    }
+
+    .quiz-btn-primary:hover {
+      box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .quiz-btn-easy {
+      background: var(--accent-success-glow);
+      color: var(--accent-success);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .quiz-btn-easy:hover {
+      background: var(--accent-success);
+      color: #fff;
+    }
+
+    .quiz-btn-hard {
+      background: var(--accent-warning-glow);
+      color: var(--accent-warning);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .quiz-btn-hard:hover {
+      background: var(--accent-warning);
+      color: #fff;
+    }
+
+    .quiz-progress-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .empty-state svg {
+      width: 48px;
+      height: 48px;
+      color: var(--border-color);
+    }
+
+    /* Quick Tip Box */
+    .tip-box {
+      display: flex;
+      gap: 12px;
+      background: var(--accent-primary-glow);
+      border-left: 4px solid var(--accent-primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 16px;
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .tip-box svg {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      color: var(--accent-primary);
+    }
+
+    /* Theme and config buttons in sidebar footer */
+    .sidebar-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .theme-selector {
+      display: flex;
+      gap: 8px;
+    }
+
+    .theme-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      position: relative;
+    }
+
+    .theme-dot.active {
+      transform: scale(1.15);
+    }
+
+    .theme-dot-dark {
+      background: #0f172a;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .theme-dot-dark.active {
+      border-color: var(--accent-primary);
+    }
+
+    .theme-dot-light {
+      background: #ffffff;
+      border-color: rgba(0, 0, 0, 0.15);
+    }
+    .theme-dot-light.active {
+      border-color: var(--accent-primary);
+    }
+
+    .theme-dot-cyber {
+      background: linear-gradient(135deg, #ff007f, #00ffff);
+      border-color: transparent;
+    }
+    .theme-dot-cyber.active {
+      border-color: #ffffff;
+    }
+
+    /* Tooltip */
+    [data-tooltip] {
+      position: relative;
+    }
+
+    [data-tooltip]::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e293b;
+      color: #f8fafc;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-md);
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    [data-tooltip]:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .app-container {
+        flex-direction: column;
+      }
+      aside {
+        width: 100%;
+      }
+      .sticky-sidebar {
+        position: static;
+        max-height: none;
+      }
+      .region-menu {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-height: none;
+        padding-bottom: 8px;
+      }
+      .region-item {
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside>
+      <div class="sticky-sidebar">
+        
+        <!-- Brand Card -->
+        <div class="glass-card brand-section">
+          <div class="brand-subtitle">Anatomy Study Hub</div>
+          <h1 class="brand-title">
+            <svg style="width:24px;height:24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            断层解剖学备考
+          </h1>
+        </div>
+
+        <!-- Progress Card -->
+        <div class="glass-card progress-widget">
+          <div class="progress-header">
+            <span>总体掌握进度</span>
+            <span id="progress-percent">0%</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progress-bar"></div>
+          </div>
+          
+          <div class="stats-row">
+            <div class="stat-box" id="stat-mastered-box">
+              <div class="stat-val" id="stat-mastered">0</div>
+              <div class="stat-label">已掌握 (Got)</div>
+            </div>
+            <div class="stat-box" id="stat-starred-box">
+              <div class="stat-val" id="stat-starred">0</div>
+              <div class="stat-label">需复习 (Star)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Regions Menu -->
+        <div class="glass-card" style="display:flex; flex-direction:column; gap:12px;">
+          <h2 style="font-size:14px; font-weight:600; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px;">按解剖分区浏览</h2>
+          <div class="region-menu" id="region-list">
+            <!-- Dynamic Regions -->
+          </div>
+        </div>
+
+        <!-- Sidebar Footer & Theme Toggle -->
+        <div class="glass-card sidebar-footer">
+          <span style="font-size: 12px; color: var(--text-muted);">主题风格</span>
+          <div class="theme-selector">
+            <div class="theme-dot theme-dot-dark active" onclick="setTheme('dark')" data-tooltip="极客深色"></div>
+            <div class="theme-dot theme-dot-light" onclick="setTheme('light')" data-tooltip="明亮医疗"></div>
+            <div class="theme-dot theme-dot-cyber" onclick="setTheme('cyberpunk')" data-tooltip="赛博霓虹"></div>
+          </div>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main>
+      
+      <!-- Toolbar Filter & Search -->
+      <div class="glass-card toolbar">
+        <div class="toolbar-row-1">
+          <div class="search-wrapper">
+            <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input type="text" class="search-input" id="search-box" placeholder="搜索名词、题干、或解析要点...">
+          </div>
+          
+          <div class="segmented-control">
+            <button class="segment-btn active" onclick="setFilterType('all')" id="type-all">全部题型</button>
+            <button class="segment-btn" onclick="setFilterType('term')" id="type-term">名词解释</button>
+            <button class="segment-btn" onclick="setFilterType('question')" id="type-question">问答简答</button>
+          </div>
+        </div>
+
+        <div class="toolbar-row-2">
+          <!-- Modes -->
+          <div class="mode-selector">
+            <button class="mode-btn active" onclick="setViewMode('browse')" id="mode-browse" data-tooltip="直接阅读所有题目的内容与解析">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+              </svg>
+              列表浏览
+            </button>
+            <button class="mode-btn" onclick="setViewMode('recall')" id="mode-recall" data-tooltip="隐藏答案，点击卡片再显示答案，检验记忆">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+              主动回忆
+            </button>
+            <button class="mode-btn" onclick="setViewMode('quiz')" id="mode-quiz" data-tooltip="进入随机闪卡测验，适合自测">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+              测验模式
+            </button>
+          </div>
+
+          <!-- Quick state selectors -->
+          <div class="action-controls">
+            <button class="mode-btn" onclick="toggleFilterStarred()" id="filter-starred-btn" style="border-radius:var(--radius-sm);">
+              仅看标星
+            </button>
+            <button class="mode-btn" onclick="toggleFilterUnstudied()" id="filter-unstudied-btn" style="border-radius:var(--radius-sm);">
+              仅看未学
+            </button>
+            <button class="btn-icon" onclick="resetProgress()" data-tooltip="清空记忆掌握进度与标星">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H17" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Tip -->
+      <div class="tip-box" id="mode-tip">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span id="tip-text">当前为<strong>列表浏览模式</strong>。您可以双击卡片或点击卡片右上角的星星 🌟 标记需要重点复习的考点，点击对勾 ✔️ 标记为已掌握。</span>
+      </div>
+
+      <!-- Cards Grid / Container -->
+      <div id="content-container">
+        <!-- Dynamic Cards or Quiz Panel -->
+      </div>
+
+    </main>
+    
+  </div>
+
+  <!-- Javascript Logic -->
+  <script>
+    // Data definition
+    const DATA = [
+      // Region 1
+      {
+        id: 1,
+        region: "头部 / 脑",
+        type: "term",
+        title: "半卵圆中心",
+        english: "centrum semiovale",
+        content: "背定义时抓住“<strong>侧脑室体上方、大脑半球白质区</strong>”，再补纤维组成：<strong>投射纤维、联络纤维、连合纤维</strong>；影像上为双侧半卵圆形白质区，是脑白质病变、腔隙灶等定位常用层面。"
+      },
+      {
+        id: 2,
+        region: "头部 / 脑",
+        type: "term",
+        title: "Reid 基线",
+        english: "Reid's base line / RBL",
+        content: "又称<strong>人类学基线</strong>。是<strong>眶下缘至外耳门中点</strong>的连线，为头部横断层常用扫描基线。"
+      },
+      {
+        id: 3,
+        region: "头部 / 脑",
+        type: "term",
+        title: "脑底静脉环",
+        english: "Rosenthal 环",
+        content: "资料中列为<strong>脑底静脉环 / 脑底静脉前环</strong>，由<strong>左右基底静脉</strong>及其属支之间细小静脉吻合形成，位置较 Willis 动脉环偏后、较深、范围较大；可分前、后静脉环，是血管病变好发部位之一。"
+      },
+      {
+        id: 4,
+        region: "头部 / 脑",
+        type: "term",
+        title: "禽距",
+        english: "calcar avis",
+        content: "<strong>距状沟</strong>向<strong>侧脑室后角</strong>突起形成；横断面常在<strong>胼胝体压部</strong>层面附近辨认，和距状沟、侧脑室后角一起记。"
+      },
+      {
+        id: 5,
+        region: "头部 / 脑",
+        type: "term",
+        title: "鞍上池",
+        english: "suprasellar cistern",
+        content: "位于<strong>蝶鞍上方</strong>，是轴位扫描时交叉池、脚间池或桥池的共同显影。类型按形态背<strong>六角形、五角形、四角形</strong>。六角形时，前方为额叶直回和眶回，侧方为颞叶钩，后方为中脑大脑脚底；池内有视交叉或视束、漏斗/垂体柄、乳头体、颈内动脉、动眼神经和大脑后动脉。"
+      },
+      {
+        id: 6,
+        region: "头部 / 脑",
+        type: "term",
+        title: "帆间池",
+        english: "cistern of velum interpositum",
+        content: "又称<strong>中间帆腔、第三脑室上池或第三脑室脉络组织池</strong>，内有<strong>大脑内静脉</strong>。位于第三脑室顶上方、穹隆体和穹隆连合下方，为尖向前的三角区；前外侧界为穹隆内侧缘，后界为<strong>胼胝体压部</strong>，向后通<strong>大脑大静脉池</strong>。<br><br><strong>与第三脑室顶区别：</strong><br>1. 帆间池层面较高；<br>2. 后界为胼胝体压部而非松果体；<br>3. 呈尖向前三角区且不与侧脑室前角相通。"
+      },
+      {
+        id: 7,
+        region: "头部 / 脑",
+        type: "term",
+        title: "脑桥小脑角池",
+        english: "cistern of pontocerebellar angle",
+        content: "按“<strong>脑桥、小脑、岩部附近蛛网膜下隙</strong>”理解，复习时带上经过结构和临床意义：<strong>面神经、前庭蜗神经</strong>等相关结构，桥小脑角区病变可累及这些神经。"
+      },
+      {
+        id: 8,
+        region: "头部 / 脑",
+        type: "question",
+        title: "简述颈内动脉的分段、名称及主要分支分布",
+        english: "",
+        content: "优先背 <strong>C5-C1 颅内五段分段法</strong>（或 Bouthillier C1-C7 七段分段法）：<br><ul><li><strong>C5 岩骨段</strong></li><li><strong>C4 海绵窦段</strong></li><li><strong>C3 前膝段</strong>：发出眼动脉</li><li><strong>C2 视交叉池段 / 床突上段</strong></li><li><strong>C1 后膝段</strong>：发出后交通动脉、脉络丛前动脉，末端续为大脑前动脉 A1 和大脑中动脉 M1。</li></ul><br><strong>主要分支分布：</strong><br>1. <strong>眼动脉</strong>：供应眶内容及眼球；<br>2. <strong>后交通动脉</strong>：向后连通大脑后动脉，参与 Willis 脑底静脉环；<br>3. <strong>脉络丛前动脉</strong>：供应海马、钩、内囊后肢后下部和苍白球等重要深部核团。"
+      },
+      {
+        id: 9,
+        region: "头部 / 脑",
+        type: "question",
+        title: "简述大脑前动脉的分段及分布",
+        english: "",
+        content: "分为 <strong>A1-A5 五段</strong>：<br><ul><li><strong>A1 水平段</strong>：发出内侧豆纹动脉；</li><li><strong>A2 上行段</strong>：发出 Heubner 返动脉及额底内侧、额前内侧动脉；</li><li><strong>A3 膝段</strong></li><li><strong>A4 胼周段</strong>：发出额中间内侧、额后内侧、中央旁动脉；</li><li><strong>A5 终段</strong>：即楔前动脉。</li></ul><br><strong>主要分布重点：</strong><br>主要分布于<strong>大脑半球内侧面顶枕沟以前</strong>，兼及额叶眶面和额、顶叶上外侧面上部。"
+      },
+      {
+        id: 10,
+        region: "头部 / 脑",
+        type: "question",
+        title: "简述大脑中动脉的分段及主要分支",
+        english: "",
+        content: "分为 <strong>M1-M5 五段</strong>：<br><ul><li><strong>M1 眶后段/水平段</strong></li><li><strong>M2 岛叶段/回旋段</strong>：发出颞前动脉，呈 U 形弯曲；</li><li><strong>M3 外侧沟段</strong>：有向中央沟上升的升动脉；</li><li><strong>M4 分叉段</strong>：发出顶后、角回、颞后动脉；</li><li><strong>M5 终末支</strong>：即角回动脉。</li></ul><br><strong>皮质支：</strong><br>包括额底外侧、中央前沟、中央沟、中央后沟、顶后、颞极、颞前/中/后、角回动脉；主要营养<strong>大脑半球上外侧面大部分和岛叶</strong>。"
+      },
+      {
+        id: 11,
+        region: "头部 / 脑",
+        type: "question",
+        title: "简述椎动脉的分段、主要分支及基底动脉分支",
+        english: "",
+        content: "椎动脉分为 <strong>V1-V5 段</strong>：<br><ul><li><strong>V1 横突孔段</strong>：穿经 C6-C2 横突孔；</li><li><strong>V2 横段</strong>：自枢椎横突孔出弯曲行至寰椎横突孔；</li><li><strong>V3 寰椎段</strong>：环绕寰椎；</li><li><strong>V4 枕骨大孔段</strong>：穿枕骨大孔入颅；</li><li><strong>V5 颅内段</strong>：在脑桥下缘与对侧合并为基底动脉。</li></ul><br><strong>椎动脉颅内分支：</strong>脑膜支、脊髓前/后动脉、延髓动脉、<strong>小脑下后动脉</strong>。<br><strong>基底动脉主要分支：</strong>小脑下前动脉、迷路动脉、脑桥动脉、小脑上动脉、<strong>大脑后动脉</strong>。"
+      },
+      {
+        id: 12,
+        region: "头部 / 脑",
+        type: "question",
+        title: "横断层面上如何辨认中央沟",
+        english: "",
+        content: "背好以下 <strong>8 点辨认标志</strong>：<br><ol><li><strong>不中断</strong>：大部分中央沟不中断；</li><li><strong>位置</strong>：较深但非最深，自脑断面外缘约中央处向后内延伸，常有一两条平行沟伴行；</li><li><strong>厚度</strong>：<strong>中央前回通常厚于中央后回</strong>；</li><li><strong>缘支</strong>：先由扣带沟缘支定位中央旁小叶，再在其前方辨认中央沟；</li><li><strong>壁间回</strong>：不达外侧沟，沟底深部通常有壁间回；</li><li><strong>前倒 T</strong>：<strong>中央前沟</strong>与<strong>额上沟</strong>汇合处成倒 T 字形；</li><li><strong>后 J 形</strong>：<strong>中央后沟</strong>与<strong>顶内沟</strong>汇合处成 J 字形；</li><li><strong>髓突辅助</strong>：侧脑室上方的大脑白质髓突（放射冠）有助定位和辨认。</li></ol>"
+      },
+      {
+        id: 13,
+        region: "头部 / 脑",
+        type: "question",
+        title: "试述鞍上池的位置、组成、毗邻及类型",
+        english: "",
+        content: "<ul><li><strong>位置</strong>：位于蝶鞍上方，是轴位扫描时交叉池、脚间池或桥池的共同显影。</li><li><strong>类型</strong>：按形态分为<strong>六角形、五角形、四角形</strong>。</li><li><strong>六角形时的组成与毗邻</strong>：<br><ul><li><strong>前方</strong>：额叶直回和眶回；</li><li><strong>侧方</strong>：左右颞叶钩；</li><li><strong>后方</strong>：中脑大脑脚底；</li><li><strong>池内结构</strong>：包含<strong>视交叉或视束、漏斗/垂体柄、乳头体、颈内动脉、动眼神经和大脑后动脉</strong>。</li></ul></li></ul>"
+      },
+      
+      // Region 2
+      {
+        id: 14,
+        region: "颌面部 / 颈部",
+        type: "term",
+        title: "颞下间隙",
+        english: "infratemporal space",
+        content: "位置在<strong>颧弓深面、下颌支内侧</strong>附近，与<strong>翼肌、上颌动脉、下颌神经分支</strong>（如下牙槽神经、舌神经）相关。复习时需与翼下颌间隙、咬肌间隙、翼腭窝进行解剖和范围上的区分。"
+      },
+      {
+        id: 15,
+        region: "颌面部 / 颈部",
+        type: "term",
+        title: "咽外侧间隙 / 咽旁间隙",
+        english: "parapharyngeal space",
+        content: "位于<strong>咽侧壁外侧</strong>的间隙。其临床重要性在于：颌面部、咽部的感染极易通过此筋膜间隙向上或向下扩散，且其邻近<strong>颈动脉鞘</strong>等含颈内动静脉、迷走神经的重要结构。"
+      },
+      {
+        id: 16,
+        region: "颌面部 / 颈部",
+        type: "term",
+        title: "翼腭窝",
+        english: "pterygopalatine fossa",
+        content: "<strong>位置</strong>：在上颌骨后方、蝶骨翼突前方、腭骨垂直板之间的深部小狭窄窝。<br><strong>内容</strong>：上颌动脉第三段及其分支、上颌神经相关分支（如翼腭神经）、翼腭神经节。<br><strong>交通（六大通道）</strong>：<br>1. 经<strong>圆孔</strong>通颅中窝；<br>2. 经<strong>翼管</strong>通破裂孔区；<br>3. 经<strong>眶下裂</strong>通眶；<br>4. 经<strong>蝶腭孔</strong>通鼻腔；<br>5. 经<strong>腭管</strong>通口腔；<br>6. 经<strong>翼上颌裂</strong>通颞下窝。<br><strong>临床意义</strong>：上述交通孔道是面部肿瘤、深部炎症、出血或麻醉药液扩散的天然路径。"
+      },
+      {
+        id: 17,
+        region: "颌面部 / 颈部",
+        type: "question",
+        title: "简述横断层上翼腭窝的位置、内容及交通/临床意义",
+        english: "",
+        content: "<strong>1. 位置</strong>：在上颌骨后方、蝶骨翼突前方、腭骨垂直板附近的深部狭窄骨性间隙。<br><strong>2. 内容</strong>：上颌动脉第三段及分支、上颌神经相关分支、翼腭神经节。<br><strong>3. 交通与临床意义</strong>：<br><ul><li>向颅内：经<strong>圆孔</strong>通颅中窝，经<strong>翼管</strong>通破裂孔；</li><li>向外周：经<strong>眶下裂</strong>通眼眶，经<strong>蝶腭孔</strong>通鼻腔，经<strong>腭管</strong>通口腔，经<strong>翼上颌裂</strong>通颞下窝。</li><li><strong>临床</strong>：它是头面部肿瘤蔓延、重度炎症扩散的枢纽，也是深部神经阻滞麻醉的重要通路。</li></ul>"
+      },
+      {
+        id: 18,
+        region: "颌面部 / 颈部",
+        type: "question",
+        title: "在颌面横断层中下颌支的标志性意义是什么",
+        english: "",
+        content: "下颌支是颌面部横断层中最重要的<strong>骨性定位标志</strong>：<br><ul><li><strong>区分间隙</strong>：它是区分<strong>咬肌间隙</strong>（外侧）与<strong>翼下颌间隙</strong>（内侧）的重要骨性分界。</li><li><strong>确定结构</strong>：外侧联系咬肌，内侧联系翼外肌和翼内肌；</li><li><strong>毗邻关系</strong>：其后方直接邻近<strong>腮腺</strong>（腮腺后床）以及穿经腮腺的<strong>下颌后静脉</strong>、面神经等重要结构。</li></ul>"
+      },
+      {
+        id: 19,
+        region: "颌面部 / 颈部",
+        type: "question",
+        title: "简述横断面上颈部筋膜格的划分及内容（4 个）",
+        english: "",
+        content: "在颈部横断面上，颈筋膜可将颈部划分为四个格，呈“<strong>中线一个，两侧两个，后方一个</strong>”的格局：<br><ol><li><strong>内脏格（中线）</strong>：位于中部偏前，含有喉与气管、咽与食管、甲状腺与甲状旁腺等脏器。</li><li><strong>血管神经格（左侧）</strong>：即左侧<strong>颈动脉鞘</strong>区，内含左颈总/颈内动脉、左颈内静脉、左迷走神经及深颈淋巴结。</li><li><strong>血管神经格（右侧）</strong>：即右侧<strong>颈动脉鞘</strong>区，内含右颈总/颈内动脉、右颈内静脉、右迷走神经及深颈淋巴结。</li><li><strong>支持格（后方）</strong>：位于颈椎周围，内含颈椎骨骼、椎前肌群、斜角肌群、脊髓及颈部相关血管神经。</li></ol><strong>临床价值</strong>：决定了病变、脓肿及肿瘤在颈部蔓延的边界和方向。"
+      },
+
+      // Region 3
+      {
+        id: 20,
+        region: "胸部",
+        type: "term",
+        title: "主动脉肺动脉窗",
+        english: "aorticopulmonary window",
+        content: "<strong>位置</strong>：在主动脉弓下方、肺动脉分叉（或左肺动脉）上方、气管左侧与左主支气管前上方的区域。<br><strong>内容</strong>：主动脉肺淋巴结（第5组）、动脉韧带、左喉返神经等。<br><strong>临床意义</strong>：此窗是影像学上评估<strong>纵隔淋巴结转移</strong>（尤其是肺癌淋巴结分期）的标志性区域，淋巴结肿大易压迫喉返神经导致声音嘶哑。"
+      },
+      {
+        id: 21,
+        region: "胸部",
+        type: "term",
+        title: "血管前间隙",
+        english: "prevascular space",
+        content: "位于上纵隔前部，胸骨后方与升主动脉、上腔静脉等大血管前壁之间的间隙。内有<strong>胸腺（或胸腺遗迹）、前纵隔淋巴结、脂肪和结缔组织</strong>。是前纵隔肿瘤（如胸腺瘤、畸胎瘤等）的好发部位。"
+      },
+      {
+        id: 22,
+        region: "胸部",
+        type: "term",
+        title: "气管前间隙",
+        english: "pretracheal space",
+        content: "位于上腔静脉、升主动脉和主动脉弓的后方，气管分叉前方的间隙。内含<strong>气管前淋巴结</strong>。常与甲状腺下极病变或纵隔气肿相沟通，是上纵隔病变蔓延的重要通路。"
+      },
+      {
+        id: 23,
+        region: "胸部",
+        type: "term",
+        title: "奇静脉食管隐窝",
+        english: "azygoesophageal recess",
+        content: "右侧胸膜在奇静脉下方与食管右侧壁之间向内折返形成的隐窝。在胸部横断层影像上表现为右下纵隔旁的锐利投影线。隐窝内投影线形态的改变常提示<strong>食管、气管旁淋巴结肿大</strong>或右肺下叶病变。"
+      },
+      {
+        id: 24,
+        region: "胸部",
+        type: "term",
+        title: "隆嵴下间隙",
+        english: "subcarinal space",
+        content: "位于气管杈（气管隆嵴）下方，左右主支气管分叉之间的多角形间隙。内有<strong>隆嵴下淋巴结（第7组）</strong>。该间隙在胸腔镜检查或纵隔淋巴结穿刺（TBNA）以及肺癌手术清除中具有极高临床定位价值。"
+      },
+      {
+        id: 25,
+        region: "胸部",
+        type: "question",
+        title: "简述胸骨角平面的标志性解剖学意义",
+        english: "",
+        content: "胸骨角平面（平对第4、5胸椎间盘）是胸部断层中最核心的“<strong>解剖分水岭</strong>”，记好 <strong>8 点标志意义</strong>：<br><ol><li>是<strong>胸骨柄与胸骨体</strong>的相接处。</li><li>外侧平对<strong>第2肋软骨</strong>，是临床上计数肋骨的重要骨性标志。</li><li>后方平对<strong>第4胸椎下缘或T4-T5椎间盘</strong>。</li><li>是划分<strong>上纵隔与下纵隔</strong>的解剖分界线。</li><li>是<strong>气管分叉（气管隆嵴）</strong>的平面。</li><li>是<strong>主动脉弓的起始和终末</strong>平面。</li><li>是<strong>奇静脉弓</strong>弯曲向前注入上腔静脉的平面。</li><li>是肺动脉分叉、左右主支气管入肺及相关淋巴结定位的关键参考平面。</li></ol>"
+      },
+      {
+        id: 26,
+        region: "胸部",
+        type: "question",
+        title: "简述左右肺段的组成",
+        english: "",
+        content: "牢记“<strong>右十左八</strong>”的肺段构成（背诵编号与名称）：<br><br><strong>1. 右肺（10个肺段）：</strong><br><ul><li><strong>上叶</strong>：尖段(S1)、后段(S2)、前段(S3)</li><li><strong>中叶</strong>：外侧段(S4)、内侧段(S5)</li><li><strong>下叶</strong>：上段(S6)、内侧底段(S7)、前底段(S8)、外侧底段(S9)、后底段(S10)</li></ul><strong>2. 左肺（8个肺段）：</strong><br><ul><li><strong>上叶</strong>：尖后段(S1+2，合并)、前段(S3)、上舌段(S4)、下舌段(S5)</li><li><strong>下叶</strong>：上段(S6)、前内侧底段(S7+8，合并)、外侧底段(S9)、后底段(S10)</li></ul>"
+      },
+
+      // Region 4
+      {
+        id: 27,
+        region: "腹部",
+        type: "term",
+        title: "门腔间隙",
+        english: "Portacaval space",
+        content: "位于肝脏下方，前方为<strong>肝门静脉（或胆总管、肝固有动脉）</strong>，后方为<strong>下腔静脉</strong>之间的间隙。在腹部CT或MRI上，此间隙是寻找肝门区肿大淋巴结、诊断胰头癌或肝脏尾状叶病变的重要解剖地标。"
+      },
+      {
+        id: 28,
+        region: "腹部",
+        type: "term",
+        title: "左肾上腺三角",
+        english: "left suprarenal gland triangle",
+        content: "在腹部横断面上，包绕左侧肾上腺的三角形解剖区。前外侧界为胃底及脾血管，后界为膈脚，内侧为腹主动脉。抓定位法：“<strong>左肾上极内前方 + 膈脚旁 + 腹主动脉旁</strong>”。"
+      },
+      {
+        id: 29,
+        region: "腹部",
+        type: "term",
+        title: "右肾上腺三角",
+        english: "right suprarenal gland triangle",
+        content: "包绕右侧肾上腺的三角形区域。前界为下腔静脉及肝右叶内侧，后界为膈脚，外侧为右肾上极。抓定位法：“<strong>右肾上极内上方 + 膈脚前外侧 + 下腔静脉后方</strong>”。"
+      },
+      {
+        id: 30,
+        region: "腹部",
+        type: "term",
+        title: "肝裸区",
+        english: "bare area of liver",
+        content: "位于肝脏膈面后上部的区域，该区<strong>无腹膜覆盖</strong>，直接通过结缔组织与膈肌相贴。其周界由冠状韧带前、后叶及左右三角韧带围成。由于缺乏腹膜屏障，此处的肝脓肿或腹壁病变易直接蔓延至纵隔或右膈下后外侧间隙。"
+      },
+      {
+        id: 31,
+        region: "腹部",
+        type: "term",
+        title: "第一肝门",
+        english: "porta hepatis",
+        content: "位于肝脏脏面的横沟。是<strong>肝门静脉、肝固有动脉、肝管、淋巴管及神经</strong>出入肝脏的部位。这些结构被 Glisson 系统（Glisson 系统结缔组织鞘）所包绕，合称为<strong>肝蒂</strong>。"
+      },
+      {
+        id: 32,
+        region: "腹部",
+        type: "term",
+        title: "第二肝门",
+        english: "second porta hepatis",
+        content: "位于下腔静脉沟的上端，为<strong>肝左、中、右静脉</strong>汇入下腔静脉的部位。在横断面上，这是划分肝脏段和叶上部结构（如划分Ⅱ、Ⅳa、Ⅷ、Ⅶ段）以及肝脏肿瘤切除时的核心控制平面。"
+      },
+      {
+        id: 33,
+        region: "腹部",
+        type: "term",
+        title: "肝门静脉左支矢状部",
+        english: "",
+        content: "肝门静脉左支呈“L”形，其弯曲向前的部分即为<strong>矢状部</strong>。是肝段划分的关键骨干标志，与左叶间裂、肝圆韧带裂、静脉韧带裂相续。在断面上常作为矢状断面划分肝段（Ⅱ、Ⅲ段与Ⅳ段分界）的<strong>最佳起始标记</strong>。"
+      },
+      {
+        id: 34,
+        region: "腹部",
+        type: "term",
+        title: "Couinaud 肝段划分",
+        english: "",
+        content: "以肝门静脉分支和肝静脉走行为基准，将肝脏分为 <strong>8 个独立的功能段</strong>：<br><ul><li><strong>I段</strong>：尾状叶；</li><li><strong>II段、III段</strong>：左外叶（Ⅱ段在上，Ⅲ段在下）；</li><li><strong>IV段</strong>：左内叶；</li><li><strong>V段、VIII段</strong>：右前叶（Ⅴ段在下，Ⅷ段在上）；</li><li><strong>VI段、VII段</strong>：右后叶（Ⅵ段在下，Ⅶ段在上）。</li></ul>三条肝静脉走行于段/叶间，起到分界作用。"
+      },
+      {
+        id: 35,
+        region: "腹部",
+        type: "question",
+        title: "简述左叶间裂在不同横断层面上的标志性结构",
+        english: "",
+        content: "左叶间裂又称<strong>脐裂</strong>，内有左叶间静脉和肝门静脉左支矢状部。其平面与肝门平面呈 45 度角，开口向左。其识别标志呈<strong>层面依赖性</strong>：<br><ul><li><strong>上部层面（膈面侧）</strong>：表现为<strong>镰状韧带附着处</strong>左侧约 1 cm 内，与<strong>下腔静脉左壁</strong>的连线。</li><li><strong>中部层面（肝门侧）</strong>：以<strong>静脉韧带裂</strong>和<strong>肝门静脉左支矢状部</strong>为标志。</li><li><strong>下部层面（脏面侧）</strong>：以<strong>肝圆韧带裂</strong>（内含肝圆韧带，即废退的脐静脉）为界，此处清晰划分了左内叶（Ⅳ段）与左外叶（Ⅲ段）。</li></ul>"
+      },
+      {
+        id: 36,
+        region: "腹部",
+        type: "question",
+        title: "在横断面上如何鉴别肝静脉与肝门静脉",
+        english: "",
+        content: "可根据以下 <strong>5 个特点</strong>进行鉴别：<br><ol><li><strong>走行与管径变化</strong>：二者反向。<strong>肝静脉</strong>越靠近膈肌（下腔静脉处）口径越粗；<strong>门静脉</strong>越靠近肝门（入肝处）口径越粗。</li><li><strong>空间分布</strong>：二者呈<strong>双手十指交叉样</strong>空间分布，互不平行，有立体交叉。</li><li><strong>管壁特征（超声/影像）</strong>：<strong>肝静脉</strong>管壁薄，周围无高回声鞘，管壁直而柔软；<strong>门静脉</strong>支由 Glisson 系统包绕，管壁较厚且回声强，分支特征明显。</li><li><strong>段叶定位关系</strong>：<strong>肝静脉</strong>走行于叶间或段间，是解剖叶、段的分界线；<strong>门静脉</strong>走行于叶内或段内，是每个段的核心功能骨架。</li><li><strong>形态特征</strong>：肝静脉主干及属支比较平直；门静脉支弯曲且常呈树枝状发散。</li></ol>"
+      },
+
+      // Region 5
+      {
+        id: 37,
+        region: "脊柱区 / 四肢",
+        type: "term",
+        title: "UTAC",
+        english: "unco-transverso-articular-complex",
+        content: "中文译为<strong>钩突-横突-关节突复合体</strong>。是颈椎椎间孔处的复杂骨性结构，内有<strong>颈神经根</strong>和<strong>椎动脉</strong>通过。该复合体的任何一部分发生退行性骨质增生（如钩椎关节增生），均可直接压迫神经根或压迫椎动脉引起相应症状（颈椎病）。"
+      },
+      {
+        id: 38,
+        region: "脊柱区 / 四肢",
+        type: "term",
+        title: "侧隐窝",
+        english: "lateral recess",
+        content: "指椎管外侧部的狭窄侧方区域，以<strong>腰椎</strong>处最为显著。<br><strong>骨性周界</strong>：<br><ul><li><strong>前壁</strong>：椎体后外侧部与椎间盘；</li><li><strong>后壁</strong>：上关节突前部及椎弓板间部；</li><li><strong>外侧壁</strong>：椎弓根内侧壁；</li><li><strong>内侧</strong>：向内宽敞，与椎管中央部相通。</li></ul><strong>临床意义</strong>：隐窝内有腰神经根经过。正常前后径为 <strong>3-5 mm</strong>，若小于 3 mm 即为狭窄，是腰椎管狭窄症压迫神经根的核心结构。"
+      },
+      {
+        id: 39,
+        region: "脊柱区 / 四肢",
+        type: "question",
+        title: "试述腰神经通道的分部、各部位置、狭窄好发处及临床意义",
+        english: "",
+        content: "<strong>腰神经通道</strong>是腰神经根自硬膜囊发出后，行至椎间管外口所经过的骨纤维性管道。<br><strong>1. 分部与位置：</strong><br><ul><li><strong>神经根管</strong>：从硬膜囊出口（起点）至椎间管内口。</li><li><strong>椎间管（椎间孔）</strong>：前壁为椎体后下缘及椎间盘，后壁为上关节突及黄韧带，上下壁为相邻的椎弓根。</li></ul><strong>2. 狭窄好发部位（四大瓶颈）</strong>：盘黄间隙、侧隐窝、上关节突旁沟、椎弓根下沟。<br><strong>3. 临床意义</strong>：是腰突、骨刺或黄韧带肥厚时的最易受压处，压迫神经根可产生严重的下肢放射性疼痛、麻木（坐骨神经痛）。"
+      },
+      {
+        id: 40,
+        region: "脊柱区 / 四肢",
+        type: "question",
+        title: "简述肩关节的构成和横断层结构特点",
+        english: "",
+        content: "<strong>1. 构成</strong>：由<strong>肱骨头</strong>和<strong>肩胛骨关节盂</strong>构成。关节盂边缘有纤维软骨构成的<strong>盂唇</strong>以加深关节窝，关节囊薄而松弛。<br><strong>2. 横断层结构特点（三大核心）</strong>：<br><ul><li><strong>骨性骨骼</strong>：横断层自上而下可辨认锁骨、肩峰、喙突、关节盂及肱骨头。</li><li><strong>肌腱袖（肩袖）</strong>：由<strong>冈上肌、冈下肌、小圆肌和肩胛下肌</strong>的肌腱紧贴关节囊外面编织而成，是维持肩关节稳定的最关键动力性结构。</li><li><strong>腱与滑囊</strong>：可见<strong>肱二头肌长头腱</strong>穿经关节腔，且关节周围有肩峰下滑囊、三角肌下滑囊等。</li></ul><strong>3. 临床意义</strong>：肩关节活动度极广，但骨性结构不稳定，极易脱位，其稳定性高度依赖盂唇的完整和肩袖肌腱的张力。"
+      },
+      {
+        id: 41,
+        region: "脊柱区 / 四肢",
+        type: "question",
+        title: "简述膝关节的构成及横断层特点",
+        english: "",
+        content: "<strong>1. 构成</strong>：由股骨下端、胫骨上端和髌骨共同构成，是人体最复杂的关节。<br><strong>2. 横断层结构特点：</strong><br><ul><li><strong>韧带结构</strong>：横断面上可清晰分辨<strong>髌韧带</strong>（前方）、<strong>前交叉韧带与后交叉韧带</strong>（髁间窝内）、<strong>胫侧与腓侧副韧带</strong>（两侧）。</li><li><strong>半月板</strong>：<strong>内侧半月板呈 C 形</strong>，较大且与胫侧副韧带紧密相连；<strong>外侧半月板近 O 形</strong>，较小且活动度大。</li><li><strong>滑膜腔与脂肪垫</strong>：髌上囊（髌骨上方）、髌下脂肪垫（髌韧带后方）、翼状襞。</li></ul><strong>3. 断面定位</strong>：可按“髌骨层面、髌尖下方层面、胫骨髁间隆起层面”自上而下识别韧带及半月板形态的演变。"
+      },
+
+      // Region 6
+      {
+        id: 42,
+        region: "男性盆部 / 会阴",
+        type: "term",
+        title: "坐骨肛门窝",
+        english: "ischioanal fossa",
+        content: "位于<strong>肛管两侧、盆膈下方</strong>的楔形间隙。外侧壁为坐骨结节、闭孔内肌及其筋膜；内侧壁为肛提肌、尾骨肌及外括约肌。内充满<strong>大量脂肪</strong>（坐骨直肠窝脂肪垫），并有肛血管和肛神经通过。由于其内脂肪血供差、抗感染力弱，此处的感染极易形成<strong>坐骨肛门窝脓肿</strong>，且脓肿可穿过会阴浅深间隙扩散。"
+      },
+      {
+        id: 43,
+        region: "男性盆部 / 会阴",
+        type: "question",
+        title: "简述男性盆部横断层第二段的上下界及主要结构排列",
+        english: "",
+        content: "<strong>1. 盆部三分段法回顾</strong>：<br>第一段为 L5 椎间盘至髋臼上缘；第二段为髋臼上缘至耻骨联合下缘；第三段为耻骨联合下缘以下。<br><strong>2. 第二段界限</strong>：<br><ul><li><strong>上界</strong>：髋臼上缘平面；</li><li><strong>下界</strong>：耻骨联合下缘平面。</li></ul><strong>3. 主要结构排列特点</strong>：<br>该段包含盆壁、股骨头、股骨颈、腹股沟区精索以及泌尿生殖脏器。从上往下主要展现：<br><ul><li><strong>膀胱及髋臼</strong>层面。</li><li><strong>股骨头</strong>（上、中、下部）层面，内侧可见精囊、输精管壶腹及膀胱底。</li><li><strong>前列腺</strong>层面：可见前列腺、前列腺静脉丛、耻骨肌和闭孔内肌。</li><li><strong>重要解剖角</strong>：<strong>膀胱-精囊角</strong>（正常 20~40 度，其内充满脂肪，若此角变钝或消失提示病变侵犯精囊）。</li><li><strong>后方</strong>直肠以及两侧的坐骨肛门窝起始部。</li></ul>"
+      }
+    ];
+
+    // App State
+    let currentRegion = "all";
+    let filterType = "all"; // "all", "term", "question"
+    let viewMode = "browse"; // "browse", "recall", "quiz"
+    let filterStarred = false;
+    let filterUnstudied = false;
+    
+    // User progress state (Persisted in localStorage)
+    let masteredItems = JSON.parse(localStorage.getItem('anatomy_mastered')) || [];
+    let starredItems = JSON.parse(localStorage.getItem('anatomy_starred')) || [];
+    let expandedAnswers = []; // Temp state for recall mode
+    
+    // Quiz mode state
+    let quizQueue = [];
+    let quizIndex = 0;
+    let quizShowAnswer = false;
+
+    // Load theme from localStorage
+    let currentTheme = localStorage.getItem('anatomy_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    // Initial load
+    window.addEventListener('DOMContentLoaded', () => {
+      initThemeDots();
+      renderRegions();
+      updateStats();
+      renderContent();
+      
+      // Event listeners
+      document.getElementById('search-box').addEventListener('input', () => {
+        // Debounce search a bit
+        if (viewMode === 'quiz') {
+          setViewMode('browse'); // Switch to browse if searching
+        }
+        renderContent();
+      });
+    });
+
+    // Theme Management
+    function setTheme(theme) {
+      currentTheme = theme;
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('anatomy_theme', theme);
+      initThemeDots();
+    }
+
+    function initThemeDots() {
+      document.querySelectorAll('.theme-dot').forEach(dot => dot.classList.remove('active'));
+      if (currentTheme === 'dark') document.querySelector('.theme-dot-dark').classList.add('active');
+      else if (currentTheme === 'light') document.querySelector('.theme-dot-light').classList.add('active');
+      else if (currentTheme === 'cyberpunk') document.querySelector('.theme-dot-cyber').classList.add('active');
+    }
+
+    // Render Regions Menu
+    function renderRegions() {
+      const regionList = document.getElementById('region-list');
+      
+      // Calculate item count per region
+      const counts = { all: DATA.length };
+      DATA.forEach(item => {
+        counts[item.region] = (counts[item.region] || 0) + 1;
+      });
+
+      const regions = ["all", "头部 / 脑", "颌面部 / 颈部", "胸部", "腹部", "脊柱区 / 四肢", "男性盆部 / 会阴"];
+      
+      regionList.innerHTML = regions.map(reg => {
+        const displayName = reg === "all" ? "全部区域" : reg;
+        const isActive = currentRegion === reg ? "active" : "";
+        const count = counts[reg] || 0;
+        
+        return `
+          <button class="region-item ${isActive}" onclick="selectRegion('${reg}')">
+            <div class="region-info">
+              <svg style="width:16px;height:16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+              <span>${displayName}</span>
+            </div>
+            <span class="region-badge">${count}</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectRegion(reg) {
+      currentRegion = reg;
+      renderRegions();
+      if (viewMode === 'quiz') {
+        // Restart quiz for that region
+        startQuiz();
+      } else {
+        renderContent();
+      }
+    }
+
+    // Filter controls
+    function setFilterType(type) {
+      filterType = type;
+      document.querySelectorAll('.segment-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(`type-${type}`).classList.add('active');
+      
+      if (viewMode === 'quiz') {
+        startQuiz();
+      } else {
+        renderContent();
+      }
+    }
+
+    function toggleFilterStarred() {
+      filterStarred = !filterStarred;
+      const btn = document.getElementById('filter-starred-btn');
+      if (filterStarred) {
+        btn.classList.add('active');
+        // Uncheck unstudied if checked
+        if (filterUnstudied) {
+          filterUnstudied = false;
+          document.getElementById('filter-unstudied-btn').classList.remove('active');
+        }
+      } else {
+        btn.classList.remove('active');
+      }
+      renderContent();
+    }
+
+    function toggleFilterUnstudied() {
+      filterUnstudied = !filterUnstudied;
+      const btn = document.getElementById('filter-unstudied-btn');
+      if (filterUnstudied) {
+        btn.classList.add('active');
+        if (filterStarred) {
+          filterStarred = false;
+          document.getElementById('filter-starred-btn').classList.remove('active');
+        }
+      } else {
+        btn.classList.remove('active');
+      }
+      renderContent();
+    }
+
+    // View Mode Management
+    function setViewMode(mode) {
+      viewMode = mode;
+      document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(`mode-${mode}`).classList.add('active');
+      
+      const tipText = document.getElementById('tip-text');
+      if (mode === 'browse') {
+        tipText.innerHTML = "当前为<strong>列表浏览模式</strong>。你可以点击卡片右上角的 🌟 标记需要重点复习的考点，点击对勾 ✔️ 标记为已掌握。";
+      } else if (mode === 'recall') {
+        tipText.innerHTML = "当前为<strong>主动回忆模式</strong>。答案已被隐藏。试着在大脑中拼图，然后<strong>点击卡片空白处或点击“显示答案”</strong>来核对。";
+      } else if (mode === 'quiz') {
+        tipText.innerHTML = "当前为<strong>闪卡测验模式</strong>。系统将随机抽取您选定区域的卡片。点击“显示解析”核对后，标记“已掌握”或“需复习”以调整队列。";
+        startQuiz();
+        return; // quiz renders separately
+      }
+      
+      renderContent();
+    }
+
+    // Stats Management
+    function updateStats() {
+      const total = DATA.length;
+      const mastered = masteredItems.length;
+      const starred = starredItems.length;
+      
+      // Update stats displays
+      document.getElementById('stat-mastered').innerText = mastered;
+      document.getElementById('stat-starred').innerText = starred;
+      
+      const percent = total > 0 ? Math.round((mastered / total) * 100) : 0;
+      document.getElementById('progress-percent').innerText = `${percent}%`;
+      document.getElementById('progress-bar').style.width = `${percent}%`;
+      
+      // Save stats
+      localStorage.setItem('anatomy_mastered', JSON.stringify(masteredItems));
+      localStorage.setItem('anatomy_starred', JSON.stringify(starredItems));
+    }
+
+    function resetProgress() {
+      if (confirm("确定要清空您的所有学习掌握记录与标星标记吗？此操作无法撤销。")) {
+        masteredItems = [];
+        starredItems = [];
+        expandedAnswers = [];
+        updateStats();
+        if (viewMode === 'quiz') {
+          startQuiz();
+        } else {
+          renderContent();
+        }
+      }
+    }
+
+    // Star & Check actions
+    function toggleStar(id, event) {
+      if (event) event.stopPropagation();
+      const idx = starredItems.indexOf(id);
+      if (idx > -1) {
+        starredItems.splice(idx, 1);
+      } else {
+        starredItems.push(id);
+        // If we star it, remove from mastered (needs more study)
+        const masteredIdx = masteredItems.indexOf(id);
+        if (masteredIdx > -1) {
+          masteredItems.splice(masteredIdx, 1);
+        }
+      }
+      updateStats();
+      
+      if (viewMode === 'quiz') {
+        updateQuizCardState();
+      } else {
+        renderContent();
+      }
+    }
+
+    function toggleMastered(id, event) {
+      if (event) event.stopPropagation();
+      const idx = masteredItems.indexOf(id);
+      if (idx > -1) {
+        masteredItems.splice(idx, 1);
+      } else {
+        masteredItems.push(id);
+        // If mastered, remove from starred
+        const starredIdx = starredItems.indexOf(id);
+        if (starredIdx > -1) {
+          starredItems.splice(starredIdx, 1);
+        }
+      }
+      updateStats();
+      
+      if (viewMode === 'quiz') {
+        updateQuizCardState();
+      } else {
+        renderContent();
+      }
+    }
+
+    // Filter Helper
+    function getFilteredData() {
+      const searchVal = document.getElementById('search-box').value.trim().toLowerCase();
+      
+      return DATA.filter(item => {
+        // Region filter
+        if (currentRegion !== 'all' && item.region !== currentRegion) return false;
+        
+        // Type filter
+        if (filterType !== 'all' && item.type !== filterType) return false;
+        
+        // Starred filter
+        if (filterStarred && !starredItems.includes(item.id)) return false;
+        
+        // Unstudied filter
+        if (filterUnstudied && (masteredItems.includes(item.id) || starredItems.includes(item.id))) return false;
+        
+        // Search filter
+        if (searchVal) {
+          const matchTitle = item.title.toLowerCase().includes(searchVal);
+          const matchEnglish = item.english.toLowerCase().includes(searchVal);
+          const matchContent = item.content.toLowerCase().includes(searchVal);
+          const matchRegion = item.region.toLowerCase().includes(searchVal);
+          return matchTitle || matchEnglish || matchContent || matchRegion;
+        }
+        
+        return true;
+      });
+    }
+
+    // Toggle reveal for Recall mode
+    function toggleRevealAnswer(id) {
+      const idx = expandedAnswers.indexOf(id);
+      if (idx > -1) {
+        expandedAnswers.splice(idx, 1);
+      } else {
+        expandedAnswers.push(id);
+      }
+      renderContent();
+    }
+
+    // Main Renderer for Browse & Recall Modes
+    function renderContent() {
+      const container = document.getElementById('content-container');
+      const filtered = getFilteredData();
+      
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="glass-card empty-state">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div style="font-weight: 500; font-size: 16px;">没有找到符合当前筛选条件的题目</div>
+            <div style="font-size: 13px; color: var(--text-muted);">可以尝试清除搜索框、更改题型选项或切换区域。</div>
+          </div>
+        `;
+        return;
+      }
+      
+      let html = `<div class="cards-grid">`;
+      
+      filtered.forEach(item => {
+        const isMastered = masteredItems.includes(item.id);
+        const isStarred = starredItems.includes(item.id);
+        const typeLabel = item.type === "term" ? "名词解释" : "问答简答";
+        const typeClass = item.type === "term" ? "badge-term" : "badge-question";
+        
+        const isAnswerRevealed = viewMode === 'browse' || expandedAnswers.includes(item.id);
+        
+        html += `
+          <div class="glass-card study-card ${isMastered ? 'mastered' : ''}" id="card-${item.id}" onclick="handleCardClick(${item.id})">
+            <!-- Card Meta -->
+            <div class="card-meta">
+              <div class="card-badges">
+                <span class="badge-tag ${typeClass}">${typeLabel}</span>
+                <span class="badge-tag badge-region">${item.region}</span>
+              </div>
+              <div class="card-actions">
+                <button class="card-action-btn star-btn ${isStarred ? 'active' : ''}" 
+                        onclick="toggleStar(${item.id}, event)" 
+                        data-tooltip="${isStarred ? '已标星需复习' : '标记为需复习'}">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M11.48 3.499c.174-.427.772-.427.946 0l2.22 5.438a.5.5 0 00.376.315l5.88.756c.465.06.65.632.314.952l-4.4 4.192a.5.5 0 00-.14.453l1.196 5.8a.5.5 0 00-.736.564L12 18.9l-5.02 2.915a.5.5 0 00-.736-.564L7.44 15.44a.5.5 0 00-.14-.453l-4.4-4.192a.5.5 0 00.314-.952l5.88-.756a.5.5 0 00.376-.315l2.22-5.438z" />
+                  </svg>
+                </button>
+                <button class="card-action-btn check-btn ${isMastered ? 'active' : ''}" 
+                        onclick="toggleMastered(${item.id}, event)" 
+                        data-tooltip="${isMastered ? '取消掌握标记' : '标记为已掌握'}">
+                  <svg viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            
+            <!-- Title -->
+            <h3 class="card-title">
+              <span>${item.title}</span>
+              ${item.english ? `<span class="english-title">${item.english}</span>` : ''}
+            </h3>
+            
+            <!-- Body -->
+            ${isAnswerRevealed ? `
+              <div class="card-body">
+                ${item.content}
+              </div>
+            ` : `
+              <div class="flashcard-placeholder">
+                <svg style="width:16px;height:16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                点击卡片显示答案
+              </div>
+            `}
+          </div>
+        `;
+      });
+      
+      html += `</div>`;
+      container.innerHTML = html;
+    }
+
+    function handleCardClick(id) {
+      if (viewMode === 'recall') {
+        toggleRevealAnswer(id);
+      }
+    }
+
+    // Quiz Mode Logic
+    function startQuiz() {
+      // Get filtered queue
+      const candidates = getFilteredData();
+      
+      if (candidates.length === 0) {
+        document.getElementById('content-container').innerHTML = `
+          <div class="glass-card empty-state">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div style="font-weight: 500; font-size: 16px;">测验队列为空</div>
+            <div style="font-size: 13px; color: var(--text-muted);">请调整检索条件，或者标记部分卡片为“需复习”。</div>
+          </div>
+        `;
+        return;
+      }
+      
+      // Shuffle the copy
+      quizQueue = [...candidates].sort(() => Math.random() - 0.5);
+      quizIndex = 0;
+      quizShowAnswer = false;
+      renderQuizCard();
+    }
+
+    function renderQuizCard() {
+      const container = document.getElementById('content-container');
+      if (quizQueue.length === 0 || quizIndex >= quizQueue.length) {
+        container.innerHTML = `
+          <div class="glass-card empty-state">
+            <svg style="color:var(--accent-success);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div style="font-weight: 600; font-size: 18px; color: var(--text-primary);">太棒了！本轮测验已完成</div>
+            <div style="font-size: 13px; color: var(--text-muted); max-width:400px; line-height:1.6; margin-top:5px;">
+              您已经测验完了这一组所有的 <strong>${quizQueue.length}</strong> 道题。可以切换分类/区域，或者点击下方重新开始新一轮乱序抽题。
+            </div>
+            <button class="quiz-btn quiz-btn-primary" onclick="startQuiz()" style="margin-top:10px; max-width:200px;">重新开始测验</button>
+          </div>
+        `;
+        return;
+      }
+      
+      const item = quizQueue[quizIndex];
+      const isMastered = masteredItems.includes(item.id);
+      const isStarred = starredItems.includes(item.id);
+      const typeLabel = item.type === "term" ? "名词解释" : "问答简答";
+      const typeClass = item.type === "term" ? "badge-term" : "badge-question";
+
+      container.innerHTML = `
+        <div class="quiz-view-container">
+          <div class="quiz-progress-text">进度：${quizIndex + 1} / ${quizQueue.length} (乱序抽题)</div>
+          
+          <div class="quiz-card-wrapper">
+            <div class="glass-card quiz-card" id="quiz-card-element">
+              <!-- Meta -->
+              <div class="card-meta">
+                <div class="card-badges">
+                  <span class="badge-tag ${typeClass}">${typeLabel}</span>
+                  <span class="badge-tag badge-region">${item.region}</span>
+                </div>
+                <div class="card-actions">
+                  <button class="card-action-btn star-btn ${isStarred ? 'active' : ''}" 
+                          onclick="toggleStar(${item.id}, event)" 
+                          data-tooltip="标星（需复习）">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M11.48 3.499c.174-.427.772-.427.946 0l2.22 5.438a.5.5 0 00.376.315l5.88.756c.465.06.65.632.314.952l-4.4 4.192a.5.5 0 00-.14.453l1.196 5.8a.5.5 0 00-.736.564L12 18.9l-5.02 2.915a.5.5 0 00-.736-.564L7.44 15.44a.5.5 0 00-.14-.453l-4.4-4.192a.5.5 0 00.314-.952l5.88-.756a.5.5 0 00.376-.315l2.22-5.438z" />
+                    </svg>
+                  </button>
+                  <button class="card-action-btn check-btn ${isMastered ? 'active' : ''}" 
+                          onclick="toggleMastered(${item.id}, event)" 
+                          data-tooltip="标为已掌握">
+                    <svg viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Content -->
+              <div>
+                <h3 class="card-title" style="font-size:22px; margin-bottom:15px;">
+                  <span>${item.title}</span>
+                  ${item.english ? `<span class="english-title" style="font-size:16px;">${item.english}</span>` : ''}
+                </h3>
+                
+                ${quizShowAnswer ? `
+                  <div class="card-body" style="display:block;">
+                    ${item.content}
+                  </div>
+                ` : `
+                  <div class="flashcard-placeholder" onclick="revealQuizAnswer()" style="padding:40px;">
+                    <svg style="width:20px;height:20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    点击思考，点击或敲击空格显示解析
+                  </div>
+                `}
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Quiz Navigation -->
+          <div class="quiz-actions-row">
+            ${!quizShowAnswer ? `
+              <button class="quiz-btn quiz-btn-primary" onclick="revealQuizAnswer()">显示解析 (Show Answer)</button>
+            ` : `
+              <button class="quiz-btn quiz-btn-hard" onclick="markQuizCard(false)">
+                <svg style="width:16px;height:16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                仍需复习 (Star)
+              </button>
+              <button class="quiz-btn quiz-btn-easy" onclick="markQuizCard(true)">
+                <svg style="width:16px;height:16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                已经掌握 (Got it)
+              </button>
+            `}
+          </div>
+        </div>
+      `;
+
+      // Allow spacebar key to reveal/confirm
+      document.onkeydown = function(e) {
+        if (viewMode !== 'quiz') return;
+        if (e.keyCode === 32) { // Space
+          e.preventDefault();
+          if (!quizShowAnswer) {
+            revealQuizAnswer();
+          }
+        } else if (e.keyCode === 49 && quizShowAnswer) { // "1" key
+          markQuizCard(false);
+        } else if (e.keyCode === 50 && quizShowAnswer) { // "2" key
+          markQuizCard(true);
+        }
+      }
+    }
+
+    function revealQuizAnswer() {
+      quizShowAnswer = true;
+      renderQuizCard();
+    }
+
+    function markQuizCard(isGot) {
+      const item = quizQueue[quizIndex];
+      if (isGot) {
+        // Mastered
+        if (!masteredItems.includes(item.id)) masteredItems.push(item.id);
+        const starIdx = starredItems.indexOf(item.id);
+        if (starIdx > -1) starredItems.splice(starIdx, 1);
+      } else {
+        // Need Review
+        if (!starredItems.includes(item.id)) starredItems.push(item.id);
+        const masteredIdx = masteredItems.indexOf(item.id);
+        if (masteredIdx > -1) masteredItems.splice(masteredIdx, 1);
+      }
+      
+      updateStats();
+      
+      // Proceed to next card
+      quizIndex++;
+      quizShowAnswer = false;
+      renderQuizCard();
+    }
+
+    function updateQuizCardState() {
+      // Updates visual indicators in the card itself without reloading the whole queue
+      const item = quizQueue[quizIndex];
+      if (!item) return;
+      const isMastered = masteredItems.includes(item.id);
+      const isStarred = starredItems.includes(item.id);
+      
+      const starBtn = document.querySelector('.quiz-card .star-btn');
+      const checkBtn = document.querySelector('.quiz-card .check-btn');
+      
+      if (starBtn && checkBtn) {
+        if (isStarred) starBtn.classList.add('active');
+        else starBtn.classList.remove('active');
+        
+        if (isMastered) checkBtn.classList.add('active');
+        else checkBtn.classList.remove('active');
+      }
+    }
+
+  </script>
+</body>
+</html>
