@@ -11,7 +11,7 @@
   
   <style>
     :root {
-      /* Medical Blue-and-White Theme (Default Light) */
+      /* Theme 1: 明亮医疗 (Default Light) */
       --bg-primary: #f0f4f8; /* Soft clinical grey-blue */
       --bg-secondary: #ffffff;
       --bg-card: #ffffff;
@@ -47,7 +47,7 @@
     }
 
     [data-theme="dark"] {
-      /* Dark Theme (Navy Blue) */
+      /* Theme 2: 静谧深蓝 */
       --bg-primary: #0a0e17;
       --bg-secondary: #101726;
       --bg-card: rgba(16, 23, 38, 0.85);
@@ -70,8 +70,56 @@
       --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.18);
     }
 
+    [data-theme="sepia"] {
+      /* Theme 3: 暖沙柔光 (Kindle Sepia) */
+      --bg-primary: #f5efe6;
+      --bg-secondary: #fdfaf2;
+      --bg-card: #fdfaf2;
+      --bg-card-hover: #f7f2e8;
+      --border-color: #e6dbcb;
+      --border-color-hover: #d97706;
+      --text-primary: #473c33;
+      --text-secondary: #6e5f52;
+      --text-muted: #9c8a79;
+      
+      --accent-primary: #d97706;
+      --accent-primary-glow: rgba(217, 119, 6, 0.08);
+      --accent-secondary: #0d9488;
+      --accent-secondary-glow: rgba(13, 148, 136, 0.08);
+      --accent-success: #16a34a;
+      --accent-success-glow: rgba(22, 163, 74, 0.08);
+      --accent-warning: #b45309;
+      --accent-warning-glow: rgba(180, 83, 9, 0.08);
+      
+      --shadow-glow: 0 0 15px rgba(217, 119, 6, 0.1);
+    }
+
+    [data-theme="mint"] {
+      /* Theme 4: 温和薄荷 */
+      --bg-primary: #eefaf4;
+      --bg-secondary: #ffffff;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f4fcf8;
+      --border-color: #cbf0dd;
+      --border-color-hover: #059669;
+      --text-primary: #0f291e;
+      --text-secondary: #334e40;
+      --text-muted: #647c70;
+      
+      --accent-primary: #059669;
+      --accent-primary-glow: rgba(5, 150, 105, 0.08);
+      --accent-secondary: #0284c7;
+      --accent-secondary-glow: rgba(2, 132, 199, 0.08);
+      --accent-success: #10b981;
+      --accent-success-glow: rgba(16, 185, 129, 0.08);
+      --accent-warning: #d97706;
+      --accent-warning-glow: rgba(217, 119, 6, 0.08);
+      
+      --shadow-glow: 0 0 15px rgba(5, 150, 105, 0.1);
+    }
+
     [data-theme="cyberpunk"] {
-      /* Neon Cyberpunk Theme */
+      /* Theme 5: 赛博极客 */
       --bg-primary: #05050a;
       --bg-secondary: #0a0a16;
       --bg-card: rgba(10, 10, 26, 0.85);
@@ -900,30 +948,7 @@
 
     .theme-dot.active {
       transform: scale(1.15);
-    }
-
-    .theme-dot-light {
-      background: #ffffff;
-      border-color: rgba(0, 0, 0, 0.15);
-    }
-    .theme-dot-light.active {
-      border-color: var(--accent-primary);
-    }
-
-    .theme-dot-dark {
-      background: #0f172a;
-      border-color: rgba(255, 255, 255, 0.2);
-    }
-    .theme-dot-dark.active {
-      border-color: var(--accent-primary);
-    }
-
-    .theme-dot-cyber {
-      background: linear-gradient(135deg, #ff007f, #00ffff);
-      border-color: transparent;
-    }
-    .theme-dot-cyber.active {
-      border-color: #ffffff;
+      border-width: 2px;
     }
 
     /* Tooltip */
@@ -1033,11 +1058,13 @@
 
         <!-- Sidebar Footer & Theme Toggle -->
         <div class="glass-card sidebar-footer">
-          <span style="font-size: 12px; color: var(--text-muted);">主题风格</span>
+          <span style="font-size: 12px; color: var(--text-muted);">配色主题</span>
           <div class="theme-selector">
-            <div class="theme-dot theme-dot-light active" onclick="setTheme('light')" data-tooltip="明亮医疗"></div>
-            <div class="theme-dot theme-dot-dark" onclick="setTheme('dark')" data-tooltip="深色模式"></div>
-            <div class="theme-dot theme-dot-cyber" onclick="setTheme('cyberpunk')" data-tooltip="赛博霓虹"></div>
+            <div class="theme-dot theme-dot-light active" onclick="setTheme('light')" data-tooltip="明亮医疗" style="background:#2563eb; border-color:#dbeafe;"></div>
+            <div class="theme-dot theme-dot-dark" onclick="setTheme('dark')" data-tooltip="静谧深蓝" style="background:#101726; border-color:rgba(59, 130, 246, 0.3);"></div>
+            <div class="theme-dot theme-dot-sepia" onclick="setTheme('sepia')" data-tooltip="暖沙柔光" style="background:#d97706; border-color:#e6dbcb;"></div>
+            <div class="theme-dot theme-dot-mint" onclick="setTheme('mint')" data-tooltip="温和薄荷" style="background:#059669; border-color:#cbf0dd;"></div>
+            <div class="theme-dot theme-dot-cyber" onclick="setTheme('cyberpunk')" data-tooltip="赛博霓虹" style="background:linear-gradient(135deg, #ff007f, #00ffff); border-color:transparent;"></div>
           </div>
         </div>
 
@@ -1197,7 +1224,7 @@
         type: "question",
         title: "大脑前动脉",
         english: "",
-        content: "A1水平段、A2上行段、A3膝段、A4胼周段、A5终段\n\n大脑前动脉的分支有三组：\n\n1. 第1组为内侧豆纹动脉，包括返支的分支和基底支，供应壳、尾状核头、内囊前肢下部及下丘脑；\n\n2. 第2组为胼胝体旁支，通常有7~20支细小的胼胝体动脉，分布于胼胝体和透明隔；\n\n3. 第3组为皮质支，所有这些分支的末端都绕过半球的上缘，分布于大脑半球上外侧面的上缘。主要的皮质支包括：在胼胝体膝部的下方发出眶额动脉和额极动脉，分布于额叶眶面和额极；在胼胝体膝部上方向上发出胼缘动脉，转折向后行于扣带沟内，并沿途分出几条上行的分支。其中额前、中、后内侧动脉分布于额内侧回，中央旁动脉分布于中央旁小叶。"
+        content: "A1水平段、A2上行段、A3膝段、A4胼周段、A5终段\n\n大脑前动脉的分支有三组：\n\n1. 第1组为内侧豆纹动脉，包括返支的分支和基底支，供应壳、尾状核头、内囊前肢下部及下丘脑；\n\n2. 第2组为胼胝体旁支，通常有7~20支细小的胼胝体动脉，分布于胼胝体和透明隔；\n\n3. 第3组为皮质支，所有这些分支的末端都绕过半球的上缘，分布于大脑半球上外侧面的上缘。主要的皮质支包括：在胼胝体膝部的下方发出眶额动脉 and 额极动脉，分布于额叶眶面和额极；在胼胝体膝部上方向上发出胼缘动脉，转折向后行于扣带沟内，并沿途分出几条上行的分支。其中额前、中、后内侧动脉分布于额内侧回，中央旁动脉分布于中央旁小叶。"
       },
       {
         id: 10,
@@ -1289,7 +1316,7 @@
         type: "term",
         title: "主动脉肺动脉窗",
         english: "aorticopulmonary window",
-        content: "主动脉升部与主动脉胸部之间至纵隔左侧缘，在CT图像上呈低密度空隙，放射学上称主动脉肺动脉窗。其范围是指主动脉弓下缘和肺动脉杈上缘之间1－2cm的小区域。"
+        content: "主动脉升部与主动脉胸部之间至纵隔左侧缘，在CT图像上呈低密度空隙，放射学上称主动脉肺动脉窗。其范围是指主动脉弓下缘和肺动脉杈上缘之间1－2cm的小区域."
       },
       {
         id: 21,
@@ -1305,7 +1332,7 @@
         type: "term",
         title: "气管前间隙",
         english: "pretracheal space",
-        content: "位于大血管和气管之间。\n\n此间隙向上经胸廓上口与颈部的气管前间隙相续连，向下达气管隆嵴平面。\n\n此间隙在主动脉弓平面和主动脉肺动脉窗平面最大，间隙由主动脉弓、上腔静脉、奇静脉弓和气管围成。\n\n间隙内有气管前淋巴结（奇静脉弓上淋巴结） and 心包上隐窝。"
+        content: "位于大血管和气管之间。\n\n此间隙向上经胸廓上口与颈部的气管前间隙相续连，向下达气管隆嵴平面。\n\n此间隙在主动脉弓平面和主动脉肺动脉窗平面最大，间隙由主动脉弓、上腔静脉、奇静脉弓和气管围成。\n\n间隙内有气管前淋巴结（奇静脉弓上淋巴结）和心包上隐窝。"
       },
       {
         id: 23,
@@ -1321,7 +1348,7 @@
         type: "term",
         title: "隆嵴下间隙",
         english: "subcarinal space",
-        content: "指前方为肺动脉杈和右肺动脉，两侧为左右主支气管，后方为食管所围成的间隙，内有隆嵴下淋巴结。"
+        content: "指前方为肺动脉杈 and 右肺动脉，两侧为左右主支气管，后方为食管所围成的间隙，内有隆嵴下淋巴结。"
       },
       {
         id: 25,
@@ -1329,7 +1356,7 @@
         type: "question",
         title: "简述胸骨角平面的标志性意义",
         english: "",
-        content: "1. 通过第二胸肋关节；\n2. 为上、下纵隔的分界线；\n3. 向后平对第4胸椎下缘；\n4. 平对主动脉弓的起端和止端；\n5. 两侧胸膜前返折向中线靠拢，纵隔前份最窄；\n6. 气管杈出现，上下变化为4－6胸椎体层面，左主支气管与食管相交；\n7. 奇静脉与奇静脉弓出现，向前汇入上腔静脉；\n8. 主主动脉肺动脉窗出现；\n9. 胸导管由右转向左行。"
+        content: "1. 通过第二胸肋关节；\n2. 为上、下纵隔的分界线；\n3. 向后平对第4胸椎下缘；\n4. 平对主动脉弓的起端和止端；\n5. 两侧胸膜前返折向中线靠拢，纵隔前份最窄；\n6. 气管杈出现，上下变化为4－6胸椎体层面，左主支气管与食管相交；\n7. 奇静脉与奇静脉弓出现，向前汇入上腔静脉；\n8. 主动脉肺动脉窗出现；\n9. 胸导管由右转向左行。"
       },
       {
         id: 26,
@@ -1453,7 +1480,7 @@
         type: "question",
         title: "腰神经通道的分部、各部位置、狭窄处及临床意义",
         english: "",
-        content: "1. 神经根管：从腰神经根的硬膜囊穿出点至椎间管内口。\n\n狭窄：1. 盘黄间隙，位于椎间盘与黄韧带之间；2. 上关节突旁沟，是上关节突内缘的浅沟；3. 侧隐窝；4. 椎弓根下沟，位于椎弓根内下缘与椎间盘之间，在椎间盘侧方膨出时更为明显。\n\n2. 椎间管：腰椎间管和腰骶椎间管前壁为椎体及椎间盘，后壁为上关节突和黄韧带，上、下壁分别为相邻椎骨的椎弓根。\n\n腰神经根由内上斜向外下通过椎间管，因此，腰神经根在椎间管内的长度比椎间管的长。\n\n椎间管分为上、下两部：1. 上部宽，位于椎体和关节突关节之间，有腰神经根，腰动脉脊支和椎间静脉上支通过；2. 下部窄，位于椎间盘与上关节突根部之间，只有椎间静脉下支通过，故此部的狭窄并不压迫神经根。"
+        content: "1. 神经根管：从腰神经根的硬膜囊穿出点至椎间管内口。\n\n狭窄：1. 盘黄间隙，位于椎间盘与黄韧带之间；2. 上关节突旁沟，是上关节突内缘的浅沟；3. 侧隐窝；4. 椎弓根下沟，位于椎弓根内下缘与椎间盘之间，在椎间盘侧方膨出时更为明显。\n\n2. 椎间管：腰椎间管和腰骶椎间管的前壁为椎体及椎间盘，后壁为上关节突和黄韧带，上、下壁分别为相邻椎骨的椎弓根。\n\n腰神经根由内上斜向外下通过椎间管，因此，腰神经根在椎间管内的长度比椎间管的长。\n\n椎间管分为上、下两部：1. 上部宽，位于椎体和关节突关节之间，有腰神经根，腰动脉脊支和椎间静脉上支通过；2. 下部窄，位于椎间盘与上关节突根部之间，只有椎间静脉下支通过，故此部的狭窄并不压迫神经根。"
       },
       {
         id: 41,
@@ -1541,6 +1568,8 @@
       document.querySelectorAll('.theme-dot').forEach(dot => dot.classList.remove('active'));
       if (currentTheme === 'light') document.querySelector('.theme-dot-light').classList.add('active');
       else if (currentTheme === 'dark') document.querySelector('.theme-dot-dark').classList.add('active');
+      else if (currentTheme === 'sepia') document.querySelector('.theme-dot-sepia').classList.add('active');
+      else if (currentTheme === 'mint') document.querySelector('.theme-dot-mint').classList.add('active');
       else if (currentTheme === 'cyberpunk') document.querySelector('.theme-dot-cyber').classList.add('active');
     }
 
@@ -1766,19 +1795,38 @@
       renderContent();
     }
 
-    // Highlight key anatomical terms/symbols helper
+    // Highlight key anatomical terms/symbols helper - removes indentation and breaks lists onto new lines
     function formatContent(text) {
-      // Escape HTML first
-      let escaped = text
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;");
-
-      // Replace bold text annotations or list markers to look nicer (like '1.', '2.', etc.)
-      escaped = escaped.replace(/(①|②|③|④|⑤|⑥|⑦|⑧|⑨|⑩|(\d+\.))/g, "<strong>$1</strong>");
+      // 1. Split into lines, trim each line's leading/trailing whitespace to get rid of indentations
+      let lines = text.split('\n');
+      let cleanedLines = lines.map(line => line.trim());
       
-      // Preserve newlines
-      return escaped.replace(/\n/g, "<br>");
+      // 2. Format list items: if a list marker like "X. " is inline, break it onto a new line
+      let joinedText = cleanedLines.join('\n');
+      // Replace "[punctuation] X. " with "[punctuation]\nX. " to enforce newline
+      joinedText = joinedText.replace(/([;；。，：、])\s*(\d+\.)/g, '$1\n$2');
+      
+      // 3. Re-split and trim again to make sure there are NO leading spaces on any line
+      lines = joinedText.split('\n');
+      cleanedLines = lines.map(line => line.trim()).filter(line => line.length > 0);
+      
+      let finalHtml = cleanedLines.map(line => {
+        // Escape HTML
+        let escaped = line
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+          
+        // Bold list numbers at start of line
+        escaped = escaped.replace(/^(\d+\.)/g, "<strong>$1</strong>");
+        
+        // Bold other list numbers or special brackets/markers inside the line
+        escaped = escaped.replace(/(①|②|③|④|⑤|⑥|⑦|⑧|⑨|⑩|(\b\d+\.))/g, "<strong>$1</strong>");
+        
+        return escaped;
+      }).join('<br>');
+      
+      return finalHtml;
     }
 
     // Main Renderer for Browse & Recall Modes
