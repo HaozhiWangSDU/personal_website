@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Parasitology Review Tables - Study Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Top Glassmorphism Navigation Bar -->
+    <header>
+      <div class="header-content">
+        <div class="brand-section">
+          <h1>
+            <i data-lucide="shield-alert" style="color: var(--accent-cyan);"></i>
+            Medical Parasitology
+          </h1>
+          <p>Complete Review & Memorization Cheat Sheet</p>
+        </div>
+        
+        <div class="mode-selector">
+          <button class="mode-btn active" id="mode-table" onclick="setMode('table')">
+            <i data-lucide="table"></i> Table View
+          </button>
+          <button class="mode-btn" id="mode-flashcards" onclick="setMode('flashcards')">
+            <i data-lucide="layers"></i> Flashcard Arena
+          </button>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Sub-navigation: Parasite Categories -->
+    <nav class="category-nav">
+      <div class="category-nav-content" id="category-tabs">
+        <!-- Dynamically populated categories -->
+        <button class="cat-btn active" onclick="setCategory('nematodes')">Nematodes</button>
+        <button class="cat-btn" onclick="setCategory('trematodes')">Trematodes</button>
+        <button class="cat-btn" onclick="setCategory('cestodes')">Cestodes</button>
+        <button class="cat-btn" onclick="setCategory('protozoa')">Protozoa</button>
+        <button class="cat-btn" onclick="setCategory('arthropods')">Medical Arthropods</button>
+        <button class="cat-btn" onclick="setCategory('differentials')">Others</button>
+      </div>
+    </nav>
+    
+    <!-- Main Display Section -->
+    <main>
+      
+      <!-- Table Mode Container -->
+      <section id="table-mode-section" class="content-section active">
+        <!-- Control panel for Table View -->
+        <div class="control-panel">
+          <div class="search-wrapper">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" id="table-search" class="search-input" placeholder="Search parasites, infective stages, pathology..." oninput="handleSearch(this.value)">
+          </div>
+          
+          <div class="actions-wrapper">
+            <!-- Transpose Toggle -->
+            <button class="btn-action" id="btn-transpose" onclick="toggleTranspose()" title="Swap row and column headers">
+              <i data-lucide="repeat"></i> Transpose Table
+            </button>
+            
+            <!-- Compact View Toggle -->
+            <button class="btn-action" id="btn-compact" onclick="toggleCompact()" title="Toggle compact or wide table layout">
+              <i data-lucide="maximize-2"></i> Wide View
+            </button>
+            
+            <!-- Cloze Study Mode Toggle -->
+            <button class="btn-action" id="btn-study-cloze" onclick="toggleClozeStudy()" title="Toggle interactive cloze test mode">
+              <i data-lucide="eye-off"></i> Cloze (Blur Cells)
+            </button>
+            
+            <!-- Cloze Helpers -->
+            <div id="cloze-controls" style="display: none; gap: 0.5rem;">
+              <button class="btn-action" onclick="clozeAction('blur')" title="Blur all cells">
+                <i data-lucide="lock"></i> Hide All
+              </button>
+              <button class="btn-action" onclick="clozeAction('reveal')" title="Reveal all cells">
+                <i data-lucide="unlock"></i> Reveal All
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Table Area -->
+        <div id="table-view-container">
+          <!-- Dynamically populated table list -->
+        </div>
+      </section>
+      
+      <!-- Flashcards Mode Container -->
+      <section id="flashcards-mode-section" class="content-section">
+        <div class="flashcards-container">
+          
+          <!-- Study configuration -->
+          <div class="flashcard-settings">
+            <div class="settings-grid">
+              
+              <div class="settings-group">
+                <label for="deck-select">Study Deck</label>
+                <select id="deck-select" class="select-custom" onchange="initFlashcards()">
+                  <!-- Dynamically populated based on tables -->
+                </select>
+              </div>
+              
+              <div class="settings-group">
+                <label>Test Focus (Hide on Front)</label>
+                <div class="fields-checkbox-grid" id="fields-to-hide-checkboxes">
+                  <!-- Dynamically populated field names -->
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+          <!-- Card Arena -->
+          <div class="flashcard-stage">
+            <div class="flashcard" id="active-flashcard" onclick="flipCard()">
+              
+              <!-- Front Side of Card -->
+              <div class="card-face card-front">
+                <div class="card-header">
+                  <span class="card-category" id="card-front-category">NEMATODE</span>
+                  <span class="card-index" id="card-front-index">1 / 10</span>
+                </div>
+                <div class="card-body">
+                  <div class="card-title-prefix">Parasite</div>
+                  <div class="card-title" id="card-front-term">Ascaris lumbricoides</div>
+                </div>
+                <div class="card-instructions">
+                  <i data-lucide="help-circle" style="width: 1rem; height: 1rem;"></i>
+                  Click card to reveal details (Space)
+                </div>
+              </div>
+              
+              <!-- Back Side of Card -->
+              <div class="card-face card-back">
+                <div class="card-header">
+                  <span class="card-category" id="card-back-category" style="color: var(--accent-emerald); background: rgba(16, 185, 129, 0.1);">REVEALED</span>
+                  <span class="card-index" id="card-back-index">1 / 10</span>
+                </div>
+                <div class="card-body" style="align-items: stretch; text-align: left;">
+                  <div class="attributes-grid" id="card-back-attributes">
+                    <!-- Dynamically populated list of attributes -->
+                  </div>
+                </div>
+                <div class="card-instructions" style="color: var(--text-secondary);">
+                  <i data-lucide="repeat" style="width: 1rem; height: 1rem;"></i>
+                  Click card to hide details (Space)
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+          <!-- Card Controls -->
+          <div class="card-navigation">
+            <button class="card-nav-btn" onclick="prevCard()" title="Previous Card (Left Arrow)">
+              <i data-lucide="arrow-left"></i>
+            </button>
+            
+            <div class="deck-actions">
+              <button class="btn-deck btn-review" onclick="markCardForReview()">
+                <i data-lucide="help-circle"></i> Needs Review (R)
+              </button>
+              <button class="btn-deck btn-know" onclick="markCardKnown()">
+                <i data-lucide="check-circle2"></i> I Know This (K)
+              </button>
+            </div>
+            
+            <button class="card-nav-btn" onclick="nextCard()" title="Next Card (Right Arrow)">
+              <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+          
+          <!-- Progress Stats -->
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="deck-progress"></div>
+          </div>
+          
+          <div class="stats-panel">
+            <div class="stat-item known-stat">Known: <span id="stats-known">0</span></div>
+            <div class="stat-item review-stat">Review: <span id="stats-review">0</span></div>
+            <div class="stat-item">Remaining: <span id="stats-remaining">10</span></div>
+            <div class="stat-item">Total: <span id="stats-total">10</span></div>
+          </div>
+          
+        </div>
+      </section>
+      
+    </main>
+    
+    <!-- App Footer -->
+    <footer style="text-align: center; padding: 2rem; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.85rem;">
+      <p>© Medical Parasitology Study Companion. All content matches word-for-word from "Parasite_Review_Tables_English.docx".</p>
+    </footer>
+    
+  </div>
+  
+  <!-- Lifecycle Modal Overlay -->
+  <div id="lifecycle-modal" class="modal-overlay" onclick="closeLifecycleModal(event)">
+    <div class="modal-content-box" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeLifecycleModal(event)">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="modal-title">
+        <i data-lucide="image" style="color: var(--accent-cyan);"></i>
+        <span id="lifecycle-modal-title">Parasite Lifecycle Diagram</span>
+      </div>
+      <div class="modal-image-wrapper">
+        <img id="lifecycle-modal-img" src="" alt="Lifecycle Diagram">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Load Data and Main Script -->
+  <script src="data.js"></script>
+  <script src="quiz_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
