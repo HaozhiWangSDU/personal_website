@@ -7,6 +7,7 @@ let isTransposed = false;
 let isClozeStudy = false;
 let isCompact = true;
 let searchQuery = '';
+let currentLang = 'en'; // 'en' or 'zh'
 
 // Flashcards state
 let flashcardDeck = [];
@@ -17,19 +18,35 @@ let cardStats = {
   review: new Set()
 };
 
-// Display maps for abbreviations to fit nicely in columns
+// Display maps for abbreviations/translations to fit nicely in columns
 const PATHOGEN_MAP = {
-  'bacteria': 'BACT',
-  'virus': 'VIR',
-  'syndrome': 'SYND'
+  en: {
+    'bacteria': 'BACT',
+    'virus': 'VIR',
+    'syndrome': 'SYND'
+  },
+  zh: {
+    'bacteria': '细菌',
+    'virus': '病毒',
+    'syndrome': '综合征'
+  }
 };
 
 const TRANSMISSION_MAP = {
-  'respiratory': 'RESP',
-  'gastrointestinal': 'GI',
-  'zoonotic': 'ZOON',
-  'blood-borne': 'BLOOD',
-  'syndromic': 'SYND'
+  en: {
+    'respiratory': 'RESP',
+    'gastrointestinal': 'GI',
+    'zoonotic': 'ZOON',
+    'blood-borne': 'BLOOD',
+    'syndromic': 'SYND'
+  },
+  zh: {
+    'respiratory': '呼吸道',
+    'gastrointestinal': '消化道',
+    'zoonotic': '媒介',
+    'blood-borne': '血/性',
+    'syndromic': '系统'
+  }
 };
 
 // Category filter logic
@@ -55,26 +72,205 @@ function filterData(category) {
 
 // Field definitions with display names
 const ATTRIBUTE_FIELDS = [
-  { key: 'definition', label: 'Definition' },
-  { key: 'pathogen', label: 'Pathogen' },
-  { key: 'transmission', label: 'Transmission' },
-  { key: 'pathogenesis', label: 'Pathogenesis' },
-  { key: 'clinical', label: 'Clinical manifestations' },
-  { key: 'diagnosis', label: 'Diagnosis' },
-  { key: 'treatment', label: 'Treatment' },
-  { key: 'prevention', label: 'Prevention' },
-  { key: 'remarks', label: 'Remarks / source notes' }
+  { key: 'definition', label: 'Definition', label_zh: '定义' },
+  { key: 'pathogen', label: 'Pathogen', label_zh: '病原体' },
+  { key: 'transmission', label: 'Transmission', label_zh: '传播途径' },
+  { key: 'pathogenesis', label: 'Pathogenesis', label_zh: '发病机制' },
+  { key: 'clinical', label: 'Clinical manifestations', label_zh: '临床表现' },
+  { key: 'diagnosis', label: 'Diagnosis', label_zh: '诊断' },
+  { key: 'treatment', label: 'Treatment', label_zh: '治疗' },
+  { key: 'prevention', label: 'Prevention', label_zh: '预防' },
+  { key: 'remarks', label: 'Remarks / source notes', label_zh: '备注 / 来源' }
 ];
 
 // Deck options mapping for flashcards
 const DECK_OPTIONS = [
-  { id: 'all', name: 'All Diseases Combined (20)' },
-  { id: 'bacterial', name: 'Bacterial Infections' },
-  { id: 'viral', name: 'Viral Infections' },
-  { id: 'respiratory', name: 'Respiratory / Airborne' },
-  { id: 'gastrointestinal', name: 'Gastrointestinal' },
-  { id: 'zoonotic', name: 'Zoonotic / Vector' }
+  { id: 'all', name: 'All Diseases Combined (20)', name_zh: '所有疾病组合 (20)' },
+  { id: 'bacterial', name: 'Bacterial Infections', name_zh: '细菌性感染' },
+  { id: 'viral', name: 'Viral Infections', name_zh: '病毒性感染' },
+  { id: 'respiratory', name: 'Respiratory / Airborne', name_zh: '呼吸道 / 空气传播' },
+  { id: 'gastrointestinal', name: 'Gastrointestinal', name_zh: '消化道' },
+  { id: 'zoonotic', name: 'Zoonotic / Vector', name_zh: '动物源性 / 媒介传播' }
 ];
+
+const UI_TRANSLATIONS = {
+  en: {
+    title: 'Infectious Diseases',
+    subtitle: 'Complete Review & Memorization Study Board',
+    modeTable: 'Table View',
+    modeFlashcards: 'Flashcard Arena',
+    catAll: 'All Diseases (20)',
+    catBacterial: 'Bacterial Infections',
+    catViral: 'Viral Infections',
+    catRespiratory: 'Respiratory / Airborne',
+    catGastrointestinal: 'Gastrointestinal',
+    catZoonotic: 'Zoonotic / Vector',
+    searchPlaceholder: 'Search diseases, symptoms, treatments...',
+    btnTranspose: 'Transpose Table',
+    btnCompactWide: 'Wide View',
+    btnCompactCompact: 'Compact View',
+    btnCloze: 'Cloze (Blur Cells)',
+    clozeHide: 'Hide All',
+    clozeReveal: 'Reveal All',
+    labelDeckSelect: 'Study Deck',
+    labelTestFocus: 'Test Focus (Hide on Front, Reveal on Back)',
+    cardFrontCategory: 'PATHOGEN TYPE',
+    cardFrontInstructions: 'Click card to reveal details (Space)',
+    cardBackInstructions: 'Click card to hide details (Space)',
+    btnNeedsReview: 'Needs Review (R)',
+    btnIKnowThis: 'I Know This (K)',
+    statKnown: 'Known: ',
+    statReview: 'Review: ',
+    statRemaining: 'Remaining: ',
+    statTotal: 'Total: ',
+    footerText: '© Infectious Diseases Study Companion. All content matches word-for-word from "Infectious_Diseases_Summary_Table_English.md".',
+    deckCompleted: 'Deck Completed!',
+    deckCompletedText: 'You went through all {total} cards in this deck.',
+    deckScore: 'Score: {score}% ({known}/{total} known)',
+    btnRestartStudy: 'Restart Study',
+    langToggle: '中文',
+    tableHeaders: ['Disease', 'Definition', 'Path.', 'Trans.', 'Pathogenesis', 'Clinical manifestations', 'Diagnosis', 'Treatment', 'Prevention', 'Remarks / source notes'],
+    noRecords: 'No records found.',
+    noCards: 'No cards in this deck'
+  },
+  zh: {
+    title: '传染病',
+    subtitle: '完整复习与背诵学习看板',
+    modeTable: '表格视图',
+    modeFlashcards: '卡片竞技场',
+    catAll: '所有疾病 (20)',
+    catBacterial: '细菌性感染',
+    catViral: '病毒性感染',
+    catRespiratory: '呼吸道 / 空气传播',
+    catGastrointestinal: '消化道',
+    catZoonotic: '动物源性 / 媒介传播',
+    searchPlaceholder: '搜索疾病、症状、治疗方案...',
+    btnTranspose: '转置表格',
+    btnCompactWide: '宽屏视图',
+    btnCompactCompact: '紧凑视图',
+    btnCloze: '填空式复习 (模糊单元格)',
+    clozeHide: '全部隐藏',
+    clozeReveal: '全部显示',
+    labelDeckSelect: '学习卡组',
+    labelTestFocus: '测试焦点 (正面隐藏，反面显示)',
+    cardFrontCategory: '病原体类型',
+    cardFrontInstructions: '点击卡片显示详情 (空格键)',
+    cardBackInstructions: '点击卡片隐藏详情 (空格键)',
+    btnNeedsReview: '需要复习 (R)',
+    btnIKnowThis: '我已经掌握 (K)',
+    statKnown: '已掌握: ',
+    statReview: '需复习: ',
+    statRemaining: '剩余: ',
+    statTotal: '总计: ',
+    footerText: '© 传染病学习助手。所有内容与 "Infectious_Diseases_Summary_Table_English.md" 英文原表完全一致。',
+    deckCompleted: '卡组已完成！',
+    deckCompletedText: '你已学习了该卡组的所有 {total} 张卡片。',
+    deckScore: '得分: {score}% ({known}/{total} 已掌握)',
+    btnRestartStudy: '重新学习',
+    langToggle: 'English',
+    tableHeaders: ['疾病', '定义', '病原', '传播', '发病机制', '临床表现', '诊断', '治疗', '预防', '备注 / 来源'],
+    noRecords: '未找到相关记录。',
+    noCards: '该卡组中没有卡片'
+  }
+};
+
+function updateUILanguage() {
+  const trans = UI_TRANSLATIONS[currentLang];
+  
+  // Document HTML title
+  document.title = currentLang === 'zh' ? '传染病背诵助手 - 学习看板' : 'Infectious Diseases Review Dashboard - Study Companion';
+  
+  // Header Title & Subtitle
+  document.querySelector('.brand-section h1').innerHTML = `
+    <i data-lucide="shield-alert" style="color: var(--accent-rose);"></i>
+    ${trans.title}
+  `;
+  document.querySelector('.brand-section p').textContent = trans.subtitle;
+  
+  // Mode Buttons
+  document.getElementById('label-mode-table').textContent = trans.modeTable;
+  document.getElementById('label-mode-flashcards').textContent = trans.modeFlashcards;
+  
+  // Category tabs text
+  document.getElementById('btn-cat-all').textContent = `${currentLang === 'zh' ? '所有疾病' : 'All Diseases'} (20)`;
+  document.getElementById('btn-cat-bacterial').textContent = trans.catBacterial;
+  document.getElementById('btn-cat-viral').textContent = trans.catViral;
+  document.getElementById('btn-cat-respiratory').textContent = trans.catRespiratory;
+  document.getElementById('btn-cat-gastrointestinal').textContent = trans.catGastrointestinal;
+  document.getElementById('btn-cat-zoonotic').textContent = trans.catZoonotic;
+  
+  // Search input
+  document.getElementById('table-search').placeholder = trans.searchPlaceholder;
+  
+  // Action Buttons in Table View
+  updateButtonTextPreservingIcon('btn-transpose', 'repeat', trans.btnTranspose);
+  const btnTranspose = document.getElementById('btn-transpose');
+  if (btnTranspose) {
+    btnTranspose.title = currentLang === 'zh' ? '交换行和列标题 (转置)' : 'Swap row and column headers';
+  }
+  
+  const compactText = isCompact ? trans.btnCompactWide : trans.btnCompactCompact;
+  const compactIcon = isCompact ? 'maximize-2' : 'minimize-2';
+  updateButtonTextPreservingIcon('btn-compact', compactIcon, compactText);
+  const btnCompact = document.getElementById('btn-compact');
+  if (btnCompact) {
+    btnCompact.title = currentLang === 'zh' ? '切换紧凑/宽屏布局' : 'Toggle compact or wide table layout';
+  }
+  
+  updateButtonTextPreservingIcon('btn-study-cloze', 'eye-off', trans.btnCloze);
+  const btnCloze = document.getElementById('btn-study-cloze');
+  if (btnCloze) {
+    btnCloze.title = currentLang === 'zh' ? '开启/关闭交互式填空测试' : 'Toggle interactive cloze test mode';
+  }
+  
+  // Cloze Helpers
+  const clozeHideBtn = document.querySelector('#cloze-controls button:first-child');
+  if (clozeHideBtn) {
+    clozeHideBtn.innerHTML = `<i data-lucide="lock"></i> ${trans.clozeHide}`;
+    clozeHideBtn.title = currentLang === 'zh' ? '隐藏所有单元格内容' : 'Blur all cells';
+  }
+  const clozeRevealBtn = document.querySelector('#cloze-controls button:nth-child(2)');
+  if (clozeRevealBtn) {
+    clozeRevealBtn.innerHTML = `<i data-lucide="unlock"></i> ${trans.clozeReveal}`;
+    clozeRevealBtn.title = currentLang === 'zh' ? '显示所有单元格内容' : 'Reveal all cells';
+  }
+  
+  // Flashcard Settings labels
+  const deckSelectLabel = document.querySelector('label[for="deck-select"]');
+  if (deckSelectLabel) deckSelectLabel.textContent = trans.labelDeckSelect;
+  
+  const focusLabel = document.querySelector('.settings-group:nth-child(2) label');
+  if (focusLabel) focusLabel.textContent = trans.labelTestFocus;
+  
+  // Language Toggle Label
+  document.getElementById('lang-toggle-label').textContent = trans.langToggle;
+  
+  // Footer text
+  document.querySelector('footer p').textContent = trans.footerText;
+  
+  // Recreate lucide icons
+  lucide.createIcons();
+}
+
+function updateButtonTextPreservingIcon(btnId, iconName, text) {
+  const btn = document.getElementById(btnId);
+  if (btn) {
+    btn.innerHTML = `<i data-lucide="${iconName}"></i> ${text}`;
+  }
+}
+
+function toggleLanguage() {
+  currentLang = currentLang === 'en' ? 'zh' : 'en';
+  
+  updateUILanguage();
+  initDeckDropdown();
+  
+  if (currentMode === 'table') {
+    renderCategory();
+  } else {
+    initFlashcards();
+  }
+}
 
 // Initialize application
 document.addEventListener('DOMContentLoaded', () => {
@@ -84,6 +280,9 @@ document.addEventListener('DOMContentLoaded', () => {
       '<div style="color: var(--accent-red); text-align: center; padding: 3rem;">Error: data.js failed to load.</div>';
     return;
   }
+  
+  // Apply initial language UI translations
+  updateUILanguage();
   
   // Render current category table
   renderCategory();
@@ -164,22 +363,32 @@ function renderCategory() {
   lucide.createIcons();
 }
 
-// Helper to check if a row matches search query
+// Helper to check if a row matches search query (bilingual support)
 function rowMatchesSearch(item, query) {
   if (!query) return true;
   const q = query.toLowerCase();
   
   return (
     item.disease.toLowerCase().includes(q) ||
+    (item.disease_zh && item.disease_zh.toLowerCase().includes(q)) ||
     item.definition.toLowerCase().includes(q) ||
+    (item.definition_zh && item.definition_zh.toLowerCase().includes(q)) ||
     item.pathogen.toLowerCase().includes(q) ||
+    (item.pathogen_zh && item.pathogen_zh.toLowerCase().includes(q)) ||
     item.transmission.some(t => t.toLowerCase().includes(q)) ||
+    (item.transmission_zh && item.transmission_zh.some(t => t.toLowerCase().includes(q))) ||
     item.pathogenesis.toLowerCase().includes(q) ||
+    (item.pathogenesis_zh && item.pathogenesis_zh.toLowerCase().includes(q)) ||
     item.clinical.toLowerCase().includes(q) ||
+    (item.clinical_zh && item.clinical_zh.toLowerCase().includes(q)) ||
     item.diagnosis.toLowerCase().includes(q) ||
+    (item.diagnosis_zh && item.diagnosis_zh.toLowerCase().includes(q)) ||
     item.treatment.toLowerCase().includes(q) ||
+    (item.treatment_zh && item.treatment_zh.toLowerCase().includes(q)) ||
     item.prevention.toLowerCase().includes(q) ||
-    item.remarks.toLowerCase().includes(q)
+    (item.prevention_zh && item.prevention_zh.toLowerCase().includes(q)) ||
+    item.remarks.toLowerCase().includes(q) ||
+    (item.remarks_zh && item.remarks_zh.toLowerCase().includes(q))
   );
 }
 
@@ -189,7 +398,7 @@ function renderNormalTable(table, dataList) {
   const trHead = document.createElement('tr');
   
   // Header Columns
-  const headers = ['Disease', 'Definition', 'Path.', 'Trans.', 'Pathogenesis', 'Clinical manifestations', 'Diagnosis', 'Treatment', 'Prevention', 'Remarks / source notes'];
+  const headers = UI_TRANSLATIONS[currentLang].tableHeaders;
   headers.forEach(h => {
     const th = document.createElement('th');
     th.textContent = h;
@@ -207,52 +416,62 @@ function renderNormalTable(table, dataList) {
     
     // 1. Disease
     const tdDisease = document.createElement('td');
-    tdDisease.innerHTML = formatCellContent(item.disease, searchQuery);
+    const diseaseText = currentLang === 'zh' ? item.disease_zh : item.disease;
+    tdDisease.innerHTML = formatCellContent(diseaseText, searchQuery);
     tr.appendChild(tdDisease);
     
     // 2. Definition
     const tdDef = document.createElement('td');
-    tdDef.appendChild(createTableCellInner(item.definition, true));
+    const defText = currentLang === 'zh' ? item.definition_zh : item.definition;
+    tdDef.appendChild(createTableCellInner(defText, true));
     tr.appendChild(tdDef);
     
     // 3. Pathogen
     const tdPathogen = document.createElement('td');
-    tdPathogen.appendChild(createTableCellInner(item.pathogen, true, true));
+    const pathogenText = currentLang === 'zh' ? item.pathogen_zh : (PATHOGEN_MAP.en[item.pathogen] || item.pathogen);
+    tdPathogen.appendChild(createTableCellInner(pathogenText, true, true, false, item.pathogen));
     tr.appendChild(tdPathogen);
     
     // 4. Transmission
     const tdTrans = document.createElement('td');
-    tdTrans.appendChild(createTableCellInner(item.transmission, true, false, true));
+    const transmissionText = currentLang === 'zh' ? item.transmission_zh : item.transmission.map(t => TRANSMISSION_MAP.en[t] || t);
+    tdTrans.appendChild(createTableCellInner(transmissionText, true, false, true));
     tr.appendChild(tdTrans);
     
     // 5. Pathogenesis
     const tdPatho = document.createElement('td');
-    tdPatho.appendChild(createTableCellInner(item.pathogenesis, true));
+    const pathogenesisText = currentLang === 'zh' ? item.pathogenesis_zh : item.pathogenesis;
+    tdPatho.appendChild(createTableCellInner(pathogenesisText, true));
     tr.appendChild(tdPatho);
     
     // 6. Clinical
     const tdClin = document.createElement('td');
-    tdClin.appendChild(createTableCellInner(item.clinical, true));
+    const clinicalText = currentLang === 'zh' ? item.clinical_zh : item.clinical;
+    tdClin.appendChild(createTableCellInner(clinicalText, true));
     tr.appendChild(tdClin);
     
     // 7. Diagnosis
     const tdDiag = document.createElement('td');
-    tdDiag.appendChild(createTableCellInner(item.diagnosis, true));
+    const diagnosisText = currentLang === 'zh' ? item.diagnosis_zh : item.diagnosis;
+    tdDiag.appendChild(createTableCellInner(diagnosisText, true));
     tr.appendChild(tdDiag);
     
     // 8. Treatment
     const tdTreat = document.createElement('td');
-    tdTreat.appendChild(createTableCellInner(item.treatment, true));
+    const treatmentText = currentLang === 'zh' ? item.treatment_zh : item.treatment;
+    tdTreat.appendChild(createTableCellInner(treatmentText, true));
     tr.appendChild(tdTreat);
     
     // 9. Prevention
     const tdPrev = document.createElement('td');
-    tdPrev.appendChild(createTableCellInner(item.prevention, true));
+    const preventionText = currentLang === 'zh' ? item.prevention_zh : item.prevention;
+    tdPrev.appendChild(createTableCellInner(preventionText, true));
     tr.appendChild(tdPrev);
     
     // 10. Remarks
     const tdRemarks = document.createElement('td');
-    tdRemarks.appendChild(createTableCellInner(item.remarks, true));
+    const remarksText = currentLang === 'zh' ? item.remarks_zh : item.remarks;
+    tdRemarks.appendChild(createTableCellInner(remarksText, true));
     tr.appendChild(tdRemarks);
     
     tbody.appendChild(tr);
@@ -273,7 +492,7 @@ function renderTransposedTable(table, dataList) {
   if (activeList.length === 0) {
     const tr = document.createElement('tr');
     const td = document.createElement('td');
-    td.textContent = 'No records match search.';
+    td.textContent = currentLang === 'zh' ? '没有匹配的记录。' : 'No records match search.';
     tr.appendChild(td);
     tbody.appendChild(tr);
     table.appendChild(tbody);
@@ -282,16 +501,16 @@ function renderTransposedTable(table, dataList) {
   
   // Rows: Attribute categories
   const rowsConfig = [
-    { label: 'Disease', key: 'disease', isHeader: true },
-    { label: 'Definition', key: 'definition' },
-    { label: 'Pathogen', key: 'pathogen', isBadge: true },
-    { label: 'Transmission', key: 'transmission', isMultiBadge: true },
-    { label: 'Pathogenesis', key: 'pathogenesis' },
-    { label: 'Clinical manifestations', key: 'clinical' },
-    { label: 'Diagnosis', key: 'diagnosis' },
-    { label: 'Treatment', key: 'treatment' },
-    { label: 'Prevention', key: 'prevention' },
-    { label: 'Remarks / source notes', key: 'remarks' }
+    { label: 'Disease', label_zh: '疾病', key: 'disease', isHeader: true },
+    { label: 'Definition', label_zh: '定义', key: 'definition' },
+    { label: 'Pathogen', label_zh: '病原体', key: 'pathogen', isBadge: true },
+    { label: 'Transmission', label_zh: '传播途径', key: 'transmission', isMultiBadge: true },
+    { label: 'Pathogenesis', label_zh: '发病机制', key: 'pathogenesis' },
+    { label: 'Clinical manifestations', label_zh: '临床表现', key: 'clinical' },
+    { label: 'Diagnosis', label_zh: '诊断', key: 'diagnosis' },
+    { label: 'Treatment', label_zh: '治疗', key: 'treatment' },
+    { label: 'Prevention', label_zh: '预防', key: 'prevention' },
+    { label: 'Remarks / source notes', label_zh: '备注 / 来源', key: 'remarks' }
   ];
   
   rowsConfig.forEach(rowInfo => {
@@ -299,14 +518,17 @@ function renderTransposedTable(table, dataList) {
     
     // First column: Row header
     const tdLabel = document.createElement('td');
-    tdLabel.textContent = rowInfo.label;
+    tdLabel.textContent = currentLang === 'zh' ? rowInfo.label_zh : rowInfo.label;
     tr.appendChild(tdLabel);
     
     // Value columns: diseases
     activeList.forEach(item => {
       const tdVal = document.createElement('td');
       
-      const val = item[rowInfo.key];
+      const key = (currentLang === 'zh' && rowInfo.key !== 'pathogen' && rowInfo.key !== 'transmission')
+        ? `${rowInfo.key}_zh`
+        : rowInfo.key;
+      const val = item[key];
       const isCloze = isClozeStudy && !rowInfo.isHeader;
       
       if (isCloze) {
@@ -315,10 +537,10 @@ function renderTransposedTable(table, dataList) {
         
         const contentDiv = document.createElement('div');
         contentDiv.className = 'cloze-content';
-        renderCellToElement(contentDiv, val, rowInfo);
+        renderCellToElement(contentDiv, val, rowInfo, item);
         tdVal.appendChild(contentDiv);
       } else {
-        renderCellToElement(tdVal, val, rowInfo);
+        renderCellToElement(tdVal, val, rowInfo, item);
       }
       
       tr.appendChild(tdVal);
@@ -331,20 +553,21 @@ function renderTransposedTable(table, dataList) {
 }
 
 // Render cell value inside a parent element for Transposed table
-function renderCellToElement(element, val, rowInfo) {
+function renderCellToElement(element, val, rowInfo, item) {
   if (rowInfo.isHeader) {
     element.innerHTML = formatCellContent(val, searchQuery);
   } else if (rowInfo.isBadge) {
     const span = document.createElement('span');
     span.className = `badge badge-${val}`;
-    const dispVal = PATHOGEN_MAP[val] || val;
+    const dispVal = currentLang === 'zh' ? item.pathogen_zh : (PATHOGEN_MAP.en[val] || val);
     span.innerHTML = formatCellContent(dispVal, searchQuery);
     element.appendChild(span);
   } else if (rowInfo.isMultiBadge) {
-    val.forEach(t => {
+    const transList = currentLang === 'zh' ? item.transmission_zh : item.transmission;
+    transList.forEach((t, idx) => {
       const span = document.createElement('span');
       span.className = 'badge badge-transmission';
-      const dispVal = TRANSMISSION_MAP[t] || t;
+      const dispVal = currentLang === 'zh' ? t : (TRANSMISSION_MAP.en[item.transmission[idx]] || t);
       span.innerHTML = formatCellContent(dispVal, searchQuery);
       element.appendChild(span);
     });
@@ -354,7 +577,7 @@ function renderCellToElement(element, val, rowInfo) {
 }
 
 // Create cell inner element for normal table view (supporting Cloze)
-function createTableCellInner(val, allowCloze, isPathogenBadge = false, isTransmissionBadge = false) {
+function createTableCellInner(val, allowCloze, isPathogenBadge = false, isTransmissionBadge = false, pathogenType = '') {
   const outer = document.createElement('div');
   const isCloze = isClozeStudy && allowCloze;
   
@@ -374,16 +597,14 @@ function createTableCellInner(val, allowCloze, isPathogenBadge = false, isTransm
   
   if (isPathogenBadge) {
     const span = document.createElement('span');
-    span.className = `badge badge-${val}`;
-    const dispVal = PATHOGEN_MAP[val] || val;
-    span.innerHTML = formatCellContent(dispVal, searchQuery);
+    span.className = `badge badge-${pathogenType || val}`;
+    span.innerHTML = formatCellContent(val, searchQuery);
     targetNode.appendChild(span);
   } else if (isTransmissionBadge) {
     val.forEach(t => {
       const span = document.createElement('span');
       span.className = 'badge badge-transmission';
-      const dispVal = TRANSMISSION_MAP[t] || t;
-      span.innerHTML = formatCellContent(dispVal, searchQuery);
+      span.innerHTML = formatCellContent(t, searchQuery);
       targetNode.appendChild(span);
     });
   } else {
@@ -499,7 +720,7 @@ function clozeAction(action) {
 // FLASHCARD ENGINE
 // ==========================================
 
-// Populate study decks in dropdown
+// Populate study decks in dropdown (bilingual support)
 function initDeckDropdown() {
   const select = document.getElementById('deck-select');
   select.innerHTML = '';
@@ -507,7 +728,7 @@ function initDeckDropdown() {
   DECK_OPTIONS.forEach(opt => {
     const el = document.createElement('option');
     el.value = opt.id;
-    el.textContent = opt.name;
+    el.textContent = currentLang === 'zh' ? opt.name_zh : opt.name;
     select.appendChild(el);
   });
 }
@@ -520,24 +741,27 @@ function initFlashcards() {
   flashcardDeck = [];
   rawCards.forEach(item => {
     let card = {
-      disease: item.disease,
+      disease: currentLang === 'zh' ? item.disease_zh : item.disease,
       pathogenType: item.pathogen.toUpperCase(),
-      attributes: []
+      attributes: [],
+      rawItem: item
     };
     
     // Add all attributes in the requested order
     ATTRIBUTE_FIELDS.forEach(field => {
       let htmlVal = '';
       if (field.key === 'pathogen') {
-        const dispVal = PATHOGEN_MAP[item.pathogen] || item.pathogen;
+        const dispVal = currentLang === 'zh' ? item.pathogen_zh : (PATHOGEN_MAP.en[item.pathogen] || item.pathogen);
         htmlVal = `<span class="badge badge-${item.pathogen}">${dispVal}</span>`;
       } else if (field.key === 'transmission') {
-        htmlVal = item.transmission.map(t => {
-          const dispVal = TRANSMISSION_MAP[t] || t;
+        const transList = currentLang === 'zh' ? item.transmission_zh : item.transmission;
+        htmlVal = transList.map((t, idx) => {
+          const dispVal = currentLang === 'zh' ? t : (TRANSMISSION_MAP.en[item.transmission[idx]] || t);
           return `<span class="badge badge-transmission">${dispVal}</span>`;
         }).join(' ');
       } else {
-        htmlVal = formatCellContent(item[field.key]);
+        const key = currentLang === 'zh' ? `${field.key}_zh` : field.key;
+        htmlVal = formatCellContent(item[key]);
       }
       
       card.attributes.push({
@@ -588,7 +812,8 @@ function populateFieldSelector() {
     cb.onchange = updateHiddenFields;
     
     label.appendChild(cb);
-    label.appendChild(document.createTextNode(field.label));
+    const labelText = currentLang === 'zh' ? field.label_zh : field.label;
+    label.appendChild(document.createTextNode(' ' + labelText));
     container.appendChild(label);
   });
   
@@ -615,7 +840,9 @@ function updateHiddenFields() {
 // Show card at current index
 function showCard() {
   const cardNode = document.getElementById('active-flashcard');
-  cardNode.classList.remove('flipped');
+  if (cardNode) {
+    cardNode.classList.remove('flipped');
+  }
   
   if (flashcardDeck.length === 0) {
     renderEmptyDeck();
@@ -628,10 +855,15 @@ function showCard() {
   }
   
   const card = flashcardDeck[currentCardIndex];
+  const item = card.rawItem;
+  
+  const dispPathogenType = currentLang === 'zh'
+    ? item.pathogen_zh
+    : (PATHOGEN_MAP.en[item.pathogen] || card.pathogenType);
   
   // Set category label
-  document.getElementById('card-front-category').textContent = card.pathogenType;
-  document.getElementById('card-back-category').textContent = `${card.pathogenType} - REVEALED`;
+  document.getElementById('card-front-category').textContent = dispPathogenType;
+  document.getElementById('card-back-category').textContent = currentLang === 'zh' ? `${dispPathogenType} - 已显示` : `${dispPathogenType} - REVEALED`;
   
   // Set index indicator
   const idxStr = `${currentCardIndex + 1} / ${flashcardDeck.length}`;
@@ -641,11 +873,41 @@ function showCard() {
   // Set term (Front title)
   document.getElementById('card-front-term').textContent = card.disease;
   
+  // Set Front title prefix label
+  const titlePrefix = document.querySelector('.card-front .card-title-prefix');
+  if (titlePrefix) {
+    titlePrefix.textContent = currentLang === 'zh' ? '疾病' : 'Disease';
+  }
+  
+  // Instructions
+  const trans = UI_TRANSLATIONS[currentLang];
+  document.querySelector('.card-front .card-instructions').innerHTML = `
+    <i data-lucide="help-circle" style="width: 1rem; height: 1rem;"></i>
+    ${trans.cardFrontInstructions}
+  `;
+  document.querySelector('.card-back .card-instructions').innerHTML = `
+    <i data-lucide="repeat" style="width: 1rem; height: 1rem;"></i>
+    ${trans.cardBackInstructions}
+  `;
+  
+  // Buttons
+  const reviewBtn = document.querySelector('.btn-review');
+  if (reviewBtn) {
+    reviewBtn.innerHTML = `<i data-lucide="help-circle"></i> ${trans.btnNeedsReview}`;
+  }
+  const knowBtn = document.querySelector('.btn-know');
+  if (knowBtn) {
+    knowBtn.innerHTML = `<i data-lucide="check-circle2"></i> ${trans.btnIKnowThis}`;
+  }
+  
   // Populate back details
   updateCardBack();
   
   // Update progress bar & stats
   updateStats();
+  
+  // Recreate Lucide Icons
+  lucide.createIcons();
 }
 
 // Populate back details of active card
@@ -662,7 +924,10 @@ function updateCardBack() {
     
     const name = document.createElement('span');
     name.className = 'attr-name';
-    name.textContent = attr.name;
+    
+    const field = ATTRIBUTE_FIELDS.find(f => f.label === attr.name);
+    const displayName = (field && currentLang === 'zh') ? field.label_zh : attr.name;
+    name.textContent = displayName;
     item.appendChild(name);
     
     const val = document.createElement('div');
@@ -722,11 +987,12 @@ function updateStats() {
   const known = cardStats.known.size;
   const review = cardStats.review.size;
   const remaining = total - currentCardIndex;
+  const trans = UI_TRANSLATIONS[currentLang];
   
-  document.getElementById('stats-known').textContent = known;
-  document.getElementById('stats-review').textContent = review;
-  document.getElementById('stats-remaining').textContent = Math.max(0, remaining);
-  document.getElementById('stats-total').textContent = total;
+  document.querySelector('.known-stat').innerHTML = `${trans.statKnown}<span id="stats-known">${known}</span>`;
+  document.querySelector('.review-stat').innerHTML = `${trans.statReview}<span id="stats-review">${review}</span>`;
+  document.querySelector('.stats-panel div:nth-child(3)').innerHTML = `${trans.statRemaining}<span id="stats-remaining">${Math.max(0, remaining)}</span>`;
+  document.querySelector('.stats-panel div:nth-child(4)').innerHTML = `${trans.statTotal}<span id="stats-total">${total}</span>`;
   
   const progressPercent = (currentCardIndex / total) * 100;
   document.getElementById('deck-progress').style.width = `${progressPercent}%`;
@@ -734,7 +1000,8 @@ function updateStats() {
 
 // Empty state
 function renderEmptyDeck() {
-  document.getElementById('card-front-term').textContent = 'No cards in this deck';
+  const trans = UI_TRANSLATIONS[currentLang];
+  document.getElementById('card-front-term').textContent = trans.noCards;
   document.getElementById('card-back-attributes').innerHTML = '';
 }
 
@@ -744,15 +1011,16 @@ function renderDeckFinished() {
   const known = cardStats.known.size;
   const total = flashcardDeck.length;
   const score = Math.round((known / total) * 100) || 0;
+  const trans = UI_TRANSLATIONS[currentLang];
   
   stage.innerHTML = `
     <div class="deck-completed">
       <i data-lucide="trophy"></i>
-      <h3>Deck Completed!</h3>
-      <p>You went through all ${total} cards in this deck.</p>
-      <p style="font-size: 1.1rem; font-weight: 700; color: var(--accent-teal);">Score: ${score}% (${known}/${total} known)</p>
+      <h3>${trans.deckCompleted}</h3>
+      <p>${trans.deckCompletedText.replace('{total}', total)}</p>
+      <p style="font-size: 1.1rem; font-weight: 700; color: var(--accent-teal);">${trans.deckScore.replace('{score}', score).replace('{known}', known).replace('{total}', total)}</p>
       <button class="btn-action" style="margin-top: 1.5rem;" onclick="restartDeck()">
-        <i data-lucide="refresh-cw"></i> Restart Study
+        <i data-lucide="refresh-cw"></i> ${trans.btnRestartStudy}
       </button>
     </div>
   `;
@@ -762,20 +1030,21 @@ function renderDeckFinished() {
 
 function restartDeck() {
   const stage = document.querySelector('.flashcard-stage');
+  const trans = UI_TRANSLATIONS[currentLang];
   stage.innerHTML = `
     <div class="flashcard" id="active-flashcard" onclick="flipCard()">
       <div class="card-face card-front">
         <div class="card-header">
-          <span class="card-category" id="card-front-category">PATHOGEN TYPE</span>
+          <span class="card-category" id="card-front-category">${trans.cardFrontCategory}</span>
           <span class="card-index" id="card-front-index">1 / 1</span>
         </div>
         <div class="card-body">
-          <div class="card-title-prefix">Disease</div>
+          <div class="card-title-prefix">${currentLang === 'zh' ? '疾病' : 'Disease'}</div>
           <div class="card-title" id="card-front-term">Term</div>
         </div>
         <div class="card-instructions">
           <i data-lucide="help-circle" style="width: 1rem; height: 1rem;"></i>
-          Click card to reveal details (Space)
+          ${trans.cardFrontInstructions}
         </div>
       </div>
       <div class="card-face card-back">
@@ -788,7 +1057,7 @@ function restartDeck() {
         </div>
         <div class="card-instructions" style="color: var(--text-secondary);">
           <i data-lucide="repeat" style="width: 1rem; height: 1rem;"></i>
-          Click card to hide details (Space)
+          ${trans.cardBackInstructions}
         </div>
       </div>
     </div>

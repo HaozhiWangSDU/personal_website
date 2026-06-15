@@ -22,12 +22,19 @@
           <p>Complete Review & Memorization Study Board</p>
         </div>
         
-        <div class="mode-selector">
-          <button class="mode-btn active" id="mode-table" onclick="setMode('table')">
-            <i data-lucide="table"></i> Table View
-          </button>
-          <button class="mode-btn" id="mode-flashcards" onclick="setMode('flashcards')">
-            <i data-lucide="layers"></i> Flashcard Arena
+        <div class="header-controls">
+          <div class="mode-selector">
+            <button class="mode-btn active" id="mode-table" onclick="setMode('table')">
+              <i data-lucide="table"></i> <span id="label-mode-table">Table View</span>
+            </button>
+            <button class="mode-btn" id="mode-flashcards" onclick="setMode('flashcards')">
+              <i data-lucide="layers"></i> <span id="label-mode-flashcards">Flashcard Arena</span>
+            </button>
+          </div>
+          
+          <button class="lang-toggle-btn" id="lang-toggle-btn" onclick="toggleLanguage()" title="Switch language / 切换语言">
+            <i data-lucide="languages"></i>
+            <span id="lang-toggle-label">中文</span>
           </button>
         </div>
       </div>

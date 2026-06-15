@@ -142,6 +142,43 @@ header {
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
 }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+  height: 38px; /* Alignment with mode selector */
+  box-sizing: border-box;
+}
+
+.lang-toggle-btn:hover {
+  background: var(--bg-card);
+  border-color: var(--accent-indigo);
+  color: var(--accent-indigo);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+.lang-toggle-btn:active {
+  transform: translateY(0);
+}
+
 /* Category Navigation (Sub-header) */
 .category-nav {
   background: rgba(248, 250, 252, 0.85);
