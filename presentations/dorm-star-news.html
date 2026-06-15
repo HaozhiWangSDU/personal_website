@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>长风破浪会有时，直挂云帆济沧海！山东大学7209宿舍荣膺“四星级宿舍”称号 - 山东大学中央通讯社</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="山大中通社济南电：山东大学基础医学院7209宿舍以100%的政治热忱、硬核学风作息、内务美学极致、零安全隐患和和谐氛围，荣获学校四星级宿舍称号，展现新时代山大学子风采。">
+    <meta name="keywords" content="山东大学, 7209宿舍, 四星级宿舍, 赵传昊, 基础医学院, 山东大学中央通讯社">
+    
+    <style>
+        /* ===========================================
+           DESIGN SYSTEM: SDU CENTRAL NEWS PORTAL VIBE
+           =========================================== */
+        :root {
+            --xinhua-red: #c00000;
+            --xinhua-red-hover: #e60000;
+            --bg-body: #f7f7f7;
+            --bg-content: #ffffff;
+            --text-dark: #222222;
+            --text-muted: #666666;
+            --border-color: #e0e0e0;
+            
+            /* Typography: SimSun (宋体) as requested */
+            --font-editorial: "SimSun", "STSong", "Songti SC", "Noto Serif CJK SC", Georgia, serif;
+            --font-sans: "SimHei", "STHeiti", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            font-family: var(--font-editorial);
+            font-size: 18px;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===========================================
+           HEADER CONTAINER & NEWS LOGO
+           =========================================== */
+        .header-top-bar {
+            background-color: #ffffff;
+            border-bottom: 3px solid var(--xinhua-red);
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .xinhua-logo {
+            font-family: var(--font-sans);
+            font-weight: bold;
+            font-size: 22px;
+            color: var(--xinhua-red);
+            text-decoration: none;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .xinhua-logo span {
+            color: #333333;
+            font-size: 14px;
+            font-weight: normal;
+            border-left: 1px solid var(--border-color);
+            padding-left: 10px;
+        }
+
+        .back-btn {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid var(--border-color);
+            padding: 5px 12px;
+            border-radius: 4px;
+            background: #fafafa;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            color: var(--xinhua-red);
+            border-color: var(--xinhua-red);
+            background: #fff;
+        }
+
+        /* --- Breadcrumb Navigation --- */
+        .breadcrumb-wrapper {
+            max-width: 1000px;
+            margin: 20px auto 10px auto;
+            padding: 0 20px;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .breadcrumb-wrapper a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .breadcrumb-wrapper a:hover {
+            color: var(--xinhua-red);
+        }
+
+        /* ===========================================
+           MAIN CONTENT ARTICLE AREA
+           =========================================== */
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto 50px auto;
+            background-color: var(--bg-content);
+            padding: 40px 60px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        /* Headlines */
+        .article-headline {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .article-subheadline {
+            font-size: 20px;
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        /* Meta Information */
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .article-meta span strong {
+            color: var(--xinhua-red);
+        }
+
+        /* --- News Highlights Box (Core Reading) --- */
+        .core-reading-box {
+            background-color: #fff9f9;
+            border: 1px solid #ffcccc;
+            border-left: 5px solid var(--xinhua-red);
+            padding: 20px 25px;
+            margin-bottom: 35px;
+            border-radius: 2px;
+        }
+
+        .core-reading-title {
+            font-family: var(--font-sans);
+            font-weight: bold;
+            color: var(--xinhua-red);
+            font-size: 16px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .core-reading-list {
+            font-size: 16px;
+            color: #444;
+            padding-left: 20px;
+        }
+
+        .core-reading-list li {
+            margin-bottom: 8px;
+        }
+
+        /* --- Article Body Paragraphs --- */
+        .article-body p {
+            text-indent: 2em; /* Standard Chinese printing style */
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        /* Lead paragraph */
+        .article-lead {
+            font-weight: bold;
+            color: #111111;
+        }
+
+        /* Bold lead location citation */
+        .byline-citation {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        /* Section Headings */
+        .section-title {
+            font-family: var(--font-sans);
+            font-size: 22px;
+            font-weight: bold;
+            color: #000000;
+            border-left: 4px solid var(--xinhua-red);
+            padding-left: 12px;
+            margin: 40px 0 20px 0;
+            line-height: 1.2;
+        }
+
+        /* ===========================================
+           LEADER PORTRAIT SPOTLIGHT (IMAGE & CAPTION)
+           =========================================== */
+        .leader-spotlight-container {
+            margin: 35px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fafafa;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .leader-image-wrapper {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            background: #fff;
+            display: flex;
+            justify-content: center;
+        }
+
+        .leader-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+
+        .leader-caption {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 10px;
+            text-align: center;
+            font-family: var(--font-sans);
+        }
+
+        /* --- Quote block --- */
+        .leader-quote-box {
+            position: relative;
+            background-color: #f9f9f9;
+            border-left: 4px solid var(--border-color);
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-style: italic;
+            color: #333333;
+        }
+
+        .quote-title {
+            font-family: var(--font-sans);
+            font-weight: bold;
+            color: var(--xinhua-red);
+            font-style: normal;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        /* ===========================================
+           EDITORIAL CLOSING / AUTHOR SIGNATURE
+           =========================================== */
+        .editorial-closing {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 16px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-sans);
+        }
+
+        .editor-signature {
+            font-style: italic;
+        }
+
+        /* ===========================================
+           RESPONSIVE VIEWPORT DESIGN
+           =========================================== */
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 25px 20px;
+                border: none;
+            }
+            .article-headline {
+                font-size: 24px;
+            }
+            .article-subheadline {
+                font-size: 16px;
+            }
+            .article-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+            body {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header bar -->
+    <header class="header-top-bar">
+        <div class="header-content">
+            <a href="#" class="xinhua-logo">
+                山东大学中央通讯社 <span>趵突泉校区分社 / 基础医学院</span>
+            </a>
+            <a href="../presentations.html" class="back-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12,19 5,12 12,5"></polyline></svg>
+                返回报告集
+            </a>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumb-wrapper">
+        您当前的位置：山东大学中央通讯社 &gt; 本科生教育 &gt; 荣誉榜 &gt; 正文
+    </div>
+
+    <!-- Main article container -->
+    <main class="main-container reveal visible">
+        <!-- Headline -->
+        <h1 class="article-headline" id="txtHeadline">长风破浪会有时，直挂云帆济沧海！山东大学7209宿舍荣膺“四星级宿舍”称号</h1>
+        
+        <!-- Subheadline -->
+        <div class="article-subheadline" id="txtSubheadline">以求真务实为要，以团结协作为本：7209宿舍规范化与常态化建设纪实</div>
+        
+        <!-- Meta info -->
+        <div class="article-meta">
+            <span>发布时间：<strong>2026年06月15日</strong></span>
+            <span>来源：<strong>山东大学中央通讯社</strong></span>
+            <span>记者/通讯员：<strong>王浩智</strong></span>
+        </div>
+
+        <!-- Core reading panel -->
+        <div class="core-reading-box">
+            <div class="core-reading-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                【核心阅读】
+            </div>
+            <ul class="core-reading-list" id="txtCoreReading">
+                <li><strong>一、制度化思想红芯：</strong> 宿舍6人实现100%政治思想对标，以1名入党积极分子为领雁示范，5名递交入党申请书的骨干青年紧密靠拢，筑牢信仰根基。</li>
+                <li><strong>二、程序化高勤作息：</strong> 严明作息铁律，全员保持“零旷课、零迟到、零早退”的绝对全勤，实现“零挂科、100%通过率”，以学风质量提质增效。</li>
+                <li><strong>三、规范化内务秩序：</strong> 对标军营卫生标准，被褥折叠统一成规整的“豆腐块”，在历次大抽查中不合格率与整改率永久为零，绘就内务美学样板。</li>
+                <li><strong>四、常态化安全防线：</strong> 严守用电与秩序红线，大功率违规用电物理级绝迹，晚归、不归及违纪处分历史记录永久为零，构建长周期安全岛。</li>
+                <li><strong>五、优质化和谐氛围：</strong> 建立坦诚包容 of 沟通方式，寝室矛盾摩擦发生率为零，文体、志愿与实践全方位开花，打造休戚与共的命运共同体。</li>
+            </ul>
+        </div>
+
+        <!-- Body text -->
+        <div class="article-body">
+            <p class="article-lead" id="txtLead"><strong style="color: rgb(34, 34, 34);">「</strong>大厦之成，非一木之材；大海之阔，非一流之归。<strong style="color: rgb(34, 34, 34);">」</strong>宿舍作为大学校园最基本的社会单元，不仅是学子休养憩息的生活居所，更是青年学子凝聚思想、砥砺品格的重要阵地。按照学校关于学生星级宿舍评定的工作部署，在基础医学院的统筹指导与层层选拔下，趵突泉校区7209宿舍在2025—2026学年星级宿舍评定中脱颖而出，正式荣膺“四星级宿舍”称号。这是对7209宿舍长久以来扎实推进宿舍管理、内务秩序和文化氛围规范化建设的充分肯定。
+            </p>
+
+            <p id="p1">
+                <strong>「岂曰无衣，与子同袍。」</strong>自7209宿舍成立以来，全室成员始终秉持“求真务实、团结协作”的精神，积极探索宿舍文化建设的常态化机制。面对宿舍日常管理中可能出现的作息摩擦或习惯差异，宿舍成员并没有采取敷衍应付的态度，而是紧紧围绕“以生为本、和谐共建”的原则，理思路、订制度，逐步细化内务规范，强化安全责任落实。他们拒绝功利性的硬性指标追逐，而是将日常的每一件小事做到极致，让宿舍建设成果真正服务于每位成员的学业与成长，在平凡温馨的集体生活中重新拾回了互帮互助、携手并进的纯粹乐趣。
+            </p>
+
+            <!-- Leader image and caption -->
+            <div class="leader-spotlight-container">
+                <div class="leader-image-wrapper">
+                    <img src="images/leader.png" alt="7209宿舍负责人赵传昊" class="leader-image">
+                </div>
+                <div class="leader-caption" id="txtLeaderCaption">
+                    图为7209宿舍最高负责人赵传昊  王浩智摄
+                </div>
+            </div>
+
+            <!-- Quote from leader -->
+            <div class="leader-quote-box">
+                <div class="quote-title">【宿舍最高负责人赵传昊寄语】</div>
+                <div id="txtLeaderQuote">
+                    <strong>「非淡泊无以明志，非宁静无以致远。」</strong>荣获学校‘四星级宿舍’称号，不仅是一份集体荣誉，更是我们在求学道路上规范生活秩序、锤炼思想品格的印证。7209宿舍将始终理清思路，积极推进宿舍各项建设的有序化与常态化。在求索医路的奋斗之路上，少一些浮躁与功利，多一些脚踏实地的自律与积累，这才是我们重拾集体乐趣与个人成长价值的泉源所在。”
+                </div>
+            </div>
+
+            <h2 class="section-title">一、 思想红：政治信念高擎，党建红芯引领航向</h2>
+            
+            <p id="p2">
+                <strong>「志之所趋，无远弗届。」</strong>7209宿舍将政治信仰视为集体的灵魂，实现了政治觉悟与责任担当的“全员红芯、全覆盖”。宿舍6名成员100%全员递交了入党申请书，已构筑起以“1名入党积极分子示范领雁、5名骨干青年紧密靠拢”的政治梯队。在日常学习与生活中，宿舍成员政治信仰坚定，积极参与主题教育，自觉将“小我”的发展融入到为国家和学校服务的“大我”之中。
+            </p>
+            
+            <p id="p3">
+                <strong>「身先率人，不言而信。」</strong>“领头雁”效应在宿舍内部成型后，更积极主动地向班级建设进行价值辐射。宿舍成员主动担当，深度出任了班级特派学习委员、生活委员、心理委员、数学课代表等核心职务，做好日常班级事务的管理工作。他们以高度负责的态度，真正做到了“一人带一室，一室引全班”，让党建红色信仰在基层日常服务同学的细节中落地生根。
+            </p>
+
+            <h2 class="section-title">二、 学风浓：铁律作息铸就知识星舰，高出勤与零挂科书写医学华章</h2>
+            
+            <p id="p4">
+                <strong>「三更灯火五更鸡，正是男儿读书时。」</strong>在人生与求学阶段中，要想实现长足的成长，就必须扎实抓好学习调研工作，打牢专业基础。面对医学课业繁重庞杂的挑战，7209宿舍以严谨的治学精神和深厚的一体化互助，拒绝一切平庸与懈怠。宿舍全体成员时刻保持着“零旷课、零迟到、零早退”的绝对全勤记录，课堂前排永远有他们整齐列坐、认真听课的身影，积极推进日常学习纪律的制度化。
+            </p>
+            
+            <p id="p5">
+                <strong>「博学而笃志，切问而近思。」</strong>在学术钻研上，7209宿舍自创了“共享学习智库”机制。宿舍成员不以功利性的分数为单一指标，而是通过互帮互助与日常探讨，实现了宿舍全员“零挂科、零学业警告、课程通过率100%”的硬核战绩。他们用脚踏实地的相互托举，不仅在考试中取得优异成绩，更在求真务实的探讨中，充分享受到了共同攻克医学难关的科学性乐趣。
+            </p>
+
+            <h2 class="section-title">三、 内务优：对标规范化美学，极致秩序绘就生活样板</h2>
+            
+            <p id="p6">
+                <strong>「一屋不扫，何以扫天下。」</strong>“构大厦者先择匠而后简材，治国家者先择佐而后定民。”内务卫生不仅是个人生活习惯的体现，更是寝室作风的缩影。7209宿舍对生活环境有着极高的纪律美学追求，积极推进宿舍内务工作的规范化。走进7209宿舍，视线所及皆是秩序的展现：桌面空无杂物，所有日常用品一律呈线型对齐，每一床被褥折叠统一成规整的“豆腐块”，每个死角都一尘不染。
+            </p>
+            
+            <p id="p7">
+                <strong>「千淘万漉虽辛苦，吹尽狂沙始到金。」</strong>在学校及学院历次卫生抽查与突击联检中，7209宿舍的综合评分始终在全院名列前茅，不合格率、整改率永久为零，被宿管老师称赞为“内务免检排头兵”。宿舍内务的井井有条，鲜明地印证了宿舍成员对细节管理的执着追求与高度自律。
+            </p>
+
+            <h2 class="section-title">四、 安全固：红线意识防微杜渐，筑牢长周期零隐患的绝对安全岛</h2>
+            
+            <p id="p8">
+                <strong>「防微杜渐，禁于未然。」</strong>安全底线高于一切，安全意识必须融入行为习惯。7209宿舍严苛遵守《山东大学学生宿舍管理规定》，宿舍内违规电器使用、私拉乱接用电等安全隐患现象被“物理级绝迹”。以畅通安全为保障，宿舍成员自发执行“出门必锁扣、人走断电源”的制度化运作，定期进行用电隐患排查，实现了安全自卫工作的程序化与常态化。
+            </p>
+            
+            <p id="p9">
+                <strong>「君子慎独，不欺暗室。」</strong>在日常作息管理上，7209宿舍保持着零违规记录——全员历史晚归次数为零、不归次数为零、违纪处分记录为零。防盗防火防电意识融入每日习惯，以高标准的自律，筑牢了宿舍安全的铜墙铁壁，在漫长的学年中实现并维护了“绝对安全无缝隙”的长效格局。
+            </p>
+
+            <h2 class="section-title">五、 氛围和：零摩擦无内耗，打造休戚与共的青春命运共同体</h2>
+            
+            <p id="p10">
+                <strong>「同声自相应，同心自相知。」</strong>优秀宿舍的建设根植于六位成员之间深厚无间的战友情谊。7209宿舍内部建立起了一套坦诚包容、互帮互助的沟通协调机制，实现了内部矛盾摩擦发生率为零的和谐记录。六位兄弟在生活上互相关照、学术探讨上相互切磋，不流于俗套与短视，重拾了同心共进最纯粹的乐趣。
+            </p>
+            
+            <p id="p11">
+                <strong>「纸上得来终觉浅，绝知此事要躬行。」</strong>与此同时，在五育并举的教育引导下，宿舍成员积极投身于文体活动、志愿服务与社会公益。他们清醒地认识到，当代医学生不仅要在课堂上钻研学问，更应在社会实践中去体验和感悟担当。宿舍成员全面开花、全情参与的优异表现，展现了新时代山大学子团结友爱、服务大局的良好风貌。
+            </p>
+
+            <h2 class="section-title">结语：久久为功，善始善终，开创优秀宿舍工作新局面</h2>
+            
+            <p id="p12">
+                <strong>「长风破浪会有时，直挂云帆济沧海。」</strong>理思路，订制度，不断提高宿舍管理服务新水平；抓业务，重实效，努力开创寝室文化建设新局面。从最初的申报期许，到如今稳扎稳打荣获四星级宿舍称号，7209宿舍以求真务实的态度，积极推进各项建设规范化、有序化、常态化。在未来的发展道路上，他们将以此次荣誉为契机，继续团结协作，直挂云帆，在医学求索的奋斗之路上乘风破浪，向着更加卓越的目标砥砺前行！
+            </p>
+        </div>
+
+        <!-- Footer signature / date -->
+        <div class="editorial-closing">
+            <span class="editor-signature">责任编辑：王浩智（山东大学中央通讯社）</span>
+            <span>发表日期：2026年6月15日</span>
+        </div>
+    </main>
+
+    <!-- Interactive edit UI elements -->
+    
+    
+    
+
+    <!-- Save Toast Notification -->
+    
+
+    <!-- Background and Reveal Javascript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Page load animation trigger
+            setTimeout(() => {
+                document.querySelector('.main-container').classList.add('visible');
+            }, 100);
+        });
+    </script>
+
+
+</body></html>
