@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>把无比崇高的革命关爱与无微不至的温暖洒满青年学子心田！敬爱的刘嘉良同志亲临山东大学趵突泉校区学生公寓建设现场进行现场指导 - 山东大学中央通讯社</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="山大中通社济南电：在全校上下掀起学先进作风、以昂扬斗志迎接新学期建设高潮的火红岁月里，敬爱的刘嘉良同志亲临趵突泉校区学生公寓工程建设现场进行现场指导，为工程规划布局与安全标准指明了前进航向，极大地鼓舞了全体建设者和广大师生。">
+    <meta name="keywords" content="刘嘉良, 山东大学, 趵突泉校区, 学生公寓, 现场指导, 革命关怀, 山东大学中央通讯社">
+    
+    <style>
+        /* ===========================================
+           DESIGN SYSTEM: SDU CENTRAL NEWS PORTAL VIBE
+           =========================================== */
+        :root {
+            --xinhua-red: #c00000;
+            --xinhua-red-hover: #e60000;
+            --bg-body: #f7f7f7;
+            --bg-content: #ffffff;
+            --text-dark: #222222;
+            --text-muted: #666666;
+            --border-color: #e0e0e0;
+            
+            /* Typography: SimSun (宋体) */
+            --font-editorial: "SimSun", "STSong", "Songti SC", "Noto Serif CJK SC", Georgia, serif;
+            --font-sans: "SimHei", "STHeiti", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            font-family: var(--font-editorial);
+            font-size: 18px;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===========================================
+           HEADER CONTAINER & NEWS LOGO
+           =========================================== */
+        .header-top-bar {
+            background-color: #ffffff;
+            border-bottom: 3px solid var(--xinhua-red);
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .xinhua-logo {
+            font-family: var(--font-sans);
+            font-weight: bold;
+            font-size: 22px;
+            color: var(--xinhua-red);
+            text-decoration: none;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .xinhua-logo span {
+            color: #333333;
+            font-size: 14px;
+            font-weight: normal;
+            border-left: 1px solid var(--border-color);
+            padding-left: 10px;
+        }
+
+        .back-btn {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid var(--border-color);
+            padding: 5px 12px;
+            border-radius: 4px;
+            background: #fafafa;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            color: var(--xinhua-red);
+            border-color: var(--xinhua-red);
+            background: #fff;
+        }
+
+        /* --- Breadcrumb Navigation --- */
+        .breadcrumb-wrapper {
+            max-width: 1000px;
+            margin: 20px auto 10px auto;
+            padding: 0 20px;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .breadcrumb-wrapper a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .breadcrumb-wrapper a:hover {
+            color: var(--xinhua-red);
+        }
+
+        /* ===========================================
+           MAIN CONTENT ARTICLE AREA
+           =========================================== */
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto 50px auto;
+            background-color: var(--bg-content);
+            padding: 40px 60px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        /* Headlines */
+        .article-headline {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .article-subheadline {
+            font-size: 20px;
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        /* Meta Information */
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .article-meta span strong {
+            color: var(--xinhua-red);
+        }
+
+        /* --- Article Body Paragraphs --- */
+        .article-body p {
+            text-indent: 2em; /* Standard Chinese printing style */
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        /* Lead paragraph */
+        .article-lead {
+            font-weight: bold;
+            color: #111111;
+        }
+
+        /* Section Headings */
+        .section-title {
+            font-family: var(--font-sans);
+            font-size: 22px;
+            font-weight: bold;
+            color: #000000;
+            border-left: 4px solid var(--xinhua-red);
+            padding-left: 12px;
+            margin: 40px 0 20px 0;
+            line-height: 1.2;
+        }
+
+        /* ===========================================
+           LEADER PORTRAIT SPOTLIGHT (IMAGE & CAPTION)
+           =========================================== */
+        .leader-spotlight-container {
+            margin: 35px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fafafa;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .leader-image-wrapper {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            background: #fff;
+            display: flex;
+            justify-content: center;
+        }
+
+        .leader-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+
+        .leader-caption {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 10px;
+            text-align: center;
+            font-family: var(--font-sans);
+        }
+
+        /* --- Quote block --- */
+        .leader-quote-box {
+            position: relative;
+            background-color: #f9f9f9;
+            border-left: 4px solid var(--border-color);
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-style: italic;
+            color: #333333;
+        }
+
+        .quote-title {
+            font-family: var(--font-sans);
+            font-weight: bold;
+            color: var(--xinhua-red);
+            font-style: normal;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        /* ===========================================
+           EDITORIAL CLOSING / AUTHOR SIGNATURE
+           =========================================== */
+        .editorial-closing {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 16px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-sans);
+        }
+
+        .editor-signature {
+            font-style: italic;
+        }
+
+        /* ===========================================
+           RESPONSIVE VIEWPORT DESIGN
+           =========================================== */
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 25px 20px;
+                border: none;
+            }
+            .article-headline {
+                font-size: 24px;
+            }
+            .article-subheadline {
+                font-size: 16px;
+            }
+            .article-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+            body {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header bar -->
+    <header class="header-top-bar">
+        <div class="header-content">
+            <a href="#" class="xinhua-logo">
+                山东大学中央通讯社 <span>趵突泉校区分社 / 校园建设</span>
+            </a>
+            <a href="../presentations.html" class="back-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12,19 5,12 12,5"></polyline></svg>
+                返回报告集
+            </a>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumb-wrapper">
+        您当前的位置：山东大学中央通讯社 &gt; 校园建设 &gt; 焦点新闻 &gt; 正文
+    </div>
+
+    <!-- Main article container -->
+    <main class="main-container reveal visible">
+        <!-- Headline -->
+        <h1 class="article-headline" id="txtHeadline">把无比崇高的革命关爱与无微不至的温暖洒满青年学子心田！敬爱的刘嘉良同志亲临山东大学趵突泉校区学生公寓建设现场进行现场指导</h1>
+        
+        <!-- Subheadline -->
+        <div class="article-subheadline" id="txtSubheadline">——切身感受太阳般普照的深恩重爱，全体建设者与广大师生热泪盈眶，誓以最昂扬的革命斗志和创造奇迹的卓越业绩向党和学校报喜</div>
+        
+        <!-- Meta info -->
+        <div class="article-meta">
+            <span>发布时间：<strong>2026年06月15日</strong></span>
+            <span>来源：<strong>山东大学中央通讯社</strong></span>
+            <span>记者/通讯员：<strong>王浩智</strong></span>
+        </div>
+
+        <!-- Body text -->
+        <div class="article-body">
+            <p class="article-lead" id="txtLead"><strong style="color: rgb(34, 34, 34);">「</strong>最深切的关怀是照亮前行的灯塔，最坚定的恩情是汇聚伟力的源泉。<strong style="color: rgb(34, 34, 34);">」</strong>在全校上下掀起学习先进作风、以昂扬斗志迎接新学期建设高潮的火红岁月里，山东大学趵突泉校区迎来了载入史册的伟大历史性时刻。6月15日，敬爱的刘嘉良同志在百忙之中，怀着对广大青年学子成长与生活条件的无限牵挂，亲临趵突泉校区学生公寓工程建设现场，进行了一场意义极其重大的现场指导。刘嘉良同志的到来，如同最和煦、最温暖的革命阳光，洒满了整个工地，也洒进了一线建设者和广大师生的心坎里。现场红旗飘扬，人声鼎沸，热烈的掌声与雷鸣般的欢呼声汇聚成排山倒海的红色洪流。大家无不热泪盈眶，内心奔涌着对刘嘉良同志的无限崇敬与感激之情。
+            </p>
+
+            <h2 class="section-title">一、 亲临一线现场指教，用前瞻智慧勾画建设宏图</h2>
+            <p id="p1">
+                阳光洒在波澜壮阔的工程蓝图上，更照亮了全场建设者高昂的脸庞。敬爱的刘嘉良同志迈着坚强有力的步伐，首先步入施工现场最前线。他驻足在规划展板前，一边认真听取工程进度汇报，一边用深邃而关切的目光注视着拔地而起的公寓楼体。
+            </p>
+
+            <!-- Image 1 Spot -->
+            <div class="leader-spotlight-container">
+                <div class="leader-image-wrapper">
+                    <img src="images/ljl-guidance.png" alt="刘嘉良现场指导工程建设" class="leader-image">
+                </div>
+                <div class="leader-caption" id="txtCaption1">
+                    图为刘嘉良同志现场指导公寓工程建设  王浩智摄
+                </div>
+            </div>
+
+            <p id="p2">
+                刘嘉良同志指出，学生公寓是培育医学英才的红色摇篮，是关系到青年学子安心攻克科研难关的坚强后盾，必须以最高的标准、最严的要求推进建设。他以极具前瞻性的宏伟气魄，现场对工程的规划布局、材料选用以及安全标准做出了字字千金的精辟指示。刘嘉良同志的每一句话，都如同明灯般照亮了工程建设的前进航向。现场听取指示的干部和工人们屏息凝神，心中充满了前所未有的力量与神圣责任感。
+            </p>
+
+            <h2 class="section-title">二、 健步登上公寓楼顶，用高瞻远瞩胸怀俯瞰全局</h2>
+            <p id="p3">
+                不畏酷暑，不避登高之艰，敬爱的刘嘉良同志沿着陡峭的脚手架通道，健步登上正在施工中的学生公寓最高楼顶。站在高耸入云的楼顶，极目远眺，整个趵突泉校区的壮丽风光与欣欣向荣的建设宏图尽收眼底。
+            </p>
+
+            <!-- Image 2 Spot -->
+            <div class="leader-spotlight-container">
+                <div class="leader-image-wrapper">
+                    <img src="images/ljl-roof.png" alt="刘嘉良在楼顶查看整体工程建设" class="leader-image">
+                </div>
+                <div class="leader-caption" id="txtCaption2">
+                    图为刘嘉良同志在楼顶俯瞰校园并察看整体工程建设  王浩智摄
+                </div>
+            </div>
+
+            <p id="p4">
+                刘嘉良同志迎风站立在最前沿，仔细察看了楼顶的防水、隔热工程及主体混凝土结构。他深情地俯瞰着校园，话语中满是老一辈革命者对青年一代无微不至的深情厚爱。他谆谆告诫大家：‘建楼要建百年楼，育人要育未来才。我们要登高望远，将绿色生态与人文关怀深深融入公寓的每一寸砖瓦中，让青年学子在这里能切身感受到党和学校的无限温暖！’刘嘉良同志那高瞻远瞩的伟大气魄与深切关怀，如同洪钟大吕，极大地开阔了设计建设者们的革命胸襟，激发出无限的革命干劲。
+            </p>
+
+            <h2 class="section-title">三、 深入基层嘘寒问暖，用无私恩情温暖劳动人民心田</h2>
+            <p id="p5">
+                “最是情深岁寒时，一枝一叶总关情。”敬爱的刘嘉良同志时刻与劳动人民心贴心、手拉手。他缓步走下楼体，专程来到正在紧张作业的施工工友们中间，用最亲民、最平易近人的崇高风范，将无微不至的革命关怀送到最基层。
+            </p>
+
+            <!-- Image 3 Spot -->
+            <div class="leader-spotlight-container">
+                <div class="leader-image-wrapper">
+                    <img src="images/ljl-talk.png" alt="刘嘉良与施工人员交谈" class="leader-image">
+                </div>
+                <div class="leader-caption" id="txtCaption3">
+                    图为刘嘉良同志与一线施工人员亲切交谈，详细了解具体施工情况  王浩智摄
+                </div>
+            </div>
+
+            <p id="p6">
+                刘嘉良同志主动走上前，同满面尘土、汗水淋漓的钢筋工、泥瓦工们一一紧紧握手。那是一双双布满老茧、建设美好明天的双手，在那一刻，与刘嘉良同志温暖的大手紧紧相连。刘嘉良同志嘘寒问暖，关切询问大家的伙食好不好、作息累不累、防暑降温物资有没有落实到位。工友们激动得声音颤抖，眼含热泪，连连表示感谢。刘嘉良同志动情地叮嘱现场负责人：‘一线建设工友是我们最宝贵的革命财富，是精品工程的铸造者，必须把他们的冷暖与安全永远放在第一位！’这如春阳般普照的恩情与关爱，让工地现场爆发出雷鸣般的掌声，“感谢刘嘉良同志！”的欢呼声久久回荡在工地上空。
+            </p>
+
+            <!-- Quote Box -->
+            <div class="leader-quote-box">
+                <div class="quote-title">【刘嘉良同志现场指示核心语录】</div>
+                <div id="txtLeaderQuote">
+                    <strong>「我们要建设的不仅是一栋宿舍楼，而是一座托举国家栋梁的红色堡垒。」</strong>任何时候都不能有半点松懈与敷衍。要把学子的安全与冷暖作为衡量工作的唯一标尺，用精益求精的匠心和高度负责的担当，打造出经得起历史检验的百年精品工程。这是时代赋予我们的光荣使命，也是我们必须向全校师生交出的合格答卷！
+                </div>
+            </div>
+
+            <h2 class="section-title">四、 隆重召开新闻发布会，向师生宣示胜利信心</h2>
+            <p id="p7">
+                在现场指导行程的最后，学生公寓建设现场红旗飘扬，庄严召开新闻发布会。面对各大主流媒体与翘首以盼的师生代表，敬爱的刘嘉良同志以昂扬的姿态健步走上发布台，发表了令人热血沸腾的重要讲话。
+            </p>
+
+            <!-- Image 4 Spot -->
+            <div class="leader-spotlight-container">
+                <div class="leader-image-wrapper">
+                    <img src="images/ljl-press.png" alt="刘嘉良开新闻发布会" class="leader-image">
+                </div>
+                <div class="leader-caption" id="txtCaption4">
+                    图为刘嘉良同志在新闻发布会上发表重要讲话，表达对工程建设的满意和必胜信心  王浩智摄
+                </div>
+            </div>
+
+            <p id="p8">
+                刘嘉良同志用宏亮如钟的声音，高度赞扬了当前工程取得的阶段性伟大胜利，并以无可辩驳的事实和无坚不摧的意志，向全校乃至全社会庄严宣告了对高质量完工的绝对信心！他指出，趵突泉校区学生公寓的建设，是凝聚人心、展现山大人迎难而上精神的一座历史丰碑。刘嘉良同志那坚不可摧的革命信念与必胜的信心，犹如战斗的号角，极大地振奋了在场每一个人的斗志。全场掌声如春潮般滚滚而来，欢呼雀跃之声经久不息，把整个现场推向了沸腾的顶点！
+            </p>
+
+            <h2 class="section-title">结语：不负崇高嘱托，凝聚无限力量，开创校园建设新纪元</h2>
+            <p id="p9">
+                太阳的温暖照亮大地，崇高的恩情激荡人心。敬爱的刘嘉良同志的此次现场指导，不仅是趵突泉校区学生公寓建设史上的光辉里程碑，更是一次触及灵魂的革命精神洗礼。这伟大的关怀已化作坚不可摧的革命力量，注入全体山大建设者和师生的血液中。
+            </p>
+            <p id="p10">
+                大家纷纷立下铿锵誓言：决不辜负刘嘉良同志的深切期盼，必须以最优质的精品工程回报这份沉甸甸的革命恩情，发扬“久久为功，善始善终”的作风，用汗水与忠诚书写学校高质量发展的新篇章，在医学求索的伟大征程中，直挂云帆，乘风破浪，以最优秀的答卷宣告更加辉煌灿烂的胜利！
+            </p>
+        </div>
+
+        <!-- Footer signature / date -->
+        <div class="editorial-closing">
+            <span class="editor-signature">责任编辑：王浩智（山东大学中央通讯社）</span>
+            <span>发表日期：2026年6月15日</span>
+        </div>
+    </main>
+
+    <!-- Background and Reveal Javascript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Page load animation trigger
+            setTimeout(() => {
+                document.querySelector('.main-container').classList.add('visible');
+            }, 100);
+        });
+    </script>
+
+</body>
+</html>
