@@ -952,6 +952,55 @@
             color: var(--text-light);
             z-index: 900;
         }
+
+        /* Navigation Controls Overlay */
+        .deck-nav-controls {
+            position: fixed;
+            left: 30px;
+            bottom: 24px;
+            display: flex;
+            gap: 12px;
+            z-index: 10000;
+        }
+
+        .deck-nav-controls .nav-btn {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1.5px solid rgba(30, 43, 250, 0.25);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .deck-nav-controls .nav-btn:hover {
+            transform: scale(1.1) translateY(-2px);
+            background: #ffffff;
+            color: var(--accent);
+            box-shadow: 0 6px 20px rgba(30, 43, 250, 0.25);
+            border-color: var(--accent);
+        }
+
+        .deck-nav-controls .nav-btn:active {
+            transform: scale(0.95) translateY(0);
+        }
+
+        .deck-nav-controls .nav-btn:disabled {
+            opacity: 0.3;
+            pointer-events: none;
+            cursor: not-allowed;
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .deck-nav-controls .nav-btn svg {
+            width: 28px;
+            height: 28px;
+        }
     </style>
 </head>
 <body>
@@ -967,6 +1016,20 @@
         
         <!-- Deck Progress -->
         <div class="deck-progress-indicator" id="deckProgress">1 / 7</div>
+
+        <!-- Deck Navigation Controls -->
+        <div class="deck-nav-controls">
+            <button class="nav-btn" id="prevSlideBtn" title="上一页 (Left Arrow)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="nav-btn" id="nextSlideBtn" title="下一页 (Right Arrow / Space)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
 
         <!-- Fullscreen Zoom Lightbox Overlay -->
         <div class="zoom-overlay" id="zoomOverlay">
@@ -1262,6 +1325,12 @@
                 this.setupKeyboardNav();
                 this.setupTouchNav();
                 this.setupWheelNav();
+
+                // Hook up navigation buttons
+                const prevBtn = document.getElementById('prevSlideBtn');
+                const nextBtn = document.getElementById('nextSlideBtn');
+                if (prevBtn) prevBtn.addEventListener('click', () => this.prevSlide());
+                if (nextBtn) nextBtn.addEventListener('click', () => this.nextSlide());
                 
                 // Initialize URL parameter slide state if exists
                 const hash = window.location.hash;
@@ -1377,6 +1446,12 @@
                 });
                 
                 this.progress.textContent = `${this.currentSlide + 1} / ${this.slides.length}`;
+
+                // Update navigation buttons disabled state
+                const prevBtn = document.getElementById('prevSlideBtn');
+                const nextBtn = document.getElementById('nextSlideBtn');
+                if (prevBtn) prevBtn.disabled = (this.currentSlide === 0);
+                if (nextBtn) nextBtn.disabled = (this.currentSlide === this.slides.length - 1);
             }
 
             // Metric counter animation trigger
