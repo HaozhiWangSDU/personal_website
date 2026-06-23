@@ -13,7 +13,6 @@
   <title>演示报告集 | 王浩智 Haozhi Wang</title>
   <meta name="description" content="王浩智的学术演示报告与临时展示文件列表。">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="dprk.css">
 </head>
 <body>
   
@@ -21,69 +20,15 @@
     
     <!-- 头部区域：返回按钮、标题、模式与语言切换 (Header with back btn, theme/lang switches) -->
     <header class="portal-header reveal">
-      <!-- Conic gradient rotating rays -->
-      <div class="sun-rays-container">
-        <svg viewBox="0 0 400 400" class="sun-svg">
-          <defs>
-            <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#ffea00" />
-              <stop offset="70%" stop-color="#ffaa00" />
-              <stop offset="100%" stop-color="#e65100" />
-            </radialGradient>
-            <linearGradient id="rayGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-              <stop offset="0%" stop-color="#ffaa00" />
-              <stop offset="100%" stop-color="#ffea00" />
-            </linearGradient>
-            <polygon id="longRay" points="185,125 200,0 215,125" fill="url(#rayGrad)" />
-            <polygon id="shortRay" points="188,125 200,45 212,125" fill="url(#rayGrad)" />
-          </defs>
-          <g class="sun-group">
-            <!-- 12 Long rays and 12 Short rays -->
-            <use href="#longRay" transform="rotate(0 200 200)" />
-            <use href="#shortRay" transform="rotate(15 200 200)" />
-            <use href="#longRay" transform="rotate(30 200 200)" />
-            <use href="#shortRay" transform="rotate(45 200 200)" />
-            <use href="#longRay" transform="rotate(60 200 200)" />
-            <use href="#shortRay" transform="rotate(75 200 200)" />
-            <use href="#longRay" transform="rotate(90 200 200)" />
-            <use href="#shortRay" transform="rotate(105 200 200)" />
-            <use href="#longRay" transform="rotate(120 200 200)" />
-            <use href="#shortRay" transform="rotate(135 200 200)" />
-            <use href="#longRay" transform="rotate(150 200 200)" />
-            <use href="#shortRay" transform="rotate(165 200 200)" />
-            <use href="#longRay" transform="rotate(180 200 200)" />
-            <use href="#shortRay" transform="rotate(195 200 200)" />
-            <use href="#longRay" transform="rotate(210 200 200)" />
-            <use href="#shortRay" transform="rotate(225 200 200)" />
-            <use href="#longRay" transform="rotate(240 200 200)" />
-            <use href="#shortRay" transform="rotate(255 200 200)" />
-            <use href="#longRay" transform="rotate(270 200 200)" />
-            <use href="#shortRay" transform="rotate(285 200 200)" />
-            <use href="#longRay" transform="rotate(300 200 200)" />
-            <use href="#shortRay" transform="rotate(315 200 200)" />
-            <use href="#longRay" transform="rotate(330 200 200)" />
-            <use href="#shortRay" transform="rotate(345 200 200)" />
-            
-            <!-- Sun center circle -->
-            <circle cx="200" cy="200" r="85" fill="url(#sunGrad)" stroke="#e65100" stroke-width="2" />
-          </g>
-        </svg>
-      </div>
-      
-      <!-- Supreme Leader Portrait Frame -->
-      <div class="leader-portrait-wrapper">
-        <div class="leader-portrait-frame">
-          <img src="leader.png" alt="7209宿舍领导核心">
-        </div>
-      </div>
-
-      <div class="propaganda-slogan">
-        <span class="propaganda-main-text lang-cn">紧紧团结在以赵传昊舍长、卷王生活委员和YD副舍长为领导的7209宿舍太阳核心周围！</span>
-        <span class="propaganda-main-text lang-en" style="font-size: 1.5rem;">Closely Unite Around the 7209 Dormitory Sun Core Led by Dorm President Zhao Chuanhao, Juanwang Life Member, and Vice Dorm President YD!</span>
-        <div class="propaganda-sub-slogan">
-          <span class="lang-cn">★ 敬爱的赵传昊舍长、卷王生活委员、YD副舍长同志永生不灭的恩情照亮着我们前进的道路！ ★</span>
-          <span class="lang-en">★ The immortal grace of our beloved Dorm President Zhao Chuanhao, Life Member Juanwang, and Vice Dorm President YD illuminates our path forward! ★</span>
-        </div>
+      <div class="portal-title-area">
+        <h1>
+          <span class="lang-cn">演示报告集</span>
+          <span class="lang-en">Presentation Portal</span>
+        </h1>
+        <p>
+          <span class="lang-cn">这里存放临时展示的 HTML 文件和学术汇报 Slides</span>
+          <span class="lang-en">Collection of temporary seminar slides, literature reviews, and documents</span>
+        </p>
       </div>
       
       <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
