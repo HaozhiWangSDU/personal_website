@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人体结构与功能学(双语4)——考前冲刺复习全书</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #2c3e50;
+    line-height: 1.85;
+    padding: 0;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 40px 30px 80px; }
+
+  /* Cover */
+  .cover {
+    background: linear-gradient(135deg, #1a5276 0%, #2e86c1 50%, #3498db 100%);
+    color: #fff;
+    padding: 55px 45px;
+    border-radius: 16px;
+    margin-bottom: 36px;
+    box-shadow: 0 8px 30px rgba(26,82,118,0.35);
+  }
+  .cover h1 { font-size: 2em; margin-bottom: 10px; letter-spacing: 1px; }
+  .cover .subtitle { font-size: 1.1em; opacity: 0.9; margin-bottom: 6px; }
+  .cover .meta { margin-top: 16px; font-size: 0.9em; opacity: 0.8; }
+  .cover .exam-info {
+    margin-top: 18px; padding: 12px 16px;
+    background: rgba(255,255,255,0.15); border-radius: 8px;
+    font-size: 0.95em;
+  }
+  .cover .exam-info span { font-weight: 700; }
+
+  /* TOC */
+  .toc {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 36px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .toc h2 { font-size: 1.2em; margin-bottom: 12px; color: #555; }
+  .toc ul { list-style: none; columns: 2; column-gap: 30px; }
+  .toc li { padding: 5px 0; break-inside: avoid; }
+  .toc a { color: #2e86c1; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+  .toc a:hover { color: #1a5276; }
+
+  /* Section */
+  .section {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px 32px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .section h2 {
+    font-size: 1.5em;
+    color: #1a5276;
+    border-left: 5px solid #2e86c1;
+    padding-left: 14px;
+    margin-bottom: 20px;
+  }
+  .section h3 {
+    font-size: 1.2em;
+    color: #2c3e50;
+    margin: 24px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #eef0f4;
+  }
+  .section h4 {
+    font-size: 1.05em;
+    color: #555;
+    margin: 18px 0 8px;
+    color: #1a5276;
+  }
+
+  /* Q&A */
+  .qa-block {
+    margin: 16px 0;
+    padding: 16px 18px;
+    border-radius: 8px;
+    border-left: 4px solid #d5dbdb;
+    background: #fafbfc;
+    transition: border-color 0.2s;
+  }
+  .qa-block:hover { border-left-color: #2e86c1; }
+  .qa-block .q {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+  }
+  .qa-block .q .num {
+    display: inline-block;
+    background: #2e86c1;
+    color: #fff;
+    font-size: 0.8em;
+    width: 28px; height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  .qa-block .answer {
+    background: #e8f5e9;
+    border-radius: 6px;
+    padding: 8px 14px;
+    margin: 8px 0;
+    font-weight: 600;
+    color: #2e7d32;
+  }
+  .qa-block .explain { color: #555; font-size: 0.95em; }
+  .qa-block .explain strong { color: #d35400; }
+
+  /* Case analysis */
+  .case-block {
+    margin: 18px 0;
+    padding: 20px 22px;
+    border-radius: 8px;
+    background: #fff8e1;
+    border-left: 4px solid #f39c12;
+  }
+  .case-block .case-title {
+    font-weight: 700;
+    color: #e67e22;
+    margin-bottom: 10px;
+    font-size: 1.05em;
+  }
+  .case-block .case-q {
+    font-weight: 600;
+    color: #444;
+    margin: 12px 0 6px;
+  }
+  .case-block .case-a {
+    color: #555;
+    margin-bottom: 8px;
+    padding-left: 16px;
+    border-left: 3px solid #f9e79f;
+  }
+
+  /* Tip/Warn/Key boxes */
+  .tip {
+    background: #eaf2f8;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    border-left: 4px solid #2e86c1;
+  }
+  .tip strong { color: #1a5276; }
+
+  .warn {
+    background: #fef9e7;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    border-left: 4px solid #f39c12;
+  }
+  .warn strong { color: #d35400; }
+
+  .key {
+    background: #fdedec;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    border-left: 4px solid #e74c3c;
+  }
+  .key strong { color: #c0392b; }
+
+  .info {
+    background: #e8f8f5;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    border-left: 4px solid #1abc9c;
+  }
+  .info strong { color: #16a085; }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.9em;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+  }
+  th {
+    background: #2e86c1;
+    color: #fff;
+    font-weight: 600;
+  }
+  tr:nth-child(even) { background: #f8f9fa; }
+
+  /* Formula */
+  .formula {
+    background: #f3e5f5;
+    border-radius: 6px;
+    padding: 10px 16px;
+    margin: 10px 0;
+    font-family: "Courier New", monospace;
+    font-size: 0.95em;
+    color: #6a1b9a;
+    border-left: 3px solid #8e44ad;
+  }
+
+  /* Tag */
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-left: 6px;
+  }
+  .tag-high { background: #fdedec; color: #c0392b; }
+  .tag-mid { background: #fef9e7; color: #d35400; }
+  .tag-low { background: #e8f5e9; color: #2e7d32; }
+
+  /* Summary grid */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .summary-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf3 100%);
+    border-radius: 10px;
+    padding: 18px;
+    border-top: 3px solid #2e86c1;
+  }
+  .summary-card h4 { margin-bottom: 10px; color: #2c3e50; }
+  .summary-card ul { padding-left: 18px; font-size: 0.92em; }
+  .summary-card li { margin: 4px 0; }
+
+  /* 知识点卡片 */
+  .knowledge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .knowledge-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #e8ecf3;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .knowledge-card h4 {
+    font-size: 1em;
+    color: #1a5276;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #2e86c1;
+  }
+  .knowledge-card ul { padding-left: 18px; font-size: 0.9em; }
+  .knowledge-card li { margin: 5px 0; line-height: 1.7; }
+
+  /* Accordion-style detail */
+  .chunk { margin: 14px 0; }
+  .chunk .chunk-title {
+    font-weight: 700;
+    font-size: 1em;
+    color: #1a5276;
+    padding: 8px 14px;
+    background: #eaf2f8;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .chunk .chunk-body { padding: 10px 8px 2px; }
+
+  ul { padding-left: 20px; }
+  li { margin: 3px 0; }
+
+  @media (max-width: 600px) {
+    .container { padding: 15px 10px 50px; }
+    .cover { padding: 25px 18px; }
+    .section { padding: 18px 14px; }
+    .toc ul { columns: 1; }
+    .summary-grid, .knowledge-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====== COVER ====== -->
+<div class="cover">
+  <h1>人体结构与功能学(双语4)——考前冲刺复习全书</h1>
+  <div class="subtitle">泌尿系统 · 水电解质 · 酸碱平衡 · 生殖系统</div>
+  <div class="exam-info">
+    考试时间：<span>2026年7月7日 14:30–16:30</span> ｜ 临床医学（含重修）<br>
+    整合内容：历年真题(2023-2025) + 4份PPT课件 + 教学大纲 + 21份上课课件
+  </div>
+  <div class="meta">考前最后一天 · 快速过一遍 · 重点看加粗和标红部分</div>
+</div>
+
+<!-- ====== TOC ====== -->
+<div class="toc">
+  <h2>📋 全书目录</h2>
+  <ul>
+    <li><a href="#overview">一、考试概况与复习策略</a></li>
+    <li><a href="#ch1">二、第1-4章：组织学与胚胎学（组胚重点）</a></li>
+    <li><a href="#ch2">三、第5章：肾脏生理（滤过/重吸收）</a></li>
+    <li><a href="#ch3">四、第6章：水电解质紊乱（三型脱水+钾）</a></li>
+    <li><a href="#ch4">五、第7章：酸碱平衡紊乱（代偿公式+混合性判断）</a></li>
+    <li><a href="#ch5">六、第8-9章：肾脏功能不全与泌尿病理</a></li>
+    <li><a href="#ch6">七、第10章：肾脏与药物（利尿药汇总）</a></li>
+    <li><a href="#ch7">八、第11章：尿液及肾功能检查</a></li>
+    <li><a href="#ch8">九、第12-15章：生殖系统（组胚/病理/激素）</a></li>
+    <li><a href="#2025">十、2025年选择题33题全解析</a></li>
+    <li><a href="#2024">十一、2024年论述题全解析</a></li>
+    <li><a href="#2023">十二、2023年简答题解析</a></li>
+    <li><a href="#formulas">十三、酸碱失衡代偿公式速查卡</a></li>
+    <li><a href="#checklist">十四、考前30分钟自测清单</a></li>
+  </ul>
+</div>
+
+<!-- ==================== SECTION: 考试概况 ==================== -->
+<div class="section" id="overview">
+  <h2>一、考试概况与复习策略</h2>
+
+  <div class="tip">
+    <strong>考试结构（2025年回忆）：</strong><br>
+    选择题：英文 A1 30道 + A2 15道（A2题干不很长，本质考单一知识点）<br>
+    切片题：5道（2泌尿 + 3生殖，题干选项中文，15分钟）<br>
+    理论题：110分钟<br>
+    <strong>三大论述方向：</strong>泌尿病理（10分）、水电解质紊乱（15分）、生殖（15分）<br>
+    <strong>泌尿生理不考大题。</strong>
+  </div>
+
+  <div class="info">
+    <strong>成绩构成：</strong>PBL 30% + 平时成绩 10% + 实验成绩 10% + 期末考试 50%
+  </div>
+
+  <h3>今日复习优先级（只剩1天）</h3>
+  <table>
+    <tr><th>优先级</th><th>内容</th><th>建议用时</th></tr>
+    <tr><td>★★★</td><td>酸碱代偿公式 + AB/SB/AG判断逻辑 + 三型脱水对比 + 病例分析套路</td><td>40 min</td></tr>
+    <tr><td>★★★</td><td>2024三道大题（膜性肾病/水电解质病例/葡萄胎PCOS）完整背一遍</td><td>45 min</td></tr>
+    <tr><td>★★★</td><td>2025选择题快速过一遍（尤其错过的和生殖组胚部分）</td><td>25 min</td></tr>
+    <tr><td>★★☆</td><td>利尿药汇总表 + 钾代谢对心肌/骨骼肌影响</td><td>20 min</td></tr>
+    <tr><td>★★☆</td><td>生殖系统核心知识点（卵泡分期/葡萄胎/HPV/Leydig/CIN/乳腺癌）</td><td>20 min</td></tr>
+    <tr><td>★★☆</td><td>组织学核心（肾单位结构/近端小管/致密斑/滤过屏障/血睾屏障）</td><td>15 min</td></tr>
+    <tr><td>★☆☆</td><td>切片病理要点（新月体/膜性肾病/肾盂肾炎/葡萄胎绒毛/CIN）</td><td>15 min</td></tr>
+    <tr><td>★☆☆</td><td>胚胎发育要点（输尿管芽/中肾管/中肾旁管/SRY/5α-还原酶）</td><td>10 min</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SECTION: 第1-4章 组胚 ==================== -->
+<div class="section" id="ch1">
+  <h2>二、第1-4章：组织学与胚胎学 <span class="tag tag-mid">选择题重点</span></h2>
+
+  <div class="tip">
+    <strong>考纲定位：</strong>组胚部分主要考选择题和切片题，涉及肾单位结构、生殖系统结构、胚胎发育过程。
+  </div>
+
+  <h3>2.1 泌尿系统组织学（第1章）——必背结构</h3>
+  <div class="knowledge-grid">
+    <div class="knowledge-card">
+      <h4>🟦 肾小体（Renal Corpuscle）</h4>
+      <ul>
+        <li><strong>血管球：</strong>入球小动脉→毛细血管袢→出球小动脉</li>
+        <li><strong>肾小囊：</strong>脏层（足细胞）+ 壁层（单扁上皮）+ 囊腔</li>
+        <li><strong>系膜细胞：</strong>支持、吞噬、收缩功能</li>
+        <li><strong>滤过屏障：</strong>有孔内皮 + 基膜 + 足细胞裂孔膜</li>
+      </ul>
+    </div>
+    <div class="knowledge-card">
+      <h4>🟦 近端小管（Proximal Tubule）</h4>
+      <ul>
+        <li><strong>光镜：</strong>立方/锥体形细胞，分界不清，腔面<strong>刷状缘</strong></li>
+        <li><strong>电镜：</strong>密集微绒毛、大量线粒体、侧突、顶小管/顶小泡</li>
+        <li>功能：重吸收65-70% Na⁺/水、100%葡萄糖/氨基酸</li>
+        <li><strong>NAG酶</strong>为其损伤标志物</li>
+      </ul>
+    </div>
+    <div class="knowledge-card">
+      <h4>🟦 球旁复合体（JGA）</h4>
+      <ul>
+        <li><strong>球旁细胞：</strong>入球小动脉壁平滑肌特化，分泌<strong>肾素</strong></li>
+        <li><strong>致密斑：</strong>远曲小管起始部，高柱状细胞，感受<strong>Na⁺浓度</strong></li>
+        <li><strong>球外系膜细胞：</strong>传递信号</li>
+        <li>功能：管-球反馈，调节肾素分泌</li>
+      </ul>
+    </div>
+    <div class="knowledge-card">
+      <h4>🟦 集合管与输尿管膀胱</h4>
+      <ul>
+        <li>集合管：立方→柱状，分界清，无刷状缘</li>
+        <li>受ADH调节水重吸收，受醛固酮调节Na⁺-K⁺交换</li>
+        <li>输尿管/膀胱：<strong>变移上皮</strong>（urothelium）</li>
+        <li>皮质肾单位 vs 髓旁肾单位（长袢，参与髓质高渗形成）</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>2.2 男性生殖系统组织学（第2章）——必背结构</h3>
+  <div class="knowledge-grid">
+    <div class="knowledge-card">
+      <h4>🟧 生精小管（Seminiferous Tubule）</h4>
+      <ul>
+        <li>生精上皮：支持细胞 + 各级生精细胞</li>
+        <li>精子发生：精原细胞→初级精母细胞→次级精母细胞→精子细胞→精子</li>
+        <li><strong>血睾屏障：</strong>支持细胞间紧密连接，隔离免疫系统</li>
+        <li>精子结构：头（核+顶体）、颈（中心体）、中段（线粒体鞘）、主段、末段</li>
+      </ul>
+    </div>
+    <div class="knowledge-card">
+      <h4>🟧 间质细胞 Leydig Cell</h4>
+      <ul>
+        <li>位置：生精小管之间的间质</li>
+        <li>形态：大多边形/立方，<strong>成簇分布（cluster）</strong>，胞质<strong>嗜酸性</strong></li>
+        <li>电镜：大量滑面内质网、脂滴、管状嵴线粒体</li>
+        <li>功能：受<strong>LH</strong>刺激，分泌<strong>睾酮</strong></li>
+      </ul>
+    </div>
+    <div class="knowledge-card">
+      <h4>🟧 支持细胞 Sertoli Cell</h4>
+      <ul>
+        <li>位置：生精上皮内，基底到腔面贯穿</li>
+        <li>功能：支持营养生精细胞、分泌<strong>ABP</strong>和<strong>抑制素</strong>、形成血睾屏障</li>
+        <li>受<strong>FSH</strong>调节</li>
+        <li>吞噬退化的生精细胞残余</li>
+      </ul>
+    </div>
+    <div class="knowledge-card">
+      <h4>🟧 附睾与前列腺</h4>
+      <ul>
+        <li>附睾管：假复层柱状上皮，静纤毛，精子成熟场所</li>
+        <li>前列腺：复管泡状腺，腺泡内可见<strong>前列腺凝固体</strong></li>
+        <li>间质富含平滑肌，射精时收缩助排精</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>2.3 女性生殖系统组织学（第3章）——卵泡发育是重点</h3>
+  <div class="chunk">
+    <div class="chunk-title">卵泡发育阶段（从原始到成熟——必须记住顺序和各阶段特征）</div>
+    <div class="chunk-body">
+      <table>
+        <tr><th>阶段</th><th>卵母细胞</th><th>卵泡细胞</th><th>特征性结构</th></tr>
+        <tr><td><strong>原始卵泡</strong></td><td>初级卵母细胞（停滞于第一次减数分裂前期）</td><td>单层扁平</td><td>数量最多，位于皮质浅层</td></tr>
+        <tr><td><strong>初级卵泡</strong></td><td>初级卵母细胞增大</td><td>立方→多层（颗粒层）</td><td><strong>透明带</strong>出现 + 卵泡膜出现<br><span style="color:#c0392b;">无卵丘！</span></td></tr>
+        <tr><td><strong>次级卵泡</strong></td><td>初级卵母细胞</td><td>颗粒层增厚</td><td><strong>卵泡腔</strong>(Antrum) + <strong>卵丘</strong>出现 + 放射冠</td></tr>
+        <tr><td><strong>成熟卵泡</strong></td><td>完成第一次减数分裂→次级卵母细胞</td><td>颗粒层变薄</td><td>卵泡腔极大，卵丘突出，排卵前</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="knowledge-grid">
+    <div class="knowledge-card">
+      <h4>排卵与黄体</h4>
+      <ul>
+        <li>排卵：成熟卵泡破裂，次级卵母细胞+放射冠+卵泡液排出</li>
+        <li>黄体形成：排卵后颗粒层+卵泡膜内层细胞黄体化</li>
+        <li>颗粒黄体细胞：分泌<strong>孕激素</strong>（大，色浅）</li>
+        <li>膜黄体细胞：分泌<strong>雌激素</strong>（小，色深）</li>
+        <li>月经黄体（14天）→白体；妊娠黄体（可维持数月）</li>
+      </ul>
+    </div>
+    <div class="knowledge-card">
+      <h4>子宫内膜周期变化</h4>
+      <ul>
+        <li><strong>月经期（1-4天）：</strong>功能层脱落</li>
+        <li><strong>增生期（5-14天）：</strong>雌激素↑，腺体增长，内膜增生</li>
+        <li><strong>分泌期（15-28天）：</strong>孕激素↑，腺体弯曲分泌，间质水肿</li>
+        <li>基底层不脱落，负责月经后修复</li>
+        <li>修复来源：基底层残留的<strong>子宫腺上皮细胞</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>2.4 泌尿生殖系统发生（第4章）——胚胎发育必考</h3>
+  <div class="knowledge-grid">
+    <div class="knowledge-card">
+      <h4>🟢 肾脏发生</h4>
+      <ul>
+        <li>前肾→退化；中肾→大部分退化</li>
+        <li><strong>后肾（永久肾）两个来源：</strong></li>
+        <li>① <strong>输尿管芽</strong>（来自<strong>中肾管</strong>末端）→输尿管、肾盂、肾盏、集合管</li>
+        <li>② <strong>生后肾组织</strong>→肾单位（肾小球+肾小管）</li>
+        <li>常见畸形：多囊肾、异位肾、马蹄肾</li>
+      </ul>
+    </div>
+    <div class="knowledge-card">
+      <h4>🟢 膀胱与尿道发生</h4>
+      <ul>
+        <li>泄殖腔→背侧（肛直肠管）+ 腹侧（<strong>尿生殖窦</strong>）</li>
+        <li>尿生殖窦上段→膀胱；中段→女性尿道大部/男性前列腺部+膜部；下段→女性阴道前庭/男性海绵体部</li>
+        <li>脐尿管闭锁→脐中韧带</li>
+      </ul>
+    </div>
+    <div class="knowledge-card">
+      <h4>🟢 生殖腺分化</h4>
+      <ul>
+        <li><strong>SRY基因</strong>（Y染色体）→睾丸决定因子→初级性索→睾丸</li>
+        <li>SRY敲除→默认发育为<strong>卵巢</strong></li>
+        <li>原始生殖细胞来自卵黄囊壁，迁移至生殖腺嵴</li>
+        <li>睾丸下降：腹腔→腹股沟管→阴囊</li>
+      </ul>
+    </div>
+    <div class="knowledge-card">
+      <h4>🟢 生殖管道分化</h4>
+      <ul>
+        <li>男性：中肾管→附睾管、输精管、射精管（依赖<strong>睾酮</strong>）；中肾旁管退化（依赖<strong>抗中肾旁管激素AMH</strong>）</li>
+        <li>女性：中肾管退化；<strong>中肾旁管</strong>→输卵管、子宫、阴道上段</li>
+        <li><strong>5α-还原酶</strong>：睾酮→DHT，缺DHT→外生殖器女性化</li>
+        <li>常见畸形：隐睾、双子宫、两性畸形</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="q">🔥 高频考点串联：输尿管芽来自？—> <strong>中肾管</strong></div>
+    <div class="q">🔥 高频考点串联：肾单位来自？—> <strong>生后肾组织</strong></div>
+    <div class="q">🔥 高频考点串联：中肾旁管发育成什么？—> <strong>输卵管、子宫、阴道上段</strong></div>
+  </div>
+</div>
+
+<!-- ==================== SECTION: 第5章 肾脏生理 ==================== -->
+<div class="section" id="ch2">
+  <h2>三、第5章：肾脏生理（不考大题，选择题重点）</h2>
+
+  <div class="tip">
+    <strong>大纲重点：</strong>掌握GFR的影响因素；近端小管/髓袢/远端小管各段的重吸收与分泌；ADH和醛固酮的作用机制。
+  </div>
+
+  <h3>3.1 肾小球滤过</h3>
+  <div class="knowledge-grid">
+    <div class="knowledge-card">
+      <h4>GFR及其影响因素</h4>
+      <ul>
+        <li><strong>GFR正常值：</strong>125 ml/min</li>
+        <li><strong>滤过分数(FF) = GFR/RPF：</strong>约20%</li>
+        <li><strong>有效滤过压：</strong>毛细血管血压-(血浆胶渗压+囊内压)</li>
+        <li>入球小动脉收缩→GFR↓</li>
+        <li>出球小动脉收缩→GFR↑（轻度），↓（重度）</li>
+        <li>大量失血→交感兴奋→入球收缩→GFR↓↓</li>
+      </ul>
+    </div>
+    <div class="knowledge-card">
+      <h4>自身调节</h4>
+      <ul>
+        <li><strong>肌源性机制：</strong>血压80-180mmHg内GFR保持稳定</li>
+        <li><strong>管-球反馈：</strong>致密斑感受Na⁺→调节入球小动脉口径</li>
+        <li>交感神经/血管紧张素II→入球收缩→GFR↓</li>
+        <li>前列腺素/ANP→入球扩张→GFR↑</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>3.2 肾小管各段重吸收与分泌——核心表格</h3>
+  <table>
+    <tr><th>部位</th><th>主要重吸收</th><th>主要分泌</th><th>关键特征</th></tr>
+    <tr>
+      <td><strong>近端小管</strong></td>
+      <td>65-70% Na⁺/水/Cl⁻；100%葡萄糖/氨基酸；85% HCO₃⁻</td>
+      <td>H⁺、有机酸、有机碱</td>
+      <td>等渗重吸收；葡萄糖有最大转运率(TmG)；碳酸酐酶参与HCO₃⁻重吸收</td>
+    </tr>
+    <tr>
+      <td><strong>髓袢降支细段</strong></td>
+      <td>水</td>
+      <td>—</td>
+      <td>对水通透，对NaCl不通透</td>
+    </tr>
+    <tr>
+      <td><strong>髓袢升支细段</strong></td>
+      <td>NaCl（被动）</td>
+      <td>—</td>
+      <td>对水不通透</td>
+    </tr>
+    <tr>
+      <td><strong>髓袢升支粗段</strong></td>
+      <td>NaCl（主动，Na-K-2Cl同向转运）</td>
+      <td>—</td>
+      <td><strong>呋塞米作用部位</strong>；对水不通透；形成髓质高渗</td>
+    </tr>
+    <tr>
+      <td><strong>远曲小管</strong></td>
+      <td>NaCl（Na-Cl同向转运）</td>
+      <td>Ca²⁺（受PTH调节）</td>
+      <td><strong>氢氯噻嗪作用部位</strong>；对水不通透</td>
+    </tr>
+    <tr>
+      <td><strong>集合管</strong></td>
+      <td>水（受ADH调节）、Na⁺（受醛固酮调节）、尿素</td>
+      <td>K⁺、H⁺、NH₃</td>
+      <td>ADH→水通道蛋白(AQP2)插入管腔膜；醛固酮→Na⁺-K⁺交换↑；<strong>螺内酯作用部位</strong></td>
+    </tr>
+  </table>
+
+  <div class="tip">
+    <strong>ADH vs 醛固酮对比：</strong><br>
+    ADH（抗利尿激素）：下丘脑视上核/室旁核合成→垂体后叶储存→主要调节<strong>水</strong>重吸收（远端小管+集合管），受血浆晶体渗透压↑和血容量↓刺激<br>
+    醛固酮：肾上腺皮质球状带分泌→促进<strong>保钠排钾泌氢</strong>（集合管），受AngII↑和血K⁺↑刺激
+  </div>
+</div>
+
+<!-- ==================== SECTION: 第6章 水电解质 ==================== -->
+<div class="section" id="ch3">
+  <h2>四、第6章：水电解质紊乱 <span class="tag tag-high">论述15分+选择题</span></h2>
+
+  <div class="key">
+    <strong>这是15分论述题的重点模块。2024年考了呕吐肠梗阻→等渗脱水+低钾+代碱的病例。请务必掌握三型脱水的对比和病例分析答题模板。</strong>
+  </div>
+
+  <h3>4.1 三型脱水对比（必背表格）</h3>
+  <table>
+    <tr><th>特征</th><th>高渗性脱水</th><th>等渗性脱水</th><th>低渗性脱水</th></tr>
+    <tr><td><strong>英文</strong></td><td>Hypertonic / Hypernatremic</td><td>Isotonic / Isonatremic</td><td>Hypotonic / Hyponatremic</td></tr>
+    <tr><td><strong>血钠</strong></td><td>&gt;150 mmol/L</td><td>130-150 mmol/L</td><td>&lt;130 mmol/L</td></tr>
+    <tr><td><strong>渗透压</strong></td><td>&gt;310 mOsm/L</td><td>280-310 mOsm/L</td><td>&lt;280 mOsm/L</td></tr>
+    <tr><td><strong>细胞外液</strong></td><td>↓（早期不明显）</td><td>↓↓</td><td>↓↓↓（最严重）</td></tr>
+    <tr><td><strong>细胞内液</strong></td><td>↓↓（细胞内脱水→脑细胞皱缩）</td><td>变化不大</td><td>↑（水进入细胞→细胞水肿）</td></tr>
+    <tr><td><strong>口渴</strong></td><td>明显（高渗刺激）</td><td>有</td><td>无（低渗不刺激）</td></tr>
+    <tr><td><strong>脱水征</strong></td><td>轻</td><td>中等</td><td>明显（皮肤弹性差、眼窝凹陷）</td></tr>
+    <tr><td><strong>休克倾向</strong></td><td>轻</td><td>中等</td><td>最易休克</td></tr>
+    <tr><td><strong>尿量/比重</strong></td><td>少尿，比重↑↑</td><td>少尿，比重↑</td><td>早期不减少，比重↓</td></tr>
+    <tr><td><strong>常见原因</strong></td><td>进水不足、发热、大量出汗</td><td>呕吐、腹泻（短时间大量丢液）</td><td>只补水不补钠、长期使用利尿剂</td></tr>
+    <tr><td><strong>特殊表现</strong></td><td>脱水热、颅内出血</td><td>—</td><td>—</td></tr>
+    <tr><td><strong>治疗原则</strong></td><td><strong>先糖后盐</strong></td><td>先盐扩容，后低渗</td><td><strong>先盐（生理盐水），严重时给少量高渗盐水</strong></td></tr>
+  </table>
+
+  <div class="warn">
+    <strong>一句话考点：</strong>
+    <ul>
+      <li>高渗脱水→口渴最明显、易脱水热和颅内出血（脑细胞皱缩）</li>
+      <li>等渗脱水→短时间大量丢失消化液（最常见脱水类型）</li>
+      <li>低渗脱水→最易休克、脱水征最明显（水进入细胞内→ECF↓↓↓）</li>
+      <li><strong>只补水不补钠→低渗性脱水</strong>（2024年大题考了！）</li>
+    </ul>
+  </div>
+
+  <h3>4.2 钾代谢紊乱——高频考点</h3>
+  <table>
+    <tr><th>特征</th><th>低钾血症 (Hypokalemia)</th><th>高钾血症 (Hyperkalemia)</th></tr>
+    <tr><td><strong>血钾</strong></td><td>&lt; 3.5 mmol/L</td><td>&gt; 5.5 mmol/L</td></tr>
+    <tr><td><strong>骨骼肌</strong></td><td><strong>超极化阻滞→肌无力、弛缓性瘫痪</strong></td><td><strong>去极化阻滞→肌无力、弛缓性瘫痪</strong></td></tr>
+    <tr><td><strong>心肌兴奋性</strong></td><td>↑（轻度），↓（重度）</td><td><strong>先↑后↓（重度→四降）</strong></td></tr>
+    <tr><td><strong>心肌传导性</strong></td><td>↓</td><td><strong>↓</strong></td></tr>
+    <tr><td><strong>心肌自律性</strong></td><td>↑（异位节律风险）</td><td><strong>↓</strong></td></tr>
+    <tr><td><strong>心肌收缩性</strong></td><td>↑</td><td><strong>↓</strong></td></tr>
+    <tr><td><strong>ECG</strong></td><td>T波低平/倒置、U波、ST压低</td><td>T波高尖（帐篷状）、QRS增宽、P波消失</td></tr>
+    <tr><td><strong>酸碱影响</strong></td><td>→代谢性碱中毒（H⁺-K⁺交换）</td><td>→代谢性酸中毒（H⁺-K⁺交换）</td></tr>
+    <tr><td><strong>补钾原则</strong></td><td>见尿补钾、口服为主、不宜过快(&lt;20mmol/h)、浓度不宜过高</td><td>钙剂拮抗心肌毒性、胰岛素+葡萄糖、透析</td></tr>
+  </table>
+
+  <div class="key">
+    <strong>超极化阻滞 vs 去极化阻滞：</strong><br>
+    低钾→细胞外K⁺↓→Em更负（超极化）→Em与Et差值↑→兴奋性↓→超极化阻滞<br>
+    高钾→细胞外K⁺↑→Em上移（去极化）→钠通道失活→兴奋性↓→去极化阻滞<br>
+    这就是低钾和高钾都能导致肌肉无力的原因，但机制相反！
+  </div>
+
+  <div class="tip">
+    <strong>呋塞米→低钾血症→代谢性碱中毒 连续考了两年，务必掌握：</strong><br>
+    呋塞米抑制髓袢升支粗段Na-K-2Cl转运→远曲小管/集合管Na⁺↑→Na⁺-K⁺交换↑→排K⁺↑→<strong>低钾</strong>；同时Na⁺-H⁺交换↑→排H⁺↑+低钾时H⁺-K⁺交换（H⁺入细胞）→<strong>代谢性碱中毒</strong>
+  </div>
+
+  <h3>4.3 PPT重点病例——病例分析答题模板</h3>
+  <div class="case-block">
+    <div class="case-title">PPT-A 病例：36岁男性，发热腹泻3天</div>
+    <p>BP 90/60, P 112, T 38.0°C，皮肤弹性差，[Na⁺]=135, [K⁺]=3.0, pH=7.21, PaCO₂=26, [HCO₃⁻]=16</p>
+    <div class="case-a">
+      <strong>诊断公式：</strong>等渗性脱水 + 低钾血症 + 代谢性酸中毒<br>
+      <strong>答题模板——"判断依据+发生机制"：</strong><br>
+      ①从病史找病因（腹泻→丢液丢钾丢碱）<br>
+      ②从体征看变化（BP↓HR↑皮肤差→ECF↓）<br>
+      ③从化验定类型（血钠正常→等渗；血钾↓→低钾；HCO₃⁻↓pH↓→代酸）<br>
+      ④机制写因果链（A→B→C，不写孤立要点）
+    </div>
+  </div>
+
+  <div class="case-block">
+    <div class="case-title">PPT-A 病例：高渗→只补糖→低渗性脱水（经典串联）</div>
+    <p>40岁男性，吐泻发热4天，Na⁺ 155→高渗脱水。只给5%葡萄糖2天后，Na⁺ 120，BP 72/50，K⁺ 3.0→低渗脱水+低钾血症+休克。</p>
+    <div class="case-a">
+      <strong>关键教训：</strong>"先糖后盐"治高渗，"先盐后糖"保容量。只补糖不补钠→血液稀释→低渗→水入细胞→ECF↓↓→休克。<br>
+      <strong>这个"高渗→治疗不当→低渗→休克"的因果链极高频！</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SECTION: 第7章 酸碱平衡 ==================== -->
+<div class="section" id="ch4">
+  <h2>五、第7章：酸碱平衡紊乱 <span class="tag tag-high">选择题+论述高频</span></h2>
+
+  <div class="key">
+    <strong>最核心能力：给定一组血气数据（pH, PaCO₂, HCO₃⁻, Na⁺, Cl⁻），判断酸碱失衡类型（单纯性还是混合性）。</strong>
+  </div>
+
+  <h3>5.1 核心指标解读</h3>
+  <table>
+    <tr><th>指标</th><th>正常值</th><th>意义</th><th>一句话记忆</th></tr>
+    <tr><td><strong>pH</strong></td><td>7.35-7.45</td><td>定酸/碱方向</td><td>&lt;7.35=酸中毒，&gt;7.45=碱中毒</td></tr>
+    <tr><td><strong>PaCO₂</strong></td><td>33-46 mmHg</td><td><strong>反映呼吸因素</strong></td><td>PaCO₂↑=呼酸；PaCO₂↓=呼碱</td></tr>
+    <tr><td><strong>SB</strong></td><td>22-27 mmol/L</td><td>标准HCO₃⁻（排除呼吸影响）</td><td>SB异常=代谢性因素</td></tr>
+    <tr><td><strong>AB</strong></td><td>22-27 mmol/L</td><td>实际HCO₃⁻（含呼吸影响）</td><td></td></tr>
+    <tr><td><strong>AB vs SB</strong></td><td>AB≈SB</td><td>差值反映呼吸因素</td><td>AB&gt;SB=呼酸；AB&lt;SB=呼碱；两者同升=代碱；两者同降=代酸</td></tr>
+    <tr><td><strong>BE（碱剩余）</strong></td><td>-3~+3</td><td>反映代谢因素变化量</td><td>BE↓=代酸，BE↑=代碱</td></tr>
+    <tr><td><strong>AG</strong></td><td>12±4 mmol/L</td><td>区分代酸类型</td><td>AG=Na⁺-(Cl⁻+HCO₃⁻)</td></tr>
+  </table>
+
+  <h3>5.2 四类单纯性失衡的判断与代偿</h3>
+  <table>
+    <tr><th>类型</th><th>原发变化</th><th>代偿方向</th><th>急性代偿</th><th>慢性代偿</th></tr>
+    <tr><td><strong>代谢性酸中毒</strong></td><td>HCO₃⁻↓</td><td>PaCO₂↓（肺）</td><td colspan="2">PaCO₂=1.5×HCO₃⁻+8±2（或ΔPaCO₂=1.2×ΔHCO₃⁻±2）</td></tr>
+    <tr><td><strong>代谢性碱中毒</strong></td><td>HCO₃⁻↑</td><td>PaCO₂↑（肺）</td><td colspan="2">ΔPaCO₂=0.7×ΔHCO₃⁻±5</td></tr>
+    <tr><td><strong>急性呼吸性酸中毒</strong></td><td>PaCO₂↑</td><td>HCO₃⁻↑（细胞缓冲）</td><td>ΔHCO₃⁻=0.1×ΔPaCO₂±1.5</td><td>—</td></tr>
+    <tr><td><strong>慢性呼吸性酸中毒</strong></td><td>PaCO₂↑</td><td>HCO₃⁻↑（肾）</td><td>—</td><td>ΔHCO₃⁻=0.4×ΔPaCO₂±3</td></tr>
+    <tr><td><strong>急性呼吸性碱中毒</strong></td><td>PaCO₂↓</td><td>HCO₃⁻↓（细胞缓冲）</td><td>ΔHCO₃⁻=0.2×ΔPaCO₂±2.5</td><td>—</td></tr>
+    <tr><td><strong>慢性呼吸性碱中毒</strong></td><td>PaCO₂↓</td><td>HCO₃⁻↓（肾）</td><td>—</td><td>ΔHCO₃⁻=0.5×ΔPaCO₂±2.5</td></tr>
+  </table>
+
+  <div class="tip">
+    <strong>判断步骤口诀：</strong><br>
+    ① 看pH → 定酸/碱方向<br>
+    ② 看原发因素（病史+HCO₃⁻/PaCO₂谁变化更明显）→ 定代谢/呼吸<br>
+    ③ 选代偿公式算预测值 → 实测值在范围内=单纯性，超出=混合性<br>
+    ④ 如怀疑代酸，算AG → AG↑=AG增高型代酸
+  </div>
+
+  <h3>5.3 AG增高型 vs AG正常型代酸</h3>
+  <table>
+    <tr><th>类型</th><th>AG</th><th>Cl⁻</th><th>常见病因（中英文对照）</th></tr>
+    <tr><td><strong>AG增高型</strong></td><td>↑</td><td>正常</td><td>乳酸酸中毒(lactic acidosis)、酮症酸中毒(ketoacidosis)、肾衰晚期、水杨酸中毒(salicylate)、甲醇</td></tr>
+    <tr><td><strong>AG正常型</strong></td><td>正常</td><td>↑（高氯）</td><td>腹泻（丢HCO₃⁻）、大量输注生理盐水、肾小管性酸中毒(RTA)、乙酰唑胺(碳酸酐酶抑制剂)</td></tr>
+  </table>
+
+  <h3>5.4 混合性失衡判断（PPT-D重点病例）</h3>
+  <div class="case-block">
+    <div class="case-title">经典三重失衡：肺心病 + 利尿剂</div>
+    <p>pH 7.43, PaCO₂ 61, HCO₃⁻ 38, Na⁺ 140, Cl⁻ 74, K⁺ 3.5</p>
+    <div class="case-a">
+      ① 慢性呼酸代偿上限：[HCO₃⁻]=24+0.4×(61-40)±3=29~35，实测38→合并<strong>代碱</strong><br>
+      ② AG=140-(74+38)=<strong>28</strong>（↑）→合并<strong>AG增高型代酸</strong><br>
+      <strong>结论：呼酸 + 代碱 + 代酸（三重失衡！）</strong>
+    </div>
+  </div>
+
+  <div class="case-block">
+    <div class="case-title">PPT-C/D：慢阻肺(COPD)患者</div>
+    <p>pH 7.35, PaCO₂ 60, HCO₃⁻ 31 → ΔHCO₃⁻=0.4×20±3=8±3 → 预测32±3，实测31 → 在范围内 → <strong>代偿性呼吸性酸中毒</strong></p>
+  </div>
+
+  <div class="warn">
+    <strong>碱中毒→手足搐搦机制：</strong>碱中毒→血浆游离Ca²⁺与蛋白结合增加→游离Ca²⁺↓→Na⁺通道激活阈值降低→神经肌肉兴奋性↑→手足搐搦(tetany)
+  </div>
+</div>
+
+<!-- ==================== SECTION: 第8-9章 肾衰+泌尿病理 ==================== -->
+<div class="section" id="ch5">
+  <h2>六、第8-9章：肾脏功能不全与泌尿系统病理 <span class="tag tag-high">论述10分</span></h2>
+
+  <div class="info">
+    <strong>2024考了膜性肾病（肾病综合征），2023考了急进性肾炎。这两个和肾盂肾炎是最核心的三种肾炎。</strong>
+  </div>
+
+  <h3>6.1 ARF vs CRF</h3>
+  <table>
+    <tr><th>特征</th><th>急性肾衰竭 (ARF/AKI)</th><th>慢性肾衰竭 (CRF/CKD)</th></tr>
+    <tr><td><strong>病因分类</strong></td><td>肾前性（低灌注）、肾性（ATN、肾小球肾炎）、肾后性（梗阻）</td><td>慢性肾小球肾炎、糖尿病肾病、高血压肾病</td></tr>
+    <tr><td><strong>发病机制</strong></td><td>肾供血减少 + 肾小管损伤</td><td>健存肾单位减少→高滤过→硬化→恶性循环</td></tr>
+    <tr><td><strong>临床经过</strong></td><td>少尿期→多尿期→恢复期</td><td>代偿期→失代偿期→肾衰竭期→尿毒症期</td></tr>
+    <tr><td><strong>尿沉渣鉴别</strong></td><td>肾小管上皮细胞、颗粒管型</td><td><strong>蜡样管型（特征性！）</strong></td></tr>
+    <tr><td><strong>CKD代谢特点</strong></td><td colspan="2">高磷、低钙、高钾、代酸、贫血（EPO↓）、肾性骨营养不良</td></tr>
+    <tr><td><strong>透析指征AEIOU</strong></td><td colspan="2">A-酸中毒、E-电解质(高钾)、I-中毒、O-容量超载、U-尿毒症</td></tr>
+  </table>
+
+  <div class="key">
+    <strong>蜡样管型 = 慢性肾病的标志！</strong>AKI不会出现。2025年选择题考了。
+  </div>
+
+  <h3>6.2 三大必考肾炎——病理表现对比</h3>
+  <table>
+    <tr><th>疾病</th><th>光镜</th><th>免疫荧光</th><th>电镜</th><th>临床</th></tr>
+    <tr>
+      <td><strong>急进性肾炎(RPGN)</strong></td>
+      <td><strong>新月体形成</strong>（壁层上皮细胞增生）</td>
+      <td>I型：IgG线性；II型：颗粒；III型：阴性</td>
+      <td>GBM断裂，新月体</td>
+      <td>快速进行性肾衰，少尿，血尿蛋白尿</td>
+    </tr>
+    <tr>
+      <td><strong>膜性肾病(MN)</strong></td>
+      <td>毛细血管壁弥漫增厚，PASM见<strong>钉突(spike)</strong></td>
+      <td><strong>IgG+C3沿毛细血管壁细颗粒状沉积</strong></td>
+      <td><strong>上皮下致密沉积物</strong>，足突融合</td>
+      <td>肾病综合征（大量蛋白尿+低蛋白血症+水肿+高脂血症）</td>
+    </tr>
+    <tr>
+      <td><strong>急性肾盂肾炎</strong></td>
+      <td><strong>间质化脓性炎</strong>（大量中性粒细胞）+肾小管坏死+白细胞管型</td>
+      <td>—</td>
+      <td>—</td>
+      <td>发热、腰痛、脓尿、菌尿；肾表面黄白色脓肿</td>
+    </tr>
+  </table>
+
+  <div class="knowledge-grid">
+    <div class="knowledge-card">
+      <h4>MPGN分型（膜增生性GN）</h4>
+      <ul>
+        <li>I型：沉积物在<strong>内皮下+系膜区</strong></li>
+        <li>II型（致密沉积物病）：基底膜内条带状</li>
+        <li>III型：内皮下+上皮下</li>
+        <li>光镜：系膜增生+双轨征（车轨征）</li>
+      </ul>
+    </div>
+    <div class="knowledge-card">
+      <h4>肾病综合征诊断"三高一低"</h4>
+      <ul>
+        <li>①大量蛋白尿 &gt;3.5g/d</li>
+        <li>②低白蛋白血症 &lt;30g/L</li>
+        <li>③水肿</li>
+        <li>④高脂血症</li>
+        <li>监测：Scr/eGFR + 24h尿蛋白/UACR + Alb + BP + 电解质</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>6.3 急性肾衰→酸中毒+高钾机制（2024大题）</h3>
+  <div class="chunk">
+    <div class="chunk-body">
+      <ul>
+        <li>GFR↓→固定酸(H₂SO₄,H₃PO₄)排泄↓→<strong>代谢性酸中毒</strong></li>
+        <li>GFR↓→K⁺排泄↓+酸中毒（H⁺-K⁺交换→K⁺外移）+组织分解↑→<strong>高钾血症</strong></li>
+        <li>新月体压迫毛细血管袢→GFR急剧↓→少尿/无尿→氮质血症</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SECTION: 第10章 药物 ==================== -->
+<div class="section" id="ch6">
+  <h2>七、第10章：肾脏与药物 <span class="tag tag-mid">选择题高频</span></h2>
+
+  <h3>7.1 五大类利尿药——作用部位与机制</h3>
+  <table>
+    <tr><th>药物</th><th>作用部位</th><th>机制</th><th>适应症</th><th>禁忌/不良反应</th></tr>
+    <tr><td><strong>呋塞米</strong> Furosemide</td><td>髓袢升支粗段</td><td>抑制Na-K-2Cl同向转运</td><td>水肿、急性肺水肿、高钙血症</td><td>痛风、低钾、低钙低镁、耳毒性、<strong>磺胺过敏</strong></td></tr>
+    <tr><td><strong>氢氯噻嗪</strong> HCTZ</td><td>远曲小管</td><td>抑制Na-Cl同向转运</td><td>高血压、轻度心衰</td><td>痛风、低钾、高血糖、高尿酸、磺胺过敏</td></tr>
+    <tr><td><strong>螺内酯</strong> Spironolactone</td><td>集合管</td><td>醛固酮受体拮抗剂（保钾）</td><td>原醛、伴低钾的水肿</td><td><strong>高钾血症</strong>、内分泌副作用</td></tr>
+    <tr><td><strong>甘露醇</strong> Mannitol</td><td>全段（渗透性）</td><td>提高管腔渗透压</td><td><strong>脑水肿</strong>、青光眼</td><td>心衰（容量负荷↑）</td></tr>
+    <tr><td><strong>乙酰唑胺</strong> Acetazolamide</td><td>近曲小管</td><td>抑制碳酸酐酶</td><td>青光眼、高山病</td><td>代酸、低钾</td></tr>
+  </table>
+
+  <div class="qa-block">
+    <div class="q">🔥 苯巴比妥中毒→用碳酸氢钠的目的？</div>
+    <div class="answer">碱化尿液，减少肾小管重吸收，促进排泄（苯巴比妥是弱酸性药物，碱化后离子型增多→不被重吸收）</div>
+  </div>
+
+  <h3>7.2 药物肾毒性+肾功能不全时用药</h3>
+  <table>
+    <tr><th>肾毒性机制</th><th>常见肾毒性药物</th><th>肾功能不全时用药调整</th></tr>
+    <tr>
+      <td>①肾小球滤过率↓；②急性肾小管坏死(ATN)；③急性间质性肾炎(AIN)；④结晶性肾病</td>
+      <td>氨基糖苷类(庆大霉素)、万古霉素、顺铂、NSAIDs、造影剂、磺胺类</td>
+      <td>根据eGFR调整剂量；延长给药间隔；选肾毒性小的替代药物；监测血药浓度</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ==================== SECTION: 第11章 尿液检查 ==================== -->
+<div class="section" id="ch7">
+  <h2>八、第11章：尿液及肾功能检查 <span class="tag tag-low">选择题</span></h2>
+
+  <div class="knowledge-grid">
+    <div class="knowledge-card">
+      <h4>蛋白尿分型（UACR标准）</h4>
+      <ul>
+        <li>UACR &lt;30 mg/g → <strong>正常</strong></li>
+        <li>UACR 30-300 mg/g → <strong>微量白蛋白尿</strong>（早期肾损伤）</li>
+        <li>UACR &gt;300 mg/g → <strong>大量白蛋白尿</strong>（临床蛋白尿）</li>
+        <li>糖尿病肾病：微量白蛋白尿期是可逆的！</li>
+      </ul>
+    </div>
+    <div class="knowledge-card">
+      <h4>肾小球功能评价</h4>
+      <ul>
+        <li>Scr + eGFR（最常用）</li>
+        <li>BUN（受饮食影响大）</li>
+        <li>Cystatin C（更敏感，不受肌肉量影响）</li>
+        <li>内生肌酐清除率(Ccr)</li>
+      </ul>
+    </div>
+    <div class="knowledge-card">
+      <h4>肾小管功能评价</h4>
+      <ul>
+        <li><strong>近端：</strong>NAG、β2-MG、α1-MG、RBP、FeNa</li>
+        <li><strong>远端：</strong>稀释浓缩试验、尿渗量测定</li>
+        <li>NAG→<strong>近端肾小管</strong>损伤敏感标志物</li>
+      </ul>
+    </div>
+    <div class="knowledge-card">
+      <h4>管型(casts)的临床意义</h4>
+      <ul>
+        <li>透明管型：正常可见，运动后增多</li>
+        <li>红细胞管型：<strong>肾小球肾炎</strong></li>
+        <li>白细胞管型：<strong>肾盂肾炎</strong></li>
+        <li>颗粒管型：肾小管损伤</li>
+        <li><strong>蜡样管型：CKD特征性表现</strong></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SECTION: 第12-15章 生殖系统 ==================== -->
+<div class="section" id="ch8">
+  <h2>九、第12-15章：生殖系统 <span class="tag tag-high">论述15分+选择题</span></h2>
+
+  <div class="key">
+    <strong>2024年和2023年都考了生殖大题（葡萄胎、PCOS）。生殖系统病理和激素调控是15分论述题的核心。</strong>
+  </div>
+
+  <h3>9.1 下丘脑-垂体-性腺轴</h3>
+  <div class="chunk">
+    <div class="chunk-body">
+      <table>
+        <tr><th></th><th>男性</th><th>女性</th></tr>
+        <tr><td><strong>下丘脑</strong></td><td colspan="2">GnRH（脉冲式分泌）</td></tr>
+        <tr><td><strong>垂体前叶</strong></td><td>FSH → Sertoli细胞（生精）<br>LH → Leydig细胞（睾酮）</td><td>FSH → 颗粒细胞（雌激素、卵泡发育）<br>LH → 排卵、黄体形成、孕激素分泌</td></tr>
+        <tr><td><strong>性腺激素</strong></td><td>睾酮(T)、抑制素(Inhibin)</td><td>雌激素(E2)、孕激素(P)、抑制素</td></tr>
+        <tr><td><strong>负反馈</strong></td><td>T + Inhibin → FSH/LH↓</td><td>E2+P + Inhibin → FSH/LH↓</td></tr>
+        <tr><td>正反馈</td><td>无</td><td>E2高峰 → LH峰 → 排卵</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h3>9.2 生殖系统病理——必考疾病</h3>
+
+  <div class="chunk">
+    <div class="chunk-title">宫颈病变：CIN谱系 + 宫颈癌</div>
+    <div class="chunk-body">
+      <table>
+        <tr><th>CIN I</th><th>CIN II</th><th>CIN III / 原位癌</th><th>浸润癌</th></tr>
+        <tr><td>异型细胞占上皮下1/3</td><td>占下1/3-2/3</td><td>占全层→全层异型，但<strong>未突破基底膜</strong></td><td>突破基底膜→浸润</td></tr>
+      </table>
+      <ul>
+        <li><strong>CIN III = 高级别上皮内瘤变 = 原位癌</strong></li>
+        <li>CIN通常<strong>无症状</strong>（不引起不规则出血，需筛查发现）</li>
+        <li><strong>HPV-16/18</strong>：E6→p53失活；E7→Rb失活→癌变</li>
+        <li>HPV-16最常见（占50%+），HPV-18其次；低危型6/11→尖锐湿疣</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="chunk">
+    <div class="chunk-title">滋养细胞疾病谱（葡萄胎→侵袭性葡萄胎→绒癌）</div>
+    <div class="chunk-body">
+      <table>
+        <tr><th>疾病</th><th>肉眼</th><th>光镜</th><th>hCG</th><th>转移</th></tr>
+        <tr><td><strong>完全性葡萄胎</strong></td><td>全部绒毛呈水泡状，如葡萄串</td><td>①绒毛间质高度水肿 ②血管消失 ③滋养层细胞增生</td><td>异常↑↑</td><td>无（可进展为侵袭性）</td></tr>
+        <tr><td><strong>部分性葡萄胎</strong></td><td>部分绒毛水肿，可见胎儿</td><td>部分绒毛水肿，血管可见</td><td>↑</td><td>极少</td></tr>
+        <tr><td><strong>侵袭性葡萄胎</strong></td><td>水泡侵入子宫肌层</td><td>同葡萄胎+肌层浸润</td><td>↑</td><td>局部侵袭</td></tr>
+        <tr><td><strong>绒毛膜癌</strong></td><td>出血坏死性结节</td><td><strong>无绒毛结构！</strong> 异型滋养细胞+出血坏死</td><td>↑↑</td><td><strong>血行转移</strong>（肺、脑）</td></tr>
+      </table>
+      <ul>
+        <li><strong>hCG来源：</strong>合体滋养层细胞分泌</li>
+        <li><strong>葡萄胎机制：</strong>完全性=空卵+精子自我复制→46XX全为父源；部分性=正常卵+双精子→三倍体69XXY</li>
+        <li><strong>清宫后hCG监测：</strong>术后每周测一次→持续不降或升高→提示恶变</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="chunk">
+    <div class="chunk-title">PCOS（多囊卵巢综合征）——2024年考题方向</div>
+    <div class="chunk-body">
+      <ul>
+        <li>三联征：<strong>月经稀发/停经 + 高雄激素表现 + 超声卵巢多囊样改变</strong></li>
+        <li>女性雄激素升高的三个疾病：PCOS、库欣综合征、先天性肾上腺皮质增生(CAH)</li>
+        <li>长期无排卵→缺乏孕激素拮抗→雌激素持续刺激→子宫内膜增生→<strong>可进展为子宫内膜癌</strong></li>
+        <li>诊断：诊刮+病理活检；超声测内膜厚度</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="chunk">
+    <div class="chunk-title">乳腺癌分子分型与治疗</div>
+    <div class="chunk-body">
+      <table>
+        <tr><th>分型</th><th>ER</th><th>PR</th><th>HER2</th><th>治疗</th></tr>
+        <tr><td>Luminal A</td><td>+</td><td>+</td><td>-</td><td>内分泌治疗（他莫昔芬/芳香化酶抑制剂）</td></tr>
+        <tr><td>Luminal B</td><td>+</td><td>+/−</td><td>+</td><td>内分泌 + HER2靶向</td></tr>
+        <tr><td><strong>HER2阳性</strong></td><td><strong>-</strong></td><td>-</td><td><strong>+</strong></td><td><strong>曲妥珠单抗</strong>(Trastuzumab) + 化疗</td></tr>
+        <tr><td>三阴性</td><td>-</td><td>-</td><td>-</td><td>化疗为主</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="case-block">
+    <div class="case-title">5α-还原酶缺乏 vs SRY敲除（2025选择题）</div>
+    <div class="case-a">
+      <strong>5α-还原酶缺乏：</strong>睾酮→DHT受阻→外生殖器女性化（但内生殖器为男性，因Wolffian管依靠睾酮发育）<br>
+      <strong>SRY敲除：</strong>性腺不发育为睾丸→默认发育为卵巢（因默认途径是女性）<br>
+      <strong>Klinefelter综合征(47,XXY)：</strong>最常见原发性性腺功能减退→睾酮↓+LH/FSH↑
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SECTION: 2025 选择题 ==================== -->
+<div class="section" id="2025">
+  <h2>十、2025年选择题33题全解析</h2>
+
+  <div class="tip">
+    <strong>以下按知识点分类呈现所有2025年真题及解析。</strong>标注★的为高频/易错题。
+  </div>
+
+  <h3>酸碱平衡（第1-2题）</h3>
+  <div class="qa-block">
+    <div class="q"><span class="num">1</span>★ AB、SB 升高见于？（代酸/呼酸/代碱/呼碱）</div>
+    <div class="answer">代碱</div>
+    <div class="explain">AB和SB均升高=代谢性碱中毒(HCO₃⁻原发性升高)；AB>SB=呼酸；AB&lt;SB=呼碱；两者均降=代酸。</div>
+  </div>
+
+  <h3>泌尿系统（第2-17题）</h3>
+  <div class="qa-block">
+    <div class="q"><span class="num">2</span>NAG检测哪部分肾小管功能？</div><div class="answer">近端肾小管</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">3</span>★ MPGN I 型电镜下致密沉积物沉积部位？</div><div class="answer">内皮下和系膜区</div>
+    <div class="explain">I型最常见：内皮下+系膜区；II型(致密沉积物病)：基底膜内；III型：内皮下+上皮下。光镜：双轨征。</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">4</span>肾小管近端小管的电镜光镜结构？</div><div class="answer">光镜：立方/锥体形细胞，刷状缘；电镜：大量微绒毛、线粒体</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">5</span>★ 致密斑的作用？</div><div class="answer">感受远曲小管液中Na⁺浓度</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">6</span>★ 苯巴比妥中毒用NaHCO₃目的？</div><div class="answer">碱化尿液→离子障→减少重吸收→促进排泄</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">7</span>★ 呋塞米作用部位？</div><div class="answer">髓袢升支粗段（抑制Na-K-2Cl同向转运体）</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">8</span>呋塞米不用于？</div><div class="answer">痛风/低钾血症/磺胺类过敏者</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">9</span>氢氯噻嗪不用于？</div><div class="answer">痛风/磺胺类过敏/严重肾功能不全</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">10</span>甘露醇适应症？</div><div class="answer">脑水肿</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">11</span>★ CKD不会出现哪个？</div><div class="answer">低磷血症（CKD→磷排泄↓→高磷血症！）</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">12</span>药物肾毒性机制？</div><div class="answer">以上都对（GFR↓+ATN+AIN+结晶性肾病）</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">13</span>★ 急进性肾炎的特征表现？</div><div class="answer">新月体形成（crescent）</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">14</span>肾盂肾炎大体表现？</div><div class="answer">肾表面黄白色脓肿，肾盂充血、脓性渗出</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">15</span>★ 肾盂肾炎光镜表现？</div><div class="answer">间质性化脓性炎（大量中性粒细胞）+肾小管坏死+白细胞管型</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">16</span>★ 下列哪个least倾向于透析？</div><div class="answer">高血尿素氮（单纯BUN↑≠透析指征。AEIOU才是）</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">17</span>★ 证明CKD而非AKI的指标？</div><div class="answer">蜡样管型（waxy cast）</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">18</span>UACR 40mg/g属于什么蛋白尿？</div><div class="answer">微量白蛋白尿（30-300mg/g范围）</div>
+  </div>
+
+  <h3>生殖系统（第18b-33题）</h3>
+  <div class="qa-block">
+    <div class="q"><span class="num">18b</span>★ 输尿管芽来自？</div><div class="answer">中肾管（mesonephric duct）</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">19</span>精子的结构？</div><div class="answer">头（顶体+核）→颈（中心体）→中段（线粒体鞘）→主段→末段</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">20</span>★ 初级卵泡不含什么？</div><div class="answer">卵丘（cumulus oophorus，次级卵泡才出现）</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">21</span>★ 分泌睾酮的细胞？</div><div class="answer">Leydig细胞（间质细胞），受LH调节</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">22</span>★ Leydig细胞组胚结构？</div><div class="answer">多边形/立方，成簇分布(cluster)，胞质嗜酸性</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">23</span>月经后子宫内膜修复靠什么？</div><div class="answer">基底层残留的子宫腺上皮细胞</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">24</span>★ 不属于不规则流血的疾病？</div><div class="answer">CIN（宫颈上皮内瘤变，未突破基底膜，通常无症状）</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">25</span>★ 最初促进精子产生的激素？</div><div class="answer">FSH（作用于Sertoli细胞启动生精）</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">26</span>★ 绒毛膜癌的标志物？</div><div class="answer">β-hCG</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">27</span>★ HPV哪型与宫颈癌最相关？</div><div class="answer">HPV-16（占50%+，其次18；低危6/11→尖锐湿疣）</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">28</span>★ 良性卵巢肿瘤？</div><div class="answer">成熟畸胎瘤(Mature Teratoma)；未成熟畸胎瘤=恶性</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">29</span>★ 5α-还原酶缺乏→外生殖器？</div><div class="answer">女性化（睾酮→DHT受阻，DHT是外生殖器发育关键）</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">30</span>★ SRY基因敲除→生殖器？</div><div class="answer">卵巢/卵巢样（默认发育途径是女性）</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">31</span>★ ER-/HER2+乳腺癌治疗？</div><div class="answer">曲妥珠单抗(Trastuzumab) + 化疗</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">32</span>28岁男性，性欲↓疲劳肌肉↓？</div><div class="answer">原发性性腺功能减退（最常见Klinefelter综合征47,XXY）</div>
+  </div>
+  <div class="qa-block">
+    <div class="q"><span class="num">33</span>★ 严重高钾对心肌影响？</div><div class="answer">四降（兴奋性↓传导性↓自律性↓收缩性↓）</div>
+  </div>
+
+  <h3>切片题要点</h3>
+  <div class="tip">
+    <strong>回忆题：</strong>子宫上皮内瘤变切片，问：A.未侵犯基底膜 B.原位腺癌 C.高级别上皮内瘤变 D.CIN III E.与HPV密切相关。<br>
+    CIN III = 高级别上皮内瘤变 = 原位癌，未突破基底膜，与HPV 16/18密切相关。可能是多选。
+  </div>
+</div>
+
+<!-- ==================== SECTION: 2024 论述题 ==================== -->
+<div class="section" id="2024">
+  <h2>十一、2024年论述题全解析</h2>
+  <div class="tip">三道中文论述题：泌尿10分 + 水电解质15分 + 生殖15分。各题另有补充方向。</div>
+
+  <div class="case-block">
+    <div class="case-title">论述题1（泌尿，10分）——II期膜性肾病</div>
+    <p>双下肢水肿，白蛋白↓，蛋白尿，UACR 3800 mg/g</p>
+    <div class="case-q">(1) 膜性肾病荧光、光镜、电镜表现</div>
+    <div class="case-a">
+      <strong>免疫荧光：</strong>IgG和C3沿毛细血管壁<strong>细颗粒状</strong>沉积<br>
+      <strong>光镜：</strong>毛细血管壁弥漫增厚，PASM染色见基底膜外侧"<strong>钉突(spike)</strong>"形成<br>
+      <strong>电镜：</strong><strong>上皮下</strong>电子致密沉积物，足突广泛融合
+    </div>
+    <div class="case-q">(2) 肾病综合征诊断依据</div>
+    <div class="case-a">
+      <strong>"三高一低"：</strong>①大量蛋白尿(>3.5g/d，UACR 3800符合)；②低白蛋白血症(<30g/L)；③水肿（双下肢）；④高脂血症
+    </div>
+    <div class="case-q">(3) 如何监测病人肾功能</div>
+    <div class="case-a">Scr/eGFR + 24h尿蛋白/UACR + Alb + BP + 电解质(K⁺/Na⁺/Ca²⁺/P) + 尿常规</div>
+  </div>
+
+  <div class="case-block">
+    <div class="case-title">论述题2（水电解质，15分）——肠梗阻呕吐病例</div>
+    <p>10岁小孩，肠梗阻呕吐，脱水样，肌肉无力，Na⁺ 135, K⁺ 2.7, HCO₃⁻ 38, PaCO₂ 46, BP 110/80。补5%葡萄糖后脱水加重，BP 70/50。</p>
+    <div class="case-q">(1) 存在哪些水电解质紊乱</div>
+    <div class="case-a">
+      入院：<strong>等渗性脱水</strong> + <strong>低钾血症</strong> + <strong>代谢性碱中毒</strong>（HCO₃⁻38>>27, PaCO₂46=代偿性升高）<br>
+      补液后：<strong>低渗性脱水</strong>（只补糖不补钠→血液稀释→低渗→水入细胞→ECF↓↓→休克）
+    </div>
+    <div class="case-q">(2) 发生机制（7分）</div>
+    <div class="case-a">
+      等渗脱水：肠梗阻积液+呕吐→丢失等渗消化液→ECF↓<br>
+      低钾：呕吐丢钾+血容量↓→醛固酮↑→排钾↑+碱中毒时H⁺-K⁺交换<br>
+      代碱：呕吐丢胃酸(H⁺+Cl⁻)+低钾→H⁺入细胞+醛固酮↑→泌H⁺↑<br>
+      补液后加重：只补糖不补钠→血液稀释→低渗→水从ECF转入ICF→ECF↓↓→BP↓
+    </div>
+    <div class="case-q">(3) 为什么肌肉无力</div>
+    <div class="case-a">低钾→ECF K⁺↓→Em超极化→Em与Et差值↑→<strong>超极化阻滞</strong>→骨骼肌兴奋性↓→无力</div>
+    <div class="case-q">(4) 为什么补液后反而脱水加重</div>
+    <div class="case-a">补液不含钠→血浆稀释→血钠↓→ECF低渗→水分从ECF进入ICF→有效循环血量↓→脱水加重、血压下降</div>
+  </div>
+
+  <div class="case-block">
+    <div class="case-title">论述题3（生殖，15分）——葡萄胎</div>
+    <p>女性，停经，hCG>200000，超声子宫多囊样，"落雪"样回声</p>
+    <div class="case-q">(1) 诊断及类型</div>
+    <div class="case-a"><strong>葡萄胎(Hydatidiform Mole)</strong>。完全性(全部绒毛水肿，无胚胎，46XX父源)；部分性(部分绒毛水肿，有胚胎，69XXY三倍体)</div>
+    <div class="case-q">(2) hCG来源与意义</div>
+    <div class="case-a">来源：合体滋养层细胞。意义：诊断、清宫后监测恶变（持续不降→侵蚀性/绒癌）、疗效评估</div>
+    <div class="case-q">(3) 病理变化</div>
+    <div class="case-a">大体：水泡状物如葡萄串。光镜：①绒毛间质高度水肿 ②血管减少/消失 ③滋养层细胞增生</div>
+    <div class="case-q">(4) 病理机制</div>
+    <div class="case-a">完全性：空卵+精子自我复制→46XX全父源→缺乏母系调控→滋养层过度增生+绒毛水肿+无胚胎</div>
+  </div>
+
+  <div class="case-block">
+    <div class="case-title">补充：同年其他考题方向</div>
+    <div class="case-q">生殖：PCOS</div>
+    <div class="case-a">诊断：月经稀发+高雄+超声多囊。三个雄激素升高的病：PCOS、库欣、CAH。10年后内膜增厚→子宫内膜癌（长期无排卵→缺乏孕激素→雌激素持续刺激→内膜增生→癌变）。需诊刮+病理活检。</div>
+    <div class="case-q">泌尿：急进性肾小球肾炎</div>
+    <div class="case-a">诊断：血尿+蛋白尿+快速肾衰+酸中毒+高钾。疾病特点：新月体形成。肾衰机制：新月体压迫毛细血管袢→GFR↓。酸中毒和高钾：GFR↓→固定酸/K⁺排泄↓+酸中毒时H⁺-K⁺交换。</div>
+  </div>
+</div>
+
+<!-- ==================== SECTION: 2023 简答 ==================== -->
+<div class="section" id="2023">
+  <h2>十二、2023年简答题解析</h2>
+
+  <div class="case-block">
+    <div class="case-title">简答1：急进性肾小球肾炎</div>
+    <p>临床表现→问什么肾炎、需完善什么检查、诊断依据</p>
+    <div class="case-a">
+      <strong>诊断：</strong>急进性肾小球肾炎(RPGN)/新月体性肾炎。依据：血尿蛋白尿+快速进行性肾衰。<br>
+      <strong>检查：</strong>肾穿刺活检(金标准)→光镜新月体>50%囊腔；免疫荧光分型(IgG线性/IgG颗粒/阴性)；血清抗GBM抗体、ANCA；Scr/BUN/eGFR/电解质/血气<br>
+    </div>
+  </div>
+
+  <div class="case-block">
+    <div class="case-title">简答2：呋塞米→低钾+代碱</div>
+    <p>问呋塞米药物作用机制</p>
+    <div class="case-a">
+      抑制髓袢升支粗段Na⁺-K⁺-2Cl⁻同向转运体→减少NaCl重吸收。<br>
+      <strong>→低钾：</strong>远端Na⁺↑→Na⁺-K⁺交换↑→排K⁺↑+醛固酮↑+流量依赖性排钾<br>
+      <strong>→代碱：</strong>远端Na⁺↑→Na⁺-H⁺交换↑→排H⁺↑；低钾→H⁺-K⁺交换→H⁺入细胞；醛固酮↑→泌H⁺↑
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SECTION: 公式速查 ==================== -->
+<div class="section" id="formulas">
+  <h2>十三、酸碱失衡代偿公式速查卡（考前必背）</h2>
+
+  <table>
+    <tr><th>原发失衡</th><th>原发变化</th><th>代偿公式</th></tr>
+    <tr><td>代谢性酸中毒</td><td>HCO₃⁻↓</td><td><strong>PaCO₂ = 1.5×HCO₃⁻ + 8 ± 2</strong><br>或 ΔPaCO₂ = 1.2×ΔHCO₃⁻ ± 2</td></tr>
+    <tr><td>代谢性碱中毒</td><td>HCO₃⁻↑</td><td><strong>ΔPaCO₂ = 0.7×ΔHCO₃⁻ ± 5</strong></td></tr>
+    <tr><td>急性呼酸</td><td>PaCO₂↑</td><td><strong>ΔHCO₃⁻ = 0.1×ΔPaCO₂ ± 1.5</strong></td></tr>
+    <tr><td>慢性呼酸</td><td>PaCO₂↑</td><td><strong>ΔHCO₃⁻ = 0.4×ΔPaCO₂ ± 3</strong></td></tr>
+    <tr><td>急性呼碱</td><td>PaCO₂↓</td><td><strong>ΔHCO₃⁻ = 0.2×ΔPaCO₂ ± 2.5</strong></td></tr>
+    <tr><td>慢性呼碱</td><td>PaCO₂↓</td><td><strong>ΔHCO₃⁻ = 0.5×ΔPaCO₂ ± 2.5</strong></td></tr>
+  </table>
+
+  <div class="formula">AG = Na⁺ − (Cl⁻ + HCO₃⁻) 　　正常值 12 ± 4 mmol/L</div>
+
+  <div class="warn">
+    <strong>混合性判断三步法：</strong><br>
+    ① 算预测值 → ② 实测值在范围内=单纯性 → ③ 实测值>上限=合并同向失衡；实测值&lt;下限=合并反向失衡
+  </div>
+</div>
+
+<!-- ==================== SECTION: 自测清单 ==================== -->
+<div class="section" id="checklist">
+  <h2>十四、考前30分钟自测清单</h2>
+  <p>以下问题如果你能不假思索地回答，说明该知识点已掌握。否则请翻回对应章节。</p>
+
+  <h4>水电解质部分（15分大题核心）</h4>
+  <ul style="padding-left:20px; line-height:2.2;">
+    <li>☐ 三型脱水的血钠范围？细胞内/外液变化？口渴有无？休克倾向？</li>
+    <li>☐ "只补水不补钠"会导致什么？机制？</li>
+    <li>☐ 高渗脱水为什么容易脱水热和颅内出血？</li>
+    <li>☐ 低渗脱水为什么最容易休克？</li>
+    <li>☐ 低钾→肌无力机制？（超极化阻滞）高钾→肌无力机制？（去极化阻滞）</li>
+    <li>☐ 严重高钾→心肌四降是哪四个？</li>
+    <li>☐ 补钾原则？为什么不能快？</li>
+    <li>☐ 病例答题模板：病因→体征→化验→机制因果链</li>
+  </ul>
+
+  <h4>酸碱部分</h4>
+  <ul style="padding-left:20px; line-height:2.2;">
+    <li>☐ AB>SB=？AB&lt;SB=？AB=SB均↑=？AB=SB均↓=？</li>
+    <li>☐ AG增高型代酸有哪些病因？AG正常型有哪些？</li>
+    <li>☐ 急性代酸最主要代偿方式？（肺→快）慢性？（肾→慢但彻底）</li>
+    <li>☐ 碱中毒→手足搐搦机制？（游离Ca²⁺↓→神经肌肉兴奋↑）</li>
+    <li>☐ 能默写6个代偿公式？</li>
+    <li>☐ 呋塞米→低钾→代碱的完整因果链？</li>
+  </ul>
+
+  <h4>泌尿病理部分（10分大题核心）</h4>
+  <ul style="padding-left:20px; line-height:2.2;">
+    <li>☐ 膜性肾病：荧光？（IgG/C3颗粒状）光镜？（钉突spike）电镜？（上皮下沉积）</li>
+    <li>☐ 急进性肾炎特征？（新月体crescent）三型免疫荧光区别？</li>
+    <li>☐ 肾病综合征"三高一低"？</li>
+    <li>☐ 肾盂肾炎是什么炎症？（化脓性间质性炎）</li>
+    <li>☐ CKD vs AKI鉴别？（蜡样管型=CKD标志）</li>
+    <li>☐ 急性肾衰→酸中毒+高钾的机制？</li>
+  </ul>
+
+  <h4>生殖部分（15分大题核心）</h4>
+  <ul style="padding-left:20px; line-height:2.2;">
+    <li>☐ 输尿管芽来自？（中肾管）生后肾组织形成什么？（肾单位）</li>
+    <li>☐ 卵泡发育各阶段特点？初级卵泡有卵丘吗？（无！次级卵泡才有）</li>
+    <li>☐ Leydig→LH→睾酮；Sertoli→FSH→ABP+抑制素</li>
+    <li>☐ 葡萄胎三大光镜特征？分型？hCG来源和意义？</li>
+    <li>☐ 侵蚀性葡萄胎 vs 绒癌鉴别？（有无绒毛结构）</li>
+    <li>☐ HPV-16 vs 11？（16高危→宫颈癌；11低危→尖锐湿疣）</li>
+    <li>☐ 5α-还原酶缺乏→？SRY敲除→？</li>
+    <li>☐ ER-/HER2+乳腺癌→？（曲妥珠单抗+化疗）</li>
+    <li>☐ CIN III = ？（高级别上皮内瘤变=原位癌，未突破基底膜）</li>
+  </ul>
+
+  <h4>药物与诊断部分</h4>
+  <ul style="padding-left:20px; line-height:2.2;">
+    <li>☐ 五大利尿药作用部位？（近端→乙酰唑胺；袢→呋塞米；远端→噻嗪；集合管→螺内酯；全段渗透→甘露醇）</li>
+    <li>☐ 苯巴比妥中毒→NaHCO₃？（碱化尿液→离子障→排泄↑）</li>
+    <li>☐ UACR分型？（<30正常，30-300微量，>300大量）</li>
+    <li>☐ NAG→？(近端小管损伤)；蜡样管型→？(CKD)</li>
+  </ul>
+
+  <div class="key" style="margin-top:24px;">
+    <strong>最后提醒——大题答题策略：</strong><br>
+    1. 先写"判断依据"（病史+体征+化验值三方面），再写"发生机制"（因果链条A→B→C，不要孤立罗列要点）<br>
+    2. 涉及脱水时务必说明"细胞外液/细胞内液如何变化"<br>
+    3. 涉及酸碱时务必写出"原发因素+代偿方向+代偿公式计算结果"<br>
+    4. 即使不完全确定，把你知道的相关机制全部写上——过程分很重要！
+  </div>
+
+  <div class="tip" style="margin-top:16px; text-align:center; font-size:1.1em;">
+    <strong>祝你明天考试顺利！沉着冷静，把会的都写上去!</strong>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
