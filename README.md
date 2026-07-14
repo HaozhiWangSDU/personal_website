@@ -136,6 +136,7 @@ wrangler deploy
 
 ## 📄 许可 / License
 
-本仓库的源代码与设计仅用于个人学术展示。如需复用代码，请保留署名；演示与复习材料中的医学内容版权归原作者所有。
+- **代码、设计与配置 / Code, design & config**：[MIT License](./LICENSE)。
+- **医学内容 / Medical content**：`presentations/` 与 `daily/` 下的演示、复习材料与日报为作者原创内容，版权归原作者所有，转载前请联系作者。
 
-Source code and design in this repository are for personal academic presentation only. If you reuse the code, please retain attribution. Medical content within the presentations remains the copyright of its respective authors.
+Source code, design, and configuration are licensed under the [MIT License](./LICENSE). The medical study materials and review decks under `presentations/` and `daily/` are authored content; please contact the author before reproducing them.
