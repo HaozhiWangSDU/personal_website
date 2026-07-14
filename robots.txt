@@ -1,0 +1,13 @@
+# robots.txt — 王浩智个人学术网站 / Haozhi Wang's personal website
+# 线上域名 / Live site: https://72092035.xyz
+
+User-agent: *
+# daily/ 为山大信息日报归档，各页已带 noindex，统一禁止抓取
+# /daily/ is the SDU info-feed archive (each page already carries noindex); disallow crawling.
+Disallow: /daily/
+
+# 演示页脚手架，非公开内容 / Presentation scaffold, not public content
+Disallow: /presentations/template.html
+
+# Sitemap
+Sitemap: https://72092035.xyz/sitemap.xml

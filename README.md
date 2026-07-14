@@ -7,7 +7,7 @@
 
 This repository hosts a **dependency-free, static** personal academic website — including a homepage, a collection of study presentations/review decks, and an archive of the Shandong University daily info feed. It is served as static assets via [Cloudflare Workers](https://developers.cloudflare.com/workers/).
 
-🔗 在线访问 / Live site: **https://wanghaozhi.com** （见 `wrangler.jsonc` 中的 `wanghaozhi` Worker）
+🔗 在线访问 / Live site: **https://72092035.xyz**
 
 ---
 

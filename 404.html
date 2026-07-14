@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+  404 页面 / 404 Page
+  复用全站主题（styles.css），自动读取 localStorage 中保存的深/浅色偏好。
+  Reuses the site theme (styles.css) and reads the saved theme from localStorage.
+-->
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>404 — 页面未找到 / Page Not Found | 王浩智 Haozhi Wang</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { margin: 0; }
+    .not-found-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .not-found-card {
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+    }
+    .not-found-code {
+      font-family: var(--font-heading);
+      font-size: clamp(4.5rem, 18vw, 8rem);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--primary);
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.04em;
+    }
+    .not-found-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0.5rem 0 0.25rem;
+    }
+    .not-found-sub {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin: 0 0 1.75rem;
+      line-height: 1.6;
+    }
+    .not-found-actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .not-found-actions a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 12px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: var(--transition-normal);
+    }
+    .not-found-actions a.primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .not-found-actions a.primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+    .not-found-actions a.secondary {
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid var(--border);
+    }
+    .not-found-actions a.secondary:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="not-found-wrap">
+    <div class="card not-found-card">
+      <div class="not-found-code">404</div>
+      <h1 class="not-found-title">
+        <span class="lang-cn">页面走丢了</span>
+        <span class="lang-en">Page Not Found</span>
+      </h1>
+      <p class="not-found-sub">
+        <span class="lang-cn">你访问的页面不存在，或者已经被移动。检查一下链接是否拼对了？</span>
+        <span class="lang-en">The page you're looking for doesn't exist or has been moved. Double-check the link?</span>
+      </p>
+      <div class="not-found-actions">
+        <a href="/" class="primary">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 0 0 1 1h3m10-11l2 2m-2-2v10a1 1 0 0 1-1 1h-3m-6 0a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1m-6 0h6"/></svg>
+          <span class="lang-cn">回到首页</span>
+          <span class="lang-en">Back to Home</span>
+        </a>
+        <a href="/presentations.html" class="secondary">
+          <span class="lang-cn">浏览演示材料</span>
+          <span class="lang-en">Browse Presentations</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 读取已保存的主题，与全站保持一致 / Restore saved theme to match the site
+    (function () {
+      try {
+        var saved = localStorage.getItem('preferred-theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+      // 根据浏览器语言显示对应文案 / Show text matching browser language
+      var lang = (navigator.language || 'en').toLowerCase().indexOf('zh') === 0 ? 'cn' : 'en';
+      document.documentElement.setAttribute('data-lang', lang);
+    })();
+  </script>
+</body>
+</html>
