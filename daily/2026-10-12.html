@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="daily-feed-date" content="2026-10-12">
+  <meta name="daily-feed-title" content="山大信息日报 2026-10-12">
+  <meta name="daily-feed-item-count" content="6">
+  <meta name="daily-feed-needs-review-count" content="0">
+  <title>山大信息日报 2026-10-12</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --ink: #172033;
+      --muted: #627086;
+      --line: #dfe5ee;
+      --panel: #ffffff;
+      --accent: #0f766e;
+      --accent-2: #1d4ed8;
+      --warn: #b45309;
+      --ok-bg: #e8f5f2;
+      --review-bg: #fff4df;
+      --checked-bg: #edf2ff;
+    }
+    * { box-sizing: border-box; }
+    html, body { max-width: 100%; overflow-x: hidden; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    a { color: var(--accent-2); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    h1, h2, h3, p, a, span, strong, dd {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .page {
+      width: min(1120px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 28px 0 52px;
+    }
+    .hero {
+      max-width: 100%;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .hero.compact { margin-bottom: 18px; }
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .topnav a, .pagination a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+    .disclaimer {
+      max-width: 780px;
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0 0;
+    }
+    .meta-grid div {
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+    }
+    .meta-grid dt {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    .meta-grid dd {
+      margin: 0;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+    .notice {
+      max-width: 100%;
+      margin-top: 18px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: var(--ok-bg);
+      color: #115e59;
+    }
+    .section-nav {
+      max-width: 100%;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 14px 2px;
+      margin: 10px 0 4px;
+    }
+    .section-nav a {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+    .sections {
+      display: grid;
+      gap: 16px;
+    }
+    .section-block {
+      max-width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 22px;
+    }
+    .section-block h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+    .section-block p, .feed-item p { margin: 8px 0 0; }
+    .items {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .feed-item {
+      max-width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+      padding: 16px;
+    }
+    .feed-item h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      line-height: 1.4;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+    .item-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
+      background: #eef2f7;
+    }
+    .pill.enough { background: var(--ok-bg); color: #115e59; }
+    .pill.checked { background: var(--checked-bg); color: #1e3a8a; }
+    .pill.review { background: var(--review-bg); color: var(--warn); }
+    .source-link {
+      display: inline-flex;
+      margin-top: 12px;
+      font-weight: 700;
+    }
+    .empty { color: var(--muted); }
+    .archive-list {
+      display: grid;
+      gap: 10px;
+    }
+    .archive-row {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .archive-row a {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .archive-row strong { overflow-wrap: anywhere; }
+    .archive-date, .archive-count {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pagination {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 22px;
+      color: var(--muted);
+    }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 18px, 1120px); padding-top: 12px; }
+      .hero, .section-block { padding: 18px; }
+      .meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .items { grid-template-columns: 1fr; }
+      .archive-row { grid-template-columns: 1fr; align-items: start; }
+    }
+    @media (max-width: 430px) {
+      .hero, .section-block { padding: 16px; }
+      .meta-grid { grid-template-columns: 1fr; }
+      .topnav a, .pagination a { min-height: 34px; padding: 5px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <nav class="topnav" aria-label="日报导航">
+        <a href="index.html">历史</a>
+        <a href="latest.html">最新</a>
+      </nav>
+      <p class="eyebrow">SDU Daily Feed · 2026-10-12</p>
+      <h1>山大信息日报 2026-10-12</h1>
+      <p class="disclaimer">本页由公开网页自动抓取并经 AI 辅助整理生成，原始链接为准。</p>
+      <dl class="meta-grid"><div><dt>生成时间</dt><dd>2026-10-13 08:05 UTC+8</dd></div><div><dt>状态</dt><dd>部分</dd></div><div><dt>条目</dt><dd>6</dd></div><div><dt>需核查</dt><dd>0</dd></div></dl>
+      
+    </header>
+    <nav class="section-nav" aria-label="栏目导航"><a href="#section-1">数据完整性状态</a><a href="#section-2">本科与研究生教学相关</a><a href="#section-3">医学、齐鲁医院、齐鲁医学院动态与机会</a><a href="#section-4">医院招聘 / 政策 / 人事机构变化</a><a href="#section-5">科研、基金、会议、讲座</a><a href="#section-6">低价值或仅作背景的信息</a><a href="#section-7">需打开原文核查</a></nav>
+    <section class="sections"><article class="section-block"><h2 id="section-1">数据完整性状态</h2>
+<p>抓取成功：24 条记录，10 个来源站点列表页均正常，无来源抓取失败。三点说明：</p><p>1. 学生在线《海外学习奖、第二校园奖评选通知》的 2 个附件（评选项目一览表.doc、模块使用说明.pdf）下载时被源站"附件下载"验证码拦截页替代（与 2026-10-09 以来同类情况一致），附件内容未解析；该通知正文关键信息（参评对象、申报程序、报送截止 10 月 21 日 17:00、联系方式）已从正文核实，摘要结论不受影响。</p><p>2. 齐鲁医学院人事人才办公室 4 个栏目页（杏林风范、服务指南、下载中心、智汇齐鲁）为 2016-2022 年旧内容列表页或空页误抓；研究生院"常用下载"、学生在线"部长信箱"亦为栏目页误抓，均已排除，不计入发布内容。本科生院当日 0 条，其文章页自 2026-08-27 起长期受站点权限拦截，属已知状态，非本次故障。</p><p>3. 历史缺口提示：2026-10-05 publish_unconfirmed 为陈旧告警（该日页面此前多次线上复核均为 HTTP 200），本次发布后对 2026-10-05.html 再次复核确认。</p></article>
+<article class="section-block"><h2 id="section-2">本科与研究生教学相关</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>山东大学 2025-2026 学年海外学习奖、第二校园奖评选工作启动</h3>
+  <div class="item-meta">
+    <span>学生在线 / 添翼成长·学工通知</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>党委学生工作部 10 月 12 日启动 2025-2026 学年海外学习奖、第二校园奖评选，对象为具有山东大学正式学籍的全日制本科生。学生通过"山东大学学生管理系统"线上申请，经辅导员、学院线上审批并公示 3 天后，由学院导出汇总表报党委学生工作部评审；学院报送纸质材料截止 10 月 21 日 17:00（中心校区明德楼 B 座 213 房间），学生线上申请需在学院审批前完成。评选条件与奖励标准见通知附件（附件下载受源站验证码限制，详见数据完整性状态）。威海、青岛校区由校区党工委学生工作部另行通知。系统答疑 QQ 群 677412970，咨询电话 0531-88364230（彭老师）。</p>
+  <a class="source-link" href="https://www.online.sdu.edu.cn/content.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=1016&amp;wbnewsid=34793" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-3">医学、齐鲁医院、齐鲁医学院动态与机会</h2>
+<p class="empty">无可发布信息。</p></article>
+<article class="section-block"><h2 id="section-4">医院招聘 / 政策 / 人事机构变化</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>齐鲁医院 2026 年非事业编制专聘科研人员招聘（基础医学研究中心）</h3>
+  <div class="item-meta">
+    <span>山东大学齐鲁医院 / 通知公告</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>齐鲁医院人事处 10 月 12 日发布公告，基础医学研究中心招聘非事业编制专聘科研人员 1 名，工作地点济南。要求博士研究生、40 周岁以下（1986 年 1 月 1 日之后出生），专业为生物学、生物化学与分子生物学、细胞生物学，需熟练掌握二代、三代高通量测序文库构建和数据处理，熟练使用 R、Python。报名时间为 2026 年 10 月 12 日至 10 月 26 日 24:00，逾期系统自动关闭，通过齐鲁医院招聘系统网上报名；录用人员签订劳动合同、缴纳五险一金。招聘事宜咨询电话 0531-82169157。</p>
+  <a class="source-link" href="https://www.qiluhospital.cn/info/1042/394581.htm" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-5">科研、基金、会议、讲座</h2>
+<p class="empty">无可发布信息。</p></article>
+<article class="section-block"><h2 id="section-6">低价值或仅作背景的信息</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>基础医学院第二届本科生"敦学榜样"分享论坛暨奖学金答辩会举行</h3>
+  <div class="item-meta">
+    <span>山东大学基础医学院 / 学院要闻</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>10 月 10 日在趵突泉校区举行，57 名本科生参加答辩。经评审，赵敏安、乐子荀等 28 名同学获 2025-2026 学年国家奖学金学院推荐资格，刘洋汐同学获山东省政府奖学金学院推荐资格。属学院评审过程性新闻，所列为学院推荐资格、尚待学校评审。</p>
+  <a class="source-link" href="https://www.bms.sdu.edu.cn/info/1133/17720.htm" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>"爱在身边"心理健康校园义诊开展</h3>
+  <div class="item-meta">
+    <span>山东大学新闻网 / 校园动态</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>10 月 9 日至 10 日世界精神卫生日前后，来自山东省精神卫生中心、威海市立第三医院、青岛市精神卫生中心的 16 位专家在一校三地开展义诊，为因学业压力、人际关系等感到抑郁焦虑或有精神科就诊、复诊需求的学生提供面对面服务。活动已举办 9 期，后续还有"走进心灵"主题讲座、心理育人队伍培训等系列活动。属活动回顾，无剩余申报事项。</p>
+  <a class="source-link" href="https://www.view.sdu.edu.cn/info/2077/214704.htm" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>齐鲁医院发布多则科研设备公开招标公告</h3>
+  <div class="item-meta">
+    <span>山东大学齐鲁医院 / 招标公告</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>10 月 12 日齐鲁医院集中发布 3 则设备公开招标公告：流式细胞仪（预算 290 万元，可采进口）、高效液相串联质谱检测系统与激光扫描共聚焦显微镜（预算 790 万元）、二氧化碳手术激光系统（预算 230 万元），投标截止均为 2026 年 11 月 2 日 9:00，招标文件获取时间为 10 月 13 日至 19 日（见 https://www.qiluhospital.cn/info/1674/394821.htm 、https://www.qiluhospital.cn/info/1674/394811.htm ）。另 SIM 超分辨显微镜以 432.9 万元中标（https://www.qiluhospital.cn/info/1674/394861.htm ）。属采购业务公告，对院内科研平台建设为背景信息。</p>
+  <a class="source-link" href="https://www.qiluhospital.cn/info/1674/394831.htm" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>齐鲁医院经颅磁刺激仪等多则设备采购成交公告发布</h3>
+  <div class="item-meta">
+    <span>山东大学齐鲁医院 / 招标公告</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>经颅磁刺激仪（新华医疗 MT7124-100A）以 26.86 万元成交；同日另有多则设备维保服务成交公告：蔡司准分子激光、全飞秒激光及 OCT 等设备维保 102 万元（https://www.qiluhospital.cn/info/1674/394711.htm ）、美敦力脑外科手术导航系统维保 22.2 万元/年（https://www.qiluhospital.cn/info/1674/394701.htm ）、STORZ 内镜维保 59.9 万元/年（https://www.qiluhospital.cn/info/1674/394691.htm ）、GE 血管造影机与回旋加速器等维保 152 万元/年（https://www.qiluhospital.cn/info/1674/394681.htm ）。当日齐鲁医院共发布 12 则采购与成交公告，其余为层流床、党务干部培训、空调外机移机等。其中经颅磁刺激仪采购对 TMS 相关研究为背景信息。</p>
+  <a class="source-link" href="https://www.qiluhospital.cn/info/1674/394851.htm" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-7">需打开原文核查</h2>
+<p class="empty">无可发布信息。</p></article></section>
+  </main>
+</body>
+</html>
