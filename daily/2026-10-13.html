@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="daily-feed-date" content="2026-10-13">
+  <meta name="daily-feed-title" content="山大信息日报 2026-10-13">
+  <meta name="daily-feed-item-count" content="4">
+  <meta name="daily-feed-needs-review-count" content="0">
+  <title>山大信息日报 2026-10-13</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --ink: #172033;
+      --muted: #627086;
+      --line: #dfe5ee;
+      --panel: #ffffff;
+      --accent: #0f766e;
+      --accent-2: #1d4ed8;
+      --warn: #b45309;
+      --ok-bg: #e8f5f2;
+      --review-bg: #fff4df;
+      --checked-bg: #edf2ff;
+    }
+    * { box-sizing: border-box; }
+    html, body { max-width: 100%; overflow-x: hidden; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    a { color: var(--accent-2); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    h1, h2, h3, p, a, span, strong, dd {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .page {
+      width: min(1120px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 28px 0 52px;
+    }
+    .hero {
+      max-width: 100%;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .hero.compact { margin-bottom: 18px; }
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .topnav a, .pagination a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+    .disclaimer {
+      max-width: 780px;
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0 0;
+    }
+    .meta-grid div {
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+    }
+    .meta-grid dt {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    .meta-grid dd {
+      margin: 0;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+    .notice {
+      max-width: 100%;
+      margin-top: 18px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: var(--ok-bg);
+      color: #115e59;
+    }
+    .section-nav {
+      max-width: 100%;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 14px 2px;
+      margin: 10px 0 4px;
+    }
+    .section-nav a {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+    .sections {
+      display: grid;
+      gap: 16px;
+    }
+    .section-block {
+      max-width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 22px;
+    }
+    .section-block h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+    .section-block p, .feed-item p { margin: 8px 0 0; }
+    .items {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .feed-item {
+      max-width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+      padding: 16px;
+    }
+    .feed-item h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      line-height: 1.4;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+    .item-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
+      background: #eef2f7;
+    }
+    .pill.enough { background: var(--ok-bg); color: #115e59; }
+    .pill.checked { background: var(--checked-bg); color: #1e3a8a; }
+    .pill.review { background: var(--review-bg); color: var(--warn); }
+    .source-link {
+      display: inline-flex;
+      margin-top: 12px;
+      font-weight: 700;
+    }
+    .empty { color: var(--muted); }
+    .archive-list {
+      display: grid;
+      gap: 10px;
+    }
+    .archive-row {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .archive-row a {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .archive-row strong { overflow-wrap: anywhere; }
+    .archive-date, .archive-count {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pagination {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 22px;
+      color: var(--muted);
+    }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 18px, 1120px); padding-top: 12px; }
+      .hero, .section-block { padding: 18px; }
+      .meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .items { grid-template-columns: 1fr; }
+      .archive-row { grid-template-columns: 1fr; align-items: start; }
+    }
+    @media (max-width: 430px) {
+      .hero, .section-block { padding: 16px; }
+      .meta-grid { grid-template-columns: 1fr; }
+      .topnav a, .pagination a { min-height: 34px; padding: 5px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <nav class="topnav" aria-label="日报导航">
+        <a href="index.html">历史</a>
+        <a href="latest.html">最新</a>
+      </nav>
+      <p class="eyebrow">SDU Daily Feed · 2026-10-13</p>
+      <h1>山大信息日报 2026-10-13</h1>
+      <p class="disclaimer">本页由公开网页自动抓取并经 AI 辅助整理生成，原始链接为准。</p>
+      <dl class="meta-grid"><div><dt>生成时间</dt><dd>2026-10-14 08:10 UTC+8</dd></div><div><dt>状态</dt><dd>部分</dd></div><div><dt>条目</dt><dd>4</dd></div><div><dt>需核查</dt><dd>0</dd></div></dl>
+      
+    </header>
+    <nav class="section-nav" aria-label="栏目导航"><a href="#section-1">数据完整性状态</a><a href="#section-2">本科与研究生教学相关</a><a href="#section-3">医学、齐鲁医院、齐鲁医学院动态与机会</a><a href="#section-4">医院招聘 / 政策 / 人事机构变化</a><a href="#section-5">科研、基金、会议、讲座</a><a href="#section-6">低价值或仅作背景的信息</a><a href="#section-7">需打开原文核查</a></nav>
+    <section class="sections"><article class="section-block"><h2 id="section-1">数据完整性状态</h2>
+<p>抓取成功：67 个栏目列表页全部正常访问，无来源抓取失败，共采集原始记录 25 条。42 条候选因发布日期不在目标日（含学生资助中心往期公示、青春山大往期活动回顾、基础医学院 2026-09-16 至 09-30 滞留旧文）被剔除，另剔除学生在线 4 个栏目导航页误抓与新闻网 4 条会议/宣传回顾。存在 3 项附件核查问题，均不影响已发布条目的关键事实：①基础医学院班主任工作评议通知（发布于 09-30，已按发布日期剔除）1 个附件未能解析；②基础医学院中秋假期值班表（发布于 09-24，已剔除）2 个附件格式不受支持未能解析；③齐鲁医院家具采购更正公告的更正明细附件被站点"附件下载"验证码拦截，未能自动解析，公告正文已说明更正事项类型，明细请见原文附件。</p></article>
+<article class="section-block"><h2 id="section-2">本科与研究生教学相关</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>2026年度小米特等奖学金答辩会的通知</h3>
+  <div class="item-meta">
+    <span>学生在线 / 通知公示</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>党委学生工作部 10 月 13 日发布。本年度全校共 33 名本科生申报，将通过公开答辩选拔 6 名候选人。答辩材料（如 PPT）提交截止 10 月 15 日上午 9:00，发送至 xuegbg@sdu.edu.cn，提交后不再更改；10 月 16 日下午 13:30 签到、14:00 开始答辩，地点为中心校区明德楼 A 座 A106 会议室；答辩含个人陈述（3.5 分钟，需脱稿）与问答（1.5 分钟）。威海、青岛校区参评学生由各校区另行组织。</p>
+  <a class="source-link" href="https://www.online.sdu.edu.cn/content.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=1016&amp;wbnewsid=34796" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-3">医学、齐鲁医院、齐鲁医学院动态与机会</h2>
+<p class="empty">无可发布信息。</p></article>
+<article class="section-block"><h2 id="section-4">医院招聘 / 政策 / 人事机构变化</h2>
+<p class="empty">无可发布信息。</p></article>
+<article class="section-block"><h2 id="section-5">科研、基金、会议、讲座</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>电气工程学院吕天光教授合作研究成果在《自然-地球科学》见刊</h3>
+  <div class="item-meta">
+    <span>山东大学新闻网 / 学术纵横</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>吕天光教授作为共同第一作者，与北京大学（沈路教授，通讯作者）、哈佛大学团队合作的研究论文 "Impacts of power plant emissions on air quality amplified by renewable energy droughts" 在 Nature Geoscience 正式见刊。研究构建电力系统与化学传输模型耦合评估框架，发现在高可再生能源渗透率情景下，"可再生能源干旱"期间化石燃料电厂排放可使 PM2.5 浓度升高 15%–40%、臭氧升高 10%–20%、年度极端污染小时数增加 40%–100%；将健康成本纳入容量规划可使中国 2050 年化石燃料发电依赖减少约 50%。研究受国家自然科学基金资助。</p>
+  <a class="source-link" href="https://www.view.sdu.edu.cn/info/1021/214718.htm" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-6">低价值或仅作背景的信息</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>学生工作条线：全校辅导员专题培训安排</h3>
+  <div class="item-meta">
+    <span>学生在线 / 通知公示</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>党委学生工作部 10 月 13 日发布，定于 10 月 15 日（周四）14:30 举办全校辅导员专题培训，三校区同步进行（济南：中心校区明德楼二层报告厅；威海：含光楼 H416 报告厅；青岛：华岗苑北五楼报告厅），参会对象为各学院从事学生工作的党委副书记、辅导员。</p>
+  <a class="source-link" href="https://www.online.sdu.edu.cn/content.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=1016&amp;wbnewsid=34795" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>齐鲁医院招标采购动态（9 则，均为 10-13 发布）</h3>
+  <div class="item-meta">
+    <span>山东大学齐鲁医院 / 招标采购</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>临床试验服务类 3 则成交公告：乳腺癌相关临床试验协调服务成交（供应商普蕊斯（上海）医药科技，81.5 万元，https://www.qiluhospital.cn/info/1674/395001.htm ）；临床试验综合管理平台全量数据采集加工服务成交（杭州数垚科技，18.9 万元，https://www.qiluhospital.cn/info/1674/394991.htm ）；临床试验质控技术服务成交（北京安泰瑞达科技，87.9 万元，https://www.qiluhospital.cn/info/1674/394981.htm ）。设备类 2 则成交公告：小儿电子胃镜、电子结肠镜采购成交（山东安普诺康科技，83.6 万元，https://www.qiluhospital.cn/info/1674/394941.htm ）；超细电子支气管镜采购成交（济南立马万言医疗器械，81.96 万元，https://www.qiluhospital.cn/info/1674/394921.htm ）。公开招标 2 则：医疗设备采购项目（呼吸机）预算 56 万元（https://www.qiluhospital.cn/info/1674/394901.htm ）、设备采购项目（便携式超声诊断系统等）预算 119.55 万元（https://www.qiluhospital.cn/info/1674/394891.htm ），两项目投标文件递交截止均为 2026 年 11 月 5 日 09:00。另有家具采购项目更正公告（对预算金额、评审细则、采购内容及项目要求予以更正，明细见其附件，https://www.qiluhospital.cn/info/1674/394961.htm ）；网络运维驻场服务项目因实质性响应供应商不足三家废标终止（https://www.qiluhospital.cn/info/1674/394951.htm ）。</p>
+  <a class="source-link" href="https://www.qiluhospital.cn/info/1674/395001.htm" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-7">需打开原文核查</h2>
+<p class="empty">无可发布信息。</p></article></section>
+  </main>
+</body>
+</html>
