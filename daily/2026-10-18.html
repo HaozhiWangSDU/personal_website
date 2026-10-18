@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="daily-feed-date" content="2026-10-18">
+  <meta name="daily-feed-title" content="山大信息日报 2026-10-18">
+  <meta name="daily-feed-item-count" content="5">
+  <meta name="daily-feed-needs-review-count" content="3">
+  <title>山大信息日报 2026-10-18</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --ink: #172033;
+      --muted: #627086;
+      --line: #dfe5ee;
+      --panel: #ffffff;
+      --accent: #0f766e;
+      --accent-2: #1d4ed8;
+      --warn: #b45309;
+      --ok-bg: #e8f5f2;
+      --review-bg: #fff4df;
+      --checked-bg: #edf2ff;
+    }
+    * { box-sizing: border-box; }
+    html, body { max-width: 100%; overflow-x: hidden; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    a { color: var(--accent-2); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    h1, h2, h3, p, a, span, strong, dd {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .page {
+      width: min(1120px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 28px 0 52px;
+    }
+    .hero {
+      max-width: 100%;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .hero.compact { margin-bottom: 18px; }
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .topnav a, .pagination a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+    .disclaimer {
+      max-width: 780px;
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0 0;
+    }
+    .meta-grid div {
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+    }
+    .meta-grid dt {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    .meta-grid dd {
+      margin: 0;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+    .notice {
+      max-width: 100%;
+      margin-top: 18px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: var(--ok-bg);
+      color: #115e59;
+    }
+    .section-nav {
+      max-width: 100%;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 14px 2px;
+      margin: 10px 0 4px;
+    }
+    .section-nav a {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+    .sections {
+      display: grid;
+      gap: 16px;
+    }
+    .section-block {
+      max-width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 22px;
+    }
+    .section-block h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+    .section-block p, .feed-item p { margin: 8px 0 0; }
+    .items {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .feed-item {
+      max-width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+      padding: 16px;
+    }
+    .feed-item h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      line-height: 1.4;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+    .item-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
+      background: #eef2f7;
+    }
+    .pill.enough { background: var(--ok-bg); color: #115e59; }
+    .pill.checked { background: var(--checked-bg); color: #1e3a8a; }
+    .pill.review { background: var(--review-bg); color: var(--warn); }
+    .source-link {
+      display: inline-flex;
+      margin-top: 12px;
+      font-weight: 700;
+    }
+    .empty { color: var(--muted); }
+    .archive-list {
+      display: grid;
+      gap: 10px;
+    }
+    .archive-row {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .archive-row a {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .archive-row strong { overflow-wrap: anywhere; }
+    .archive-date, .archive-count {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pagination {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 22px;
+      color: var(--muted);
+    }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 18px, 1120px); padding-top: 12px; }
+      .hero, .section-block { padding: 18px; }
+      .meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .items { grid-template-columns: 1fr; }
+      .archive-row { grid-template-columns: 1fr; align-items: start; }
+    }
+    @media (max-width: 430px) {
+      .hero, .section-block { padding: 16px; }
+      .meta-grid { grid-template-columns: 1fr; }
+      .topnav a, .pagination a { min-height: 34px; padding: 5px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <nav class="topnav" aria-label="日报导航">
+        <a href="index.html">历史</a>
+        <a href="latest.html">最新</a>
+      </nav>
+      <p class="eyebrow">SDU Daily Feed · 2026-10-18</p>
+      <h1>山大信息日报 2026-10-18</h1>
+      <p class="disclaimer">本页由公开网页自动抓取并经 AI 辅助整理生成，原始链接为准。</p>
+      <dl class="meta-grid"><div><dt>生成时间</dt><dd>2026-10-19T07:21:52.092960+09:00</dd></div><div><dt>状态</dt><dd>部分</dd></div><div><dt>条目</dt><dd>5</dd></div><div><dt>需核查</dt><dd>3</dd></div></dl>
+      
+    </header>
+    <nav class="section-nav" aria-label="栏目导航"><a href="#section-1">数据完整性状态</a><a href="#section-2">本科与研究生教学相关</a><a href="#section-3">医学、齐鲁医院、齐鲁医学院动态与机会</a><a href="#section-4">医院招聘 / 政策 / 人事机构变化</a><a href="#section-5">科研、基金、会议、讲座</a><a href="#section-6">低价值或仅作背景的信息</a><a href="#section-7">需打开原文核查</a></nav>
+    <section class="sections"><article class="section-block"><h2 id="section-1">数据完整性状态</h2>
+<p>学校侧抓取成功：当日候选记录 10 条（齐鲁医学院 5 条、新闻网 5 条），来源失败 0，列表页均正常。3 条齐鲁医学院栏目页误抓（医学教育理事会页、校园地图页、院长信箱页，均为静态或旧内容）与 1 条栏目列表页误抓已排除；其余落选条目为已结束活动回顾或纯宣传，无跟进价值。本期刊出条目均不依赖附件；被排除旧文（本科教学督导简报等）的附件为验证码拦截页，不影响本刊内容。</p><p>招聘监控：检查部分失败或未完成；检查时间 2026-10-19T07:21:52.092960+09:00；来源 48 个；新发现或更新医师相关信息 3 条；覆盖不完整，不能据此判断没有新招聘</p></article>
+<article class="section-block"><h2 id="section-2">本科与研究生教学相关</h2>
+<p class="empty">无可发布信息。</p></article>
+<article class="section-block"><h2 id="section-3">医学、齐鲁医院、齐鲁医学院动态与机会</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>齐鲁医学院举办医药类秋季就业双选会暨“医海领航”就业赋能系列活动</h3>
+  <div class="item-meta">
+    <span>山东大学齐鲁医学院 / 齐鲁要闻</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>10 月 18 日山东大学 2027 届毕业生秋季就业双选会医药类专场在趵突泉校区举办，汇聚全国 22 个省份的 130 余家用人单位，提供岗位 8000 余个，现场学生 3000 余名；同步的“医海领航”就业赋能系列活动提供职业生涯咨询与求职备考指导。属秋季医药招聘季动态，可关注该系列后续活动安排。</p>
+  <a class="source-link" href="https://www.qlyxb.sdu.edu.cn/info/1180/17930.htm" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-4">医院招聘 / 政策 / 人事机构变化</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>滨州市卫生健康委员会所属医疗卫生机构2025年度公开招聘优秀岗位工作人员笔试成绩公告</h3>
+  <div class="item-meta">
+    <span>滨州市卫健招聘</span>
+    <span class="pill review">需核查原文</span>
+  </div>
+  <p>阶段：成绩结果；渠道：招聘方式待核实；发布：2025-09-15；首次发现：2026-10-19T07:27:11.139845+09:00；报名截止：待核实；报名状态：报名状态待核实；执业医师资格证据：原文证据待核实；附件：附件：滨州市卫生健康委员会所属医疗卫生机构2025年度公开招聘优秀岗位工作人员笔试成绩及进入面试范围人员名单 http://wjw.binzhou.gov.cn/module/download/downfile.jsp?classid=0&amp;filename=6079b183798f4e0b9f9539f2dc03234b.xls</p>
+  <a class="source-link" href="http://wjw.binzhou.gov.cn/art/2025/9/15/art_120994_10315401.html" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>滨州市卫生健康委员会所属医疗卫生机构2025年度公开招聘工作人员报名、岗位核减情况及缴费公告</h3>
+  <div class="item-meta">
+    <span>滨州市卫健招聘</span>
+    <span class="pill review">需核查原文</span>
+  </div>
+  <p>阶段：取消或核减；渠道：招聘方式待核实；发布：2025-09-01；首次发现：2026-10-19T07:27:26.298310+09:00；报名截止：待核实；报名状态：取消；执业医师资格证据：原文证据待核实；附件：附件：滨州市卫生健康委员会所属医疗卫生机构2025年度公开招聘工作人员岗位报名人数及核减岗位情况.xlsx http://wjw.binzhou.gov.cn/module/download/downfile.jsp?classid=0&amp;filename=b59c67d6d55a4f82ae31192d72104c01.xlsx</p>
+  <a class="source-link" href="http://wjw.binzhou.gov.cn/art/2025/9/1/art_120994_10315083.html" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>滨州市卫生健康系统医疗卫生机构急需紧缺专业人才2025年度“一站式”校园招聘拟聘用人员公示</h3>
+  <div class="item-meta">
+    <span>滨州市卫健招聘</span>
+    <span class="pill review">需核查原文</span>
+  </div>
+  <p>阶段：拟聘公示；渠道：校招；发布：2025-07-28；首次发现：2026-10-19T07:27:40.580850+09:00；报名截止：待核实；报名状态：报名状态待核实；执业医师资格证据：原文证据待核实；附件：附件：滨州市卫生健康系统医疗卫生机构急需紧缺专业人才2025年度“一站式”校园招聘拟聘用人员名单 http://wjw.binzhou.gov.cn/module/download/downfile.jsp?classid=0&amp;filename=96d5abedd40c4df98c58b47713b90216.docx</p>
+  <a class="source-link" href="http://wjw.binzhou.gov.cn/art/2025/7/28/art_120994_10314462.html" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-5">科研、基金、会议、讲座</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>王守宇教授团队发现原子核中最简并的手征双重带</h3>
+  <div class="item-meta">
+    <span>山东大学新闻网 / 学术纵横</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>核科学与能源动力学院王守宇教授团队联合中国科学院近代物理研究所，在锑-112 原子核中发现迄今最简并的手征双重带，成果发表于《物理评论快报》（Physical Review Letters）；博士后许文政为第一作者，王守宇为通讯作者，山东大学为第一完成单位，两条带相同自旋态平均能量差仅 36 keV，报道称为我国在束伽马谱学实验终端产出的首项 PRL 成果，研究受国家杰出青年科学基金项目等资助。</p>
+  <a class="source-link" href="https://www.view.sdu.edu.cn/info/1021/214777.htm" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-6">低价值或仅作背景的信息</h2>
+<p class="empty">无可发布信息。</p></article>
+<article class="section-block"><h2 id="section-7">需打开原文核查</h2>
+<p class="empty">无可发布信息。</p></article></section>
+  </main>
+</body>
+</html>
