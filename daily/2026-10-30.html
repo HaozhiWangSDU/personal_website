@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="daily-feed-date" content="2026-10-30">
+  <meta name="daily-feed-title" content="山大信息日报 2026-10-30">
+  <meta name="daily-feed-item-count" content="6">
+  <meta name="daily-feed-needs-review-count" content="0">
+  <title>山大信息日报 2026-10-30</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --ink: #172033;
+      --muted: #627086;
+      --line: #dfe5ee;
+      --panel: #ffffff;
+      --accent: #0f766e;
+      --accent-2: #1d4ed8;
+      --warn: #b45309;
+      --ok-bg: #e8f5f2;
+      --review-bg: #fff4df;
+      --checked-bg: #edf2ff;
+    }
+    * { box-sizing: border-box; }
+    html, body { max-width: 100%; overflow-x: hidden; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    a { color: var(--accent-2); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    h1, h2, h3, p, a, span, strong, dd {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .page {
+      width: min(1120px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 28px 0 52px;
+    }
+    .hero {
+      max-width: 100%;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .hero.compact { margin-bottom: 18px; }
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .topnav a, .pagination a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+    .disclaimer {
+      max-width: 780px;
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0 0;
+    }
+    .meta-grid div {
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+    }
+    .meta-grid dt {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    .meta-grid dd {
+      margin: 0;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+    .notice {
+      max-width: 100%;
+      margin-top: 18px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: var(--ok-bg);
+      color: #115e59;
+    }
+    .section-nav {
+      max-width: 100%;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 14px 2px;
+      margin: 10px 0 4px;
+    }
+    .section-nav a {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+    .sections {
+      display: grid;
+      gap: 16px;
+    }
+    .section-block {
+      max-width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 22px;
+    }
+    .section-block h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+    .section-block p, .feed-item p { margin: 8px 0 0; }
+    .items {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .feed-item {
+      max-width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+      padding: 16px;
+    }
+    .feed-item h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      line-height: 1.4;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+    .item-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
+      background: #eef2f7;
+    }
+    .pill.enough { background: var(--ok-bg); color: #115e59; }
+    .pill.checked { background: var(--checked-bg); color: #1e3a8a; }
+    .pill.review { background: var(--review-bg); color: var(--warn); }
+    .source-link {
+      display: inline-flex;
+      margin-top: 12px;
+      font-weight: 700;
+    }
+    .empty { color: var(--muted); }
+    .archive-list {
+      display: grid;
+      gap: 10px;
+    }
+    .archive-row {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .archive-row a {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .archive-row strong { overflow-wrap: anywhere; }
+    .archive-date, .archive-count {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pagination {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 22px;
+      color: var(--muted);
+    }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 18px, 1120px); padding-top: 12px; }
+      .hero, .section-block { padding: 18px; }
+      .meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .items { grid-template-columns: 1fr; }
+      .archive-row { grid-template-columns: 1fr; align-items: start; }
+    }
+    @media (max-width: 430px) {
+      .hero, .section-block { padding: 16px; }
+      .meta-grid { grid-template-columns: 1fr; }
+      .topnav a, .pagination a { min-height: 34px; padding: 5px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <nav class="topnav" aria-label="日报导航">
+        <a href="index.html">历史</a>
+        <a href="latest.html">最新</a>
+      </nav>
+      <p class="eyebrow">SDU Daily Feed · 2026-10-30</p>
+      <h1>山大信息日报 2026-10-30</h1>
+      <p class="disclaimer">本页由公开网页自动抓取并经 AI 辅助整理生成，原始链接为准。</p>
+      <dl class="meta-grid"><div><dt>生成时间</dt><dd>2026-10-31T10:53:01.594082+09:00</dd></div><div><dt>状态</dt><dd>部分</dd></div><div><dt>条目</dt><dd>6</dd></div><div><dt>需核查</dt><dd>0</dd></div></dl>
+      
+    </header>
+    <nav class="section-nav" aria-label="栏目导航"><a href="#section-1">数据完整性状态</a><a href="#section-2">本科与研究生教学相关</a><a href="#section-3">医学、齐鲁医院、齐鲁医学院动态与机会</a><a href="#section-4">医院招聘 / 政策 / 人事机构变化</a><a href="#section-5">科研、基金、会议、讲座</a><a href="#section-6">低价值或仅作背景的信息</a><a href="#section-7">需打开原文核查</a></nav>
+    <section class="sections"><article class="section-block"><h2 id="section-1">数据完整性状态</h2>
+<p>学校侧抓取成功：67 个列表页全部正常，无源站失败。40 条候选因发布日期早于目标日（栏目滞留旧文）排除；6 条重复 URL 候选均为往期已发布公告（新生入学教育、思政优秀论文公示、过冬衣物通知、心理委员结业公示等），按规则省略；9 条栏目/列表页误抓与 2 条会议、仪式类宣传报道排除。</p><p>保留条目中 2 个打包附件（暑期社会实践答辩通知、社会助学金评定通知）下载后为不可解析的 .bin 格式，正文关键信息均已完整核实，附件请从原文获取。</p><p>招聘监测 48 个来源：9 个完全核验、36 个部分覆盖、3 个需人工检查（泰安市卫健、泰安市人社、淄博市人社）、28 个停用。本次并入 2 条招聘公告，均为 2026-10-29 日报已提前收录并人工核实原文的公告（发布日期 10月29-30日，监测重复发现），无新增待办。另有 1 条记录因发布日期被解析为未来日期而过滤，与既往已处理的日期误解析模式一致。</p><p>历史缺口（未回填）：2026-09-30、2026-10-23 采集缺失；2026-10-29 推送成功但线上部署未验证（托管平台构建异常，10月31日上午复核仍未恢复），请以 2026-10-29 日报"数据完整性状态"为准。</p><p>招聘监控：检查部分失败或未完成；检查时间 2026-10-31T10:53:01.594082+09:00；来源 48 个；新发现或更新医师相关信息 0 条；覆盖不完整，不能据此判断没有新招聘</p></article>
+<article class="section-block"><h2 id="section-2">本科与研究生教学相关</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>关于开展山东大学2025-2026学年学生暑期社会实践省级优秀团队推优答辩暨实践育人成果分享会的通知</h3>
+  <div class="item-meta">
+    <span>青春山大 / 重要通知</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>共青团山东大学委员会 10月30日发布。省级优秀团队推优答辩会定于 11月2日（周一）14:00 举行，主会场设济南中心校区思源报告厅，青岛校区华岗苑南五层报告厅设分会场。各实践团队负责人需于 11月1日12:00 前加入答辩群（QQ群 789231421），并于 11月1日17:00 前将经学院团委、指导教师审核通过的 PPT 在线提交（展示 3 分钟、页数 25 页内）；各学院需推荐 2 名学生评委，评委于 11月1日12:00 前入群（学生评委群 789668831、教师评委群 604144276）。答辩及优秀团队、优秀个人申报材料（附件3-5）须于 11月1日17:00 前提交，逾期视为自动放弃。联系人：济南方老师 0531-88361991、青岛孙老师 0532-58630037。候选团队名单及申报表见原文附件。</p>
+  <a class="source-link" href="https://www.youth.sdu.edu.cn/tz_content.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=1004&amp;wbnewsid=12432" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>关于评定山东大学2026-2027学年昱鸿助学金等10项社会助学金的通知</h3>
+  <div class="item-meta">
+    <span>学生在线 / 添翼成长·学工通知</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>党委学生工作部 10月30日发布，启动 2026-2027 学年本科生 10 项社会助学金评定：昱鸿、应善良、喜来健、中海油、小米、泰安苔花、山东移动希望工程、齐鲁制药、基础医学院云贵川雄鹰励学金、景行助学金，评定对象、名额及标准见附件。申请经学生管理系统办理，需完整填写基本信息、家庭成员及家庭经济情况后提交申请，各项社会助学金之间不可兼得；评定公示不少于 3 日。各学院须于 11月6日17:00 前将盖章纸质材料报送至中心校区明德楼 B217 学生资助中心，威海、青岛校区另行通知。附件1-9 见原文。</p>
+  <a class="source-link" href="https://www.online.sdu.edu.cn/content.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=1016&amp;wbnewsid=34870" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-3">医学、齐鲁医院、齐鲁医学院动态与机会</h2>
+<p class="empty">无可发布信息。</p></article>
+<article class="section-block"><h2 id="section-4">医院招聘 / 政策 / 人事机构变化</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>关于2026年青岛市卫生健康委员会直属事业单位卫生类公开招聘（第二批）拟聘用人选的公示</h3>
+  <div class="item-meta">
+    <span>青岛市卫生健康委员会</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>青岛市卫健委直属事业单位卫生类公开招聘（第二批）拟聘用人员公示，共 133 人，公示及异议受理截止 11月6日，咨询电话 0532-85912521。该公告已于 2026-10-29 日报提前收录（当时发布日期 10月30日晚于目标日一天），本日为正式发布日的重复收录，信息无变化。</p>
+  <a class="source-link" href="http://wsjkw.qingdao.gov.cn/ywdt/gggs/202610/t20261030_10765024.shtml" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>山东第一医科大学附属职业病医院（山东省职业病医院）2026年度公开招聘人员公告</h3>
+  <div class="item-meta">
+    <span>山东省属事业单位公开招聘服务平台</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>山东省职业病医院（山东第一医科大学附属职业病医院）2026 年度公开招聘公告，岗位含耳鼻喉科等医疗专业技术岗，要求医师资格证、医师执业证书（执业范围匹配）及住院医师规范化培训合格证书等；报名时间 11月2日9:00 至 11月6日16:00，报名邮箱 sdszfyrsk@163.com。该公告已于 2026-10-29 日报提前收录，本日为监测重复发现，信息无变化。</p>
+  <a class="source-link" href="https://hrss.shandong.gov.cn/articles/ch00232/202610/5f2bc82f-3226-4fd4-95e1-058c7ba2e11b.shtml" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-5">科研、基金、会议、讲座</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>董勇教授团队发表氢氨无焰燃烧综述文章</h3>
+  <div class="item-meta">
+    <span>山东大学新闻网 / 学术纵横</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>核科学与能源动力学院董勇教授团队在 Renewable and Sustainable Energy Reviews（IF 18.0）发表题为"Hydrogen and ammonia fuels in flameless combustion: A review"的综述，系统总结氢氨燃料无焰燃烧在燃烧反应动力学、燃烧器设计、燃烧安全性与污染物排放方面的进展，2025级博士研究生晋浩泽为第一作者、董勇教授为通讯作者。团队正开展水蒸汽调控的氢氧直接燃烧技术研究，面向工业零碳热能应用。</p>
+  <a class="source-link" href="https://www.view.sdu.edu.cn/info/1021/214972.htm" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>许一菲教授团队揭示全球哺乳动物病毒多样性与跨种共享异质性</h3>
+  <div class="item-meta">
+    <span>山东大学新闻网 / 学术纵横</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>公共卫生学院许一菲教授团队在 PNAS 发表哺乳动物病毒组研究成果，整合全球 4685 份测序数据（覆盖 14 目 296 种宿主、1737 种病毒），识别出 965 种跨物种共享病毒，发现食肉目、偶蹄目等类群跨目病毒共享水平较高，挑战了以蝙蝠、啮齿动物为单一监测重点的传统叙事，为高风险疫源动物监测优先级与源头防控布局提供数据支撑。</p>
+  <a class="source-link" href="https://www.view.sdu.edu.cn/info/1021/214931.htm" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-6">低价值或仅作背景的信息</h2>
+<p class="empty">无可发布信息。</p></article>
+<article class="section-block"><h2 id="section-7">需打开原文核查</h2>
+<p class="empty">无可发布信息。</p></article></section>
+  </main>
+</body>
+</html>
