@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="daily-feed-date" content="2026-11-12">
+  <meta name="daily-feed-title" content="山大信息日报 2026-11-12">
+  <meta name="daily-feed-item-count" content="14">
+  <meta name="daily-feed-needs-review-count" content="0">
+  <title>山大信息日报 2026-11-12</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --ink: #172033;
+      --muted: #627086;
+      --line: #dfe5ee;
+      --panel: #ffffff;
+      --accent: #0f766e;
+      --accent-2: #1d4ed8;
+      --warn: #b45309;
+      --ok-bg: #e8f5f2;
+      --review-bg: #fff4df;
+      --checked-bg: #edf2ff;
+    }
+    * { box-sizing: border-box; }
+    html, body { max-width: 100%; overflow-x: hidden; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    a { color: var(--accent-2); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    h1, h2, h3, p, a, span, strong, dd {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .page {
+      width: min(1120px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 28px 0 52px;
+    }
+    .hero {
+      max-width: 100%;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .hero.compact { margin-bottom: 18px; }
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .topnav a, .pagination a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+    .disclaimer {
+      max-width: 780px;
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0 0;
+    }
+    .meta-grid div {
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+    }
+    .meta-grid dt {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    .meta-grid dd {
+      margin: 0;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+    .notice {
+      max-width: 100%;
+      margin-top: 18px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: var(--ok-bg);
+      color: #115e59;
+    }
+    .section-nav {
+      max-width: 100%;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 14px 2px;
+      margin: 10px 0 4px;
+    }
+    .section-nav a {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+    .sections {
+      display: grid;
+      gap: 16px;
+    }
+    .section-block {
+      max-width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 22px;
+    }
+    .section-block h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+    .section-block p, .feed-item p { margin: 8px 0 0; }
+    .items {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .feed-item {
+      max-width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+      padding: 16px;
+    }
+    .feed-item h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      line-height: 1.4;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+    .item-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
+      background: #eef2f7;
+    }
+    .pill.enough { background: var(--ok-bg); color: #115e59; }
+    .pill.checked { background: var(--checked-bg); color: #1e3a8a; }
+    .pill.review { background: var(--review-bg); color: var(--warn); }
+    .source-link {
+      display: inline-flex;
+      margin-top: 12px;
+      font-weight: 700;
+    }
+    .empty { color: var(--muted); }
+    .archive-list {
+      display: grid;
+      gap: 10px;
+    }
+    .archive-row {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .archive-row a {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .archive-row strong { overflow-wrap: anywhere; }
+    .archive-date, .archive-count {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pagination {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 22px;
+      color: var(--muted);
+    }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 18px, 1120px); padding-top: 12px; }
+      .hero, .section-block { padding: 18px; }
+      .meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .items { grid-template-columns: 1fr; }
+      .archive-row { grid-template-columns: 1fr; align-items: start; }
+    }
+    @media (max-width: 430px) {
+      .hero, .section-block { padding: 16px; }
+      .meta-grid { grid-template-columns: 1fr; }
+      .topnav a, .pagination a { min-height: 34px; padding: 5px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <nav class="topnav" aria-label="日报导航">
+        <a href="index.html">历史</a>
+        <a href="latest.html">最新</a>
+      </nav>
+      <p class="eyebrow">SDU Daily Feed · 2026-11-12</p>
+      <h1>山大信息日报 2026-11-12</h1>
+      <p class="disclaimer">本页由公开网页自动抓取并经 AI 辅助整理生成，原始链接为准。</p>
+      <dl class="meta-grid"><div><dt>生成时间</dt><dd>2026-11-13T17:26:20.384145+09:00</dd></div><div><dt>状态</dt><dd>需核查</dd></div><div><dt>条目</dt><dd>14</dd></div><div><dt>需核查</dt><dd>0</dd></div></dl>
+      
+    </header>
+    <nav class="section-nav" aria-label="栏目导航"><a href="#section-1">数据完整性状态</a><a href="#section-2">本科与研究生教学相关</a><a href="#section-3">医学、齐鲁医院、齐鲁医学院动态与机会</a><a href="#section-4">医院招聘 / 政策 / 人事机构变化</a><a href="#section-5">科研、基金、会议、讲座</a><a href="#section-6">低价值或仅作背景的信息</a><a href="#section-7">需打开原文核查</a></nav>
+    <section class="sections"><article class="section-block"><h2 id="section-1">数据完整性状态</h2>
+<p>学校侧采集正常：67 个列表页全部抓取成功、无失败源；抓取文章 82 篇，43 篇因发布日期超出目标日丢弃（复核均为既往已发布或基线滞留旧项，无近目标日漏抓），7 条重复 URL 候选去重。保留条目发布日期均为 2026-11-12（另含 1 条 2026-11-10 期补录与 1 条 2026-11-13 发布的提前收录，均已在条目内注明）。学生在线、青春山大文章页本轮可正常访问；保留条目 25 个附件全部下载成功（验证码自动过码 42/42），其中 20 个完成文本抽取、5 个 .doc 附件解析工具不可用，关键事实均以正文为准、附件细节见原文；完整性审计中的附件缺失标记均为下载验证后按临时文件边界清理（80/80、无错误）所致，非数据损失。</p><p>2026-11-11 期自动化未运行（采集缺失）。本次抓取中发现两条属于缺失期间的漏抓通知：校长奖（单项）评审会通知（发布于 2026-11-11，答辩已于 11-13 举行、答辩 PPT 截止 11-12 中午）行动窗口已过，不补录、仅此注明；第二校园奖、海外学习奖拟获奖名单公示（发布于 2026-11-10，公示期至 11-17 仍在进行）已补录至本期教学栏目。另有邢怀朋团队 Molecular Cell 研究成果 11-12 在齐鲁医学院网站再次发布，2026-11-10 期日报已收录同一成果（新闻网版本），本期不再重复。招聘监测为覆盖警告（48 个源；4 条记录均为既往期间公告的再次观察，已逐一核对源站现状并以同 URL 预写去重，本日无新增招聘事件）；过滤记录中 future_publication_date 1 条为既往已核实的山大第二医院发布日期误解析，重复指纹 1 条为同一公示双路径去重，均无新影响。</p><p>历史缺口（均未回填）：2026-09-30、2026-10-23、2026-11-05、11-06、11-08、11-09、11-11 采集缺失；2026-11-07、11-10 已采集但发布未完成（页面未上线）。发布自 2026-11-02 起持续受阻：网站仓库存在非日报目录的未提交变更（robots.txt 修改与 calendar/ 目录），按规则不代为处置，故 11-02 起各期页面均未上线，latest 页仍为 2026-11-01。</p><p>招聘监控：未取得可验证的检查结果；不能据此判断没有新招聘</p></article>
+<article class="section-block"><h2 id="section-2">本科与研究生教学相关</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>2026—2027 学年第一学期《形势与政策》课考试安排确定（第 12/13 周）</h3>
+  <div class="item-meta">
+    <span>学生在线 / 学工通知</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>考试安排在第 12 周（双周上课学生）和第 13 周（单周上课学生）进行，具体时间地点与 2026 秋季课表一致，闭卷、不得携带参考资料。各学院监考人员登记表须于 11 月 17 日前发送至 xuegbj@sdu.edu.cn；试卷纸、考场记录表等考试材料 11 月 16 日上午到各校区指定地点领取；课堂教学成绩由讨论课成绩与期末考试成绩各占 50%；纸质备案材料 12 月 7 日前交中心校区明德楼 B217（济南）或会文南楼 A122（青岛）。联系人崔颖（内线 64385）。该通知发布于 2026-11-13 上午、晚于目标日一天，因涉及本周内材料报送与领卷事项提前收录；5 个附件（监考操作规程、监考人员登记表、试卷存档要求等）下载后其中 4 个 .doc 文本抽取工具不可用，以正文为准、附件见原文。</p>
+  <a class="source-link" href="https://www.online.sdu.edu.cn/content.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=1016&amp;wbnewsid=34968" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>第二十届“挑战杯”大学生课外学术科技作品竞赛校内选拔赛启动</h3>
+  <div class="item-meta">
+    <span>青春山大 / 重要通知</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>2027 年 6 月 1 日前注册的全日制本科生、硕士研究生（不含在职硕士）均可申报（博士能否参赛以正式通知为准），每队不超过 10 人、指导教师限 3 人且须 2 名高级职称教师推荐；作品分自然科学类学术论文、哲学社会科学类社会调查报告、科技发明制作三类。时间线：学生科技创新项目双选会拟于 12 月举办（另行通知）；各培养单位种子项目 2026 年 12 月 31 日前发送至 xskx@sdu.edu.cn；院级初赛 2027 年 1 月至 3 月初，校级复赛 3 月下旬（网络评审），校级决赛 4 月上旬（现场答辩）；学院推荐项目汇总材料 2027 年 3 月 15 日前报送 xskx@sdu.edu.cn；办赛交流 QQ 群 1023373952。通知明确严禁使用 AI 工具代替撰写学术论文、调查报告。5 个附件中 1 个文本抽取不可用，以正文为准、附件见原文。</p>
+  <a class="source-link" href="https://www.youth.sdu.edu.cn/tz_content.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=1004&amp;wbnewsid=12463" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>中国国际大学生创新大赛（2027）校内选拔赛启动</h3>
+  <div class="item-meta">
+    <span>青春山大 / 重要通知</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>主体赛事含高教主赛道、“青年红色筑梦之旅”赛道、产业赛道与国际赛道（另行通知），高教主赛道按本科生组、研究生组分创意组与创业组，项目类型覆盖新工科、新医科、新农科、新文科及“人工智能+”。各培养单位种子项目（不超过 2 个）2026 年 12 月 31 日前报送 xskx@sdu.edu.cn；学生创新创业项目双选会拟于 2026 年 12 月举办；种子项目专项培训会拟于 2026 年秋季学期期末考试结束后开展；赛事专项工作组名单与院级项目材料 2027 年 3 月 25 日前报送校团委；省级赛事拟于 7—9 月、国家级赛事拟于 10—11 月举行（以正式通知为准）。</p>
+  <a class="source-link" href="https://www.youth.sdu.edu.cn/tz_content.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=1004&amp;wbnewsid=12462" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>山东大学 2026 年度（第 37 期）团校培训启动</h3>
+  <div class="item-meta">
+    <span>青春山大 / 重要通知</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>校级团校设共青团组织建设工作、团支部工作、经纬学堂、学生社团工作大会暨社团工作培训、“山岩计划”五个班次，覆盖各学院团委组织委员、2026 级新生及新换届团支部书记、校院学生会与研究生会骨干、学生社团负责人和第 29 届研究生支教团成员。各班次学员汇总表（电子版+盖章扫描版）须于 2026 年 11 月 16 日 12:00 前按班次分别发送至 twzzb@sdu.edu.cn、sdudgb2022@163.com、sdustgzb@163.com（青岛校区 sduqdtgw@126.com、威海校区 sdwhtwzx@163.com）。济南校本部联系人信鸽 0531-88369964。</p>
+  <a class="source-link" href="https://www.youth.sdu.edu.cn/tz_content.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=1004&amp;wbnewsid=12467" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>第四十二次学生代表大会与第二十四次研究生代表大会 12 月召开（预备通知）</h3>
+  <div class="item-meta">
+    <span>青春山大 / 重要通知</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>大会拟于 2026 年 12 月上旬至中旬召开。11 月 12 日至 18 日各基层单位推荐学生代表及常任代表（常任代表须为非学生会主席团成员或部门负责人），代表名单须经不少于 3 个工作日公示；代表情况表与汇总表（盖章扫描版+Word 版）须于 11 月 18 日 11:00 前按校区发送至对应邮箱（济南校区学代会 sdusumsc@163.com、研代会 sduyjsh2024@163.com，威海、青岛校区另见原文）。大会实行提案制，济南各校区学生提案参照第八届“畅益山大”学生提案大赛通知要求提交。联系人殷老师 0531-88369958（济南各校区）。</p>
+  <a class="source-link" href="https://www.youth.sdu.edu.cn/tz_content.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=1004&amp;wbnewsid=12464" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>“一站式”学生社区综合管理模式建设提质增效工作部署</h3>
+  <div class="item-meta">
+    <span>学生在线 / 学工通知</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>依据教育部《高校“一站式”学生社区综合管理模式建设提质增效指南（2026 年修订版）》，明确学校层面统一建设标准与督导评估、学院层面落实基础指标并规范建立工作台账的职责分工，推动辅导员、专任教师、管理干部、学生骨干联系社区机制常态化，育人活动优先落地学生社区。各学院（培养单位）须于 11 月底前将分管负责同志、工作联络员名单报党委学生工作部，联系人李冉 0531-88364780（xgbyzs@sdu.edu.cn）。</p>
+  <a class="source-link" href="https://www.online.sdu.edu.cn/content.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=1016&amp;wbnewsid=34964" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>2025-2026 学年第二校园奖、海外学习奖拟获奖名单公示（11-10 期补录）</h3>
+  <div class="item-meta">
+    <span>学生在线 / 通知公示</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>经学生申请、学院审核、学校评审，产生 2025-2026 学年第二校园奖、海外学习奖拟获奖学生人选，名单见原文附件。公示时间 2026 年 11 月 11 日至 11 月 17 日，公示电话 0531-88364230；威海校区、青岛校区获奖名单由各校区学工部另行公示。该公示发布于 2026-11-10 18:11，属 2026-11-10 期日报漏抓（该期尚未上线），因公示期仍在进行，本期补录。</p>
+  <a class="source-link" href="https://www.online.sdu.edu.cn/content.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=1016&amp;wbnewsid=34942" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-3">医学、齐鲁医院、齐鲁医学院动态与机会</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>齐鲁医院携手京东健康共建远程诊疗中心上线</h3>
+  <div class="item-meta">
+    <span>山东大学齐鲁医院 / 综合新闻</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>齐鲁医院与京东健康共建的远程诊疗中心正式上线，为山东省首家由综合性医院联合京东健康共建的远程诊疗中心，首批入驻专家 400 余位、基本实现临床专业全覆盖，面向全国患者提供在线医疗咨询服务，主要服务异地就医不便、复诊咨询、慢病用药咨询和报告解读人群。患者可在京东 App 或小程序搜索“山东大学齐鲁医院远程诊疗中心”，选择科室与专家发起线上问诊。</p>
+  <a class="source-link" href="https://www.qiluhospital.cn/info/1674/399271.htm" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-4">医院招聘 / 政策 / 人事机构变化</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>山东医药大学附属医院（原滨州医学院附属医院）博士后、博士及硕士招聘（再次观察）</h3>
+  <div class="item-meta">
+    <span>山东大学学生就业创业指导中心 / 通知公告</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>位于滨州的省属三甲综合医院面向社会招聘博士后、博士研究生（科研岗位名额不限）与硕士研究生。临床医师博士待遇含安家费最高 110 万元、科研启动经费最高 100 万元，纳入在编管理，另发租房补贴并报销来院考察往返交通费；应聘医师岗位须持医师资格证书，博士（后）岗位年龄原则上不超过 35 周岁、硕士岗位不超过 30 周岁。自简章发布之日起报名、不定期组织考试、岗位招满即止（就业信息平台挂牌截止 2027-07-10 非实际报名截止，报名以医院应聘网址 www.byfy.cn 为准）。已于 2026-11-10 期日报收录（该期尚未上线），本日监测再次推送、状态未变，非新增。</p>
+  <a class="source-link" href="https://jobcareer.sdu.edu.cn/eweb/jygl/index.so?id=LLTUc6V6YxNY5vzjGuYyZz&amp;lmxhV=0402&amp;modcode=jygl_zpxxck&amp;rklx=jyw&amp;subsyscode=zpfw&amp;type=ssoZxzpView" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>青岛市卫健委直属事业单位高级人才和博士拟聘用人选公示（第七批，公示至 11 月 17 日）</h3>
+  <div class="item-meta">
+    <span>青岛市卫生健康委员会 / 公告公示</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>第七批考试、体检、考察工作完成，柳建荟等 11 名拟聘用人选予以公示，涉及山东大学齐鲁医院（青岛）、青岛市海慈医疗集团、青岛市妇女儿童医院、北京大学人民医院青岛医院等委直属单位。公示期 5 个工作日、截止 2026 年 11 月 17 日，异议受理部门为市卫健委人事处，电话 0532-85912521。已于 2026-11-10 期日报收录（该期尚未上线），本日为同一公示的再次观察，公示期仍有效。</p>
+  <a class="source-link" href="http://wsjkw.qingdao.gov.cn/ywdt/gggs/202611/t20261110_10773059.shtml" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>山一医第三附属医院 2026 年公开招聘拟聘用人员公示（公示期已结束）</h3>
+  <div class="item-meta">
+    <span>山东第一医科大学第三附属医院 / 通知公告</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>医院按 2026 年 7 月 27 日发布的岗位计划完成笔试、面试、考察、体检，拟聘用 13 名人员（含重症、内分泌、神经内科等临床医师岗位）予以公示，公示期 2026 年 11 月 6 日至 11 月 12 日（已届满），招聘单位联系电话 0531-58628827。该公示曾于 2026-11-07 期日报收录、11-10 期再次收录（均未上线），本日监测仍推送该记录，为同一公示的再次观察、非新增。</p>
+  <a class="source-link" href="http://www.sdyfy.cn/Info/News/Content_4838.html" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>山东省立第三医院社区全科医生岗位招聘公告（报名已截止）</h3>
+  <div class="item-meta">
+    <span>山东省立第三医院</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>招聘新城社区医院全科医生 1 名，35 周岁以下（1990 年 11 月之后出生），须具备医师资格证、医师执业证（执业范围为全科医学或加注全科医学），所需学历学位证书、资格证等须于 2026 年 11 月 6 日前取得。报名时间为 2026 年 11 月 6 日 14:00 至 11 月 12 日 16:00（已截止），初审 11 月 9 日至 16 日，联系电话 0531-85952118。曾于 2026-11-07 期日报收录（未上线），本日为同一公告的再次观察、非新增，报名已截止。</p>
+  <a class="source-link" href="https://www.sdsldsyy.com/Info/T20200417/Front/Information/InformationContent.aspx?ChannelId=39&amp;Id=26664" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-5">科研、基金、会议、讲座</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>张仁斌教授合作论文在《管理世界》探讨央行沟通与企业宏观经济感知</h3>
+  <div class="item-meta">
+    <span>山东大学新闻网 / 学术纵横</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>经济学院张仁斌教授作为通讯作者的合作论文《货币政策冲击、央行沟通与企业宏观经济感知》刊发于《管理世界》2026 年第 11 期，合作者来自对外经济贸易大学、复旦大学与中央财经大学。研究基于信号提取模型，运用符号约束 BSVAR 模型将货币政策冲击分解为纯净政策冲击与信息冲击，发现纯净宽松政策冲击能够提振企业宏观经济感知，而宽松的信息冲击则会降低企业宏观经济感知，且效应存在企业异质性、非对称特征与状态依存特征。</p>
+  <a class="source-link" href="https://www.view.sdu.edu.cn/info/1021/215188.htm" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-6">低价值或仅作背景的信息</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>齐鲁医院招标采购信息汇总（12 则）</h3>
+  <div class="item-meta">
+    <span>山东大学齐鲁医院 / 招标采购</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>2026-11-12 发布/更新 12 则。成交公告 6 则：电动密闭下送车成交 13.82 万元、供应商山东欣益商贸（https://www.qiluhospital.cn/info/1674/399391.htm）；外车清洗架成交 12.6 万元、山东欣益商贸（https://www.qiluhospital.cn/info/1674/399381.htm）；全自动单极反渗透水处理系统成交 11 万元、山东欣益商贸（https://www.qiluhospital.cn/info/1674/399371.htm）；PACS/RIS 影像系统运维服务成交 27.99 万元/年、上海雷荷波信息科技（https://www.qiluhospital.cn/info/1674/399351.htm）；铅衣成交 6.208 万元、济南同心众邦商贸（https://www.qiluhospital.cn/info/1674/399241.htm）；华美楼便民超市场地对外租赁（租期 3 年含装修期）由山东橙子便利生活中标（https://www.qiluhospital.cn/info/1674/399231.htm）。招标/磋商公告 4 则：便携超声诊断仪等公开招标、预算 56.35 万元（https://www.qiluhospital.cn/info/1674/399361.htm）；光学相干断层扫描仪公开招标、预算 210 万元（https://www.qiluhospital.cn/info/1674/399341.htm）；手持眼压计公开招标、预算 20 万元、可采进口（https://www.qiluhospital.cn/info/1674/399321.htm）；近远红外光学成像仪（智慧脊柱健康管理系统）竞争性磋商、预算 44 万元（https://www.qiluhospital.cn/info/1674/399331.htm）——以上投标/响应文件提交截止均为 2026 年 12 月 3 日 09:00，招标（采购）文件获取时间为 11 月 13 日至 19 日。更正与终止各 1 则：高频手术系统竞争性磋商更正公告，响应文件提交及开启时间由 11 月 13 日更正为 12 月 3 日 09:00、地点更正为文化西路 107 号齐鲁楼北塔 2 楼 2A 会议室（https://www.qiluhospital.cn/info/1674/399261.htm）；胃肠动力学检查系统采购终止，原因系递交响应文件供应商不足三家废标（https://www.qiluhospital.cn/info/1674/399251.htm）。</p>
+  <a class="source-link" href="https://www.qiluhospital.cn/info/1674/399391.htm" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-7">需打开原文核查</h2>
+<p class="empty">无可发布信息。</p></article></section>
+  </main>
+</body>
+</html>
