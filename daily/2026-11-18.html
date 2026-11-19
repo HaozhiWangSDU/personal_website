@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="daily-feed-date" content="2026-11-18">
+  <meta name="daily-feed-title" content="山大信息日报 2026-11-18">
+  <meta name="daily-feed-item-count" content="6">
+  <meta name="daily-feed-needs-review-count" content="0">
+  <title>山大信息日报 2026-11-18</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --ink: #172033;
+      --muted: #627086;
+      --line: #dfe5ee;
+      --panel: #ffffff;
+      --accent: #0f766e;
+      --accent-2: #1d4ed8;
+      --warn: #b45309;
+      --ok-bg: #e8f5f2;
+      --review-bg: #fff4df;
+      --checked-bg: #edf2ff;
+    }
+    * { box-sizing: border-box; }
+    html, body { max-width: 100%; overflow-x: hidden; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    a { color: var(--accent-2); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    h1, h2, h3, p, a, span, strong, dd {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .page {
+      width: min(1120px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 28px 0 52px;
+    }
+    .hero {
+      max-width: 100%;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .hero.compact { margin-bottom: 18px; }
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .topnav a, .pagination a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+    .disclaimer {
+      max-width: 780px;
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0 0;
+    }
+    .meta-grid div {
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+    }
+    .meta-grid dt {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    .meta-grid dd {
+      margin: 0;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+    .notice {
+      max-width: 100%;
+      margin-top: 18px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: var(--ok-bg);
+      color: #115e59;
+    }
+    .section-nav {
+      max-width: 100%;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 14px 2px;
+      margin: 10px 0 4px;
+    }
+    .section-nav a {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+    .sections {
+      display: grid;
+      gap: 16px;
+    }
+    .section-block {
+      max-width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 22px;
+    }
+    .section-block h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+    .section-block p, .feed-item p { margin: 8px 0 0; }
+    .items {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .feed-item {
+      max-width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+      padding: 16px;
+    }
+    .feed-item h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      line-height: 1.4;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+    .item-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
+      background: #eef2f7;
+    }
+    .pill.enough { background: var(--ok-bg); color: #115e59; }
+    .pill.checked { background: var(--checked-bg); color: #1e3a8a; }
+    .pill.review { background: var(--review-bg); color: var(--warn); }
+    .source-link {
+      display: inline-flex;
+      margin-top: 12px;
+      font-weight: 700;
+    }
+    .empty { color: var(--muted); }
+    .archive-list {
+      display: grid;
+      gap: 10px;
+    }
+    .archive-row {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .archive-row a {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .archive-row strong { overflow-wrap: anywhere; }
+    .archive-date, .archive-count {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pagination {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 22px;
+      color: var(--muted);
+    }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 18px, 1120px); padding-top: 12px; }
+      .hero, .section-block { padding: 18px; }
+      .meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .items { grid-template-columns: 1fr; }
+      .archive-row { grid-template-columns: 1fr; align-items: start; }
+    }
+    @media (max-width: 430px) {
+      .hero, .section-block { padding: 16px; }
+      .meta-grid { grid-template-columns: 1fr; }
+      .topnav a, .pagination a { min-height: 34px; padding: 5px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <nav class="topnav" aria-label="日报导航">
+        <a href="index.html">历史</a>
+        <a href="latest.html">最新</a>
+      </nav>
+      <p class="eyebrow">SDU Daily Feed · 2026-11-18</p>
+      <h1>山大信息日报 2026-11-18</h1>
+      <p class="disclaimer">本页由公开网页自动抓取并经 AI 辅助整理生成，原始链接为准。</p>
+      <dl class="meta-grid"><div><dt>生成时间</dt><dd>2026-11-19T10:51:02.969046+09:00</dd></div><div><dt>状态</dt><dd>部分</dd></div><div><dt>条目</dt><dd>6</dd></div><div><dt>需核查</dt><dd>0</dd></div></dl>
+      
+    </header>
+    <nav class="section-nav" aria-label="栏目导航"><a href="#section-1">数据完整性状态</a><a href="#section-2">本科与研究生教学相关</a><a href="#section-3">医学、齐鲁医院、齐鲁医学院动态与机会</a><a href="#section-4">医院招聘 / 政策 / 人事机构变化</a><a href="#section-5">科研、基金、会议、讲座</a><a href="#section-6">低价值或仅作背景的信息</a><a href="#section-7">需打开原文核查</a></nav>
+    <section class="sections"><article class="section-block"><h2 id="section-1">数据完整性状态</h2>
+<p>抓取整体正常：67个来源列表页全部成功，无来源失败，共35条原始候选。其中栏目/服务页误抓16条、内部会议报道或活动回顾9条、讲座1条（举办时间已过）、往期已收录1条（昱鸿助学金等10项社会助学金拟资助名单公示，已于2026-11-17期发布）按规则省略，其余按发布价值规则排除，保留6条。</p><p>附件情况：潍柴动力奖学金公示的名单附件为zip打包文件，自动解析不支持，正文关键信息完整，名单以原文附件为准；本科生院转专业通知4个附件、暑期学校公示1个附件均已下载并解析成功（审计中的附件缺失提示均为运行结束后清理所致的复检现象，非数据损失）。</p><p>招聘侧覆盖警告：48个来源全部检查完毕，自动导出1条新发现（省立三院社区全科医生新一期公告，已核查原文）；另有1条招聘发布日期未解析、未被自动导出的记录（省公卫临床中心考察体检通知）经人工盘点原文后补录；1条未来日期记录为山东大学第二医院既往已知的日期误解析，无新影响。</p><p>历史缺口（未回填）：2026-09-30、2026-10-23、2026-11-04、11-05、11-06、11-08、11-09、11-11无采集记录，相应日期内容未知。</p><p>招聘监控：检查部分失败或未完成；检查时间 2026-11-19T10:51:02.969046+09:00；来源 48 个；新发现或更新医师相关信息 0 条；覆盖不完整，不能据此判断没有新招聘</p></article>
+<article class="section-block"><h2 id="section-2">本科与研究生教学相关</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>关于做好2026年秋季学期本科生转专业工作的通知</h3>
+  <div class="item-meta">
+    <span>山东大学本科生院 / 教务管理</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>2026年11月18日发布，面向2025级全日制在校本科生。11月19日10:00起可在"智慧教学管理服务平台"（bkzhjx.wh.sdu.edu.cn）查看各学院接收工作方案并在线报名，报名截止11月29日12:00；学生最多可填报两个志愿专业，两个志愿均拟录取时原则上按第一志愿优先。所在学院与报考学院的审核须分别于11月30日12:00、12月1日17:00前完成；各学院选拔工作安排在12月2日至12月13日。通知、各学院接收方案、系统操作指南等4个附件均已下载解析成功。注意：申请一经录取公示，学籍信息由学校统一变更，原则上不再接受退回原专业或原大类的申请，请有意向的同学留意各环节系统截止时间。</p>
+  <a class="source-link" href="https://www.bkjx.sdu.edu.cn/content.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=1014&amp;wbnewsid=38252" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>关于公示2026年暑期学校优秀项目及优秀组织单位的通知</h3>
+  <div class="item-meta">
+    <span>山东大学本科生院 / 教务管理</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>2026年11月18日发布。经项目负责人申报、单位推荐、专家评审等程序，确定《概率机器学习》等50个项目为2026年暑期学校优秀项目，经济学院等20个学院为2026年暑期学校优秀组织单位，现予公示，公示期三天，如有异议请及时联系本科生院。联系电话（0531）88365098，邮箱sqxx@sdu.edu.cn。公示名单附件已下载解析成功。</p>
+  <a class="source-link" href="https://www.bkjx.sdu.edu.cn/content.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=1014&amp;wbnewsid=38247" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>2026年度潍柴动力奖学金等17项社会奖学金获奖学生名单公示</h3>
+  <div class="item-meta">
+    <span>学生在线 / 通知公示</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>2026年11月18日发布。经学生申请、学院（培养单位）推荐、学校审核，潍柴动力、小米、玲珑集团、华为、齐鲁制药优秀学生、金利来、海信、小松中日、临工、宝供物流、比亚迪、苏州工业园区、山东广电、港华燃气、侯拱辰优秀贫困生、魏桥、燕宝共17项社会奖学金获奖人选已评出并公示，公示时间2026年11月19日至11月25日，公示电话88364230。获奖名单见原文附件（zip打包文件，本站未能自动解析，请以原文附件为准）。</p>
+  <a class="source-link" href="https://www.online.sdu.edu.cn/content.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=1016&amp;wbnewsid=34995" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-3">医学、齐鲁医院、齐鲁医学院动态与机会</h2>
+<p class="empty">无可发布信息。</p></article>
+<article class="section-block"><h2 id="section-4">医院招聘 / 政策 / 人事机构变化</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>山东省立第三医院社区全科医生岗位招聘公告（2026-11-18新一期）</h3>
+  <div class="item-meta">
+    <span>山东省立第三医院官网 / 人才招聘</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>已核查原文。2026年11月18日发布，招聘社区全科医生1名，工作地点为省立三院新城社区医院。35周岁以下（1990年11月之后出生），本科及以上；以本科学历报考需临床医学或全科医学专业，以研究生学历报考需内科学或全科医学专业；须具备医师资格证、医师执业证（执业范围为全科医学或加注全科医学），所需学历学位证书、资格证等须于2026年11月18日前取得。报名时间2026年11月18日14:00至11月29日17:00，网上报名系统hrrecruitw.sdsldsyy.com；单位初审2026年11月19日8:00至12月2日17:00。联系电话0531-85952118（工作日8:30-11:30、14:00-17:00）。注：与2026-11-07期已发布的同名公告（当时报名期为11月6日至12日）属同一岗位类型的新一期招聘。</p>
+  <a class="source-link" href="https://www.sdsldsyy.com/Info/T20200417/Front/Information/InformationContent.aspx?ChannelId=39&amp;Id=26686" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+<article class="feed-item">
+  <h3>山东省公共卫生临床中心2026年公开招聘高级岗及博士人员进入考察体检范围人员通知</h3>
+  <div class="item-meta">
+    <span>山东省公共卫生临床中心官网 / 通知公告</span>
+    <span class="pill checked">已核查原文</span>
+  </div>
+  <p>已核查原文。2026年11月17日发布（发布日期未被招聘监测自动解析，经人工盘点原文核实后补录）。该中心2026年公开招聘高级岗及博士人员面试工作已完成，面试合格分数线70分，按招聘岗位依总成绩1:1.5比例由高分到低分确定进入考察体检范围人选，名单见原文附件；体检集合时间为2026年11月19日（周四）上午8点10分，集合地点、有关要求及注意事项另行通知。</p>
+  <a class="source-link" href="https://www.sdgwlc.com/notice_detail/10860.html" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-5">科研、基金、会议、讲座</h2>
+<div class="items">
+<article class="feed-item">
+  <h3>王天宇研究员在铁电/反铁电芯片与AI类脑计算领域取得新进展</h3>
+  <div class="item-meta">
+    <span>山东大学新闻网 / 学术纵横</span>
+    <span class="pill enough">摘要足够</span>
+  </div>
+  <p>2026年11月18日发布。集成电路学院王天宇研究员团队在全铪基铁电/反铁电神经形态类脑计算芯片与混合人工智能计算方向取得进展，成果以"Fully hafnium-based ferroelectric/antiferroelectric devices for hybrid SNN neuromorphic computing"为题发表于Applied Physics Letters。研究生陈庆鑫为论文第一作者，王天宇研究员、孟佳琳教授为共同通讯作者，集成电路学院为第一完成单位。团队利用HfZrOx薄膜组分可调特性，在同一铪基氧化物材料平台上同时实现突触权重调制（铁电器件）与积分、阈值响应、发放行为（反铁电器件），面向动态视觉传感器手势识别的混合神经形态架构实现92.8%的识别准确率。</p>
+  <a class="source-link" href="https://www.view.sdu.edu.cn/info/1021/215266.htm" target="_blank" rel="noopener noreferrer">打开原文</a>
+</article>
+</div></article>
+<article class="section-block"><h2 id="section-6">低价值或仅作背景的信息</h2>
+<p class="empty">无可发布信息。</p></article>
+<article class="section-block"><h2 id="section-7">需打开原文核查</h2>
+<p class="empty">无可发布信息。</p></article></section>
+  </main>
+</body>
+</html>
