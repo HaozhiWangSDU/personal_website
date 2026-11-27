@@ -1,0 +1,2327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>内科学（第10版）· 风湿免疫病教学大纲精要（掌握 / 熟悉 + SVG图解）</title>
+<style id="theme-tokens">
+:root, [data-theme="light"] {
+  --background: #f6f8fb;
+  --content: #f6f8fb;
+  --card: #ffffff;
+  --sidebar: #eef2f7;
+  --border: #d5dde8;
+  --card-border: #e5ebf3;
+  --foreground: #182230;
+  --muted-foreground: #526075;
+  --placeholder: #7a889d;
+  --primary: #1d4ed8;
+  --primary-foreground: #ffffff;
+  --secondary: #e8eef6;
+  --secondary-foreground: #1e293b;
+  --accent: #dbeafe;
+  --link: #1d4ed8;
+  --success: #15803d;
+  --warning: #d97706;
+  --error: #dc2626;
+  --chart-1: #0284c7;
+  --chart-2: #0d9488;
+  --chart-3: #7c3aed;
+  --chart-4: #ea580c;
+  --chart-5: #be123c;
+  --chart-6: #4f46e5;
+}
+[data-theme="dark"] {
+  --background: #0f172a;
+  --content: #0f172a;
+  --card: #162033;
+  --sidebar: #111b2e;
+  --border: #2a3952;
+  --card-border: #223047;
+  --foreground: #e6edf7;
+  --muted-foreground: #9cb0c9;
+  --placeholder: #7488a3;
+  --primary: #60a5fa;
+  --primary-foreground: #0b1220;
+  --secondary: #1e2c45;
+  --secondary-foreground: #dce7f7;
+  --accent: #1d3557;
+  --link: #60a5fa;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --error: #f87171;
+  --chart-1: #38bdf8;
+  --chart-2: #2dd4bf;
+  --chart-3: #a78bfa;
+  --chart-4: #fb923c;
+  --chart-5: #fb7185;
+  --chart-6: #818cf8;
+}
+</style>
+<style id="app-styles">
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .app-shell {
+    display: flex;
+    min-height: 100vh;
+    background: var(--background);
+  }
+  /* Sidebar */
+  .sidebar {
+    width: 256px;
+    flex-shrink: 0;
+    background: var(--sidebar);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 30;
+    transition: width 0.2s ease, transform 0.2s ease, opacity 0.18s ease;
+  }
+  body.sidebar-collapsed .sidebar {
+    width: 0;
+    min-width: 0;
+    border-right: none;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .sidebar-header {
+    padding: 14px 14px 10px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .sidebar-close-btn {
+    padding: 3px 7px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--muted-foreground);
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+  .sidebar-close-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .sidebar-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--foreground);
+    line-height: 1.35;
+  }
+  .sidebar-sub {
+    font-size: 11.5px;
+    color: var(--muted-foreground);
+    margin-top: 3px;
+  }
+  .nav-list {
+    padding: 8px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    overflow-y: auto;
+  }
+  .nav-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 9px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--foreground);
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-size: 12.8px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .nav-item:hover {
+    background: var(--card);
+    border-color: var(--card-border);
+  }
+  .nav-item.active {
+    background: var(--card);
+    border-color: var(--primary);
+    box-shadow: inset 3px 0 0 var(--primary);
+  }
+  .nav-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+  .nav-item.active .nav-num {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+  .nav-meta {
+    display: block;
+    font-size: 10.8px;
+    color: var(--muted-foreground);
+    margin-top: 2px;
+  }
+  .sidebar-controls {
+    padding: 10px 10px 8px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .sidebar-controls-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted-foreground);
+    letter-spacing: 0.03em;
+    padding: 0 2px;
+  }
+  .sidebar-controls .tool-btn {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sidebar-footer {
+    padding: 8px 12px 10px;
+    border-top: 1px solid var(--card-border);
+    font-size: 11px;
+    color: var(--muted-foreground);
+  }
+
+  /* Main area */
+  .main-wrap {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
+    padding: 7px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .menu-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--foreground);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .menu-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .filter-group {
+    display: inline-flex;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2px;
+    gap: 2px;
+  }
+  .filter-btn {
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: var(--muted-foreground);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .filter-btn.active {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+  .tool-btn {
+    padding: 6px 10px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--foreground);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .tool-btn:hover {
+    border-color: var(--primary);
+  }
+  .tool-btn.active {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border-color: var(--primary);
+  }
+
+  /* Content */
+  .content {
+    padding: 14px 22px 44px;
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .module-section {
+    display: none;
+  }
+  .module-section.active,
+  body.view-all .module-section {
+    display: block;
+  }
+  body.view-all .module-section {
+    margin-bottom: 42px;
+    padding-bottom: 32px;
+    border-bottom: 2px dashed var(--border);
+  }
+  .mod-header {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+  }
+  .mod-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .mod-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--foreground);
+  }
+  .mod-source {
+    font-size: 12px;
+    color: var(--muted-foreground);
+    background: var(--secondary);
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+  .syllabus-box {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+    font-size: 12.5px;
+    border-top: 1px solid var(--card-border);
+    padding-top: 10px;
+  }
+  .syl-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .syl-tag {
+    flex-shrink: 0;
+    padding: 1px 7px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .syl-tag.m { background: var(--error); color: #ffffff; }
+  .syl-tag.f { background: var(--chart-1); color: #ffffff; }
+  .syl-tag.x { background: var(--secondary); color: var(--muted-foreground); border: 1px solid var(--border); }
+  .syl-excluded { color: var(--muted-foreground); font-size: 12px; }
+
+  /* Tier sections */
+  .tier-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 22px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--border);
+    font-size: 16px;
+    font-weight: 800;
+  }
+  .tier-heading.master-hd { border-bottom-color: var(--error); }
+  .tier-heading.familiar-hd { border-bottom-color: var(--chart-1); }
+
+  /* Cards */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .card.tier-master {
+    border-left: 4px solid var(--error);
+  }
+  .card.tier-familiar {
+    border-left: 4px solid var(--chart-1);
+    opacity: 0.96;
+  }
+  .card-hd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .card-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--foreground);
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .badge-m {
+    background: var(--error);
+    color: #ffffff;
+  }
+  .badge-f {
+    background: transparent;
+    color: var(--chart-1);
+    border: 1px solid var(--chart-1);
+  }
+  .badge-note {
+    background: var(--warning);
+    color: #111111;
+  }
+
+  /* Filtering */
+  body.filter-master [data-tier="familiar"] { display: none !important; }
+  body.filter-familiar [data-tier="master"] { display: none !important; }
+
+  /* Typography inside cards */
+  .card p { margin: 6px 0; }
+  .card ul, .card ol { margin: 6px 0; padding-left: 20px; }
+  .card li { margin: 4px 0; }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .mini-box {
+    background: var(--background);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  .mini-box h4 {
+    margin: 0 0 5px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  /* Tables */
+  .tbl-wrap {
+    overflow-x: auto;
+    margin: 8px 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  table.med-tbl {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+  table.med-tbl th {
+    background: var(--secondary);
+    color: var(--foreground);
+    font-weight: 700;
+    text-align: left;
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  table.med-tbl td {
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--card-border);
+    vertical-align: top;
+  }
+  table.med-tbl tr:last-child td { border-bottom: none; }
+  .row-highlight {
+    background: var(--accent);
+  }
+
+  /* Callouts */
+  .callout {
+    margin: 8px 0;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    border: 1px solid var(--border);
+    background: var(--background);
+  }
+  .callout.warn { border-left: 3px solid var(--warning); }
+  .callout.danger { border-left: 3px solid var(--error); }
+  .callout.info { border-left: 3px solid var(--chart-1); }
+
+  /* Cloze self-test spans */
+  .k {
+    font-weight: 700;
+    color: var(--primary);
+    border-bottom: 1px dotted var(--primary);
+    padding: 0 2px;
+    border-radius: 3px;
+    transition: background 0.15s, color 0.15s;
+  }
+  body.cloze-on .k:not(.revealed) {
+    background: var(--foreground);
+    color: transparent;
+    border-bottom-color: transparent;
+    cursor: pointer;
+    user-select: none;
+  }
+  body.cloze-on .k:not(.revealed):hover { opacity: 0.85; }
+  body.cloze-on .k.revealed {
+    background: var(--secondary);
+    color: var(--primary);
+    cursor: pointer;
+  }
+
+  /* SVG diagram box */
+  .svg-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin: 12px 0 16px;
+  }
+  .svg-hd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .svg-zoom-btn {
+    padding: 3px 9px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--background);
+    color: var(--foreground);
+    font-size: 11.5px;
+    cursor: pointer;
+  }
+  .svg-zoom-btn:hover { border-color: var(--primary); color: var(--primary); }
+  .svg-stage {
+    width: 100%;
+    overflow-x: auto;
+    cursor: zoom-in;
+  }
+  .svg-stage svg {
+    display: block;
+    width: 100%;
+    min-width: 680px;
+    height: auto;
+  }
+
+  /* Lightbox modal */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    max-width: 1200px;
+    width: 96%;
+    max-height: 92vh;
+    overflow: auto;
+    padding: 16px;
+  }
+  .modal-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .modal-body svg { width: 100%; height: auto; display: block; }
+
+  /* Responsive */
+  @media (max-width: 860px) {
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 264px;
+      transform: translateX(-100%);
+      box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .sidebar.open { transform: translateX(0); }
+    body.sidebar-collapsed .sidebar { width: 264px; opacity: 1; pointer-events: auto; border-right: 1px solid var(--border); }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .content { padding: 12px 12px 40px; }
+  }
+  @media print {
+    .sidebar, .topbar, .svg-zoom-btn { display: none !important; }
+    .module-section { display: block !important; page-break-after: always; }
+    .card, .svg-card { break-inside: avoid; }
+    body.cloze-on .k { background: transparent !important; color: inherit !important; }
+  }
+
+  /* Published Portal Integration (Audit Not Completed + Back Navigation) */
+  .portal-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--foreground);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .portal-back-link:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .audit-pill {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 700;
+    background: rgba(217, 119, 6, 0.14);
+    color: var(--warning);
+    border: 1px solid var(--warning);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .portal-audit-banner {
+    margin: 0 0 14px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--warning);
+    border-left: 4px solid var(--warning);
+    background: rgba(217, 119, 6, 0.09);
+    color: var(--foreground);
+    font-size: 12.5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .portal-audit-banner strong { color: var(--warning); }
+  .portal-audit-links { display: inline-flex; gap: 10px; flex-wrap: wrap; }
+  .portal-audit-links a {
+    color: var(--link);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .portal-audit-links a:hover { text-decoration: underline; }
+  @media print {
+    .portal-back-link, .audit-pill { display: none !important; }
+  }
+</style>
+</head>
+<body >
+<div class="app-shell">
+  <!-- Left Navigation Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div>
+        <div class="sidebar-title">内科学（第10版）风湿免疫病</div>
+        <div class="sidebar-sub">理论课程大纲精要 · 4模块 / 6学时<br />方案A：核心掌握 + 支撑熟悉</div>
+      </div>
+      <button class="sidebar-close-btn" id="sidebarCloseBtn" type="button" title="收起侧边栏">✕</button>
+    </div>
+    <nav class="nav-list" id="navList">
+      <button class="nav-item active" data-target="mod-1"><span class="nav-num">Ⅰ</span><span><strong>风湿病总论</strong><span class="nav-meta">第1章 · 课本P808-813 / PDF P839-844</span></span></button>
+      <button class="nav-item" data-target="mod-2"><span class="nav-num">Ⅱ</span><span><strong>类风湿关节炎（RA）</strong><span class="nav-meta">第2章 · 课本P814-819 / PDF P845-850</span></span></button>
+      <button class="nav-item" data-target="mod-3"><span class="nav-num">Ⅲ</span><span><strong>系统性红斑狼疮（SLE）</strong><span class="nav-meta">第3章 · 课本P820-826 / PDF P851-857</span></span></button>
+      <button class="nav-item" data-target="mod-4"><span class="nav-num">Ⅳ</span><span><strong>系统性血管炎（5病）</strong><span class="nav-meta">第6章 · 课本P835-844 / PDF P866-875</span></span></button>
+      <button class="nav-item" data-target="mod-audit"><span class="nav-num">审</span><span><strong>大纲边界与差异审计表</strong><span class="nav-meta">方案A口径 · 勘误 · 12章剔除清单</span></span></button>
+    </nav>
+    <div class="sidebar-controls">
+      <div class="sidebar-controls-title">阅读与自测选项</div>
+      <button class="tool-btn" id="clozeBtn" type="button" title="遮罩关键数字、阈值、首选药物用于闭卷自测"><span>背诵遮罩</span><span id="clozeState">关</span></button>
+      <button class="tool-btn" id="viewAllBtn" type="button" title="切换单章精读或全篇展开以便通读/打印"><span>全篇展开</span><span id="viewAllState">关</span></button>
+      <button class="tool-btn" id="themeToggleBtn" type="button" title="切换浅色/深色主题"><span>深色主题</span><span id="themeState">关</span></button>
+    </div>
+    <div class="sidebar-footer">
+      依据：人卫第10版《内科学》第八篇<br />
+      偏移恒定：PDF物理页 = 课本印刷页 + 31
+    </div>
+  </aside>
+
+  <!-- Right Workspace -->
+  <div class="main-wrap">
+    <header class="topbar">
+      <a class="portal-back-link" href="./index.html" title="返回内科学七大系统总导航">← 七大系统导航</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="切换侧边栏">☰ 收起侧边栏</button>
+      <div class="filter-group" role="group" aria-label="重要程度筛选">
+        <button class="filter-btn active" data-filter="all" type="button">全部内容</button>
+        <button class="filter-btn" data-filter="master" type="button">仅看掌握（核心）</button>
+        <button class="filter-btn" data-filter="familiar" type="button">仅看熟悉（次重点）</button>
+      </div>
+      <span class="audit-pill" title="Audit Not Completed · 尚未完成独立审计">⚠ Audit Not Completed</span>
+    
+    </header>
+
+    <main class="content" id="mainContent">
+<div class="portal-audit-banner" role="note"><span><strong>⚠ Audit Not Completed</strong> — Audit Not Completed · 尚未完成独立审计。临床阈值、药物剂量与诊疗标准请以人卫第10版教材原文为准。</span><span class="portal-audit-links"><a href="./index.html">七大系统导航与大纲</a><a href="https://app.notion.com/p/4249530ba4dc8048bf97f49fffac6c77" target="_blank" rel="noopener noreferrer">Notion 配套页面 ↗</a></span></div>
+
+
+<!-- ==================== MODULE 1 ==================== -->
+<section class="module-section active" id="mod-1" data-mod-title="Ⅰ、第一章 风湿病总论">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅰ、风湿病总论</h1>
+      <span class="mod-source">第10版 第一章《总论》（课本 P808–813 / PDF P839–844）· 1学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>风湿性疾病定义；常见自身抗体（ANA 谱、类风湿谱、ANCA、aPLs 等）、HLA-B27、关节液、病理活检与脊柱/关节/内脏影像学解读；抗风湿五大类药物分类、作用机制与安全监测（方案 A 核心口径）。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>1983 年 ARA 风湿性疾病 10 大类分类（重点熟悉第 1 类弥漫性结缔组织病与第 2 类血清阴性脊柱关节病）；病史采集与体格检查要点、常见关节/软组织病变鉴别（表 8-1-2）及常见弥漫性结缔组织病表现（表 8-1-3）。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">未列入大纲的第八篇其余 12 章专节内容（本模块仅保留第一章原文表格中原有之病名/抗体/体征条目）；第 10 版第一章未设“风湿性疾病主要病理特点总论表”，仅述 4 类活检意义，具体病理分述于模块 2–4。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 1 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 1 · 风湿性疾病诊断支柱（五大类自身抗体 / HLA / 关节液 / 影像）与抗风湿药物机制分层</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 436" width="100%" role="img" aria-label="风湿性疾病诊断支柱与抗风湿药物机制分层图">
+        <defs>
+          <marker id="arr1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr1r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+
+        <!-- Upper band: Diagnostic Pillars -->
+        <rect x="8" y="8" width="864" height="202" rx="10" fill="var(--primary)" fill-opacity="0.06" stroke="var(--border)" />
+        <text x="22" y="29" font-size="13" font-weight="700" fill="var(--primary)">① 核心实验室与影像学判读框架（临床表现始终是诊断基础，不可单凭抗体确诊）</text>
+
+        <!-- Col 1: 5 Autoantibody classes -->
+        <rect x="20" y="40" width="320" height="158" rx="8" fill="var(--card)" stroke="var(--error)" stroke-width="1.5" />
+        <rect x="20" y="40" width="320" height="26" rx="8" fill="var(--error)" fill-opacity="0.12" />
+        <text x="180" y="58" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--error)">五大类临床自身抗体</text>
+        <text x="30" y="82" font-size="11.5" fill="var(--foreground)">1. ANA谱：靶抗原扩至全细胞；抗ENA助鉴别</text>
+        <text x="44" y="98" font-size="11" fill="var(--muted-foreground)">（与活动度/严重度无关；dsDNA示SLE活动）</text>
+        <text x="30" y="117" font-size="11.5" fill="var(--foreground)">2. RF：抗变性IgG Fc；RA阳性~80%，特异差</text>
+        <text x="30" y="136" font-size="11.5" fill="var(--foreground)">3. ANCA：cANCA/PR3(GPA&gt;90%)；pANCA/MPO</text>
+        <text x="30" y="155" font-size="11.5" fill="var(--foreground)">4. aPLs：ACA / 抗β2GPⅠ / LAC→血栓/流产</text>
+        <text x="30" y="174" font-size="11.5" fill="var(--foreground)">5. 抗角蛋白谱：抗CCP较AKA早诊敏特度更优</text>
+
+        <!-- Col 2: HLA + Synovial Fluid + Biopsy -->
+        <rect x="352" y="40" width="256" height="158" rx="8" fill="var(--card)" stroke="var(--primary)" stroke-width="1.5" />
+        <rect x="352" y="40" width="256" height="26" rx="8" fill="var(--primary)" fill-opacity="0.12" />
+        <text x="480" y="58" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--primary)">HLA · 关节液 · 活检</text>
+        <text x="362" y="83" font-size="11.5" fill="var(--foreground)">• HLA-B27：AS阳性90% / 正常10%</text>
+        <text x="362" y="102" font-size="11.5" fill="var(--foreground)">• 关节液WBC截断值：</text>
+        <text x="372" y="119" font-size="11" fill="var(--chart-2)" font-weight="600">&lt;2000×10⁶/L → 非炎性关节炎</text>
+        <text x="372" y="135" font-size="11" fill="var(--error)" font-weight="600">&gt;3000且PMN≥50% → 炎性关节炎</text>
+        <text x="372" y="151" font-size="11" fill="var(--muted-foreground)">尿酸盐结晶→痛风；涂片培养→感染</text>
+        <text x="362" y="172" font-size="11.5" fill="var(--foreground)">• 决定性活检：肾(LN)/滑膜/唇腺/肌肉</text>
+
+        <!-- Col 3: Imaging -->
+        <rect x="620" y="40" width="240" height="158" rx="8" fill="var(--card)" stroke="var(--chart-1)" stroke-width="1.5" />
+        <rect x="620" y="40" width="240" height="26" rx="8" fill="var(--chart-1)" fill-opacity="0.14" />
+        <text x="740" y="58" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-1)">骨关节与脏器影像</text>
+        <text x="630" y="83" font-size="11.5" fill="var(--foreground)">• X线：最常用，看间隙狭窄/侵蚀</text>
+        <text x="630" y="102" font-size="11.5" fill="var(--foreground)">• CT：重叠部位(骶髂)；双能CT看痛风</text>
+        <text x="630" y="121" font-size="11.5" fill="var(--primary)" font-weight="600">• MRI：软骨/骨髓水肿/早破坏最敏</text>
+        <text x="630" y="140" font-size="11.5" fill="var(--foreground)">• 超声：早期滑膜软骨损伤及随访</text>
+        <text x="630" y="159" font-size="11.5" fill="var(--foreground)">• 脏器：肺HRCT(ILD)/脑MRI(SLE)</text>
+        <text x="630" y="177" font-size="11.5" fill="var(--foreground)">  血管超声/CTA/MRA/造影/PET(血管炎)</text>
+
+        <!-- Lower band: Drug classes -->
+        <rect x="8" y="222" width="864" height="206" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="22" y="244" font-size="13" font-weight="700" fill="var(--error)">② 抗风湿五大类治疗药物：快速对症控炎 vs 慢作用/靶向改变病情（DMARDs &amp; 生物制剂）</text>
+
+        <rect x="20" y="256" width="198" height="158" rx="8" fill="var(--warning)" fill-opacity="0.09" stroke="var(--warning)" stroke-width="1.2" />
+        <text x="119" y="276" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">1. NSAIDs（快效对症）</text>
+        <text x="30" y="297" font-size="11.2" fill="var(--foreground)">• 机制：抑COX→抑前列腺素</text>
+        <text x="30" y="316" font-size="11.2" fill="var(--error)" font-weight="600">• 不能控制原发病进展</text>
+        <text x="30" y="335" font-size="11.2" fill="var(--foreground)">• 副反应：消化道/肾/心血管</text>
+        <text x="30" y="354" font-size="11.2" fill="var(--foreground)">• 选择性COX-2抑制剂可减</text>
+        <text x="38" y="370" font-size="11.2" fill="var(--foreground)">胃肠道不良反应</text>
+        <text x="30" y="392" font-size="11" fill="var(--muted-foreground)">高龄及消化道/肾病者慎用</text>
+
+        <rect x="230" y="256" width="204" height="158" rx="8" fill="var(--error)" fill-opacity="0.08" stroke="var(--error)" stroke-width="1.2" />
+        <text x="332" y="276" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">2. 糖皮质激素（CTD一线）</text>
+        <text x="240" y="297" font-size="11.2" fill="var(--foreground)">• 短效：可的松、氢化可的松</text>
+        <text x="240" y="315" font-size="11.2" fill="var(--foreground)">• 中效：泼尼松/龙、甲泼尼龙</text>
+        <text x="240" y="333" font-size="11.2" fill="var(--foreground)">• 长效：地塞米松、倍他米松</text>
+        <text x="240" y="353" font-size="11.2" fill="var(--primary)" font-weight="600">• 肝功不全优选11位羟基GC：</text>
+        <text x="248" y="369" font-size="11" fill="var(--primary)">氢化可的松/泼尼松龙/甲泼尼龙</text>
+        <text x="240" y="391" font-size="11" fill="var(--muted-foreground)">防感染/骨松/股骨头坏死/反跳</text>
+
+        <rect x="446" y="256" width="208" height="158" rx="8" fill="var(--primary)" fill-opacity="0.08" stroke="var(--primary)" stroke-width="1.2" />
+        <text x="550" y="276" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">3. DMARDs（改变病情）</text>
+        <text x="456" y="297" font-size="11.2" fill="var(--foreground)">• 传统：起效慢(2~4月)，长期维持</text>
+        <text x="464" y="314" font-size="11" fill="var(--foreground)">MTX(抑二氢叶酸还原酶)</text>
+        <text x="464" y="330" font-size="11" fill="var(--foreground)">LEF(抑二氢乳清酸脱氢酶)</text>
+        <text x="464" y="346" font-size="11" fill="var(--foreground)">MMF(抑IMPDH) / CTX(交联DNA)</text>
+        <text x="456" y="362" font-size="10.5" fill="var(--foreground)">CsA/FK506(抑IL-2) | HCQ(溶酶体pH)</text>
+        <text x="456" y="382" font-size="11.2" fill="var(--chart-3)" font-weight="600">• 靶向：JAK/STAT通路抑制剂</text>
+        <text x="464" y="398" font-size="11" fill="var(--muted-foreground)">托法替布/巴瑞替尼/乌帕替尼</text>
+
+        <rect x="666" y="256" width="194" height="158" rx="8" fill="var(--chart-2)" fill-opacity="0.10" stroke="var(--chart-2)" stroke-width="1.2" />
+        <text x="763" y="276" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-2)">4-5. 生物制剂与辅助治疗</text>
+        <text x="676" y="297" font-size="11.2" fill="var(--foreground)">• TNF-α靶点：RA、SpA</text>
+        <text x="676" y="315" font-size="11" fill="var(--foreground)">• IL-6R拮抗 / 阿巴西普(RA)</text>
+        <text x="676" y="333" font-size="11.2" fill="var(--foreground)">• 利妥昔单抗(CD20)：AAV一线</text>
+        <text x="676" y="351" font-size="11.2" fill="var(--foreground)">• 贝利尤单抗/泰它西普：SLE</text>
+        <text x="676" y="371" font-size="11.2" fill="var(--error)" font-weight="600">• 用前必查：乙肝与结核！</text>
+        <text x="676" y="393" font-size="11" fill="var(--muted-foreground)">辅助：IVIG / 血浆置换 / 免疫吸附</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="tier-heading master-hd"><span class="badge badge-m">掌握 · 核心考点</span><span>风湿病定义、自身抗体谱、影像学与抗风湿药物机制</span></div>
+
+  <!-- Card 1.1 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">1.1 风湿性疾病的定义、疾病谱特征与病理活检定位</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <ul>
+      <li><strong>定义（课本 P808）</strong>：风湿性疾病（rheumatic disease）是一组累及<span class="k">骨与关节及其周围软组织</span>（如肌肉、肌腱、滑膜、滑囊、韧带和软骨等），以及其他相关组织和器官的慢性疾病。包含 <span class="k">10 大类 100 余种</span>疾病，病因多样、发病机制不甚明了，但多数与<span class="k">自身免疫异常</span>密切相关；既可为局限性病理损伤，也可为全身性疾病，不及时诊治多有致残甚至致死风险。</li>
+      <li><strong>疾病谱变迁</strong>：感染相关风湿性疾病已明显减少，而<span class="k">骨关节炎、痛风性关节炎</span>发病率呈上升趋势；IgG4 相关性疾病、自身炎症性疾病等新病种不断被认识；分类/诊断标准由单纯“计算条目个数”发展为<span class="k">计算不同条目权重评分总分</span>。</li>
+      <li><strong>病理活检的决定性意义（课本 P811）</strong>：活组织检查对诊断有决定性意义并指导治疗：
+        <ul>
+          <li><span class="k">肾脏活检</span>：狼疮性肾炎（LN）病理分型；</li>
+          <li><span class="k">滑膜活检</span>：关节炎病因判断；</li>
+          <li><span class="k">唇腺活检</span>：干燥综合征（SS）诊断；</li>
+          <li><span class="k">肌肉活检</span>：多发性肌炎/皮肌炎（PM/DM）诊断。</li>
+        </ul>
+      </li>
+    </ul>
+    <div class="callout info"><strong>大纲-教材边界声明</strong>：大纲考核难点重点列有“风湿性疾病的主要病理特点”，第 10 版第一章《总论》未专设病理特点总论表，仅在【实验室检查】第 4 条概括上述 4 类活检；具体疾病特征病理（RA 滑膜炎/血管翳/类风湿结节、SLE 苏木紫小体/洋葱皮样病变、血管炎纤维素样坏死/肉芽肿）均严格按各章原文详述于模块 2–4。</div>
+  </div>
+
+  <!-- Card 1.2 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">1.2 实验室检查：常规指标、五大类自身抗体（完整表 8-1-4）、HLA 与关节液</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <p><strong>（一）常规与炎症/免疫指标</strong>：血、尿、便常规及肝肾功能必不可少（WBC 变化、溶血性贫血、血小板减低、蛋白尿、镜下血尿均提示风湿病可能）。<span class="k">ESR 增快、CRP 升高</span>提示 RA、血管炎等活动；<span class="k">补体 C3、C4 下降</span>常伴随 SLE 活动。</p>
+    <p><strong>（二）五大类自身抗体核心概念（诊断须以临床表现为基础，不可单凭抗体确诊）</strong>：</p>
+    <ol>
+      <li><strong>抗核抗体（ANA）</strong>：靶抗原包括核酸、组蛋白、非组蛋白及各种蛋白酶，已由传统细胞核扩大到<span class="k">整个细胞（含细胞质及细胞器）</span>；分为抗 DNA、抗组蛋白、抗非组蛋白、抗核仁及抗其他细胞成分 5 大类。其中<span class="k">抗 ENA 抗体</span>（可被盐水提取的可溶性抗原）对鉴别诊断尤为重要，但<span class="k">与疾病严重程度及活动度无关</span>。正常老年人或肿瘤患者血清可出现低滴度 ANA。</li>
+      <li><strong>类风湿因子（RF）</strong>：靶抗原为<span class="k">变性 IgG 分子的 Fc 片段</span>。RA 阳性率约 <span class="k">80%</span>，但特异性较差——亦见于 pSS、SLE、SSc 等 CTD、感染性疾病、肿瘤及约 <span class="k">5% 正常人群</span>。</li>
+      <li><strong>抗中性粒细胞胞质抗体（ANCA）</strong>：靶抗原为中性粒细胞胞质成分，主要为<span class="k">丝氨酸蛋白酶 3（PR3）</span>和<span class="k">髓过氧化物酶（MPO）</span>，与血管炎密切相关。</li>
+      <li><strong>抗磷脂抗体（APL）</strong>：靶抗原为各种带负电荷的磷脂；临床常测<span class="k">抗心磷脂抗体、抗 β₂ 糖蛋白Ⅰ抗体、狼疮抗凝物</span>，主要致凝血改变（血栓形成、血小板减少、病理妊娠）。</li>
+      <li><strong>抗角蛋白抗体谱</strong>：靶抗原为细胞基质中的<span class="k">聚角蛋白微丝蛋白</span>，对 RA 特异度高且助早期诊断，包括 APF、AKA 及人工合成环化肽<span class="k">抗 CCP 抗体</span>（较 AKA 灵敏度和特异度更好）。</li>
+    </ol>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>分类（表 8-1-4）</th><th>自身抗体</th><th>临床意义（严格忠实第 10 版原文）</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="2">抗 DNA 抗体</td><td><strong>抗 dsDNA 抗体</strong></td><td>常作为 <span class="k">SLE 活动指标</span>，用于监测 SLE 病情变化、活动期判断、药物疗效等。</td></tr>
+          <tr><td>抗 ssDNA 抗体</td><td>临床实用价值不大，一般不用于临床常规检测。</td></tr>
+          <tr><td>抗组蛋白抗体</td><td><strong>AHA 抗体</strong></td><td>可见于多种 CTD，无诊断特异性，但对 CTD 尤其是<span class="k">药物性狼疮</span>诊断有重要临床价值。</td></tr>
+          <tr><td>抗 DNA 组蛋白抗体</td><td>抗核小体抗体</td><td>多见于活动性狼疮尤其狼疮性肾炎；与抗 dsDNA、抗 Sm 同测可明显提高 SLE 诊断灵敏度和特异度。</td></tr>
+          <tr><td rowspan="8">抗非组蛋白抗体</td><td><strong>抗 Sm 抗体</strong></td><td>对 SLE 诊断具较高特异性，是目前公认的 <span class="k">SLE 血清标记抗体</span>。</td></tr>
+          <tr><td>抗 U1RNP 抗体</td><td>与<span class="k">雷诺现象</span>相关，对 CTD 诊断具有重要临床意义。</td></tr>
+          <tr><td>抗 SSA 抗体</td><td>主要见于原发性 SS（阳性率 <span class="k">40%～95%</span>），也见于 SLE（20%～60%）、RA、SSc（24%）等。</td></tr>
+          <tr><td>抗 SSB 抗体</td><td>对诊断 SS 具有高度特异性，是 SS 较特异的血清抗体。</td></tr>
+          <tr><td><strong>抗核糖体抗体（抗 rRNP）</strong></td><td>SLE 特异性自身抗体（阳性率 10%～40%），与 SLE <span class="k">中枢神经系统受累</span>相关。</td></tr>
+          <tr><td>抗 Scl-70 抗体</td><td>SSc 血清标记性抗体，与<span class="k">肺间质病变</span>相关。</td></tr>
+          <tr><td>抗 Jo-1 及抗合成酶抗体</td><td>炎症性肌病血清标记性抗体（PM/DM 阳性率 20%～30%），多数伴间质性肺病及多关节炎/关节痛。</td></tr>
+          <tr><td>抗着丝点抗体（ACA）</td><td>SSc 局限型 CREST 综合征特异性抗体，阳性率可达 <span class="k">80%～98%</span>。</td></tr>
+          <tr><td>抗核仁抗体</td><td>抗核仁抗体</td><td>约 20%～40% 的 SSc 患者阳性。</td></tr>
+          <tr><td rowspan="2">抗磷脂抗体</td><td>抗心磷脂抗体（ACA）</td><td>中高滴度 IgG 型和 IgM 型 ACA 是诊断 APS 的重要指标之一。</td></tr>
+          <tr><td>抗 β₂ 糖蛋白Ⅰ抗体</td><td>中高滴度 IgG 型和 IgM 型抗 β₂ 糖蛋白Ⅰ抗体是诊断 APS 的重要指标。</td></tr>
+          <tr><td rowspan="2">抗中性粒细胞胞质抗体（ANCA）</td><td><strong>胞质型 cANCA（靶抗原 PR3）</strong></td><td>诊断<span class="k">肉芽肿性多血管炎（GPA）特异度 &gt;90%</span>，持续阳性者易复发。</td></tr>
+          <tr><td><strong>核周型 pANCA（靶抗原 MPO）</strong></td><td>主要与<span class="k">显微镜下多血管炎（MPA）、嗜酸性肉芽肿性多血管炎（EGPA）</span>相关，特异性稍差。</td></tr>
+          <tr><td rowspan="4">RA 相关自身抗体</td><td><strong>类风湿因子（RF）</strong></td><td>RA 阳性率约 80%，为 RA 血清学标准之一；5% 正常老年人可阳性且随年龄增高而增加。</td></tr>
+          <tr><td><strong>抗环瓜氨酸肽抗体（anti-CCP）</strong></td><td>RA 血清学标准之一，可更好预测疾病进展与关节影像学改变，早期 RA 即可出现。</td></tr>
+          <tr><td>抗角蛋白抗体（AKA）</td><td>RA 早期诊断和判断预后的指标之一。</td></tr>
+          <tr><td>抗核周因子（APF）</td><td>与 RA 多关节痛、晨僵及 X 线骨破坏明显相关，可弥补 RF 不足。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>（三）人类白细胞抗原（HLA）关联</h4>
+        <ul>
+          <li><span class="k">HLA-B27</span>：与中轴关节受累脊柱关节炎密切关联；AS 阳性率 <span class="k">90%</span>，也见于反应性关节炎、银屑病关节炎；正常人群阳性率 <span class="k">10%</span>。</li>
+          <li>其他关联：HLA-B5 ↔ 贝赫切特病（BD）；HLA-DR2、DR3 ↔ SLE；HLA-DR3、B8 ↔ pSS；HLA-DR4 ↔ RA。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>（四）关节液检查核心阈值</h4>
+        <ul>
+          <li><strong>非炎性关节炎</strong>：WBC 往往在 <span class="k">2000×10⁶/L 以下</span>。</li>
+          <li><strong>炎性关节炎</strong>：WBC 超过 <span class="k">3000×10⁶/L</span>，且中性粒细胞达 <span class="k">50% 以上</span>。</li>
+          <li><strong>化脓性关节炎</strong>：外观呈脓性且 WBC 更高；细菌涂片/培养阳性助诊感染性关节炎。</li>
+          <li><strong>痛风性关节炎</strong>：关节液中找到<span class="k">尿酸盐结晶</span>。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 1.3 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">1.3 影像学检查：骨关节评估与肌肉骨骼外脏器评估</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>检查方法</th><th>适用部位与核心诊断价值（课本 P811）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>X 线</strong></td><td>骨和关节检查<span class="k">最常用</span>；发现软组织肿胀及钙化、骨质疏松、关节间隙狭窄、关节侵蚀脱位、软骨下囊性变。</td></tr>
+          <tr><td><strong>关节 CT / 双能 CT</strong></td><td>检测多层组织重叠部位（<span class="k">骶髂关节、股骨头、胸锁关节、椎间盘</span>），较 X 线敏感性更高；<span class="k">双能 CT</span> 有助检测痛风性关节炎患处痛风结晶。</td></tr>
+          <tr><td><strong>MRI</strong></td><td>对软组织、关节软骨损伤、<span class="k">骨髓水肿、缺血性骨坏死、早期微小骨破坏</span>和肌肉炎症是最灵敏可靠的手段。</td></tr>
+          <tr><td><strong>关节超声</strong></td><td>早期发现关节滑膜、软骨损伤，并监测病情变化。</td></tr>
+          <tr><td><strong>受累脏器影像</strong></td><td><span class="k">胸部高分辨率 CT（HRCT）</span>→肺间质病变；头颅 CT/MRI→SLE 中枢神经受累；血管超声、CTA、MRA、血管造影、PET→血管炎评价。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Card 1.4 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">1.4 抗风湿五大类药物分类、作用机制与应用原则（含完整表 8-1-5）</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <ul>
+      <li><strong>治疗总目标</strong>：尽早治疗，维持关节/脏器功能、缓解症状、提高生活质量、改善预后（含一般治疗、药物治疗及矫形/滑膜切除/关节置换等手术治疗）。</li>
+      <li><strong>1. 非甾体抗炎药（NSAIDs）</strong>：机制为抑制<span class="k">环氧化酶（COX）</span>→抑制花生四烯酸转化为前列腺素；抗炎解热镇痛起效快，但<span class="k">不能控制原发病病情进展</span>。具消化道、肾及心血管副作用（老年、有消化道/肾基础病慎用）；选择性 COX-2 抑制剂可减少胃肠道副作用。</li>
+      <li><strong>2. 糖皮质激素（GC）</strong>：强大抗炎+免疫抑制，为多种 CTD <span class="k">一线药物</span>。
+        <ul>
+          <li>半衰期分类：<strong>短效</strong>（可的松、氢化可的松）；<strong>中效</strong>（泼尼松、泼尼松龙、甲泼尼龙、曲安西龙等）；<strong>长效</strong>（地塞米松、倍他米松等）。</li>
+          <li>肝功能不全优选：<span class="k">氢化可的松、泼尼松龙、甲泼尼龙</span>为 11 位羟基化合物，可不经肝脏转化直接发挥生理效应。</li>
+          <li>长期大量不良反应：感染、高血压、高糖血症、骨质疏松、撤药反跳、无菌性股骨头坏死、肥胖、精神兴奋、消化性溃疡等。</li>
+        </ul>
+      </li>
+      <li><strong>3. 改善病情的抗风湿药（DMARDs）</strong>：分传统 DMARDs 与靶向 DMARDs；共同特点为改善和延缓病情进展（防止/延缓 RA 骨结构破坏）；起效慢，通常治疗 <span class="k">2～4 个月</span>才显效，缓解后宜长期维持。</li>
+      <li><strong>4. 生物制剂</strong>：基因工程单克隆抗体，靶向阻断关键发病环节：
+        <ul>
+          <li><strong>TNF-α 靶点</strong>：率先在 RA、脊柱关节炎成功，迅速改善病情、阻止关节破坏；</li>
+          <li><strong>IL-6 受体拮抗剂</strong>、<strong>阿巴西普</strong>（CTLA-4 与 IgG1 Fc 融合蛋白）：用于 RA；</li>
+          <li><strong>抗 CD20 单抗（利妥昔单抗）</strong>：获批用于 <span class="k">ANCA 相关血管炎一线治疗</span>，并用于难治性 SLE（肾炎、溶血性贫血、血小板减少）；</li>
+          <li><strong>贝利尤单抗</strong>（抗 B 细胞刺激因子单抗）、<strong>泰它西普</strong>：用于标准治疗疗效不佳的 SLE；</li>
+          <li>主要不良反应为感染、过敏反应，用药前必须筛查感染，尤其是<span class="k">乙型肝炎和结核</span>。</li>
+        </ul>
+      </li>
+      <li><strong>5. 辅助性治疗</strong>：静脉输注免疫球蛋白（IVIG）、血浆置换、血浆免疫吸附。</li>
+    </ul>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>类别（表 8-1-5）</th><th>药名</th><th>主要作用机制（逐药忠实第 10 版原文）</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="10"><strong>传统 DMARDs</strong></td><td>柳氮磺吡啶</td><td>在肠道分解为 5-氨基水杨酸（抑前列腺素、清除吞噬细胞致炎性氧离子）和磺胺吡啶；服药 12 周后外周血活化淋巴细胞减少。</td></tr>
+          <tr><td>羟氯喹</td><td>改变<span class="k">细胞溶酶体 pH</span>，减弱巨噬细胞抗原提呈功能和 IL-1 分泌，减少淋巴细胞活化。</td></tr>
+          <tr><td><strong>甲氨蝶呤（MTX）</strong></td><td>抑制<span class="k">二氢叶酸还原酶</span>，抑制嘌呤、嘧啶核苷酸合成，使活化淋巴细胞合成和生长受阻。</td></tr>
+          <tr><td><strong>来氟米特（LEF）</strong></td><td>活性代谢物抑制<span class="k">二氢乳清酸脱氢酶</span>，抑制嘧啶核苷酸合成，使活化淋巴细胞合成、生长受阻。</td></tr>
+          <tr><td>硫唑嘌呤（AZA）</td><td>干扰腺嘌呤、鸟嘌呤核苷酸合成，使活化淋巴细胞合成和生长受阻。</td></tr>
+          <tr><td><strong>环磷酰胺（CTX）</strong></td><td><span class="k">交联 DNA 和蛋白</span>，使细胞生长受阻。</td></tr>
+          <tr><td><strong>吗替麦考酚酯（MMF）</strong></td><td>活性代谢物抑制<span class="k">次黄嘌呤单核苷酸脱氢酶</span>，抑制鸟嘌呤核苷酸，使活化淋巴细胞合成、生长受阻。</td></tr>
+          <tr><td>环孢素（CsA）</td><td>抑制 <span class="k">IL-2 的合成和释放</span>，抑制、改变 T 细胞生长和反应。</td></tr>
+          <tr><td>他克莫司（FK506）</td><td>抑制 <span class="k">IL-2 的合成和释放</span>，抑制、改变 T 细胞生长和反应。</td></tr>
+          <tr><td>雷公藤多苷</td><td>抑制淋巴细胞增殖，减少免疫球蛋白合成。</td></tr>
+          <tr><td rowspan="3"><strong>靶向 DMARDs</strong></td><td>托法替布</td><td>JAK 激酶抑制剂，阻断 <span class="k">JAK/STAT 信号转导通路</span>。</td></tr>
+          <tr><td>巴瑞替尼</td><td>选择性 JAK 激酶抑制剂，阻断 JAK/STAT 信号转导通路。</td></tr>
+          <tr><td>乌帕替尼</td><td>选择性 <span class="k">JAK1</span> 激酶抑制剂，阻断 JAK/STAT 信号转导通路。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="tier-heading familiar-hd"><span class="badge badge-f">熟悉 · 次重点支撑</span><span>风湿病 10 大类分类、病史查体与常见 CTD 体征速览</span></div>
+
+  <!-- Card 1.5 -->
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd">
+      <h3 class="card-title">1.5 1983 年 ARA 风湿性疾病 10 大类分类（表 8-1-1，大纲要求重点熟悉第 1、2 类）</h3>
+      <span class="badge badge-f">熟悉</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>分类序号</th><th>疾病分类</th><th>代表疾病名称（高亮为大纲明示重点熟悉的第 1、2 类）</th></tr></thead>
+        <tbody>
+          <tr class="row-highlight"><td><strong>第 1 类（重点）</strong></td><td><strong>弥漫性结缔组织病</strong></td><td><span class="k">类风湿关节炎、系统性红斑狼疮、干燥综合征、系统性硬化症、炎症性肌病、系统性血管炎、重叠综合征</span>等</td></tr>
+          <tr class="row-highlight"><td><strong>第 2 类（重点）</strong></td><td><strong>血清阴性脊柱关节病</strong></td><td><span class="k">强直性脊柱炎、银屑病性关节炎、反应性关节炎、肠病性关节炎、未分化脊柱关节病</span>等</td></tr>
+          <tr><td>第 3 类</td><td>骨关节病</td><td>骨关节炎、关节退行性改变等</td></tr>
+          <tr><td>第 4 类</td><td>遗传、代谢和内分泌相关</td><td>马方综合征、先天/获得性免疫缺陷病；痛风、焦磷酸钙沉积病；淀粉样变、肢端肥大症、甲减、甲旁亢相关关节病等</td></tr>
+          <tr><td>第 5 类</td><td>与感染相关风湿性疾病</td><td>风湿热、莱姆病、Poncet 综合征等</td></tr>
+          <tr><td>第 6 类</td><td>骨肿瘤</td><td>原发性（滑膜瘤、滑膜肉瘤等）；继发性（白血病、多发性骨髓瘤、肿瘤骨转移等）</td></tr>
+          <tr><td>第 7 类</td><td>神经血管疾病</td><td>神经性关节病（Charcot 关节）、压迫性神经病变（周围神经/神经根受压）、反射性交感神经营养不良等</td></tr>
+          <tr><td>第 8 类</td><td>骨与软骨病变</td><td>骨质疏松、骨软化、肥大性骨关节病、弥漫性原发性骨肥厚、骨炎等</td></tr>
+          <tr><td>第 9 类</td><td>关节附属器官相关病变</td><td>关节周围病变（滑囊炎、肌腱病等）、椎间盘病变、特发性下腰痛、其他疼痛综合征（如纤维肌痛综合征）等</td></tr>
+          <tr><td>第 10 类</td><td>其他有关节症状的疾病</td><td>药物相关风湿综合征、慢性活动性肝炎、结节病、维生素 C 缺乏症、回纹型风湿征等</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Card 1.6 -->
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd">
+      <h3 class="card-title">1.6 病史采集、体格检查与关节/弥漫性 CTD 临床特点对比（表 8-1-2 &amp; 表 8-1-3）</h3>
+      <span class="badge badge-f">熟悉</span>
+    </div>
+    <ul>
+      <li><strong>人口学与系统问诊提示</strong>：SLE 多见于育龄女性；AS 多见于青年男性且部分有家族史；OA 多见于中老年。除骨关节肌肉痛外，须询问脱发、光过敏、雷诺现象、口腔/外阴溃疡、口眼干燥、腮腺肿大及全身各系统症状；典型皮损如蝶形红斑提示 SLE，眶周紫红色水肿斑及双手关节伸面脱屑性斑丘疹提示皮肌炎（DM）。</li>
+    </ul>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead>
+          <tr><th>体格检查（表 8-1-2）</th><th>骨关节炎</th><th>炎性关节病</th><th>关节痛</th><th>滑囊炎或肌腱炎</th><th>肌肉筋膜病变</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>肿 / 红 / 热</td><td>肿各异 / 无红 / 无热</td><td><strong>肿是</strong> / 红各异 / <strong>热是</strong></td><td>无 / 无 / 无</td><td><strong>肿是 / 红是 / 热是</strong></td><td>无 / 无 / 无</td></tr>
+          <tr><td>痛</td><td>活动后加重</td><td>是</td><td>各异</td><td>关节周围</td><td>是</td></tr>
+          <tr><td>关节活动度</td><td>受限</td><td>受限</td><td>正常或受限</td><td>正常，多因疼痛受限</td><td>正常</td></tr>
+          <tr><td>主动/被动运动痛</td><td>两者均是</td><td>两者均是</td><td>通常两者均是</td><td><span class="k">主动 &gt; 被动</span></td><td>通常两者均是</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>常见弥漫性 CTD（表 8-1-3）</th><th>特异性临床表现及体征</th></tr></thead>
+        <tbody>
+          <tr><td><strong>系统性红斑狼疮</strong></td><td>颧部蝶形红斑、环形红斑、盘状红斑，脱发，口腔溃疡、多关节肿痛，颜面/眼睑/下肢水肿，紫癜，精神症状，癫痫，偏瘫，截瘫</td></tr>
+          <tr><td><strong>类风湿关节炎</strong></td><td>对称性多关节肿痛，关节变形，晨僵，类风湿结节</td></tr>
+          <tr><td>干燥综合征</td><td>口干、眼干、腮腺肿大、猖獗龋、紫癜、夜尿增多、肢体软瘫</td></tr>
+          <tr><td>炎症性肌病</td><td>四肢近端肌痛及肌无力、吞咽困难、上眼睑紫红色水肿性红斑、Gottron 征、颈部 V 形充血、颈背及双上臂外侧红斑、技工手、甲周红斑、皮下钙化、干咳、劳力性呼吸困难</td></tr>
+          <tr><td>系统性硬化症</td><td>雷诺现象，指端缺血性溃疡，硬指，皮肤肿硬失去弹性，吞咽困难，反酸，干咳，劳力性呼吸困难，肺底爆裂音，杵状指</td></tr>
+          <tr><td><strong>大动脉炎</strong></td><td>发热，盗汗，无脉，颈部/腹部血管杂音，高血压</td></tr>
+          <tr><td><strong>ANCA 相关血管炎</strong></td><td>鞍鼻、咯血、劳力性呼吸困难、少尿、手足麻木、突眼、可触性紫癜</td></tr>
+          <tr><td><strong>贝赫切特病</strong></td><td>口腔溃疡、外阴溃疡、毛囊炎、结节红斑、针刺反应、关节肿痛、葡萄膜炎、视力下降</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MODULE 2 ==================== -->
+<section class="module-section" id="mod-2" data-mod-title="Ⅱ、第二章 类风湿关节炎">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅱ、类风湿关节炎（RA）</h1>
+      <span class="mod-source">第10版 第二章《类风湿关节炎》（课本 P814–819 / PDF P845–850）· 1学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>RA 定义与病理特点（滑膜炎、血管翳、血管炎、类风湿结节）；临床表现（晨僵、受累关节、纽扣花/天鹅颈/尺偏畸形及 8 大系统关节外表现）；RF 与 ACPA（抗 CCP）定义及意义；2010 年 ACR/EULAR 分类标准（表 8-2-1）与鉴别诊断；早期/达标治疗（T2T）与六类药物使用原则。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>流行病学、病因与免疫发病机制；特殊关节受累（肩/髋、颞下颌、颈椎 C1–C2 半脱位）及 ACR 功能 4 级；血常规/炎性指标/滑液检查/X 线 Ⅰ–Ⅳ 期与 MRI/超声；DAS28 活动度评估、一般/外科治疗及预后。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">大纲提及的 1987 年 ACR 分类标准第 10 版已删除未收录；鉴别诊断“痛风”第 10 版仅在关节滑液中简提及而未单设鉴别段，严格忠实第 10 版原文不凭记忆补写。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 2 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 2 · 类风湿关节炎病理演变（滑膜炎→血管翳）· 2010 ACR/EULAR 分类积分 · T2T 药物阶梯</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 448" width="100%" role="img" aria-label="类风湿关节炎病理演变、2010分类积分与T2T治疗阶梯图">
+        <defs>
+          <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr2r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+
+        <!-- Band 1: Pathology & Joint/Extra-articular axis -->
+        <rect x="8" y="8" width="864" height="134" rx="10" fill="var(--error)" fill-opacity="0.05" stroke="var(--border)" />
+        <text x="22" y="29" font-size="13" font-weight="700" fill="var(--error)">① 基本病理双线：关节滑膜炎/血管翳（致残根源）+ 关节外血管炎/类风湿结节</text>
+
+        <rect x="20" y="40" width="194" height="90" rx="8" fill="var(--card)" stroke="var(--warning)" stroke-width="1.4" />
+        <text x="117" y="60" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">急性滑膜炎</text>
+        <text x="30" y="79" font-size="11.2" fill="var(--foreground)">• 滑膜渗出与细胞浸润</text>
+        <text x="30" y="96" font-size="11.2" fill="var(--foreground)">• 滑膜下小血管扩张/水肿</text>
+        <text x="30" y="113" font-size="11.2" fill="var(--foreground)">• 中性粒细胞浸润</text>
+
+        <line x1="214" y1="85" x2="244" y2="85" stroke="var(--error)" stroke-width="2" marker-end="url(#arr2r)" />
+
+        <rect x="246" y="40" width="234" height="90" rx="8" fill="var(--card)" stroke="var(--error)" stroke-width="1.6" />
+        <text x="363" y="60" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">慢性期：血管翳（Pannus）</text>
+        <text x="256" y="79" font-size="11.2" fill="var(--foreground)">• 滑膜细胞1~3层→5~10层+(A/B型)</text>
+        <text x="256" y="96" font-size="11.2" fill="var(--foreground)">• 滑膜下CD4+T为主淋巴滤泡+新生血管</text>
+        <text x="256" y="113" font-size="11.2" fill="var(--error)" font-weight="600">• 侵蚀软骨/骨→X线Ⅰ~Ⅳ期及畸形</text>
+
+        <line x1="480" y1="85" x2="510" y2="85" stroke="var(--error)" stroke-width="2" marker-end="url(#arr2r)" />
+
+        <rect x="512" y="40" width="348" height="90" rx="8" fill="var(--card)" stroke="var(--chart-3)" stroke-width="1.4" />
+        <text x="686" y="60" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-3)">关节外病理：中小血管炎 &amp; 类风湿结节</text>
+        <text x="524" y="79" font-size="11.2" fill="var(--foreground)">• 血管炎：内膜增生/淋巴细胞浸润/纤维素样坏死→闭塞</text>
+        <text x="520" y="97" font-size="11" fill="var(--foreground)">• 类风湿结节：纤维素样坏死→环状上皮样细胞→肉芽</text>
+        <text x="524" y="115" font-size="11.2" fill="var(--muted-foreground)">• 累及：皮肤(30~40%)/肺ILD(30%)/Caplan/心包/巩膜/Felty</text>
+
+        <!-- Band 2: 2010 ACR/EULAR 4-domain score -->
+        <rect x="8" y="154" width="864" height="128" rx="10" fill="var(--primary)" fill-opacity="0.06" stroke="var(--border)" />
+        <text x="22" y="175" font-size="13" font-weight="700" fill="var(--primary)">② 2010 年 ACR/EULAR RA 分类标准：四维度加权总分 ≥ 6 分（满分 10 分）</text>
+
+        <rect x="20" y="186" width="268" height="84" rx="8" fill="var(--card)" stroke="var(--primary)" stroke-width="1.3" />
+        <text x="154" y="204" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">A. 关节受累情况（0~5分）</text>
+        <text x="30" y="222" font-size="11" fill="var(--foreground)">1中大=0 | 2~10中大=1 | 1~3小=2</text>
+        <text x="30" y="239" font-size="11" fill="var(--foreground)">4~10小=3 | &gt;10且含≥1小关节=5分</text>
+        <text x="30" y="256" font-size="10.5" fill="var(--error)">不含DIP、第1跖趾、拇指腕掌关节</text>
+
+        <rect x="298" y="186" width="228" height="84" rx="8" fill="var(--card)" stroke="var(--error)" stroke-width="1.3" />
+        <text x="412" y="204" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">B. 血清学（0~3分）</text>
+        <text x="308" y="222" font-size="11" fill="var(--foreground)">• RF及抗CCP均阴性 = 0分</text>
+        <text x="308" y="239" font-size="11" fill="var(--foreground)">• 任一低滴度阳性 = 2分</text>
+        <text x="308" y="256" font-size="11" fill="var(--error)" font-weight="600">• 任一高滴度(&gt;3倍上限) = 3分</text>
+
+        <rect x="536" y="186" width="156" height="84" rx="8" fill="var(--card)" stroke="var(--chart-1)" stroke-width="1.3" />
+        <text x="614" y="204" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-1)">C. 滑膜炎持续时间</text>
+        <text x="548" y="228" font-size="11.5" fill="var(--foreground)">• &lt; 6周 = 0分</text>
+        <text x="548" y="250" font-size="11.5" fill="var(--primary)" font-weight="700">• ≥ 6周 = 1分</text>
+
+        <rect x="702" y="186" width="158" height="84" rx="8" fill="var(--card)" stroke="var(--chart-2)" stroke-width="1.3" />
+        <text x="781" y="204" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-2)">D. 急性期反应物</text>
+        <text x="712" y="228" font-size="11.5" fill="var(--foreground)">• CRP/ESR均正常 = 0</text>
+        <text x="712" y="250" font-size="11.5" fill="var(--primary)" font-weight="700">• CRP或ESR异常 = 1分</text>
+
+        <!-- Band 3: T2T Drug Ladder -->
+        <rect x="8" y="294" width="864" height="146" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="22" y="316" font-size="13" font-weight="700" fill="var(--chart-2)">③ 达标治疗（T2T）路径：目标 = 临床缓解 / 低疾病活动度（80%+ 规范治疗可缓解）</text>
+
+        <rect x="20" y="328" width="248" height="100" rx="8" fill="var(--primary)" fill-opacity="0.09" stroke="var(--primary)" stroke-width="1.4" />
+        <text x="144" y="348" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">初始确诊：必用 1 种 DMARDs</text>
+        <text x="30" y="368" font-size="11.2" fill="var(--foreground)">• 传统DMARDs首选：甲氨蝶呤(MTX)</text>
+        <text x="30" y="386" font-size="11.2" fill="var(--foreground)">• 备选/联用：LEF、SASP、HCQ</text>
+        <text x="30" y="404" font-size="11" fill="var(--muted-foreground)">• 起效慢(1~3月)，可单用或≥2种联用</text>
+
+        <line x1="268" y1="378" x2="298" y2="378" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr2)" />
+
+        <rect x="300" y="328" width="256" height="100" rx="8" fill="var(--warning)" fill-opacity="0.10" stroke="var(--warning)" stroke-width="1.4" />
+        <text x="428" y="348" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">快速控症：GC桥梁 + NSAIDs</text>
+        <text x="310" y="368" font-size="11.2" fill="var(--foreground)">• GC：小剂量短疗程“桥梁”，必联DMARD</text>
+        <text x="310" y="386" font-size="11.2" fill="var(--foreground)">• 关节腔注射GC：1年内≤3次</text>
+        <text x="310" y="404" font-size="11.2" fill="var(--error)" font-weight="600">• NSAIDs：忌≥2种同服，注意心血管</text>
+
+        <line x1="556" y1="378" x2="586" y2="378" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr2)" />
+
+        <rect x="588" y="328" width="272" height="100" rx="8" fill="var(--error)" fill-opacity="0.08" stroke="var(--error)" stroke-width="1.4" />
+        <text x="724" y="348" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">未达标 / 预后不良：加用 b/tsDMARDs</text>
+        <text x="598" y="368" font-size="11.2" fill="var(--foreground)">• bDMARDs(TNF-αi/IL-6i等)：宜联MTX</text>
+        <text x="608" y="384" font-size="10.8" fill="var(--error)">用前必筛结核、肝炎病毒、除外肿瘤</text>
+        <text x="598" y="403" font-size="11.2" fill="var(--foreground)">• tsDMARDs(JAKi)：心血管/血栓高危慎</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="tier-heading master-hd"><span class="badge badge-m">掌握 · 核心考点</span><span>RA 病理、关节/关节外表现、RF/ACPA、2010 标准、鉴别与 T2T 药物</span></div>
+
+  <!-- Card 2.1 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">2.1 RA 定义与基本病理特点（滑膜炎、血管翳、血管炎、类风湿结节）</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <ul>
+      <li><strong>定义</strong>：以<span class="k">侵蚀性、对称性多关节炎</span>为主要临床表现的慢性、全身性自身免疫病；发病高峰 <span class="k">35～50 岁</span>，女性患病率 <span class="k">2～3 倍</span>于男性；我国患病率 <span class="k">0.42%</span>（平均发病年龄 47 岁）。</li>
+      <li><strong>关节基本病理——滑膜炎与血管翳（pannus）</strong>：
+        <ul>
+          <li><strong>急性期</strong>：滑膜渗出和细胞浸润；滑膜下层小血管扩张、内皮细胞肿大、细胞间隙增大、间质水肿和中性粒细胞浸润。</li>
+          <li><strong>慢性期</strong>：滑膜肥厚形成绒毛样突起，突向关节腔或侵入软骨和软骨下骨质，即<span class="k">血管翳（pannus）</span>——具很强破坏性，是造成<span class="k">关节软骨和骨破坏的病理基础</span>。镜下见滑膜细胞由正常 <span class="k">1～3 层增生至 5～10 层或更多</span>（大部为巨噬细胞样 A 型细胞和成纤维细胞样 B 型细胞）；滑膜下层大量淋巴细胞弥漫或聚集成淋巴滤泡样（大部为 <span class="k">CD4⁺T 细胞</span>，次为 B 细胞和浆细胞），伴新生血管、活化成纤维样细胞及纤维组织。</li>
+        </ul>
+      </li>
+      <li><strong>关节外病理——血管炎与类风湿结节</strong>：可累及中、小动脉和/或静脉，见血管内膜增生、管壁淋巴细胞浸润、<span class="k">纤维素样坏死</span>→管壁增厚、管腔狭窄或闭塞。<span class="k">类风湿结节</span>是血管炎典型表现，呈三层结构：<strong>中心</strong>为纤维素样坏死组织 → <strong>周围</strong>为环状排列的上皮样细胞浸润 → <strong>最外层</strong>为肉芽组织。</li>
+    </ul>
+  </div>
+
+  <!-- Card 2.2 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">2.2 临床表现：核心关节表现与 8 大系统关节外表现</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <p><strong>（一）核心关节表现</strong>（多慢性起病，手、腕、足双侧对称多关节肿痛首发，可伴乏力、低热、肌痛、体重下降）：</p>
+    <ul>
+      <li><strong>晨僵</strong>：关节僵硬和胶着感，晨起明显、活动后减轻，通常持续<span class="k">超过半小时</span>；为判断疾病活动指标之一（主观性强），RA 最突出。</li>
+      <li><strong>关节痛与压痛</strong>：往往是 RA <span class="k">最早的症状</span>，多呈对称性、持续性，部位与肿胀一致。</li>
+      <li><strong>关节肿胀</strong>：滑膜增生、关节腔积液及周围软组织水肿所致，多对称；最常累及<span class="k">腕、掌指（MCP）、近端指间（PIP）关节</span>，其次为足趾、膝、踝、肘、肩关节。</li>
+      <li><strong>关节畸形（较晚期）</strong>：肌萎缩与痉挛加重畸形；最常见为掌指关节半脱位、<span class="k">手指向尺侧偏斜</span>、<span class="k">“天鹅颈（swan neck）”样畸形</span>、<span class="k">“纽扣花（boutonniere）”样畸形</span>，腕和肘关节强直亦较常见。</li>
+    </ul>
+    <p><strong>（二）关节外表现（8 大系统完整梳理）</strong>：</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>受累系统</th><th>特征性临床表现与重要数值（课本 P815–816）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. 皮肤类风湿结节</strong></td><td><span class="k">最常见的关节外表现</span>（见于 <span class="k">30%～40%</span> 患者）；多见于活动期、男性、长期大量吸烟者；好发关节隆突及受压处（前臂伸面、尺骨鹰嘴下方、跟腱、滑囊）；质硬、无压痛、对称分布；存在<span class="k">提示 RA 病情活动</span>。</td></tr>
+          <tr><td><strong>2. 皮肤血管炎</strong></td><td>发生率 <span class="k">&lt;10%</span>，见于长病程、RF 阳性且活动者；表现为瘀点、紫癜、指/趾坏疽、梗死、网状青斑、皮肤深大溃疡；须积极用免疫抑制剂。</td></tr>
+          <tr><td><strong>3. 心脏</strong></td><td><span class="k">心包炎最常见</span>（多见于 RF 阳性、有结节者）；&lt;10% 有临床症状，近半数可经超声心动图检出。</td></tr>
+          <tr><td><strong>4. 肺（男&gt;女，可首发）</strong></td><td>① <strong>肺间质病变（ILD）</strong>：最常见肺病变（约 <span class="k">30%</span>），活动后气短、肺纤维化，肺功能+肺部 HRCT 助早诊；② <strong>胸膜炎</strong>（约 10%，单/双侧少量渗出性积液）；③ <strong>肺结节</strong>（可液化空洞；尘肺合并 RA 出现大量大结节称 <span class="k">Caplan 综合征</span>/类风湿性尘肺病）。</td></tr>
+          <tr><td><strong>5. 眼</strong></td><td>最常见为继发干燥综合征所致干眼症；另可出现<span class="k">巩膜炎</span>（重者溃疡、穿孔致视力损害，病理为巩膜血管炎，常提示活动）。</td></tr>
+          <tr><td><strong>6. 神经系统</strong></td><td>神经受压最常见（腕关节正中神经受压→<span class="k">腕管综合征</span>）；继发血管炎致手足麻木或<span class="k">多发性单神经炎</span>（提示活动）；C₁～C₂ 颈椎受累→脊髓病变。</td></tr>
+          <tr><td><strong>7. 血液系统</strong></td><td>贫血最常见（程度与关节炎症相关，控制后改善）；活动期血小板增多。<span class="k">Felty 综合征</span> = RA + <span class="k">脾大 + 中性粒细胞减少</span>（可伴贫血/血小板减少、下肢溃疡、结节、发热等突出关节外表现）。</td></tr>
+          <tr><td><strong>8. 肾</strong></td><td>少见（偶有轻微膜性肾病、肾小球肾炎、肾内小血管炎、肾淀粉样变）；出现肾损须警惕长期服 NSAIDs 药物所致。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Card 2.3 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">2.3 类风湿因子（RF）与抗瓜氨酸化蛋白抗体（ACPA / 抗 CCP）</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>类风湿因子（RF）</h4>
+        <ul>
+          <li><strong>定义</strong>：针对 <span class="k">IgG Fc 片段</span>抗原表位的自身抗体，分 IgM、IgG、IgA 型，常规测 <span class="k">IgM 型 RF</span>。</li>
+          <li><strong>临床意义</strong>：RA 阳性率 <span class="k">75%～80%</span>；但非 RA 特异性抗体（慢性感染、其他自免病及 <span class="k">1%～5%</span> 健康人可阳性）；<strong>RF 阴性不能排除 RA</strong>。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>抗瓜氨酸化蛋白抗体（ACPA）</h4>
+        <ul>
+          <li><strong>组成</strong>：抗 CCP、抗 MCV、APF、AKA、AFA。</li>
+          <li><strong>抗 CCP 临床意义</strong>：RA 阳性率约 <span class="k">75%</span>，特异度极高（<span class="k">93%～98%</span>），可在疾病早期出现且与预后相关。</li>
+          <li><strong>血清学阴性 RA</strong>：约 <span class="k">15%</span> 患者 RF 和 ACPA 均为阴性。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2.4 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">2.4 2010 年 ACR/EULAR 分类标准（完整表 8-2-1）与鉴别诊断</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <p>RA 目前无诊断标准，普遍采用 <strong>2010 年 ACR/EULAR 分类标准</strong>：由 4 部分组成，总分 <span class="k">≥6 分</span>可分类为 RA。（注：大纲同时提及的 1987 年标准在第 10 版教材已删除未录。）</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>评估维度</th><th>条目细则（表 8-2-1）</th><th>评分</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="5"><strong>关节受累情况（0～5 分）</strong><br /><span style="font-size:11px;color:var(--muted-foreground)">肿胀、疼痛关节</span></td><td>1 个中大关节</td><td>0</td></tr>
+          <tr><td>2～10 个中大关节</td><td>1</td></tr>
+          <tr><td>1～3 个小关节</td><td>2</td></tr>
+          <tr><td>4～10 个小关节</td><td>3</td></tr>
+          <tr><td>&gt;10 个关节（<span class="k">至少 1 个为小关节</span>）</td><td><strong>5</strong></td></tr>
+          <tr><td rowspan="3"><strong>血清学（0～3 分）</strong></td><td>RF 和抗 CCP 抗体均阴性</td><td>0</td></tr>
+          <tr><td>RF 或抗 CCP 抗体低滴度阳性</td><td>2</td></tr>
+          <tr><td>RF 或抗 CCP 抗体高滴度阳性（<span class="k">&gt;正常上限 3 倍</span>）</td><td><strong>3</strong></td></tr>
+          <tr><td rowspan="2"><strong>滑膜炎持续时间（0～1 分）</strong></td><td>&lt;6 周</td><td>0</td></tr>
+          <tr><td><span class="k">≥6 周</span></td><td><strong>1</strong></td></tr>
+          <tr><td rowspan="2"><strong>急性期反应物（0～1 分）</strong></td><td>CRP 和 ESR 均正常</td><td>0</td></tr>
+          <tr><td>CRP 或 ESR 异常</td><td><strong>1</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px;color:var(--muted-foreground)">表注：<strong>小关节</strong>包括掌指关节、近端指间关节、第 2～5 跖趾关节、腕关节，<strong>不包括</strong><span class="k">拇指腕掌关节、第 1 跖趾关节和远端指间关节（DIP）</span>；<strong>大关节</strong>指肩、肘、髋、膝和踝关节。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>鉴别疾病</th><th>核心鉴别要点（第 10 版原文 4 病，痛风未单设专段仅于滑液鉴别提及）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>骨关节炎（OA）</strong></td><td>中老年多发；非对称累及膝、踝、脊柱等负重关节，活动痛重、休息轻；手常累及 DIP（<span class="k">Heberden 结节</span>）及 PIP（<span class="k">Bouchard 结节</span>）；膝摩擦感；RF/ACPA 阴性；X 线示边缘唇样增生或骨疣，<strong>无骨破坏</strong>，可见间隙狭窄。</td></tr>
+          <tr><td><strong>强直性脊柱炎（AS）</strong></td><td>青壮年男性，侵犯骶髂及脊柱；外周受累以非对称下肢大关节为主，极少累及手关节；X 线见骶髂骨破坏/融合；可有家族史，<span class="k">&gt;90% HLA-B27 阳性</span>，RF 阴性。</td></tr>
+          <tr><td><strong>银屑病关节炎</strong></td><td>多于银屑病数年后发生，大多非对称；以 <span class="k">DIP 受累更常见</span>，伴附着点炎、手指炎及骶髂/脊柱炎；RF 多阴性。</td></tr>
+          <tr><td><strong>系统性红斑狼疮（SLE）</strong></td><td>指关节肿痛可首发且可有 RF 阳性、ESR/CRP 升高，但关节病变一般为<span class="k">非侵蚀性</span>，伴蝶形红斑、脱发、蛋白尿等突出关节外表现，ANA/抗 dsDNA 阳性。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Card 2.5 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">2.5 治疗原则（早期、达标、个体化）与六类抗 RA 药物使用原则</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <p><strong>总原则</strong>：RA 不能根治，遵循<span class="k">早期、达标（T2T）、个体化</span>原则；主要目标是达到<span class="k">临床缓解或低疾病活动度</span>，最终目的是减少致残。药物治疗最重要，<span class="k">初始治疗必须应用一种 DMARDs</span>。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>药物类别</th><th>代表药物与定位</th><th>使用原则与核心不良反应（课本 P818–819）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. NSAIDs</strong></td><td>缓解关节炎症状常用药</td><td>镇痛抗炎但控病情有限，须与 DMARDs 同服；可增心血管事件；<span class="k">避免 2 种或以上 NSAIDs 同服</span>。</td></tr>
+          <tr><td><strong>2. 传统 DMARDs</strong></td><td><span class="k">首选甲氨蝶呤（MTX）</span>；余 LEF、SASP、HCQ</td><td>起效慢（<span class="k">1～3 个月</span>），无明显镇痛抗炎但可延缓控制进展；确诊即尽早启用，可单用或 ≥2 种联用。</td></tr>
+          <tr><td><strong>3. 生物 DMARDs</strong></td><td>最普遍：TNF-α 抑制剂、IL-6 拮抗剂；另 IL-1i、CD20 单抗、CTLA-4 融合蛋白</td><td>传统 DMARDs 未达标或有预后不良因素时加用；<span class="k">宜与 MTX 联用</span>增效减副；用前必筛<span class="k">结核与肝炎病毒</span>并除外肿瘤；副作用含注射/输液反应、感染（呼吸道/带状疱疹）、部分长期增肿瘤风险。</td></tr>
+          <tr><td><strong>4. 靶向 DMARDs</strong></td><td>JAK 抑制剂：托法替布、巴瑞替尼、乌帕替尼</td><td>起效快，传统 DMARDs 反应不足时联用；副作用：WBC 减少、肝损、感染（肝炎/结核/疱疹）、<span class="k">增加心血管及血栓事件风险</span>（高危者慎用）。</td></tr>
+          <tr><td><strong>5. 糖皮质激素（GC）</strong></td><td><span class="k">“桥梁治疗（bridge therapy）”</span></td><td>原则：<span class="k">小剂量、短疗程</span>，必联 DMARDs，待 DMARDs 起效后减停；严重关节外受累（心肺眼神经、继发血管炎）予中到大剂量；关节腔注射 1 年内<span class="k">不宜超过 3 次</span>（防感染/类固醇晶体性关节炎）；均应补钙 + VitD 防骨松。</td></tr>
+          <tr><td><strong>6. 传统中药/植物药</strong></td><td>最常用：<span class="k">雷公藤多苷</span>；另白芍总苷、青藤碱</td><td>缓解关节症状较好，长期控病情待证实；注意性腺抑制、胃肠道不适、肝损和骨髓抑制。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="tier-heading familiar-hd"><span class="badge badge-f">熟悉 · 次重点支撑</span><span>RA 病因机制、特殊关节与功能分级、辅助检查细节及预后</span></div>
+
+  <!-- Card 2.6 -->
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd">
+      <h3 class="card-title">2.6 病因发病机制、特殊关节、ACR 功能分级与辅检/影像分期</h3>
+      <span class="badge badge-f">熟悉</span>
+    </div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>病因与发病机制</h4>
+        <ul>
+          <li><strong>遗传</strong>：一级亲属患 RA 概率 <span class="k">11%</span>；<span class="k">HLA-DRB1</span> 等位基因突变相关。</li>
+          <li><strong>环境</strong>：病原体激活 T/B 细胞或分子模拟；<span class="k">吸烟</span>显著增加 RA 风险。</li>
+          <li><strong>免疫紊乱</strong>：活化 CD4⁺T 与 MHC Ⅱ⁺ APC 浸润滑膜；B 细胞、巨噬细胞、滑膜成纤维细胞协同致炎。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>特殊关节与 ACR 功能 4 级</h4>
+        <ul>
+          <li><strong>肩/髋</strong>：周围软组织多不易见肿，髋痛常位于臀部及下腰部；<strong>颞下颌</strong>：讲话咀嚼痛、张口受限；<strong>颈椎</strong>：最重为 <span class="k">C₁～C₂ 寰枢关节半脱位</span>压迫脊髓。</li>
+          <li><strong>ACR 功能分级</strong>：Ⅰ 照常生活工作；Ⅱ 一般生活+某种工作，其他活动受限；Ⅲ 一般生活，工作及其他活动受限；Ⅳ 自理与工作均受限。</li>
+        </ul>
+      </div>
+    </div>
+    <ul>
+      <li><strong>血液与炎症指标</strong>：轻中度正细胞正色素性贫血；活动期血小板增多，WBC 多正常；Ig 升高，补体多正常或轻升；ESR、CRP 反映活动度。</li>
+      <li><strong>关节滑液</strong>：正常 ≤3～5ml；RA 呈淡黄、透明、黏稠，WBC <span class="k">5000～50000×10⁶/L</span>（约 2/3 多核）；证实炎症并鉴别感染/痛风/假性痛风，<strong>不能确诊 RA</strong>。</li>
+      <li><strong>双手/腕 X 线 Ⅰ–Ⅳ 期</strong>：<span class="k">Ⅰ 期</span> 软组织肿胀 + 关节附近骨质疏松 → <span class="k">Ⅱ 期</span> 关节间隙变窄 → <span class="k">Ⅲ 期</span> 关节面虫蚀样改变 → <span class="k">Ⅳ 期</span> 半脱位与纤维性/骨性强直。</li>
+      <li><strong>MRI / 超声 / 活检</strong>：MRI 对早期滑膜炎、积液、骨髓水肿最敏感；高频超声显示滑膜增生并通过血流信号反映炎症活动度及引导穿刺；关节镜及针刺活检具辅助价值。</li>
+    </ul>
+  </div>
+
+  <!-- Card 2.7 -->
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd">
+      <h3 class="card-title">2.7 病情判断（DAS28）、一般/外科治疗与预后</h3>
+      <span class="badge badge-f">熟悉</span>
+    </div>
+    <ul>
+      <li><strong>病情判断</strong>：综合评估晨僵时间、压痛/肿胀关节数、ESR/CRP 及医患评分，临床常用 28 关节评估工具 <span class="k">DAS28</span>；并评估影响预后因素（病程、躯体功能 HAQ 评分、关节外表现、自身抗体阳性、早期 X 线骨破坏）。</li>
+      <li><strong>一般与外科治疗</strong>：一般治疗含宣教、休息、急性期关节制动、恢复期功能锻炼、理疗（卧床休息仅适于急性期、发热及内脏受累者）。外科含人工关节置换（晚期畸形失能）与滑膜切除术（须同时用 DMARDs 防滑膜再增生复发）。</li>
+      <li><strong>预后</strong>：经早期诊断、规范化治疗，<span class="k">80% 以上</span> RA 患者能实现病情缓解。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== MODULE 3 ==================== -->
+<section class="module-section" id="mod-3" data-mod-title="Ⅲ、第三章 系统性红斑狼疮">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅲ、系统性红斑狼疮（SLE）</h1>
+      <span class="mod-source">第10版 第三章《系统性红斑狼疮》（课本 P820–826 / PDF P851–857）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>SLE 定义与 13 大系统临床表现（蝶形红斑、浆膜炎、Jaccoud 关节病、肾、Libman-Sacks 心内膜炎、DAH/PAH、NPLE、血液、合并 APS/SS、眼底血管炎）；核心自身抗体（ANA、抗 dsDNA、抗 ENA 谱、aPLs）与补体/活动度指标；2012 年 SLICC 分类标准（表 8-3-1）、狼疮危象与 SLEDAI 评分（表 8-3-2）；个体化及诱导/维持缓解治疗（激素常规/冲击、羟氯喹基础治疗、免疫抑制剂表 8-3-3、生物制剂及其他）。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>流行病学、病因（遗传/环境/雌激素）与免疫发病机制；基本与特征性病理（苏木紫小体、洋葱皮样病变、心瓣膜赘生物）；影像学检查、鉴别诊断（药物性狼疮）与预后及急/远期主要死因。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">大纲提及的 1997 年 ACR 标准第 10 版未收录（改用 2012 SLICC，正文提及 2019 EULAR/ACR 无细则表）；第 10 版第三章未提及“狼疮带试验”“满堂亮”“干细胞移植”与“妊娠生育管理”；狼疮性肾炎病理分型与 APS 细则原文分别跨篇指向第五篇第三章及第十二章（未入本大纲），严格保留最小提及不跨篇补写。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 3 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 3 · SLE 核心自身抗体-表型映射 · 2012 SLICC &amp; SLEDAI 分层 · 诱导/维持个体化治疗决策</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 460" width="100%" role="img" aria-label="系统性红斑狼疮自身抗体映射、诊断活动度分级与治疗决策图">
+        <defs>
+          <marker id="arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr3r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+
+        <!-- Band 1: Autoantibodies -> Organ/Phenotype map -->
+        <rect x="8" y="8" width="864" height="142" rx="10" fill="var(--primary)" fill-opacity="0.06" stroke="var(--border)" />
+        <text x="22" y="29" font-size="13" font-weight="700" fill="var(--primary)">① 核心自身抗体与补体临床意义速览（诊断标记 vs 活动预警 vs 器官表型）</text>
+
+        <rect x="20" y="40" width="204" height="98" rx="8" fill="var(--card)" stroke="var(--error)" stroke-width="1.4" />
+        <text x="122" y="59" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">诊断标记与活动度</text>
+        <text x="30" y="78" font-size="11" fill="var(--foreground)">• ANA：近乎100%，特异度低</text>
+        <text x="30" y="95" font-size="11" fill="var(--error)" font-weight="600">• 抗dsDNA：标记+活动+复发</text>
+        <text x="30" y="112" font-size="11" fill="var(--primary)" font-weight="600">• 抗Sm：特异99% / 敏25%</text>
+        <text x="30" y="129" font-size="11" fill="var(--foreground)">• C3↓示活动；C4↓活动/易感</text>
+
+        <rect x="234" y="40" width="214" height="98" rx="8" fill="var(--card)" stroke="var(--chart-3)" stroke-width="1.4" />
+        <text x="341" y="59" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-3)">抗ENA其余亚型映射</text>
+        <text x="244" y="78" font-size="11" fill="var(--foreground)">• 抗rRNP → NPLE/重要内脏</text>
+        <text x="244" y="95" font-size="11" fill="var(--foreground)">• 抗SSA(Ro) → 光过敏/皮损/</text>
+        <text x="254" y="111" font-size="10.8" fill="var(--foreground)">WBC↓/新生儿心脏传导阻滞</text>
+        <text x="244" y="129" font-size="11" fill="var(--foreground)">• 抗RNP(40%) → 雷诺 / PAH</text>
+
+        <rect x="458" y="40" width="194" height="98" rx="8" fill="var(--card)" stroke="var(--warning)" stroke-width="1.4" />
+        <text x="555" y="59" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">抗磷脂抗体（aPLs）</text>
+        <text x="468" y="78" font-size="11" fill="var(--foreground)">• ACA / LAC / 抗β2GPⅠ</text>
+        <text x="468" y="96" font-size="11" fill="var(--foreground)">• 近1/3 SLE合并阳性</text>
+        <text x="468" y="114" font-size="11" fill="var(--error)" font-weight="600">• 致APS：动静脉血栓、</text>
+        <text x="476" y="130" font-size="11" fill="var(--error)">病理妊娠、血小板减少</text>
+
+        <rect x="662" y="40" width="198" height="98" rx="8" fill="var(--card)" stroke="var(--chart-1)" stroke-width="1.4" />
+        <text x="761" y="59" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-1)">抗组织细胞 &amp; 特征病理</text>
+        <text x="672" y="78" font-size="11" fill="var(--foreground)">• Coombs(+)溶贫(10%)</text>
+        <text x="672" y="95" font-size="11" fill="var(--foreground)">• 抗血小板 / 抗神经元抗体</text>
+        <text x="672" y="113" font-size="11" fill="var(--primary)" font-weight="600">• 特征病理：苏木紫小体、</text>
+        <text x="680" y="129" font-size="11" fill="var(--primary)">脾中央动脉洋葱皮样病变</text>
+
+        <!-- Band 2: 2012 SLICC & SLEDAI -->
+        <rect x="8" y="162" width="864" height="126" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="22" y="183" font-size="13" font-weight="700" fill="var(--error)">② 诊断标准（2012 SLICC，敏 97% / 特 84%）与疾病活动度分级（SLEDAI 前 10 天，总分 105）</text>
+
+        <rect x="20" y="194" width="420" height="82" rx="8" fill="var(--error)" fill-opacity="0.06" stroke="var(--error)" stroke-width="1.3" />
+        <text x="32" y="213" font-size="12" font-weight="700" fill="var(--error)">2012 SLICC 两条确诊路径（满足其一即可）</text>
+        <text x="32" y="233" font-size="11.2" fill="var(--foreground)">路径 A：11项临床 + 6项免疫中满足 ≥4条（至少1临床 + 1免疫）</text>
+        <text x="32" y="251" font-size="11.2" fill="var(--foreground)">路径 B：肾活检证实狼疮性肾炎 + ANA阳性 或 抗dsDNA阳性</text>
+        <text x="32" y="268" font-size="10.5" fill="var(--muted-foreground)">注：1997 ACR未录；2019 EULAR/ACR原文仅文字提及无积分表</text>
+
+        <line x1="440" y1="235" x2="466" y2="235" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr3)" />
+
+        <rect x="468" y="194" width="392" height="82" rx="8" fill="var(--chart-1)" fill-opacity="0.08" stroke="var(--chart-1)" stroke-width="1.3" />
+        <text x="480" y="213" font-size="12" font-weight="700" fill="var(--chart-1)">SLEDAI 四档活动度（8/4/2/1 权重分）</text>
+        <text x="480" y="233" font-size="11.5" fill="var(--chart-2)" font-weight="700">≤ 4 分：病情稳定</text>
+        <text x="646" y="233" font-size="11.5" fill="var(--primary)" font-weight="700">5 ~ 9 分：轻度活动</text>
+        <text x="480" y="253" font-size="11.5" fill="var(--warning)" font-weight="700">10 ~ 14 分：中度活动</text>
+        <text x="646" y="253" font-size="11.5" fill="var(--error)" font-weight="700">≥ 15 分：重度活动</text>
+        <text x="480" y="270" font-size="10.5" fill="var(--muted-foreground)">8分项全为中枢/视网膜/血管炎；4分项为肾/关节/肌炎</text>
+
+        <!-- Band 3: Treatment pathway -->
+        <rect x="8" y="300" width="864" height="152" rx="10" fill="var(--chart-2)" fill-opacity="0.06" stroke="var(--border)" />
+        <text x="22" y="322" font-size="13" font-weight="700" fill="var(--chart-2)">③ 个体化两阶段治疗策略（全员基础：羟氯喹 + 防晒宣教 + 伴发病防治）</text>
+
+        <rect x="20" y="334" width="194" height="106" rx="8" fill="var(--card)" stroke="var(--chart-2)" stroke-width="1.4" />
+        <text x="117" y="353" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-2)">全程基础：羟氯喹</text>
+        <text x="30" y="372" font-size="11" fill="var(--foreground)">• 无禁忌均建议服用</text>
+        <text x="30" y="389" font-size="11" fill="var(--foreground)">• 降活动/器官损/血栓</text>
+        <text x="30" y="406" font-size="11" fill="var(--foreground)">• 眼科随访：高危每年1次</text>
+        <text x="38" y="422" font-size="10.8" fill="var(--muted-foreground)">低危第5年起每年1次</text>
+
+        <line x1="214" y1="387" x2="234" y2="387" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr3)" />
+
+        <rect x="236" y="334" width="212" height="106" rx="8" fill="var(--card)" stroke="var(--primary)" stroke-width="1.4" />
+        <text x="342" y="353" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">急性期：诱导缓解</text>
+        <text x="246" y="372" font-size="11" fill="var(--foreground)">• 泼尼松 0.5~1mg/(kg·d)</text>
+        <text x="246" y="389" font-size="11" fill="var(--foreground)">  稳2周或6周后渐减</text>
+        <text x="246" y="406" font-size="11" fill="var(--error)" font-weight="600">• 重要脏器首选CTX或MMF</text>
+        <text x="246" y="423" font-size="11" fill="var(--foreground)">  无明显副反应≥6个月</text>
+
+        <line x1="448" y1="387" x2="468" y2="387" stroke="var(--error)" stroke-width="2" marker-end="url(#arr3r)" />
+
+        <rect x="470" y="334" width="186" height="106" rx="8" fill="var(--card)" stroke="var(--error)" stroke-width="1.5" />
+        <text x="563" y="353" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">狼疮危象 / 危重症</text>
+        <text x="480" y="372" font-size="11" fill="var(--error)" font-weight="600">• 甲泼尼龙冲击：</text>
+        <text x="480" y="389" font-size="11" fill="var(--foreground)">  500~1000mg qd×3~5d</text>
+        <text x="480" y="406" font-size="11" fill="var(--foreground)">  必要1~2周后重复</text>
+        <text x="480" y="423" font-size="11" fill="var(--foreground)">• 可选IVIG、血浆置换</text>
+
+        <line x1="656" y1="387" x2="676" y2="387" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr3)" />
+
+        <rect x="678" y="334" width="182" height="106" rx="8" fill="var(--card)" stroke="var(--chart-3)" stroke-width="1.4" />
+        <text x="769" y="353" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-3)">维持缓解 &amp; 生物制剂</text>
+        <text x="688" y="372" font-size="11" fill="var(--foreground)">• 泼尼松 &lt;10mg/d 维持</text>
+        <text x="688" y="389" font-size="11" fill="var(--foreground)">• 1~2种免疫抑制剂维持</text>
+        <text x="688" y="406" font-size="11" fill="var(--chart-3)" font-weight="600">• 难治/复发：贝利尤单抗</text>
+        <text x="688" y="423" font-size="11" fill="var(--foreground)">  泰它西普 / 利妥昔单抗</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="tier-heading master-hd"><span class="badge badge-m">掌握 · 核心考点</span><span>SLE 临床表现、自身抗体谱、SLICC/SLEDAI 与个体化治疗</span></div>
+
+  <!-- Card 3.1 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">3.1 SLE 定义与多系统临床表现（13 大系统完整版）</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <p><strong>定义与流病</strong>：SLE 是以<span class="k">致病性自身抗体和免疫复合物</span>形成并介导器官、组织损伤的自身免疫病，临床多系统受累，血清存在以 ANA 为代表的多种自身抗体。我国患病率（30.13～70.41）/10 万，好发于 <span class="k">20～40 岁育龄女性</span>，黄种人发病率位居全球第二。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>受累系统</th><th>核心临床表现、特征体征与关键数值（课本 P821–822）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. 全身表现</strong></td><td>活动期多发热（以<span class="k">低、中度热</span>常见），伴疲倦、乏力、食欲缺乏、肌痛、体重下降。</td></tr>
+          <tr><td><strong>2. 皮肤与黏膜</strong></td><td><span class="k">80%</span> 出现皮疹，以<span class="k">鼻梁和双颧颊部蝶形红斑</span>最具特征性（皮疹多无明显瘙痒）；另见盘状红斑、指掌/甲周红斑、指端缺血；<span class="k">口腔及鼻黏膜无痛性溃疡</span>和脱发（弥漫或斑秃）常提示疾病活动。</td></tr>
+          <tr><td><strong>3. 浆膜炎</strong></td><td>半数以上急性发作期出现多发性浆膜炎（双侧中小量胸腔积液、中小量心包积液）；评估活动度时须与 LN 肾综低蛋白血症、心肌病或重度 PAH 所致积液甄别。</td></tr>
+          <tr><td><strong>4. 肌肉关节</strong></td><td>指、腕、膝对称性多关节痛/肿痛，伴红肿少见。<span class="k">10%</span> 出现 <span class="k">Jaccoud 关节病</span>（肌腱受损所致可复的<span class="k">非侵蚀性</span>关节半脱位，X 线多无骨破坏）；5%～10% 肌炎；小部分股骨头坏死。</td></tr>
+          <tr><td><strong>5. 肾脏表现</strong></td><td>27.9%～70% 病程受累（中国首发仅 25.8%）；蛋白尿、血尿、管型尿、水肿、高血压乃至肾衰；平滑肌受累可致输尿管扩张与肾积水。（LN 病理分型原文指向第五篇，本章未设专节。）</td></tr>
+          <tr><td><strong>6. 心血管</strong></td><td>心包炎（心脏压塞少见）；<span class="k">疣状心内膜炎（Libman-Sacks 心内膜炎）</span>：常见于<span class="k">二尖瓣后叶心室侧</span>，不改变心脏杂音性质，可脱落栓塞或并发 IE；约 10% 心肌损害；冠脉受累（冠脉炎 + aPL 血栓 + 长期激素致动脉粥样硬化）。</td></tr>
+          <tr><td><strong>7. 肺部表现</strong></td><td>ILD（急/亚急性磨玻璃影 + 慢性纤维化，弥散下降）；约 <span class="k">2%</span> 合并<span class="k">弥漫性肺泡出血（DAH）</span>，凶险、病死率 <span class="k">&gt;50%</span>（BALF 呈血性或见大量含铁血黄素巨噬细胞助诊）；<span class="k">肺动脉高压（PAH）</span>预后不良（超声+右心漂浮导管诊断）。</td></tr>
+          <tr><td><strong>8. 神经系统（NPLE）</strong></td><td>又称狼疮脑病，中枢（癫痫、狼疮性头痛、脑血管病、无菌性脑膜炎、脱髓鞘、运动障碍、脊髓病、意识错乱、精神病等）与周围（GBS、自主/单/多发神经病、重症肌无力等）均可累及；病理基础为脑局部血管炎微血栓、Libman-Sacks 小栓子、抗神经细胞抗体或并存 APS；CSF 压力及蛋白↑（细胞/氯/糖多正常）+ MRI 助诊。</td></tr>
+          <tr><td><strong>9. 消化系统</strong></td><td>食欲减退、腹痛、呕吐、腹泻；早期肝损预后不良；少数急腹症（胰腺炎、肠坏死、肠梗阻）与活动相关，机制为肠壁及肠系膜血管炎；失蛋白肠病/肝病早期用激素多快改善。</td></tr>
+          <tr><td><strong>10. 血液系统</strong></td><td>活动期 Hb↓、WBC↓、PLT↓；<span class="k">10%</span> 为 Coombs 阳性溶血性贫血；PLT↓与抗血小板抗体、aPL 及骨髓巨核细胞成熟障碍相关；部分无痛性淋巴结肿大、少数脾大。</td></tr>
+          <tr><td><strong>11. 合并 APS</strong></td><td>近 <span class="k">1/3</span> SLE 合并 aPL 阳性，少部分可诊 APS（动静脉血栓、病理妊娠、血小板减少 + 持续 aPL 阳性；详见说明：第十二章未入大纲，仅按本章界定）。</td></tr>
+          <tr><td><strong>12. 干燥综合征</strong></td><td>约 <span class="k">30%</span> 患者并存继发性干燥综合征。</td></tr>
+          <tr><td><strong>13. 眼部表现</strong></td><td>约 15% 眼底病变（视网膜出血、渗出、视盘水肿，系视网膜血管炎），累及视神经重者可数日致盲，早期治疗多数可逆。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Card 3.2 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">3.2 自身抗体谱、补体、活动度指标与肾活检/病理边界</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>检测项目</th><th>临床意义与关键数值（课本 P822–823）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>ANA</strong></td><td>见于几乎所有 SLE 患者；特异度低，单纯阳性不能用于与其他 CTD 鉴别。</td></tr>
+          <tr><td><strong>抗 dsDNA 抗体</strong></td><td>SLE 诊断的<span class="k">特异性标记抗体</span>；多见于活动期，<span class="k">滴度与疾病活动性密切相关</span>；稳定期滴度升高提示复发风险高。</td></tr>
+          <tr><td><strong>抗 Sm 抗体</strong></td><td>SLE 诊断的<span class="k">标记抗体</span>；特异度 <span class="k">99%</span>，灵敏度仅 <span class="k">25%</span>；有助于早期、不典型或回顾性诊断。</td></tr>
+          <tr><td><strong>抗 RNP 抗体</strong></td><td>阳性率 40%，对 SLE 特异度不高，常与 SLE 的<span class="k">雷诺现象和肺动脉高压</span>相关。</td></tr>
+          <tr><td><strong>抗 SSA（Ro）抗体</strong></td><td>与光过敏、血管炎、皮损、白细胞减低、平滑肌受累、<span class="k">新生儿狼疮</span>（经胎盘致新生儿心脏传导阻滞）相关。</td></tr>
+          <tr><td><strong>抗 SSB（La）抗体</strong></td><td>与抗 SSA 关联，与继发干燥综合征有关，阳性率低于抗 SSA。</td></tr>
+          <tr><td><strong>抗 rRNP 抗体</strong></td><td>往往提示 <span class="k">NPLE</span> 或其他重要内脏损害。</td></tr>
+          <tr><td><strong>抗磷脂抗体（aPLs）</strong></td><td>抗心磷脂抗体、狼疮抗凝物、抗 β₂GPⅠ 抗体；结合临床判断是否合并 APS。</td></tr>
+          <tr><td><strong>抗组织细胞抗体</strong></td><td>抗红细胞抗体（Coombs 试验）、抗血小板相关抗体、抗神经元抗体（多见于 NPLE）；另有部分 RF、少数 ANCA。</td></tr>
+          <tr><td><strong>补体（CH50/C3/C4）</strong></td><td><span class="k">C3 低下</span>常提示 SLE 活动；<span class="k">C4 低下</span>除提示活动外，尚可能提示 SLE 易感性（C4 缺乏）。</td></tr>
+          <tr><td><strong>其他活动度指标</strong></td><td>CSF 变化（压力/蛋白升高）、蛋白尿增多、ESR 增快、CRP 升高。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout info"><strong>大纲-教材缺节说明</strong>：大纲具体内容列有“狼疮带试验”“狼疮肾炎满堂亮免疫病理特征及肾活检病理分型”，第 10 版第三章仅说明肾活检对 LN 诊断/治疗/预后均有价值并指向跨篇“第五篇第三章第一节狼疮性肾炎”，本章原文未提及“狼疮带试验”“满堂亮”及 LN Ⅰ–Ⅵ 分型细节，严格遵守不跨篇补写原则。</div>
+  </div>
+
+  <!-- Card 3.3 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">3.3 2012 年 SLICC 分类标准（表 8-3-1）、狼疮危象与 SLEDAI（表 8-3-2）</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <p><strong>（一）2012 年 SLICC 分类标准（表 8-3-1）</strong>：第 10 版推荐 2012 年 SLICC 或 2019 年 EULAR/ACR 分类标准，原文仅列出 2012 年 SLICC 细则（灵敏度 <span class="k">97%</span>，特异度 <span class="k">84%</span>；未收录大纲所写 1997 年 ACR 标准，亦未列 2019 积分表）。确诊须符合以下任一条件：① 11 项临床 + 6 项免疫学标准中满足 <span class="k">≥4 条（含至少 1 条临床 + 至少 1 条免疫学标准）</span>；② <span class="k">肾活检证实为狼疮性肾炎且 ANA 阳性或抗 dsDNA 阳性</span>。</p>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>临床标准（共 11 项）</h4>
+        <ol style="padding-left:18px;margin:4px 0;font-size:12.5px">
+          <li>急性或亚急性皮肤狼疮</li>
+          <li>慢性皮肤狼疮</li>
+          <li>口腔或鼻咽部溃疡</li>
+          <li>非瘢痕形成引起的脱发</li>
+          <li>炎性滑膜炎：医师观察到 ≥2 个肿胀关节，或伴晨僵的压痛关节</li>
+          <li>浆膜炎</li>
+          <li>肾脏：尿蛋白/肌酐异常（或 24h 尿蛋白 <span class="k">&gt;500mg</span>）或红细胞管型</li>
+          <li>神经系统：癫痫发作、精神异常、多发性单神经炎、脊髓炎、外周或脑神经病变、脑炎（急性精神错乱状态）</li>
+          <li>溶血性贫血</li>
+          <li>白细胞减少（<span class="k">&lt;4×10⁹/L</span>，至少 1 次）或淋巴细胞减少（<span class="k">&lt;1×10⁹/L</span>，至少 1 次）</li>
+          <li>血小板减少（<span class="k">&lt;100×10⁹/L</span>，至少 1 次）</li>
+        </ol>
+      </div>
+      <div class="mini-box">
+        <h4>免疫学标准（共 6 项）</h4>
+        <ol style="padding-left:18px;margin:4px 0;font-size:12.5px">
+          <li>ANA 高于实验室正常参考值范围</li>
+          <li>抗 dsDNA 抗体高于正常参考值范围（<span class="k">ELISA 法须两次均高于正常</span>）</li>
+          <li>抗 Sm 抗体阳性</li>
+          <li>抗磷脂抗体阳性：狼疮抗凝物（梅毒血清试验假阳性）、抗心磷脂抗体（至少 2 次异常或中高滴度）、抗 β₂GPⅠ 阳性</li>
+          <li>低补体：低 C3、低 C4、低 CH50</li>
+          <li>直接 Coombs 试验阳性（非溶血性贫血状态）</li>
+        </ol>
+        <div class="callout danger" style="margin-top:8px"><strong>狼疮危象（10 种急性危及生命重症）</strong>：急进性狼疮性肾炎、严重中枢神经损害、严重溶血性贫血、血小板减少性紫癜、粒细胞缺乏症、严重心脏损害、严重狼疮性肺炎、弥漫性肺泡出血、严重狼疮性肝炎、严重血管炎。</div>
+      </div>
+    </div>
+    <p><strong>（二）病情判断三维度 &amp; SLEDAI 评分（表 8-3-2）</strong>：判定依据为① 活动性/急性发作；② 脏器功能状态和不可逆损伤；③ 并发症（动脉粥样硬化、感染、高血压、糖尿病）。SLEDAI 按<span class="k">前 10 天内</span>症状打分，总分 <span class="k">105 分</span>：<span class="k">≤4 分</span>病情稳定、<span class="k">5～9 分</span>轻度活动、<span class="k">10～14 分</span>中度活动、<span class="k">≥15 分</span>重度活动。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>分值</th><th>表现项目（共 24 项）</th><th>定义细则（完整保留原文表 8-3-2）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>8 分</strong></td><td>抽搐</td><td>近期出现，除外代谢、感染、药物所致者。</td></tr>
+          <tr><td><strong>8 分</strong></td><td>精神病</td><td>严重现实感知障碍致正常活动能力改变（幻觉、思维不连贯/奔逸/贫乏/不合逻辑、行为异常/紊乱/紧张行为），除外尿毒症或药物所致。</td></tr>
+          <tr><td><strong>8 分</strong></td><td>器质性脑病综合征</td><td>智力改变（定向力/记忆力差、智能障碍），突发波动性，含意识模糊、注意力减退、不能持续注意周围环境 + 至少 2 项（知觉障碍、语言不连贯、失眠、白天困倦、抑郁或亢奋），除外代谢/药物/感染。</td></tr>
+          <tr><td><strong>8 分</strong></td><td>视觉障碍</td><td>狼疮视网膜病变（细胞样体、视网膜出血、脉络膜出血或渗出、视神经炎），除外高血压/药物/感染。</td></tr>
+          <tr><td><strong>8 分</strong></td><td>脑神经病变</td><td>近期出现的运动性、感觉性脑神经病变。</td></tr>
+          <tr><td><strong>8 分</strong></td><td>狼疮性头痛</td><td>严重、持续疼痛，可为偏头痛，镇静镇痛剂无效。</td></tr>
+          <tr><td><strong>8 分</strong></td><td>脑血管意外</td><td>近期出现，除外动脉粥样硬化。</td></tr>
+          <tr><td><strong>8 分</strong></td><td>血管炎</td><td>破溃、坏死、手指压痛性结节、甲床周围梗死、片状出血，或活检/血管造影证实。</td></tr>
+          <tr><td><strong>4 分</strong></td><td>关节炎</td><td>至少 2 个关节痛并有炎性体征（压痛、肿胀或积液）。</td></tr>
+          <tr><td><strong>4 分</strong></td><td>肌炎</td><td>近端肌痛、无力伴 CK 升高、肌电图改变或活检证实。</td></tr>
+          <tr><td><strong>4 分</strong></td><td>管型尿</td><td>红细胞管型、颗粒管型或混合管型。</td></tr>
+          <tr><td><strong>4 分</strong></td><td>血尿</td><td><span class="k">&gt;5 个红细胞/高倍视野</span>，除外其他原因。</td></tr>
+          <tr><td><strong>4 分</strong></td><td>蛋白尿</td><td><span class="k">&gt;0.5g/24h</span>，近期出现或近期增加。</td></tr>
+          <tr><td><strong>4 分</strong></td><td>脓尿</td><td><span class="k">&gt;5 个白细胞/高倍视野</span>，除外感染。</td></tr>
+          <tr><td><strong>2 分</strong></td><td>皮疹 / 脱发 / 黏膜溃疡</td><td>新出现或反复出现的炎性皮疹；异常斑片状或弥漫性脱发；口腔、鼻腔溃疡（每项各 2 分）。</td></tr>
+          <tr><td><strong>2 分</strong></td><td>胸膜炎 / 心包炎</td><td>胸痛伴摩擦音/积液/胸膜肥厚；心包痛伴摩擦音/积液（ECG 或超声证实）（每项各 2 分）。</td></tr>
+          <tr><td><strong>2 分</strong></td><td>低补体 / 抗 dsDNA 升高</td><td>CH50、C3、C4 低于正常低值；抗 dsDNA 放射免疫分析（Farr 法）&gt;25% 或高于正常（每项各 2 分）。</td></tr>
+          <tr><td><strong>1 分</strong></td><td>发热 / 血小板减少 / 白细胞下降</td><td>发热 <span class="k">&gt;38℃</span>（除外感染）；PLT <span class="k">&lt;100×10⁹/L</span>；WBC <span class="k">&lt;3×10⁹/L</span>（除外药物所致）（每项各 1 分）。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Card 3.4 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">3.4 个体化治疗策略：一般治疗、激素、羟氯喹、免疫抑制剂（表 8-3-3）与生物制剂</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <ul>
+      <li><strong>总原则</strong>：不能根治，须<span class="k">个体化</span>；糖皮质激素联合免疫抑制剂为主；<strong>两阶段</strong>：急性期积极<span class="k">诱导缓解</span> → 缓解后<span class="k">维持缓解</span>（保脏器、减副反应），同时防治伴发疾病（动脉粥样硬化、高血压、血脂异常、糖尿病、骨质疏松）及强化宣教随访。</li>
+      <li><strong>一般治疗 6 要点</strong>：① 心理治疗树立乐观；② 急性活动期卧床，稳定慢性期适当工作勿过劳；③ 早发现早治感染；④ 避免诱发狼疮药物（如<span class="k">避孕药</span>）；⑤ <span class="k">避免强阳光暴晒和紫外线照射</span>；⑥ 缓解期才可防疫注射且<span class="k">尽可能不用活疫苗</span>。对症治疗：NSAIDs 退热/止关节痛、控制代谢合并症、NPLE 予降颅压/抗癫痫/抗抑郁。</li>
+      <li><strong>1. 糖皮质激素</strong>：
+        <ul>
+          <li>诱导缓解：泼尼松 <span class="k">0.5～1 mg/(kg·d)</span>，病情稳定 2 周或 6 周后逐渐减量；</li>
+          <li>长期维持：病情允许时泼尼松 <span class="k">&lt;10 mg/d</span> 小剂量维持；</li>
+          <li><strong>狼疮危象激素冲击</strong>：甲泼尼龙 <span class="k">500～1000 mg 静滴 qd×3～5 天</span>为 1 疗程，必要时 1～2 周后可重复。</li>
+        </ul>
+      </li>
+      <li><strong>2. 羟氯喹（基础治疗）</strong>：SLE 患者<span class="k">如无禁忌均建议服用</span>，可降疾病活动度、降器官损伤和血栓风险、改善血脂、提高生存率。眼科风险评估：<span class="k">高风险每年 1 次</span>眼科检查，<span class="k">低风险服药第 5 年起每年 1 次</span>。</li>
+      <li><strong>3. 免疫抑制剂</strong>：活动时联用可更好控活动、保脏器、减复发、减激素用量；重要脏器受累诱导缓解期<span class="k">首选 CTX 或 MMF</span>，无明显副作用建议至少用 <span class="k">6 个月</span>；维持期选 1～2 种长期维持。</li>
+      <li><strong>4. 生物制剂与其他治疗</strong>：激素/免疫抑制剂疗效不佳、不耐受或复发者考虑生物制剂——我国已获批适应证：<span class="k">贝利尤单抗、泰它西普</span>；<span class="k">利妥昔单抗</span>虽未获批适应证，但指南提及对部分顽固性 LN 及血液受累有效。危重/困难病例可选 <span class="k">IVIG、血浆置换</span>。（注：第 10 版第三章未提及“干细胞移植”。）</li>
+    </ul>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>免疫抑制剂（表 8-3-3）</th><th>用法用量</th><th>主要副作用</th></tr></thead>
+        <tbody>
+          <tr><td><strong>环磷酰胺（CTX）</strong></td><td><span class="k">0.4g 每周 1 次</span>；或 <span class="k">0.5～1.0g/m² 每 3～4 周 1 次</span>；口服 1～2mg/(kg·d)</td><td>胃肠道反应、脱发、骨髓抑制、诱发感染、肝损、性腺抑制、致畸、<span class="k">出血性膀胱炎</span>、远期致癌性</td></tr>
+          <tr><td><strong>吗替麦考酚酯（MMF）</strong></td><td>每日 <span class="k">1.5～2g</span></td><td>胃肠道反应、骨髓抑制、感染、致畸</td></tr>
+          <tr><td>环孢素（CsA）</td><td>每日 3～5mg/kg</td><td>胃肠道反应、多毛、肝肾损伤、高血压、高尿酸血症、高血钾</td></tr>
+          <tr><td>他克莫司（FK506）</td><td>每日 2～6mg</td><td>高血压、胃肠道反应、高尿酸血症、肝肾损伤、高血钾</td></tr>
+          <tr><td>硫唑嘌呤（AZA）</td><td>每日 50～100mg</td><td>骨髓抑制、胃肠道反应、肝功能损害</td></tr>
+          <tr><td>甲氨蝶呤（MTX）</td><td>10～15mg，每周 1 次</td><td>胃肠道反应、口腔黏膜糜烂、肝损、骨髓抑制，偶见肺纤维化</td></tr>
+          <tr><td>来氟米特（LEF）</td><td>每日 10～20mg</td><td>腹泻、肝损、皮疹、WBC 下降、脱发、致畸</td></tr>
+          <tr><td>雷公藤多苷</td><td>20mg，每日 2 次或 3 次</td><td>生殖系统异常、胃肠道反应、骨髓抑制、肝肾损伤、皮损</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="tier-heading familiar-hd"><span class="badge badge-f">熟悉 · 次重点支撑</span><span>SLE 病因发病机制、特征病理、影像、药物性狼疮鉴别与预后</span></div>
+
+  <!-- Card 3.5 -->
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd">
+      <h3 class="card-title">3.5 病因、免疫发病机制与特征性病理改变</h3>
+      <span class="badge badge-f">熟悉</span>
+    </div>
+    <div class="grid-3">
+      <div class="mini-box">
+        <h4>病因三要素</h4>
+        <ul>
+          <li><strong>遗传</strong>：第 1 代亲属 8 倍，单卵双胎 5～10 倍于异卵；多基因叠加（HLA Ⅲ 类 C2/C4 缺失、HLA Ⅱ 类 DR2/DR3 异常），已知基因仅解释约 15%。</li>
+          <li><strong>环境</strong>：紫外线致上皮凋亡暴露新抗原；部分药物降 DNA 甲基化诱发药物狼疮；CMV/新冠等病毒。</li>
+          <li><strong>雌激素</strong>：围绝经期前女∶男 <span class="k">9∶1</span>，儿童及老人 3∶1。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>免疫发病机制</h4>
+        <ul>
+          <li><strong>致病性自身抗体</strong>：IgG 型高亲和力（抗 DNA→肾小球；抗血小板/红细胞→PLT↓/溶贫；抗 SSA 经胎盘→新生儿传导阻滞；aPL→APS；抗核糖体→NPLE）。</li>
+          <li><strong>致病性 IC 增高 3 原因</strong>：清除异常、形成过多、大小不当不能吞噬排出。</li>
+          <li><strong>T/NK 失调</strong>：CD8⁺T 与 NK 不能抑制 CD4⁺T → B 细胞持续活化。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>基本与特征性病理</h4>
+        <ul>
+          <li><strong>基本改变</strong>：全身任何器官炎症反应与中小血管异常（IC 沉积或抗体侵袭致管壁炎/坏死 + 继发血栓缺血）。</li>
+          <li><strong>特征改变①</strong>：<span class="k">苏木紫小体</span>（细胞核变性嗜酸性团块）。</li>
+          <li><strong>特征改变②</strong>：<span class="k">“洋葱皮样病变”</span>（小动脉周围向心性纤维增生，明显于脾中央动脉）。</li>
+          <li>另见心瓣膜反复纤维素样变性形成赘生物。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3.6 -->
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd">
+      <h3 class="card-title">3.6 影像学检查、鉴别诊断（药物性狼疮）与预后死因</h3>
+      <span class="badge badge-f">熟悉</span>
+    </div>
+    <ul>
+      <li><strong>影像学检查</strong>：头颅 MRI/CT（脑梗死/出血）、胸部 HRCT（早期 ILD）、超声心动图（心包积液、心肌、瓣膜病变、PAH 高敏早诊）。</li>
+      <li><strong>鉴别诊断</strong>：须与相应各系统疾病、其他 CTD 及系统性血管炎鉴别。<strong>药物性狼疮</strong>（如长期服<span class="k">肼屈嗪</span>等）：<span class="k">极少有神经系统表现和肾炎</span>，抗 dsDNA 及抗 Sm 抗体<span class="k">阴性</span>，血清补体常<span class="k">正常</span>（第一章表 8-1-4 另注抗组蛋白抗体 AHA 对其有重要诊断价值）。</li>
+      <li><strong>预后与主要死因</strong>：存活率已提高至 <span class="k">10 年存活率 &gt;90%</span>、<span class="k">15 年生存率 80%</span>（20 世纪 50 年代仅 4 年 50%）。
+        <ul>
+          <li><strong>急性期死因</strong>：<span class="k">多脏器严重损害</span>（尤其严重 NPLE、PAH、急进性 LN）和<span class="k">感染</span>；</li>
+          <li><strong>远期死因</strong>：慢性肾功能不全、药物（尤其长期大剂量激素）不良反应、<span class="k">冠状动脉粥样硬化性心脏病</span>。（注：第 10 版第三章【预后】未设“妊娠生育”专述。）</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== MODULE 4 ==================== -->
+<section class="module-section" id="mod-4" data-mod-title="Ⅳ、第六章 系统性血管炎">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅳ、系统性血管炎（概论 + 5 种血管炎）</h1>
+      <span class="mod-source">第10版 第六章《系统性血管炎》（课本 P835–844 / PDF P866–875）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>系统性血管炎范畴、2012 年 Chapel Hill 分类（表 8-6-1）、基本病理、诊断（活检金标准、ANCA、血管造影/CTA/MRA）与两阶段治疗原则；以及大纲明示<strong>重点理解</strong>的 3 种血管炎：<strong>大动脉炎（TA，含 Numano 5 型与 2022 分类标准表 8-6-2）</strong>、<strong>巨细胞动脉炎（GCA）</strong>、<strong>ANCA 相关血管炎（AAV：MPA/GPA/EGPA）</strong>。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>总论病因机制细节，以及大纲具体教学内容列出的其余 2 种血管炎：<strong>结节性多动脉炎（PAN，含 1990 ACR 分类标准）</strong>与<strong>贝赫切特病（BD / 白塞综合征，含针刺反应与 2014 国际诊断标准表 8-6-3）</strong>。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">第 10 版第六章未列出 2022 年 AAV 分类积分细则表（仅作原文概述不凭记忆补写）；第六章 L74 间接免疫荧光 cANCA/pANCA 印刷误反已依同篇第一章表 8-1-4 正文纠偏并在下文与审计表透明勘误溯源。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 4 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 4 · 2012 Chapel Hill 血管管径谱系与 5 大常见系统性血管炎核心鉴别决策图</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 460" width="100%" role="img" aria-label="2012 Chapel Hill血管管径谱系分类与五大系统性血管炎鉴别决策图">
+        <defs>
+          <marker id="arr4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr4r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+
+        <!-- Header bar: Caliber spectrum -->
+        <rect x="8" y="8" width="864" height="44" rx="8" fill="var(--primary)" fill-opacity="0.08" stroke="var(--border)" />
+        <text x="440" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="var(--primary)">2012 Chapel Hill 血管管径分类轴（红框 = 重点掌握 3 病；蓝框 = 熟悉 2 病）</text>
+        <text x="440" y="45" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">基本病理特征 = 血管壁纤维素样坏死（呈节段性，活检阴性不能排除） · 治疗 = 糖皮质激素基础 + 诱导/维持两阶段</text>
+
+        <!-- Col 1: Large vessel (TA + GCA) -->
+        <rect x="8" y="64" width="212" height="388" rx="10" fill="var(--card)" stroke="var(--error)" stroke-width="1.6" />
+        <rect x="8" y="64" width="212" height="28" rx="10" fill="var(--error)" fill-opacity="0.14" />
+        <text x="114" y="83" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--error)">大血管炎（重点掌握）</text>
+
+        <rect x="18" y="102" width="192" height="168" rx="7" fill="var(--error)" fill-opacity="0.05" stroke="var(--border)" />
+        <text x="114" y="120" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">大动脉炎（TA）</text>
+        <text x="26" y="138" font-size="11" fill="var(--error)" font-weight="600">• 90%&lt;30岁年轻女(8~9:1)</text>
+        <text x="26" y="155" font-size="11" fill="var(--foreground)">• 主动脉及一级分支肉芽肿</text>
+        <text x="26" y="172" font-size="11" fill="var(--foreground)">• 无脉/杂音/压差≥20mmHg</text>
+        <text x="26" y="189" font-size="11" fill="var(--foreground)">• Numano 5型；彩超通心粉征</text>
+        <text x="26" y="206" font-size="11" fill="var(--primary)" font-weight="600">• 2022标准：≤60岁且≥5分</text>
+        <text x="26" y="223" font-size="11" fill="var(--foreground)">• 确诊：造影/CTA；活动MRA</text>
+        <text x="26" y="240" font-size="11" fill="var(--foreground)">• 泼尼松1mg/kg/d±免疫抑制</text>
+        <text x="26" y="257" font-size="10.8" fill="var(--muted-foreground)">  难治用TNF-αi / IL-6R单抗</text>
+
+        <rect x="18" y="278" width="192" height="164" rx="7" fill="var(--error)" fill-opacity="0.05" stroke="var(--border)" />
+        <text x="114" y="296" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">巨细胞动脉炎（GCA）</text>
+        <text x="26" y="314" font-size="11" fill="var(--error)" font-weight="600">• &gt;50岁老人(峰74岁)，女多</text>
+        <text x="26" y="331" font-size="11" fill="var(--foreground)">• 70%颞头痛/下颌跛行</text>
+        <text x="26" y="348" font-size="11" fill="var(--foreground)">• 30%视力降/失明；PMR 40~60%</text>
+        <text x="26" y="365" font-size="11" fill="var(--primary)" font-weight="600">• ESR平均&gt;50；颞动脉活检</text>
+        <text x="26" y="382" font-size="11" fill="var(--foreground)">• 泼尼松40~60mg/d极敏感</text>
+        <text x="26" y="399" font-size="11" fill="var(--error)" font-weight="600">• 视力急降→甲泼冲击×3d</text>
+        <text x="26" y="416" font-size="11" fill="var(--chart-2)" font-weight="600">• IL-6单抗已成GCA一线药</text>
+        <text x="26" y="433" font-size="10.8" fill="var(--muted-foreground)">  减量易复发需小剂量维持</text>
+
+        <!-- Col 2: Medium vessel (PAN) -->
+        <rect x="228" y="64" width="206" height="388" rx="10" fill="var(--card)" stroke="var(--chart-1)" stroke-width="1.5" />
+        <rect x="228" y="64" width="206" height="28" rx="10" fill="var(--chart-1)" fill-opacity="0.14" />
+        <text x="331" y="83" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-1)">中血管炎（熟悉）</text>
+
+        <text x="331" y="114" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--foreground)">结节性多动脉炎（PAN）</text>
+        <text x="238" y="138" font-size="11.2" fill="var(--foreground)">• 男&gt;女，高峰40~50岁</text>
+        <text x="238" y="158" font-size="11.2" fill="var(--foreground)">• 中小动脉分叉处坏死/动脉瘤</text>
+        <text x="238" y="178" font-size="11.2" fill="var(--error)" font-weight="600">• 极少累及肺动脉与肾小球！</text>
+        <text x="238" y="198" font-size="11.2" fill="var(--foreground)">• 最常累及神经(36~72%)：</text>
+        <text x="248" y="214" font-size="11" fill="var(--foreground)">多发单神经炎(垂腕/垂足)</text>
+        <text x="238" y="234" font-size="11.2" fill="var(--foreground)">• 肾(30~60%肾梗死/高血压)</text>
+        <text x="238" y="254" font-size="11.2" fill="var(--foreground)">• 消化(40%)/睾丸痛(20%)</text>
+        <text x="238" y="274" font-size="11.2" fill="var(--primary)" font-weight="600">• ANCA阴性；HBV相关&lt;5%</text>
+        <text x="238" y="294" font-size="11.2" fill="var(--primary)" font-weight="600">• 造影“念珠样”改变具特异性</text>
+        <text x="238" y="314" font-size="11.2" fill="var(--foreground)">• 1990 ACR：10项满3项分类</text>
+        <rect x="238" y="334" width="186" height="104" rx="7" fill="var(--chart-1)" fill-opacity="0.08" stroke="var(--border)" />
+        <text x="246" y="354" font-size="11.2" font-weight="700" fill="var(--chart-1)">治疗与预后要点</text>
+        <text x="246" y="373" font-size="10.8" fill="var(--foreground)">• 无心肾神经(&lt;65岁)：单GC</text>
+        <text x="246" y="390" font-size="10.8" fill="var(--foreground)">• 脏器受累：GC+CTX诱导</text>
+        <text x="246" y="407" font-size="10.8" fill="var(--foreground)">• HBV相关：抗病毒6~12月+GC</text>
+        <text x="246" y="425" font-size="10.8" fill="var(--muted-foreground)">• 5年生存：未治&lt;15%→治83%</text>
+
+        <!-- Col 3: Small vessel (AAV) -->
+        <rect x="442" y="64" width="216" height="388" rx="10" fill="var(--card)" stroke="var(--error)" stroke-width="1.6" />
+        <rect x="442" y="64" width="216" height="28" rx="10" fill="var(--error)" fill-opacity="0.14" />
+        <text x="550" y="83" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--error)">小血管炎·AAV（重点掌握）</text>
+
+        <text x="550" y="114" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">GPA · MPA · EGPA</text>
+        <text x="452" y="136" font-size="11" fill="var(--error)" font-weight="600">• 寡/无免疫复合物沉积；C5a参与</text>
+        <text x="452" y="155" font-size="11" fill="var(--primary)" font-weight="600">• cANCA/PR3 → GPA(&gt;90%)</text>
+        <text x="452" y="172" font-size="11" fill="var(--primary)" font-weight="600">• pANCA/MPO → MPA / EGPA</text>
+        <text x="452" y="192" font-size="11" fill="var(--foreground)">• 肉芽肿：GPA淋巴细胞性</text>
+        <text x="462" y="208" font-size="11" fill="var(--foreground)">EGPA嗜酸性粒细胞性</text>
+        <text x="452" y="228" font-size="11" fill="var(--foreground)">• 耳鼻喉：鞍鼻/喉气管软骨/中耳</text>
+        <text x="452" y="246" font-size="11" fill="var(--foreground)">• 肺：咯血/多发结节/空洞/ILD</text>
+        <text x="452" y="264" font-size="11" fill="var(--foreground)">• 肾：血尿/蛋白尿/急进性肾衰</text>
+        <text x="452" y="282" font-size="11" fill="var(--foreground)">• 眼突眼/巩膜；神经多发单神经炎</text>
+        <text x="452" y="300" font-size="11" fill="var(--foreground)">• 皮肤指端溃疡/紫癜；腹痛穿孔</text>
+        <rect x="452" y="316" width="196" height="122" rx="7" fill="var(--error)" fill-opacity="0.06" stroke="var(--error)" stroke-width="1.2" />
+        <text x="460" y="335" font-size="11.2" font-weight="700" fill="var(--error)">诱导 + 维持一线方案</text>
+        <text x="460" y="354" font-size="10.8" fill="var(--foreground)">• 诱导：足量GC + CTX 或 RTX</text>
+        <text x="460" y="371" font-size="10.8" fill="var(--error)" font-weight="600">• RTX为重症GPA/MPA诱导一线</text>
+        <text x="460" y="388" font-size="10.8" fill="var(--foreground)">• 维持：小剂量GC + AZA/MTX/RTX</text>
+        <text x="460" y="405" font-size="10.8" fill="var(--foreground)">• 危重：血浆置换/免疫吸附/IVIG</text>
+        <text x="460" y="423" font-size="10.8" fill="var(--muted-foreground)">• 80% 患者存活时间 &gt; 5年</text>
+
+        <!-- Col 4: Variable vessel (BD) -->
+        <rect x="666" y="64" width="206" height="388" rx="10" fill="var(--card)" stroke="var(--chart-1)" stroke-width="1.5" />
+        <rect x="666" y="64" width="206" height="28" rx="10" fill="var(--chart-1)" fill-opacity="0.14" />
+        <text x="769" y="83" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-1)">变异性血管炎（熟悉）</text>
+
+        <text x="769" y="114" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">贝赫切特病（白塞综合征）</text>
+        <text x="676" y="136" font-size="11" fill="var(--primary)" font-weight="600">• 大中小微血管及动静脉均受累</text>
+        <text x="676" y="155" font-size="11" fill="var(--foreground)">• 口腔溃疡&gt;98%(首发,≥3次/年)</text>
+        <text x="676" y="173" font-size="11" fill="var(--foreground)">• 外阴溃疡80%；结节红斑70%</text>
+        <text x="676" y="191" font-size="11" fill="var(--foreground)">• 眼炎：葡萄膜炎/视网膜炎致盲</text>
+        <text x="676" y="209" font-size="11" fill="var(--foreground)">• 肠白塞50%(右下腹)/神经20%</text>
+        <text x="676" y="227" font-size="11" fill="var(--foreground)">• 血管10%(静脉血栓/动脉瘤)</text>
+        <text x="676" y="245" font-size="11" fill="var(--error)" font-weight="600">• 针刺反应(48h)：唯一较特异</text>
+        <text x="676" y="263" font-size="11" fill="var(--foreground)">• 血清ANA/ANCA/aPL均正常</text>
+        <text x="676" y="281" font-size="11" fill="var(--primary)" font-weight="600">• 2014国际标准：积分≥4分</text>
+        <rect x="676" y="298" width="186" height="140" rx="7" fill="var(--chart-1)" fill-opacity="0.08" stroke="var(--border)" />
+        <text x="684" y="317" font-size="11.2" font-weight="700" fill="var(--chart-1)">分层治疗要点</text>
+        <text x="684" y="336" font-size="10.8" fill="var(--foreground)">• 皮肤黏膜防复发首选：秋水仙碱</text>
+        <text x="684" y="353" font-size="10.8" fill="var(--error)" font-weight="600">• 沙利度胺：致海豹胎孕妇禁服</text>
+        <text x="684" y="370" font-size="10.8" fill="var(--foreground)">• 后葡萄膜炎：GC+AZA/CsA/IFN/</text>
+        <text x="692" y="385" font-size="10.8" fill="var(--foreground)">TNF-α抑制剂</text>
+        <text x="684" y="403" font-size="10.8" fill="var(--foreground)">• 肠/CNS/DVT：GC+免疫抑制/TNF</text>
+        <text x="684" y="421" font-size="10.8" fill="var(--muted-foreground)">• 动脉瘤/肠穿孔出血需手术介入</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="tier-heading master-hd"><span class="badge badge-m">掌握 · 核心考点</span><span>血管炎分类与诊治总则 + 重点 3 病（TA / GCA / AAV）</span></div>
+
+  <!-- Card 4.1 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">4.1 第一节 概论：2012 Chapel Hill 分类（表 8-6-1）、病理、诊断与两阶段治疗</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <p><strong>定义</strong>：血管炎是以<span class="k">血管壁炎症</span>为病理特征的自身免疫病；系统性血管炎累及多脏器，可致不可逆损害，不治死亡率高。目前采用 <strong>2012 年 Chapel Hill 会议分类标准</strong>（按主要受累血管大小命名分类）：</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>2012 Chapel Hill 大类（表 8-6-1）</th><th>所含具体疾病（完整忠实第 10 版原文）</th></tr></thead>
+        <tbody>
+          <tr class="row-highlight"><td><strong>累及大血管的系统性血管炎</strong></td><td><span class="k">大动脉炎、巨细胞动脉炎</span></td></tr>
+          <tr><td><strong>累及中等大小血管的系统性血管炎</strong></td><td><span class="k">结节性多动脉炎、川崎病</span></td></tr>
+          <tr class="row-highlight"><td><strong>累及小血管的系统性血管炎</strong></td><td>① <strong>ANCA 相关血管炎（AAV）</strong>：<span class="k">显微镜下多血管炎（MPA）、肉芽肿性多血管炎（GPA）、嗜酸性肉芽肿性多血管炎（EGPA）</span>；<br />② <strong>免疫复合物性小血管炎</strong>：抗肾小球基底膜病、冷球蛋白性血管炎、IgA 性血管炎、低补体血症性荨麻疹性血管炎</td></tr>
+          <tr><td><strong>累及血管大小可变的系统性血管炎</strong></td><td><span class="k">贝赫切特病</span>、科根综合征</td></tr>
+          <tr><td>单器官血管炎</td><td>皮肤白细胞破碎性血管炎、皮肤动脉炎、原发性中枢神经系统血管炎、孤立性主动脉炎</td></tr>
+          <tr><td>与系统性疾病相关的血管炎</td><td>红斑狼疮相关血管炎、类风湿关节炎相关血管炎、结节病相关血管炎</td></tr>
+          <tr><td>与可能病因相关的血管炎</td><td>丙肝病毒相关冷球蛋白血症性血管炎、乙肝病毒相关血管炎、梅毒相关主动脉炎、血清病相关免疫复合物性血管炎、药物相关性免疫复合物性血管炎、药物相关 ANCA 相关血管炎、肿瘤相关血管炎</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li><strong>基本病理改变</strong>：① 血管壁炎症与坏死：多种炎细胞浸润及<span class="k">血管壁纤维素样坏死（特征性病理改变）</span>；部分形成巨细胞及肉芽肿（GPA 淋巴细胞性肉芽肿、EGPA 嗜酸性粒细胞性肉芽肿）；② 管壁结构破坏：纤维化/增厚狭窄/血栓，弹性纤维与平滑肌受损致动脉瘤与扩张；同一血管病变常呈<span class="k">节段性</span>。</li>
+      <li><strong>诊断要点与 7 项特殊检查</strong>：需鉴别模拟病（恶性肿瘤、感染性心内膜炎、肌纤维发育不良、动脉粥样硬化、非血管炎性栓塞[APS/DIC/胆固醇/肿瘤栓塞]）。常规可见 WBC/PLT↑、慢性病贫血、ESR/CRP↑、肾损（血尿/蛋白尿/红细胞管型/SCr↑）。
+        <ul>
+          <li><strong>1. ANCA</strong>：分间接免疫荧光（IIF）与 ELISA 两法——依同篇第一章表 8-1-4 规范表述：<strong>胞质型 cANCA</strong>（ELISA 主要靶抗原 <span class="k">PR3</span>）与 <span class="k">GPA</span> 相关；<strong>核周型 pANCA</strong>（主要靶抗原 <span class="k">MPO</span>）与 <span class="k">MPA、EGPA</span> 相关。</li>
+          <li><strong>2. 抗内皮细胞抗体（AECA）</strong>：见于部分 TA、川崎病、BD，但灵敏度与特异度不高。</li>
+          <li><strong>3. 病理活检</strong>：确诊血管炎的<span class="k">“金标准”</span>（纤维素样坏死为特征）；因病变呈节段性，<span class="k">活检阴性不能排除血管炎</span>。</li>
+          <li><strong>4. 血管造影</strong>：诊断大、中血管炎重要依据，了解范围最确切可靠。</li>
+          <li><strong>5. 血管彩超</strong>：无创，适于较大较浅表血管随访，准确性不如造影。</li>
+          <li><strong>6. CTA</strong>：观察管壁、管腔与范围，<span class="k">可取代血管造影</span>作为大、中血管炎依据。</li>
+          <li><strong>7. MRA</strong>：除管壁/管腔外，还可反映管壁<span class="k">是否存在活动炎症</span>，对大血管炎诊断及病情判断很有价值。</li>
+        </ul>
+      </li>
+      <li><strong>两阶段治疗原则</strong>：早期诊断、早期治疗；分<span class="k">诱导缓解</span>（控急性炎症、最大限度恢复脏器功能）与<span class="k">维持缓解</span>（维持稳定、防复发、减副作用）。<span class="k">糖皮质激素</span>为基础及诱导缓解一线药；重要脏器（肾/肺/神经/心）受累须大剂量激素并及早加用免疫抑制剂（最常用 <span class="k">CTX</span>，余 AZA、MTX、MMF、CsA、FK506）；<span class="k">利妥昔单抗（RTX）</span>已获批用于 AAV 诱导和维持缓解；急进性肾/肺损害及危重者可行血浆置换、免疫吸附、大剂量 IVIG。</li>
+    </ul>
+    <div class="callout warn"><strong>第 10 版原文勘误溯源</strong>：第六章第 74 行将 IIF 胞质荧光与核周荧光误印为“胞质呈荧光阳性称为 P-ANCA，核周围呈荧光阳性称为 C-ANCA”（同句后半句关联疾病仍写 C-ANCA↔GPA、P-ANCA↔MPA/EGPA）。本指南按同篇第一章表 8-1-4 正确原文（cANCA=胞质型/PR3，pANCA=核周型/MPO）呈现并在此透明留痕。</div>
+  </div>
+
+  <!-- Card 4.2 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">4.2 第二节 大动脉炎（TA，大纲重点理解）</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <ul>
+      <li><strong>定义与流病</strong>：累及<span class="k">主动脉及其一级分支</span>的慢性、肉芽肿性全层动脉炎（曾称无脉症、高安病），致狭窄/闭塞（少数扩张/动脉瘤）。好发亚洲/中东，男∶女 <span class="k">1∶(8～9)</span>，发病 5～45 岁，<span class="k">约 90% 在 30 岁前发病</span>；病因涉 HLA-DRB52*01、结核分枝杆菌/衣原体/疱疹病毒、性激素。</li>
+      <li><strong>病理三期</strong>：急性期（始于中外膜交界滋养血管→累及全层、巨细胞肉芽肿、中膜弹性纤维断裂）→ 慢性期（纤维化、瘢痕、血管增生伴散在炎症）→ 瘢痕期（全层纤维化增厚狭窄闭塞，或弹性纤维断裂致动脉瘤）。</li>
+      <li><strong>临床二期与 Numano 5 型</strong>：① <strong>无脉前期/全身期</strong>：发热、盗汗、关节痛、体重下降、血管痛压痛、颈/腹/背部血管杂音（漏诊率极高）；② <strong>无脉期</strong>：缺血表现，按 Numano 分 5 型：
+        <div class="tbl-wrap">
+          <table class="med-tbl">
+            <thead><tr><th>Numano 分型</th><th>受累血管范围</th><th>典型临床表现与体征</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Ⅰ 型</strong></td><td>主动脉弓发出的三支</td><td>脑缺血（头痛头晕视物模糊/咀嚼无力/卒中）；上肢缺血（无力发凉麻木）；颈/桡/肱动脉搏动减弱或消失，颈部/锁骨下窝血管杂音。</td></tr>
+              <tr><td><strong>Ⅱ 型</strong></td><td>升、降主动脉 + 主动脉弓三支</td><td>同 Ⅰ 型 + 部分出现背痛，背部听诊可闻血管杂音。</td></tr>
+              <tr><td><strong>Ⅲ 型</strong></td><td>降主动脉 + 双侧肾动脉</td><td><span class="k">顽固性高血压</span>；少数腹痛、间歇性跛行；背、腹部血管杂音；<span class="k">下肢血压低于上肢血压</span>。</td></tr>
+              <tr><td><strong>Ⅳ 型</strong></td><td>仅腹主动脉 + 双肾动脉</td><td>临床表现与 Ⅲ 型相似，但<span class="k">背部不能闻及杂音</span>。</td></tr>
+              <tr><td><strong>Ⅴ 型</strong></td><td>主动脉全程及其一级分支</td><td>可出现上述全部表现。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </li>
+      <li><strong>辅助检查</strong>：活动期 WBC/PLT/ESR/CRP↑，少数 AECA/抗主动脉抗体(+)；彩超见三层界限不清增厚狭窄呈<span class="k">“通心粉”征</span>；<span class="k">动脉造影或 CTA 是确诊依据</span>；MRA 看管壁炎性水肿用于诊断及判断活动；PET/PET-MRA 判断活动性及程度。</li>
+      <li><strong>2022 年 ACR/EULAR 分类标准（表 8-6-2）</strong>：须先满足 3 项纳入标准（① 大血管血管炎；② 诊断年龄 <span class="k">≤60 岁</span>；③ 影像学证据），权重积分 <span class="k">≥5 分</span>可分类为 TA（除外先心主动脉缩窄、肌纤维发育不良、动脉粥样硬化、血栓闭塞性脉管炎、BD、PAN、胸廓出口综合征）：
+        <div class="tbl-wrap">
+          <table class="med-tbl">
+            <thead><tr><th>评分域（表 8-6-2）</th><th>临床与影像条目</th><th>分值</th></tr></thead>
+            <tbody>
+              <tr><td rowspan="3">临床表现</td><td>女性</td><td>+1</td></tr>
+              <tr><td>血管炎引起的心绞痛或缺血性心脏疼痛</td><td>+2</td></tr>
+              <tr><td>四肢间歇性跛行</td><td>+2</td></tr>
+              <tr><td rowspan="4">血管检查结果</td><td>动脉杂音</td><td>+2</td></tr>
+              <tr><td>上肢动脉搏动减弱</td><td>+2</td></tr>
+              <tr><td>颈动脉搏动减弱或压痛</td><td>+2</td></tr>
+              <tr><td><span class="k">双上肢收缩压差 ≥20mmHg</span></td><td>+1</td></tr>
+              <tr><td rowspan="3">血管造影和超声</td><td>病变动脉数（三选一）：1 支（+1） / 2 支（+2） / <span class="k">≥3 支（+3）</span></td><td>+1～+3</td></tr>
+              <tr><td>血管炎累及双侧对称的动脉分支</td><td>+1</td></tr>
+              <tr><td>腹主动脉受累，合并肾动脉或肠系膜动脉受累</td><td><span class="k">+3</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </li>
+      <li><strong>治疗与预后</strong>：活动期泼尼松 <span class="k">1 mg/(kg·d)</span>（4～6 周渐减停）；快速进展予甲泼尼龙 500～1000mg 冲击；单激素不佳联用免疫抑制剂（CTX/AZA/MTX/MMF）；难治/复发/减量困难用 <span class="k">TNF-α 拮抗剂或 IL-6 受体单抗</span>；严重缺血手术重建/支架/搭桥，严重肾动脉狭窄顽固高血压可考虑肾切除。5 年生存率 <span class="k">93.8%</span>，10 年 <span class="k">90.9%</span>（主死因心衰、心脑血管意外、肾衰、手术并发症）。</li>
+    </ul>
+  </div>
+
+  <!-- Card 4.3 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">4.3 第三节 巨细胞动脉炎（GCA，大纲重点理解）</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <ul>
+      <li><strong>定义与流病</strong>：又称<span class="k">颞动脉炎</span>，老年人慢性肉芽肿性全层动脉炎，常累及主动脉弓及其一级分支尤其颞动脉。<span class="k">50 岁以上发病（高峰 74 岁）</span>，女∶男 2～4∶1，北欧最高亚洲最低；病因涉 HLA-DRB1*01/*04、高龄退变、吸烟、病毒；病理与 TA 几乎相同（全层炎细胞浸润、内膜增生、内弹性膜断裂、巨细胞肉芽肿）。</li>
+      <li><strong>临床表现</strong>：隐袭起病伴全身症状；<span class="k">70%</span> 出现一侧或双侧<span class="k">颞部头痛、头皮触痛、颞下颌关节间歇性运动障碍</span>，颞浅动脉增粗变硬呈结节状伴压痛；<span class="k">30%</span> 头颈动脉缺血（<span class="k">视力下降、复视、眼肌麻痹甚至失明</span>，听力减退、眩晕）；15% 主动脉弓分支缺血（上肢跛行、脉弱/无脉、双上肢压不等）；<span class="k">40%～60% 伴风湿性多肌痛（PMR）</span>（颈、肩胛带、骨盆带酸痛晨僵，肌压痛及肌力减弱不显著）。</li>
+      <li><strong>实验室与诊断</strong>：最突出异常为 <span class="k">ESR 明显增快（平均 &gt;50 mm/h）</span>、CRP 升高，常伴贫血及 WBC/PLT↑。50 岁以上新发颞部头痛 + 颞浅动脉搏动减弱/增粗变硬 + <span class="k">颞动脉活检见肉芽肿性动脉炎可确诊</span>（因节段性易假阴性，颞动脉造影/CTA/MR/PET 助诊）。</li>
+      <li><strong>治疗与预后</strong>：对糖皮质激素反应十分明显——泼尼松（龙）<span class="k">40～60 mg/d</span>（1 周内症状消失，减量易复发须小剂量长期维持）；复发加 MTX、AZA、CTX；<span class="k">出现视力改变尤其急剧下降者须甲泼尼龙 500～1000 mg/d 冲击 3 天</span>；<span class="k">IL-6 单抗</span>疗效好且减激素，已成为 GCA 的<span class="k">一线治疗药物</span>。大多预后良好。</li>
+    </ul>
+  </div>
+
+  <!-- Card 4.4 -->
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd">
+      <h3 class="card-title">4.4 第五节 ANCA 相关血管炎（AAV，大纲重点理解）</h3>
+      <span class="badge badge-m">掌握</span>
+    </div>
+    <ul>
+      <li><strong>定义与成员</strong>：以血清 ANCA 阳性为最突出特点的系统性小血管炎（小动脉/微小动脉/微小静脉/毛细血管，偶累中动脉），包括 <span class="k">MPA、GPA、EGPA</span>。受累脏器<span class="k">仅有极少量或无免疫复合物沉积</span>；病理为小血管全层炎症、坏死（纤维素样坏死+中性粒/淋巴/嗜酸性细胞浸润），伴或不伴肉芽肿，是确诊<span class="k">“金标准”</span>。</li>
+      <li><strong>9 大系统临床表现</strong>：
+        <div class="tbl-wrap">
+          <table class="med-tbl">
+            <thead><tr><th>受累部位</th><th>核心表现（课本 P841–842）</th></tr></thead>
+            <tbody>
+              <tr><td>全身 / 皮肤黏膜</td><td>发热、关节痛/炎、肌痛、乏力、体重下降；口腔溃疡、紫癜、网状青斑、皮肤梗死、溃疡坏疽（多发指端溃疡常见）。</td></tr>
+              <tr><td>眼部 / 耳鼻咽喉</td><td>结膜/角膜/巩膜/虹膜/眼睑炎、视网膜血管炎、<span class="k">突眼</span>；喉气管软骨受累→声嘶/喘鸣/吸气呼吸困难；耳软骨红肿热痛、中耳炎听力丧失；鼻软骨→<span class="k">鞍鼻</span>；鼻窦→脓血涕、脓血性鼻痂、鼻塞。</td></tr>
+              <tr><td>呼吸 / 肾脏</td><td>咳嗽、喘鸣、<span class="k">咯血</span>，肺影像见浸润影、<span class="k">多发结节、空洞</span>和间质病变；肾脏见血尿、蛋白尿、高血压、SCr↑及<span class="k">急进性肾衰竭</span>。</td></tr>
+              <tr><td>神经 / 心脏 / 腹部</td><td>以周围神经多见（<span class="k">多发性单神经炎</span>最常见），中枢见抽搐/卒中/脑脊髓炎；心脏心包积液/心肌病/瓣膜反流/冠脉受累；腹痛、血性腹泻、肠穿孔、肠梗阻、腹膜炎。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </li>
+      <li><strong>检查与诊断</strong>：ANCA 阳性最突出（余见贫血、WBC/PLT↑、ESR/CRP↑、血尿/蛋白尿/红细胞管型/SCr↑）。无统一分类标准，2022 年 ACR/EULAR 更新加权积分（注：第 10 版原文未列积分细则表；应用前须除外感染、恶性肿瘤及其他系统性风湿病模拟疾病，且分类标准仅作参考非临床诊断标准）。</li>
+      <li><strong>治疗与预后</strong>：糖皮质激素一线。<strong>诱导缓解</strong>：足量糖皮质激素 + 免疫抑制剂（最常用 <span class="k">CTX</span>）；<strong>维持缓解</strong>：小剂量糖皮质激素 + <span class="k">AZA 或 MTX</span>。<span class="k">利妥昔单抗（RTX）</span>既可诱导亦可维持，已成为<span class="k">重症 GPA 和 MPA 诱导缓解一线药物</span>。早诊合理治疗使 <span class="k">80% 患者存活 &gt;5 年</span>。</li>
+    </ul>
+  </div>
+
+  <div class="tier-heading familiar-hd"><span class="badge badge-f">熟悉 · 次重点支撑</span><span>总论病因机制 + 结节性多动脉炎（PAN）+ 贝赫切特病（BD）</span></div>
+
+  <!-- Card 4.5 -->
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd">
+      <h3 class="card-title">4.5 系统性血管炎总论病因与发病机制细节</h3>
+      <span class="badge badge-f">熟悉</span>
+    </div>
+    <ul>
+      <li><strong>遗传与感染/药物病因</strong>：HLA-DRB1*01/*04 → GCA；HLA-DRB52*01 → TA；HLA-DP/HLA-DQ → AAV。感染：病毒（概论述 10% PAN 伴 HBV，第四节进一步指出随着乙肝疫苗普及已降至 &lt;5%；80% 混合型冷球蛋白血症伴 HCV）、结核分枝杆菌（TA、白塞病）；药物诱导 ANCA 血管炎：<span class="k">丙硫氧嘧啶、肼屈嗪、可卡因</span>。</li>
+      <li><strong>四大机制</strong>：① 外来感染原直接损伤血管；② 巨噬细胞活化释放 TNF-α、IL-6、IL-1；③ 自身抗体 ANCA（主要靶抗原 PR3、MPO，另含弹性蛋白酶、乳铁蛋白）；④ 补体旁路途径激活释放 <span class="k">C5a</span> 造成血管和脏器损伤。</li>
+    </ul>
+  </div>
+
+  <!-- Card 4.6 -->
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd">
+      <h3 class="card-title">4.6 第四节 结节性多动脉炎（PAN）</h3>
+      <span class="badge badge-f">熟悉</span>
+    </div>
+    <ul>
+      <li><strong>定义与病理</strong>：累及<span class="k">中、小动脉</span>的局灶性全层坏死性血管炎，好发于<span class="k">血管分叉处</span>；男&gt;女，高峰 40～50 岁；HBV 相关 PAN 现仅占 <span class="k">&lt;5%</span>。<span class="k">很少累及肺动脉</span>，急性期纤维素样坏死、管壁破坏形成动脉瘤及血栓。</li>
+      <li><strong>临床表现（系统性[特发/HBV相关] vs 皮肤型）</strong>：
+        <ul>
+          <li><strong>系统性 PAN</strong>：全身症状 90%；① <span class="k">神经系统最常受累</span>（36%～72%）：多发性单神经炎（垂腕、垂足、麻木）；② 肾（30%～60%）：入球血管受累致肾多发梗死、高血压、SCr↑、血尿蛋白尿，但<span class="k">肾小球本身几乎不受累</span>；③ 消化（近 40%）：腹痛/出血/肠梗死穿孔；④ 生殖：20% 睾丸痛/硬结（尸检 80%）；⑤ 眼、肢体坏疽、心衰/心梗。</li>
+          <li><strong>皮肤型 PAN（罕见）</strong>：&gt;40 岁女性常见，下肢皮肤溃疡、网状青斑、皮下结节、白色萎缩、紫癜，易复发。</li>
+        </ul>
+      </li>
+      <li><strong>检查与 1990 年 ACR 分类标准（10 项满足 ≥3 项分类为 PAN）</strong>：<span class="k">ANCA 阴性</span>；血管造影见内脏/下肢中小动脉节段性扩张和狭窄呈<span class="k">“念珠样”改变（具诊断特异性）</span>；活检确诊。10 项指标：① 体重下降；② 网状青斑；③ 睾丸痛或触痛；④ 弥漫肌痛/无力/小腿压痛；⑤ 单/多发单/多神经炎；⑥ 舒张压 ≥90mmHg；⑦ BUN ≥14.3mmol/L 或 SCr ≥133μmol/L；⑧ HBsAg 或 HBsAb 阳性；⑨ 动脉造影异常（内脏动脉闭塞或动脉瘤）；⑩ 中小动脉活检中性粒/单核细胞浸润（须除外其他 CTD 血管炎及 AAV）。</li>
+      <li><strong>治疗与预后</strong>：&lt;65 岁且无神经/肾/心损害的特发系统性 PAN 单用 GC；有上述脏器损害予泼尼松 1mg/(kg·d) + 免疫抑制剂（<span class="k">首选 CTX</span>），缓解后 AZA/MTX 维持。HBV 相关 PAN 须<span class="k">抗病毒（6～12 个月）联合 GC</span>（控制不佳加免疫抑制）。未治 5 年生存率 &lt;15%，积极合理治疗可达 <span class="k">83%</span>。</li>
+    </ul>
+  </div>
+
+  <!-- Card 4.7 -->
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd">
+      <h3 class="card-title">4.7 第六节 贝赫切特病（BD / 白塞综合征）</h3>
+      <span class="badge badge-f">熟悉</span>
+    </div>
+    <ul>
+      <li><strong>定义与独特病理</strong>：又称白塞病，现统一称白塞综合征；以口腔溃疡、外阴溃疡、眼炎为特征，依内脏受损分血管型、神经型、胃肠型；中国北方发病率 110/10 万，男略多于女。独特之处：<span class="k">大、中、小及微血管及动、静脉均可受累</span>（炎症、增厚狭窄、坏死、动脉瘤、继发血栓）。</li>
+      <li><strong>基本症状（4 项）与系统性症状（6 项）</strong>：
+        <ul>
+          <li><strong>口腔溃疡</strong>：<span class="k">&gt;98%</span> 患者、首发且最基本必需症状；每年发作 <span class="k">≥3 次</span>，痛性、2～3mm、7～14 天自愈多不留瘢痕；</li>
+          <li><strong>外阴溃疡</strong>：约 80%，性状似口腔溃疡；</li>
+          <li><strong>皮肤病变</strong>：<span class="k">结节性红斑最常见（70%</span>，膝下对称浸润痛性结节，很少破溃）、毛囊炎（30%，面颈多见）、针刺反应、下肢浅表血栓性静脉炎；</li>
+          <li><strong>眼炎</strong>：葡萄膜炎及视网膜血管炎（反复致盲；前葡萄膜炎可伴前房积脓）；</li>
+          <li><strong>内脏系统</strong>：① 消化道（肠白塞，多发溃疡发生率高达 50%，<span class="k">右下腹痛</span>最常见，可穿孔/出血/瘘管致死）；② 神经白塞（20%，急骤起病，含中枢实质损害及中枢静脉血栓）；③ 血管白塞（10%，动脉狭窄与动脉瘤交替；大静脉上/下腔静脉梗阻，四肢/脑静脉血栓；心脏少见）；④ 关节炎（30%～50%，膝最多见、一过性自限）；⑤ 肺小动脉瘤（大咯血致命）及肺栓塞；⑥ 附睾炎。</li>
+        </ul>
+      </li>
+      <li><strong>检查、针刺反应与 2014 国际诊断标准（表 8-6-3）</strong>：无特异血清抗体（ANA 谱、ANCA、aPL、补体均正常）。<span class="k">针刺反应</span>是目前唯一特异性较强的试验：无菌针刺入前臂屈面皮内退出，<span class="k">48 小时后</span>局部出现红丘疹或伴白疱疹为阳性。2014 国际标准总分 <span class="k">≥4 分（原文“4 分以上”）</span>诊断：
+        <div class="tbl-wrap">
+          <table class="med-tbl">
+            <thead><tr><th>2014 国际白塞病诊断标准条目（表 8-6-3）</th><th>权重分</th><th>原文表注要点</th></tr></thead>
+            <tbody>
+              <tr><td>眼病 / 生殖器阿弗他溃疡 / 口腔阿弗他溃疡</td><td>各 <strong>2 分</strong></td><td>口腔：每年至少 3 次肯定溃疡；眼病：前/后葡萄膜炎、视网膜血管炎、玻璃体细胞</td></tr>
+              <tr><td>皮肤病变 / 神经系统表现 / 血管表现 / 针刺试验阳性*</td><td>各 <strong>1 分</strong></td><td>*针刺试验为可选项；皮肤含结节性红斑、假性毛囊炎、丘疹性脓疱疹、非青春期非激素痤疮样结节</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </li>
+      <li><strong>治疗与预后</strong>：
+        <ul>
+          <li><strong>对症治疗</strong>：局部激素软膏/眼药；<span class="k">秋水仙碱</span>为防止皮肤黏膜病变（尤其结节性红斑和生殖器溃疡）复发的<span class="k">首选药</span>；<span class="k">沙利度胺</span>（25～100mg/d）治口腔溃疡效佳，可致<span class="k">“海豹胎”畸形、孕妇禁服</span>。</li>
+          <li><strong>脏器与眼炎治疗</strong>：后葡萄膜炎→GC + AZA / CsA / IFN-α / TNF-αi；急性 DVT→GC + AZA / CTX / CsA；胃肠道→GC + AZA / TNF-αi；中枢神经→大剂量 GC + AZA / TNF-αi。</li>
+          <li><strong>手术与预后</strong>：动脉瘤介入/切除，肠穿孔/大出血/梗阻急诊手术。大多预后良好，眼病可致盲，胃肠严重并发症与感染是高死亡主因。</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== AUDIT APPENDIX ==================== -->
+<section class="module-section" id="mod-audit" data-mod-title="审、大纲边界与差异审计表">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">大纲-教材边界与内部差异审计表</h1>
+      <span class="mod-source">透明度与溯源记录 · 已确认方案 A + 严格第 10 版原文边界</span>
+    </div>
+    <p style="margin:10px 0 0;font-size:13px;color:var(--muted-foreground)">
+      本学习页严格执行用户审定通过的<strong>方案 A</strong>与两条权威红线：① 以《内科学-理论课程教学大纲.docx》“内科学-风湿病”表（4 个模块 / 6 学时）为纲，将核心诊治主干与血管炎重点理解 3 病（TA/GCA/AAV）划为<strong>掌握（红标）</strong>，将同章其余大纲已列具体教学内容（含总论 10 大分类[突出 1、2 类]、病因机制、预后及 PAN/贝赫切特病）划为<strong>熟悉（蓝标）</strong>，彻底剔除未列入大纲的其余 12 章；② 知识内容 100% 严格依据人卫第 10 版《内科学》<code>08-第八篇 风湿免疫病</code> 原文（全篇偏移恒定：<code>PDF 物理页 = 课本印刷页 + 31</code>），绝不引入外部记忆或跨篇补写。
+    </p>
+  </div>
+
+  <!-- Audit Card 1 -->
+  <div class="card">
+    <div class="card-hd">
+      <h3 class="card-title">一、风湿病教学大纲内部口径特征与跨栏差异核验</h3>
+      <span class="badge badge-note">决策记录</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>核验项</th><th>大纲 / 教学日历原文实况</th><th>本学习页执行策略（已确认方案 A）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>无传统“掌握/熟悉/了解”三栏</strong></td><td>【教学目标和要求】改用“培养…能力 / 提高…理解 / 增进…了解”表述，仅总论具体内容写“熟悉第一类和第二类中的疾病”，血管炎目标写“重点理解大动脉炎、巨细胞动脉炎和 ANCA 相关性血管炎”。</td><td>严格执行方案 A：各章【教学/考核难点重点】+ 核心诊治主干 + 血管炎重点理解 3 病→<strong>掌握（红标）</strong>；其余同章大纲【具体教学内容】支撑项（含 PAN 与 BD）→<strong>熟悉（蓝标）</strong>。</td></tr>
+          <tr><td><strong>总论【支撑关系表】漏列第 4 条</strong></td><td>总论【教学目标和要求】含 4 条（第 4 条为“扩展对风湿病治疗药物作用机制的理解”），【支撑关系表】仅填前 3 列而漏写第 4 条。</td><td>以【教学目标和要求】及【具体教学内容】为准，完整纳入五大类抗风湿药物及表 8-1-5 全部 13 种 DMARDs 机制（归入掌握层）。</td></tr>
+          <tr><td><strong>学时与章号映射</strong></td><td>大纲表头 6 学时（总论 1 + RA 1 + SLE 2 + 系统性血管炎 2），与《附件 1 教学日历》3 次×2 学时一致；大纲第三章“系统性血管炎”对应第 10 版第六章。</td><td>设 <code>mod-1</code>..<code>mod-4</code> 四个模块，模块头与侧边栏均准确标注第 10 版章号（第 1、2、3、6 章）及双页码（偏移恒定 +31）。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Audit Card 2 -->
+  <div class="card">
+    <div class="card-hd">
+      <h3 class="card-title">二、第 10 版《第八篇 风湿免疫病》版次更新、缺节边界与原文勘误溯源</h3>
+      <span class="badge badge-note">溯源说明</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>模块 / 条目</th><th>第 10 版第八篇原文实况</th><th>本学习页处理方式</th></tr></thead>
+        <tbody>
+          <tr><td><strong>RA：1987 年标准 &amp; 鉴别“痛风”</strong></td><td>第二章仅收录 2010 年 ACR/EULAR 分类标准（表 8-2-1），已删 1987 标准；鉴别诊断仅专述 OA、AS、银屑病关节炎、SLE 4 病（痛风仅在滑液检查简提及）。</td><td>100% 按 2010 标准与原文 4 病鉴别编写，不凭记忆补写 1987 标准或单设痛风鉴别段，并在模块头显式说明。</td></tr>
+          <tr><td><strong>SLE：1997 ACR / 2019 标准、狼疮带试验、满堂亮/LN 分型、干细胞移植、妊娠生育</strong></td><td>第三章仅给 2012 SLICC 表（正文提及 2019 EULAR/ACR 无细则表）；未提 1997 标准、“狼疮带试验”、“满堂亮”、“干细胞移植”及“妊娠生育”；LN 病理分型指向第五篇第三章，APS 细则指向第十二章。</td><td>严格遵循不跨篇补写原则：完整呈现 2012 SLICC、SLEDAI 与表 8-3-3；保留第三章对 LN 与 APS 的原有界定，其余缺节显式声明“未设专节/未提及”。</td></tr>
+          <tr><td><strong>总论：风湿病主要病理特点</strong></td><td>第一章未设“常见风湿病病理特点总论表”，仅在实验室检查第 4 条简述肾/滑膜/唇腺/肌肉 4 类活检意义。</td><td>模块 1 如实呈现 4 类活检意义并声明未设总论表；各病具体病理归于模块 2–4 原文对应处。</td></tr>
+          <tr><td><strong>系统性血管炎：2022 AAV 分类标准 &amp; HBV-PAN 比例</strong></td><td>第六章第五节仅文字述及 2022 ACR/EULAR 更新加权积分（无细则表）；第一节概论写 10% PAN 伴 HBV，第四节写随乙肝疫苗普及已降至 &lt;5%。</td><td>不凭记忆补写 2022 AAV 积分表；HBV-PAN 比例并注第一节与第四节两处原文表述。</td></tr>
+          <tr><td><strong>第六章 L74 ANCA 荧光类型印刷勘误</strong></td><td>第六章 L74 原文误印为“胞质呈荧光阳性称为 P-ANCA，核周围呈荧光阳性称为 C-ANCA”（同句下半句仍正确关联 C-ANCA↔GPA、P-ANCA↔MPA/EGPA）；同篇第一章表 8-1-4 明确正确记载 cANCA=胞质型/PR3，pANCA=核周型/MPO。</td><td>正文统一按第一章表 8-1-4 正确表述纠偏，并在模块 4 与本表透明留痕勘误来源。</td></tr>
+          <tr><td><strong>MinerU OCR 个别字符校对</strong></td><td>第一、二章原文解析偶见将英文缩写“RA”误识别为“BA”、将“β₂GPⅠ”漏下标识别为“βGPⅠ”。</td><td>结合上下文及同章表 8-1-4 核对恢复规范写法“RA”与“β₂GPⅠ”。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Audit Card 3 -->
+  <div class="card">
+    <div class="card-hd">
+      <h3 class="card-title">三、未列入风湿病教学大纲的第八篇其余 12 章彻底剔除清单</h3>
+      <span class="badge badge-note">零泄露边界</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>第 10 版章号与章名</th><th>双页码（课本 / PDF）</th><th>处理状态与最小边界说明</th></tr></thead>
+        <tbody>
+          <tr><td>第四章 干燥综合征</td><td>课本 P827–830 / PDF P858–861</td><td><strong>整章剔除</strong>（仅在总论分类/抗体表及 RA/SLE 继发合并中保留原文最小提及）</td></tr>
+          <tr><td>第五章 脊柱关节炎</td><td>课本 P831–834 / PDF P862–865</td><td><strong>整章剔除</strong>（仅在总论第 2 类/HLA-B27 及 RA 鉴别中保留原文最小提及）</td></tr>
+          <tr><td>第七章 特发性炎症性肌病</td><td>课本 P845–847 / PDF P876–878</td><td><strong>整章剔除</strong>（仅在总论表 8-1-1/3/4 中保留原文最小提及）</td></tr>
+          <tr><td>第八章 系统性硬化症</td><td>课本 P848–850 / PDF P879–881</td><td><strong>整章剔除</strong>（仅在总论表 8-1-1/3/4 中保留原文最小提及）</td></tr>
+          <tr><td>第九章 痛风</td><td>课本 P851–854 / PDF P882–885</td><td><strong>整章剔除</strong>（仅在总论第 4 类/关节液/双能 CT 及 RA 滑液中保留原文最小提及）</td></tr>
+          <tr><td>第十章 骨关节炎</td><td>课本 P855–857 / PDF P886–888</td><td><strong>整章剔除</strong>（仅在总论表 8-1-1/2 及 RA 鉴别诊断中保留原文最小提及）</td></tr>
+          <tr><td>第十一章 IgG4 相关性疾病</td><td>课本 P858–861 / PDF P889–892</td><td><strong>整章剔除</strong>（仅总论导语提及新病种名）</td></tr>
+          <tr><td>第十二章 抗磷脂综合征</td><td>课本 P862–864 / PDF P893–895</td><td><strong>整章剔除</strong>（仅总论 aPLs 及 SLE 合并 APS 原文简述中保留最小界定）</td></tr>
+          <tr><td>第十三章 成人斯蒂尔病</td><td>课本 P865–866 / PDF P896–897</td><td><strong>整章剔除</strong></td></tr>
+          <tr><td>第十四章 复发性多软骨炎</td><td>课本 P867–868 / PDF P898–899</td><td><strong>整章剔除</strong></td></tr>
+          <tr><td>第十五章 风湿热</td><td>课本 P869–870 / PDF P900–901</td><td><strong>整章剔除</strong>（仅总论第 5 类列表名）</td></tr>
+          <tr><td>第十六章 纤维肌痛综合征</td><td>课本 P871–872 / PDF P902–903</td><td><strong>整章剔除</strong>（仅总论第 9 类列表名）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+    </main>
+  </div>
+</div>
+
+<!-- SVG Lightbox Modal -->
+<div class="modal-backdrop" id="svgModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-panel">
+    <div class="modal-top">
+      <span id="modalTitle">SVG 图解放大预览</span>
+      <button class="tool-btn" id="modalClose" type="button">关闭 (ESC)</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const navItems = Array.from(document.querySelectorAll(".nav-item"));
+  const sections = Array.from(document.querySelectorAll(".module-section"));
+  const sidebar = document.getElementById("sidebar");
+  const menuBtn = document.getElementById("menuBtn");
+  const sidebarCloseBtn = document.getElementById("sidebarCloseBtn");
+  const filterBtns = Array.from(document.querySelectorAll(".filter-btn"));
+  const clozeBtn = document.getElementById("clozeBtn");
+  const clozeState = document.getElementById("clozeState");
+  const viewAllBtn = document.getElementById("viewAllBtn");
+  const viewAllState = document.getElementById("viewAllState");
+  const svgModal = document.getElementById("svgModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalBody = document.getElementById("modalBody");
+  const modalClose = document.getElementById("modalClose");
+
+  function isMobile() {
+    return window.matchMedia("(max-width: 860px)").matches;
+  }
+
+  function updateSidebarBtnLabel() {
+    const collapsed = isMobile()
+      ? !sidebar.classList.contains("open")
+      : document.body.classList.contains("sidebar-collapsed");
+    menuBtn.textContent = collapsed ? "☰ 展开侧边栏" : "☰ 收起侧边栏";
+  }
+
+  function toggleSidebar() {
+    if (isMobile()) {
+      sidebar.classList.toggle("open");
+    } else {
+      document.body.classList.toggle("sidebar-collapsed");
+    }
+    updateSidebarBtnLabel();
+  }
+
+  function closeSidebar() {
+    if (isMobile()) {
+      sidebar.classList.remove("open");
+    } else {
+      document.body.classList.add("sidebar-collapsed");
+    }
+    updateSidebarBtnLabel();
+  }
+
+  menuBtn.addEventListener("click", toggleSidebar);
+  if (sidebarCloseBtn) sidebarCloseBtn.addEventListener("click", closeSidebar);
+  window.addEventListener("resize", updateSidebarBtnLabel);
+  updateSidebarBtnLabel();
+
+  function activateModule(id, scrollTop) {
+    navItems.forEach((btn) => btn.classList.toggle("active", btn.dataset.target === id));
+    sections.forEach((sec) => sec.classList.toggle("active", sec.id === id));
+    if (isMobile()) {
+      sidebar.classList.remove("open");
+      updateSidebarBtnLabel();
+    }
+    if (document.body.classList.contains("view-all")) {
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else if (scrollTop !== false) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+
+  navItems.forEach((btn) => {
+    btn.addEventListener("click", () => activateModule(btn.dataset.target, true));
+  });
+
+  // Filter: all / master / familiar
+  function setFilter(mode) {
+    document.body.classList.remove("filter-master", "filter-familiar");
+    if (mode === "master") document.body.classList.add("filter-master");
+    if (mode === "familiar") document.body.classList.add("filter-familiar");
+    filterBtns.forEach((b) => b.classList.toggle("active", b.dataset.filter === mode));
+  }
+  filterBtns.forEach((btn) => btn.addEventListener("click", () => setFilter(btn.dataset.filter)));
+
+  // Cloze self-test mode
+  let clozeOn = false;
+  clozeBtn.addEventListener("click", () => {
+    clozeOn = !clozeOn;
+    document.body.classList.toggle("cloze-on", clozeOn);
+    clozeBtn.classList.toggle("active", clozeOn);
+    if (clozeState) clozeState.textContent = clozeOn ? "开（点词翻开）" : "关";
+    if (!clozeOn) {
+      document.querySelectorAll(".k.revealed").forEach((el) => el.classList.remove("revealed"));
+    }
+  });
+  document.addEventListener("click", (e) => {
+    if (!clozeOn) return;
+    const span = e.target.closest(".k");
+    if (span) span.classList.toggle("revealed");
+  });
+
+  // View all / Print toggle
+  let viewAll = false;
+  viewAllBtn.addEventListener("click", () => {
+    viewAll = !viewAll;
+    document.body.classList.toggle("view-all", viewAll);
+    viewAllBtn.classList.toggle("active", viewAll);
+    if (viewAllState) viewAllState.textContent = viewAll ? "开" : "关";
+  });
+
+  // SVG zoom lightbox
+  function openSvgModal(svgCard) {
+    const titleEl = svgCard.querySelector(".svg-hd span");
+    const svgEl = svgCard.querySelector("svg");
+    if (!svgEl) return;
+    modalTitle.textContent = titleEl ? titleEl.textContent : "SVG 图解";
+    modalBody.innerHTML = "";
+    const clone = svgEl.cloneNode(true);
+    clone.querySelectorAll("[id]").forEach((n) => {
+      const oldId = n.getAttribute("id");
+      const newId = "m_" + oldId;
+      n.setAttribute("id", newId);
+      clone.querySelectorAll(`[marker-end="url(#${oldId})"]`).forEach((el) => el.setAttribute("marker-end", `url(#${newId})`));
+      clone.querySelectorAll(`[marker-start="url(#${oldId})"]`).forEach((el) => el.setAttribute("marker-start", `url(#${newId})`));
+    });
+    modalBody.appendChild(clone);
+    svgModal.classList.add("open");
+  }
+  document.querySelectorAll(".svg-card").forEach((card) => {
+    const btn = card.querySelector(".svg-zoom-btn");
+    const stage = card.querySelector(".svg-stage");
+    if (btn) btn.addEventListener("click", () => openSvgModal(card));
+    if (stage) stage.addEventListener("click", () => openSvgModal(card));
+  });
+  function closeModal() {
+    svgModal.classList.remove("open");
+    modalBody.innerHTML = "";
+  }
+  modalClose.addEventListener("click", closeModal);
+  svgModal.addEventListener("click", (e) => { if (e.target === svgModal) closeModal(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+})();
+</script>
+
+<script>
+(function () {
+  const root = document.documentElement;
+  const btn = document.getElementById("themeToggleBtn");
+  const state = document.getElementById("themeState");
+  const saved = (function () { try { return localStorage.getItem("study_guide_theme"); } catch (e) { return null; } })();
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  let theme = saved || (prefersDark ? "dark" : "light");
+  function apply(t) {
+    root.setAttribute("data-theme", t);
+    if (btn) btn.classList.toggle("active", t === "dark");
+    if (state) state.textContent = t === "dark" ? "开" : "关";
+    try { localStorage.setItem("study_guide_theme", t); } catch (e) {}
+  }
+  apply(theme);
+  if (btn) {
+    btn.addEventListener("click", function () {
+      theme = theme === "dark" ? "light" : "dark";
+      apply(theme);
+    });
+  }
+})();
+</script>
+
+
+<script>
+(function () {
+  function syncFromHash() {
+    var raw = (window.location.hash || "").replace(/^#/, "");
+    if (!raw) return;
+    var btn = document.querySelector('.nav-item[data-target="' + raw + '"]');
+    if (btn) btn.click();
+  }
+  window.addEventListener("hashchange", syncFromHash);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", syncFromHash);
+  } else {
+    syncFromHash();
+  }
+})();
+</script>
+
+</body>
+</html>

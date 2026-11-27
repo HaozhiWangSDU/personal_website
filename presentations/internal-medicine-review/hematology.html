@@ -1,0 +1,2684 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>内科学（第10版）· 血液系统教学大纲精要（掌握 / 熟悉 + SVG图解）</title>
+<style id="theme-tokens">
+:root, [data-theme="light"] {
+  --background: #f6f8fb;
+  --content: #f6f8fb;
+  --card: #ffffff;
+  --sidebar: #eef2f7;
+  --border: #d5dde8;
+  --card-border: #e5ebf3;
+  --foreground: #182230;
+  --muted-foreground: #526075;
+  --placeholder: #7a889d;
+  --primary: #1d4ed8;
+  --primary-foreground: #ffffff;
+  --secondary: #e8eef6;
+  --secondary-foreground: #1e293b;
+  --accent: #dbeafe;
+  --link: #1d4ed8;
+  --success: #15803d;
+  --warning: #d97706;
+  --error: #dc2626;
+  --chart-1: #0284c7;
+  --chart-2: #0d9488;
+  --chart-3: #7c3aed;
+  --chart-4: #ea580c;
+  --chart-5: #be123c;
+  --chart-6: #4f46e5;
+}
+[data-theme="dark"] {
+  --background: #0f172a;
+  --content: #0f172a;
+  --card: #162033;
+  --sidebar: #111b2e;
+  --border: #2a3952;
+  --card-border: #223047;
+  --foreground: #e6edf7;
+  --muted-foreground: #9cb0c9;
+  --placeholder: #7488a3;
+  --primary: #60a5fa;
+  --primary-foreground: #0b1220;
+  --secondary: #1e2c45;
+  --secondary-foreground: #dce7f7;
+  --accent: #1d3557;
+  --link: #60a5fa;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --error: #f87171;
+  --chart-1: #38bdf8;
+  --chart-2: #2dd4bf;
+  --chart-3: #a78bfa;
+  --chart-4: #fb923c;
+  --chart-5: #fb7185;
+  --chart-6: #818cf8;
+}
+</style>
+<style id="app-styles">
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .app-shell {
+    display: flex;
+    min-height: 100vh;
+    background: var(--background);
+  }
+  /* Sidebar */
+  .sidebar {
+    width: 256px;
+    flex-shrink: 0;
+    background: var(--sidebar);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 30;
+    transition: width 0.2s ease, transform 0.2s ease, opacity 0.18s ease;
+  }
+  body.sidebar-collapsed .sidebar {
+    width: 0;
+    min-width: 0;
+    border-right: none;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .sidebar-header {
+    padding: 14px 14px 10px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .sidebar-close-btn {
+    padding: 3px 7px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--muted-foreground);
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+  .sidebar-close-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .sidebar-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--foreground);
+    line-height: 1.35;
+  }
+  .sidebar-sub {
+    font-size: 11.5px;
+    color: var(--muted-foreground);
+    margin-top: 3px;
+  }
+  .nav-list {
+    padding: 8px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+    overflow-y: auto;
+  }
+  .nav-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 7px 9px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--foreground);
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-size: 12.8px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .nav-item:hover {
+    background: var(--card);
+    border-color: var(--card-border);
+  }
+  .nav-item.active {
+    background: var(--card);
+    border-color: var(--primary);
+    box-shadow: inset 3px 0 0 var(--primary);
+  }
+  .nav-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+  .nav-item.active .nav-num {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+  .nav-meta {
+    display: block;
+    font-size: 10.8px;
+    color: var(--muted-foreground);
+    margin-top: 2px;
+  }
+  .sidebar-controls {
+    padding: 10px 10px 8px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .sidebar-controls-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted-foreground);
+    letter-spacing: 0.03em;
+    padding: 0 2px;
+  }
+  .sidebar-controls .tool-btn {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sidebar-footer {
+    padding: 8px 12px 10px;
+    border-top: 1px solid var(--card-border);
+    font-size: 11px;
+    color: var(--muted-foreground);
+  }
+
+  /* Main area */
+  .main-wrap {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
+    padding: 7px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .menu-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--foreground);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .menu-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .filter-group {
+    display: inline-flex;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2px;
+    gap: 2px;
+  }
+  .filter-btn {
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: var(--muted-foreground);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .filter-btn.active {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+  .tool-btn {
+    padding: 6px 10px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--foreground);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .tool-btn:hover {
+    border-color: var(--primary);
+  }
+  .tool-btn.active {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border-color: var(--primary);
+  }
+
+  /* Content */
+  .content {
+    padding: 14px 22px 44px;
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .module-section {
+    display: none;
+  }
+  .module-section.active,
+  body.view-all .module-section {
+    display: block;
+  }
+  body.view-all .module-section {
+    margin-bottom: 42px;
+    padding-bottom: 32px;
+    border-bottom: 2px dashed var(--border);
+  }
+  .mod-header {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+  }
+  .mod-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .mod-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--foreground);
+  }
+  .mod-source {
+    font-size: 12px;
+    color: var(--muted-foreground);
+    background: var(--secondary);
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+  .syllabus-box {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+    font-size: 12.5px;
+    border-top: 1px solid var(--card-border);
+    padding-top: 10px;
+  }
+  .syl-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .syl-tag {
+    flex-shrink: 0;
+    padding: 1px 7px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .syl-tag.m { background: var(--error); color: #ffffff; }
+  .syl-tag.f { background: var(--chart-1); color: #ffffff; }
+  .syl-tag.x { background: var(--secondary); color: var(--muted-foreground); border: 1px solid var(--border); }
+  .syl-excluded { color: var(--muted-foreground); font-size: 12px; }
+
+  /* Tier sections */
+  .tier-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 22px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--border);
+    font-size: 16px;
+    font-weight: 800;
+  }
+  .tier-heading.master-hd { border-bottom-color: var(--error); }
+  .tier-heading.familiar-hd { border-bottom-color: var(--chart-1); }
+
+  /* Cards */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .card.tier-master {
+    border-left: 4px solid var(--error);
+  }
+  .card.tier-familiar {
+    border-left: 4px solid var(--chart-1);
+    opacity: 0.96;
+  }
+  .card-hd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .card-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--foreground);
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .badge-m {
+    background: var(--error);
+    color: #ffffff;
+  }
+  .badge-f {
+    background: transparent;
+    color: var(--chart-1);
+    border: 1px solid var(--chart-1);
+  }
+  .badge-note {
+    background: var(--warning);
+    color: #111111;
+  }
+
+  /* Filtering */
+  body.filter-master [data-tier="familiar"] { display: none !important; }
+  body.filter-familiar [data-tier="master"] { display: none !important; }
+
+  /* Typography inside cards */
+  .card p { margin: 6px 0; }
+  .card ul, .card ol { margin: 6px 0; padding-left: 20px; }
+  .card li { margin: 4px 0; }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .mini-box {
+    background: var(--background);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  .mini-box h4 {
+    margin: 0 0 5px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  /* Tables */
+  .tbl-wrap {
+    overflow-x: auto;
+    margin: 8px 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  table.med-tbl {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+  table.med-tbl th {
+    background: var(--secondary);
+    color: var(--foreground);
+    font-weight: 700;
+    text-align: left;
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  table.med-tbl td {
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--card-border);
+    vertical-align: top;
+  }
+  table.med-tbl tr:last-child td { border-bottom: none; }
+
+  /* Callouts */
+  .callout {
+    margin: 8px 0;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    border: 1px solid var(--border);
+    background: var(--background);
+  }
+  .callout.warn {
+    border-left: 3px solid var(--warning);
+  }
+  .callout.danger {
+    border-left: 3px solid var(--error);
+  }
+  .callout.info {
+    border-left: 3px solid var(--chart-1);
+  }
+
+  /* Cloze self-test spans */
+  .k {
+    font-weight: 700;
+    color: var(--primary);
+    border-bottom: 1px dotted var(--primary);
+    padding: 0 2px;
+    border-radius: 3px;
+    transition: background 0.15s, color 0.15s;
+  }
+  body.cloze-on .k:not(.revealed) {
+    background: var(--foreground);
+    color: transparent;
+    border-bottom-color: transparent;
+    cursor: pointer;
+    user-select: none;
+  }
+  body.cloze-on .k:not(.revealed):hover {
+    opacity: 0.85;
+  }
+  body.cloze-on .k.revealed {
+    background: var(--secondary);
+    color: var(--primary);
+    cursor: pointer;
+  }
+
+  /* SVG diagram box */
+  .svg-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin: 12px 0 16px;
+  }
+  .svg-hd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .svg-zoom-btn {
+    padding: 3px 9px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--background);
+    color: var(--foreground);
+    font-size: 11.5px;
+    cursor: pointer;
+  }
+  .svg-zoom-btn:hover { border-color: var(--primary); color: var(--primary); }
+  .svg-stage {
+    width: 100%;
+    overflow-x: auto;
+    cursor: zoom-in;
+  }
+  .svg-stage svg {
+    display: block;
+    width: 100%;
+    min-width: 680px;
+    height: auto;
+  }
+
+  /* Lightbox modal */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    max-width: 1200px;
+    width: 96%;
+    max-height: 92vh;
+    overflow: auto;
+    padding: 16px;
+  }
+  .modal-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .modal-body svg { width: 100%; height: auto; display: block; }
+
+  /* Responsive */
+  @media (max-width: 860px) {
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 264px;
+      transform: translateX(-100%);
+      box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .sidebar.open { transform: translateX(0); }
+    body.sidebar-collapsed .sidebar { width: 264px; opacity: 1; pointer-events: auto; border-right: 1px solid var(--border); }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .content { padding: 12px 12px 40px; }
+  }
+  @media print {
+    .sidebar, .topbar, .svg-zoom-btn { display: none !important; }
+    .module-section { display: block !important; page-break-after: always; }
+    .card, .svg-card { break-inside: avoid; }
+    body.cloze-on .k { background: transparent !important; color: inherit !important; }
+  }
+
+  /* Published Portal Integration (Audit Not Completed + Back Navigation) */
+  .portal-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--foreground);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .portal-back-link:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .audit-pill {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 700;
+    background: rgba(217, 119, 6, 0.14);
+    color: var(--warning);
+    border: 1px solid var(--warning);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .portal-audit-banner {
+    margin: 0 0 14px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--warning);
+    border-left: 4px solid var(--warning);
+    background: rgba(217, 119, 6, 0.09);
+    color: var(--foreground);
+    font-size: 12.5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .portal-audit-banner strong { color: var(--warning); }
+  .portal-audit-links { display: inline-flex; gap: 10px; flex-wrap: wrap; }
+  .portal-audit-links a {
+    color: var(--link);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .portal-audit-links a:hover { text-decoration: underline; }
+  @media print {
+    .portal-back-link, .audit-pill { display: none !important; }
+  }
+</style>
+</head>
+<body >
+<div class="app-shell">
+  <!-- Left Navigation Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div>
+        <div class="sidebar-title">内科学（第10版）血液系统</div>
+        <div class="sidebar-sub">理论课程大纲精要 · 8讲 / 实计10学时<br />严守【对应课程目标】掌握 / 熟悉</div>
+      </div>
+      <button class="sidebar-close-btn" id="sidebarCloseBtn" type="button" title="收起侧边栏">✕</button>
+    </div>
+    <nav class="nav-list" id="navList">
+      <button class="nav-item active" data-target="mod-1"><span class="nav-num">Ⅰ</span><span><strong>贫血概述</strong><span class="nav-meta">第2章 · 课本P544–548 / PDF P575–579</span></span></button>
+      <button class="nav-item" data-target="mod-2"><span class="nav-num">Ⅱ</span><span><strong>缺铁性贫血（IDA）</strong><span class="nav-meta">第3章 · 课本P549–551 / PDF P580–582</span></span></button>
+      <button class="nav-item" data-target="mod-3"><span class="nav-num">Ⅲ</span><span><strong>再生障碍性贫血（AA）</strong><span class="nav-meta">第5章 · 课本P555–558 / PDF P586–589</span></span></button>
+      <button class="nav-item" data-target="mod-4"><span class="nav-num">Ⅳ</span><span><strong>白血病（AL / CML）</strong><span class="nav-meta">第9章1–3节 · 课本P576–588 / PDF P607–619</span></span></button>
+      <button class="nav-item" data-target="mod-5"><span class="nav-num">Ⅴ</span><span><strong>淋巴瘤（仅熟悉层）</strong><span class="nav-meta">第10章 · 课本P591–599 / PDF P622–630</span></span></button>
+      <button class="nav-item" data-target="mod-6"><span class="nav-num">Ⅵ</span><span><strong>多发性骨髓瘤（MM）</strong><span class="nav-meta">第11章 · 课本P600–604 / PDF P631–635</span></span></button>
+      <button class="nav-item" data-target="mod-7"><span class="nav-num">Ⅶ</span><span><strong>出血性疾病概述</strong><span class="nav-meta">第14章 · 课本P612–619 / PDF P643–650</span></span></button>
+      <button class="nav-item" data-target="mod-8"><span class="nav-num">Ⅷ</span><span><strong>原发免疫性血小板减少症</strong><span class="nav-meta">第15章2节 · 课本P622–623 / PDF P653–654</span></span></button>
+      <button class="nav-item" data-target="mod-audit"><span class="nav-num">审</span><span><strong>大纲边界与差异审计表</strong><span class="nav-meta">剔除13整章+3子节 · 冲突与缺口溯源</span></span></button>
+    </nav>
+    <div class="sidebar-controls">
+      <div class="sidebar-controls-title">阅读与自测选项</div>
+      <button class="tool-btn" id="clozeBtn" type="button" title="遮罩关键数字、阈值、首选药物用于闭卷自测"><span>背诵遮罩</span><span id="clozeState">关</span></button>
+      <button class="tool-btn" id="viewAllBtn" type="button" title="切换单章精读或全篇展开以便通读/打印"><span>全篇展开</span><span id="viewAllState">关</span></button>
+      <button class="tool-btn" id="themeToggleBtn" type="button" title="切换浅色/深色主题"><span>深色主题</span><span id="themeState">关</span></button>
+    </div>
+    <div class="sidebar-footer">
+      依据：人卫第10版《内科学》第六篇<br />
+      口径：严格仅取【对应课程目标】掌握/熟悉
+    </div>
+  </aside>
+
+  <!-- Right Workspace -->
+  <div class="main-wrap">
+    <header class="topbar">
+      <a class="portal-back-link" href="./index.html" title="返回内科学七大系统总导航">← 七大系统导航</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="切换侧边栏">☰ 收起侧边栏</button>
+      <div class="filter-group" role="group" aria-label="重要程度筛选">
+        <button class="filter-btn active" data-filter="all" type="button">全部内容</button>
+        <button class="filter-btn" data-filter="master" type="button">仅看掌握（核心）</button>
+        <button class="filter-btn" data-filter="familiar" type="button">仅看熟悉（次重点）</button>
+      </div>
+      <span class="audit-pill" title="Audit Not Completed · 尚未完成独立审计">⚠ Audit Not Completed</span>
+    
+    </header>
+
+    <main class="content" id="mainContent">
+<div class="portal-audit-banner" role="note"><span><strong>⚠ Audit Not Completed</strong> — Audit Not Completed · 尚未完成独立审计。临床阈值、药物剂量与诊疗标准请以人卫第10版教材原文为准。</span><span class="portal-audit-links"><a href="./index.html">七大系统导航与大纲</a><a href="https://app.notion.com/p/4249530ba4dc8048bf97f49fffac6c77" target="_blank" rel="noopener noreferrer">Notion 配套页面 ↗</a></span></div>
+
+
+<!-- ==================== MODULE 1 ==================== -->
+<section class="module-section active" id="mod-1" data-mod-title="Ⅰ、第二章 贫血概述">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅰ、贫血概述</h1>
+      <span class="mod-source">第10版 第二章《贫血概述》（课本 P544–548 / PDF P575–579）· 0.5学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>贫血的常见分类及其临床表现（含国内与 WHO 贫血定义阈值及血浆容量干扰前提）。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>不同类型贫血的血常规特点（细胞学参数 MCV/MCH/MCHC、Hb 严重度分层、网织红细胞及外周血涂片特征）。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">严格按【对应课程目标】剔除仅列于教学内容/难点重点但未列入目标的骨髓检查（涂片与活检）、发病机制实验室检查、临床诊断步骤、鉴别诊断及对症/对因治疗。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 1 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 1 · 贫血双轴分类总图（发病机制/病因三大类 × 细胞形态 MCV/MCHC 与严重度分层）</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 390" width="100%" role="img" aria-label="贫血双轴分类总图">
+        <defs>
+          <marker id="arr1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr1r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+        <!-- Top Definition Banner -->
+        <rect x="16" y="12" width="848" height="54" rx="10" fill="var(--primary)" fill-opacity="0.10" stroke="var(--primary)" stroke-width="1.5" />
+        <text x="440" y="33" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--foreground)">我国海平面贫血诊断标准：成年男 Hb &lt;120 g/L ｜ 非妊娠女 Hb &lt;110 g/L ｜ 妊娠女 Hb &lt;100 g/L</text>
+        <text x="440" y="53" text-anchor="middle" font-size="11.5" fill="var(--muted-foreground)">注意干扰：妊娠/低蛋白/心衰/脾大/巨球蛋白血症 → 血液稀释（误诊）；脱水/急性失血 → 血液浓缩（漏诊）</text>
+
+        <!-- Left Axis: Pathogenesis/Etiology (3 big boxes) -->
+        <rect x="16" y="84" width="520" height="292" rx="10" fill="var(--card)" stroke="var(--error)" stroke-width="1.5" />
+        <rect x="16" y="84" width="520" height="30" rx="10" fill="var(--error)" fill-opacity="0.14" />
+        <text x="276" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="var(--error)">本质分类：按发病机制和/或病因（三大类）</text>
+
+        <!-- Category 1 -->
+        <rect x="28" y="124" width="496" height="128" rx="8" fill="var(--error)" fill-opacity="0.06" stroke="var(--error)" stroke-width="1" />
+        <text x="40" y="143" font-size="12.5" font-weight="700" fill="var(--foreground)">（一）红细胞生成减少性贫血（取决于三大因素）</text>
+        <rect x="38" y="152" width="154" height="90" rx="6" fill="var(--card)" stroke="var(--border)" />
+        <text x="115" y="170" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">1. 造血干/祖细胞异常</text>
+        <text x="46" y="188" font-size="11" fill="var(--foreground)">• 再生障碍性贫血 (AA)</text>
+        <text x="46" y="204" font-size="11" fill="var(--foreground)">• 纯红再障 (PRCA)</text>
+        <text x="46" y="220" font-size="11" fill="var(--foreground)">• 先天性红系异常 (CDA)</text>
+        <text x="46" y="236" font-size="11" fill="var(--foreground)">• MDS / 造血系统肿瘤</text>
+
+        <rect x="200" y="152" width="160" height="90" rx="6" fill="var(--card)" stroke="var(--border)" />
+        <text x="280" y="170" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">2. 造血调节异常</text>
+        <text x="208" y="188" font-size="11" fill="var(--foreground)">• 基质受损（骨纤/转移）</text>
+        <text x="208" y="204" font-size="11" fill="var(--foreground)">• 淋巴细胞亢进（T/B）</text>
+        <text x="208" y="220" font-size="10.5" fill="var(--foreground)">• 因子异常(EPO↓/铁调素)</text>
+        <text x="208" y="236" font-size="11" fill="var(--foreground)">• 凋亡亢进（PNH/AA）</text>
+
+        <rect x="368" y="152" width="146" height="90" rx="6" fill="var(--card)" stroke="var(--border)" />
+        <text x="441" y="170" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">3. 原料不足/利用障碍</text>
+        <text x="376" y="190" font-size="11" fill="var(--foreground)">• 叶酸 / Vit B12 缺乏</text>
+        <text x="376" y="206" font-size="11" fill="var(--muted-foreground)">  → 巨幼细胞贫血</text>
+        <text x="376" y="224" font-size="11" fill="var(--foreground)">• 缺铁 / 铁利用障碍</text>
+        <text x="376" y="240" font-size="11" fill="var(--muted-foreground)">  → 血红素合成异常</text>
+
+        <!-- Category 2 & 3 -->
+        <rect x="28" y="262" width="236" height="102" rx="8" fill="var(--chart-4)" fill-opacity="0.09" stroke="var(--chart-4)" stroke-width="1" />
+        <text x="146" y="282" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-4)">（二）红细胞破坏过多性</text>
+        <text x="40" y="303" font-size="11.5" fill="var(--foreground)">即溶血性贫血（HA）</text>
+        <text x="40" y="323" font-size="11" fill="var(--muted-foreground)">• 血管外：黄染、胆红素尿、尿胆原↑</text>
+        <text x="40" y="341" font-size="11" fill="var(--muted-foreground)">• 血管内：游离 Hb 尿、含铁血黄素尿</text>
+        <text x="40" y="357" font-size="11" fill="var(--muted-foreground)">• 慢性溶血可伴胆道结石、肝脾大</text>
+
+        <rect x="274" y="262" width="250" height="102" rx="8" fill="var(--chart-3)" fill-opacity="0.09" stroke="var(--chart-3)" stroke-width="1" />
+        <text x="399" y="282" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-3)">（三）失血性贫血</text>
+        <text x="286" y="303" font-size="11.5" fill="var(--foreground)">按速度：急性 / 慢性（常合并 IDA）</text>
+        <text x="286" y="323" font-size="11" fill="var(--muted-foreground)">• 按失血量：轻 / 中 / 重度</text>
+        <text x="286" y="341" font-size="11" fill="var(--muted-foreground)">• 出凝血病：ITP、血友病、严重肝病</text>
+        <text x="286" y="357" font-size="11" fill="var(--muted-foreground)">• 非出凝血病：外伤/肿瘤/溃疡/痔等</text>
+
+        <!-- Right Axis: Morphology + Severity -->
+        <rect x="550" y="84" width="314" height="162" rx="10" fill="var(--card)" stroke="var(--chart-1)" stroke-width="1.5" />
+        <rect x="550" y="84" width="314" height="30" rx="10" fill="var(--chart-1)" fill-opacity="0.14" />
+        <text x="707" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="var(--chart-1)">细胞学分类（表 6-2-1）</text>
+        <text x="562" y="132" font-size="12" font-weight="700" fill="var(--foreground)">大细胞性：MCV &gt;100 fl，MCHC &gt;360 g/L</text>
+        <text x="570" y="149" font-size="11" fill="var(--muted-foreground)">高网织红溶血、MDS、肝疾病</text>
+        <text x="562" y="173" font-size="12" font-weight="700" fill="var(--foreground)">正细胞性：MCV 80~100，MCHC 320~360</text>
+        <text x="570" y="190" font-size="11" fill="var(--muted-foreground)">AA、PRCA、HA、骨髓病性、急性失血</text>
+        <text x="562" y="214" font-size="12" font-weight="700" fill="var(--foreground)">小细胞低色素：MCV &lt;80，MCHC &lt;320</text>
+        <text x="570" y="231" font-size="11" fill="var(--muted-foreground)">IDA、铁粒幼细胞贫血、地贫</text>
+
+        <rect x="550" y="256" width="314" height="120" rx="10" fill="var(--card)" stroke="var(--warning)" stroke-width="1.5" />
+        <rect x="550" y="256" width="314" height="28" rx="10" fill="var(--warning)" fill-opacity="0.16" />
+        <text x="707" y="275" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--foreground)">严重度划分（表 6-2-2）与增生分类</text>
+        <rect x="562" y="293" width="68" height="36" rx="6" fill="var(--success)" fill-opacity="0.14" stroke="var(--success)" />
+        <text x="596" y="309" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--foreground)">轻度</text>
+        <text x="596" y="324" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">&gt;90 g/L</text>
+        <rect x="636" y="293" width="68" height="36" rx="6" fill="var(--chart-1)" fill-opacity="0.14" stroke="var(--chart-1)" />
+        <text x="670" y="309" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--foreground)">中度</text>
+        <text x="670" y="324" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">60~90</text>
+        <rect x="710" y="293" width="68" height="36" rx="6" fill="var(--warning)" fill-opacity="0.18" stroke="var(--warning)" />
+        <text x="744" y="309" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--foreground)">重度</text>
+        <text x="744" y="324" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">30~59</text>
+        <rect x="784" y="293" width="68" height="36" rx="6" fill="var(--error)" fill-opacity="0.18" stroke="var(--error)" />
+        <text x="818" y="309" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--error)">极重度</text>
+        <text x="818" y="324" text-anchor="middle" font-size="11" fill="var(--error)">&lt;30 g/L</text>
+        <text x="707" y="352" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">按骨髓红系增生：增生不良性（如 AA）vs 增生性（余贫血）</text>
+        <text x="707" y="368" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">按进展速度：急性贫血 vs 慢性贫血</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心考点</span> 贫血的常见分类及其临床表现</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">一、贫血定义、诊断阈值前提与多维度分类</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>定义</strong>：单位容积循环血液中血红蛋白（Hb）浓度、红细胞数量（RBC）及血细胞比容（HCT）低于本地区、相同年龄和性别人群参考值下限的临床症状，临床常以 <span class="k">Hb 浓度</span>代替。</p>
+    <ul>
+      <li><strong>我国海平面标准</strong>：成年男性 <span class="k">Hb &lt;120 g/L</span>，成年女性（非妊娠）<span class="k">Hb &lt;110 g/L</span>，妊娠期女性 <span class="k">Hb &lt;100 g/L</span>。</li>
+      <li><strong>1972 年 WHO 海平面标准</strong>：6 个月～&lt;6 岁儿童 <span class="k">&lt;110 g/L</span>，6～14 岁儿童 <span class="k">&lt;120 g/L</span>，成年男性 <span class="k">&lt;130 g/L</span>，非妊娠女性 <span class="k">&lt;120 g/L</span>，妊娠期女性 <span class="k">&lt;110 g/L</span>。</li>
+      <li><strong>影响判定的生理与容量因素</strong>：婴儿、儿童及妊娠期 Hb 偏低；久居高原居民 Hb 偏高；妊娠、低蛋白血症、充血性心衰、脾大及巨球蛋白血症时血浆容量增加致<span class="k">血液稀释</span>（易误诊）；脱水或急性失血时循环血容量减少致<span class="k">血液浓缩</span>（易漏诊）。</li>
+    </ul>
+    <p><strong>临床辅助分类（4 种视角）</strong>：①按进展速度分急、慢性贫血；②按骨髓红系增生分<span class="k">增生不良性贫血</span>（如再生障碍性贫血）与<span class="k">增生性贫血</span>（除再障外的贫血）；③按红细胞形态分大细胞性、正常细胞性、小细胞低色素性（见下表 6-2-1）；④按 Hb 浓度分轻、中、重、极重度（见下表 6-2-2）。</p>
+    <div class="grid-2">
+      <div class="tbl-wrap">
+        <table class="med-tbl">
+          <thead><tr><th colspan="4">表 6-2-1 贫血的细胞学分类（第 10 版原文）</th></tr><tr><th>类型</th><th>MCV (fl)</th><th>MCHC (g/L)</th><th>常见疾病</th></tr></thead>
+          <tbody>
+            <tr><td>大细胞性贫血</td><td><span class="k">&gt;100</span></td><td><span class="k">&gt;360</span></td><td>伴网织红细胞大量增生的溶血性贫血、骨髓增生异常性肿瘤、肝疾病</td></tr>
+            <tr><td>正常细胞性贫血</td><td><span class="k">80～100</span></td><td><span class="k">320～360</span></td><td>再生障碍性贫血、纯红细胞再生障碍性贫血、溶血性贫血、骨髓病性贫血、急性失血性贫血</td></tr>
+            <tr><td>小细胞低色素性贫血</td><td><span class="k">&lt;80</span></td><td><span class="k">&lt;320</span></td><td>缺铁性贫血、铁粒幼细胞贫血、珠蛋白生成障碍性贫血</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tbl-wrap">
+        <table class="med-tbl">
+          <thead><tr><th colspan="2">表 6-2-2 贫血的严重程度划分标准</th></tr><tr><th>贫血严重程度</th><th>血红蛋白浓度 (g/L)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>极重度</strong></td><td><span class="k">&lt;30</span></td></tr>
+            <tr><td><strong>重度</strong></td><td><span class="k">30～59</span></td></tr>
+            <tr><td><strong>中度</strong></td><td><span class="k">60～90</span></td></tr>
+            <tr><td><strong>轻度</strong></td><td><span class="k">&gt;90</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="callout info">
+      <strong>原书核对备注</strong>：经核对第 10 版原书表 6-2-1 图像，大细胞性贫血栏确印为 MCHC &gt;360 g/L 且常见疾病未列巨幼细胞贫血；叶酸或维生素 B<sub>12</sub> 缺乏所致巨幼细胞贫血载于下文“发病机制与病因分类”第 3 条。
+    </div>
+    <p><strong>本质分类：按发病机制和/或病因（三大类）</strong>：</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>大类</th><th>亚类</th><th>核心机制与代表疾病（第 10 版原文）</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="3"><strong>（一）红细胞生成减少性贫血</strong><br />取决于造血细胞、造血调节、造血原料三大因素</td><td><strong>1. 造血干/祖细胞异常</strong></td><td>①<span class="k">再生障碍性贫血（AA）</span>：原发/继发造血干/祖细胞缺陷所致骨髓衰竭；②<span class="k">纯红细胞再生障碍（PRCA）</span>：先天性（Diamond-Blackfan 综合征）与后天性（原发可检出自身 EPO/幼红细胞抗体；继发见于药物、微小病毒 B19/肝炎病毒感染、自免病、胸腺瘤/淋巴瘤/浆细胞病/淋白、髓系恶性克隆及再障危象；分急性型、慢性幼儿型、慢性成人型）；③<span class="k">先天性红细胞生成异常性贫血（CDA）</span>：红系无效造血和形态异常，常染色体隐性或显性遗传；④<span class="k">造血系统恶性克隆性疾病</span>：MDS 及各类造血系统肿瘤（高增生、低分化）。</td></tr>
+          <tr><td><strong>2. 造血调节异常</strong></td><td>①<span class="k">骨髓基质细胞受损</span>：骨髓坏死、骨髓纤维化、骨髓硬化症、石骨症、髓外肿瘤骨髓转移、骨髓炎；②<span class="k">淋巴细胞功能亢进</span>：T 细胞经穿孔素直接杀伤和/或细胞因子介导凋亡（如 AA）；B 细胞产抗骨髓细胞自身抗体（免疫相关性全血细胞减少）；③<span class="k">造血调节因子水平异常</span>：肾不全/垂体或甲减/肝病致 <span class="k">EPO 生成不足</span>；肿瘤/病毒致 TNF、IFN 等负调控因子增多；感染和促炎因子诱导<span class="k">铁调素（hepcidin）</span>分泌致血浆游离铁降低、铁利用障碍（<span class="k">慢性病贫血</span>）；④<span class="k">造血细胞凋亡亢进</span>：PNH 具“双重发病机制”（PIGA 基因突变抗凋亡扩增 + T 细胞介导正常细胞凋亡）；AA 髓系衰竭主要为凋亡所致。</td></tr>
+          <tr><td><strong>3. 造血原料不足或利用障碍</strong></td><td>①<span class="k">叶酸或维生素 B<sub>12</sub> 缺乏/利用障碍</span>：巨幼细胞贫血；②<span class="k">缺铁和铁利用障碍性贫血</span>：临床最常见贫血，又称血红素合成异常性贫血，呈小细胞低色素性（中央淡染区扩大）。</td></tr>
+          <tr><td><strong>（二）红细胞破坏过多性贫血</strong></td><td>即<span class="k">溶血性贫血（HA）</span></td><td>红细胞寿命缩短、破坏超过骨髓代偿能力。</td></tr>
+          <tr><td><strong>（三）失血性贫血</strong></td><td>按速度/失血量/病因分</td><td>急性与慢性（<span class="k">慢性失血性贫血常合并 IDA</span>）；轻、中、重度；出凝血性疾病（ITP、血友病、严重肝病）vs 非出凝血性疾病（外伤、肿瘤、结核、支扩、消化性溃疡、肝病、痔、泌尿生殖病等）。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">二、贫血的临床表现（5 项决定因素 + 10 大系统详表）</h3><span class="badge badge-m">掌握</span></div>
+    <p>贫血<strong>最常见的全身症状为<span class="k">乏力</span></strong>。临床表现取决于 <strong>5 个因素</strong>：①贫血的病因（含原发病）；②血液携氧能力下降程度；③血容量下降程度；④发生贫血的速度；⑤血液、循环、呼吸等系统对贫血的代偿与耐受能力。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>受累系统</th><th>共性表现与特异性原发病/并发症表现</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. 神经系统</strong></td><td>头痛、眩晕、萎靡、晕厥、失眠、多梦、耳鸣、眼花、记忆力减退、注意力不集中（脑缺氧、急性失血低血容量、重度溶血高胆红素/高游离 Hb、白血病 CNS 浸润、再障颅内/眼底出血）。<span class="k">肢端麻木</span>（末梢神经炎）特多见于 <span class="k">Vit B<sub>12</sub> 缺乏性巨幼贫</span>；小儿 IDA 可哭闹躁动甚至影响智力发育。</td></tr>
+          <tr><td><strong>2. 皮肤黏膜</strong></td><td><span class="k">苍白</span>为主要表现（机制：神经体液调节致有效血容量重分布以保脑心肾肝肺、皮肤黏膜供血减少 + 单位容积 RBC/Hb 减少）；粗糙、无光泽、溃疡（缺铁、叶酸/B<sub>12</sub> 缺乏、自免病）。溶血性贫血（尤其血管外）呈<span class="k">黄染</span>；造血系统肿瘤可并发<span class="k">绿色瘤</span>等皮肤损害。</td></tr>
+          <tr><td><strong>3. 呼吸系统</strong></td><td>轻度平静时呼吸可不增、活动后低氧及 CO<sub>2</sub> 潴留致呼吸加快加深；重度平静时亦气短甚至<span class="k">端坐呼吸</span>。原发病/并发症：再障呼吸道感染、白血病肺浸润、红斑狼疮“狼疮肺”、反复输血致“含铁血黄素肺”。</td></tr>
+          <tr><td><strong>4. 循环系统</strong></td><td>急性失血呈低血容量反应（外周血管收缩、心率快、心悸）；非失血性贫血为心脏对组织缺氧反应（轻度活动后心悸心率快，中重度静息即出现）；长期贫血致<span class="k">贫血性心脏病</span>（心律失常、心脏结构异常、心功能不全）；多次输血致“血色病”亦可累及心脏。</td></tr>
+          <tr><td><strong>5. 消化系统</strong></td><td>消化腺分泌减少甚至萎缩致消化不良、腹胀、纳差、排便改变。慢性溶血合并<span class="k">胆道结石/炎症</span>；IDA 可有<span class="k">吞咽异物感</span>，钩虫病所致 IDA 可合并<span class="k">异食癖</span>；巨幼细胞贫血或恶性贫血可现<span class="k">舌炎、舌乳头萎缩、牛肉舌、镜面舌</span>。</td></tr>
+          <tr><td><strong>6. 泌尿系统</strong></td><td>肾性贫血有原发肾病表现；<span class="k">血管外溶血</span>现胆红素尿和高尿胆原尿；<span class="k">血管内溶血</span>现游离血红蛋白尿和含铁血黄素尿，重者游离 Hb 堵塞肾小管致少尿/无尿/急性肾衰竭；急性重度失血因肾血流减少致少尿无尿及肾不全。</td></tr>
+          <tr><td><strong>7. 内分泌系统</strong></td><td>产后大出血贫血致垂体缺血坏死即<span class="k">希恩综合征</span>；长期贫血影响甲状腺、性腺、肾上腺、胰腺功能及 EPO/胃肠激素分泌。</td></tr>
+          <tr><td><strong>8. 生殖系统</strong></td><td>男性长期贫血致睾丸生精细胞缺血坏死、睾酮分泌受影响、男性特征减弱；女性影响激素分泌，或合并凝血/血小板异常致月经过多。</td></tr>
+          <tr><td><strong>9. 免疫系统</strong></td><td>红细胞减少降低调理素作用，红细胞膜<span class="k">补体受体 1（CR1）</span>减少影响非特异性免疫；反复输血影响 T 细胞亚群；某些抗贫血药改变免疫功能。</td></tr>
+          <tr><td><strong>10. 血液系统</strong></td><td>外周血细胞量（RBC/Hb/HCT 减低、Ret 改变、可伴 WBC/PLT 异常）、形态（大/小/正细胞及异形）及生化改变（<span class="k">2,3-DPG 合成增多</span>降低 Hb 氧亲和力、氧解离曲线右移以利组织供氧；浆细胞病 M 蛋白及钙磷异常；溶血游离 Hb↑/结合珠蛋白↓/血钾↑/胆红素↑；合并 DIC 凝血纤溶异常）；骨髓有核细胞增生度及各系变化；造血肿瘤伴肝脾淋巴结大，溶血伴肝/脾大，骨髓纤维化与脾亢伴脾大。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 不同类型贫血的血常规特点</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">血常规核心指标临床意义与常见类型对照</h3><span class="badge badge-f">熟悉</span></div>
+    <ul>
+      <li><strong>确定贫血及伴随系别变化</strong>：血常规测定 <span class="k">RBC、Hb、HCT</span> 确定有无贫血，并判断是否伴白细胞或血小板数量异常（如再障/全血细胞减少、造血系统肿瘤伴白细胞/血小板改变）。</li>
+      <li><strong>严重度判定</strong>：以 <span class="k">Hb 浓度</span>直接划分轻（&gt;90）、中（60～90）、重（30～59）、极重度（&lt;30 g/L）。</li>
+      <li><strong>红细胞参数（MCV、MCH、MCHC）</strong>：反映红细胞大小及血红蛋白含量，将贫血分为大细胞性（MCV &gt;100 fl、MCHC &gt;360 g/L）、正常细胞性（MCV 80～100 fl、MCHC 320～360 g/L）和小细胞低色素性（MCV &lt;80 fl、MCHC &lt;320 g/L），为明确病理机制提供关键线索。</li>
+      <li><strong>网织红细胞（Ret）计数</strong>：间接反映<span class="k">骨髓红系细胞增生（或对贫血的代偿）情况</span>——增生不良性贫血（如再障）降低，溶血性贫血及急性失血代偿期显著增高。</li>
+      <li><strong>外周血涂片</strong>：直接观察红细胞、白细胞、血小板的数量与形态改变（如小细胞中央淡染区扩大、异形红细胞、异形白细胞与血小板），以及是否存在<span class="k">疟原虫</span>和异常细胞。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== MODULE 2 ==================== -->
+<section class="module-section" id="mod-2" data-mod-title="Ⅱ、第三章 缺铁性贫血">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅱ、缺铁性贫血（IDA）</h1>
+      <span class="mod-source">第10版 第三章《缺铁性贫血》（课本 P549–551 / PDF P580–582）· 0.5学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>缺铁性贫血的常见病因、临床表现、诊断及治疗。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>缺铁性贫血的血常规、铁蛋白等实验室检查特点。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">严格按【对应课程目标】剔除流行病学调查、正常铁代谢生理详述、发病机制详述、预后与预防专节。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 2 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 2 · 铁缺乏症三阶段演变（ID → IDE → IDA）与口服补铁疗效时间轴</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 355" width="100%" role="img" aria-label="铁缺乏症三阶段演变与口服补铁疗效时间轴">
+        <defs>
+          <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr2r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+        <!-- Stage 1: ID -->
+        <rect x="20" y="18" width="248" height="156" rx="10" fill="var(--warning)" fill-opacity="0.10" stroke="var(--warning)" stroke-width="1.5" />
+        <text x="144" y="40" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--foreground)">阶段 1：贮存铁耗尽（ID）</text>
+        <text x="34" y="65" font-size="11.5" fill="var(--foreground)">• 血清铁蛋白 &lt;12 μg/L</text>
+        <text x="34" y="86" font-size="11.5" fill="var(--foreground)">• 骨髓小粒可染铁消失</text>
+        <text x="34" y="107" font-size="11.5" fill="var(--foreground)">• 铁粒幼细胞 &lt;15%</text>
+        <text x="34" y="132" font-size="11.5" font-weight="700" fill="var(--success)">✓ 血清铁（SI）尚正常</text>
+        <text x="34" y="153" font-size="11.5" font-weight="700" fill="var(--success)">✓ Hb 尚正常（无贫血）</text>
+
+        <line x1="268" y1="96" x2="310" y2="96" stroke="var(--error)" stroke-width="2" marker-end="url(#arr2r)" />
+
+        <!-- Stage 2: IDE -->
+        <rect x="316" y="18" width="248" height="156" rx="10" fill="var(--chart-4)" fill-opacity="0.10" stroke="var(--chart-4)" stroke-width="1.5" />
+        <text x="440" y="40" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--foreground)">阶段 2：缺铁性红细胞生成（IDE）</text>
+        <text x="330" y="65" font-size="11.5" fill="var(--foreground)">• 具备 ID 全部铁贮存耗尽指标</text>
+        <text x="330" y="86" font-size="11.5" fill="var(--error)">• 转铁蛋白饱和度 &lt;15%</text>
+        <text x="330" y="107" font-size="11.5" fill="var(--error)">• FEP/Hb &gt;4.5 μg/g Hb</text>
+        <text x="330" y="128" font-size="11.5" fill="var(--foreground)">• sTfR 升高（最佳反映指标）</text>
+        <text x="330" y="153" font-size="11.5" font-weight="700" fill="var(--success)">✓ Hb 尚正常</text>
+
+        <line x1="564" y1="96" x2="606" y2="96" stroke="var(--error)" stroke-width="2" marker-end="url(#arr2r)" />
+
+        <!-- Stage 3: IDA -->
+        <rect x="612" y="18" width="248" height="156" rx="10" fill="var(--error)" fill-opacity="0.11" stroke="var(--error)" stroke-width="1.8" />
+        <text x="736" y="40" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--error)">阶段 3：缺铁性贫血（IDA）</text>
+        <text x="626" y="65" font-size="11.5" fill="var(--foreground)">• 具备 IDE 全部指标</text>
+        <text x="626" y="86" font-size="11.5" font-weight="700" fill="var(--error)">• Hb 降低：男&lt;120/女&lt;110/孕&lt;100</text>
+        <text x="626" y="107" font-size="11.5" fill="var(--foreground)">• 小细胞低色素：MCV &lt;80 fl</text>
+        <text x="626" y="128" font-size="11.5" fill="var(--foreground)">  MCH &lt;27 pg，MCHC &lt;320 g/L</text>
+        <text x="626" y="153" font-size="11.5" font-weight="700" fill="var(--primary)">★ 必须同步查明原发病病因！</text>
+
+        <!-- Bottom Timeline: Oral Iron Therapy Response -->
+        <rect x="20" y="196" width="840" height="142" rx="10" fill="var(--card)" stroke="var(--primary)" stroke-width="1.5" />
+        <rect x="20" y="196" width="840" height="28" rx="10" fill="var(--primary)" fill-opacity="0.12" />
+        <text x="440" y="215" text-anchor="middle" font-size="13" font-weight="700" fill="var(--primary)">首选口服铁剂疗效观察与停药时间轴（餐后服；Vit C/肉鱼促吸收，茶/乳/谷类抑吸收）</text>
+
+        <line x1="60" y1="264" x2="820" y2="264" stroke="var(--primary)" stroke-width="2.5" marker-end="url(#arr2)" />
+        <circle cx="90" cy="264" r="7" fill="var(--primary)" />
+        <text x="90" y="250" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--foreground)">开始服药</text>
+        <text x="90" y="286" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">硫酸亚铁0.3g tid</text>
+        <text x="90" y="302" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">或右旋糖酐铁50mg</text>
+
+        <circle cx="285" cy="264" r="7" fill="var(--chart-2)" />
+        <text x="285" y="250" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--chart-2)">第 5～10 天</text>
+        <text x="285" y="286" text-anchor="middle" font-size="11" fill="var(--foreground)">网织红细胞达高峰</text>
+        <text x="285" y="302" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">最早有效标志</text>
+
+        <circle cx="475" cy="264" r="7" fill="var(--chart-1)" />
+        <text x="475" y="250" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--chart-1)">2 周后</text>
+        <text x="475" y="286" text-anchor="middle" font-size="11" fill="var(--foreground)">Hb 浓度开始上升</text>
+        <text x="475" y="302" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">贫血症状渐改善</text>
+
+        <circle cx="640" cy="264" r="7" fill="var(--success)" />
+        <text x="640" y="250" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--success)">约 2 个月</text>
+        <text x="640" y="286" text-anchor="middle" font-size="11" fill="var(--foreground)">Hb 恢复正常</text>
+        <text x="640" y="302" text-anchor="middle" font-size="11" fill="var(--error)">此时切勿停药！</text>
+
+        <circle cx="790" cy="264" r="7" fill="var(--error)" />
+        <text x="790" y="250" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--error)">再持续 4～6 个月</text>
+        <text x="790" y="286" text-anchor="middle" font-size="11" fill="var(--foreground)">待血清铁蛋白正常</text>
+        <text x="790" y="302" text-anchor="middle" font-size="11" fill="var(--foreground)">补足贮存铁后停药</text>
+        <text x="440" y="328" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">注射铁剂总需量 =（须达到 Hb - 患者 Hb）（g/L）× 0.33 × 患者体重（kg）；首剂 0.5 ml 试验观察 1 小时</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心考点</span> 缺铁性贫血的病因、临床表现、诊断与治疗</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">一、概念、三阶段与常见病因</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>概念</strong>：机体内贮存铁耗尽（ID）、缺铁性红细胞生成（IDE）不足导致的贫血。铁缺乏症分为 <span class="k">ID、IDE 和 IDA</span> 三个阶段，IDA 表现为小细胞低色素性贫血及其他组织缺铁异常。总述病因类型含铁摄入不足、需求量增加、吸收不良、转运障碍（无转铁蛋白血症、肝病、慢性炎症）、丢失过多及利用障碍（铁粒幼细胞贫血、铅中毒、慢性病贫血）。</p>
+    <div class="grid-3">
+      <div class="mini-box">
+        <h4>1. 需铁量增加而铁摄入不足</h4>
+        多见于<span class="k">婴幼儿、青少年、妊娠和哺乳期妇女</span>。婴幼儿未及时添加蛋/肉类辅食、青少年偏食、女性月经过多或妊娠哺乳未补充富含铁食物均易致 IDA。
+      </div>
+      <div class="mini-box">
+        <h4>2. 铁吸收障碍</h4>
+        常见于<span class="k">胃大部切除术后</span>（胃酸不足且食物绕过铁主要吸收部位<span class="k">十二指肠</span>快速进入空肠）；亦见于长期不明原因腹泻、慢性肠炎、克罗恩病等胃肠功能紊乱。
+      </div>
+      <div class="mini-box">
+        <h4>3. 铁丢失过多（慢性失血最常见）</h4>
+        • <strong>慢性胃肠道失血</strong>：痔、消化性溃疡、食管裂孔疝、息肉、胃肠道肿瘤、寄生虫、EGVB；<br />
+        • <strong>月经过多</strong>：节育器、子宫肌瘤、月经失调；<br />
+        • <strong>咯血/肺泡出血</strong>：肺含铁血黄素沉着症、肺出血肾炎综合征、肺结核、支扩、肺癌；<br />
+        • <strong>血红蛋白尿</strong>：PNH、冷抗体型 AIHA、人工心瓣膜、行军性血红蛋白尿；<br />
+        • <strong>其他</strong>：遗传性出血性毛细血管扩张症、慢肾衰血透、多次献血。
+      </div>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">二、临床表现（三大征群）</h3><span class="badge badge-m">掌握</span></div>
+    <ol>
+      <li><strong>缺铁原发病表现</strong>：如消化性溃疡、肿瘤或痔致黑便/血便/腹痛，肠道寄生虫致腹痛/大便性状改变，妇女月经过多，肿瘤消瘦，血管内溶血致血红蛋白尿。</li>
+      <li><strong>贫血表现</strong>：乏力、易疲倦、头晕、头痛、眼花、耳鸣、心悸、气短、纳差；皮肤黏膜苍白、心率增快。</li>
+      <li><strong>组织缺铁表现（含铁酶及铁依赖酶活性减低与外胚叶营养障碍）</strong>：精神行为异常（烦躁、易怒、注意力不集中、<span class="k">异食癖</span>）；体力耐力下降、易感染；儿童生长发育迟缓与智力低下；<span class="k">口腔炎、舌炎、舌乳头萎缩、口角皲裂、吞咽困难</span>；毛发干枯脱落、皮肤干燥皱缩；指/趾甲无光泽、脆薄易裂，重者变平甚至下凹呈<span class="k">勺状（匙状甲）</span>。</li>
+    </ol>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">三、三阶段诊断标准、病因诊断与 4 种小细胞贫血鉴别</h3><span class="badge badge-m">掌握</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>阶段</th><th>第 10 版诊断标准（逐级递增）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. ID（贮存铁耗尽）</strong></td><td>①血清铁蛋白 <span class="k">&lt;12 μg/L</span>；②骨髓铁染色示骨髓小粒可染铁消失，<span class="k">铁粒幼细胞 &lt;15%</span>；③血红蛋白及血清铁等指标尚正常。</td></tr>
+          <tr><td><strong>2. IDE（缺铁性红细胞生成）</strong></td><td>①满足 ID 的①+②；②<span class="k">转铁蛋白饱和度 &lt;15%</span>；③<span class="k">FEP/Hb &gt;4.5 μg/g Hb</span>；④血红蛋白尚正常。</td></tr>
+          <tr><td><strong>3. IDA（缺铁性贫血）</strong></td><td>①满足 IDE 的①+②+③；②小细胞低色素性贫血：男 <span class="k">Hb &lt;120 g/L</span>、女 <span class="k">&lt;110 g/L</span>、孕妇 <span class="k">&lt;100 g/L</span>；<span class="k">MCV &lt;80 fl，MCH &lt;27 pg，MCHC &lt;320 g/L</span>。</td></tr>
+          <tr><td><strong>4. 病因诊断（根治前提）</strong></td><td>缺铁病因有时比贫血更严重：疑消化道恶性肿瘤或残胃癌须多次查<span class="k">粪便隐血</span>，必要时行胃肠道 X 线或内镜检查；月经过多妇女须排查妇科疾病。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>鉴别诊断（与下列 4 种小细胞性贫血鉴别）</strong>：</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>疾病</th><th>血清铁 (SI)</th><th>总铁结合力 (TIBC)</th><th>转铁蛋白饱和度 (TS)</th><th>血清铁蛋白 / 骨髓铁</th><th>核心鉴别要点</th></tr></thead>
+        <tbody>
+          <tr><td><strong>缺铁性贫血（IDA）</strong></td><td><span class="k">↓</span>（&lt;8.95 μmol/L）</td><td><span class="k">↑</span>（&gt;64.44 μmol/L）</td><td><span class="k">↓</span>（&lt;15%）</td><td><span class="k">↓</span>（&lt;12 μg/L / 消失）</td><td>缺铁病因明确，补铁有效</td></tr>
+          <tr><td><strong>1. 铁粒幼细胞贫血</strong></td><td><span class="k">↑</span></td><td>不低</td><td><span class="k">↑</span></td><td><span class="k">↑</span>（外铁与内铁均多）</td><td>铁利用障碍，骨髓见<span class="k">环形铁粒幼细胞</span></td></tr>
+          <tr><td><strong>2. 珠蛋白生成障碍性贫血</strong></td><td>不低且常↑</td><td>—</td><td>不低且常↑</td><td>不低且常↑</td><td>多为地贫，有家族史与溶血，血涂片多量<span class="k">靶形红细胞</span>，HbF 或 HbA<sub>2</sub> 增高、HbH 包涵体</td></tr>
+          <tr><td><strong>3. 慢性病贫血（ACD）</strong></td><td><span class="k">↓</span></td><td><span class="k">↓</span></td><td><span class="k">↓</span></td><td><span class="k">↑</span>（贮存铁增多）</td><td>继发于慢性炎症、感染或肿瘤，铁释放/利用障碍</td></tr>
+          <tr><td><strong>4. 转铁蛋白缺乏症</strong></td><td><span class="k">明显↓</span></td><td><span class="k">明显↓</span></td><td>—</td><td><span class="k">明显↓</span></td><td>先天（常染色体隐性，幼儿伴发育不良多脏器受累）或获得性（严重肝病/肿瘤）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">四、治疗原则、病因治疗与规范补铁</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>两大治疗原则</strong>：<span class="k">根除病因；补足贮存铁</span>。</p>
+    <ul>
+      <li><strong>1. 病因治疗</strong>：营养不足者改善饮食（瘦肉、动物肝脏），育龄女性可每日或隔日预防性补元素铁；月经过多查妇科病因；寄生虫驱虫；恶性肿瘤手术/放化疗；消化性溃疡抑酸护胃。</li>
+      <li><strong>2. 补铁治疗</strong>：
+        <ul>
+          <li><strong>铁剂分类</strong>：无机铁以<span class="k">硫酸亚铁</span>为代表（胃肠不良反应较明显）；有机铁包括右旋糖酐铁、葡萄糖酸亚铁、山梨醇铁、富马酸亚铁、琥珀酸亚铁、多糖铁复合物等。</li>
+          <li><strong>首选口服铁剂</strong>：硫酸亚铁 <span class="k">0.3 g，每日 3 次</span>；或右旋糖酐铁 <span class="k">50 mg，每日 2～3 次</span>。<span class="k">餐后服用</span>胃肠反应小、易耐受。</li>
+          <li><strong>饮食吸收影响</strong>：进食<span class="k">谷类、乳类和茶</span>抑制铁吸收；<span class="k">鱼、肉类、维生素 C</span> 可加强铁吸收。</li>
+          <li><strong>疗效观察与停药指征</strong>：最先表现为外周血<span class="k">网织红细胞增多</span>，高峰在服药后 <span class="k">5～10 天</span>；<span class="k">2 周后</span> Hb 上升；一般 <span class="k">2 个月左右</span> Hb 恢复正常；须在 Hb 正常后<span class="k">至少持续 4～6 个月</span>，待<span class="k">铁蛋白正常后</span>停药。</li>
+          <li><strong>注射铁剂（肌内或静脉）</strong>：适用于口服铁剂不能耐受，或胃肠道正常解剖部位改变影响吸收者。最常用<span class="k">右旋糖酐铁</span>，首次给药须用 <span class="k">0.5 ml</span> 作试验剂量，<span class="k">1 小时</span>后无过敏反应方可足量治疗。注射用铁总需量公式：<span class="k">（须达到的 Hb - 患者的 Hb）（g/L）× 0.33 × 患者体重（kg）</span>。</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 缺铁性贫血的血常规、铁蛋白等实验室检查特点</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">五项实验室检查核心阈值速览</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>检查类别</th><th>第 10 版定量阈值与形态特征</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. 血象</strong></td><td>小细胞低色素性贫血：<span class="k">MCV &lt;80 fl，MCH &lt;27 pg，MCHC &lt;320 g/L</span>；血涂片见红细胞体积小、<span class="k">中央淡染区扩大</span>；网织红细胞多正常或轻度增高；WBC、PLT 可正常或减低，部分患者 PLT 升高。</td></tr>
+          <tr><td><strong>2. 骨髓象</strong></td><td>增生活跃或明显活跃，以红系增生为主，粒系与巨核系无明显异常；红系以中、晚幼红细胞为主，体积小、核染色质致密、胞质少且边缘不齐、血红蛋白形成不良，即<span class="k">“核老浆幼”</span>现象。</td></tr>
+          <tr><td><strong>3. 铁代谢</strong></td><td>血清铁 <span class="k">&lt;8.95 μmol/L</span>，总铁结合力 <span class="k">&gt;64.44 μmol/L</span>，转铁蛋白饱和度 <span class="k">&lt;15%</span>，sTfR &gt;8 mg/L；血清铁蛋白 <span class="k">&lt;12 μg/L</span>；骨髓普鲁士蓝染色（亚铁氰化钾）示骨髓小粒无深蓝色含铁血黄素颗粒，幼红细胞内铁减少/消失、<span class="k">铁粒幼细胞 &lt;15%</span>。</td></tr>
+          <tr><td><strong>4. 红细胞内卟啉代谢</strong></td><td>FEP <span class="k">&gt;0.9 μmol/L</span>（全血），ZPP <span class="k">&gt;0.96 μmol/L</span>（全血），FEP/Hb <span class="k">&gt;4.5 μg/g Hb</span>。</td></tr>
+          <tr><td><strong>5. 血清转铁蛋白受体（sTfR）</strong></td><td>迄今反映<span class="k">缺铁性红细胞生成的最佳指标</span>，一般 sTfR 浓度 <span class="k">&gt;26.5 nmol/L（2.25 μg/ml）</span>可诊断缺铁。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MODULE 3 ==================== -->
+<section class="module-section" id="mod-3" data-mod-title="Ⅲ、第五章 再生障碍性贫血">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅲ、再生障碍性贫血（AA）</h1>
+      <span class="mod-source">第10版 第五章《再生障碍性贫血》（课本 P555–558 / PDF P586–589）· 1学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>再生障碍性贫血的常见病因、临床表现、诊断及治疗。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>再生障碍性贫血的血常规、骨髓细胞学、EPO 等特异性实验室检查特点（注：第 10 版第 5 章实验室检查未列血清 EPO 检测）。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">严格按【对应课程目标】剔除流行病学、三种发病机制（干祖细胞/微环境/免疫）专述、疗效标准（CR/PR/NR）、预防与预后专节；所有分型与治疗严格忠实第 10 版原文。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 3 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 3 · 再生障碍性贫血分型（NSAA / SAA / VSAA）与分层治疗决策树</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 390" width="100%" role="img" aria-label="再生障碍性贫血分型与分层治疗决策树">
+        <defs>
+          <marker id="arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr3r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+        <!-- Top Diagnostic Entry -->
+        <rect x="20" y="14" width="840" height="58" rx="10" fill="var(--primary)" fill-opacity="0.10" stroke="var(--primary)" stroke-width="1.5" />
+        <text x="440" y="36" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--foreground)">AA 诊断（4条）：全血细胞减少+Ret&lt;1%+淋比高 ｜ 一般无肝脾大 ｜ 多部位骨髓增生减低/小粒空虚 ｜ 排除他病</text>
+        <text x="440" y="57" text-anchor="middle" font-size="11.2" fill="var(--muted-foreground)">必须排除：PNH（CD55⁻/CD59⁻）、MDS-RA、Evans/IRP、低增生 AL/APL、急性造血停滞、放化疗抑制、噬血综合征</text>
+
+        <line x1="250" y1="72" x2="210" y2="108" stroke="var(--error)" stroke-width="2" marker-end="url(#arr3r)" />
+        <line x1="630" y1="72" x2="670" y2="108" stroke="var(--chart-1)" stroke-width="2" marker-end="url(#arr3)" />
+
+        <!-- Left Branch: SAA / VSAA -->
+        <rect x="20" y="114" width="445" height="106" rx="10" fill="var(--error)" fill-opacity="0.09" stroke="var(--error)" stroke-width="1.6" />
+        <text x="242" y="135" text-anchor="middle" font-size="13" font-weight="700" fill="var(--error)">重型再障（SAA Ⅰ型 / AAA）与极重型（VSAA）</text>
+        <text x="32" y="156" font-size="10.8" fill="var(--foreground)">• 血象3选2：Ret绝对值&lt;15×10⁹/L、ANC&lt;0.5×10⁹/L、PLT&lt;20×10⁹/L</text>
+        <text x="34" y="176" font-size="11.5" fill="var(--foreground)">• 骨髓：多部位广泛重度减低（&lt;正常 25%），小粒皆空虚</text>
+        <text x="34" y="196" font-size="11.5" font-weight="700" fill="var(--error)">• 若 SAA Ⅰ型伴 ANC &lt;0.2×10⁹/L → 极重型再障（VSAA）</text>
+        <text x="34" y="212" font-size="10.8" fill="var(--muted-foreground)">（NSAA 病情恶化达 SAA Ⅰ型标准者称 SAA Ⅱ型）</text>
+
+        <!-- Right Branch: NSAA -->
+        <rect x="485" y="114" width="375" height="106" rx="10" fill="var(--chart-1)" fill-opacity="0.10" stroke="var(--chart-1)" stroke-width="1.5" />
+        <text x="672" y="135" text-anchor="middle" font-size="13" font-weight="700" fill="var(--chart-1)">非重型再障（NSAA / CAA）</text>
+        <text x="499" y="158" font-size="11.5" fill="var(--foreground)">• 全血细胞减少，但未达 SAA Ⅰ型标准</text>
+        <text x="499" y="179" font-size="11.5" fill="var(--foreground)">• 骨髓多部位增生减低（&lt;正常 50%），脂肪滴多</text>
+        <text x="499" y="200" font-size="11.5" fill="var(--foreground)">• 起病缓、皮肤黏膜出血为主、高热少见（&lt;1周）</text>
+
+        <!-- Arrows to Therapy -->
+        <line x1="130" y1="220" x2="130" y2="254" stroke="var(--error)" stroke-width="2" marker-end="url(#arr3r)" />
+        <line x1="350" y1="220" x2="350" y2="254" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr3)" />
+        <line x1="672" y1="220" x2="672" y2="254" stroke="var(--chart-1)" stroke-width="2" marker-end="url(#arr3)" />
+
+        <!-- Therapy Box 1: allo-HSCT -->
+        <rect x="20" y="260" width="215" height="114" rx="9" fill="var(--card)" stroke="var(--error)" stroke-width="1.5" />
+        <text x="127" y="281" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--error)">首选：allo-HSCT</text>
+        <text x="32" y="302" font-size="11.2" fill="var(--foreground)">适用同时满足：</text>
+        <text x="32" y="320" font-size="11.2" fill="var(--foreground)">1. 年龄 &lt;40 岁</text>
+        <text x="32" y="338" font-size="11.2" fill="var(--foreground)">2. 无感染及其他并发症</text>
+        <text x="32" y="356" font-size="11.2" fill="var(--foreground)">3. 有 HLA 相合同胞供者</text>
+
+        <!-- Therapy Box 2: IST + HGF -->
+        <rect x="245" y="260" width="275" height="114" rx="9" fill="var(--card)" stroke="var(--primary)" stroke-width="1.5" />
+        <text x="382" y="281" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--primary)">强化免疫抑制 + 促造血（SAA）</text>
+        <text x="257" y="301" font-size="11" fill="var(--foreground)">• 兔ATG 3~5 / 猪ALG 20~30 mg/(kg·d)×5d</text>
+        <text x="257" y="319" font-size="11" fill="var(--foreground)">  （皮试+激素防过敏，静滴 12~16h）</text>
+        <text x="257" y="337" font-size="11" fill="var(--foreground)">• 联合环孢素 3~5 mg/(kg·d)，疗程 &gt;1 年</text>
+        <text x="257" y="355" font-size="11" fill="var(--foreground)">• 促造血：G-CSF/EPO；难治 SAA 艾/海曲泊帕</text>
+
+        <!-- Therapy Box 3: NSAA + Support -->
+        <rect x="530" y="260" width="330" height="114" rx="9" fill="var(--card)" stroke="var(--chart-1)" stroke-width="1.5" />
+        <text x="695" y="281" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-1)">NSAA 治疗 + 全部 AA 基础支持</text>
+        <text x="542" y="301" font-size="11" fill="var(--foreground)">• 环孢素（全部 AA）+ 雄激素 4 药（司坦唑醇等）</text>
+        <text x="542" y="319" font-size="11" fill="var(--foreground)">• 造血生长因子（GM-CSF/G-CSF、EPO、rhTPO）</text>
+        <text x="542" y="337" font-size="11" fill="var(--foreground)">• 支持：Hb&lt;60g/L 耐受差输血；防感染/止血/护肝</text>
+        <text x="542" y="355" font-size="11" fill="var(--foreground)">• 祛铁：反复输血 &gt;20U 和/或 SF &gt;1000 μg/L</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心考点</span> 再生障碍性贫血的病因、临床表现、诊断与治疗</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">一、概念、分型框架与常见病因</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>概念</strong>：由不同病因和机制引起的<span class="k">骨髓造血功能衰竭症</span>，主要表现为骨髓造血功能低下、全血细胞减少及由此所致的<span class="k">贫血、出血、感染综合征</span>。按 Camitta 标准（1976）分为重型（SAA）和非重型（NSAA）；按病因分先天性（遗传性）与后天性（获得性，分原发性和继发性）。</p>
+    <ul>
+      <li><strong>常见病因（多数不明，可能为以下 3 类）</strong>：
+        <ol>
+          <li><strong>病毒感染</strong>：特别是<span class="k">肝炎病毒</span>、<span class="k">微小病毒 B19</span> 等。</li>
+          <li><strong>化学因素</strong>：特别是<span class="k">氯霉素类抗生素、磺胺类药物、抗肿瘤药以及苯</span>等。其中<span class="k">抗肿瘤药与苯</span>对骨髓的抑制与<span class="k">剂量相关</span>；抗生素、磺胺类药物及杀虫剂所致再障与剂量关系不大，而与<span class="k">个人敏感性</span>有关。</li>
+          <li><strong>电离辐射</strong>：长期接触 X 射线、镭及放射性核素等，影响 DNA 复制、抑制有丝分裂，使造血干细胞减少。</li>
+        </ol>
+      </li>
+    </ul>
+    <div class="callout warn">
+      <strong>大纲与第 10 版教材术语差异说明</strong>：大纲教学内容写“普通型/重度/极重度、三联 IST（hATG、环孢素、艾曲泊帕）、低强度治疗”；第 10 版教材原文使用 <span class="k">NSAA / SAA（Ⅰ、Ⅱ型）/ VSAA</span> 分型，强化免疫抑制为<span class="k">兔源 ATG 或猪源 ALG 联合环孢素</span>，未提马源 hATG、“三联 IST”及“低强度治疗”，艾曲泊帕/海曲泊帕列于促造血治疗（难治 SAA）。本页 100% 忠实第 10 版原文。
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">二、临床表现：SAA 与 NSAA 核心对比</h3><span class="badge badge-m">掌握</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>对比维度</th><th>重型再生障碍性贫血（SAA）</th><th>非重型再生障碍性贫血（NSAA）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>起病与进展</strong></td><td>起病急、进展快、病情重；少数可由 NSAA 进展而来（称 SAA Ⅱ型）</td><td>起病和进展较缓慢，病情较重型轻</td></tr>
+          <tr><td><strong>贫血</strong></td><td>多呈进行性加重，苍白、乏力、头昏、心悸、气短明显</td><td>慢性病程，苍白、乏力、头昏、心悸、活动后气短；输血改善但不持久</td></tr>
+          <tr><td><strong>感染</strong></td><td>多数发热 <span class="k">&gt;39℃</span>，个别持续高热；以<span class="k">呼吸道感染</span>最常见；病原体以<span class="k">革兰氏阴性杆菌、金黄色葡萄球菌和真菌</span>为主，常合并败血症</td><td>高热较少见，感染较易控制，很少持续 <span class="k">1 周以上</span>；上呼吸道感染常见，其次牙龈炎/支气管炎/扁桃体炎，肺炎与败血症少见（G<sup>-</sup> 杆菌和各类球菌）</td></tr>
+          <tr><td><strong>出血</strong></td><td>均有皮肤黏膜及内脏出血：出血点/大片瘀斑、<span class="k">口腔黏膜血疱</span>、鼻/牙龈/眼结膜出血，深部脏器（呕血/咯血/便血/血尿/阴道/眼底）及<span class="k">颅内出血</span>（常危及生命）</td><td>出血倾向较轻，以皮肤黏膜出血为主，内脏出血少见、较易控制；久治无效者可发生颅内出血</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">三、诊断标准、分型诊断标准与 7 大鉴别诊断</h3><span class="badge badge-m">掌握</span></div>
+    <ol>
+      <li><strong>AA 诊断标准（4 条）</strong>：①<span class="k">全血细胞减少</span>，网织红细胞百分比 <span class="k">&lt;1%</span>，淋巴细胞比例增高；②<span class="k">一般无肝、脾大</span>；③骨髓多部位增生减低（<span class="k">&lt;正常 50%</span>）或重度减低（<span class="k">&lt;正常 25%</span>），造血细胞减少，非造血细胞比例增高，骨髓小粒空虚（骨髓活检示造血组织均匀减少）；④除外其他全血细胞减少疾病（PNH、Fanconi 贫血、Evans 综合征、免疫相关性全血细胞减少等）。</li>
+      <li><strong>AA 分型诊断标准</strong>：
+        <ul>
+          <li><strong>SAA Ⅰ型（又称 AAA）</strong>：发病急、贫血进行性加重，常伴严重感染和/或出血；血象具备下述<strong>三项中两项</strong>：<span class="k">网织红细胞绝对值 &lt;15×10<sup>9</sup>/L</span>、<span class="k">中性粒细胞 &lt;0.5×10<sup>9</sup>/L</span>、<span class="k">血小板 &lt;20×10<sup>9</sup>/L</span>；骨髓增生广泛重度减低。</li>
+          <li><strong>极重型再障（VSAA）</strong>：符合 SAA Ⅰ型且中性粒细胞 <span class="k">&lt;0.2×10<sup>9</sup>/L</span>。</li>
+          <li><strong>NSAA（又称 CAA）</strong>：达不到 SAA Ⅰ型标准；若病情恶化达到 SAA Ⅰ型诊断标准，称为 <span class="k">SAA Ⅱ型</span>。</li>
+        </ul>
+      </li>
+    </ol>
+    <p><strong>7 大鉴别诊断对比表</strong>：</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>鉴别疾病</th><th>易混淆点</th><th>关键鉴别依据（第 10 版原文）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. 阵发性睡眠性血红蛋白尿症（PNH）</strong></td><td>不典型者无血红蛋白尿，全血细胞减少，骨髓可减低</td><td>典型者有血红蛋白尿；骨髓或外周血可检出 <span class="k">CD55<sup>-</sup>、CD59<sup>-</sup></span> 的各系血细胞</td></tr>
+          <tr><td><strong>2. 骨髓增生异常性肿瘤（MDS-RA）</strong></td><td>全血细胞减少，Ret 不高/减低，骨髓可低增生</td><td>存在<span class="k">病态造血</span>，早期髓系抗原（<span class="k">CD34</span>）表达增多，可有染色体核型异常</td></tr>
+          <tr><td><strong>3. 自身抗体介导全血细胞减少</strong>（Evans / 免疫相关性全血细胞减少）</td><td>全血细胞减少、骨髓增生减低</td><td>可测及外周成熟血细胞（Evans）或骨髓未成熟血细胞（IRP）自身抗体；Ret 或中性粒细胞比例常不低/偏高，骨髓红系比例不低易见<span class="k">“红系造血岛”</span>，Th1:Th2 降低、CD5<sup>+</sup>B 细胞↑、血清 IL-4/IL-10↑，对激素/IVIG/抗 CD20 单抗/环磷酰胺反应较好</td></tr>
+          <tr><td><strong>4. 急性白血病（低增生性 AL / 部分 APL）</strong></td><td>早期无肝脾淋巴结大，两系或三系减少</td><td>仔细观察血象及多部位骨髓见原始粒/单核/淋巴细胞明显增多；APL 见 <span class="k">t(15;17)</span> 及 <span class="k">PML::RARA</span> 融合基因</td></tr>
+          <tr><td><strong>5. 急性造血功能停滞</strong></td><td>多伴高热、贫血重、进展快</td><td>常由感染、药物或儿童营养不良诱发，具<span class="k">自限性</span>，无需特殊治疗，<span class="k">2～6 周</span>可恢复</td></tr>
+          <tr><td><strong>6. 放/化疗所致骨髓抑制</strong></td><td>全血细胞减少</td><td>有明确肿瘤及放/化疗病史，经促造血治疗后恢复</td></tr>
+          <tr><td><strong>7. 噬血细胞综合征</strong></td><td>全血细胞减少</td><td>多有感染诱因、高热、肝脾大、黄疸/腹水，骨髓成熟组织细胞明显增生且见<span class="k">噬血现象</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">四、治疗方案（支持治疗 + 针对发病机制治疗）</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>（一）支持治疗</strong>：</p>
+    <ul>
+      <li><strong>保护措施</strong>：预防感染（SAA 保护性隔离，酌情预防性抗真菌）；防外伤剧烈活动；杜绝接触伤骨髓及抑血小板药物；心理护理。</li>
+      <li><strong>对症治疗（6 项）</strong>：①纠正贫血：一般 <span class="k">Hb &lt;60 g/L</span> 且耐受差时输血，防输血过多；②控制出血：酚磺乙胺等止血药；纤溶亢进用氨基己酸（<span class="k">泌尿生殖系统出血禁用</span>）；女性子宫出血肌注<span class="k">丙酸睾酮</span>；严重血小板减少输浓缩血小板，任意供者无效改输 <span class="k">HLA 配型相配</span>血小板；③控制感染：留取分泌物/尿/便/血培养药敏，先用广谱抗生素，回报后换敏感窄谱，警惕并抗真菌；④护肝治疗；⑤<span class="k">祛铁治疗</span>：反复输血 <span class="k">&gt;20 U</span> 和/或血清铁蛋白 <span class="k">&gt;1 000 μg/L</span>（有条件查肝/心 MRI 评估铁过载）；⑥疫苗接种：因有致骨髓衰竭或复发报道，除非绝对需要<span class="k">不主张接种疫苗</span>（HSCT 后推荐规律接种者除外）。</li>
+    </ul>
+    <p><strong>（二）针对发病机制的治疗（三大支柱）</strong>：</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>治疗支柱</th><th>代表药物 / 方案</th><th>适用对象、剂量用法与注意事项（第 10 版原文）</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="3"><strong>1. 免疫抑制治疗</strong></td><td><strong>ALG / ATG</strong></td><td>主要用于 <span class="k">SAA</span>。兔源 ATG <span class="k">3～5 mg/(kg·d)</span> 连用 5 天；猪源 ALG <span class="k">20～30 mg/(kg·d)</span> 连用 5 天。用药前须做<span class="k">过敏试验</span>，用药中用糖皮质激素防过敏，静滴不宜过快（每日维持点滴 <span class="k">12～16 小时</span>）；与 CsA 组成强化免疫抑制方案。</td></tr>
+          <tr><td><strong>环孢素（CsA）</strong></td><td>适用于<span class="k">全部 AA</span>。<span class="k">3～5 mg/(kg·d)</span> 左右，疗程一般 <span class="k">&gt;1 年</span>；按造血/T 细胞恢复、血药浓度及不良反应（肝肾损害、牙龈增生、消化道反应）个体化调整。</td></tr>
+          <tr><td><strong>其他</strong></td><td>CD3 单抗、吗替麦考酚酯（MMF）、环磷酰胺、甲泼尼龙等用于 SAA。</td></tr>
+          <tr><td rowspan="2"><strong>2. 促造血治疗</strong></td><td><strong>雄激素（4 种常用药）</strong></td><td>适用于<span class="k">全部 AA</span>。①司坦唑醇 <span class="k">2 mg tid</span>；②十一酸睾酮 <span class="k">40～80 mg tid</span>；③达那唑 <span class="k">0.2 g tid</span>；④丙酸睾酮 <span class="k">100 mg/d</span> 肌内注射。注意男性化、肝功能损害等不良反应。</td></tr>
+          <tr><td><strong>造血生长因子</strong></td><td>适用于全部 AA，特别是 SAA（多在 IST 后用，维持 <span class="k">≥3 个月</span>）：①GM-CSF 或 G-CSF <span class="k">5 μg/(kg·d)</span>；②EPO 常用 <span class="k">50～100 U/(kg·d)</span>；③TPO-RA 治疗<span class="k">难治 SAA</span>：<span class="k">艾曲泊帕</span>起始 75 mg/d（每 2 周 +25 mg/d，最大 150 mg/d）、<span class="k">海曲泊帕</span>起始 7.5 mg/d（每 2 周 +2.5 mg/d，最大 15 mg/d）；④rhTPO（ATG 后每周 3 次，每次 15 000 U）；⑤IL-11 可联 IST。</td></tr>
+          <tr><td><strong>3. 异基因造血干细胞移植</strong></td><td><strong>allo-HSCT</strong></td><td><span class="k">40 岁以下</span>、无感染及其他并发症、有 <span class="k">HLA 相合同胞供者</span>的 SAA 患者，可考虑<span class="k">首选</span>。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 再生障碍性贫血的实验室检查特点</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">血象、骨髓象及其他相关特异性检查</h3><span class="badge badge-f">熟悉</span></div>
+    <ul>
+      <li><strong>1. 血象</strong>：SAA 呈重度全血细胞减少——重度<span class="k">正细胞正色素性贫血</span>，Ret 百分比多 <span class="k">&lt;0.5%</span> 且绝对值 <span class="k">&lt;15×10<sup>9</sup>/L</span>；WBC 多 <span class="k">&lt;2×10<sup>9</sup>/L</span>，中性粒细胞 <span class="k">&lt;0.5×10<sup>9</sup>/L</span>，淋巴细胞比例明显增高；PLT <span class="k">&lt;20×10<sup>9</sup>/L</span>。NSAA 亦呈全血细胞减少但未达 SAA 程度。</li>
+      <li><strong>2. 骨髓象与骨髓活检</strong>：SAA 多部位骨髓增生<span class="k">重度减低</span>，粒、红、巨核系明显减少且形态大致正常，淋巴细胞及非造血细胞比例明显增高，<span class="k">骨髓小粒皆空虚</span>；NSAA 多部位骨髓增生减低、较多脂肪滴、淋巴/网状/浆细胞比例增高、多数骨髓小粒空虚。骨髓活检示全切片增生减低，造血组织减少，脂肪组织和/或非造血细胞增多，无异常细胞。</li>
+      <li><strong>3. 其他相关检查</strong>：<span class="k">CD4∶CD8 比值减低</span>，<span class="k">Th1∶Th2 比值增高</span>，CD8<sup>+</sup>T 细胞和 γδT 细胞比例增高，血清 <span class="k">IL-2、IFN-γ、TNF</span> 水平增高；骨髓细胞染色体核型正常；骨髓铁染色示<span class="k">贮铁增多</span>；<span class="k">中性粒细胞碱性磷酸酶（NAP）染色强阳性</span>；溶血检查均阴性。</li>
+    </ul>
+    <div class="callout danger">
+      <strong>缺节显式声明（EPO 检查）</strong>：大纲目标栏提及“熟悉 EPO 等特异性实验室检查特点”，但人卫第 10 版《内科学》第六篇第五章【实验室检查】<strong>未设血清 EPO 检测条目</strong>（EPO 仅见于本章促造血治疗节）。严格遵守教材原文边界，不凭外部记忆补写血清 EPO 数值或变化规律。
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MODULE 4 ==================== -->
+<section class="module-section" id="mod-4" data-mod-title="Ⅳ、第九章 白血病（AL / CML）">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅳ、白血病（急性白血病 + 慢性髓系白血病）</h1>
+      <span class="mod-source">第10版 第九章《白血病》第一～三节（课本 P576–588 / PDF P607–619；全章至 P590/PDF P621，已剔除第四节 CLL）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>白血病的临床表现和 MICM 检查（覆盖急性白血病 AML/ALL 与慢性髓系白血病 CML）。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>白血病的诊断和治疗（含鉴别诊断、一般支持治疗、按危险度分层的抗白血病治疗与 CML 疗效监测，初步形成白血病诊疗思路）。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">严格按大纲教学内容与确认边界剔除第九章第四节《慢性淋巴细胞白血病》（课本 P588–590 / PDF P619–621），并按目标栏剔除发病情况、病因发病机制（含“二次打击”学说）及预后专节。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 4 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 4 · 白血病 MICM 整合诊断与危险分层诊疗总路径（AML / APL / ALL / CML）</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 420" width="100%" role="img" aria-label="白血病MICM整合诊断与危险分层诊疗总路径">
+        <defs>
+          <marker id="arr4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr4r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+        <!-- Top Row: MICM 4 Pillars -->
+        <rect x="16" y="14" width="202" height="106" rx="9" fill="var(--error)" fill-opacity="0.09" stroke="var(--error)" stroke-width="1.5" />
+        <text x="117" y="35" text-anchor="middle" font-size="13" font-weight="700" fill="var(--error)">M · 形态学 + 细胞化学</text>
+        <text x="26" y="55" font-size="11" fill="var(--foreground)">• 骨髓原始：WHO≥20%/FAB≥30%</text>
+        <text x="26" y="73" font-size="11" fill="var(--foreground)">• MPO(+)：AML；PAS块状：ALL</text>
+        <text x="26" y="91" font-size="11" fill="var(--foreground)">• NSE(+)NaF抑≥50%：单核</text>
+        <text x="26" y="109" font-size="11" fill="var(--foreground)">• CML：中晚幼为主、NAP↓/(-)</text>
+
+        <rect x="230" y="14" width="202" height="106" rx="9" fill="var(--chart-1)" fill-opacity="0.10" stroke="var(--chart-1)" stroke-width="1.5" />
+        <text x="331" y="35" text-anchor="middle" font-size="13" font-weight="700" fill="var(--chart-1)">I · 免疫学分型（EGIL）</text>
+        <text x="240" y="55" font-size="11" fill="var(--foreground)">• B系2分：CyCD79a/22/IgM</text>
+        <text x="240" y="73" font-size="11" fill="var(--foreground)">• T系2分：CD3、TCRα/β、γ/δ</text>
+        <text x="240" y="91" font-size="10.5" fill="var(--foreground)">• 髓系2分:CyMPO(1分13/33/117)</text>
+        <text x="240" y="109" font-size="10.8" fill="var(--foreground)">• APL：CD13/33/117⁺, DR⁻/34⁻</text>
+
+        <rect x="444" y="14" width="202" height="106" rx="9" fill="var(--chart-3)" fill-opacity="0.10" stroke="var(--chart-3)" stroke-width="1.5" />
+        <text x="545" y="35" text-anchor="middle" font-size="13" font-weight="700" fill="var(--chart-3)">C · 细胞遗传学</text>
+        <text x="454" y="55" font-size="11" fill="var(--foreground)">• APL：99% t(15;17)(q22;q12)</text>
+        <text x="454" y="73" font-size="11" fill="var(--foreground)">• AML良：t(8;21)、inv(16)</text>
+        <text x="454" y="91" font-size="11" fill="var(--foreground)">• CML：&gt;95% Ph t(9;22)</text>
+        <text x="454" y="109" font-size="10.5" fill="var(--foreground)">• ALL:成人25%Ph⁺/儿t(12;21)</text>
+
+        <rect x="658" y="14" width="206" height="106" rx="9" fill="var(--chart-2)" fill-opacity="0.10" stroke="var(--chart-2)" stroke-width="1.5" />
+        <text x="761" y="35" text-anchor="middle" font-size="13" font-weight="700" fill="var(--chart-2)">M · 分子生物学</text>
+        <text x="668" y="55" font-size="11" fill="var(--foreground)">• APL：PML::RARA 融合基因</text>
+        <text x="668" y="73" font-size="11" fill="var(--foreground)">• CML：BCR::ABL1（编码P210）</text>
+        <text x="668" y="91" font-size="11" fill="var(--foreground)">• AML良：NPM1(无FLT3)/CEBPA</text>
+        <text x="668" y="109" font-size="11" fill="var(--foreground)">• AML差：TP53、复杂/单体核型</text>
+
+        <!-- Downward arrows -->
+        <line x1="117" y1="120" x2="117" y2="152" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr4)" />
+        <line x1="331" y1="120" x2="331" y2="152" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr4)" />
+        <line x1="545" y1="120" x2="545" y2="152" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr4)" />
+        <line x1="761" y1="120" x2="761" y2="152" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr4)" />
+
+        <!-- Middle Banner: 4 Clinical Subtypes & Therapy -->
+        <rect x="16" y="158" width="202" height="162" rx="9" fill="var(--card)" stroke="var(--error)" stroke-width="1.5" />
+        <text x="117" y="179" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--error)">AML（非 APL）</text>
+        <text x="26" y="200" font-size="11" fill="var(--foreground)">• 诱导：3+7（IA / DA / HA）</text>
+        <text x="26" y="218" font-size="11" fill="var(--foreground)">• 老年/不耐受：HMA+BCL-2i</text>
+        <text x="26" y="236" font-size="11" fill="var(--foreground)">• 缓解后（按表6-9-3分层）：</text>
+        <text x="26" y="254" font-size="11" fill="var(--primary)">  - 良好：首选 HD Ara-C</text>
+        <text x="26" y="272" font-size="11" fill="var(--error)">  - 不良：首选 allo-HSCT</text>
+        <text x="26" y="290" font-size="11" fill="var(--foreground)">  - 中等：两者均可</text>
+        <text x="26" y="308" font-size="10.5" fill="var(--muted-foreground)">（防小脑共济失调；WBC≥100按差）</text>
+
+        <rect x="230" y="158" width="202" height="162" rx="9" fill="var(--card)" stroke="var(--warning)" stroke-width="1.5" />
+        <text x="331" y="179" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--warning)">APL（M₃）</text>
+        <text x="240" y="200" font-size="11" fill="var(--foreground)">• 易并发 DIC/广泛出血</text>
+        <text x="240" y="218" font-size="11" font-weight="700" fill="var(--primary)">• 诱导：ATRA + 砷剂（ATO）</text>
+        <text x="240" y="236" font-size="11" fill="var(--foreground)">• 警惕分化综合征（激素+停药）</text>
+        <text x="240" y="254" font-size="11" fill="var(--foreground)">• 积极输 PLT/FFP/冷沉淀</text>
+        <text x="240" y="272" font-size="11" fill="var(--foreground)">• 禁用单采（一般不推荐）</text>
+        <text x="240" y="290" font-size="11" fill="var(--foreground)">• CR后鞘注≥3次 + 交替维持</text>
+        <text x="240" y="308" font-size="10.5" fill="var(--muted-foreground)">近 2 年，监测 PML::RARA 阴性</text>
+
+        <rect x="444" y="158" width="202" height="162" rx="9" fill="var(--card)" stroke="var(--chart-3)" stroke-width="1.5" />
+        <text x="545" y="179" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-3)">ALL（成人 / 儿童）</text>
+        <text x="454" y="200" font-size="11" fill="var(--foreground)">• 诱导：VP→DVP→DVLP /</text>
+        <text x="454" y="218" font-size="11" fill="var(--foreground)">  Hyper-CVAD；Ph⁺ 联 TKI</text>
+        <text x="454" y="236" font-size="11" fill="var(--foreground)">• 强化巩固（HD MTX+亚叶酸钙）</text>
+        <text x="454" y="254" font-size="11" fill="var(--foreground)">• 维持 2~3年（6-MP+MTX+VP）</text>
+        <text x="454" y="272" font-size="11" fill="var(--error)">• 全程防 CNSL（鞘注+全身）</text>
+        <text x="454" y="290" font-size="11" fill="var(--foreground)">• 睾丸白血病：双侧照射+化疗</text>
+        <text x="454" y="308" font-size="10.5" fill="var(--muted-foreground)">• R/R B-ALL：CD19 CAR-T / 双抗</text>
+
+        <rect x="658" y="158" width="206" height="162" rx="9" fill="var(--card)" stroke="var(--chart-2)" stroke-width="1.5" />
+        <text x="761" y="179" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-2)">CML（CP / AP / BC）</text>
+        <text x="668" y="200" font-size="11" font-weight="700" fill="var(--primary)">• CP 首选 TKI：一代伊马替尼</text>
+        <text x="668" y="218" font-size="11" fill="var(--foreground)">• 二代：尼洛替尼 / 达沙替尼</text>
+        <text x="668" y="236" font-size="11" fill="var(--error)">• T315I 突变：三代奥雷巴替尼</text>
+        <text x="668" y="254" font-size="11" fill="var(--foreground)">• 妊娠期首选：IFN-α</text>
+        <text x="668" y="272" font-size="11" fill="var(--foreground)">• 3/6/12/18月监测 HR/CyR/MR</text>
+        <text x="668" y="290" font-size="11" fill="var(--foreground)">• AP/BC：加量TKI(±化疗)→回CP</text>
+        <text x="668" y="308" font-size="10.5" fill="var(--error)">  立即行 allo-HSCT + 移植后 TKI</text>
+
+        <!-- Bottom Banner: Common Emergency & CR Standard -->
+        <rect x="16" y="336" width="848" height="70" rx="9" fill="var(--secondary)" stroke="var(--border)" />
+        <text x="440" y="357" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--foreground)">通用急症与疗效节点：WBC &gt;100×10⁹/L 紧急单采（APL 除外）+ 水化碱化 + 别嘌醇防高尿酸肾病 + 成分血辐照 25~30 Gy</text>
+        <text x="440" y="378" text-anchor="middle" font-size="11.5" fill="var(--primary)">AL 完全缓解（CR）：症状体征消失、外周无原始细胞、无髓外病变、骨髓原始 &lt;5%、ANC &gt;1.0×10⁹/L、PLT ≥100×10⁹/L</text>
+        <text x="440" y="396" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">定期监测 MRD（可检测残留病）；CML 稳定深层分子学反应（DMR）≥2 年可评估无治疗缓解（TFR）</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心考点</span> 白血病的临床表现与 MICM 检查（AL + CML）</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">一、基本概念分类与临床表现（急性白血病 + 慢性髓系白血病三期）</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>概念与基本分类</strong>：造血干/祖细胞恶性克隆性疾病，白血病细胞自我更新增强、增殖失控、分化障碍、凋亡受阻，抑制正常造血并浸润他脏。按分化成熟度与自然病程分<strong>急性白血病（AL）</strong>（停滞在原始/早期幼稚阶段，自然病程仅几个月，分 <span class="k">ALL 与 AML</span>）和<strong>慢性白血病（CL）</strong>（停滞在较成熟幼稚/成熟阶段，自然病程数年；本讲按大纲覆盖 <span class="k">CML</span>）。</p>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>（一）急性白血病（AL）两大临床征群</h4>
+        <p><strong>1. 正常骨髓造血受抑制表现</strong>：</p>
+        <ul>
+          <li><strong>贫血</strong>：病程短者可无贫血，半数就诊时已重度贫血（尤其继发于 MDS）。</li>
+          <li><strong>发热与感染</strong>：半数以发热为早期表现（可高达 39～40℃）。常见部位：<span class="k">口腔炎、牙龈炎、咽峡炎</span>（可溃疡坏死）、肺部、肛周炎/肛旁脓肿、血流感染。最常见致病菌为<span class="k">革兰氏阴性杆菌</span>（肺炎克雷伯、铜绿、大肠埃希、不动杆菌），G<sup>+</sup> 球菌（金葡/表葡/肠球菌）上升；长程抗生素/粒缺并发<span class="k">真菌</span>（念珠/曲霉/隐球菌）、病毒（HSV/VZV/CMV）、偶见耶氏肺孢子菌。</li>
+          <li><strong>出血</strong>：近 <span class="k">40%</span> 为早期表现；<span class="k">APL 易并发凝血异常（DIC）</span>致广泛出血；AL 死于出血占 62.24%，其中 <span class="k">87% 为颅内出血</span>（头痛、呕吐、双侧瞳孔不等大、昏迷死亡）。原因：白血病细胞血管淤滞浸润、血小板减少、凝血异常、感染。</li>
+        </ul>
+        <p><strong>2. 白血病细胞增殖浸润表现</strong>：</p>
+        <ul>
+          <li><strong>淋巴结与肝脾大</strong>：淋巴结肿大以 <span class="k">ALL</span> 多见，纵隔淋巴结肿大常见于 <span class="k">T-ALL</span>；肝脾多轻至中度，除 CML 急变外<span class="k">巨脾罕见</span>。</li>
+          <li><strong>骨骼与关节</strong>：常有<span class="k">胸骨下段局部压痛</span>；儿童多见骨关节痛；骨髓坏死致剧痛。</li>
+          <li><strong>眼部</strong>：部分 AML 伴<span class="k">粒细胞肉瘤（绿色瘤）</span>，最常累及<span class="k">眼眶骨膜</span>致突眼、复视、失明。</li>
+          <li><strong>口腔与皮肤</strong>：<span class="k">M<sub>4</sub> 和 M<sub>5</sub></span> 常致<span class="k">牙龈增生肿胀</span>，皮肤蓝灰色斑丘疹或紫蓝色结节。</li>
+          <li><strong>中枢神经系统（CNSL）</strong>：最常见髓外浸润（血脑屏障阻挡化疗药），多见于缓解期，以 <span class="k">ALL 最常见</span>（儿童尤甚），其次 M<sub>4</sub>、M<sub>5</sub>、M<sub>2</sub>；表现头痛头晕、呕吐、颈强直、抽搐昏迷。</li>
+          <li><strong>睾丸白血病</strong>：多一侧无痛性肿大（对侧活检亦常浸润），多见于 ALL 缓解期幼儿/青年，仅次于 CNSL 的髓外复发部位。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>（二）慢性髓系白血病（CML）自然病程三期</h4>
+        <p>起病缓慢，早期常无症状（体检发现血象异常或脾大），自然病程分三期：</p>
+        <ul>
+          <li><strong>1. 慢性期（CP，一般持续 1～4 年）</strong>：
+            <br />• 代谢亢进症状：乏力、低热、多汗/盗汗、体重减轻；
+            <br />• <span class="k">最显著体征为脾大（巨脾）</span>：就医时常达脐或脐以下，质地坚实、平滑、无压痛，伴左上腹坠胀感；若发生<span class="k">脾梗死</span>则脾区压痛明显并有摩擦音；
+            <br />• 明显肝大少见；部分患者<span class="k">胸骨中下段压痛</span>；白细胞极高时眼底充血出血及白细胞淤滞症。</li>
+          <li><strong>2. 加速期（AP，维持数月至数年）</strong>：
+            <br />• 发热、虚弱、进行性体重下降、骨骼疼痛，渐出现贫血和出血；
+            <br />• 脾持续或进行性肿大；
+            <br />• 原有效药物（含 TKI）失效；
+            <br />• 实验室指标：外周血或骨髓原始细胞 <span class="k">≥10%</span>、外周血嗜碱性粒细胞 <span class="k">&gt;20%</span>、不明原因血小板进行性减少或增加、Ph<sup>+</sup> 细胞出现附加染色体异常（<span class="k">+8、双 Ph、i(17q)</span> 等）。</li>
+          <li><strong>3. 急变期（BC，终末期）</strong>：
+            <br />• 临床与 AL 类似，多数急髓变，少数急淋变或急单变，偶巨核/红系急变，预后极差（数月内死亡）；
+            <br />• 实验室指标：外周血或骨髓原始细胞 <span class="k">&gt;20%</span> 或出现髓外原始细胞浸润。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">二、MICM 检查全解（上）：M 形态学与细胞化学 + I 免疫学</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>（一）急性白血病（AL）血象、骨髓象、FAB/WHO 分型与细胞化学（M）</strong>：</p>
+    <ul>
+      <li><strong>血象</strong>：WBC <span class="k">&gt;10×10<sup>9</sup>/L</span> 称白细胞增多性白血病，正常或减低（可 &lt;1.0×10<sup>9</sup>/L）称白细胞不增多性白血病；涂片见原始和幼稚细胞；正细胞性贫血；约 50% 患者 PLT &lt;60×10<sup>9</sup>/L。</li>
+      <li><strong>骨髓象（诊断 AL 主要依据和必做检查）</strong>：FAB 分型原始细胞 <span class="k">≥30% ANC</span>，WHO 分型降至 <span class="k">≥20% ANC</span>，且<span class="k">伴重现性遗传学异常的 AML 取消 ≥20% 要求</span>（伴 BCR::ABL1 融合及伴 CEBPA 突变者除外）。少数骨髓增生低下称低增生性 AL。</li>
+    </ul>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th colspan="3">AL 的 FAB 分型要点（AML M<sub>0</sub>～M<sub>7</sub> 与 ALL L<sub>1</sub>～L<sub>3</sub>）</th></tr><tr><th>类型</th><th>名称</th><th>核心形态学与组化诊断界值（NEC = 非红系有核细胞）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>M<sub>0</sub></strong></td><td>急性髓细胞白血病微分化型</td><td>原始细胞 &gt;30%，无嗜天青颗粒及 Auer 小体，光镜 MPO/苏丹黑 B &lt;3%，电镜 MPO(+)；CD33/CD13(+)，淋系/血小板抗原(-)</td></tr>
+          <tr><td><strong>M<sub>1</sub></strong></td><td>急性粒细胞白血病未分化型</td><td>原始粒细胞（Ⅰ+Ⅱ型）占 NEC <span class="k">&gt;90%</span>，至少 3% MPO(+)</td></tr>
+          <tr><td><strong>M<sub>2</sub></strong></td><td>急性粒细胞白血病部分分化型</td><td>原始粒细胞占 NEC <span class="k">30%～89%</span>，其他粒细胞 ≥10%，单核细胞 &lt;20%</td></tr>
+          <tr><td><strong>M<sub>3</sub></strong></td><td>急性早幼粒细胞白血病（APL）</td><td>颗粒增多的<span class="k">早幼粒细胞</span>为主，占 NEC <span class="k">≥30%</span></td></tr>
+          <tr><td><strong>M<sub>4</sub> / M<sub>4</sub>Eo</strong></td><td>急性粒-单核细胞白血病</td><td>原始细胞占 NEC &gt;30%，各阶段粒细胞 ≥20%，各阶段单核细胞 ≥20%；伴嗜酸性粒细胞占 NEC ≥5% 为 M<sub>4</sub>Eo</td></tr>
+          <tr><td><strong>M<sub>5</sub></strong></td><td>急性单核细胞白血病</td><td>原单+幼单占 NEC ≥30%，且原单+幼单+单核 ≥80%（原单 ≥80% 为 M<sub>5a</sub>，&lt;80% 为 M<sub>5b</sub>）</td></tr>
+          <tr><td><strong>M<sub>6</sub></strong></td><td>红白血病（EL）</td><td>幼红细胞 <span class="k">≥50%</span>，NEC 中原始细胞（Ⅰ+Ⅱ型）≥30%</td></tr>
+          <tr><td><strong>M<sub>7</sub></strong></td><td>急性巨核细胞白血病</td><td>原始巨核细胞 ≥30%，血小板抗原及血小板过氧化酶(+)</td></tr>
+          <tr><td><strong>L<sub>1</sub> / L<sub>2</sub> / L<sub>3</sub></strong></td><td>ALL 的 FAB 三亚型</td><td>L<sub>1</sub>：小细胞（直径 <span class="k">≤12 μm</span>）为主；L<sub>2</sub>：大细胞（<span class="k">&gt;12 μm</span>）为主；L<sub>3</sub>（Burkitt 型）：大细胞大小一致、明显空泡、胞质强嗜碱性</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>WHO 第 5 版 AL 分型框架</strong>：①<strong>AML</strong> 分为两大组：（1）伴重现性遗传学异常的 AML（APL 伴 PML::RARA、AML 伴 RUNX1::RUNX1T1 / CBFB::MYH11 / DEK::NUP214 / RBM15::MRTFA / BCR::ABL1 / KMT2A 重排 / MECOM 重排 / NUP98 重排 / NPM1 突变 / CEBPA 突变、骨髓增生异常相关 AML、伴其他特定遗传学改变）；（2）由分化定义的 AML（微分化型、未成熟型、成熟型、急性嗜碱性粒细胞、急性粒-单核、急性单核、急性红细胞、急性巨核细胞白血病）。②<strong>ALL</strong> 分为：（1）原始 B 淋巴细胞白血病（B-ALL NOS、高超二倍体、亚二倍体、iAMP21、BCR::ABL1 融合及样特征、KMT2A 重排、ETV6::RUNX1 融合及样特征、TCF3::PBX1、IGH::IL3、TCF3::HLF 及其他特定异常）；（2）原始 T 淋巴细胞白血病（T-ALL NOS、早期前体 T 淋巴细胞白血病 ETP-ALL）。</p>
+    <div class="grid-2">
+      <div class="tbl-wrap">
+        <table class="med-tbl">
+          <thead><tr><th colspan="4">表 6-9-1 常见 AL 的细胞化学鉴别</th></tr><tr><th>染色</th><th>ALL</th><th>急粒（AML）</th><th>急单（AMoL）</th></tr></thead>
+          <tbody>
+            <tr><td><strong>MPO</strong></td><td><span class="k">(-)</span></td><td>分化差 (-)～(+)；分化好 <span class="k">(+)～(+++)</span></td><td>(-)～(+)</td></tr>
+            <tr><td><strong>PAS</strong></td><td><span class="k">(+) 成块或粗颗粒状</span></td><td>(-) 或 (+) 弥漫淡红/细颗粒</td><td>(-) 或 (+) 弥漫淡红/细颗粒</td></tr>
+            <tr><td><strong>NSE</strong></td><td>(-)</td><td>(-)～(+)，<span class="k">NaF 抑制 &lt;50%</span></td><td>(+)，<span class="k">NaF 抑制 ≥50%</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tbl-wrap">
+        <table class="med-tbl">
+          <thead><tr><th colspan="4">表 6-9-2 白血病免疫学积分系统（EGIL，1998）</th></tr><tr><th>分值</th><th>B 系</th><th>T 系</th><th>髓系</th></tr></thead>
+          <tbody>
+            <tr><td><strong>2 分</strong></td><td><span class="k">CyCD79a、CyCD22、CyIgM</span></td><td><span class="k">CD3、TCRα/β、TCRγ/δ</span></td><td><span class="k">CyMPO</span></td></tr>
+            <tr><td><strong>1 分</strong></td><td>CD19、CD20、CD10</td><td>CD2、CD5、CD8、CD10</td><td>CD117、CD13、CD33、CD65</td></tr>
+            <tr><td><strong>0.5 分</strong></td><td>TdT、CD24</td><td>TdT、CD7、CD1a</td><td>CD14、CD15、CD64</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p><strong>免疫学关键点（I）</strong>：造血干/祖细胞表达 <span class="k">CD34</span>；APL 典型表达 <span class="k">CD13、CD33、CD117</span>，不表达 <span class="k">HLA-DR 和 CD34</span>，可表达 CD9。急性混合细胞白血病（双表型或双克隆）须满足<span class="k">髓系与一个淋系积分均 &gt;2 分</span>。</p>
+    <p><strong>（二）CML 血象、NAP 与骨髓象</strong>：①血象：WBC 常 <span class="k">&gt;20×10<sup>9</sup>/L</span>（可达 &gt;100×10<sup>9</sup>/L），以<span class="k">中性中幼、晚幼和杆状核粒细胞</span>居多，原始（Ⅰ+Ⅱ）&lt;10%，<span class="k">嗜酸、嗜碱性粒细胞增多</span>（后者助诊）；近半数 PLT 增多，晚期减低伴贫血。②<span class="k">NAP 活性减低或阴性</span>（治疗有效恢复、复发再降、合并细菌感染略升）。③骨髓象：增生明显至极度活跃，粒红比显著增高，中/晚幼及杆状核明显增多，原始 &lt;10%，嗜酸嗜碱增多，红系相对减少，巨核正常/增多（晚期减），偶见 <span class="k">Gaucher（戈谢）细胞</span>。</p>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">三、MICM 检查全解（下）：C 细胞遗传学 + M 分子生物学 + 生化与脑脊液</h3><span class="badge badge-m">掌握</span></div>
+    <ul>
+      <li><strong>APL 特征标志</strong>：<span class="k">99%</span> 的 APL 伴 <span class="k">t(15;17)(q22;q12)</span>，形成 <span class="k">PML::RARA</span> 融合基因（15 号 PML 与 17 号 RARA 融合，为 ATRA 和砷剂有效之分子基础）。</li>
+      <li><strong>CML 特征标志</strong>：<span class="k">&gt;95%</span> 见 <span class="k">Ph 染色体 t(9;22)(q34;q11)</span>（9 号 ABL1 易位至 22 号 BCR），形成 <span class="k">BCR::ABL1</span> 融合基因，主要编码具酪氨酸激酶活性的 <span class="k">P<sub>210</sub></span> 蛋白（可见于粒、红、单核、巨核及淋巴细胞）；不足 5% 为 Ph 阴性但 BCR::ABL1 阳性。</li>
+      <li><strong>血液生化与脑脊液</strong>：AL 与 CML 均可见血清尿酸、LDH 增高；AL 伴 DIC 时凝血异常；CNSL 脑脊液<span class="k">压力升高、白细胞增多、蛋白增多、糖定量减少</span>，涂片见白血病细胞。</li>
+    </ul>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th colspan="2">表 6-9-3 AML 常见遗传异常的预后分层</th></tr><tr><th>预后组</th><th>细胞遗传学与分子生物学异常（第 10 版原文）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>良好</strong></td><td><span class="k">t(8;21)(q22;q22.1)/RUNX1::RUNX1T1</span>；<span class="k">inv(16)(p13.1q22) 或 t(16;16)/CBFB::MYH11</span>（KIT/FLT3 突变不改变风险类别）；<span class="k">NPM1 突变且无 FLT3-ITD</span>；<span class="k">CEBPA bZIP 框内突变</span>（单/双等位均属良好）。</td></tr>
+          <tr><td><strong>中等</strong></td><td>NPM1 突变伴 FLT3-ITD；野生型 NPM1 伴 FLT3-ITD（无不良风险因素）；t(9;11)(p21.3;q23.3)/MLLT3::KMT2A；未归类为良好或不良的异常。</td></tr>
+          <tr><td><strong>不良</strong></td><td>t(6;9)/DEK::NUP214；t(v;11q23.3)/KMT2A 重排（不含 PTD）；t(9;22)/BCR::ABL1；t(8;16)/KAT6A::CREBBP；inv(3) 或 t(3;3)/GATA2,MECOM(EVI1)；t(3q26.2;v)/MECOM 重排；<span class="k">-5 或 del(5q)、-7、-17/abn(17p)</span>；<span class="k">复杂核型</span>（≥3 个不相关异常）；<span class="k">单体核型</span>（≥2 个常染色体单体或 1 个常染色体单体合并结构异常）；ASXL1/BCOR/EZH2/RUNX1/SF3B1/SRSF2/STAG2/U2AF1/ZRSR2 突变；<span class="k">TP53 突变</span>（等位基因比例 ≥10%）。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th colspan="4">表 6-9-4 ALL 常见染色体和分子学异常检出率</th></tr><tr><th>染色体核型</th><th>相关基因</th><th>成人发生率</th><th>儿童发生率</th></tr></thead>
+        <tbody>
+          <tr><td>超二倍体（&gt;50 条） / 亚二倍体（&lt;44 条）</td><td>—</td><td>7% / 2%</td><td><span class="k">25%</span> / 1%</td></tr>
+          <tr><td><strong>t(9;22)(q34;q11.2)（Ph<sup>+</sup>ALL）</strong></td><td><span class="k">BCR::ABL1</span></td><td><span class="k">25%</span></td><td>2%～4%</td></tr>
+          <tr><td>t(12;21)(p13;q22)</td><td><span class="k">ETV6::RUNX1</span>（TEL::AML1）</td><td>2%</td><td><span class="k">22%</span></td></tr>
+          <tr><td>t(v;11q23)：t(4;11)、t(9;11)、t(11;19)</td><td>KMT2A（MLL）</td><td>10%</td><td>8%</td></tr>
+          <tr><td>t(1;19) / t(5;14) / t(8;14),t(2;8),t(8;22)</td><td>TCF3::PBX1 / IL3::IGH / MYC</td><td>3% / &lt;1% / 4%</td><td>6% / &lt;1% / 2%</td></tr>
+          <tr><td>t(1;14) / t(10;14) / t(5;14)(q35;q32)</td><td>TAL-1 / HOX11 / HOX11L2</td><td>12% / 8% / 1%</td><td>7% / 1% / 3%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 白血病的诊断鉴别与分层治疗（AL + CML）</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">四、AL 与 CML 的诊断要点及鉴别诊断</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>急性白血病（AL）诊断与 4 项鉴别</h4>
+        <p>依据临床表现、血象、骨髓象确诊，并尽力获取完整 <span class="k">MICM</span> 资料以分层和指导治疗。须鉴别：</p>
+        <ol>
+          <li><strong>MDS</strong>：病态造血、全血减少，但骨髓原始细胞 <span class="k">&lt;20%</span>。</li>
+          <li><strong>感染致白细胞异常</strong>：传染性单核细胞增多症见异形淋细胞（非原始细胞）、嗜异性抗体效价升、可自愈；百日咳/风疹等淋巴细胞形态正常、骨髓原始不增多。</li>
+          <li><strong>巨幼细胞贫血</strong>：须与红白血病（M<sub>6</sub>）鉴别——巨幼贫原始细胞不增多、幼红细胞 <span class="k">PAS 阴性</span>、叶酸/Vit B<sub>12</sub> 有效。</li>
+          <li><strong>急性粒缺恢复期</strong>：有明确药物/感染因，血小板正常，无 Auer 小体及染色体异常，短期恢复。</li>
+        </ol>
+      </div>
+      <div class="mini-box">
+        <h4>慢性髓系白血病（CML）诊断与 3 项鉴别</h4>
+        <p>不明原因持续 WBC↑ + 典型血/髓象 + 脾大 + <span class="k">Ph 染色体和/或 BCR::ABL1 阳性</span>即可确诊（注意 Ph 亦见于 1% AML、5% 儿童 ALL、25% 成人 ALL；双阴性类 CML 归入 MDS/MPN）。须鉴别：</p>
+        <ol>
+          <li><strong>其他原因脾大</strong>：血吸虫、慢性疟疾、黑热病、肝硬化、脾亢（无典型 CML 血髓象，Ph/BCR::ABL1 阴性）。</li>
+          <li><strong>类白血病反应</strong>：继发于严重感染/肿瘤，粒细胞见中毒颗粒与空泡，嗜酸/嗜碱不增多，<span class="k">NAP 强阳性</span>，Ph/BCR::ABL1 阴性，Hb/PLT 多正常。</li>
+          <li><strong>原发性骨髓纤维化</strong>：脾大显著，但 WBC 多 <span class="k">&lt;30×10<sup>9</sup>/L</span>，NAP 阳性，外周见幼红与<span class="k">泪滴状红细胞</span>，Ph 阴性，伴 <span class="k">JAK2 V617F / CALR / MPL</span> 突变，骨穿<span class="k">干抽</span>，网状纤维染色阳性。</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">五、急性白血病（ALL / AML / APL / 老年）治疗策略</h3><span class="badge badge-f">熟悉</span></div>
+    <p><strong>（一）一般治疗（5 项）</strong>：①<span class="k">高白细胞血症（WBC &gt;100×10<sup>9</sup>/L）</span>：防白细胞淤滞症，紧急血细胞分离机单采（<span class="k">APL 一般不推荐</span>）+ 水化碱化 + 预处理（ALL 用地塞米松 10 mg/m<sup>2</sup> 静注；AML 用羟基脲 1.5～2.5 g/6h，总量 6～10 g/d 约 36h）防溶瘤并发症；②防治感染：层流/隔离病房，G-CSF 缩短粒缺期（ALL 及老年/强化疗/伴感染 AML），发热即培养+经验抗生素；③成分输血：维持 <span class="k">Hb &gt;80 g/L</span>（白细胞淤滞时不宜马上输红细胞），低血小板输单采血小板，白细胞滤器去白，<span class="k">25～30 Gy 辐照</span>防 TA-GVHD；④防高尿酸血症肾病：24h 静脉补液保尿量 <span class="k">&gt;100 ml/(m<sup>2</sup>·h)</span>、碱化尿液、别嘌醇 <span class="k">100 mg tid</span>；⑤维持营养。</p>
+    <p><strong>（二）抗白血病两阶段与 CR / MRD 定义</strong>：第一阶段诱导缓解获 <span class="k">CR</span>（症状体征消失、外周无原始细胞、无髓外白血病、骨髓三系恢复且<span class="k">原始细胞 &lt;5%</span>、<span class="k">ANC &gt;1.0×10<sup>9</sup>/L</span>、<span class="k">PLT ≥100×10<sup>9</sup>/L</span>）；第二阶段缓解后治疗（化疗/HSCT），定期监测 <span class="k">MRD</span>（CR 后体内仍残留 10<sup>8</sup>～10<sup>9</sup>/L 白血病细胞；DFS &gt;10 年有望治愈）。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>类型</th><th>诱导缓解治疗</th><th>缓解后治疗、庇护所防治与复发/移植</th></tr></thead>
+        <tbody>
+          <tr><td><strong>ALL</strong></td><td>基本方案 <span class="k">VP</span>（VCR 副作用末梢神经炎/便秘 + P）→ <span class="k">DVP</span>（加 DNR，警惕心脏毒性）→ 常用 <span class="k">DVLP</span>（加 L-Asp/PEG-Asp，副作用肝损/胰腺炎/凝血与白蛋白降/过敏），或加 CTX/Ara-C 及 <span class="k">Hyper-CVAD</span>；<span class="k">Ph<sup>+</sup>ALL 联用 TKI</span>（伊马替尼/达沙替尼，CR 达 90%～95%，用至维持结束）。</td><td>• <strong>强化巩固 + 维持</strong>：大剂量交替轮换（<span class="k">HD MTX</span> 须水化碱化+<span class="k">亚叶酸钙解救</span>）；维持用 <span class="k">6-MP + MTX + 间断 VP</span> 持续 <span class="k">2～3 年</span>（成熟 B-ALL 除外）；MRD<sup>+</sup> B-ALL 可用 CD19/CD3 双抗后移植。<br />• <strong>CNSL 与睾丸</strong>：早期强化全身+鞘注（MTX/Ara-C/激素）防 CNSL，颅脊椎照射仅作挽救；睾丸白血病单侧受累亦行<span class="k">双侧照射</span>+全身化疗。<br />• <strong>复发与移植</strong>：复发（CR 后骨髓原始 &gt;5% 或髓外）用原方案/HD Ara-C/双抗/CD22 ADC/<span class="k">CD19 CAR-T</span>（约 90% 获 CR）。<strong>allo-HSCT 指征</strong>：①复发难治；②CR<sub>2</sub>；③CR<sub>1</sub> 高危（Ph<sup>+</sup>、亚二倍体、MLL 重排、前 B-ALL WBC≥30×10<sup>9</sup>/L、T-ALL WBC≥100×10<sup>9</sup>/L、CR &gt;4～6 周、MRD 持续或上升）。</td></tr>
+          <tr><td><strong>AML（非 APL）</strong></td><td>标准 <span class="k">3+7 方案</span>：<span class="k">IA</span>（IDA 12 mg/(m<sup>2</sup>·d)）或 <span class="k">DA</span>（DNR 60～90 mg/(m<sup>2</sup>·d)）联标准剂量 Ara-C；中国方案 <span class="k">HA / HAD / HAA</span>（高三尖杉酯碱）；老年/不耐受用<span class="k">去甲基化药 + BCL-2 抑制剂</span>；伴 FLT3/IDH 突变联相应抑制剂；2 疗程未 CR 示原发耐药。</td><td>• <strong>&lt;60 岁按表 6-9-3 危险度分层</strong>：<span class="k">预后不良首选 allo-HSCT</span>；<span class="k">预后良好首选大剂量 Ara-C（HD Ara-C）</span>（最严重并发症<span class="k">小脑性共济失调须停药</span>，激素预防皮疹发热结膜炎）；预后中等两者均可；初诊 WBC ≥100×10<sup>9</sup>/L 按不良组。<br />• <strong>CNSL 筛查</strong>：初诊 WBC ≥40×10<sup>9</sup>/L、髓外病变、M<sub>4</sub>/M<sub>5</sub>、t(8;21) 或 inv(16) 者 CR 后查脑脊液并预防鞘注 ≥1 次。<br />• <strong>复发难治</strong>：靶向药（FLT3i/IDHi）、中大剂量 Ara-C、无交叉耐药新药、再达 CR 后尽快 allo-HSCT。</td></tr>
+          <tr><td><strong>APL（M<sub>3</sub>）</strong></td><td><span class="k">ATRA（20～45 mg/(m<sup>2</sup>·d)）+ 砷剂（ATO）</span>为主，必要时加羟基脲/蒽环类降白细胞；积极输血小板、FFP、冷沉淀降早期出血死亡。<br />• <strong>分化综合征</strong>：发热、肌骨痛、呼吸窘迫、肺浸润、胸/心包积液、体重增、低血压、AKI → 予<span class="k">糖皮质激素</span>+吸氧利尿，可暂停 ATRA。<br />• 其他毒性：ATRA 致头痛/高颅压/肝损；ATO 致肝损/<span class="k">QT 间期延长</span>。</td><td>• CR 后至少预防性鞘内用药 <span class="k">3 次</span>；<br />• 分子学缓解后以 ATRA + 砷剂交替维持治疗<span class="k">近 2 年</span>，定期监测维持 <span class="k">PML::RARA 阴性</span>；<br />• 复发用 ATO ± ATRA ± 蒽环类再诱导，融合基因转阴者行 auto-HSCT 或砷剂巩固，仍阳性考虑 allo-HSCT。</td></tr>
+          <tr><td><strong>老年 AL</strong></td><td colspan="2">&gt;60 岁多须减量以降低治疗相关死亡；&lt;70 岁体能与脏器好且高危有供者可行非清髓 allo-HSCT；BCL-2i+HMA、CD3/CD19 双抗、TKI 显著改善老年治疗格局。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">六、慢性髓系白血病（CML）治疗与表 6-9-5 疗效监测</h3><span class="badge badge-f">熟悉</span></div>
+    <ul>
+      <li><strong>（一）CML CP 治疗</strong>：
+        <ol>
+          <li><strong>高白细胞紧急处理</strong>：羟基脲 + 别嘌醇，极高或白细胞淤滞行治疗性白细胞单采；确诊后<span class="k">首选 TKI</span>。</li>
+          <li><strong>分子靶向治疗（TKI）</strong>：一代<span class="k">伊马替尼（IM）</span>（阻断 ABL1 激酶 ATP 结合位，CCyR 92%、10年 OS 84%；随意减停易致激酶区突变耐药）；二代<span class="k">尼洛替尼、达沙替尼</span>（更快获深层分子学反应 DMR，一线可选）；三代<span class="k">奥雷巴替尼</span>（克服 <span class="k">T315I 突变</span>）。治疗后第 <span class="k">3、6、12、18 个月</span>规范监测疗效，失败查 ABL1 激酶区突变并换 TKI 或 HSCT；稳定 DMR <span class="k">≥2 年</span>可尝试停药达<span class="k">无治疗缓解（TFR）</span>。</li>
+          <li><strong>干扰素-α（IFN-α）</strong>：用于不适合 TKI/HSCT 及<span class="k">各期妊娠期患者的安全选择</span>（不易透胎盘，TKI 具生殖毒性）。</li>
+          <li><strong>其他药物与 allo-HSCT</strong>：羟基脲（起效 2～3 天，限高龄/合并症/不耐受 TKI 与 IFN-α 及降白细胞）；其他含 Ara-C、HHT、砷剂、白消安；<span class="k">allo-HSCT</span> 适用于至少 2 种 TKI 耐药/不耐受及 AP/BC。</li>
+        </ol>
+      </li>
+      <li><strong>（二）进展期（AP / BC）治疗</strong>：评估核型、BCR::ABL1 与激酶区突变；AP 未用过 TKI 者用加量一/二代 TKI（IM 600～800 mg/d、尼洛替尼 800 mg/d、达沙替尼 140 mg/d）回到 CP，未达最佳立即 allo-HSCT；BC 明确急变类型后加量 TKI + 联合化疗回 CP 后立即 allo-HSCT（可单倍型移植），移植后辅以 TKI 及必要时 DLI。</li>
+    </ul>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th colspan="3">表 6-9-5 CML 慢性期（CP）的治疗反应定义</th></tr><tr><th>反应维度</th><th>级别</th><th>判定标准（IS = 国际标准化）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>血液学反应（HR）</strong></td><td>完全血液学反应（CHR）</td><td><span class="k">PLT &lt;450×10<sup>9</sup>/L，WBC &lt;10×10<sup>9</sup>/L</span>，外周无髓系不成熟细胞，嗜碱 &lt;5%（0.05），无症状体征，可触及脾大消失</td></tr>
+          <tr><td rowspan="2"><strong>细胞遗传学反应（CyR）</strong></td><td>完全 CyR（CCyR） / 部分（PCyR）</td><td>CCyR：<span class="k">Ph<sup>+</sup> 细胞 = 0</span>；PCyR：Ph<sup>+</sup> 细胞 1%～35%</td></tr>
+          <tr><td>次要 / 微小 / 无反应</td><td>MinorCyR：36%～65%；MiniCyR：66%～95%；NoCyR：&gt;95%</td></tr>
+          <tr><td rowspan="2"><strong>分子学反应（MR）</strong></td><td>主要分子学反应（MMR / MR<sup>3.0</sup>）</td><td><span class="k">BCR::ABL1<sup>IS</sup> ≤0.1%</span></td></tr>
+          <tr><td>深层分子学反应（MR<sup>4.0</sup> / MR<sup>4.5</sup> / MR<sup>5.0</sup>）</td><td>MR<sup>4.0</sup> ≤0.01%（或=0且ABL1&gt;10 000）；MR<sup>4.5</sup> ≤0.0032%（&gt;32 000）；MR<sup>5.0</sup> ≤0.001%（&gt;100 000）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MODULE 5 ==================== -->
+<section class="module-section" id="mod-5" data-mod-title="Ⅴ、第十章 淋巴瘤">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅴ、淋巴瘤（全章仅【熟悉】层，无【掌握】项）</h1>
+      <span class="mod-source">第10版 第十章《淋巴瘤》（课本 P591–599 / PDF P622–630）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>（本模块大纲【对应课程目标】未设“掌握”条目——切换“仅看掌握”时本模块不展示核心卡片。）</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>淋巴瘤的诊断方法和治疗原则（涵盖活检病理与免疫分型诊断路径、关键影像/实验室检查、Ann Arbor 临床分期、鉴别诊断、HL 与惰性/侵袭性 NHL 治疗原则及方案）。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">严格剔除了解项“WHO 2022 分类和临床特征”（含第 10 版表 6-10-2 WHO 2016 大表、HL 亚型病理细节、9 种 NHL 特征及临床表现专节），并剔除病因发病机制、流行病学及预后（含 IPI 表 6-10-4）；仅在治疗原则中保留最小必要分层标签（HL / 惰性 NHL / 侵袭性 NHL / DLBCL / 胃 MALT 等）。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 5 -->
+  <div class="svg-card" data-tier="familiar">
+    <div class="svg-hd">
+      <span>图解 5 · 淋巴瘤诊断方法—Ann Arbor 临床分期—分层治疗原则总览（HL vs 惰性/侵袭性 NHL）</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 390" width="100%" role="img" aria-label="淋巴瘤诊断方法、Ann Arbor分期与分层治疗原则总览">
+        <defs>
+          <marker id="arr5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--chart-1)" />
+          </marker>
+          <marker id="arr5r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+        </defs>
+        <!-- Step 1: Diagnosis -->
+        <rect x="18" y="14" width="405" height="122" rx="10" fill="var(--chart-1)" fill-opacity="0.10" stroke="var(--chart-1)" stroke-width="1.5" />
+        <text x="220" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="var(--chart-1)">第一步：确诊与亚型鉴定（病理活检为核心）</text>
+        <text x="30" y="57" font-size="11.2" fill="var(--foreground)">• 完整切除较大淋巴结（避免挤压）→ 印片(瑞氏) + 切片(HE)</text>
+        <text x="30" y="76" font-size="11.2" fill="var(--foreground)">• 免疫组化 + 流式细胞术 + FISH / 中期染色体显带分型</text>
+        <text x="30" y="95" font-size="11.2" fill="var(--foreground)">• 骨髓活检+涂片（查 R-S / NHL 细胞）；PET-CT 定性定位分期</text>
+        <text x="30" y="114" font-size="11" fill="var(--muted-foreground)">• 鉴别：结核性淋巴结炎/转移癌、发热性疾病、器官其他恶性肿瘤</text>
+
+        <line x1="423" y1="75" x2="452" y2="75" stroke="var(--chart-1)" stroke-width="2" marker-end="url(#arr5)" />
+
+        <!-- Step 2: Ann Arbor Staging -->
+        <rect x="458" y="14" width="404" height="122" rx="10" fill="var(--primary)" fill-opacity="0.09" stroke="var(--primary)" stroke-width="1.5" />
+        <text x="660" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="var(--primary)">第二步：Ann Arbor 临床分期（HL 与 NHL 通用）</text>
+        <text x="470" y="57" font-size="11.2" fill="var(--foreground)">• Ⅰ期：单淋巴结区（Ⅰ）或局灶单结外（ⅠE）</text>
+        <text x="470" y="75" font-size="11.2" fill="var(--foreground)">• Ⅱ期：横膈同侧 ≥2 组（Ⅱ / ⅡE）；Ⅲ期：横膈上下同受累</text>
+        <text x="470" y="93" font-size="11.2" font-weight="700" fill="var(--error)">• Ⅳ期：弥漫结外；肝或骨髓受累即使局限亦属 Ⅳ 期</text>
+        <text x="470" y="112" font-size="11" fill="var(--muted-foreground)">• B 组症状：发热&gt;38℃ / 盗汗 / 半年体重降&gt;10%（X=巨块&gt;10cm）</text>
+
+        <!-- Arrows to 3 Treatment Columns -->
+        <line x1="220" y1="136" x2="155" y2="168" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr5r)" />
+        <line x1="440" y1="136" x2="440" y2="168" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr5r)" />
+        <line x1="660" y1="136" x2="725" y2="168" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr5r)" />
+
+        <!-- Col 1: HL -->
+        <rect x="18" y="174" width="272" height="202" rx="10" fill="var(--card)" stroke="var(--chart-2)" stroke-width="1.5" />
+        <rect x="18" y="174" width="272" height="28" rx="10" fill="var(--chart-2)" fill-opacity="0.14" />
+        <text x="154" y="193" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-2)">霍奇金淋巴瘤（HL）化放综合</text>
+        <text x="28" y="217" font-size="11.2" fill="var(--foreground)">• <tspan font-weight="700">首选方案：ABVD</tspan>（优于 MOPP）</text>
+        <text x="28" y="237" font-size="11.2" fill="var(--foreground)">• 早期Ⅰ/Ⅱ期：ABVD 2~4（良）或</text>
+        <text x="28" y="254" font-size="11.2" fill="var(--foreground)">  4~6（差）疗程 + 受累野 30~40 Gy</text>
+        <text x="28" y="274" font-size="11.2" fill="var(--foreground)">• 晚期Ⅲ/Ⅳ期：推荐 <tspan font-weight="700" fill="var(--primary)">BV-AVD</tspan></text>
+        <text x="28" y="294" font-size="11.2" fill="var(--foreground)">• NLPHL ⅠA期：切除/观察/20~30Gy</text>
+        <text x="28" y="314" font-size="11.2" fill="var(--foreground)">• R/R CHL：二线化疗/auto-HSCT、</text>
+        <text x="28" y="331" font-size="11.2" font-weight="700" fill="var(--error)">  PD-1 抑制剂</text>
+        <text x="28" y="356" font-size="10.5" fill="var(--muted-foreground)">（大肿块或残存灶加局部放疗）</text>
+
+        <!-- Col 2: Indolent NHL -->
+        <rect x="304" y="174" width="272" height="202" rx="10" fill="var(--card)" stroke="var(--chart-1)" stroke-width="1.5" />
+        <rect x="304" y="174" width="272" height="28" rx="10" fill="var(--chart-1)" fill-opacity="0.14" />
+        <text x="440" y="193" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-1)">惰性 NHL（化疗为主，姑息观察）</text>
+        <text x="314" y="217" font-size="11.2" fill="var(--foreground)">• Ⅰ/Ⅱ期：放疗或化疗（生存可达10年）</text>
+        <text x="314" y="237" font-size="11.2" font-weight="700" fill="var(--primary)">• Ⅲ/Ⅳ期：主张观察和等待姑息原则</text>
+        <text x="314" y="257" font-size="11.2" fill="var(--foreground)">• 进展：苯丁酸氮芥/CTX、苯达莫司汀</text>
+        <text x="314" y="277" font-size="11.2" fill="var(--foreground)">• 联合化疗：COP / CHOP；难控 FC</text>
+        <text x="314" y="297" font-size="11.2" fill="var(--foreground)">• CD20⁺ B 细胞：联用<tspan font-weight="700">利妥昔单抗</tspan></text>
+        <text x="314" y="317" font-size="11.2" fill="var(--foreground)">• 局限期胃 MALT：抗 Hp 治疗可消退</text>
+        <text x="314" y="337" font-size="11.2" fill="var(--foreground)">• 蕈样肉芽肿病：干扰素部分缓解</text>
+        <text x="314" y="357" font-size="10.5" fill="var(--muted-foreground)">（合并脾亢有指征者可行脾切除术）</text>
+
+        <!-- Col 3: Aggressive NHL -->
+        <rect x="590" y="174" width="272" height="202" rx="10" fill="var(--card)" stroke="var(--chart-3)" stroke-width="1.5" />
+        <rect x="590" y="174" width="272" height="28" rx="10" fill="var(--chart-3)" fill-opacity="0.14" />
+        <text x="726" y="193" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-3)">侵袭性 NHL（不论分期以化疗为主）</text>
+        <text x="600" y="217" font-size="11.2" fill="var(--foreground)">• 标准方案：<tspan font-weight="700" fill="var(--primary)">CHOP</tspan>（DLBCL 经典 <tspan font-weight="700" fill="var(--error)">R-CHOP</tspan>）</text>
+        <text x="600" y="237" font-size="11.2" fill="var(--foreground)">• 4疗程未缓解换方案；总≥6疗程</text>
+        <text x="600" y="257" font-size="11.2" fill="var(--foreground)">• 残留/巨块/CNS 累及：局部放疗 25Gy</text>
+        <text x="600" y="277" font-size="11.2" fill="var(--foreground)">• Burkitt / AITL：强烈化疗（大剂CTX）</text>
+        <text x="600" y="297" font-size="11.2" fill="var(--foreground)">• 新药：来那度胺/西达本胺/伊布替尼</text>
+        <text x="600" y="317" font-size="11.2" fill="var(--foreground)">• 挽救：ICE/DHAP/MINE/Hyper-CVAD</text>
+        <text x="600" y="337" font-size="11.2" font-weight="700" fill="var(--error)">• R/R B-NHL：CAR-T；&lt;60岁可 HSCT</text>
+        <text x="600" y="357" font-size="10.5" fill="var(--muted-foreground)">（长期维持治疗对侵袭性 NHL 无益）</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Familiar Tier Only -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 淋巴瘤的诊断方法、分期、鉴别与治疗原则</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">一、诊断方法、辅助检查、Ann Arbor 临床分期与鉴别诊断</h3><span class="badge badge-f">熟悉</span></div>
+    <ol>
+      <li><strong>病理学与免疫/遗传学确诊方法（金标准）</strong>：对进行性、无痛性淋巴结肿大者，选取较大淋巴结<span class="k">完整取出、避免挤压</span>，切开做淋巴结印片（瑞氏染色）及固定切片（HE 染色）；深部淋巴结在 B 超或 CT 引导下穿刺活检；疑皮肤淋巴瘤做皮肤活检及印片；伴血细胞异常、血清 ALP 增高或骨骼病变时做<span class="k">骨髓活检和涂片</span>寻找 R-S 细胞或 NHL 细胞。进一步行<span class="k">免疫组化、流式细胞仪分化抗原分析、FISH 及中期染色体显带</span>确定亚型。</li>
+      <li><strong>实验室与影像学评估</strong>：
+        <ul>
+          <li><strong>血液与骨髓</strong>：HL 常有轻中度贫血、部分嗜酸性粒细胞增多，骨髓找到 <span class="k">R-S 细胞</span>为骨髓浸润依据（活检提高阳性率）；NHL 白细胞多正常伴淋巴细胞增多，晚期累及骨髓可呈淋巴瘤细胞白血病。</li>
+          <li><strong>血清学</strong>：活动期 ESR 增快；<span class="k">血清 LDH 升高</span>提示预后不良；ALP 或血钙升高提示骨骼受累；B 细胞 NHL 可伴溶血性贫血或 M 蛋白血症；CNS 累及时脑脊液蛋白升高、流式可检出异常淋巴瘤细胞。</li>
+          <li><strong>影像学检查</strong>：浅表淋巴结用 B 超及核素显像；胸部 X 线/CT 查纵隔及肺门；腹腔及盆腔淋巴结以 <span class="k">CT 为首选</span>；肝脾受累须有<span class="k">两种以上影像学检查</span>同时显示实质性占位性病变方可确定；<span class="k">PET-CT</span> 为临床分期及疗效评价的重要指标。</li>
+        </ul>
+      </li>
+      <li><strong>Ann Arbor 临床分期（HL 与 NHL 参照使用；脾和咽淋巴环各记 1 个淋巴结区域）</strong>：
+        <ul>
+          <li><strong>Ⅰ期</strong>：单个淋巴结区域（Ⅰ）或局灶性单个结外器官（ⅠE）受侵犯。</li>
+          <li><strong>Ⅱ期</strong>：横膈同侧两组或多组淋巴结受侵犯（Ⅱ），或局灶性单个结外器官及其区域淋巴结受侵犯伴/不伴同侧其他淋巴结区受累（ⅡE）。</li>
+          <li><strong>Ⅲ期</strong>：横膈上、下淋巴结区域同时受侵犯（Ⅲ），可伴局灶性相关结外器官（ⅢE）、脾受侵（ⅢS）或两者皆有（ⅢE+S）。</li>
+          <li><strong>Ⅳ期</strong>：弥漫性（多灶性）单个或多个结外器官受侵，或孤立性结外器官受侵伴远处非区域淋巴结肿大；<span class="k">肝或骨髓受累即使局限亦属 Ⅳ 期</span>。</li>
+          <li><strong>全身症状分组与部位符号</strong>：无下列症状为 A 组，具备任一项为 <span class="k">B 组</span>：①不明原因发热 <span class="k">&gt;38℃</span>；②<span class="k">盗汗</span>；③半年内体重下降 <span class="k">&gt;10%</span>。记录符号：E 结外、X 直径 &gt;10 cm 巨块、M 骨髓、S 脾、H 肝、O 骨骼、D 皮肤、P 胸膜、L 肺。</li>
+        </ul>
+      </li>
+      <li><strong>鉴别诊断（3 类）</strong>：①其他淋巴结肿大疾病（淋巴结炎、恶性肿瘤转移、结核性淋巴结炎多局限于颈两侧、粘连融合、晚期软化破溃成窦道）；②以发热为主的淋巴瘤（鉴别结核病、败血症、结缔组织病、坏死性淋巴结炎、恶性组织细胞病）；③结外淋巴瘤（鉴别相应器官其他恶性肿瘤）。</li>
+    </ol>
+    <div class="callout warn">
+      <strong>版次与教材差异说明</strong>：大纲目标栏写“了解 WHO 2022 分类”，但第 10 版教材第十章正文与表 6-10-2 仍采用 WHO 2016 年版分类（因分类与临床特征均属“了解”项已完整剔除）；另大纲教学内容提及的“替雷利珠单抗、BACOP”在第 10 版原文未出现，下文治疗方案 100% 忠实第 10 版原文。
+    </div>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">二、霍奇金淋巴瘤（HL）治疗原则与表 6-10-1 主要方案</h3><span class="badge badge-f">熟悉</span></div>
+    <p><strong>总体原则</strong>：HL 治愈率较高，采用<span class="k">化疗加放疗的综合治疗</span>。<span class="k">ABVD 方案</span>缓解率及 5 年无病生存率均优于 MOPP（MOPP 易致第二肿瘤和不孕），为目前 HL 首选化疗方案；对于 Ⅲ、Ⅳ 期 HL，<span class="k">BV-AVD</span>（维布妥昔单抗为靶向 CD30 的 ADC）有更好生存获益。</p>
+    <ul>
+      <li><strong>结节性淋巴细胞为主型（NLPHL，多 ⅠA 期）</strong>：ⅠA 期可单纯淋巴结切除、等待观察或累及野放疗 <span class="k">20～30 Gy</span>；Ⅱ 期以上同早期 HL。</li>
+      <li><strong>早期（Ⅰ、Ⅱ期）HL</strong>：预后良好组 <span class="k">2～4 疗程 ABVD + 受累野放疗 30～40 Gy</span>；预后差组 <span class="k">4～6 疗程 ABVD + 受累野放疗 30～40 Gy</span>。</li>
+      <li><strong>晚期（Ⅲ、Ⅳ期）HL</strong>：推荐 <span class="k">BV-AVD</span>；化疗前大肿块或化疗后肿瘤残存者加放疗；化疗中进展或早复发行挽救性高剂量化疗及 HSCT。</li>
+      <li><strong>复发难治性（R/R）HL</strong>：放疗后复发行常规化疗；化疗抵抗/不耐受且再分期 Ⅰ/Ⅱ 期行放疗；常规缓解后复发行二线化疗或高剂量化疗 + auto-HSCT；<span class="k">PD-1 抑制剂</span>用于 R/R 经典型 HL。</li>
+    </ul>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th colspan="4">表 6-10-1 霍奇金淋巴瘤的主要化疗方案</th></tr><tr><th>方案</th><th>组成药物</th><th>剂量与用法</th><th>备注</th></tr></thead>
+        <tbody>
+          <tr><td><strong>MOPP</strong></td><td>氮芥 / 长春新碱 / 丙卡巴肼 / 泼尼松</td><td>M 4 mg/(m<sup>2</sup>·d) iv d1,8；O 1～2 mg iv d1,8；P 70 mg/(m<sup>2</sup>·d) po d1～14；P 40 mg/d po d1～14</td><td>氮芥改 CTX 600 mg/m<sup>2</sup> iv 即 COPP；疗程间休 2 周</td></tr>
+          <tr><td><strong>ABVD（首选）</strong></td><td>多柔比星 / 博来霉素 / 长春碱 / 达卡巴嗪</td><td>A 25 mg/m<sup>2</sup>、B 10 mg/m<sup>2</sup>、V 6 mg/m<sup>2</sup>、D 375 mg/m<sup>2</sup></td><td>4 药均于 d1、d15 静注 1 次，疗程间休 2 周</td></tr>
+          <tr><td><strong>BV-AVD（Ⅲ/Ⅳ期）</strong></td><td>维布妥昔单抗 / 多柔比星 / 长春碱 / 达卡巴嗪</td><td>BV 1.2 mg/kg、A 25 mg/m<sup>2</sup>、V 6 mg/m<sup>2</sup>、D 375 mg/m<sup>2</sup></td><td>4 药均于 d1、d15 静注 1 次，疗程间休 2 周</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">三、非霍奇金淋巴瘤（NHL）治疗原则、表 6-10-3 方案与生物/细胞治疗</h3><span class="badge badge-f">熟悉</span></div>
+    <p><strong>总体策略</strong>：因多中心发生倾向，以<span class="k">化疗为主</span>的化、放疗结合综合治疗。</p>
+    <ul>
+      <li><strong>1. 惰性淋巴瘤</strong>（B 细胞：SLL、LPL、MZL、FL；T 细胞：MF/SS）：发展慢、不易缓解。Ⅰ/Ⅱ 期放疗或化疗后存活可达 10 年；Ⅲ/Ⅳ 期主张<span class="k">观察和等待的姑息治疗原则</span>；进展时老年可口服苯丁酸氮芥或环磷酰胺，苯达莫司汀可杀伤 G<sub>0</sub> 期细胞；联合化疗用 COP 或 CHOP，进展难控试用 FC（氟达拉滨 + 环磷酰胺）。</li>
+      <li><strong>2. 侵袭性淋巴瘤</strong>（B 细胞：DLBCL、MCL、BL；T 细胞：AITL、ALCL、PTCL）：<span class="k">不论分期均以化疗为主</span>；化疗后残留肿块、局部巨大肿块或 CNS 累及加局部放疗扩大照射（<span class="k">25 Gy</span>）。<span class="k">CHOP</span> 为侵袭性 NHL 标准方案（每 2～3 周 1 疗程，4 疗程未缓解改方案，CR 后巩固 2 疗程、总数不少于 6 疗程，长期维持无益）；<span class="k">R-CHOP</span> 为 DLBCL 经典标准方案；AITL 与 Burkitt 淋巴瘤进展极快须强烈化疗（大剂量 CTX 方案对 Burkitt 有治愈作用）。</li>
+      <li><strong>3. 新药与二线挽救</strong>：来那度胺联合化疗；<span class="k">西达本胺</span>（HDAC 抑制剂）治 T 细胞淋巴瘤；<span class="k">伊布替尼</span>（BTK 抑制剂）治 MCL 等。复发/难治二线无交叉耐药方案：ICE、DHAP、MINE、Hyper-CVAD。</li>
+      <li><strong>4. 生物治疗（4 项）</strong>：①<span class="k">抗 CD20 单抗（利妥昔单抗）</span>：用于 CD20<sup>+</sup> B 细胞 NHL（90% 表达）及 NLPHL，联化疗提 CR 及 DFS，HSCT 前用于体内净化；②<span class="k">干扰素</span>：对蕈样肉芽肿病部分缓解；③<span class="k">抗 Hp 药物</span>：局限期胃 MALT 淋巴瘤经抗 Hp 后部分症状改善甚至淋巴瘤消失；④<span class="k">CAR-T 细胞免疫治疗</span>：用于复发/难治 B 细胞淋巴瘤。</li>
+      <li><strong>5. HSCT 与手术</strong>：&lt;60 岁、重要脏器正常、缓解期短/难治易复发的侵袭性淋巴瘤，一线有效后可行 HSCT；合并脾功能亢进有脾切指征者可行脾切除改善血象以利化疗。</li>
+    </ul>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th colspan="3">表 6-10-3 非霍奇金淋巴瘤的常用联合化疗方案</th></tr><tr><th>方案与周期</th><th>组成药物</th><th>剂量和用法</th></tr></thead>
+        <tbody>
+          <tr><td><strong>CHOP</strong>（2～3 周/疗程）</td><td>环磷酰胺 / 多柔比星 / 长春新碱 / 泼尼松</td><td>CTX 750 mg/m<sup>2</sup> ivgtt d1；ADM 50 mg/m<sup>2</sup> ivgtt d1；VCR 1.4 mg/m<sup>2</sup> iv d1（最大 2 mg/次）；泼尼松 100 mg/d po d1～5</td></tr>
+          <tr><td><strong>R-CHOP</strong>（2 或 3 周/疗程）</td><td>利妥昔单抗 + CHOP</td><td>利妥昔单抗 <span class="k">375 mg/m<sup>2</sup></span> ivgtt d1；CTX/ADM/VCR 于 d2、泼尼松 d2～6（剂量同 CHOP）</td></tr>
+          <tr><td><strong>EPOCH</strong>（2～3 周/疗程）</td><td>依托泊苷 / 多柔比星 / 长春新碱 / 泼尼松 / 环磷酰胺</td><td>VP-16 50、ADM 10、VCR 0.4 mg/(m<sup>2</sup>·d) 持续 ivgtt d1～4；泼尼松 60 mg/m<sup>2</sup> bid po d1～5；CTX 750 mg/(m<sup>2</sup>·d) ivgtt d5</td></tr>
+          <tr><td><strong>ESHAP</strong>（3 周/疗程，复发用）</td><td>依托泊苷 / 甲泼尼龙 / 顺铂 / 阿糖胞苷</td><td>VP-16 40、甲泼尼龙 500、顺铂 25 mg/(m<sup>2</sup>·d) ivgtt d1～4；Ara-C 2 g/m<sup>2</sup> ivgtt 3h d5</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MODULE 6 ==================== -->
+<section class="module-section" id="mod-6" data-mod-title="Ⅵ、第十一章 多发性骨髓瘤">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅵ、多发性骨髓瘤（MM）</h1>
+      <span class="mod-source">第10版 第十一章《多发性骨髓瘤》（课本 P600–604 / PDF P631–635）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>多发性骨髓瘤的临床表现和诊断标准（含活动性与冒烟性诊断标准及直接支撑的实验室/影像核心指标与鉴别诊断）。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>多发性骨髓瘤的分型分期（12 种亚型 + DS / ISS / R-ISS 分期）和治疗原则与方案。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">严格按【对应课程目标】剔除流行病学、病因和发病机制及预后专节（中位生存期详述）；表 6-11-4 按第 10 版原文同步收录 ISS 与 R-ISS。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 6 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 6 · 多发性骨髓瘤诊断标准（CRAB + SLiM）与 DS / ISS / R-ISS 分期及治疗总路径</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 410" width="100%" role="img" aria-label="多发性骨髓瘤诊断标准、分期与治疗路径">
+        <defs>
+          <marker id="arr6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr6r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+        <!-- Left: Active MM Diagnosis -->
+        <rect x="16" y="14" width="538" height="196" rx="10" fill="var(--error)" fill-opacity="0.08" stroke="var(--error)" stroke-width="1.6" />
+        <text x="285" y="36" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--error)">活动性（有症状）MM 诊断标准（表 6-11-1）：第 1 条 + 第 2 条任一项</text>
+        <rect x="28" y="46" width="514" height="30" rx="6" fill="var(--card)" stroke="var(--error)" />
+        <text x="285" y="66" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">必满足第 1 条：骨髓单克隆浆细胞比例 ≥10% 和/或 组织活检证明为浆细胞瘤</text>
+
+        <rect x="28" y="84" width="262" height="116" rx="7" fill="var(--card)" stroke="var(--border)" />
+        <text x="159" y="102" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">（1）靶器官损害（CRAB）</text>
+        <text x="38" y="121" font-size="11" fill="var(--foreground)">[C] 校正血清钙 &gt;2.75 mmol/L</text>
+        <text x="38" y="139" font-size="11" fill="var(--foreground)">[R] 肌酐清除率&lt;40 或 Cr&gt;177 μmol/L</text>
+        <text x="38" y="157" font-size="11" fill="var(--foreground)">[A] Hb&lt;100g/L 或低于正常下限&gt;20g/L</text>
+        <text x="38" y="175" font-size="11" fill="var(--foreground)">[B] 影像学（X线/CT/PET-CT）≥1处</text>
+        <text x="38" y="191" font-size="11" fill="var(--foreground)">    溶骨性病变</text>
+
+        <rect x="300" y="84" width="242" height="116" rx="7" fill="var(--card)" stroke="var(--border)" />
+        <text x="421" y="102" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">（2）无靶器官损害但见 SLiM</text>
+        <text x="310" y="124" font-size="11" fill="var(--foreground)">[S] 骨髓单克隆浆细胞 ≥60%</text>
+        <text x="310" y="146" font-size="11" fill="var(--foreground)">[Li] 受累/非受累游离轻链比 ≥100</text>
+        <text x="310" y="162" font-size="10.5" fill="var(--muted-foreground)">     （且受累轻链 ≥100 mg/L）</text>
+        <text x="310" y="182" font-size="11" fill="var(--foreground)">[M] MRI &gt;1处 5mm以上局灶病变</text>
+
+        <!-- Right: Smoldering MM -->
+        <rect x="572" y="14" width="292" height="196" rx="10" fill="var(--chart-1)" fill-opacity="0.10" stroke="var(--chart-1)" stroke-width="1.5" />
+        <text x="718" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="var(--chart-1)">冒烟性（无症状）MM（表 6-11-2）</text>
+        <text x="584" y="62" font-size="11.5" font-weight="700" fill="var(--foreground)">必满足第 3 条 + 第 1 和/或 第 2 条：</text>
+        <text x="584" y="86" font-size="11.2" fill="var(--foreground)">1. 血清 M 蛋白 ≥30 g/L</text>
+        <text x="584" y="104" font-size="11.2" fill="var(--foreground)">   或 24h 尿轻链 ≥0.5 g</text>
+        <text x="584" y="126" font-size="11.2" fill="var(--foreground)">2. 骨髓单克隆浆细胞 10%～59%</text>
+        <text x="584" y="148" font-size="11.2" font-weight="700" fill="var(--chart-1)">3. 无 SLiM、CRAB 及淀粉样变性</text>
+        <rect x="586" y="166" width="264" height="32" rx="6" fill="var(--card)" stroke="var(--chart-1)" />
+        <text x="718" y="186" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--chart-1)">治疗原则：暂不推荐治疗（随访）</text>
+
+        <!-- Downward Arrow from Active MM -->
+        <line x1="285" y1="210" x2="285" y2="238" stroke="var(--error)" stroke-width="2" marker-end="url(#arr6r)" />
+
+        <!-- Bottom Left: Staging -->
+        <rect x="16" y="244" width="320" height="152" rx="10" fill="var(--card)" stroke="var(--primary)" stroke-width="1.5" />
+        <text x="176" y="266" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--primary)">分型与两大分期体系</text>
+        <text x="28" y="287" font-size="11" fill="var(--foreground)">• 分型：IgG/A/D/M/E/轻链 × κ/λ（12 亚型）</text>
+        <text x="28" y="305" font-size="11" fill="var(--foreground)">  + 双克隆型 + 不分泌型（1%～2%）</text>
+        <text x="28" y="325" font-size="11" fill="var(--foreground)">• <tspan font-weight="700">DS 分期</tspan>（肿瘤负荷）：Hb、钙、溶骨、</text>
+        <text x="28" y="342" font-size="11" fill="var(--foreground)">  M 蛋白产生率 + A/B 肾功能亚型</text>
+        <text x="28" y="362" font-size="11" fill="var(--foreground)">• <tspan font-weight="700">ISS / R-ISS</tspan>（预后）：β₂-MG（3.5/5.5）</text>
+        <text x="28" y="379" font-size="11" fill="var(--foreground)">  + 白蛋白(35) + LDH + 高危 FISH 3项</text>
+
+        <line x1="336" y1="320" x2="364" y2="320" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr6)" />
+
+        <!-- Bottom Right: Systemic & Supportive Treatment -->
+        <rect x="370" y="244" width="494" height="152" rx="10" fill="var(--card)" stroke="var(--success)" stroke-width="1.5" />
+        <text x="617" y="266" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--success)">活动性 MM 系统治疗流程 + 支持治疗</text>
+        <text x="382" y="287" font-size="11.2" fill="var(--foreground)">1. <tspan font-weight="700">诱导</tspan>（≤70岁评估移植：避烷化剂/亚硝基脲，来那度胺≤4疗程）：</text>
+        <text x="394" y="305" font-size="11" fill="var(--muted-foreground)">通用 VD/Rd/RVD/PAD/VCD/VTD/TAD/TCD/RCD；非移植增 VMP/MPT/Dara-VMP/DRd</text>
+        <text x="382" y="325" font-size="11.2" fill="var(--foreground)">2. <tspan font-weight="700">移植与巩固</tspan>：auto-HSCT（早移植 EFS 长，肾不全/老年非禁忌）→ 巩固 2~4 疗程</text>
+        <text x="382" y="345" font-size="11.2" fill="var(--foreground)">3. <tspan font-weight="700">维持</tspan>：来那度胺 / 硼替佐米 / 伊沙佐米 / 沙利度胺 ± 激素（年轻高危R/R可 allo）</text>
+        <text x="382" y="365" font-size="11.2" fill="var(--error)">4. <tspan font-weight="700">支持治疗</tspan>：骨病双膦酸盐（肾损优先地舒单抗）/10~30Gy放疗；高钙水化利尿；</text>
+        <text x="394" y="383" font-size="11" fill="var(--foreground)">肾损避 NSAIDs/造影剂；沙利/来那度胺预防抗凝；大剂量DXM防PJP；高黏滞血浆置换</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心考点</span> 多发性骨髓瘤的临床表现与诊断标准</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">一、概念与十大临床表现</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>概念</strong>：由恶性浆细胞克隆性增殖所致疾病，特征为单克隆浆细胞在骨髓恶性增殖广泛浸润，常伴血/尿单克隆免疫球蛋白或/和轻链增加，正常造血及多克隆免疫球蛋白受抑。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>序号与表现</th><th>核心机制与临床特点（第 10 版原文）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. 骨骼损害</strong></td><td><span class="k">骨痛</span>为主要且常为<span class="k">首发症状</span>，以<span class="k">腰骶部、胸骨、肋骨</span>最常见；可发生病理性骨折（多见于肋骨、锁骨、胸腰椎）及高钙血症；由破骨细胞与成骨细胞活性失衡所致。</td></tr>
+          <tr><td><strong>2. 贫血</strong></td><td>常见，发生缓慢，多为轻、中度贫血（红细胞生成减少，与瘤细胞浸润抑制造血及肾不全有关）。</td></tr>
+          <tr><td><strong>3. 肾功能损害</strong></td><td>常见且具特征性，表现少尿、泡沫尿、水肿；与分型相关，<span class="k">IgD 型最常见，轻链型次之</span>；肾衰竭为主要致死原因之一。</td></tr>
+          <tr><td><strong>4. 高钙血症</strong></td><td>纳差、呕吐、乏力、意识模糊、多尿、便秘（广泛溶骨 + 肾不全所致）。</td></tr>
+          <tr><td><strong>5. 感染</strong></td><td>正常多克隆免疫球蛋白及中性粒细胞减少所致：细菌以<span class="k">肺炎、尿路感染</span>甚至败血症多见；病毒以<span class="k">带状疱疹</span>多见。</td></tr>
+          <tr><td><strong>6. 高黏滞综合征</strong></td><td>M 蛋白增多致头昏、眩晕、眼花、耳鸣、手指麻木、视力减退、充血性心衰、意识障碍/昏迷；冷球蛋白可致<span class="k">雷诺现象</span>。</td></tr>
+          <tr><td><strong>7. 出血倾向</strong></td><td>鼻出血、牙龈出血、皮肤紫癜。3 大机制：①血小板减少及 M 蛋白包裹影响功能；②M 蛋白妨碍纤维蛋白多聚化并影响凝血因子；③高球蛋白与淀粉样变损伤血管壁。</td></tr>
+          <tr><td><strong>8. 淀粉样变性</strong></td><td>少数发生：舌体与腮腺肿大、心肌肥厚扩大（<span class="k">严重时可猝死</span>）、腹泻/便秘、皮肤苔藓样变、外周神经病变及肝肾损害。</td></tr>
+          <tr><td><strong>9. 神经系统损害</strong></td><td>肌无力、肢体麻木、痛觉迟钝；<span class="k">脊髓压迫</span>最严重（浸润、肿块压迫、高钙、高黏滞、淀粉样变、轻链沉积所致）。</td></tr>
+          <tr><td><strong>10. 髓外浸润</strong></td><td>肝、脾、淋巴结和肾多见；肝脾多轻度肿大，淋巴结肿大较少见；亦可累及甲状腺、皮肤、胸膜、消化道、CNS 等。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">二、活动性与冒烟性 MM 诊断标准（表 6-11-1/2）、必备检查与鉴别诊断</h3><span class="badge badge-m">掌握</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>表 6-11-1 活动性（有症状）MM 诊断标准</h4>
+        <p>须满足<strong>第 1 条 + 第 2 条中任何 1 项</strong>：</p>
+        <p><strong>1. 克隆性浆细胞证据</strong>：骨髓单克隆浆细胞比例 <span class="k">≥10%</span> 和/或组织活检证明为浆细胞瘤。</p>
+        <p><strong>2. 骨髓瘤引起的相关表现</strong>：</p>
+        <ul>
+          <li><strong>（1）靶器官损害（CRAB）</strong>：
+            <br />• <strong>[C]</strong> 校正血清钙 <span class="k">&gt;2.75 mmol/L</span>（校正钙 = 总钙 - 0.025×白蛋白[g/L] + 1.0）；
+            <br />• <strong>[R]</strong> 肾功能损害（肌酐清除率 <span class="k">&lt;40 ml/min</span> 或血清肌酐 <span class="k">&gt;177 μmol/L</span>）；
+            <br />• <strong>[A]</strong> 贫血（Hb 低于正常下限 20 g/L 以上或 <span class="k">&lt;100 g/L</span>）；
+            <br />• <strong>[B]</strong> 溶骨性破坏：X 线片、CT 或 PET-CT 显示 <span class="k">≥1 处</span>溶骨性病变。</li>
+          <li><strong>（2）无靶器官损害但出现 ≥1 项 SLiM 指标</strong>：
+            <br />• <strong>[S]</strong> 骨髓单克隆浆细胞比例 <span class="k">≥60%</span>；
+            <br />• <strong>[Li]</strong> 受累/非受累血清游离轻链比 <span class="k">≥100</span>（受累轻链 <span class="k">≥100 mg/L</span>）；
+            <br />• <strong>[M]</strong> MRI 检查出现 <span class="k">&gt;1 处 5 mm 以上</span>局灶性病变。</li>
+        </ul>
+        <p style="font-size:12px;color:var(--muted-foreground)">注：1%～2% 的 MM 患者 M 蛋白鉴定阴性、骨髓浆细胞 ≥10%，称<span class="k">不分泌型 MM</span>。</p>
+      </div>
+      <div class="mini-box">
+        <h4>表 6-11-2 冒烟性（无症状）MM 诊断标准</h4>
+        <p>须满足<strong>第 3 条 + 第 1 条和/或第 2 条</strong>：</p>
+        <ol>
+          <li>血清单克隆 M 蛋白 <span class="k">≥30 g/L</span> 或 24 小时尿轻链 <span class="k">≥0.5 g</span>；</li>
+          <li>骨髓单克隆浆细胞比例 <span class="k">10%～59%</span>；</li>
+          <li><span class="k">无相关器官及组织损害</span>（无 SLiM、CRAB 等终末器官损害表现及淀粉样变性）。</li>
+        </ol>
+        <h4>诊断直接支撑的实验室与影像学核心指标</h4>
+        <ul>
+          <li><strong>血象与骨髓</strong>：正细胞性贫血，涂片红细胞呈<span class="k">“缗钱状”排列</span>；骨髓原/幼浆细胞 <span class="k">≥10%</span>（最高 70%～95%），成堆、双/多核、核仁 1～4 个。</li>
+          <li><strong>M 蛋白与尿液</strong>：血清蛋白电泳见单峰突起 M 蛋白；免疫分型 5 项（蛋白电泳、Ig 定量、总蛋白/白蛋白、免疫固定电泳、游离轻链及比值）；35%～65% 尿检出<span class="k">本周蛋白（BJP，κ 或 λ 轻链）</span>。</li>
+          <li><strong>生化与遗传</strong>：血钙↑、<span class="k">血清 ALP 正常或轻度增高</span>（以溶骨为主）；β<sub>2</sub>-微球蛋白与 LDH 反映肿瘤负荷；FISH 不良核型含 <span class="k">亚二倍体、del(17p)、t(4;14)、t(14;16)、t(14;20)、1q 扩增</span>。</li>
+          <li><strong>影像学</strong>：X 线示<span class="k">圆形、边缘清楚如凿孔样</span>多发溶骨损害及病理性骨折；当前首选推荐<span class="k">全身低剂量 CT、全身 MRI 或 PET-CT</span>。</li>
+        </ul>
+      </div>
+    </div>
+    <p><strong>5 大鉴别诊断</strong>：①<strong>反应性浆细胞增多症</strong>（炎症/伤寒/SLE/肝硬化/转移癌；浆细胞一般 <span class="k">≤15%</span>、无形态异常、<span class="k">CD38<sup>+</sup>CD56<sup>-</sup></span>、无 M 蛋白、IGH 重排阴性）；②<strong>MGUS</strong>（有 M 蛋白、单克隆浆细胞增多但未达 MM 标准且无器官损害）；③<strong>华氏巨球蛋白血症（WM）</strong>（单克隆 <span class="k">IgM</span>、淋巴样浆细胞浸润、FISH 常无 t(11;14)、常具 <span class="k">MYD88 L265P</span> 突变）；④<strong>AL 型淀粉样变性</strong>（单克隆轻链沉积、活检组织<span class="k">刚果红染色阳性</span>）；⑤<strong>骨转移癌/老年骨质疏松/肾小管酸中毒/甲旁亢</strong>（成骨活跃，常伴<span class="k">血清 ALP 升高</span>，骨髓可寻成堆癌细胞）。</p>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 多发性骨髓瘤的分型分期与治疗原则</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">三、免疫分型与三大分期体系（DS / ISS / R-ISS）</h3><span class="badge badge-f">熟悉</span></div>
+    <p><strong>免疫分型</strong>：按异常增殖 Ig 分为 <span class="k">IgG、IgA、IgD、IgM、IgE、轻链型</span>，每种又分 κ 和 λ 轻链型，共 <span class="k">12 种亚型</span>；另含双克隆型和不分泌型。</p>
+    <div class="grid-2">
+      <div class="tbl-wrap">
+        <table class="med-tbl">
+          <thead><tr><th colspan="2">表 6-11-3 Durie-Salmon（DS）分期（反映肿瘤负荷和临床进程）</th></tr><tr><th>分期</th><th>分期标准（第 10 版原文核对）</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Ⅰ期</strong></td><td>满足<strong>所有</strong>条件：①Hb &gt;100 g/L；②血清钙 ≤2.65 mmol/L（11.5 mg/dl）；③骨骼 X 线正常或骨型孤立性浆细胞瘤；④M 蛋白产生率低：IgG &lt;50 g/L、IgA &lt;30 g/L、本周蛋白 &lt;4 g/24h</td></tr>
+            <tr><td><strong>Ⅱ期</strong></td><td>不符合 Ⅰ 期和 Ⅲ 期的所有患者</td></tr>
+            <tr><td><strong>Ⅲ期</strong></td><td>满足<strong>≥1 个</strong>条件：①<span class="k">Hb &lt;85 g/L</span>；②血清钙 &gt;2.65 mmol/L（11.5 mg/dl）；③溶骨病变 <span class="k">&gt;3 处</span>；④M 蛋白产生率高：IgG &gt;70 g/L、IgA &gt;50 g/L、本周蛋白 &gt;12 g/24h</td></tr>
+            <tr><td><strong>A / B 亚型</strong></td><td>A 亚型（肾功能正常）：Ccr &gt;40 ml/min 或 Cr &lt;177 μmol/L（2.0 mg/dl）；<br />B 亚型（肾功能不全）：Ccr ≤40 ml/min 或 Cr ≥177 μmol/L（2.0 mg/dl）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tbl-wrap">
+        <table class="med-tbl">
+          <thead><tr><th colspan="3">表 6-11-4 ISS 与 R-ISS 分期（主要用于预后判断）</th></tr><tr><th>分期</th><th>ISS 标准</th><th>R-ISS 标准</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Ⅰ期</strong></td><td>血清 β<sub>2</sub>-MG <span class="k">&lt;3.5 mg/L</span> 且白蛋白 <span class="k">≥35 g/L</span></td><td>ISS Ⅰ期 + 非细胞遗传学高危 + LDH 正常</td></tr>
+            <tr><td><strong>Ⅱ期</strong></td><td>介于 Ⅰ 期和 Ⅲ 期之间</td><td>介于 R-ISS Ⅰ期和 Ⅲ 期之间</td></tr>
+            <tr><td><strong>Ⅲ期</strong></td><td>血清 β<sub>2</sub>-MG <span class="k">≥5.5 mg/L</span></td><td>ISS Ⅲ期 +（细胞遗传学高危 <strong>或</strong> LDH 高于正常）</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--muted-foreground)">注：R-ISS 细胞遗传学高危指间期 FISH 检出 <span class="k">del(17p)、t(4;14) 或 t(14;16)</span>。</p>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">四、治疗原则、系统方案与支持治疗</h3><span class="badge badge-f">熟悉</span></div>
+    <p><strong>两大治疗原则</strong>：①有症状 MM 采用系统治疗（诱导治疗 → 巩固治疗[含干细胞移植] → 维持治疗）；②<span class="k">无症状（冒烟性）骨髓瘤暂不推荐治疗</span>。</p>
+    <ul>
+      <li><strong>1. 诱导治疗</strong>：按年龄（原则上 <span class="k">≤70 岁</span>）、体能与共存病评估 HSCT 适合性。移植候选须避免对干细胞有毒性的药物（尽量避烷化剂和亚硝基脲类），含来那度胺方案应 <span class="k">≤4 个疗程</span>以防动员采集失败。
+        <br />• <strong>通用初始方案（9 种）</strong>：VD（硼替佐米/地塞米松）、Rd（来那度胺/DXM）、<span class="k">RVD</span>、PAD、VCD、VTD、TAD、TCD、RCD；
+        <br />• <strong>不适合移植增选方案（4 种）</strong>：VMP、MPT、<span class="k">Dara-VMP</span>（达雷妥尤单抗+VMP）、<span class="k">DRd</span>（达雷妥尤单抗+Rd）。</li>
+      <li><strong>2. 移植、巩固与维持</strong>：①<span class="k">auto-HSCT</span>（肾功能不全及老年并非禁忌，早期移植无事件生存期更长）；②<strong>巩固</strong>：诱导或移植后未获最大疗效者以原方案短期巩固 <span class="k">2～4 个疗程</span>；③<strong>维持</strong>：来那度胺、硼替佐米、伊沙佐米或沙利度胺单药或联激素；④<strong>allo-HSCT</strong>：年轻、高危、复发难治患者可考虑。</li>
+      <li><strong>3. 支持治疗（7 项）</strong>：①骨病：所有需治有症状 MM 静滴<span class="k">双膦酸盐</span>或皮下<span class="k">地舒单抗</span>（<span class="k">肾功能不全优先地舒单抗</span>）；病理骨折/脊髓压迫行外科或姑息低剂量放疗（10～30 Gy）；②高钙血症：水化利尿 + 地舒单抗/双膦酸盐/大剂量激素/降钙素；③肾不全：水化利尿、降尿酸、积极透析、<span class="k">避免 NSAIDs 与静脉造影剂</span>、用双膦酸盐须监测肾功；④贫血：EPO；⑤感染：反复或危及生命用 IVIG；大剂量地塞米松方案须预防<span class="k">伊氏肺孢子菌肺炎和真菌感染</span>；⑥凝血/血栓：沙利度胺或来那度胺方案建议<span class="k">预防性抗凝</span>；⑦高黏滞血症：有症状者行<span class="k">血浆置换</span>。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== MODULE 7 ==================== -->
+<section class="module-section" id="mod-7" data-mod-title="Ⅶ、第十四章 出血性疾病概述">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅶ、出血性疾病概述（正常止凝血机制 + 分类与诊断步骤）</h1>
+      <span class="mod-source">第10版 第十四章《出血性疾病概述》（课本 P612–619 / PDF P643–650）· 0.5学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>正常的止血和凝血机理（血管/血小板/凝血三因素、14 个凝血因子特性、传统瀑布三阶段与现代双阶段凝血学说、抗凝及纤溶机制）。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>出血性疾病的分类和诊断步骤（五大病因分类、病史体检鉴别、筛选与确诊试验、五步程序性诊断）。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">严格按【对应课程目标】剔除标为“了解”的【出血性疾病的防治】全节（含病因防治、止血药物、促血小板药物、局部处理及免疫/血浆置换/手术/中药/基因治疗）。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 7 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 7 · 正常止血—凝血瀑布（传统 + 现代双阶段）—抗凝与纤溶动态平衡总图</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 430" width="100%" role="img" aria-label="正常止血、凝血瀑布与抗凝纤溶动态平衡总图">
+        <defs>
+          <marker id="arr7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr7r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+          <marker id="arr7g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--success)" />
+          </marker>
+        </defs>
+        <!-- Top: Primary Hemostasis -->
+        <rect x="16" y="12" width="848" height="72" rx="10" fill="var(--primary)" fill-opacity="0.09" stroke="var(--primary)" stroke-width="1.5" />
+        <text x="440" y="33" text-anchor="middle" font-size="13" font-weight="700" fill="var(--primary)">一期止血（血管 + 血小板）：血管收缩（最早反应）→ 受损内皮释 vWF / TF / 暴露胶原 / 释 TM</text>
+        <text x="440" y="54" text-anchor="middle" font-size="11.5" fill="var(--foreground)">血小板黏附（GPⅠb — vWF — 内皮下胶原）→ 血小板聚集（GPⅡb/Ⅲa — 纤维蛋白原）→ 活化释放 TXA₂、5-HT</text>
+        <text x="440" y="73" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">形成初期血小板血栓，并同步启动外源性（TF）及内源性（FⅫ）凝血途径</text>
+
+        <!-- Down arrows to Extrinsic & Intrinsic -->
+        <line x1="165" y1="84" x2="165" y2="108" stroke="var(--error)" stroke-width="2" marker-end="url(#arr7r)" />
+        <line x1="455" y1="84" x2="455" y2="108" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr7)" />
+
+        <!-- Extrinsic Box -->
+        <rect x="16" y="114" width="286" height="92" rx="9" fill="var(--error)" fill-opacity="0.08" stroke="var(--error)" stroke-width="1.5" />
+        <text x="159" y="135" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--error)">外源性凝血途径（TF 途径 · 启动阶段）</text>
+        <text x="28" y="156" font-size="11.2" fill="var(--foreground)">• 损伤内皮释 TF + FⅦ/FⅦa + Ca²⁺</text>
+        <text x="28" y="175" font-size="11.2" fill="var(--foreground)">• TF/FⅦa 复合物激活 FⅩ（亦可激活 FⅨ）</text>
+        <text x="28" y="194" font-size="11" fill="var(--muted-foreground)">• 现代学说：先生成少量凝血酶启动放大</text>
+
+        <!-- Intrinsic Box -->
+        <rect x="316" y="114" width="290" height="92" rx="9" fill="var(--chart-1)" fill-opacity="0.09" stroke="var(--chart-1)" stroke-width="1.5" />
+        <text x="461" y="135" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-1)">内源性凝血途径（接触激活）</text>
+        <text x="328" y="156" font-size="11.2" fill="var(--foreground)">• 胶原暴露 → FⅫ→FⅫa → 激活 FⅪ→FⅪa</text>
+        <text x="328" y="175" font-size="11.2" fill="var(--foreground)">• FⅪa + Ca²⁺ → 激活 FⅨ→FⅨa</text>
+        <text x="328" y="194" font-size="11.2" fill="var(--foreground)">• FⅨa + FⅧ + PF₃ + Ca²⁺ → 激活 FⅩ</text>
+
+        <!-- Arrows converging to Common Pathway -->
+        <line x1="159" y1="206" x2="275" y2="234" stroke="var(--error)" stroke-width="1.8" marker-end="url(#arr7r)" />
+        <line x1="461" y1="206" x2="345" y2="234" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr7)" />
+
+        <!-- Common Pathway (3 stages) -->
+        <rect x="16" y="240" width="590" height="176" rx="10" fill="var(--card)" stroke="var(--error)" stroke-width="1.6" />
+        <rect x="16" y="240" width="590" height="28" rx="10" fill="var(--error)" fill-opacity="0.12" />
+        <text x="311" y="259" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--error)">共同途径与现代“放大阶段”（凝血活酶 → 凝血酶 → 交联纤维蛋白）</text>
+
+        <rect x="28" y="276" width="176" height="72" rx="7" fill="var(--background)" stroke="var(--border)" />
+        <text x="116" y="294" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--primary)">① 凝血活酶生成</text>
+        <text x="36" y="313" font-size="10.8" fill="var(--foreground)">FⅩa + FⅤ + 磷脂</text>
+        <text x="36" y="330" font-size="10.8" fill="var(--foreground)">+ Ca²⁺ → 凝血活酶</text>
+
+        <line x1="204" y1="312" x2="224" y2="312" stroke="var(--error)" stroke-width="1.8" marker-end="url(#arr7r)" />
+
+        <rect x="230" y="276" width="172" height="72" rx="7" fill="var(--error)" fill-opacity="0.09" stroke="var(--error)" />
+        <text x="316" y="294" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--error)">② 凝血酶生成（核心）</text>
+        <text x="238" y="313" font-size="10.8" fill="var(--foreground)">凝血酶原(FⅡ) → 凝血酶</text>
+        <text x="238" y="330" font-size="10.8" fill="var(--error)">正反馈激活 PLT/FⅤ/FⅧ/FⅪ</text>
+
+        <line x1="402" y1="312" x2="422" y2="312" stroke="var(--error)" stroke-width="1.8" marker-end="url(#arr7r)" />
+
+        <rect x="428" y="276" width="166" height="72" rx="7" fill="var(--background)" stroke="var(--border)" />
+        <text x="511" y="294" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--success)">③ 纤维蛋白生成</text>
+        <text x="436" y="313" font-size="10.8" fill="var(--foreground)">FⅠ 裂解肽A/B → 单体</text>
+        <text x="436" y="330" font-size="10.8" fill="var(--foreground)">经 FⅩⅢa → 交联稳定</text>
+
+        <rect x="28" y="356" width="566" height="50" rx="7" fill="var(--warning)" fill-opacity="0.10" stroke="var(--warning)" />
+        <text x="311" y="375" text-anchor="middle" font-size="11" font-weight="700" fill="var(--foreground)">现代双阶段连接点：少量凝血酶在磷脂与凝血酶原存在下激活 FⅪ，连接外源与内源</text>
+        <text x="311" y="394" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">Vit K 依赖（肝合成）：FⅡ/Ⅶ/Ⅸ/Ⅹ（及 PC/PS）；半衰期最短 FⅦ(3~6h)，最长 FⅩⅢ(240h)</text>
+
+        <!-- Right Panel: Anticoagulation & Fibrinolysis -->
+        <rect x="622" y="114" width="242" height="148" rx="9" fill="var(--success)" fill-opacity="0.08" stroke="var(--success)" stroke-width="1.5" />
+        <text x="743" y="135" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--success)">生理性抗凝系统（4 组成）</text>
+        <text x="632" y="156" font-size="11" fill="var(--foreground)">1. <tspan font-weight="700">抗凝血酶（AT，占 75%）</tspan>：</text>
+        <text x="642" y="172" font-size="10.8" fill="var(--muted-foreground)">灭活 FⅩa 及凝血酶（肝素变构增强）</text>
+        <text x="632" y="191" font-size="11" fill="var(--foreground)">2. <tspan font-weight="700">蛋白 C 系统（PC/PS/TM）</tspan>：</text>
+        <text x="642" y="207" font-size="10.8" fill="var(--muted-foreground)">凝血酶+TM→APC(+PS)→灭活 FⅤ/FⅧ</text>
+        <text x="632" y="226" font-size="11" fill="var(--foreground)">3. <tspan font-weight="700">TFPI</tspan>：抗 FⅩa 及 TF/FⅦa 复合物</text>
+        <text x="632" y="246" font-size="11" fill="var(--foreground)">4. <tspan font-weight="700">肝素</tspan>：变构 AT + 促内皮释 t-PA</text>
+
+        <rect x="622" y="274" width="242" height="142" rx="9" fill="var(--chart-3)" fill-opacity="0.09" stroke="var(--chart-3)" stroke-width="1.5" />
+        <text x="743" y="295" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-3)">纤维蛋白溶解系统（纤溶）</text>
+        <text x="632" y="316" font-size="11" fill="var(--foreground)">• 内源激活：FⅫa→激肽释放酶→PLG</text>
+        <text x="632" y="335" font-size="11" fill="var(--foreground)">• 外源激活：内皮/组织 t-PA、u-PA→PLG</text>
+        <text x="632" y="355" font-size="11" font-weight="700" fill="var(--chart-3)">• 纤溶酶降解纤维蛋白(原) → FDP</text>
+        <text x="632" y="375" font-size="10.8" fill="var(--muted-foreground)">• 抑制物：α₂-PI、α₁-AP、α₂-AP</text>
+        <text x="632" y="396" font-size="10.8" fill="var(--muted-foreground)">  （抑制 t-PA 与纤溶酶保持动态平衡）</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心考点</span> 正常的止血、凝血、抗凝与纤溶机理</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">一、正常止血机制（血管、血小板、凝血三大因素）</h3><span class="badge badge-m">掌握</span></div>
+    <ol>
+      <li><strong>血管因素</strong>：<span class="k">血管收缩</span>是人体对出血<span class="k">最早的生理性反应</span>（由神经反射及多种介质调控）。受损血管内皮细胞发挥 <strong>4 大作用</strong>：①表达释放 <span class="k">vWF</span>，促血小板黏附聚集；②表达释放<span class="k">组织因子（TF）</span>，启动外源性凝血；③<span class="k">基底胶原暴露</span>激活 FⅫ，启动内源性凝血；④表达释放<span class="k">凝血酶调节蛋白（TM）</span>，调节抗凝系统。</li>
+      <li><strong>血小板因素（黏附、聚集、释放）</strong>：①<strong>黏附</strong>：血小板 <span class="k">GPⅠb</span> 作受体，经 <span class="k">vWF</span> 桥梁作用黏附于受损内皮下胶原纤维；②<strong>聚集</strong>：血小板 <span class="k">GPⅡb/Ⅲa</span> 复合物通过<span class="k">纤维蛋白原</span>互相连接聚集；③<strong>释放</strong>：活化血小板释放 <span class="k">TXA<sub>2</sub>、5-HT</span> 等活性物质。</li>
+      <li><strong>凝血因素</strong>：血管损伤启动外源及内源凝血途径，在磷脂等参与下形成纤维蛋白血栓填塞破口，同时生成的凝血酶强力促进血液凝固与止血。</li>
+    </ol>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">二、凝血机制：14 个凝血因子特性（表 6-14-1）与传统/现代凝血过程</h3><span class="badge badge-m">掌握</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th colspan="9">表 6-14-1 直接参与人体凝血的 14 个血浆凝血因子名称及特性（第 10 版原文核对）</th></tr><tr><th>因子</th><th>同义名</th><th>合成部位</th><th>Vit K 依赖</th><th>血浆浓度 (mg/L)</th><th>硫酸钡吸附</th><th>血清中</th><th>储存稳定性</th><th>半衰期 (h)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Ⅰ</strong></td><td>纤维蛋白原</td><td>肝、巨核细胞</td><td>-</td><td>2000～4000</td><td>-</td><td>无</td><td>稳定</td><td>72～120</td></tr>
+          <tr><td><strong>Ⅱ</strong></td><td>凝血酶原</td><td>肝</td><td><span class="k">+</span></td><td>100～150</td><td>+</td><td>无</td><td>稳定</td><td>60～70</td></tr>
+          <tr><td><strong>Ⅲ</strong></td><td>组织因子，组织凝血活酶</td><td>组织、内皮、单核细胞</td><td>-</td><td>0</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td><strong>Ⅳ</strong></td><td>钙离子（Ca<sup>2+</sup>）</td><td>—</td><td>—</td><td>90～110</td><td>—</td><td>—</td><td>稳定</td><td>稳定</td></tr>
+          <tr><td><strong>Ⅴ</strong></td><td>易变因子（前加速素）</td><td>肝</td><td>-</td><td>5～10</td><td>-</td><td>无</td><td><span class="k">不稳定</span></td><td>12</td></tr>
+          <tr><td><strong>Ⅶ</strong></td><td>稳定因子（前转变素）</td><td>肝</td><td><span class="k">+</span></td><td>0.5</td><td>+</td><td>有</td><td><span class="k">不稳定</span></td><td><span class="k">3～6</span>（最短）</td></tr>
+          <tr><td><strong>Ⅷ</strong></td><td>抗血友病球蛋白（AHG）</td><td>肝、脾、巨核细胞</td><td>-</td><td>0.1～0.2</td><td>-</td><td>无</td><td>不稳定（冷冻稳定）</td><td>8～12</td></tr>
+          <tr><td><strong>Ⅸ</strong></td><td>PTC，christmas 因子</td><td>肝</td><td><span class="k">+</span></td><td>4～5</td><td>+</td><td>有</td><td>稳定</td><td>18～24</td></tr>
+          <tr><td><strong>Ⅹ</strong></td><td>Stuart-Prowe 因子</td><td>肝</td><td><span class="k">+</span></td><td>8～10</td><td>+</td><td>有</td><td>尚稳定</td><td>30～40</td></tr>
+          <tr><td><strong>Ⅺ</strong></td><td>血浆凝血活酶前质（PTA）</td><td>肝</td><td>-</td><td>5</td><td>+</td><td>有</td><td>稳定</td><td>52</td></tr>
+          <tr><td><strong>Ⅻ</strong></td><td>接触因子，Hageman 因子</td><td>肝</td><td>-</td><td>30</td><td>-</td><td>有</td><td>稳定</td><td>60</td></tr>
+          <tr><td><strong>ⅩⅢ</strong></td><td>纤维蛋白稳定因子</td><td>肝、巨核细胞</td><td>-</td><td>10～22</td><td>-</td><td>无</td><td>稳定</td><td><span class="k">240</span>（最长）</td></tr>
+          <tr><td><strong>PK</strong></td><td>激肽释放酶原（前激肽释放酶）</td><td>肝</td><td>-</td><td>50</td><td>-</td><td>有</td><td>稳定</td><td>35</td></tr>
+          <tr><td><strong>HMWK</strong></td><td>高分子量激肽原</td><td>肝</td><td>-</td><td>70</td><td>-</td><td>有</td><td>稳定</td><td>150</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>（一）经典“瀑布学说”凝血三阶段</strong>：</p>
+    <ol>
+      <li><strong>凝血活酶生成</strong>：
+        <ul>
+          <li><strong>外源性凝血途径（TF 途径）</strong>：受损内皮释放 TF，与 FⅦ 或 FⅦa 在 Ca<sup>2+</sup> 存在下形成 <span class="k">TF/FⅦ 或 TF/FⅦa 复合物</span>激活 FⅩ（后者作用远大于前者，且还可激活 FⅨ）。</li>
+          <li><strong>内源性凝血途径</strong>：内皮下带负电荷胶原激活 <span class="k">FⅫ → FⅫa</span> → 激活 <span class="k">FⅪ → FⅪa</span> → 在 Ca<sup>2+</sup> 存在下激活 <span class="k">FⅨ → FⅨa</span> → FⅨa + FⅧ + 膜磷脂（如 PF<sub>3</sub>）+ Ca<sup>2+</sup> 形成复合物激活 FⅩ。</li>
+          <li><strong>共同途径</strong>：FⅩa + FⅤ + 磷脂 + Ca<sup>2+</sup> 形成<span class="k">凝血活酶</span>复合物。</li>
+        </ul>
+      </li>
+      <li><strong>凝血酶生成</strong>：无活性凝血酶原在凝血活酶作用下转变为蛋白分解活性极强的<span class="k">凝血酶</span>。<strong>凝血酶 5 大关键作用</strong>：①反馈性加速凝血酶原向凝血酶转变（远强于凝血活酶）；②诱导血小板不可逆聚集、加速活化释放；③激活 <span class="k">FⅪ</span>；④激活 <span class="k">FⅩⅢ</span> 加速稳定性纤维蛋白形成；⑤激活纤溶酶原增强纤溶活性。</li>
+      <li><strong>纤维蛋白生成</strong>：凝血酶裂解纤维蛋白原释放肽 A、肽 B 成纤维蛋白单体 → 自动聚合为不稳定性纤维蛋白 → 经 <span class="k">FⅩⅢa</span> 作用形成<span class="k">稳定性交联纤维蛋白</span>。</li>
+    </ol>
+    <p><strong>（二）现代凝血双阶段学说</strong>：①<strong>启动阶段</strong>：通过外源性凝血途径（TF 途径）生成<span class="k">少量凝血酶</span>；②<strong>放大阶段</strong>：少量凝血酶正反馈激活血小板（磷脂酰丝氨酸外翻提供磷脂表面）、激活 FⅤ、激活 FⅧ，并在磷脂与凝血酶原存在下激活 <span class="k">FⅪ</span>（<span class="k">FⅪ 作为 TF 途径与内在途径的连接点</span>），生成足量凝血酶完成凝血。</p>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">三、生理性抗凝与纤维蛋白溶解机制</h3><span class="badge badge-m">掌握</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>（一）抗凝系统（4 大组成）</h4>
+        <ol>
+          <li><strong>抗凝血酶（AT）</strong>：人体<span class="k">最重要抗凝物质（占约 75%）</span>，肝及内皮合成，主要灭活 <span class="k">FⅩa 及凝血酶</span>（亦灭活 FⅨa/FⅪa/FⅫa），活性与肝素密切相关。</li>
+          <li><strong>蛋白 C 系统（PC、PS、TM）</strong>：PC、PS 为 Vit K 依赖性因子（肝合成）；TM 位于内皮表面作凝血酶受体。凝血酶与 TM 1∶1 结合裂解 PC 为 <span class="k">APC</span>，以 PS 为辅因子灭活 <span class="k">FⅤ 和 FⅧ</span>。</li>
+          <li><strong>组织因子途径抑制物（TFPI）</strong>：主要内皮生成；①直接对抗 FⅩa；②在 Ca<sup>2+</sup> 存在下与 FⅩa 形成复合物，对抗 <span class="k">TF/FⅦa</span> 复合物。</li>
+          <li><strong>肝素</strong>：肺/肠黏膜肥大细胞合成，与 AT 结合使其变构暴露活性中心，1∶1 灭活 FⅩa/凝血酶（LMWH 抗 FⅩa 更强），并促内皮释 <span class="k">t-PA</span> 增强纤溶。</li>
+        </ol>
+      </div>
+      <div class="mini-box">
+        <h4>（二）纤溶系统组成与双途径激活</h4>
+        <ul>
+          <li><strong>组成</strong>：①纤溶酶原（PLG，脾/嗜酸粒/肾生成，内皮亦有表达）；②组织型纤溶酶原激活物（<span class="k">t-PA</span>，主要激活剂，内皮合成）；③尿激酶型（u-PA / UK，含 pro-UK 和双链 u-PA）；④纤溶酶相关抑制物：α<sub>2</sub>-纤溶酶抑制物（α<sub>2</sub>-PI）、α<sub>1</sub>-抗胰蛋白酶（α<sub>1</sub>-AP）、α<sub>2</sub>-抗纤溶酶（α<sub>2</sub>-AP），抑制 t-PA 和纤溶酶。</li>
+          <li><strong>内源性激活途径</strong>：<span class="k">FⅫa</span> 使前激肽释放酶转为激肽释放酶 → 激活 PLG 为纤溶酶。</li>
+          <li><strong>外源性激活途径</strong>：内皮及组织受损释 <span class="k">t-PA 或 u-PA</span> → 裂解 PLG 为纤溶酶。</li>
+          <li><strong>纤溶产物</strong>：纤溶酶降解纤维蛋白（原）为小分子多肽 A、B、C 及系列碎片，统称<span class="k">纤维蛋白（原）降解产物（FDP）</span>。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 出血性疾病的分类与诊断步骤</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">四、出血性疾病的五大病因与机制分类</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>分类</th><th>先天性 / 遗传性</th><th>获得性</th></tr></thead>
+        <tbody>
+          <tr><td><strong>（一）血管壁异常</strong></td><td>遗传性出血性毛细血管扩张症、家族性单纯性紫癜、先天性结缔组织病</td><td>感染（败血症）、过敏（过敏性紫癜）、药物性紫癜、营养不良（Vit C / Vit PP 缺乏）、代谢内分泌（糖尿病/库欣）、结缔组织病、动脉硬化、机械/体位性紫癜</td></tr>
+          <tr><td><strong>（二）血小板异常</strong></td><td><strong>质量异常</strong>：血小板无力症、巨大血小板综合征</td><td><strong>数量减少（4 机制）</strong>：①生成减少（AA/白血病/放化疗）；②破坏过多（ITP）；③消耗过度（DIC）；④分布异常（脾亢）。<strong>数量增多伴功能异常</strong>：原发性血小板增多症。<strong>获得性质量异常</strong>（较多见）：抗血小板药、感染、尿毒症、异常球蛋白血症</td></tr>
+          <tr><td><strong>（三）凝血异常</strong></td><td>血友病 A/B、遗传性 FⅪ 缺乏症、罕见遗传性 FⅡ/Ⅴ/Ⅶ/Ⅹ 缺乏</td><td>肝病性凝血障碍、维生素 K 缺乏症、尿毒症性凝血异常</td></tr>
+          <tr><td><strong>（四）抗凝及纤溶异常</strong></td><td>少见</td><td>主要为获得性：肝素过量、香豆素类过量及敌鼠钠中毒、免疫相关性抗凝物增多、动物毒素中毒、溶栓药物过量</td></tr>
+          <tr><td><strong>（五）复合性止血异常</strong></td><td><span class="k">血管性血友病（vWD）</span></td><td><span class="k">弥散性血管内凝血（DIC）</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">五、临床鉴别（表 6-14-2）、筛选与确诊试验（表 6-14-3）及五步程序性诊断</h3><span class="badge badge-f">熟悉</span></div>
+    <p><strong>病史与体检核心规律</strong>：皮肤黏膜出血点/紫癜多为<span class="k">血管或血小板异常</span>；深部血肿、关节腔出血提示<span class="k">凝血障碍</span>；创伤/术后延迟性出血考虑<span class="k">纤溶异常</span>。病史须详询出血特征、诱因、基础病、家族史与月经史；体检关注出血体征、原发病体征及一般生命体征。</p>
+    <div class="grid-2">
+      <div class="tbl-wrap">
+        <table class="med-tbl">
+          <thead><tr><th colspan="4">表 6-14-2 常见出血性疾病的临床鉴别（第 10 版原文核对）</th></tr><tr><th>项目</th><th>血管性疾病</th><th>血小板性疾病</th><th>凝血障碍性疾病</th></tr></thead>
+          <tbody>
+            <tr><td>性别 / 阳性家族史</td><td>女多见 / 较少见</td><td>女少见 / 罕见</td><td><span class="k">80%～90% 男性</span> / 多见</td></tr>
+            <tr><td>出生后脐带出血</td><td>罕见</td><td>罕见</td><td><span class="k">常见</span></td></tr>
+            <tr><td>皮肤紫癜 / 大块瘀斑</td><td>常见 / 罕见</td><td><span class="k">多见 / 多见</span></td><td>罕见 / 可见</td></tr>
+            <tr><td>血肿 / 关节腔出血</td><td>罕见 / 罕见</td><td>可见 / 罕见</td><td><span class="k">常见 / 多见</span></td></tr>
+            <tr><td>内脏出血 / 眼底出血</td><td>偶见 / 罕见</td><td>常见 / <span class="k">常见</span></td><td>常见 / 少见</td></tr>
+            <tr><td>月经过多 / 术后渗血不止</td><td>少见 / 少见</td><td><span class="k">多见</span> / 可见</td><td>少见 / <span class="k">多见</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tbl-wrap">
+        <table class="med-tbl">
+          <thead><tr><th colspan="6">表 6-14-3 常用出、凝血试验在诊断中的意义</th></tr><tr><th>项目</th><th>血管性</th><th>血小板性</th><th>凝固异常</th><th>纤溶亢进</th><th>抗凝物增多</th></tr></thead>
+          <tbody>
+            <tr><td><strong>BT</strong></td><td>正常或异常</td><td>正常或异常</td><td>正常或异常</td><td>正常</td><td>正常</td></tr>
+            <tr><td><strong>PLT</strong></td><td>正常</td><td><span class="k">正常或异常</span></td><td>正常</td><td>正常</td><td>正常</td></tr>
+            <tr><td><strong>PT / APTT</strong></td><td>正常</td><td>正常</td><td>正常或异常</td><td>正常或异常</td><td>正常或异常</td></tr>
+            <tr><td><strong>TT</strong></td><td>正常</td><td>正常</td><td>正常或异常</td><td><span class="k">异常</span></td><td><span class="k">异常</span></td></tr>
+            <tr><td><strong>纤维蛋白原</strong></td><td>正常</td><td>正常</td><td>正常或异常</td><td><span class="k">异常</span></td><td>正常</td></tr>
+            <tr><td><strong>FDP</strong></td><td>正常</td><td>正常</td><td>正常</td><td><span class="k">异常</span></td><td>正常</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <ul>
+      <li><strong>实验室分层顺序（筛选 → 确诊 → 特殊）</strong>：
+        <br />• <strong>筛选试验</strong>：血管/血小板（<span class="k">BT、血小板计数、形态学</span>）；凝血（<span class="k">APTT、PT、TT、Fbg</span>）。
+        <br />• <strong>确诊试验（5 类）</strong>：①血管：vWF、ET-1、TM；②血小板：计数形态、聚集试验、CD62P、GPⅡb/Ⅲa 与 GPⅠb/Ⅸ 固相检测（ISTH 建议流式细胞术）；③凝血：一阶段（FⅫ/Ⅺ/Ⅹ/Ⅸ/Ⅷ/Ⅶ/Ⅴ/TF）、二阶段（凝血酶原）、三阶段（Fbg/异常 Fbg/纤维蛋白单体/FⅩⅢ）；④抗凝：AT/TAT、PC/PS/TM、FⅧ 抗体、狼疮抗凝物/抗心磷脂抗体；⑤纤溶：3P 试验、FDP、D-二聚体、PLG、t-PA/PAI/PIC。</li>
+      <li><strong>五步程序性诊断原则</strong>（先常见后少见/罕见、先易后难、先普通后特殊）：①确定是否属出血性疾病 → ②大致区分血管/血小板异常还是凝血障碍或其他 → ③判断数量异常还是质量缺陷 → ④借病史、家系与特殊检查初判先天/遗传还是获得性 → ⑤先天/遗传者行基因及分子检测明确确切病因与机制。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== MODULE 8 ==================== -->
+<section class="module-section" id="mod-8" data-mod-title="Ⅷ、第十五章第二节 原发免疫性血小板减少症">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅷ、原发免疫性血小板减少症（ITP）</h1>
+      <span class="mod-source">第10版 第十五章《紫癜性疾病》第二节（课本 P622–623 / PDF P653–654；已剔除第一节过敏性紫癜与第三节 TTP）· 1.5学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>ITP 的诊断要点（含诊断直接必需的临床表现简述、实验室检查与骨髓巨核细胞成熟障碍、排除性诊断 4 要点、出血评分、鉴别诊断与 5 型分期）。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>ITP 的治疗方法（观察随访指征、一般治疗、急症处理、一线/二线/三线阶梯方案）。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">严格按【对应课程目标】剔除标为“了解”的【病因和发病机制】全节；并彻底剔除同章第一节《过敏性紫癜》（P620–621）与第三节《血栓性血小板减少性紫癜》（P624–625）；第 10 版原文仅述成人 ITP，未展开儿童 ITP 对比与血块退缩试验。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 8 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 8 · 原发免疫性血小板减少症（ITP）排除性诊断—5 型分期—阶梯治疗流程图</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 390" width="100%" role="img" aria-label="原发免疫性血小板减少症排除性诊断与阶梯治疗流程图">
+        <defs>
+          <marker id="arr8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr8r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+        <!-- Top Left: 4 Diagnostic Criteria -->
+        <rect x="16" y="14" width="450" height="148" rx="10" fill="var(--error)" fill-opacity="0.08" stroke="var(--error)" stroke-width="1.6" />
+        <text x="241" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="var(--error)">临床排除性诊断 4 要点（掌握核心）</text>
+        <text x="28" y="58" font-size="11.5" fill="var(--foreground)">1. <tspan font-weight="700">至少 2 次</tspan>检查血小板计数减少，血细胞形态无异常</text>
+        <text x="28" y="79" font-size="11.5" fill="var(--foreground)">2. 体检<tspan font-weight="700">脾一般不大</tspan></text>
+        <text x="28" y="100" font-size="11.5" fill="var(--foreground)">3. 骨髓检查巨核细胞数正常或增多，有<tspan font-weight="700" fill="var(--error)">成熟障碍</tspan></text>
+        <text x="42" y="117" font-size="10.8" fill="var(--muted-foreground)">（幼稚巨核细胞增加，产板型巨核细胞显著减少）</text>
+        <text x="28" y="138" font-size="11.5" fill="var(--foreground)">4. 排除假性、遗传/先天性及一切继发性血小板减少</text>
+
+        <!-- Top Right: 5 Clinical Types & Bleeding Score -->
+        <rect x="482" y="14" width="382" height="148" rx="10" fill="var(--primary)" fill-opacity="0.08" stroke="var(--primary)" stroke-width="1.5" />
+        <text x="673" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="var(--primary)">5 型分期与出血风险评分</text>
+        <text x="494" y="58" font-size="11.2" fill="var(--foreground)">• 新诊断：≤3 个月 ｜ 持续性：3～12 个月 ｜ 慢性：&gt;12 个月</text>
+        <text x="494" y="80" font-size="11.2" font-weight="700" fill="var(--error)">• 重症 ITP：PLT &lt;10×10⁹/L 伴活动出血，或出血评分 ≥5 分</text>
+        <text x="494" y="102" font-size="11.2" fill="var(--foreground)">• 难治性：一线 + 二线促PLT药 + 抗CD20 均无效，或脾切无效/复发</text>
+        <rect x="494" y="116" width="358" height="34" rx="6" fill="var(--card)" stroke="var(--primary)" />
+        <text x="673" y="137" text-anchor="middle" font-size="11.2" font-weight="700" fill="var(--primary)">出血评分 = 年龄评分 + 最高出血症状评分</text>
+
+        <!-- Decision Split Arrows -->
+        <line x1="150" y1="162" x2="115" y2="196" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr8)" />
+        <line x1="340" y1="162" x2="310" y2="196" stroke="var(--error)" stroke-width="2" marker-end="url(#arr8r)" />
+        <line x1="560" y1="162" x2="540" y2="196" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr8)" />
+        <line x1="760" y1="162" x2="765" y2="196" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr8)" />
+
+        <!-- Bottom 4 Therapy Tiers -->
+        <rect x="16" y="202" width="174" height="174" rx="9" fill="var(--success)" fill-opacity="0.08" stroke="var(--success)" stroke-width="1.5" />
+        <text x="103" y="223" text-anchor="middle" font-size="12" font-weight="700" fill="var(--success)">观察随访 / 一般</text>
+        <text x="26" y="245" font-size="11" fill="var(--foreground)">• PLT &gt;30×10⁹/L</text>
+        <text x="26" y="263" font-size="11" fill="var(--foreground)">• 无明显出血倾向</text>
+        <text x="26" y="281" font-size="11" fill="var(--foreground)">• 无手术/创伤/高危</text>
+        <text x="26" y="302" font-size="11" font-weight="700" fill="var(--success)">→ 定期观察随访</text>
+        <text x="26" y="326" font-size="10.8" fill="var(--muted-foreground)">活动出血(症状≥2分)</text>
+        <text x="26" y="343" font-size="10.8" fill="var(--error)">无论PLT高低均治疗</text>
+        <text x="26" y="363" font-size="10.5" fill="var(--muted-foreground)">禁用抗血小板药物</text>
+
+        <rect x="202" y="202" width="214" height="174" rx="9" fill="var(--error)" fill-opacity="0.09" stroke="var(--error)" stroke-width="1.6" />
+        <text x="309" y="223" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">急症处理（危重联合）</text>
+        <text x="212" y="243" font-size="10.8" fill="var(--error)">PLT&lt;10伴重出血/颅内/手术分娩</text>
+        <text x="212" y="264" font-size="11" fill="var(--foreground)">1. <tspan font-weight="700">IVIG</tspan> 400mg/kg×5d 或</text>
+        <text x="224" y="281" font-size="11" fill="var(--foreground)">1.0g/kg×2d</text>
+        <text x="212" y="301" font-size="11" fill="var(--foreground)">2. <tspan font-weight="700">甲泼尼龙</tspan> 1g/d ivgtt×3d</text>
+        <text x="212" y="321" font-size="11" fill="var(--foreground)">3. 促血小板药（rhTPO/艾/海）</text>
+        <text x="212" y="341" font-size="11" fill="var(--foreground)">4. 血小板输注</text>
+        <text x="212" y="361" font-size="11" fill="var(--foreground)">5. 长春碱类 / 急症脾切除</text>
+
+        <rect x="428" y="202" width="214" height="174" rx="9" fill="var(--card)" stroke="var(--primary)" stroke-width="1.5" />
+        <text x="535" y="223" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">一线治疗（新诊断首选）</text>
+        <text x="438" y="245" font-size="11" font-weight="700" fill="var(--foreground)">1. 糖皮质激素（首选）</text>
+        <text x="444" y="264" font-size="10.8" fill="var(--foreground)">• HD-DXM 40mg/d×4d</text>
+        <text x="444" y="281" font-size="10.8" fill="var(--muted-foreground)">  无效 10 天后可重复 1 次</text>
+        <text x="444" y="300" font-size="10.8" fill="var(--foreground)">• 泼尼松 1mg/(kg·d)≤80mg</text>
+        <text x="444" y="317" font-size="10.8" fill="var(--muted-foreground)">  6~8周停，维持≤5mg/d</text>
+        <text x="438" y="339" font-size="11" font-weight="700" fill="var(--foreground)">2. IVIG（特定适应证）</text>
+        <text x="444" y="358" font-size="10.8" fill="var(--muted-foreground)">急症/激素不耐受/脾切前/妊娠</text>
+
+        <rect x="654" y="202" width="210" height="174" rx="9" fill="var(--card)" stroke="var(--chart-1)" stroke-width="1.5" />
+        <text x="759" y="223" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-1)">二线与三线治疗</text>
+        <text x="664" y="245" font-size="11" font-weight="700" fill="var(--foreground)">二线（激素失败/半年复发）</text>
+        <text x="664" y="264" font-size="10.8" fill="var(--foreground)">• 促PLT药（1~2周效，防血栓）</text>
+        <text x="664" y="282" font-size="10.8" fill="var(--foreground)">• 抗CD20单抗（活动乙肝禁用）</text>
+        <text x="664" y="300" font-size="10.8" fill="var(--foreground)">• 脾切除（确诊≥12~24月，</text>
+        <text x="674" y="316" font-size="10.5" fill="var(--muted-foreground)">术前2周接种3联疫苗）</text>
+        <text x="664" y="338" font-size="11" font-weight="700" fill="var(--foreground)">三线治疗</text>
+        <text x="664" y="357" font-size="10.8" fill="var(--foreground)">• 地西他滨 / ATRA+达那唑</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心考点</span> 原发免疫性血小板减少症（ITP）的诊断要点</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">一、临床识别特征与实验室检查核心指标（诊断直接依据）</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>概念与人群特点</strong>：既往称特发性血小板减少性紫癜，是临床上<span class="k">最常见的出血性疾病</span>（育龄期女性高于男性，60 岁以上发病率为 60 岁以下 2 倍，出血风险随年龄增高；本节主述成人 ITP）。</p>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>临床表现简述</h4>
+        <ol>
+          <li><strong>反复皮肤黏膜出血</strong>：瘀点、瘀斑、鼻出血、牙龈出血、月经过多、外伤止血不易；重者内脏及颅内出血；部分患者仅血小板减少而无出血症状。</li>
+          <li><strong>乏力</strong>：部分患者有明显乏力。</li>
+          <li><strong>失血性贫血</strong>：出血过多或长期月经过多所致。</li>
+        </ol>
+      </div>
+      <div class="mini-box">
+        <h4>4 项实验室检查特征</h4>
+        <ol>
+          <li><strong>血常规</strong>：血小板计数减少，血小板平均体积（MPV）偏大；部分伴正细胞或小细胞低色素贫血；<span class="k">血细胞形态无异常</span>。</li>
+          <li><strong>出凝血及血小板功能</strong>：<span class="k">凝血功能正常</span>，<span class="k">出血时间（BT）延长</span>，<span class="k">束臂试验阳性</span>；血小板功能一般正常。</li>
+          <li><strong>骨髓象（重点）</strong>：巨核细胞数正常或增加，<span class="k">巨核细胞成熟障碍</span>（幼稚巨核细胞增加，<span class="k">产板型巨核细胞显著减少</span>）。</li>
+          <li><strong>血清学</strong>：TPO 正常或轻度升高；约 <span class="k">70%</span> 抗血小板糖蛋白自身抗体阳性；伴 AIHA（Evans 综合征）者 Coombs 阳性、胆红素升高。</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">二、临床排除性诊断 4 要点、出血评分、鉴别诊断与 5 型分期</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>（一）临床排除性诊断 4 要点</strong>：①<span class="k">至少 2 次</span>检查血小板计数减少，血细胞形态无异常；②体检<span class="k">脾一般不大</span>；③骨髓检查巨核细胞数正常或增多，有<span class="k">成熟障碍</span>；④排除其他继发性血小板减少症。</p>
+    <p><strong>（二）出血程度分级</strong>：采用出血评分系统量化风险：<span class="k">ITP 出血评分 = 年龄评分 + 出血症状评分（所有出血症状中最高分值）</span>。</p>
+    <p><strong>（三）鉴别诊断</strong>：须排除<span class="k">假性血小板减少</span>；遗传性或先天性血小板减少综合征；以及各种<span class="k">继发性血小板减少症</span>（如再生障碍性贫血、脾功能亢进、MDS、白血病、系统性红斑狼疮、药物性免疫性血小板减少等）。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th colspan="2">（四）ITP 的 5 型分型与分期（直接指导观察与治疗分层）</th></tr><tr><th>分型 / 分期</th><th>第 10 版界定标准</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. 新诊断的 ITP</strong></td><td>确诊后 <span class="k">3 个月以内</span>的 ITP 患者</td></tr>
+          <tr><td><strong>2. 持续性 ITP</strong></td><td>确诊后 <span class="k">3～12 个月</span>血小板持续减少的 ITP 患者</td></tr>
+          <tr><td><strong>3. 慢性 ITP</strong></td><td>血小板减少持续 <span class="k">超过 12 个月</span>的 ITP 患者</td></tr>
+          <tr><td><strong>4. 重症 ITP</strong></td><td>血小板 <span class="k">&lt;10×10<sup>9</sup>/L 伴活动性出血</span>，或<span class="k">出血评分 ≥5 分</span></td></tr>
+          <tr><td><strong>5. 难治性 ITP</strong></td><td>对一线治疗药物、二线促血小板生成药物及利妥昔单抗均无效，或脾切除无效/术后复发，经诊断再评估仍确诊为 ITP 者</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 原发免疫性血小板减少症（ITP）的治疗方法</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">三、治疗目标、观察随访指征与五级阶梯治疗方案</h3><span class="badge badge-f">熟悉</span></div>
+    <p><strong>治疗原则与启动阈值</strong>：目前尚无根治法，以毒性最小维持安全血小板水平、预防出血、提高生活质量，遵循个体化原则。无明显出血倾向、<span class="k">PLT &gt;30×10<sup>9</sup>/L</span> 且无手术/创伤/高出血风险工作者可<span class="k">观察随访</span>；若有活动性出血（<span class="k">出血症状评分 ≥2 分</span>），无论血小板水平如何均应治疗。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>治疗层级</th><th>适用指征</th><th>具体方案、剂量与核心注意事项（第 10 版原文）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>一般治疗</strong></td><td>有明显出血倾向者</td><td>严格卧床，避免加重出血药物，<span class="k">禁用抗血小板药物</span>，有效控制高血压、避免创伤。</td></tr>
+          <tr><td><strong>急症处理</strong></td><td><span class="k">PLT &lt;10×10<sup>9</sup>/L 伴广泛严重出血</span>；疑/已发生<span class="k">颅内出血</span>；近期将行手术或分娩</td><td>危急者可联合应用：①<span class="k">IVIG</span>：400 mg/(kg·d)×5 天 或 1.0 g/(kg·d)×2 天；②<span class="k">大剂量甲泼尼龙</span>：1 g/d 静滴 3 天后渐减；③促血小板生成药（rhTPO、艾曲泊帕、海曲泊帕、罗普司亭）；④血小板输注；⑤其他（长春碱类、急症脾切除）。</td></tr>
+          <tr><td><strong>一线治疗</strong></td><td>新诊断需治患者</td><td>①<strong>糖皮质激素（一般为首选）</strong>：<br />• <span class="k">大剂量地塞米松（HD-DXM）</span>：40 mg/d×4 天，无效 10 天后可重复 1 次（高龄、糖尿病、高血压、青光眼慎用）；<br />• <span class="k">泼尼松</span>：1 mg/(kg·d)（最大 80 mg/d），起效快减，<span class="k">6～8 周内停用</span>，维持安全剂量 <span class="k">≤5 mg/d</span>，2 周无效尽快减停。<br />②<strong>IVIG</strong>（用法同急症）：用于急症、不能耐受激素或脾切前准备、合并妊娠或分娩前（<span class="k">IgA 缺乏和肾功能不全者慎用</span>）。</td></tr>
+          <tr><td><strong>二线治疗</strong></td><td>初始激素失败、半年内复发或有激素禁忌</td><td>①<strong>促血小板生成药</strong>：rhTPO、艾曲泊帕、海曲泊帕、阿伐曲泊帕、罗普司亭（1～2 周起效，停药难维持，注意<span class="k">血栓风险</span>）；<br />②<strong>抗 CD20 单抗</strong>：375 mg/m<sup>2</sup> 或 100 mg/次静滴每周 1 次×4 次，或 375 mg/m<sup>2</sup> 单次（4～8 周起效，<span class="k">活动性乙型肝炎禁用</span>）；<br />③<strong>脾切除</strong>：用于正规激素无效、泼尼松 5 mg/d 不能维持、或激素禁忌且确诊至少 <span class="k">12～24 个月以上</span>者；术前须重新评价诊断，术前 <span class="k">2 周</span>接种疫苗（<span class="k">肺炎球菌、脑膜炎奈瑟菌、流感嗜血杆菌</span>），注意血栓及感染风险。</td></tr>
+          <tr><td><strong>三线治疗</strong></td><td>二线治疗失败/难治者</td><td>①<span class="k">地西他滨</span>：3.5 mg/(m<sup>2</sup>·d)×3 天，间隔 3 周，共 3～6 周期（3 周期无效停用）；<br />②<span class="k">全反式维 A 酸（ATRA）</span>20 mg/d 分 2 次 + <span class="k">达那唑</span> 400 mg/d 分 2 次联用 16 周；<br />③其他（长春新碱、环孢素、硫唑嘌呤、MMF，个体化选择）。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== APPENDIX: AUDIT ==================== -->
+<section class="module-section" id="mod-audit" data-mod-title="大纲边界与差异审计表">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">大纲-教材边界与内部差异审计表</h1>
+      <span class="mod-source">透明度与溯源记录</span>
+    </div>
+    <p style="margin:8px 0 0;font-size:13px;color:var(--muted-foreground)">
+      本学习页严格执行两条硬边界：① 仅采信《内科学-理论课程教学大纲.docx》血液病部分<strong>【对应课程目标】</strong>栏（该部分【对应课程目标】与【支撑关系表】100% 一致），彻底剔除标为“了解”及未列入大纲的章节与子节；② 知识内容 100% 严格依据人卫第 10 版《内科学》<strong>06-第六篇 血液系统疾病</strong>原文（全篇页码偏移恒定：PDF = 课本 + 31），绝不凭外部记忆或旧版补写。
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="card-hd"><h3 class="card-title">一、大纲内部跨栏口径冲突与裁决明细（共 7 处 + 学时核对）</h3><span class="badge badge-note">决策记录</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>模块 / 疾病</th><th>【对应课程目标】原文（权威依据）</th><th>大纲内其他栏目原文</th><th>本学习页执行结果</th></tr></thead>
+        <tbody>
+          <tr><td><strong>全局学时核对</strong></td><td>表头总学时：8 学时</td><td>8 个知识点分项之和：0.5+0.5+1+2+2+2+0.5+1.5 = <strong>10 学时</strong></td><td>在侧栏副标题客观标注“8讲 / 实计 10 学时”，各模块保留分项学时。</td></tr>
+          <tr><td><strong>Ⅰ、贫血概述</strong></td><td>掌握常见分类及临床表现；熟悉不同类型贫血血常规特点。</td><td>【教学内容和要求】列骨髓象/生化/溶血检查/诊断鉴别/治疗；【难点重点】列“贫血的诊断及鉴别诊断”。</td><td>严格以目标栏为准，彻底剔除骨髓检查、发病机制检查、诊断步骤、鉴别诊断及治疗。</td></tr>
+          <tr><td><strong>Ⅲ、再生障碍性贫血</strong></td><td>掌握病因、临床表现、诊断及治疗；熟悉血常规、骨髓细胞学、EPO 等实验室检查。</td><td>【教学内容和要求】分型写“普通型/重度/极重度”，治疗写“三联 IST(hATG/CsA/艾曲泊帕)、低强度治疗”。</td><td>严格忠实第 10 版原文（NSAA/SAA/VSAA；兔 ATG/猪 ALG+CsA；难治 SAA 用艾/海曲泊帕），剔除发病机制、疗效标准、预防预后。</td></tr>
+          <tr><td><strong>Ⅳ、白血病</strong></td><td>掌握临床表现和 MICM 检查；熟悉诊断和治疗；初步形成诊疗思路。</td><td>【教学内容和要求】16 条仅覆盖急性白血病（AML/ALL）与慢性髓系白血病（CML），未列第四节 CLL。</td><td>按用户确认剔除第九章第四节《慢性淋巴细胞白血病》（P588–590 / PDF P619–621），并剔除发病率、病因机制与预后专节。</td></tr>
+          <tr><td><strong>Ⅴ、淋巴瘤</strong></td><td>一、<strong>了解</strong> WHO 2022 分类和临床特征；二、<strong>熟悉</strong>诊断方法和治疗原则（全章无掌握项）。</td><td>【教学内容和要求】完整展开病因机制、病理分类、临床表现、治疗（含替雷利珠单抗、BACOP）。</td><td>全模块仅设【熟悉】卡片，彻底剔除病理分类大表、临床表现专节、病因机制与 IPI 预后，仅在诊断/治疗中保留最小分层标签。</td></tr>
+          <tr><td><strong>Ⅵ、多发性骨髓瘤</strong></td><td>掌握临床表现和诊断标准；熟悉分型分期和治疗原则。</td><td>【教学内容和要求】列实验室/影像检查、鉴别诊断、DS 与 ISS 分期及治疗方案。</td><td>临床表现与诊断标准（含必需实验室/影像指标与鉴别）归【掌握】，分型分期（12 亚型 + DS/ISS/R-ISS）与治疗归【熟悉】，剔除病因机制与预后。</td></tr>
+          <tr><td><strong>Ⅶ、出血性疾病概述</strong></td><td>掌握正常止血和凝血机理；熟悉分类和诊断步骤；<strong>了解</strong>治疗原则。</td><td>【教学内容和要求】五、“防治”简述消除病因、预防出血及常用止血措施。</td><td>彻底剔除第十四章【出血性疾病的防治】全节，零泄露。</td></tr>
+          <tr><td><strong>Ⅷ、原发免疫性血小板减少症</strong></td><td>一、<strong>了解</strong>发病机理；二、<strong>掌握</strong>诊断要点；三、<strong>熟悉</strong>治疗方法。</td><td>【教学内容和要求】含临床表现、实验室检查、鉴别诊断、治疗；【难点重点】列鉴别诊断、急症处理、一线治疗。</td><td>彻底剔除发病机理；按用户确认保留诊断直接必需的临床表现简述、实验室检查（骨髓巨核细胞成熟障碍）、5 型分期与鉴别诊断于【掌握】下，治疗方法归【熟悉】。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hd"><h3 class="card-title">二、第 10 版血液篇缺节、版次更新与原书图表图像核对记录</h3><span class="badge badge-note">溯源说明</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>模块 / 条目</th><th>第 10 版《06-第六篇 血液系统疾病》实际情况</th><th>执行与处理方式</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Ⅰ、表 6-2-1 细胞学分类</strong></td><td>经核对第 10 版原书表 6-2-1 图像，大细胞性贫血行确印为 MCHC &gt;360 g/L 且常见疾病未列巨幼细胞贫血（巨幼贫见于下文原料缺乏分类）。</td><td>100% 原样忠实照录表 6-2-1 并在注脚客观说明，不擅改原书表格。</td></tr>
+          <tr><td><strong>Ⅲ、第 5 章实验室 EPO 缺节</strong></td><td>大纲提及“EPO 等特异性实验室检查”，但第 10 版第 5 章【实验室检查】未设血清 EPO 检测（EPO 仅在促造血治疗节出现）；且无马源 hATG / 三联 IST / 低强度治疗提法。</td><td>如实收录全部实验室检查原文并显式红框声明缺节，不跨源补写。</td></tr>
+          <tr><td><strong>Ⅴ、第 10 章 WHO 分类与药物版次</strong></td><td>大纲写“WHO 2022 分类”及“替雷利珠单抗、BACOP”，但第 10 版第 10 章正文及表 6-10-2 仍采用 WHO 2016 年版分类，亦未载替雷利珠单抗与 BACOP。</td><td>100% 忠实第 10 版原文方案（ABVD/BV-AVD、CHOP/R-CHOP/EPOCH/ESHAP、PD-1 抑制剂、CAR-T 等）并显式说明差异。</td></tr>
+          <tr><td><strong>Ⅵ、表 6-11-3 与 6-11-4</strong></td><td>经核对第 10 版原书表 6-11-3 图像，DS 分期确印为 2.65 mmol/L（11.5 mg/dl）；表 6-11-4 将 ISS 与 R-ISS 同表并列。</td><td>原样忠实照录 DS 数值，并完整收录 ISS 与 R-ISS。</td></tr>
+          <tr><td><strong>Ⅶ、表 6-14-1 与 6-14-2</strong></td><td>经核对原书图像，表 6-14-1（14 个凝血因子）与表 6-14-2（常见出血性疾病临床鉴别）均按第 10 版印刷原文核对无误；并修正少量 MinerU OCR 识别误字（如 TXA→TXA<sub>2</sub>、FⅫa 激活 FⅪ）。</td><td>100% 忠实第 10 版印刷原文。</td></tr>
+          <tr><td><strong>Ⅷ、第 15 章第二节 ITP</strong></td><td>第 10 版原文明确说明“本节主要讲述成人 ITP”，未展开成人与儿童 ITP 对比，亦未提血块退缩试验；同时修正少量 OCR 误字符（如 R-S 细胞、IL-4/IL-10、50～100 U/(kg·d)）。</td><td>仅依据第 10 版成人 ITP 原文编写，不补写儿童 ITP 对比。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hd"><h3 class="card-title">三、第 10 版血液篇 21 章全景范围核对（剔除 13 整章 + 3 同章子节）</h3><span class="badge badge-note">范围核对</span></div>
+    <p>第 10 版《06-第六篇 血液系统疾病》全篇共 <strong>21 章</strong>（课本 P540–651 / PDF P571–682），大纲 8 个知识点映射其中 <strong>8 章</strong>（第 2、3、5、9、10、11、14、15 章），以下 <strong>13 整章未列入大纲，全部剔除</strong>：</p>
+    <p style="color:var(--muted-foreground)">第一章 总论（P540–543 / PDF P571–574）｜ 第四章 巨幼细胞贫血（P552–554 / PDF P583–585）｜ 第六章 溶血性贫血（P559–569 / PDF P590–600）｜ 第七章 白细胞减少和粒细胞缺乏症（P570–571 / PDF P601–602）｜ 第八章 骨髓增生异常性肿瘤（P572–575 / PDF P603–606）｜ 第十二章 骨髓增殖性肿瘤（P605–609 / PDF P636–640）｜ 第十三章 脾功能亢进（P610–611 / PDF P641–642）｜ 第十六章 凝血障碍性疾病（P626–630 / PDF P657–661）｜ 第十七章 弥散性血管内凝血（P631–634 / PDF P662–665）｜ 第十八章 血栓性疾病（P635–637 / PDF P666–668）｜ 第十九章 输血和输血反应（P638–641 / PDF P669–672）｜ 第二十章 造血干细胞移植（P642–647 / PDF P673–678）｜ 第二十一章 CAR-T 细胞免疫疗法在血液病中的应用（P648–651 / PDF P679–682）。</p>
+    <p><strong>同章未选入大纲的 3 处子节（同步剔除）</strong>：第九章第四节《慢性淋巴细胞白血病》（P588–590 / PDF P619–621）、第十五章第一节《过敏性紫癜》（P620–621 / PDF P651–652）、第十五章第三节《血栓性血小板减少性紫癜》（P624–625 / PDF P655–656）。</p>
+  </div>
+</section>
+
+    </main>
+  </div>
+</div>
+
+<!-- SVG Zoom Lightbox Modal -->
+<div class="modal-backdrop" id="svgModal" role="dialog" aria-modal="true" aria-label="SVG 图解放大预览">
+  <div class="modal-panel">
+    <div class="modal-top">
+      <span id="modalTitle">图解放大查看</span>
+      <button class="tool-btn" id="modalClose" type="button">关闭 (ESC)</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const navItems = Array.from(document.querySelectorAll(".nav-item"));
+  const sections = Array.from(document.querySelectorAll(".module-section"));
+  const sidebar = document.getElementById("sidebar");
+  const menuBtn = document.getElementById("menuBtn");
+  const sidebarCloseBtn = document.getElementById("sidebarCloseBtn");
+  const filterBtns = Array.from(document.querySelectorAll(".filter-btn"));
+  const clozeBtn = document.getElementById("clozeBtn");
+  const clozeState = document.getElementById("clozeState");
+  const viewAllBtn = document.getElementById("viewAllBtn");
+  const viewAllState = document.getElementById("viewAllState");
+  const svgModal = document.getElementById("svgModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalBody = document.getElementById("modalBody");
+  const modalClose = document.getElementById("modalClose");
+
+  function isMobile() {
+    return window.matchMedia("(max-width: 860px)").matches;
+  }
+
+  function updateSidebarBtnLabel() {
+    const collapsed = isMobile()
+      ? !sidebar.classList.contains("open")
+      : document.body.classList.contains("sidebar-collapsed");
+    menuBtn.textContent = collapsed ? "☰ 展开侧边栏" : "☰ 收起侧边栏";
+  }
+
+  function toggleSidebar() {
+    if (isMobile()) {
+      sidebar.classList.toggle("open");
+    } else {
+      document.body.classList.toggle("sidebar-collapsed");
+    }
+    updateSidebarBtnLabel();
+  }
+
+  function closeSidebar() {
+    if (isMobile()) {
+      sidebar.classList.remove("open");
+    } else {
+      document.body.classList.add("sidebar-collapsed");
+    }
+    updateSidebarBtnLabel();
+  }
+
+  menuBtn.addEventListener("click", toggleSidebar);
+  if (sidebarCloseBtn) sidebarCloseBtn.addEventListener("click", closeSidebar);
+  window.addEventListener("resize", updateSidebarBtnLabel);
+  updateSidebarBtnLabel();
+
+  function activateModule(id, scrollTop) {
+    navItems.forEach((btn) => btn.classList.toggle("active", btn.dataset.target === id));
+    sections.forEach((sec) => sec.classList.toggle("active", sec.id === id));
+    if (isMobile()) {
+      sidebar.classList.remove("open");
+      updateSidebarBtnLabel();
+    }
+    if (document.body.classList.contains("view-all")) {
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else if (scrollTop !== false) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+
+  navItems.forEach((btn) => {
+    btn.addEventListener("click", () => activateModule(btn.dataset.target, true));
+  });
+
+  // Filter: all / master / familiar
+  function setFilter(mode) {
+    document.body.classList.remove("filter-master", "filter-familiar");
+    if (mode === "master") document.body.classList.add("filter-master");
+    if (mode === "familiar") document.body.classList.add("filter-familiar");
+    filterBtns.forEach((b) => b.classList.toggle("active", b.dataset.filter === mode));
+  }
+  filterBtns.forEach((btn) => btn.addEventListener("click", () => setFilter(btn.dataset.filter)));
+
+  // Cloze self-test mode
+  let clozeOn = false;
+  clozeBtn.addEventListener("click", () => {
+    clozeOn = !clozeOn;
+    document.body.classList.toggle("cloze-on", clozeOn);
+    clozeBtn.classList.toggle("active", clozeOn);
+    if (clozeState) clozeState.textContent = clozeOn ? "开（点词翻开）" : "关";
+    if (!clozeOn) {
+      document.querySelectorAll(".k.revealed").forEach((el) => el.classList.remove("revealed"));
+    }
+  });
+  document.addEventListener("click", (e) => {
+    if (!clozeOn) return;
+    const span = e.target.closest(".k");
+    if (span) span.classList.toggle("revealed");
+  });
+
+  // View all / Print toggle
+  let viewAll = false;
+  viewAllBtn.addEventListener("click", () => {
+    viewAll = !viewAll;
+    document.body.classList.toggle("view-all", viewAll);
+    viewAllBtn.classList.toggle("active", viewAll);
+    if (viewAllState) viewAllState.textContent = viewAll ? "开" : "关";
+  });
+
+  // SVG zoom lightbox
+  function openSvgModal(svgCard) {
+    const titleEl = svgCard.querySelector(".svg-hd span");
+    const svgEl = svgCard.querySelector("svg");
+    if (!svgEl) return;
+    modalTitle.textContent = titleEl ? titleEl.textContent : "SVG 图解";
+    modalBody.innerHTML = "";
+    const clone = svgEl.cloneNode(true);
+    clone.querySelectorAll("[id]").forEach((n) => {
+      const oldId = n.getAttribute("id");
+      const newId = "m_" + oldId;
+      n.setAttribute("id", newId);
+      clone.querySelectorAll(`[marker-end="url(#${oldId})"]`).forEach((el) => el.setAttribute("marker-end", `url(#${newId})`));
+      clone.querySelectorAll(`[marker-start="url(#${oldId})"]`).forEach((el) => el.setAttribute("marker-start", `url(#${newId})`));
+    });
+    modalBody.appendChild(clone);
+    svgModal.classList.add("open");
+  }
+  document.querySelectorAll(".svg-card").forEach((card) => {
+    const btn = card.querySelector(".svg-zoom-btn");
+    const stage = card.querySelector(".svg-stage");
+    if (btn) btn.addEventListener("click", () => openSvgModal(card));
+    if (stage) stage.addEventListener("click", () => openSvgModal(card));
+  });
+  function closeModal() {
+    svgModal.classList.remove("open");
+    modalBody.innerHTML = "";
+  }
+  modalClose.addEventListener("click", closeModal);
+  svgModal.addEventListener("click", (e) => { if (e.target === svgModal) closeModal(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+})();
+</script>
+
+<script>
+(function () {
+  const root = document.documentElement;
+  const btn = document.getElementById("themeToggleBtn");
+  const state = document.getElementById("themeState");
+  const saved = (function () { try { return localStorage.getItem("study_guide_theme"); } catch (e) { return null; } })();
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  let theme = saved || (prefersDark ? "dark" : "light");
+  function apply(t) {
+    root.setAttribute("data-theme", t);
+    if (btn) btn.classList.toggle("active", t === "dark");
+    if (state) state.textContent = t === "dark" ? "开" : "关";
+    try { localStorage.setItem("study_guide_theme", t); } catch (e) {}
+  }
+  apply(theme);
+  if (btn) {
+    btn.addEventListener("click", function () {
+      theme = theme === "dark" ? "light" : "dark";
+      apply(theme);
+    });
+  }
+})();
+</script>
+
+
+<script>
+(function () {
+  function syncFromHash() {
+    var raw = (window.location.hash || "").replace(/^#/, "");
+    if (!raw) return;
+    var btn = document.querySelector('.nav-item[data-target="' + raw + '"]');
+    if (btn) btn.click();
+  }
+  window.addEventListener("hashchange", syncFromHash);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", syncFromHash);
+  } else {
+    syncFromHash();
+  }
+})();
+</script>
+
+</body>
+</html>

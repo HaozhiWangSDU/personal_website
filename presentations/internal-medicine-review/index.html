@@ -1,0 +1,3137 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>内科学（第10版）七大系统教学大纲精要导航 · Audit Not Completed</title>
+<meta name="description" content="人卫第10版《内科学》七大系统教学大纲精要总导航，整合呼吸、循环、消化、泌尿、血液、内分泌与风湿免疫共50个模块与50幅SVG图解、完整理论教学大纲及配套Notion页面（Audit Not Completed）。" />
+<style>
+:root, [data-theme="light"] {
+  --background: #f6f8fb;
+  --card: #ffffff;
+  --sidebar: #eef2f7;
+  --border: #d5dde8;
+  --card-border: #e5ebf3;
+  --foreground: #182230;
+  --muted-foreground: #526075;
+  --primary: #1d4ed8;
+  --primary-foreground: #ffffff;
+  --secondary: #e8eef6;
+  --accent: #dbeafe;
+  --link: #1d4ed8;
+  --success: #15803d;
+  --warning: #d97706;
+  --warning-bg: #fffbeb;
+  --warning-border: #f59e0b;
+  --error: #dc2626;
+  --error-bg: #fef2f2;
+  --shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+}
+[data-theme="dark"] {
+  --background: #0f172a;
+  --card: #162033;
+  --sidebar: #111b2e;
+  --border: #2a3952;
+  --card-border: #223047;
+  --foreground: #e6edf7;
+  --muted-foreground: #9cb0c9;
+  --primary: #60a5fa;
+  --primary-foreground: #0b1220;
+  --secondary: #1e2c45;
+  --accent: #1d3557;
+  --link: #60a5fa;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --warning-bg: rgba(245, 158, 11, 0.12);
+  --warning-border: #d97706;
+  --error: #f87171;
+  --error-bg: rgba(248, 113, 113, 0.12);
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+}
+a { color: var(--link); }
+
+.page-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 20px 56px;
+}
+
+/* Top Bar */
+.top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.top-nav-left, .top-nav-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--foreground);
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.nav-pill:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.nav-pill.notion-pill {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+}
+.nav-pill.notion-pill:hover {
+  opacity: 0.92;
+  color: var(--primary-foreground);
+}
+
+/* Audit Alert Banner */
+.audit-banner {
+  background: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+  border-left: 5px solid var(--warning);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.audit-banner-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--warning);
+  margin-bottom: 4px;
+}
+.audit-banner-text {
+  font-size: 13px;
+  color: var(--foreground);
+  margin: 0;
+  max-width: 820px;
+}
+.audit-stamp {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1.5px solid var(--error);
+  background: var(--error-bg);
+  color: var(--error);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Hero */
+.hero {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: var(--shadow);
+  margin-bottom: 22px;
+}
+.hero-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.hero h1 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.hero-sub {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 13.5px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--card-border);
+}
+.stat-box {
+  background: var(--background);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.stat-num {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2;
+}
+.stat-num.warn { color: var(--warning); font-size: 14.5px; padding-top: 4px; }
+.stat-label {
+  font-size: 11.5px;
+  color: var(--muted-foreground);
+  margin-top: 2px;
+}
+
+/* Notion Resource Card */
+.notion-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.notion-card-info strong { font-size: 14px; display: block; margin-bottom: 2px; }
+.notion-card-info span { font-size: 12.5px; color: var(--muted-foreground); word-break: break-all; }
+
+/* Section Heading */
+.sec-hd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 26px 0 14px;
+}
+.sec-hd h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+}
+.sec-hd span {
+  font-size: 12.5px;
+  color: var(--muted-foreground);
+}
+
+/* 7-System Card Grid */
+.sys-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+}
+.sys-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--sys-accent, var(--primary));
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sys-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.part-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--secondary);
+  color: var(--foreground);
+  font-size: 11.5px;
+  font-weight: 700;
+}
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--warning-bg);
+  color: var(--warning);
+  border: 1px solid var(--warning-border);
+}
+.status-badge.warn-resp {
+  background: var(--error-bg);
+  color: var(--error);
+  border-color: var(--error);
+}
+.sys-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+.sys-en {
+  font-size: 12px;
+  color: var(--muted-foreground);
+  margin-top: 2px;
+}
+.sys-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: var(--foreground);
+}
+.sys-stats strong { color: var(--primary); }
+.sys-pages {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+
+.sys-mod-details {
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background: var(--background);
+  padding: 8px 10px;
+}
+.sys-mod-details summary {
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--foreground);
+  user-select: none;
+}
+.sys-mod-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+.sys-mod-list li a {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  background: var(--card);
+  transition: border-color 0.15s;
+}
+.sys-mod-list li a:hover {
+  border-color: var(--primary);
+}
+.mod-link-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--foreground);
+}
+.mod-link-meta {
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+
+.sys-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 4px;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid var(--primary);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.btn-primary:hover { opacity: 0.9; color: var(--primary-foreground); }
+.btn-sm { padding: 6px 12px; font-size: 12.5px; }
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--secondary);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+.btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
+
+/* Syllabus Explorer */
+.syllabus-section {
+  margin-top: 32px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px;
+  box-shadow: var(--shadow);
+}
+.syl-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--card-border);
+}
+.syl-mode-group {
+  display: inline-flex;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 3px;
+  gap: 3px;
+}
+.syl-mode-btn {
+  border: none;
+  background: transparent;
+  color: var(--muted-foreground);
+  padding: 5px 11px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.syl-mode-btn.active {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.syl-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.syl-tab {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.syl-tab:hover { border-color: var(--primary); }
+.syl-tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+}
+.tab-hours {
+  font-size: 11px;
+  opacity: 0.8;
+  margin-left: 3px;
+}
+
+.syl-panel { display: none; }
+.syl-panel.active { display: block; }
+body.syl-show-all .syl-panel {
+  display: block;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 2px dashed var(--border);
+}
+body.syl-mode-curated .syl-view-raw { display: none; }
+body.syl-mode-raw .syl-view-curated { display: none; }
+
+.syl-panel-hd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.syl-panel-hd h3 { margin: 0; font-size: 16.5px; }
+.syl-panel-sub { margin: 2px 0 0; font-size: 12px; color: var(--muted-foreground); }
+.warn-inline { color: var(--warning); }
+
+.sub-sec-title {
+  margin: 14px 0 10px;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.cur-mod-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cur-mod-card {
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  background: var(--background);
+  padding: 12px 14px;
+}
+.cur-mod-hd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.cur-mod-link {
+  font-weight: 800;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--foreground);
+}
+.cur-mod-link:hover { color: var(--primary); text-decoration: underline; }
+.cur-mod-src {
+  font-size: 11.5px;
+  color: var(--muted-foreground);
+}
+.cur-mod-body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.cur-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+}
+.cur-tag {
+  flex-shrink: 0;
+  padding: 1px 7px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.tag-m { background: var(--error); color: #ffffff; }
+.tag-f { background: transparent; color: var(--primary); border: 1px solid var(--primary); }
+.tag-x { background: var(--secondary); color: var(--muted-foreground); }
+
+.meta-card {
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  background: var(--background);
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.meta-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 10px;
+  font-size: 12.5px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--card-border);
+}
+.meta-row:last-child { border-bottom: none; padding-bottom: 0; }
+.meta-k { font-weight: 700; color: var(--muted-foreground); }
+.meta-v { color: var(--foreground); }
+
+.raw-details {
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  background: var(--background);
+  padding: 10px 14px;
+  margin-bottom: 10px;
+}
+.raw-details summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--foreground);
+}
+.raw-details-body {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--card-border);
+}
+.syl-ch-hd {
+  font-weight: 800;
+  font-size: 13.5px;
+  color: var(--foreground);
+  background: var(--secondary);
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin: 12px 0 6px;
+}
+.syl-sub-hd {
+  font-weight: 700;
+  font-size: 12.5px;
+  color: var(--primary);
+  margin: 8px 0 4px;
+}
+.syl-item, .syl-para {
+  margin: 3px 0;
+  font-size: 12.5px;
+  color: var(--foreground);
+}
+.syl-item { padding-left: 8px; }
+.kw-m { color: var(--error); }
+.kw-f { color: var(--primary); }
+.kw-u { color: var(--muted-foreground); }
+
+.syl-tbl-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.syl-tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  background: var(--card);
+}
+.syl-tbl th, .syl-tbl td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--card-border);
+  border-right: 1px solid var(--card-border);
+  text-align: left;
+  vertical-align: top;
+}
+.syl-tbl th {
+  background: var(--secondary);
+  font-weight: 700;
+}
+
+.footer {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+
+@media (max-width: 680px) {
+  .page-wrap { padding: 12px 12px 40px; }
+  .hero { padding: 16px; }
+  .hero h1 { font-size: 19px; }
+  .sys-grid { grid-template-columns: 1fr; }
+  .meta-row { grid-template-columns: 1fr; gap: 2px; }
+  .syllabus-section { padding: 14px; }
+}
+</style>
+</head>
+<body class="syl-mode-both">
+<div class="page-wrap">
+
+  <nav class="top-nav" aria-label="顶部导航">
+    <div class="top-nav-left">
+      <a class="nav-pill" href="../../presentations.html">← 返回演示报告集</a>
+      <a class="nav-pill" href="#syllabus-explorer">查看七系统教学大纲 ↓</a>
+    </div>
+    <div class="top-nav-right">
+      <a class="nav-pill notion-pill" href="https://app.notion.com/p/4249530ba4dc8048bf97f49fffac6c77" target="_blank" rel="noopener noreferrer">Notion 配套页面 ↗</a>
+      <button class="nav-pill" id="hubThemeBtn" type="button">深色主题：<span id="hubThemeState">关</span></button>
+    </div>
+  </nav>
+
+  <div class="audit-banner" role="alert">
+    <div>
+      <div class="audit-banner-title">⚠ Audit Not Completed（七大系统独立逐字审计尚未完成）</div>
+      <p class="audit-banner-text">
+        本专题当前为《内科学（第10版）》七大系统学习指南的整合发布版本，<strong>尚未完成全量独立审计与修订放行</strong>：其中呼吸系统已完成首轮独立审计并检出待修订缺陷，循环、消化、泌尿、血液、内分泌、风湿免疫六大系统尚未开展独立审计。复习临床诊断阈值、用药剂量与适应证时，请务必结合第10版教材原文与官方教学大纲交叉核验。
+      </p>
+    </div>
+    <span class="audit-stamp">Audit Not Completed</span>
+  </div>
+
+  <header class="hero">
+    <div class="hero-top">
+      <div>
+        <h1>内科学（第10版）· 七大系统教学大纲精要导航</h1>
+        <p class="hero-sub">严格对应《内科学》理论课程教学大纲与人民卫生出版社第10版《内科学》（第二篇至第八篇）· 掌握 / 熟悉分层 · 双页码溯源 · 定制 SVG 矢量图解</p>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#systems-grid">浏览七大系统学习页 ↓</a>
+      <a class="btn-ghost" href="#syllabus-explorer">查阅完整教学大纲</a>
+      <a class="btn-ghost" href="https://app.notion.com/p/4249530ba4dc8048bf97f49fffac6c77" target="_blank" rel="noopener noreferrer">打开 Notion 配套整理页面 ↗</a>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-box"><div class="stat-num">7</div><div class="stat-label">内科学核心系统（第2–8篇）</div></div>
+      <div class="stat-box"><div class="stat-num">80</div><div class="stat-label">大纲理论总学时</div></div>
+      <div class="stat-box"><div class="stat-num">50</div><div class="stat-label">分级教学模块（支持直达）</div></div>
+      <div class="stat-box"><div class="stat-num">50</div><div class="stat-label">定制交互式 SVG 矢量图解</div></div>
+      <div class="stat-box"><div class="stat-num warn">Audit Not Completed</div><div class="stat-label">当前质量审计状态</div></div>
+    </div>
+  </header>
+
+  <section class="notion-card" aria-label="配套 Notion 资源">
+    <div class="notion-card-info">
+      <strong>Notion 配套复习与资料页面</strong>
+      <span>https://app.notion.com/p/4249530ba4dc8048bf97f49fffac6c77</span>
+    </div>
+    <a class="btn-primary btn-sm" href="https://app.notion.com/p/4249530ba4dc8048bf97f49fffac6c77" target="_blank" rel="noopener noreferrer">前往 Notion 页面 ↗</a>
+  </section>
+
+  <div class="sec-hd" id="systems-grid">
+    <h2>一、七大系统精要导航</h2>
+    <span>点击主按钮进入完整系统页，或展开模块列表直达单章 · 所有子页均支持背诵遮罩、全篇展开与深浅色主题</span>
+  </div>
+
+  <main class="sys-grid">
+    
+      <article class="sys-card" style="--sys-accent: #0284c7;">
+        <div class="sys-card-top">
+          <div class="sys-badges">
+            <span class="part-pill">第二篇</span>
+            <span class="status-badge warn-resp">⚠ Audit Not Completed · 首轮待修订</span>
+          </div>
+          <h2 class="sys-title">呼吸系统疾病</h2>
+          <div class="sys-en">Respiratory System</div>
+          <div class="sys-stats">
+            <span><strong>16</strong> 学时</span>
+            <span><strong>8</strong> 模块</span>
+            <span><strong>8</strong> SVG 图解</span>
+          </div>
+          <div class="sys-pages">课本 P23–137（按大纲选章） · PDF P54–168</div>
+        </div>
+
+        <details class="sys-mod-details">
+          <summary>展开全部 8 个教学模块目录（点击直达）</summary>
+          <ul class="sys-mod-list">
+            <li><a href="./respiratory.html#mod-1"><span class="mod-link-title">Ⅰ、肺炎（含肺脓肿）</span><span class="mod-link-meta">第10版 第六章《肺部感染性疾病》（课本 P46–67 / PDF P77–98）+ 第七章《肺脓肿》（课本 P68–70 / PDF P99–101）· 2学时</span></a></li>
+<li><a href="./respiratory.html#mod-2"><span class="mod-link-title">Ⅱ、肺结核</span><span class="mod-link-meta">第10版 第八章《肺结核》（课本 P71–85 / PDF P102–116）· 2学时</span></a></li>
+<li><a href="./respiratory.html#mod-3"><span class="mod-link-title">Ⅲ、慢性阻塞性肺疾病（COPD）</span><span class="mod-link-meta">第10版 第三章《慢性阻塞性肺疾病》（课本 P23–30 / PDF P54–61）· 2学时</span></a></li>
+<li><a href="./respiratory.html#mod-4"><span class="mod-link-title">Ⅳ、支气管哮喘</span><span class="mod-link-meta">第10版 第四章《支气管哮喘》（课本 P31–39 / PDF P62–70）· 2学时</span></a></li>
+<li><a href="./respiratory.html#mod-5"><span class="mod-link-title">Ⅴ、肺血栓栓塞症（肺栓塞）</span><span class="mod-link-meta">第10版 第十一章《肺血栓栓塞症》（课本 P110–117 / PDF P141–148）· 2学时</span></a></li>
+<li><a href="./respiratory.html#mod-6"><span class="mod-link-title">Ⅵ、间质性肺疾病（ILD / DPLD）</span><span class="mod-link-meta">第10版 第十章《间质性肺疾病》（课本 P99–109 / PDF P130–140）· 2学时</span></a></li>
+<li><a href="./respiratory.html#mod-7"><span class="mod-link-title">Ⅶ、胸膜疾病（胸腔积液、结核性胸膜炎与气胸）</span><span class="mod-link-meta">第10版 第十三章《胸膜疾病》（课本 P126–137 / PDF P157–168）· 2学时</span></a></li>
+<li><a href="./respiratory.html#mod-8"><span class="mod-link-title">Ⅷ、原发性肺癌</span><span class="mod-link-meta">第10版 第九章《肺癌》（课本 P86–98 / PDF P117–129）· 2学时</span></a></li>
+          </ul>
+        </details>
+
+        <div class="sys-actions">
+          <a class="btn-primary" href="./respiratory.html">进入呼吸系统精要 →</a>
+          <button class="btn-ghost jump-syl-btn" type="button" data-syl-target="respiratory">查看本系统大纲</button>
+        </div>
+      </article>
+      <article class="sys-card" style="--sys-accent: #dc2626;">
+        <div class="sys-card-top">
+          <div class="sys-badges">
+            <span class="part-pill">第三篇</span>
+            <span class="status-badge">⚠ Audit Not Completed</span>
+          </div>
+          <h2 class="sys-title">循环系统疾病</h2>
+          <div class="sys-en">Circulatory System</div>
+          <div class="sys-stats">
+            <span><strong>16</strong> 学时</span>
+            <span><strong>9</strong> 模块</span>
+            <span><strong>9</strong> SVG 图解</span>
+          </div>
+          <div class="sys-pages">课本 P176–334 · PDF P207–365</div>
+        </div>
+
+        <details class="sys-mod-details">
+          <summary>展开全部 9 个教学模块目录（点击直达）</summary>
+          <ul class="sys-mod-list">
+            <li><a href="./circulatory.html#mod-1"><span class="mod-link-title">Ⅰ、心功能不全（心力衰竭）</span><span class="mod-link-meta">第10版 第二章《心力衰竭》（课本 P176–189 / PDF P207–220）· 2学时（慢1+急1）</span></a></li>
+<li><a href="./circulatory.html#mod-2"><span class="mod-link-title">Ⅱ、心律失常</span><span class="mod-link-meta">第10版 第三章《心律失常》（课本 P190–226 / PDF P221–257）· 2学时</span></a></li>
+<li><a href="./circulatory.html#mod-3"><span class="mod-link-title">Ⅲ、动脉粥样硬化及冠心病</span><span class="mod-link-meta">第10版 第四章《动脉粥样硬化和冠状动脉粥样硬化性心脏病》（课本 P227–259 / PDF P258–290）· 4学时（稳2+心梗2）</span></a></li>
+<li><a href="./circulatory.html#mod-4"><span class="mod-link-title">Ⅳ、高血压</span><span class="mod-link-meta">第10版 第五章《高血压》（课本 P260–274 / PDF P291–305）· 2学时</span></a></li>
+<li><a href="./circulatory.html#mod-5"><span class="mod-link-title">Ⅴ、心肌疾病</span><span class="mod-link-meta">第10版 第六章《心肌疾病》（课本 P275–287 / PDF P306–318）· 2学时</span></a></li>
+<li><a href="./circulatory.html#mod-6"><span class="mod-link-title">Ⅵ、心脏瓣膜病</span><span class="mod-link-meta">第10版 第八章《心脏瓣膜病》（课本 P299–314 / PDF P330–345）· 2学时</span></a></li>
+<li><a href="./circulatory.html#mod-7"><span class="mod-link-title">Ⅶ、心包疾病</span><span class="mod-link-meta">第10版 第九章《心包疾病》（课本 P315–320 / PDF P346–351）· 1学时</span></a></li>
+<li><a href="./circulatory.html#mod-8"><span class="mod-link-title">Ⅷ、感染性心内膜炎</span><span class="mod-link-meta">第10版 第十章《感染性心内膜炎》（课本 P321–327 / PDF P352–358）· 1学时</span></a></li>
+<li><a href="./circulatory.html#mod-9"><span class="mod-link-title">Ⅸ、心脏骤停与心肺复苏</span><span class="mod-link-meta">第10版 第十一章《心脏骤停与心脏性猝死》（课本 P328–334 / PDF P359–365）· 2学时</span></a></li>
+          </ul>
+        </details>
+
+        <div class="sys-actions">
+          <a class="btn-primary" href="./circulatory.html">进入循环系统精要 →</a>
+          <button class="btn-ghost jump-syl-btn" type="button" data-syl-target="circulatory">查看本系统大纲</button>
+        </div>
+      </article>
+      <article class="sys-card" style="--sys-accent: #d97706;">
+        <div class="sys-card-top">
+          <div class="sys-badges">
+            <span class="part-pill">第四篇</span>
+            <span class="status-badge">⚠ Audit Not Completed</span>
+          </div>
+          <h2 class="sys-title">消化系统疾病</h2>
+          <div class="sys-en">Digestive System</div>
+          <div class="sys-stats">
+            <span><strong>16</strong> 学时</span>
+            <span><strong>12</strong> 模块</span>
+            <span><strong>12</strong> SVG 图解</span>
+          </div>
+          <div class="sys-pages">课本 P356–463 · PDF P387–494</div>
+        </div>
+
+        <details class="sys-mod-details">
+          <summary>展开全部 12 个教学模块目录（点击直达）</summary>
+          <ul class="sys-mod-list">
+            <li><a href="./digestive.html#mod-1"><span class="mod-link-title">Ⅰ、消化系统疾病总论</span><span class="mod-link-meta">第10版 第一章《总论》（课本 P356–362 / PDF P387–393）· 1学时</span></a></li>
+<li><a href="./digestive.html#mod-2"><span class="mod-link-title">Ⅱ、胃食管反流病（GERD）</span><span class="mod-link-meta">第10版 第二章《胃食管反流病》（课本 P363–365 / PDF P394–396）· 0.5学时</span></a></li>
+<li><a href="./digestive.html#mod-3"><span class="mod-link-title">Ⅲ、胃炎（急性胃炎与慢性胃炎）</span><span class="mod-link-meta">第10版 第四章《胃炎》（课本 P369–373 / PDF P400–404）· 1学时</span></a></li>
+<li><a href="./digestive.html#mod-4"><span class="mod-link-title">Ⅳ、消化性溃疡（PU）</span><span class="mod-link-meta">第10版 第五章《消化性溃疡》（课本 P374–378 / PDF P405–409）· 1.5学时</span></a></li>
+<li><a href="./digestive.html#mod-5"><span class="mod-link-title">Ⅴ、肠结核及结核性腹膜炎</span><span class="mod-link-meta">第10版 第七章《肠结核和结核性腹膜炎》（课本 P383–387 / PDF P414–418）· 0.5学时</span></a></li>
+<li><a href="./digestive.html#mod-6"><span class="mod-link-title">Ⅵ、炎症性肠病（溃疡性结肠炎 &amp; 克罗恩病）</span><span class="mod-link-meta">第10版 第八章《炎症性肠病》（课本 P388–394 / PDF P419–425）· 2学时</span></a></li>
+<li><a href="./digestive.html#mod-7"><span class="mod-link-title">Ⅶ、功能性胃肠病（FD &amp; IBS）</span><span class="mod-link-meta">第10版 第十章《功能性胃肠病》（课本 P398–401 / PDF P429–432）· 2学时</span></a></li>
+<li><a href="./digestive.html#mod-8"><span class="mod-link-title">Ⅷ、肝硬化</span><span class="mod-link-meta">第10版 第十五章《肝硬化》（课本 P417–426 / PDF P448–457）· 1.5学时</span></a></li>
+<li><a href="./digestive.html#mod-9"><span class="mod-link-title">Ⅸ、肝性脑病（HE）</span><span class="mod-link-meta">第10版 第十五章《肝硬化》（肝性脑病专节：课本 P420–425 / PDF P451–456）· 0.5学时</span></a></li>
+<li><a href="./digestive.html#mod-10"><span class="mod-link-title">Ⅹ、胆胰系统疾病（肝外胆管结石 &amp; 急性胰腺炎）</span><span class="mod-link-meta">第10版 第十八章《肝外胆系结石及炎症》第二节（课本 P436–437 / PDF P467–468）+ 第二十章《胰腺炎》第一节（课本 P441–446 / PDF P472–477）· 2学时</span></a></li>
+<li><a href="./digestive.html#mod-11"><span class="mod-link-title">Ⅺ、消化道肿瘤（空腔 3 病 vs 实性 3 病对比）</span><span class="mod-link-meta">第10版 第三章《食管癌》（课本 P366–368 / PDF P397–399）+ 第六章《胃癌》（P379–382 / PDF P410–413）+ 第九章《结直肠癌》（P395–397 / PDF P426–428）+ 第十六章《原发性肝癌》（P427–431 / PDF P458–462）+ 第十九章《胆道系统肿瘤》第二节二《胆管癌》（P439–440 / PDF P470–471）+ 第二十一章《胰腺癌》（P450–451 / PDF P481–482）· 2学时</span></a></li>
+<li><a href="./digestive.html#mod-12"><span class="mod-link-title">Ⅻ、消化道出血</span><span class="mod-link-meta">第10版 第二十五章《消化道出血》（课本 P460–463 / PDF P491–494）· 2学时</span></a></li>
+          </ul>
+        </details>
+
+        <div class="sys-actions">
+          <a class="btn-primary" href="./digestive.html">进入消化系统精要 →</a>
+          <button class="btn-ghost jump-syl-btn" type="button" data-syl-target="digestive">查看本系统大纲</button>
+        </div>
+      </article>
+      <article class="sys-card" style="--sys-accent: #0d9488;">
+        <div class="sys-card-top">
+          <div class="sys-badges">
+            <span class="part-pill">第五篇</span>
+            <span class="status-badge">⚠ Audit Not Completed</span>
+          </div>
+          <h2 class="sys-title">泌尿系统疾病</h2>
+          <div class="sys-en">Urinary System (Nephrology)</div>
+          <div class="sys-stats">
+            <span><strong>8</strong> 学时</span>
+            <span><strong>4</strong> 模块</span>
+            <span><strong>4</strong> SVG 图解</span>
+          </div>
+          <div class="sys-pages">课本 P466–532 · PDF P497–563</div>
+        </div>
+
+        <details class="sys-mod-details">
+          <summary>展开全部 4 个教学模块目录（点击直达）</summary>
+          <ul class="sys-mod-list">
+            <li><a href="./urinary.html#mod-1"><span class="mod-link-title">Ⅰ、泌尿系统总论与肾小球疾病概述</span><span class="mod-link-meta">第10版 第一章《总论》（课本 P466–472 / PDF P497–503）+ 第二章第一节《肾小球疾病概述》（课本 P473–475 / PDF P504–506）· 2学时</span></a></li>
+<li><a href="./urinary.html#mod-2"><span class="mod-link-title">Ⅱ、肾病综合征（NS）</span><span class="mod-link-meta">第10版 第二章第五节《肾病综合征》（课本 P480–485 / PDF P511–516）· 2学时</span></a></li>
+<li><a href="./urinary.html#mod-3"><span class="mod-link-title">Ⅲ、急性肾损伤（AKI）</span><span class="mod-link-meta">第10版 第九章《急性肾损伤》（课本 P518–524 / PDF P549–555）· 2学时</span></a></li>
+<li><a href="./urinary.html#mod-4"><span class="mod-link-title">Ⅳ、慢性肾衰竭（CRF / CKD）</span><span class="mod-link-meta">第10版 第十章《慢性肾衰竭》（课本 P525–532 / PDF P556–563）· 2学时</span></a></li>
+          </ul>
+        </details>
+
+        <div class="sys-actions">
+          <a class="btn-primary" href="./urinary.html">进入泌尿系统精要 →</a>
+          <button class="btn-ghost jump-syl-btn" type="button" data-syl-target="urinary">查看本系统大纲</button>
+        </div>
+      </article>
+      <article class="sys-card" style="--sys-accent: #be123c;">
+        <div class="sys-card-top">
+          <div class="sys-badges">
+            <span class="part-pill">第六篇</span>
+            <span class="status-badge">⚠ Audit Not Completed</span>
+          </div>
+          <h2 class="sys-title">血液系统疾病</h2>
+          <div class="sys-en">Hematology</div>
+          <div class="sys-stats">
+            <span><strong>8</strong> 学时</span>
+            <span><strong>8</strong> 模块</span>
+            <span><strong>8</strong> SVG 图解</span>
+          </div>
+          <div class="sys-pages">课本 P544–623 · PDF P575–654</div>
+        </div>
+
+        <details class="sys-mod-details">
+          <summary>展开全部 8 个教学模块目录（点击直达）</summary>
+          <ul class="sys-mod-list">
+            <li><a href="./hematology.html#mod-1"><span class="mod-link-title">Ⅰ、贫血概述</span><span class="mod-link-meta">第10版 第二章《贫血概述》（课本 P544–548 / PDF P575–579）· 0.5学时</span></a></li>
+<li><a href="./hematology.html#mod-2"><span class="mod-link-title">Ⅱ、缺铁性贫血（IDA）</span><span class="mod-link-meta">第10版 第三章《缺铁性贫血》（课本 P549–551 / PDF P580–582）· 0.5学时</span></a></li>
+<li><a href="./hematology.html#mod-3"><span class="mod-link-title">Ⅲ、再生障碍性贫血（AA）</span><span class="mod-link-meta">第10版 第五章《再生障碍性贫血》（课本 P555–558 / PDF P586–589）· 1学时</span></a></li>
+<li><a href="./hematology.html#mod-4"><span class="mod-link-title">Ⅳ、白血病（急性白血病 + 慢性髓系白血病）</span><span class="mod-link-meta">第10版 第九章《白血病》第一～三节（课本 P576–588 / PDF P607–619；全章至 P590/PDF P621，已剔除第四节 CLL）· 2学时</span></a></li>
+<li><a href="./hematology.html#mod-5"><span class="mod-link-title">Ⅴ、淋巴瘤（全章仅【熟悉】层，无【掌握】项）</span><span class="mod-link-meta">第10版 第十章《淋巴瘤》（课本 P591–599 / PDF P622–630）· 2学时</span></a></li>
+<li><a href="./hematology.html#mod-6"><span class="mod-link-title">Ⅵ、多发性骨髓瘤（MM）</span><span class="mod-link-meta">第10版 第十一章《多发性骨髓瘤》（课本 P600–604 / PDF P631–635）· 2学时</span></a></li>
+<li><a href="./hematology.html#mod-7"><span class="mod-link-title">Ⅶ、出血性疾病概述（正常止凝血机制 + 分类与诊断步骤）</span><span class="mod-link-meta">第10版 第十四章《出血性疾病概述》（课本 P612–619 / PDF P643–650）· 0.5学时</span></a></li>
+<li><a href="./hematology.html#mod-8"><span class="mod-link-title">Ⅷ、原发免疫性血小板减少症（ITP）</span><span class="mod-link-meta">第10版 第十五章《紫癜性疾病》第二节（课本 P622–623 / PDF P653–654；已剔除第一节过敏性紫癜与第三节 TTP）· 1.5学时</span></a></li>
+          </ul>
+        </details>
+
+        <div class="sys-actions">
+          <a class="btn-primary" href="./hematology.html">进入血液系统精要 →</a>
+          <button class="btn-ghost jump-syl-btn" type="button" data-syl-target="hematology">查看本系统大纲</button>
+        </div>
+      </article>
+      <article class="sys-card" style="--sys-accent: #7c3aed;">
+        <div class="sys-card-top">
+          <div class="sys-badges">
+            <span class="part-pill">第七篇</span>
+            <span class="status-badge">⚠ Audit Not Completed</span>
+          </div>
+          <h2 class="sys-title">内分泌和代谢性疾病</h2>
+          <div class="sys-en">Endocrinology &amp; Metabolism</div>
+          <div class="sys-stats">
+            <span><strong>10</strong> 学时</span>
+            <span><strong>5</strong> 模块</span>
+            <span><strong>5</strong> SVG 图解</span>
+          </div>
+          <div class="sys-pages">课本 P654–745 · PDF P685–776</div>
+        </div>
+
+        <details class="sys-mod-details">
+          <summary>展开全部 5 个教学模块目录（点击直达）</summary>
+          <ul class="sys-mod-list">
+            <li><a href="./endocrine.html#mod-1"><span class="mod-link-title">Ⅰ、内分泌和代谢疾病总论</span><span class="mod-link-meta">第10版 第七篇 第一章《总论》（课本 P654–662 / PDF P685–693）· 2学时</span></a></li>
+<li><a href="./endocrine.html#mod-2"><span class="mod-link-title">Ⅱ、甲状腺功能亢进症（Graves 病）</span><span class="mod-link-meta">第10版 第五章《甲状腺疾病》第一节（课本 P686–692 / PDF P717–723）· 2学时</span></a></li>
+<li><a href="./endocrine.html#mod-3"><span class="mod-link-title">Ⅲ、糖尿病与糖尿病酮症酸中毒（DKA）</span><span class="mod-link-meta">第10版 第八章《糖尿病》第一、二节（课本 P724–745 / PDF P755–776）· 2学时</span></a></li>
+<li><a href="./endocrine.html#mod-4"><span class="mod-link-title">Ⅳ、皮质醇增多症（库欣综合征）</span><span class="mod-link-meta">第10版 第七章《肾上腺疾病》第一节（课本 P709–711 / PDF P740–742）· 2学时</span></a></li>
+<li><a href="./endocrine.html#mod-5"><span class="mod-link-title">Ⅴ、原发性醛固酮增多症（原醛症）</span><span class="mod-link-meta">第10版 第七章《肾上腺疾病》第二节（课本 P712–714 / PDF P743–745）· 2学时</span></a></li>
+          </ul>
+        </details>
+
+        <div class="sys-actions">
+          <a class="btn-primary" href="./endocrine.html">进入内分泌系统精要 →</a>
+          <button class="btn-ghost jump-syl-btn" type="button" data-syl-target="endocrine">查看本系统大纲</button>
+        </div>
+      </article>
+      <article class="sys-card" style="--sys-accent: #4f46e5;">
+        <div class="sys-card-top">
+          <div class="sys-badges">
+            <span class="part-pill">第八篇</span>
+            <span class="status-badge">⚠ Audit Not Completed</span>
+          </div>
+          <h2 class="sys-title">风湿免疫病</h2>
+          <div class="sys-en">Rheumatology</div>
+          <div class="sys-stats">
+            <span><strong>6</strong> 学时</span>
+            <span><strong>4</strong> 模块</span>
+            <span><strong>4</strong> SVG 图解</span>
+          </div>
+          <div class="sys-pages">课本 P808–844 · PDF P839–875</div>
+        </div>
+
+        <details class="sys-mod-details">
+          <summary>展开全部 4 个教学模块目录（点击直达）</summary>
+          <ul class="sys-mod-list">
+            <li><a href="./rheumatology.html#mod-1"><span class="mod-link-title">Ⅰ、风湿病总论</span><span class="mod-link-meta">第10版 第一章《总论》（课本 P808–813 / PDF P839–844）· 1学时</span></a></li>
+<li><a href="./rheumatology.html#mod-2"><span class="mod-link-title">Ⅱ、类风湿关节炎（RA）</span><span class="mod-link-meta">第10版 第二章《类风湿关节炎》（课本 P814–819 / PDF P845–850）· 1学时</span></a></li>
+<li><a href="./rheumatology.html#mod-3"><span class="mod-link-title">Ⅲ、系统性红斑狼疮（SLE）</span><span class="mod-link-meta">第10版 第三章《系统性红斑狼疮》（课本 P820–826 / PDF P851–857）· 2学时</span></a></li>
+<li><a href="./rheumatology.html#mod-4"><span class="mod-link-title">Ⅳ、系统性血管炎（概论 + 5 种血管炎）</span><span class="mod-link-meta">第10版 第六章《系统性血管炎》（课本 P835–844 / PDF P866–875）· 2学时</span></a></li>
+          </ul>
+        </details>
+
+        <div class="sys-actions">
+          <a class="btn-primary" href="./rheumatology.html">进入风湿免疫病精要 →</a>
+          <button class="btn-ghost jump-syl-btn" type="button" data-syl-target="rheumatology">查看本系统大纲</button>
+        </div>
+      </article>
+  </main>
+
+  <section class="syllabus-section" id="syllabus-explorer" aria-label="内科学七大系统教学大纲">
+    <div class="sec-hd" style="margin-top:0;">
+      <h2>二、《内科学》七大系统完整教学大纲</h2>
+      <span>同步提供「精编掌握/熟悉分层映射」与「官方 DOCX 教学大纲原文」双视角对照</span>
+    </div>
+
+    <div class="syl-controls">
+      <div class="syl-mode-group" role="group" aria-label="大纲显示视角">
+        <button class="syl-mode-btn active" type="button" data-syl-mode="both">双视角对照</button>
+        <button class="syl-mode-btn" type="button" data-syl-mode="curated">仅看精编分层</button>
+        <button class="syl-mode-btn" type="button" data-syl-mode="raw">仅看大纲原文</button>
+      </div>
+      <button class="nav-pill" id="sylExpandAllBtn" type="button">展开全部七系统：<span>关</span></button>
+    </div>
+
+    <div class="syl-tabs" role="tablist" aria-label="切换系统教学大纲">
+      <button class="syl-tab active" type="button" role="tab" aria-selected="true" data-syl-tab="respiratory">呼吸系统 <span class="tab-hours">16h</span></button><button class="syl-tab" type="button" role="tab" aria-selected="false" data-syl-tab="circulatory">循环系统 <span class="tab-hours">16h</span></button><button class="syl-tab" type="button" role="tab" aria-selected="false" data-syl-tab="digestive">消化系统 <span class="tab-hours">16h</span></button><button class="syl-tab" type="button" role="tab" aria-selected="false" data-syl-tab="urinary">泌尿系统 <span class="tab-hours">8h</span></button><button class="syl-tab" type="button" role="tab" aria-selected="false" data-syl-tab="hematology">血液系统 <span class="tab-hours">8h</span></button><button class="syl-tab" type="button" role="tab" aria-selected="false" data-syl-tab="endocrine">内分泌系统 <span class="tab-hours">10h</span></button><button class="syl-tab" type="button" role="tab" aria-selected="false" data-syl-tab="rheumatology">风湿免疫病 <span class="tab-hours">6h</span></button>
+    </div>
+
+    
+      <section class="syl-panel active" id="syl-respiratory" data-syl-panel="respiratory">
+        <div class="syl-panel-hd">
+          <div>
+            <h3>第二篇 · 呼吸系统疾病（16 学时 / 8 讲）</h3>
+            <p class="syl-panel-sub">课本 P23–137（按大纲选章） · PDF P54–168 · <strong class="warn-inline">⚠ Audit Not Completed</strong></p>
+          </div>
+          <a class="btn-primary btn-sm" href="./respiratory.html">打开本系统学习页 →</a>
+        </div>
+
+        <div class="syl-view-curated">
+          <h4 class="sub-sec-title">精编分层大纲（掌握 / 熟悉 / 已剔除 · 点击模块直达对应章节）</h4>
+          <div class="cur-mod-grid">
+            
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./respiratory.html#mod-1">Ⅰ、肺炎（含肺脓肿） ↗</a>
+              <span class="cur-mod-src">第10版 第六章《肺部感染性疾病》（课本 P46–67 / PDF P77–98）+ 第七章《肺脓肿》（课本 P68–70 / PDF P99–101）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>肺炎球菌及其他病原体导致 CAP 的病理、临床表现，重症肺炎病情评估（CURB-65）及抢救治疗方案；肺炎的诊断、鉴别诊断、治疗原则和方法。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>葡萄球菌肺炎、肺炎支原体肺炎、肺炎衣原体肺炎、病毒性肺炎的临床特征、诊断要点及治疗药物选择；常见肺部真菌感染的诊断和治疗；肺脓肿的病因、发病机理。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：肺炎流行病学概况、CAP/HAP/VAP 分类及细菌分布专述；大纲目标未要求的肺脓肿临床表现/诊断/鉴别/治疗（详见文末审计表）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./respiratory.html#mod-2">Ⅱ、肺结核 ↗</a>
+              <span class="cur-mod-src">第10版 第八章《肺结核》（课本 P71–85 / PDF P102–116）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>临床类型、检查方法、诊断要点和诊断程序、鉴别诊断；短程和间歇治疗理论；治疗原则；标准与短程治疗方案。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>发生发展过程、各种影像表现、病原菌生物学特性、结核菌素试验、卡介苗接种的方法及意义、并发咯血的处理。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：肺结核手术指征、预防原则和预防方法（病例报告/登记/预防性化疗）；结核性胸膜炎并入模块Ⅶ讲授。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./respiratory.html#mod-3">Ⅲ、慢性阻塞性肺疾病（COPD） ↗</a>
+              <span class="cur-mod-src">第10版 第三章《慢性阻塞性肺疾病》（课本 P23–30 / PDF P54–61）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>临床表现、诊断及鉴别诊断、并发症及治疗原则（含第10版 ABE 综合评估与分级治疗）。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>慢阻肺病的定义、与慢性支气管炎及肺气肿的关系、肺功能检查对本病诊断的意义。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：病因、发病机理（炎症/蛋白酶失衡/氧化应激）、病理（小叶中央/全小叶）与病理生理、国际动向及流行病学。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./respiratory.html#mod-4">Ⅳ、支气管哮喘 ↗</a>
+              <span class="cur-mod-src">第10版 第四章《支气管哮喘》（课本 P31–39 / PDF P62–70）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>常见病因和发病机理、炎症特征、气道高反应性（AHR）特点及哮喘异质性特点；临床表现、分型（不含表型细分）、分级、诊断和鉴别诊断基本知识。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>哮喘治疗常用药物（控制用药与缓解用药）；哮喘急性加重的处理原则。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：哮喘流行病学/年龄分布/危害性、哮喘表型细分、长期进展气道重塑与并发症专述、国际防治新动向与预后。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./respiratory.html#mod-5">Ⅴ、肺血栓栓塞症（肺栓塞） ↗</a>
+              <span class="cur-mod-src">第10版 第十一章《肺血栓栓塞症》（课本 P110–117 / PDF P141–148）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>VTE、PE、PTE 及肺梗死（大纲称肺梗塞）的概念；临床表现；实验室及辅助检查；诊断策略及危险分层。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>肺血栓栓塞症病因及病理生理；溶栓及抗凝治疗的适应证、禁忌证。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：流行病学、病理学、抗凝及溶栓具体用药方案/剂量/疗程、介入/手术及预防细节（大纲内部冲突详见文末审计表）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./respiratory.html#mod-6">Ⅵ、间质性肺疾病（ILD / DPLD） ↗</a>
+              <span class="cur-mod-src">第10版 第十章《间质性肺疾病》（课本 P99–109 / PDF P130–140）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>ILD/DPLD 分类（ATS/ERS 共识）；IPF 非外科肺活检临床诊断标准及 HRCT 表现；常见 ILD（结节病、过敏性肺炎、药物性肺疾病、肉芽肿性多血管炎 GPA）的定义、诊断标准与治疗方法。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>IPF 的临床表现、肺功能检查表现。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：DPLD 流行病学总体趋势、IPF 病因机制及治疗研究新药（吡非尼酮/尼达尼布等，详见文末审计表）、其余罕见 ILD（CEP/PLCH/PLAM/PAP/IPH）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./respiratory.html#mod-7">Ⅶ、胸膜疾病（胸腔积液、结核性胸膜炎与气胸） ↗</a>
+              <span class="cur-mod-src">第10版 第十三章《胸膜疾病》（课本 P126–137 / PDF P157–168）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>胸腔积液诊断要点、鉴别诊断及结核性胸膜炎的治疗原则；气胸的临床表现、诊断和鉴别诊断、防治原则及治疗方法。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>胸腔积液的临床表现；气胸的病因、发病机理和临床类型。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：胸腔积液的循环压力机制、病因和发病机理（大纲跨栏冲突详见文末审计表）；肺炎旁胸腔积液及恶性胸腔积液的具体治疗。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./respiratory.html#mod-8">Ⅷ、原发性肺癌 ↗</a>
+              <span class="cur-mod-src">第10版 第九章《肺癌》（课本 P86–98 / PDF P117–129）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>肺癌的临床表现、诊断及治疗原则。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>肺癌的治疗方案（手术、药物、放疗、介入、中医药）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：病因与发病机制、解剖及 2021 WHO 组织学分类专节、鉴别诊断、第 9 版 TNM 分期表、三级预防及预后（治疗中仅保留 NSCLC/SCLC 及分期最小必要标签）。</span></div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="syl-view-raw">
+          <h4 class="sub-sec-title">《内科学》理论课程教学大纲原文（源自官方 DOCX）</h4>
+          <div class="meta-card">
+            <div class="meta-row"><div class="meta-k">课程名称</div><div class="meta-v">内科学 — 呼吸系统</div></div><div class="meta-row"><div class="meta-k">英文名称</div><div class="meta-v">Internal Medicine -Syllabus for respiratory medicine</div></div><div class="meta-row"><div class="meta-k">理论学时</div><div class="meta-v">总学时_16_学时，其中：理论_16_学时；实验__0学时；上机_0_学时；实践_0_学时。</div></div><div class="meta-row"><div class="meta-k">教学方式</div><div class="meta-v">翻转式、TBL（基于团队的教学方法）、PBL（基于问题的教学方法）、CBL（基于案例的教学方法）等。</div></div><div class="meta-row"><div class="meta-k">考核与成绩评定</div><div class="meta-v">【考核方式】<br />期末考试（笔试、闭卷）。<br />【成绩评定】<br />期末考试100%。</div></div><div class="meta-row"><div class="meta-k">课程描述</div><div class="meta-v">呼吸系统疾病是严重危害人民健康的常见病、多发病，已经构成影响公共健康的重大问题。通过呼吸系统部分的讲授，可以使学生了解呼吸系统疾病的重要性，初步掌握呼吸与危重症医学科常见疾病的诊断与治疗原则。</div></div><div class="meta-row"><div class="meta-k">课程目标</div><div class="meta-v">教学目标1：培养诊治呼吸系统常见疾病的能力。<br />教学目标2：增进对呼吸系统疾病治疗目标和治疗手段的了解和运用。<br />教学目标3：培养医学整体观，提高运用生物-心理-社会医学模式进行诊疗的素质。</div></div><div class="meta-row"><div class="meta-k">教材及参考资料</div><div class="meta-v">【教材】<br />葛均波,王辰，王建安主编，内科学第10版，人民卫生出版社，2024年出版，卫生部“十四五”规划教材<br />王辰，王建安主编，内科学第3版（供8年制及7年制、5+3一体化临床医学等专业用），人民卫生出版社，2015年出版，卫生部“十二五”规划教材<br />【参考书】<br />3-5 本相关的教材或者专著、杂志或网络资源<br />《GOLD》全球慢阻肺防治倡议<br />《GINA》全球支气管哮喘防治倡议<br />《热病》第 44 版</div></div>
+          </div>
+          <details class="raw-details" open>
+            <summary>展开 / 收起：呼吸系统逐讲教学大纲原文条目（共 147 段）</summary>
+            <div class="raw-details-body">
+              <div class="syl-ch-hd">Ⅰ、肺炎（授课2学时）</div>
+<div class="syl-sub-hd">【教学目标和要求】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>肺炎球菌及其他病原体导致社区获得性肺炎的病理、临床表现，尤其是发生重症肺炎时病情评估 (CURB-65)，以及抢救与治疗方案。</p>
+<p class="syl-item">二、<strong class="kw-m">掌握</strong>肺炎的诊断、鉴别诊断、治疗原则和方法。</p>
+<p class="syl-item">三、<strong class="kw-f">熟悉</strong>葡萄球菌肺炎、肺炎支原体肺炎、肺炎衣原体肺炎、病毒性肺炎的临床特征、诊断要点及治疗药物的选择。熟悉常见的肺部真菌感染的诊断和治疗。</p>
+<p class="syl-item">四、<strong class="kw-f">熟悉</strong>肺脓肿的病因、发病机理。</p>
+<p class="syl-item">五、<strong class="kw-u">了解</strong>肺炎是常见病与多发病。同时使学生了解目前主要根据发病场所分为社区获得性肺炎(CAP)与医院获得性肺炎(HAP),其中HAP还包括呼吸机相关性肺炎。也因此细菌分布情况有所不同。</p>
+<div class="syl-sub-hd">【理论授课内容】</div>
+<p class="syl-item">1、概要讲述肺炎球菌的生物学特征；详述病理、病理生理、临床表现及其内在的联系，包括重症肺炎及其并发症的病理生理机制，阐述诊断要点和鉴别诊断，以及抢救与治疗。</p>
+<p class="syl-item">2、对葡萄球菌肺炎、肺炎支原体肺炎、肺炎衣原体肺炎、病毒性肺炎、肺真菌病等作一般性讲授。重点讲授它们的临床特征、诊断要点和治疗中抗菌药物的选择。</p>
+<p class="syl-item">3、概述肺脓肿的概念、病理特点、好发年龄及发病情况;详述肺脓肿的病因、临床特点和诊断。诊断中影像表现是重点，鉴别诊断也应<strong class="kw-m">掌握</strong>。治疗原则为抗感染及引流，强调抗生素治疗应早期、长程。</p>
+<div class="syl-sub-hd">【教学和学习建议】建议采用的教学方法；学生学习时应该注意的问题。比如练习、实验、研讨要求等。</div>
+<p class="syl-para">教学方法：课文与幻灯相结合，图文并茂，将病例与临床穿插于讲课当中，使学生记忆深刻，易于理解。</p>
+<p class="syl-para">应注意的问题：肺炎的影像学特点及发病机制。</p>
+<div class="syl-sub-hd">【教学/考核难点重点】</div>
+<p class="syl-para">肺炎的诊断及鉴别诊断。</p>
+<div class="syl-ch-hd">Ⅱ、肺结核（授课2学时）</div>
+<div class="syl-sub-hd">【教学目标和要求】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>肺结核的临床类型、检查方法、诊断要点和诊断程序、鉴别诊断、短程和间歇治疗理论；治疗原则；标准与短程治疗方案。</p>
+<p class="syl-item">二、<strong class="kw-f">熟悉</strong>肺结核的发生、发展过程；各种影像表现、病原菌生物学特性、结核菌素试验，卡介苗接种的方法及意义，并发咯血的处理。</p>
+<p class="syl-item">三、<strong class="kw-u">了解</strong>肺结核的手术指征、预防原则和预防方法</p>
+<div class="syl-sub-hd">【理论授课内容】</div>
+<p class="syl-item">1、概述肺结核的病原学、传播途径、流行病学特征和目前肺结核的发病情况及面临的问题。</p>
+<p class="syl-item">2、详细讲授肺结核的临床类型、临床表现、检查方法、诊断 (包括诊断要点和诊断程序、记录程序)和鉴别诊断、治疗原则和治疗方法。</p>
+<p class="syl-item">3、简述发病机理、病理变化(包括基本病理变化、转归及体内播散)；</p>
+<p class="syl-item">4、自学肺结核的预防原则和预防方法。</p>
+<p class="syl-item">5、结核性胸膜炎部分并入胸腔积液内讲授。</p>
+<div class="syl-sub-hd">【教学和学习建议】</div>
+<p class="syl-para">教学方法：课文与幻灯相结合，图文并茂，将病例与临床穿插于讲课当中，使学生记忆深刻，易于理解；</p>
+<p class="syl-para">应注意的问题：肺结核的预防原则和预防方法。</p>
+<div class="syl-sub-hd">【教学/考核难点重点】</div>
+<p class="syl-para">肺结核的病因、诊断、鉴别诊断及 影像表现</p>
+<div class="syl-ch-hd">Ⅲ、慢性阻塞性肺疾病（授课2学时）</div>
+<div class="syl-sub-hd">【教学目标和要求】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>慢性阻塞性肺疾病的临床表现、诊断及鉴别诊断，并发症及治疗原则。</p>
+<p class="syl-item">二、<strong class="kw-f">熟悉</strong>慢性阻塞性肺疾病的定义，与慢性支气管炎、肺气肿的关系，肺功能检查对本病诊断意义。</p>
+<p class="syl-item">三、<strong class="kw-u">了解</strong>慢性阻塞性肺疾病的病因、发病机理、病理与病理生理改变。</p>
+<p class="syl-item">四、<strong class="kw-u">了解</strong>慢阻肺防治国际动向</p>
+<div class="syl-sub-hd">【理论授课内容】</div>
+<p class="syl-item">1.概述慢性阻塞性肺疾病的定义、发病情况，扼要介绍吸烟、化学理化因素、感染等因素与发病关系。</p>
+<p class="syl-item">2.讲述慢性阻塞性肺疾病的诊断依据(根据吸烟等高危因素史、临床症状、体征及肺功能检查等综合分析)、严重程度评估。</p>
+<p class="syl-item">3.讲述慢性支气管炎及肺气肿临床症状及体征、肺功能检查对慢性阻塞性肺疾病诊断的重要意义、胸片、胸部CT特征及血气分析诊断价值。</p>
+<p class="syl-item">4.讲述慢性阻塞性肺疾病的鉴别诊断(临床症状相似的呼吸系统疾病及其它原因所致呼吸气腔扩大的肺气肿)。</p>
+<p class="syl-item">5.讲述慢性阻塞性肺疾病的并发症(慢性呼吸衰竭、自发性气胸、慢性肺源性心脏病)。</p>
+<p class="syl-item">6.讲述慢性阻塞性肺疾病的治疗(稳定期治疗：戒烟、支气管舒张药物、祛痰药、家庭氧疗等。急性加重期治疗：支气管舒张剂、控制性吸氧、抗生素使用、糖皮质激素使用)。</p>
+<div class="syl-sub-hd">【教学和学习建议】</div>
+<p class="syl-para">教学方法：课文与幻灯相结合，图文并茂，将病例与临床穿插于讲课当中，使学生记忆深刻，易于理解；</p>
+<p class="syl-para">应注意的问题： 吸入药物慢性阻塞性肺疾病治疗中的地位</p>
+<div class="syl-sub-hd">【教学/考核难点重点】</div>
+<p class="syl-para">慢性阻塞性肺疾病的分级治疗方案</p>
+<div class="syl-ch-hd">Ⅳ、支气管哮喘（授课2学时）</div>
+<div class="syl-sub-hd">【教学目标和要求】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>本病常见的病因和发病机理、炎症特征和气道反应性增高的特点，还包括哮喘的异质性特点。</p>
+<p class="syl-item">二、<strong class="kw-m">掌握</strong>本病的临床表现、分型 (<strong class="kw-u">了解</strong>哮喘表型)、分级、诊断和鉴别诊断的基本知识。<strong class="kw-f">熟悉</strong>哮喘治疗常用药物，包括控制用药与缓解用药。熟悉哮喘急性加重的处理原则。</p>
+<p class="syl-item">三、<strong class="kw-u">了解</strong>哮喘是常见病与多发病情况，年龄分布与危害性。明确其长期发展可引起持续气流受限(气道重塑)，合并慢性阻塞性肺疾病，导致肺动脉高压、以及严重心脏合并症和呼吸衰竭的重要基础疾病。</p>
+<p class="syl-item">四、<strong class="kw-u">了解</strong>近年哮喘防治的国际新动向。</p>
+<div class="syl-sub-hd">【理论授课内容】</div>
+<p class="syl-item">1、概述支气管哮喘定义、疾病特征和发病情况。</p>
+<p class="syl-item">2、详述哮喘的病因、发病机制和病理生理。</p>
+<p class="syl-item">3、讲解临床表现时，哮喘的分型、分级、分期中，哮喘控制水平分级，哮喘急性加重严重程度分级是重点。鉴别诊断中要强调与心源性哮喘、COPD鉴别的重要意义。</p>
+<p class="syl-item">4、在防治方面，应强调哮喘健康教育，确定并减少危险因素，以及定期评估，正确的治疗方案和监测。其中非急性加重期哮喘的分级治疗，哮喘急性加重的治疗原则是重点。对于支气管舒张剂及糖皮质激素的正确应用应详细阐述。</p>
+<div class="syl-sub-hd">【教学和学习建议】</div>
+<p class="syl-para">教学方法：课文与幻灯相结合，图文并茂，将病例与临床穿插于讲课当中，使学生记忆深刻，易于理解；</p>
+<p class="syl-para">应注意的问题： 强调哮喘健康教育，确定并减少危险因素，以及定期评估，正确的治疗方案和监测。</p>
+<div class="syl-sub-hd">【教学/考核难点重点】</div>
+<p class="syl-para">哮喘的分级治疗方案</p>
+<div class="syl-ch-hd">Ⅴ、肺栓塞（授课2学时）</div>
+<div class="syl-sub-hd">【教学目标和要求】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>静脉血栓栓塞症、肺栓塞、肺血栓栓塞症及肺梗塞的概念。</p>
+<p class="syl-item">二、<strong class="kw-u">了解</strong>肺血栓栓塞症流行病学。</p>
+<p class="syl-item">三、<strong class="kw-u">了解</strong>肺血栓栓塞病理学。</p>
+<p class="syl-item">四、<strong class="kw-f">熟悉</strong>肺血栓栓塞症病因及病理生理。</p>
+<p class="syl-item">五、<strong class="kw-m">掌握</strong>肺栓塞临床表现。</p>
+<p class="syl-item">六、<strong class="kw-m">掌握</strong>肺栓塞实验室及辅助检查。</p>
+<p class="syl-item">七、<strong class="kw-m">掌握</strong>肺栓塞诊断策略及危险分层。</p>
+<p class="syl-item">八、<strong class="kw-f">熟悉</strong>溶栓及抗凝治疗的适应症、禁忌症。</p>
+<p class="syl-item">九、<strong class="kw-u">了解</strong>肺栓塞溶栓治疗、抗凝治疗方案。</p>
+<div class="syl-sub-hd">【理论授课内容】</div>
+<p class="syl-item">1.阐述肺栓塞、静脉血栓栓塞症、肺血栓栓塞症及肺梗塞的概念。</p>
+<p class="syl-item">2.概述肺血栓栓塞症流行病学。</p>
+<p class="syl-item">3.概述肺血栓栓塞病理学。</p>
+<p class="syl-item">4.阐述肺血栓栓塞症病因包括原发性危险因素与继发性危险因素及病理生理。</p>
+<p class="syl-item">5.阐述肺栓塞临床表现。</p>
+<p class="syl-item">6.详解肺栓塞实验室及辅助检查。</p>
+<p class="syl-item">7.详解肺栓塞诊断策略及危险分层。</p>
+<p class="syl-item">8.概述溶栓及抗凝治疗的适应症、禁忌症。</p>
+<p class="syl-item">9.概述肺栓塞溶栓治疗、抗凝治疗的方案。</p>
+<div class="syl-sub-hd">【教学和学习建议】</div>
+<p class="syl-para">教学方法：课文与幻灯相结合，图文并茂，将病例与临床穿插于讲课当中，使学生记忆深刻，易于理解。</p>
+<p class="syl-para">应注意的问题： 强调肺栓塞的危险因素，以及定期评估，正确的治疗方案和监测。</p>
+<div class="syl-sub-hd">【教学/考核难点重点】</div>
+<p class="syl-para">肺栓塞的抗凝治疗方案</p>
+<div class="syl-ch-hd">Ⅵ、间质性肺疾病（授课2学时）</div>
+<div class="syl-sub-hd">【教学目标和要求】</div>
+<p class="syl-item">一、<strong class="kw-u">了解</strong>弥漫性间质性肺疾病(DPLD)是目前在国内国际上广泛关注的疾病，尤其是特发性肺间质纤维化，其发病率差异很大，但总体呈上升趋势，并且缺乏有效的治疗。对DPLD进行正确的分类，并据此做出正确的诊断，是正确治疗的基础。</p>
+<p class="syl-item">二、<strong class="kw-m">掌握</strong>ILD/DPLD分类 (2013ATS/ERS 专家共识推荐)。掌握 IPF非外科肺活检临床诊断标准。包括HRCT诊断IPF的影像学表现。<strong class="kw-f">熟悉</strong>IPF的临床表现、肺功能检查表现。<strong class="kw-u">了解</strong>目前IPF 的治疗研究的新药。</p>
+<p class="syl-item">三、<strong class="kw-m">掌握</strong>常见的间质性肺疾病的定义、诊断标准与治疗方法，包括：结节病、过敏性肺炎、药物性肺疾病、肉芽肿性多血管炎(GPA)。</p>
+<div class="syl-sub-hd">【理论授课内容】</div>
+<p class="syl-item">1.概要叙述弥漫性间质性肺疾病的定义， 以及发生低氧血症和呼吸衰竭的病理生理机制。重点讲授2013ATS/ERS关于DPLD 的分类。<strong class="kw-f">熟悉</strong>HRCT对IPF的诊断支持的影像表现，以及不支持的表现。</p>
+<p class="syl-item">2.概要叙述常见的DPLD的疾病特点，重点对结节病、过敏性肺炎、药物性肺疾病、肉芽肿性多血管炎(GPA)的诊断标准</p>
+<div class="syl-sub-hd">【教学和学习建议】</div>
+<p class="syl-para">教学方法：课文与幻灯相结合，图文并茂，将病例与临床穿插于讲课当中，使学生记忆深刻，易于理解。</p>
+<p class="syl-para">应注意的问题：强调DPLD的疾病分类及特点，以及正确的治疗方案和监测。</p>
+<div class="syl-sub-hd">【教学/考核难点重点】</div>
+<p class="syl-para">DPLD的诊断及鉴别诊断</p>
+<div class="syl-ch-hd">Ⅶ、胸膜疾病（授课2学时）</div>
+<div class="syl-sub-hd">【教学目标和要求】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>胸腔积液诊断要点、鉴别诊断及结核性胸膜炎的治疗原则。</p>
+<p class="syl-item">二、<strong class="kw-f">熟悉</strong>胸腔积液的临床表现。</p>
+<p class="syl-item">三、<strong class="kw-u">了解</strong>胸腔积液的病因和发病机理。</p>
+<p class="syl-item">四、<strong class="kw-m">掌握</strong>气胸的临床表现、诊断和鉴别诊断、防治原则及治疗方法。</p>
+<p class="syl-item">五、<strong class="kw-f">熟悉</strong>气胸的病因、发病机理和临床类型。</p>
+<div class="syl-sub-hd">【理论授课内容】</div>
+<p class="syl-item">1、概述胸腔积液的转运机制、病因和胸腔积液的性质。</p>
+<p class="syl-item">2、详述胸腔积液的临床表现。重点讲解X线、CT、MRI、超声及胸液检查的临床意义，强调渗出液及漏出液的鉴别诊断。</p>
+<p class="syl-item">3、阐述细菌、结核、肿瘤引起的胸腔积液的鉴别诊断及治疗原则。</p>
+<p class="syl-item">4、概述气胸概念，气胸对心肺功能的影响；简述临床气胸类型及病因。本章论述重点是自发性气胸。</p>
+<p class="syl-item">5、详述气胸的临床表现，X线检查的特点，阐明气胸与支气管哮喘、阻塞性肺气肿、急性心肌梗死、肺大泡等的鉴别诊断。</p>
+<p class="syl-item">6、治疗中，重点是排气治疗，胸腔闭式引流详细讲授，介绍胸腔粘连疗法。</p>
+<p class="syl-item">7、简述气胸的并发症。</p>
+<div class="syl-sub-hd">【教学和学习建议】</div>
+<p class="syl-para">教学方法：课文与幻灯相结合，图文并茂，将病例与临床穿插于讲课当中，使学生记忆深刻，易于理解。</p>
+<p class="syl-para">应注意的问题：熟悉胸腔穿刺术，收集胸水标本，送检细胞学和病原学检查。</p>
+<div class="syl-sub-hd">【教学/考核难点重点】</div>
+<p class="syl-para">胸水的诊断及鉴别诊断</p>
+<div class="syl-ch-hd">Ⅷ、原发性肺癌（授课2学时）</div>
+<div class="syl-sub-hd">【教学目标和要求】</div>
+<p class="syl-item">1、<strong class="kw-m">掌握</strong>:肺癌的临床表现、诊断及治疗原则。</p>
+<p class="syl-item">2、<strong class="kw-u">了解</strong>:本病的分类、病因、鉴别诊断、临床分期及预后。</p>
+<p class="syl-item">3、<strong class="kw-f">熟悉</strong>:肺癌的治疗方案。</p>
+<div class="syl-sub-hd">【理论授课内容】</div>
+<p class="syl-item">1、病因和发病机制吸烟、职业致癌因子、空气污染、电离辐射、饮食与营养。</p>
+<p class="syl-item">2、分类按解剖学分类,按组织学分类。</p>
+<p class="syl-item">3、临床表现原发肿瘤、局部扩散、远处转移引起的症状,肺癌作用于其他系统引起的肺外表现。</p>
+<p class="syl-item">4、影像学及其他检查</p>
+<p class="syl-para">胸部X线、CT、MRI、放射性核素扫描、痰脱落细胞、纤维支气管镜检查和开胸肺活检。</p>
+<p class="syl-item">5、诊断、鉴别诊断及临床分期</p>
+<p class="syl-item">(1)诊断:病史、体格检查及有关的辅助检查可确诊。</p>
+<p class="syl-item">(2)鉴别诊断:肺结核、肺炎、肺脓肿。</p>
+<p class="syl-item">(3)临床分期:0期、Ⅰ期、Ⅱ期、Ⅲ期、Ⅳ期。</p>
+<p class="syl-item">6、治疗手术治疗,药物治疗,放射治疗,其他局部治疗,中医药治疗。</p>
+<p class="syl-item">7、预后早期发现及早治疗,隐性肺癌痊愈,鳞癌预后较好,腺癌次之,小细胞未分化癌差。</p>
+<div class="syl-sub-hd">【教学和学习建议】</div>
+<p class="syl-para">教学方法：课文与幻灯相结合，图文并茂，将病例与临床穿插于讲课当中，使学生记忆深刻，易于理解。</p>
+<p class="syl-para">应注意的问题：熟悉肺癌的治疗方案。</p>
+<div class="syl-sub-hd">【教学/考核难点重点】</div>
+<p class="syl-para">肺癌的诊断及鉴别诊断</p>
+            </div>
+          </details>
+          <details class="raw-details"><summary>展开：教学内容对课程目标的支撑关系表</summary><div class="raw-details-body"><div class="syl-tbl-wrap"><table class="syl-tbl"><thead><tr>
+<th></th><th>课程目标1</th><th>课程目标2</th><th>课程目标3</th>
+</tr></thead><tbody>
+<tr><td>第一章/
+肺炎</td><td>掌握社区获得性肺炎的病理、临床表现</td><td>掌握肺炎的诊断、鉴别诊断、治疗原则和方法</td><td>熟悉葡萄球菌肺炎、肺炎支原体肺炎等的临床特征、诊断要点及治疗</td></tr>
+<tr><td>第二章
+肺结核</td><td>掌握肺结核的临床类型、检查方法、诊断要点和诊断程序、鉴别诊断、短程和间歇治疗理论；治疗原则；标准与短程治疗方案</td><td>熟悉肺结核的发生、发展过程；各种影像表现、病原菌生物学特性、 结核菌素试验，卡介苗接种的方法及意义，并发咯血的处理</td><td>了解肺结核的手术指征、预防原则和预防方法</td></tr>
+<tr><td>第三章
+慢性阻塞性肺疾病</td><td>掌握慢性阻塞性肺疾病的临床表现、诊断及鉴别诊断，并发症及治疗原则。</td><td>熟悉慢性阻塞性肺疾病的定义，与慢性支气管炎、肺气肿的关系，肺功能检查对本病诊断意义。</td><td>了解慢性阻塞性肺疾病的病因、发病机理、病理与病理生理改变。</td></tr>
+<tr><td>第四章
+支气管哮喘</td><td>掌握常见的病因和发病机理、炎症特征和气道反应性增高的特点，还包括哮喘的异质性特点。</td><td>掌握临床表现、分型 (了解哮喘表型)、分级、诊断和鉴别诊断。熟悉哮喘治疗常用药物，包括控制用药与缓解用药。熟悉哮喘急性加重的处理原则。</td><td>了解哮喘是常见病与多发病情况，年龄分布与危害性。</td></tr>
+<tr><td>第五章
+肺栓塞</td><td>掌握静脉血栓栓塞症、肺栓塞、肺血栓栓塞症及肺梗塞的概念、流行病学、病理学、病因及病理生理。</td><td>掌握肺栓塞临床表现、实验室及辅助检查、肺栓塞诊断策略及危险分层。</td><td>熟悉溶栓及抗凝治疗的适应症、禁忌症。了解肺栓塞溶栓治疗、抗凝治疗方案。</td></tr>
+<tr><td>第六章
+间质性肺疾病</td><td>了解弥漫性间质性肺疾病(DPLD)的分类、诊断及治疗。</td><td>掌握 IPF 非外科肺活检临床诊断标准、影像学表现。熟悉 IPF 的临床表现、治疗。</td><td>掌握常见的间质性肺疾病的定义、诊断标准与治疗方法。</td></tr>
+<tr><td>第七章
+胸膜疾病</td><td>掌握胸腔积液诊断要点、鉴别诊断及结核性胸膜炎的治疗原则。</td><td>熟悉胸腔积液的临床表现、病因和发病机理。</td><td>掌握气胸的临床表现、诊断和鉴别诊断、防治原则及治疗方法。</td></tr>
+<tr><td>第八章
+原发性肺癌</td><td>掌握:肺癌的临床表现、诊断及治疗原则</td><td>了解:本病的分类、病因、鉴别诊断、临床分期及预后。</td><td>熟悉：肺癌的治疗方案。</td></tr>
+</tbody></table></div></div></details>
+        </div>
+      </section>
+      <section class="syl-panel" id="syl-circulatory" data-syl-panel="circulatory">
+        <div class="syl-panel-hd">
+          <div>
+            <h3>第三篇 · 循环系统疾病（16 学时 / 9 讲）</h3>
+            <p class="syl-panel-sub">课本 P176–334 · PDF P207–365 · <strong class="warn-inline">⚠ Audit Not Completed</strong></p>
+          </div>
+          <a class="btn-primary btn-sm" href="./circulatory.html">打开本系统学习页 →</a>
+        </div>
+
+        <div class="syl-view-curated">
+          <h4 class="sub-sec-title">精编分层大纲（掌握 / 熟悉 / 已剔除 · 点击模块直达对应章节）</h4>
+          <div class="cur-mod-grid">
+            
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./circulatory.html#mod-1">Ⅰ、心功能不全（心力衰竭） ↗</a>
+              <span class="cur-mod-src">第10版 第二章《心力衰竭》（课本 P176–189 / PDF P207–220）· 2学时（慢1+急1）</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>慢性心衰的病因与诱因、LVEF 分型、临床表现、A–D 分期与 NYHA 分级、核心辅助检查、诊断鉴别及治疗原则与药物治疗；急性心衰的分类分型、急性肺水肿及心源性休克急救流程与血管活性药物选择。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>心力衰竭的病理生理与心室重塑机制（大纲难点）；慢性心衰非药物器械治疗（CRT/ICD/LVAD/移植）与急性心衰机械辅助循环支持及长期管理；急性心梗合并心衰的跨章溯源指引。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>前沿展望（基因治疗等，大纲课程目标4“了解”项）；急性心梗合并心衰具体分型与再灌注流程已归入本篇第四章 STEMI 专述，本章不重复跨章补写。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./circulatory.html#mod-2">Ⅱ、心律失常 ↗</a>
+              <span class="cur-mod-src">第10版 第三章《心律失常》（课本 P190–226 / PDF P221–257）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>心律失常分类与电生理机制；房性（房早/房速/房扑/房颤及抗凝评分与策略）、室性（室早/室速/宽QRS鉴别/TdP/室扑室颤）、房室传导阻滞的心电图特征与治疗原则；抗心律失常药物分类、适应证/禁忌证与致心律失常作用；心脏电复律与电除颤。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>窦性心律失常（含病态窦房结综合征）、房室交界性心律失常及阵发性室上速（AVNRT/AVRT 与预激综合征）、室内传导阻滞；常用电生理与监测检查；心血管植入型电子器械（PM/ICD/CRT）与导管消融适应证。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>[附] 遗传性心律失常综合征（LQTS/Brugada/CPVT/SQTS/ERS 专节，仅在抗心律失常药适应证必要语境中保留名称，不展开专节）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./circulatory.html#mod-3">Ⅲ、动脉粥样硬化及冠心病 ↗</a>
+              <span class="cur-mod-src">第10版 第四章《动脉粥样硬化和冠状动脉粥样硬化性心脏病》（课本 P227–259 / PDF P258–290）· 4学时（稳2+心梗2）</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>冠心病临床分型与供需失衡/冠脉血流储备基础；稳定型心绞痛病因、典型症状、负荷试验/CTA/造影诊断、鉴别、药物治疗及预防；急性冠脉综合征（UA/NSTEMI 与急性 STEMI）定义、危险分层、心肌坏死标志物动态、STEMI 心电图演变与定位、并发症（含心源性休克与心衰处理）及溶栓 vs PCI 再灌注策略。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>动脉粥样硬化的主要危险因素、内皮损伤与炎症假说机制、AHA 6型病理演变、稳定 vs 易损斑块特征、全身受累临床表现与综合防治原则；再灌注损伤临床表现与右室心肌梗死特殊处理。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>第三节二/三《缺血性心肌病》《隐匿型冠心病》专节及第五节《冠状动脉痉挛》《心肌桥》《微血管疾病》专节（仅保留心绞痛/ACS 鉴别与分型所需最小标签）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./circulatory.html#mod-4">Ⅳ、高血压 ↗</a>
+              <span class="cur-mod-src">第10版 第五章《高血压》（课本 P260–274 / PDF P291–305）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>高血压诊断标准（诊室/家庭/ABPM）与血压分级；心血管危险分层与靶器官损害评估；原发性高血压治疗原则、降压目标值及六大类降压药特点与个体化联合用药方案；继发性高血压筛查指征与 6 大常见继发高血压筛查流程。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>我国人群高血压流行病学与特点；高血压五大发病机制及年龄血流动力学特点；特殊类型高血压（老年、儿童青少年、难治性高血压、高血压急症与亚急症分级处理及 4 大静脉降压药、合并脑卒中/心梗/CKD/糖尿病降压策略）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>妊娠高血压（教材注明参见《妇产科学》，本章未设专节）；基因治疗等前沿展望（课程目标4“了解”项）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./circulatory.html#mod-5">Ⅴ、心肌疾病 ↗</a>
+              <span class="cur-mod-src">第10版 第六章《心肌疾病》（课本 P275–287 / PDF P306–318）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>肥厚型心肌病（HCM）与扩张型心肌病（DCM）的病理/超声/CMR 鉴别特征、诊断标准、猝死风险评估（ICD）与治疗原则；病毒性心肌炎（VM）的诊断依据、三大特殊类型（拟 ACS 鉴别要点、暴发性心肌炎）与治疗原则。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>2023 年 ESC 心肌病 5 大临床表型分类框架与 5 步规范化诊疗径路；限制型心肌病（RCM，含心肌淀粉样变性）特征及其与缩窄性心包炎的血流动力学核心鉴别。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>第三节《非扩张型左心室心肌病（NDLVC）》与第四节《致心律失常性右心室心肌病（ARVC）》独立专节（仅在 2023 ESC 五表型分类总表保留名称）；基因治疗前沿（课程目标4“了解”项）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./circulatory.html#mod-6">Ⅵ、心脏瓣膜病 ↗</a>
+              <span class="cur-mod-src">第10版 第八章《心脏瓣膜病》（课本 P299–314 / PDF P330–345）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>二尖瓣狭窄（MS）、二尖瓣反流（MR，大纲称关闭不全）、主动脉瓣狭窄（AS）、主动脉瓣反流（AR，大纲称关闭不全）的病因病理、血流动力学、临床表现与听诊杂音、超声定量分度、并发症及药物/介入/外科治疗原则。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>第五节《多瓣膜病（联合瓣膜病）》的病因、5 种常见组合的血流动力学叠加/互相掩盖效应（大纲难点）与诊治原则。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>第六节《风湿热》专节（Jones 诊断标准、风湿热治疗及一/二级预防详述，仅在风湿性瓣膜病因与苄星青霉素预防处保留最小必要提及）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./circulatory.html#mod-7">Ⅶ、心包疾病 ↗</a>
+              <span class="cur-mod-src">第10版 第九章《心包疾病》（课本 P315–320 / PDF P346–351）· 1学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>急性心包炎的病理分型、临床表现（胸痛与心包摩擦音）、ECG 4 阶段演变、鉴别诊断（与 AMI/主动脉夹层/肺栓塞及常见病因表 3-9-1）与治疗；心脏压塞 Beck 三联征、奇脉与紧急心包穿刺急救；慢性缩窄性心包炎的临床表现、影像/右心导管特征、与限制型心肌病鉴别及外科心包切除指征。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>第二节《心包积液及心脏压塞》完整体征（Ewart 征、Kussmaul 征）、X 线烧瓶心、超声压塞塌陷征象与多模态影像（CT/CMR）价值。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>无大纲外排除子节（本章三节均与大纲要求直接对应，并已与第 10 版第二节单列命名对齐）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./circulatory.html#mod-8">Ⅷ、感染性心内膜炎 ↗</a>
+              <span class="cur-mod-src">第10版 第十章《感染性心内膜炎》（课本 P321–327 / PDF P352–358）· 1学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>感染性心内膜炎（IE）的病因病原谱与临床表现（含急/亚急性鉴别及周围体征/并发症）；血培养与多模态影像学规范；2023 版 ESC 感染性心内膜炎诊断标准（表 3-10-1）；抗生素治疗五大原则、经验与特定治疗方案及紧急（&lt;24h）/择期（&lt;7d）外科手术时机。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>特殊类型 IE——人工瓣膜心内膜炎（PVE，早/晚期病原、加庆大与利福平及 6 条再置换手术指征）与静脉药物成瘾者心内膜炎（DAIE，三尖瓣/脓毒性肺栓塞、2周短程 vs 4–6周标准方案）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>无大纲外排除子节；第 10 版已将经典 Duke 标准更新为 2023 版 ESC 诊断标准，本页严格按第 10 版原文呈现。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./circulatory.html#mod-9">Ⅸ、心脏骤停与心肺复苏 ↗</a>
+              <span class="cur-mod-src">第10版 第十一章《心脏骤停与心脏性猝死》（课本 P328–334 / PDF P359–365）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>心脏骤停（CA）与心脏性猝死（SCD）定义、病因、病理生理与临床 4 期；心脏骤停快速识别与呼救；基础生命支持（BLS · C-A-B 高质量胸外按压参数、气道开放、人工呼吸比例与早期 AED）；高级生命支持（ALS/ACLS 通气频率、电除颤能量与电极位置、肾上腺素与抗心律失常药应用流程）。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>ECPR（ECMO）适应原则与伦理考量；复苏后处理（心脏骤停后综合征、5H5T 可逆病因排查、急诊冠脉造影指征、循环目标与脑复苏 5 大措施）；CA 预后与 SCD 预防（ICD 最有效）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>大纲难点“CPR 期间药物代谢的关系”在教材第 11 章未设药代动力学专节，本页严格按原文收录胸泵/心泵血流动力学与外周静推后 20ml 生理盐水冲管规范并显式留痕，绝不凭记忆补写。</span></div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="syl-view-raw">
+          <h4 class="sub-sec-title">《内科学》理论课程教学大纲原文（源自官方 DOCX）</h4>
+          <div class="meta-card">
+            <div class="meta-row"><div class="meta-k">课程名称</div><div class="meta-v">内科学——循环系统</div></div><div class="meta-row"><div class="meta-k">英文名称</div><div class="meta-v">Internal Medicine- Cardiology</div></div><div class="meta-row"><div class="meta-k">理论学时</div><div class="meta-v">总学时16学时，其中：理论16学时；实验0学时；上机0学时；实践0学时。</div></div><div class="meta-row"><div class="meta-k">教学方式</div><div class="meta-v">翻转课堂：课前自学基础知识，课堂聚焦难点讨论与互动，提升学习效率。<br />PBL（基于问题的学习）：以临床问题为导向，引导学生自主探究，培养跨学科整合能力。<br />CBL（基于案例的教学）：通过真实病例分析，强化临床思维与诊疗决策能力。<br />TBL（基于团队的学习）：小组协作解决复杂问题，模拟多学科会诊，提升团队协作能力。<br />混合式教学：线上学习结合线下实操，利用数字化工具优化个性化学习与技能训练。</div></div><div class="meta-row"><div class="meta-k">考核与成绩评定</div><div class="meta-v">【考核方式】课堂互动、课堂考勤、单元测试、期末考核<br />【成绩评定】课堂互动占10%，课堂考勤占10%、单元测试30%，期末考核50%</div></div><div class="meta-row"><div class="meta-k">课程描述</div><div class="meta-v">本课程是临床医学专业的核心课程，旨在系统讲解循环系统的解剖生理、病理机制及常见疾病的诊疗规范。课程设置的目的在于培养医学生对心血管疾病的临床思维与实践能力，涵盖循环系统的结构与功能，重点讲授心力衰竭、心律失常、冠心病、高血压等疾病的病因、病理生理、诊断与治疗策略。通过理论授课、病例讨论及临床见习，学生将掌握循环系统疾病的循证医学诊疗原则，并了解前沿研究进展。本课程为后续临床实践与科研奠定基础，强调基础与临床的整合，提升学生解决复杂心血管问题的综合能力。</div></div><div class="meta-row"><div class="meta-k">课程目标</div><div class="meta-v">【课程目标1】掌握循环系统核心知识体系<br />使学生系统掌握心脏解剖生理、血管功能调节及血液动力学原理，能准确阐述心力衰竭、冠心病、高血压等常见疾病的病理机制与临床表现，建立完整的循环系统疾病知识框架<br />【课程目标2】培养临床思维与诊疗能力<br />通过病例分析、模拟诊疗和临床见习，训练学生从病史采集、体格检查到辅助检查结果判读的全流程诊疗能力，重点培养对心律失常、急性冠脉综合征等急危重症的鉴别诊断与处理能力<br />【课程目标3】掌握关键技术操作与评估方法<br />培养学生独立完成心电图解读、心脏听诊、血压动态监测等基础技能，并熟悉冠脉造影、心脏超声等影像学报告的临床意义，强化循证医学决策能力<br />【课程目标4】了解学科前沿与跨学科整合<br />介绍基因治疗、精准医疗在心血管领域的应用，探讨循环系统疾病与代谢、免疫等系统的交互关系，激发学生探索创新诊疗技术的科研兴趣<br />【课程思政目标1】弘扬科学家精神与医学人文关怀<br />通过心血管领域重大发现史和医者抗疫案例，培养学生严谨求实的科学态度；在临床教学中强调&quot;以患者为中心&quot;的沟通技巧，强化生命至上的职业使命感<br />【课程思政目标2】强化团队协作与社会责任意识<br />设计PBL小组讨论与多学科会诊模拟，引导学生理解MDT模式的价值；结合我国基层心血管疾病防控现状，培养学生对公共卫生问题的关注与解决能力，树立&quot;健康中国&quot;的担当精神。</div></div><div class="meta-row"><div class="meta-k">教材及参考资料</div><div class="meta-v">【教材1】葛均波、王辰、王建安主编，《内科学》（第10版），人民卫生出版社，2024年，国家卫生健康委员会&quot;十四五&quot;规划教材<br />【参考资料1】《实用内科学》（第16版），王吉耀、葛均波、邹和建编，人民卫生出版社<br />【参考资料2】《实用心脏病学》，陈灏珠编，上海科学技术出版社<br />【参考资料3】《心血管内科学教科书:Braunwald心脏病学》 (英文影印版,第9版), Eugene Braunwald主编，北京大学医学出版社</div></div>
+          </div>
+          <details class="raw-details" open>
+            <summary>展开 / 收起：循环系统逐讲教学大纲原文条目（共 188 段）</summary>
+            <div class="raw-details-body">
+              <div class="syl-ch-hd">知识点一/第一章 心功能不全</div>
+<div class="syl-ch-hd">第一节 慢性心力衰竭</div>
+<p class="syl-para">（共1学时，授课0.5学时，研讨0.5学时）</p>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1.<strong class="kw-m">掌握</strong>病因与发病机制（专业目标1）</p>
+<p class="syl-item">2.培养临床诊疗能力（专业目标2）</p>
+<p class="syl-item">3.强化团队协作意识（思政目标2）</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">1.核心知识</p>
+<p class="syl-para">心力衰竭的病因、临床表现、诊断、鉴别诊断和心功能分级</p>
+<p class="syl-item">2.临床能力</p>
+<p class="syl-para">NYHA分级的判断；治疗原则，药物治疗，非药物治疗</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-item">1.社会责任：分析我国心衰流行病学数据，讨论基层医疗资源分配问题</p>
+<p class="syl-item">2.团队协作：模拟MDT会诊（心内科、康复科、营养科）</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1.重点：心力衰竭的诊断，分型和治疗</p>
+<p class="syl-item">2.难点：心室重构的分子机制，心力衰竭的病理生理</p>
+<div class="syl-ch-hd">第二节 急性心力衰竭（共1学时，授课0.5学时，研讨0.5学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1.<strong class="kw-m">掌握</strong>急救处理（专业目标2）</p>
+<p class="syl-item">2.强化人文关怀（思政目标1）</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-para">急救流程</p>
+<p class="syl-para">急性肺水肿处理流程</p>
+<p class="syl-para">心源性休克：血管活性药物选择</p>
+<p class="syl-para">病例分析</p>
+<p class="syl-para">急性心梗合并心衰的治疗</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">模拟心衰急诊场景，学生分饰医生、护士、患者家属等角色，体验救治过程中的伦理决策（如资源有限时的优先救治原则）</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1.重点：急性肺水肿的临床表现，鉴别鉴别</p>
+<p class="syl-item">2.难点：血管扩张剂的血流动力学影响</p>
+<div class="syl-ch-hd">知识点二/第二章 心律失常</div>
+<p class="syl-para">（共2学时，授课1.5学时，研讨0.5学时）</p>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1.<strong class="kw-m">掌握</strong>心律失常分类与机制（专业目标1）</p>
+<p class="syl-item">2.培养心电图判读能力（专业目标3）</p>
+<p class="syl-item">3.强化临床决策中的伦理意识（思政目标1）</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">1.分类与机制</p>
+<p class="syl-para">快速性心律失常与缓慢性心律失常的病理生理基础</p>
+<p class="syl-para">心电图特征：房颤的f波、室早的宽大畸形QRS波等</p>
+<p class="syl-item">2.诊疗流程</p>
+<p class="syl-para">急诊处理原则：电复律、抗心律失常药物的适应症与禁忌症；</p>
+<p class="syl-para">案例讨论：老年房颤患者的抗凝策略（抗凝及出血评分应用）</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-item">1.科学伦理：强调精准用药与患者安全的重要性，注意抗心律失常药物的致心律失常作用。</p>
+<p class="syl-item">2.人文关怀：分析心律失常患者心理焦虑问题，培养医患沟通技巧</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1.重点：<strong class="kw-m">掌握</strong>房性心律失常、室性心律失常、房室传导阻滞等心电图表现和治疗原则，房颤的心电图特征与抗凝治疗原则</p>
+<p class="syl-item">2.难点：离子通道机制与抗心律失常药物选择</p>
+<div class="syl-ch-hd">知识点三/第三章 动脉粥样硬化及冠心病</div>
+<div class="syl-ch-hd">第一节 稳定型心绞痛</div>
+<p class="syl-para">（共2学时，授课1学时，CBL案例讨论1学时）</p>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1.<strong class="kw-m">掌握</strong>发病机制与分型（专业目标1）</p>
+<p class="syl-item">2.训练胸痛鉴别诊断思维和治疗原则（专业目标2）</p>
+<p class="syl-item">3.培养公共卫生责任感（思政目标2）</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">1.核心知识</p>
+<p class="syl-para">稳定型心绞痛的病因、症状、诊断、治疗及预防；典型症状特点</p>
+<p class="syl-item">2.诊疗技术</p>
+<p class="syl-para">负荷试验（平板运动试验）与冠脉CTA的临床应用；药物治疗</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-item">1.社会责任：结合我国冠心病发病率上升趋势，讨论基层慢病管理策略</p>
+<p class="syl-item">2.团队协作：模拟胸痛中心MDT会诊（心内科、影像科、急诊科角色扮演）</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1.重点：心绞痛与急性心梗的鉴别要点</p>
+<p class="syl-item">2.难点：冠脉血流储备的生理学基础</p>
+<div class="syl-ch-hd">第二节 急性心肌梗死</div>
+<p class="syl-para">（共2学时，授课1学时，PBL讨论1学时）</p>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1.<strong class="kw-m">掌握</strong>急性心肌梗死定义、诊断、并发症和治疗原则（专业目标2）</p>
+<p class="syl-item">2.<strong class="kw-f">理解</strong>循证医学决策（专业目标3）</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">1.急救流程</p>
+<p class="syl-para">溶栓与PCI的适应症（STEMI vs. NSTEMI）</p>
+<p class="syl-para">心肌坏死标记物的动态变化解读</p>
+<p class="syl-item">2.并发症管理</p>
+<p class="syl-para">心源性休克的血管活性药物选择</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">职业使命：播放“心梗急救纪录片”，强调时间就是心肌的救治理念</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1.重点：STEMI的心电图演变和定位，再灌注治疗策略</p>
+<p class="syl-item">2.难点：再灌注损伤的分子机制</p>
+<div class="syl-ch-hd">知识点四/第四章 高血压</div>
+<p class="syl-para">（共2学时，授课1学时，研讨1学时）</p>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1.<strong class="kw-m">掌握</strong>分级与危险分层（专业目标1）</p>
+<p class="syl-item">2.培养慢病管理能力（专业目标4）</p>
+<p class="syl-item">3.强化健康科普意识（思政目标2）</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">1.高血压诊断标准、治疗原则</p>
+<p class="syl-item">2.继发性高血压筛查流程（肾动脉狭窄、嗜铬细胞瘤、原发性醛固酮增多症等）</p>
+<p class="syl-item">3.治疗策略，个体化用药方案</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-item">1.科学精神：学习最新指南和研究进展</p>
+<p class="syl-item">2.基层服务：组织学生参与社区高血压筛查，撰写健康宣教方案</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1.重点：高血压诊断标准、分级、危险分层和治疗原则</p>
+<p class="syl-item">2.难点：继发性高血压的筛查。</p>
+<div class="syl-ch-hd">知识点五/第五章 心肌疾病</div>
+<p class="syl-para">（共2学时，其中授课1.5学时，研讨0.5学时）</p>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1.<strong class="kw-m">掌握</strong>心肌疾病的分类及病理特征（专业目标1）</p>
+<p class="syl-item">2.培养心肌病鉴别诊断能力（专业目标2）</p>
+<p class="syl-item">3.<strong class="kw-f">理解</strong>遗传性心肌病的家族筛查意义（思政目标2）</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-para">扩张型心肌病：超声/病理特征；诊断标准；治疗原则</p>
+<p class="syl-para">肥厚型心肌病：超声特征，猝死风险评估，治疗原则</p>
+<p class="syl-item">3.心肌炎：诊断标准</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-item">1.医学伦理：通过&quot;猝死案例&quot;讨论心肌病筛查的重要性</p>
+<p class="syl-item">2.人文关怀：展示心肌病患者家庭随访档案，强调终身管理理念</p>
+<p class="syl-item">3.科研创新：基因检测技术在遗传性心肌病中的应用</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1.重点：扩张型与肥厚型心肌病的超声鉴别要点</p>
+<p class="syl-item">2.难点：心肌炎与急性冠脉综合征的鉴别诊断</p>
+<div class="syl-ch-hd">知识点六/第六章 心脏瓣膜病</div>
+<p class="syl-para">（共2学时，其中授课1学时，CBL案例教学1学时）</p>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1.<strong class="kw-m">掌握</strong>瓣膜病的血流动力学改变（专业目标1）</p>
+<p class="syl-item">2.训练听诊与影像学判读技能（专业目标3）</p>
+<p class="syl-item">3.培养MDT协作意识（思政目标2）</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">1.二尖瓣狭窄：病因和病理改变；病理生理；临床表现；超声分型；诊断及鉴别诊断；并发症；治疗原则；</p>
+<p class="syl-item">2.二尖瓣关闭不全：病因和病理改变；病理生理；临床表现；辅助检查；并发症；治疗原则</p>
+<p class="syl-item">3.主动脉瓣狭窄：病因和病理改变；病理生理；临床表现；辅助检查；并发症；治疗原则</p>
+<p class="syl-item">4.主动脉瓣关闭不全：病因和病理改变；病理生理；临床表现；辅助检查；并发症；治疗原则</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-item">1.工匠精神：播放瓣膜置换术介入手术，展示手术技术精益求精</p>
+<p class="syl-item">2.医疗公平：讨论风湿性瓣膜病在欠发达地区的防治现状</p>
+<p class="syl-item">3.创新意识：介绍国产人工瓣膜的研发突破</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1.重点：心脏瓣膜病的诊断和治疗</p>
+<p class="syl-item">2.难点：联合瓣膜病的血流动力学叠加效应</p>
+<div class="syl-ch-hd">知识点七/第七章 心包疾病</div>
+<p class="syl-para">（共1学时，授课0.5学时，CBL案例0.5学时）</p>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1.<strong class="kw-m">掌握</strong>心包炎病理分型与血流动力学改变（专业目标1）</p>
+<p class="syl-item">2.训练心脏压塞急救能力（专业目标3）</p>
+<p class="syl-item">3.<strong class="kw-f">理解</strong>病原微生物耐药性防控（思政目标1）</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">1.急性心包炎</p>
+<p class="syl-para">纤维蛋白性：心前区疼痛与心包摩擦音</p>
+<p class="syl-para">渗出性：Beck三联征（低血压、颈静脉怒张、心音遥远）</p>
+<p class="syl-item">2.慢性缩窄性心包炎</p>
+<p class="syl-para">外科治疗指征：心包钙化伴心室舒张受限</p>
+<p class="syl-para">鉴别诊断：需与限制型心肌病区分</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-item">1.全球健康：结合结核性心包炎在发展中国家高发，讨论耐药结核菌防控策略</p>
+<p class="syl-item">2.技术创新：心包疾病多模态成像的应用</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1.重点：心包疾病的诊断和治疗</p>
+<p class="syl-item">2.难点：缩窄性心包炎与限制型心肌病的血流动力学差异</p>
+<div class="syl-ch-hd">知识点八/第八章 感染性心内膜炎</div>
+<p class="syl-para">（共1学时，授课0.5学时，PBL讨论0.5学时）</p>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1.<strong class="kw-m">掌握</strong>诊断标准（专业目标2）</p>
+<p class="syl-item">2.培养抗生素合理使用意识（思政目标1）</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">1.临床表现</p>
+<p class="syl-item">2.治疗原则及手术时机</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-item">1.医学伦理：分析人工瓣膜心内膜炎患者的治疗选择与生活质量权衡</p>
+<p class="syl-item">2.科研精神：回顾青霉素发现对感染性心内膜炎治愈率的革命性提升</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1.重/难点：急性心内膜炎的诊断与鉴别</p>
+<div class="syl-ch-hd">知识点九/第九章 心脏骤停与心肺复苏</div>
+<p class="syl-para">（共2学时，其中授课1学时，模拟训练0.5学时，案例研讨0.5学时）</p>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1.<strong class="kw-m">掌握</strong>心脏骤停的病理生理与识别标准（专业目标1）</p>
+<p class="syl-item">2.熟练BLS与ACLS操作流程（专业目标3）</p>
+<p class="syl-item">3.培养急救团队协作意识（思政目标2）</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-para">病理生理与识别</p>
+<p class="syl-para">基础生命支持(BLS)</p>
+<p class="syl-para">高级心血管生命支持(ACLS)</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-item">1.生命教育</p>
+<p class="syl-para">强化时间意识；强调公众急救培训的社会价值</p>
+<p class="syl-item">2.团队协作</p>
+<p class="syl-para">模拟急诊科抢救场景：分配角色（按压者/气道管理/药物准备/记录员），训练MDT配合</p>
+<p class="syl-para">案例讨论：机场AED成功救活案例 vs. 农村地区延误救治案例，探讨医疗资源公平性</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1.重点：心肺复苏的流程，室颤的识别与除颤能量选择</p>
+<p class="syl-item">2.难点：CPR期间血流动力学变化与药物代谢的关系</p>
+            </div>
+          </details>
+          <details class="raw-details"><summary>展开：教学内容对课程目标的支撑关系表</summary><div class="raw-details-body"><div class="syl-tbl-wrap"><table class="syl-tbl"><thead><tr>
+<th></th><th>课程目标1</th><th>课程目标2</th><th>课程目标3</th><th>课程目标4</th>
+</tr></thead><tbody>
+<tr><td>第一章</td><td>x</td><td>x</td><td></td><td></td></tr>
+<tr><td>第二章</td><td>x</td><td></td><td>x</td><td></td></tr>
+<tr><td>第三章</td><td>x</td><td>x</td><td>x</td><td></td></tr>
+<tr><td>第四章</td><td>x</td><td></td><td></td><td>x</td></tr>
+<tr><td>第五章</td><td>x</td><td>x</td><td></td><td></td></tr>
+<tr><td>第六章</td><td>x</td><td></td><td>x</td><td></td></tr>
+<tr><td>第七章</td><td>x</td><td></td><td>x</td><td></td></tr>
+<tr><td>第八章</td><td></td><td>x</td><td></td><td></td></tr>
+<tr><td>第九章</td><td>x</td><td></td><td>x</td><td></td></tr>
+</tbody></table></div></div></details>
+        </div>
+      </section>
+      <section class="syl-panel" id="syl-digestive" data-syl-panel="digestive">
+        <div class="syl-panel-hd">
+          <div>
+            <h3>第四篇 · 消化系统疾病（16 学时 / 12 讲）</h3>
+            <p class="syl-panel-sub">课本 P356–463 · PDF P387–494 · <strong class="warn-inline">⚠ Audit Not Completed</strong></p>
+          </div>
+          <a class="btn-primary btn-sm" href="./digestive.html">打开本系统学习页 →</a>
+        </div>
+
+        <div class="syl-view-curated">
+          <h4 class="sub-sec-title">精编分层大纲（掌握 / 熟悉 / 已剔除 · 点击模块直达对应章节）</h4>
+          <div class="cur-mod-grid">
+            
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./digestive.html#mod-1">Ⅰ、消化系统疾病总论 ↗</a>
+              <span class="cur-mod-src">第10版 第一章《总论》（课本 P356–362 / PDF P387–393）· 1学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>消化系统常见病的基本临床表现、诊断步骤、鉴别诊断方法、治疗原则（注：第10版第一章未设专节，仅导语概括诊治思维并以第二节重要诊疗技术作直接支撑）。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>消化系统结构与功能特点（对应第10版第一节：常见疾病相关的消化生理、生化功能）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：消化系统疾病近年发展概况；不凭第9版或外部记忆补写第10版第一章未设专节的症状学/治疗总原则内容。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./digestive.html#mod-2">Ⅱ、胃食管反流病（GERD） ↗</a>
+              <span class="cur-mod-src">第10版 第二章《胃食管反流病》（课本 P363–365 / PDF P394–396）· 0.5学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>胃食管反流病的基本临床表现、临床分类、诊断与鉴别诊断。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>胃食管反流病的发病机制。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：GERD 治疗方法（病人教育、PPI/P-CAB/H₂RA 药物疗程、难治性 GERD、维持治疗、抗反流手术及并发症治疗）；以及流行病学、病理专节与三级预防（仅诊断依据中保留原文必备条款“PPI试验性治疗有效”）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./digestive.html#mod-3">Ⅲ、胃炎（急性胃炎与慢性胃炎） ↗</a>
+              <span class="cur-mod-src">第10版 第四章《胃炎》（课本 P369–373 / PDF P400–404）· 1学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>胃炎（急性胃炎、慢性胃炎）的临床表现和诊断要点；本病的治疗原则。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>鉴别诊断（注：第10版第四章第一、二节未设独立【鉴别诊断】专节，仅在慢性胃炎中指出胃镜及活检病理是诊断和鉴别诊断的主要手段）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：胃炎常见病概况；大纲目标未列入的病因/发病机制专节（急性胃炎应激/NSAIDs COX-1机制、慢性胃炎Hp鞭毛/尿素酶/自身免疫机制专述）及未列入大纲的第三节《特殊类型的胃炎或胃病》。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./digestive.html#mod-4">Ⅳ、消化性溃疡（PU） ↗</a>
+              <span class="cur-mod-src">第10版 第五章《消化性溃疡》（课本 P374–378 / PDF P405–409）· 1.5学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>消化性溃疡的临床表现、诊断和治疗。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>本病的鉴别诊断、防治原则和并发症；本病的病因和发病机理。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：幽门螺杆菌在消化性溃疡发病中的作用机制专述、本病的病理学（大体/组织学专节）及流行病学情况；预后专节。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./digestive.html#mod-5">Ⅴ、肠结核及结核性腹膜炎 ↗</a>
+              <span class="cur-mod-src">第10版 第七章《肠结核和结核性腹膜炎》（课本 P383–387 / PDF P414–418）· 0.5学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>肠结核与结核性腹膜炎的临床表现、诊断与治疗。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>发病机理、病理特点及鉴别诊断；并发症及处理。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>大纲【对应课程目标】未列入的预后与预防专节。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./digestive.html#mod-6">Ⅵ、炎症性肠病（溃疡性结肠炎 &amp; 克罗恩病） ↗</a>
+              <span class="cur-mod-src">第10版 第八章《炎症性肠病》（课本 P388–394 / PDF P419–425）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>溃疡性结肠炎（UC）和克罗恩病（CD）的临床表现、诊断和治疗。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>溃疡性结肠炎和克罗恩病的鉴别诊断、并发症。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：UC 和 CD 的病因和发病原理（环境、NOD2 遗传、肠道微生态及 Th1/Th2/Th17 免疫失衡专述）；独立病理专节与预后结肠镜监测专节（仅保留诊断/鉴别必需的组织学征象）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./digestive.html#mod-7">Ⅶ、功能性胃肠病（FD &amp; IBS） ↗</a>
+              <span class="cur-mod-src">第10版 第十章《功能性胃肠病》（课本 P398–401 / PDF P429–432）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>功能性消化不良（FD）及肠易激综合征（IBS）的诊断标准与临床亚型（严格采信第 10 版教材标准；大纲【对应课程目标】缺分级且漏写 IBS，依【支撑关系表】补全）。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>功能性消化不良及肠易激综合征的发病概况与临床特点。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：IBS 治疗原则及未定级/非核心的 FD 治疗方案（一般治疗、药物及心理疗法）；以及大纲目标未要求的病因发病机制、鉴别诊断专节与预后。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./digestive.html#mod-8">Ⅷ、肝硬化 ↗</a>
+              <span class="cur-mod-src">第10版 第十五章《肝硬化》（课本 P417–426 / PDF P448–457）· 1.5学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>肝硬化的临床表现、诊断、鉴别诊断及治疗。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>肝硬化并发症的基本发病机制及治疗原则。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：肝硬化的分类、病因（10余种病因专述及遗传代谢病细节）及病理特征（肝细胞消亡/EMT/肝星形细胞/肝窦毛细血管化专述；仅在诊断中保留“肝活检查见假小叶可建立诊断”最小必备表述）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./digestive.html#mod-9">Ⅸ、肝性脑病（HE） ↗</a>
+              <span class="cur-mod-src">第10版 第十五章《肝硬化》（肝性脑病专节：课本 P420–425 / PDF P451–456）· 0.5学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>肝性脑病的诱因、临床表现、诊断、鉴别诊断及治疗。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>肝性脑病的病因、发病机制。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：病理（脑水肿/大脑皮质变薄等）及独立辅助检查专节（仅在诊断依据及表 4-15-1 分期原文中保留最小必备条款）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./digestive.html#mod-10">Ⅹ、胆胰系统疾病（肝外胆管结石 &amp; 急性胰腺炎） ↗</a>
+              <span class="cur-mod-src">第10版 第十八章《肝外胆系结石及炎症》第二节（课本 P436–437 / PDF P467–468）+ 第二十章《胰腺炎》第一节（课本 P441–446 / PDF P472–477）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>急性胰腺炎（AP）、肝外胆管结石的临床表现、诊断、鉴别诊断及治疗原则。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>急性胰腺炎的病因及发病机制。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：本病的病理分类（急性水肿型/出血坏死型专述）及局部并发症具体处理（假性囊肿引流、胰腺脓肿清创手术）；大纲未选入的第十八章第一节《胆囊结石及胆囊炎》、第十八章第二节结石病因与第二十章第二节《慢性胰腺炎》（仅保留 AP 诊断必备的 MAP/MSAP/SAP/CAP 严重度分级）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./digestive.html#mod-11">Ⅺ、消化道肿瘤（空腔 3 病 vs 实性 3 病对比） ↗</a>
+              <span class="cur-mod-src">第10版 第三章《食管癌》（课本 P366–368 / PDF P397–399）+ 第六章《胃癌》（P379–382 / PDF P410–413）+ 第九章《结直肠癌》（P395–397 / PDF P426–428）+ 第十六章《原发性肝癌》（P427–431 / PDF P458–462）+ 第十九章《胆道系统肿瘤》第二节二《胆管癌》（P439–440 / PDF P470–471）+ 第二十一章《胰腺癌》（P450–451 / PDF P481–482）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>对比掌握消化道空腔脏器肿瘤（食管癌、胃癌、结直肠癌）与实性脏器肿瘤（肝癌、胆管癌、胰腺癌）的病理、临床表现、诊断方法。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>消化道肿瘤（6 病横向对比）的病因及发病机制。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：内镜诊断和治疗其中的作用（EMR/ESD 适应证、内镜支架/消融等）；大纲目标未要求的 6 种肿瘤手术/放化疗/靶向/免疫/TACE/Whipple 治疗方案、预后与预防；以及第十九章未选入的第一节《胆道系统良性肿瘤》与第二节一《胆囊癌》。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./digestive.html#mod-12">Ⅻ、消化道出血 ↗</a>
+              <span class="cur-mod-src">第10版 第二十五章《消化道出血》（课本 P460–463 / PDF P491–494）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>消化道出血的临床表现、诊断和治疗。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>消化道出血的部位及病因（上消化道、小肠、下消化道局部病因及 OGIB 概念）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：全身性疾病所致消化道出血（血管性疾病、血液病及尿毒症等系统性病因专述及对应全身病治疗条目）。</span></div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="syl-view-raw">
+          <h4 class="sub-sec-title">《内科学》理论课程教学大纲原文（源自官方 DOCX）</h4>
+          <div class="meta-card">
+            <div class="meta-row"><div class="meta-k">课程名称</div><div class="meta-v">内科学—消化系统</div></div><div class="meta-row"><div class="meta-k">英文名称</div><div class="meta-v">Internal Medicine -Syllabus for Gastroenterology</div></div><div class="meta-row"><div class="meta-k">理论学时</div><div class="meta-v">总学时16学时，其中：理论16学时；实验0学时；上机0学时；实践0学时。</div></div><div class="meta-row"><div class="meta-k">教学方式</div><div class="meta-v">PBL（基于问题的教学方法）、CBL（基于案例的教学方法）</div></div><div class="meta-row"><div class="meta-k">考核与成绩评定</div><div class="meta-v">【考核方式】过程性考核（出勤+课堂作业+阶段测验）+期末考试<br />【成绩评定】出勤10%，课堂作业20%，阶段测验20%，期末考核50%</div></div><div class="meta-row"><div class="meta-k">课程描述</div><div class="meta-v">消化系统疾病包括食管、胃、肠、肝、胆、胰等脏器的器质性和功能性疾病，临床十分常见。通过课程学习，学生应掌握消化系统的主要结构和功能特点以及与疾病的关系，具备消化生理、病理生理、药理、消化内镜知识，培养在消化道症状诊查过程中的病史采集和逻辑思维能力。<br />Digestive system diseases include organic and functional diseases which including esophagus, stomach, intestine, liver, biliary, pancreas and other organs. They are very common. Through the course study, students should master the main structure and function characteristics of digestive system as well as the relationship with diseases, acquire knowledge of digestive physiology, pathophysiology, pharmacology and digestive endoscopy, and cultivate the ability of medical history collection and logical thinking.</div></div><div class="meta-row"><div class="meta-k">课程目标</div><div class="meta-v">通过内科学（消化系病）的理论学习，让学生了解消化系统常见病多发病的类型，以及诊断思路，药物治疗、内镜治疗的指征及方法，初步掌握消化系统常见危急重症的急救处理原则。</div></div><div class="meta-row"><div class="meta-k">教材及参考资料</div><div class="meta-v">【教材】<br />葛均波、王辰、王建安主编，《内科学》（第十版），人民卫生出版社，2024-06-01<br />【参考书】<br />王吉耀、葛均波、邹和建主编，《实用内科学》（第16版），人民卫生出版社，2022-06-02<br />姜泊主编，《胃肠病学》，人民卫生出版社，2015-09-01</div></div>
+          </div>
+          <details class="raw-details" open>
+            <summary>展开 / 收起：消化系统逐讲教学大纲原文条目（共 461 段）</summary>
+            <div class="raw-details-body">
+              <div class="syl-ch-hd">第一章 总论（授课 1学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>消化系统常见病的基本临床表现、诊断步骤、鉴别诊断方法、治疗原则。</p>
+<p class="syl-item">二、<strong class="kw-f">熟悉</strong>消化系统结构与功能特点。</p>
+<p class="syl-item">三、<strong class="kw-u">了解</strong>消化系统疾病近年发展概况。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">1、复习消化系统主要解剖结构，生理功能及其发病的关系。</p>
+<p class="syl-item">2、诊断与鉴别诊断的基本方法与步骤，主要症状的诊查思路。</p>
+<p class="syl-item">3、常用实验室检查及辅助检查。</p>
+<p class="syl-item">4、基本治疗原则。</p>
+<div class="syl-sub-hd">【思政要素和案例】 结合我国消化系统疾病防治成就彰显制度优势，用医学科研故事培育科学精神，以临床案例强化生命伦理意识。</div>
+<div class="syl-sub-hd">【教学难点重点】 消化系统的生理特点，和新技术进展。</div>
+<div class="syl-ch-hd">第二章 胃食管反流病（授课 0.5学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>胃食管反流病的基本临床表现、临床分类、诊断与鉴别诊断。</p>
+<p class="syl-item">二、<strong class="kw-f">熟悉</strong>胃食管反流病的发病机制。</p>
+<p class="syl-item">三、<strong class="kw-u">了解</strong>胃食管反流病的治疗方法。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-para">[概述] 定义、发病率和流行病学。</p>
+<p class="syl-para">[病理和发病机理] 胃食管腔因过度接触（或暴露于）胃液而引起的临床胃食管反流症和食管黏膜损伤的疾病称为胃食管反流。</p>
+<p class="syl-item">1、一过性食管下括约肌松弛（TLESR）。</p>
+<p class="syl-item">2、食管裂孔疝。</p>
+<p class="syl-item">3、食管酸廓清能力下降。</p>
+<p class="syl-item">4、胃动力不足。</p>
+<p class="syl-para">[临床表现]</p>
+<p class="syl-item">1、症状</p>
+<p class="syl-item">（1）反流症状：反酸烧心、胸骨后痛，与体位和进食有关，夜间明显。</p>
+<p class="syl-item">（2）食管外症状：咳嗽、哮喘、间质性肺炎。</p>
+<p class="syl-item">2、体征：缺乏特异性。</p>
+<p class="syl-item">3、临床分型：非糜烂性反流病（NERD），糜烂性食管炎（EE），Barrett食管。</p>
+<p class="syl-para">[实验室检查] 胃镜、钡餐、食管测压和pH监测。</p>
+<p class="syl-para">[诊断] 反酸烧心，实验性抗反流治疗有效可诊断，抗返流无效者行胃镜和（或）pH监测。</p>
+<p class="syl-para">[鉴别诊断]食管炎症；心源性胸痛；非心源性胸痛：胡桃夹食管、贲门失驰缓、食管弥漫痉挛</p>
+<p class="syl-para">[并发症]</p>
+<p class="syl-item">1. 出血；2. 食管狭窄；3. 食管腺癌；4. 食管外并发症。</p>
+<p class="syl-para">[治疗]</p>
+<p class="syl-item">1、目的和原则</p>
+<p class="syl-item">2、一般治疗 改变生活和饮食习惯。</p>
+<p class="syl-item">3、药物治疗</p>
+<p class="syl-item">（1）促胃肠动力治疗；</p>
+<p class="syl-item">（2）抑酸治疗：①H2受体拮抗剂；②质子泵抑制剂；③抗酸剂；</p>
+<p class="syl-item">4、维持治疗；</p>
+<p class="syl-item">5、抗反流手术；</p>
+<p class="syl-item">6、并发症治疗：狭窄和Barrett的治疗。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">结合病因倡导健康生活方式呼应“健康中国”，多学科协作模式弘扬集体主义精神。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1、胃食管反流病的病因及发病机制</p>
+<p class="syl-item">2、胃食管反流病的鉴别诊断</p>
+<div class="syl-ch-hd">第四章  胃炎（授课 1学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">一、<strong class="kw-u">了解</strong>胃炎是一常见病。</p>
+<p class="syl-item">二、<strong class="kw-m">掌握</strong>本病的临床表现和诊断要点，<strong class="kw-f">熟悉</strong>鉴别诊断。</p>
+<p class="syl-item">三、<strong class="kw-m">掌握</strong>本病的治疗原则。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-para">[概述] 一般概念及分类。</p>
+<div class="syl-ch-hd">第一节  急性胃炎</div>
+<p class="syl-para">[概述] 分类，指出以急性单纯性胃炎和急性糜烂性胃炎为最常见，急性糜烂性胃炎是上消化道出血的常见原因之一。</p>
+<p class="syl-para">[病因和发病机理] 外因和内因。</p>
+<p class="syl-para">[临床表现] 消化道症状及全身症状，指出由细菌或细菌毒素所致者，可伴有肠炎表现，即急性胃肠炎。</p>
+<p class="syl-para">[诊断和鉴别诊断]</p>
+<p class="syl-para">（一）诊断根据病史、症状和体征。</p>
+<p class="syl-para">（二）着重指出某些急腹症早期，少数急性心梗，糖尿病急性并发症等可酷似急性胃炎，应细心观察，以免误诊。</p>
+<p class="syl-para">[治疗] 及时去除病因，静脉补液，细菌感染所致者使用抗生素。</p>
+<p class="syl-para">[预防]做好预防工作对防止本病发生的重要性。</p>
+<div class="syl-ch-hd">第二节  慢性胃炎</div>
+<p class="syl-para">[概述] 着重指出本病的高发病率，分类方法的演变及其意义。</p>
+<p class="syl-para">[病因和发病机理] 尚未完全明了，介绍可能的发病原因，包括幽门螺杆菌感染、自身免疫机制和遗传因素、其他因素等。着重指出幽门螺杆菌的发现及其致病作用。</p>
+<p class="syl-para">[病理] 非萎缩性胃炎及萎缩性胃炎的基本病理特征。</p>
+<p class="syl-para">[临床表现]主要为非特异性的消化不良症状。</p>
+<p class="syl-para">[实验室检查和其它检查]</p>
+<p class="syl-item">1、幽门螺旋杆菌检测。</p>
+<p class="syl-item">2、胃液分析</p>
+<p class="syl-item">3、血清胃泌素测定。</p>
+<p class="syl-item">4、自身抗体。</p>
+<p class="syl-item">5、血清VitB12浓度和VitB12吸收试验。</p>
+<p class="syl-para">[诊断] 确诊主要依赖胃镜检查和胃粘膜活检；幽门螺旋杆菌的检测。</p>
+<p class="syl-para">[防治]</p>
+<p class="syl-item">1、根除幽门螺杆菌。</p>
+<p class="syl-item">2、抑酸或抗酸治疗。</p>
+<p class="syl-item">3、抑制反流。</p>
+<p class="syl-item">4、增强胃粘膜防御。</p>
+<p class="syl-item">5、胃动力药。</p>
+<p class="syl-para">[预后] 少数慢性萎缩性胃炎可能演变为胃癌，要严密随访。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">结合幽门螺杆菌发现史强调科研协作。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1、胃炎的病因及发病机理。</p>
+<p class="syl-item">2、胃炎的分类及治疗随访原则。</p>
+<p class="syl-item">3、非甾体抗炎药导致急性胃炎的发病机制。</p>
+<p class="syl-item">4、Hp导致胃炎的机制。</p>
+<div class="syl-ch-hd">第五章 消化性溃疡(授课 1.5 学时)</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>本病的临床表现、诊断和治疗。</p>
+<p class="syl-item">二、<strong class="kw-f">熟悉</strong>本病的鉴别诊断、防治原则和并发症。</p>
+<p class="syl-item">三、<strong class="kw-f">熟悉</strong>本病的病因和发病机理。</p>
+<p class="syl-item">四、<strong class="kw-u">了解</strong>幽门螺杆菌在消化性溃疡发病中的作用机制。</p>
+<p class="syl-item">五、<strong class="kw-u">了解</strong>本病的病理学、流行病学情况。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-para">[概述] 定义、发病率和流行病学。明确消化性溃疡的定义，涉及范围。</p>
+<p class="syl-para">[病理和发病机理] 消化性溃疡发病机理主要是胃十二指肠粘膜的防御机制和损 害因素之间的平衡受到破坏。</p>
+<p class="syl-para">涉及主要因素有:</p>
+<p class="syl-item">1、幽门螺杆菌感染;是主要病因。</p>
+<p class="syl-item">2、非甾体类抗炎药。</p>
+<p class="syl-item">3、胃酸和胃蛋白酶。</p>
+<p class="syl-item">4、其他危险因素:吸烟、遗传因素、应激、胃十二指肠运动异常。</p>
+<p class="syl-para">[病理] 溃疡的大体解剖和基本组织学改变，包括部位、数目、大小、形态、深 度、并发病变。</p>
+<p class="syl-para">[临床表现] 特点是慢性过程、周期性发作、节律性痛疼。10-15%患者可无症状。</p>
+<p class="syl-item">1、症状</p>
+<p class="syl-item">(1) 上腹痛:部位、性质(慢性、节律性、周期性)。</p>
+<p class="syl-item">(2) 其它症状。</p>
+<p class="syl-item">2、体征:缺乏特异性，发作期于剑突下有稳定而局限的压痛点。</p>
+<p class="syl-item">3、特殊类型溃疡:球后溃疡、无症状性溃疡，老年人消化性溃疡，胃十二指肠复合溃疡、幽门管溃疡、巨大溃疡的临床表现特点。</p>
+<p class="syl-para">[实验室检查及其他检查]</p>
+<p class="syl-para">胃镜检查:意义、内镜下表现及分期。</p>
+<p class="syl-para">X线钡餐检查、幽门螺杆菌检查、胃泌素及胃液分析的临床意义。</p>
+<p class="syl-para">[诊断] 初步诊断依据:慢性病程、周期发作及节律性上腹痛。</p>
+<p class="syl-para">[鉴别诊断] 1、引起上腹痛的其他疾病:功能性消化不良、胃炎、肝胆胰疾病。 2、胃癌:鉴别诊断要点，胃镜检查的意义。3、胃泌素瘤。</p>
+<p class="syl-para">[并发症]</p>
+<p class="syl-item">1. 大量出血; 2. 穿孔; 3. 幽门梗阻; 4. 癌变 并发症是消化性溃疡患者的致死原因，<strong class="kw-m">掌握</strong>四大并发症的临床表现和主要诊断手段。</p>
+<p class="syl-para">[治疗]</p>
+<p class="syl-item">1、目的和原则</p>
+<p class="syl-item">2、一般治疗:包括饮食调节、忌烟酒、避免损伤胃粘膜药物、稳定情绪等。</p>
+<p class="syl-item">3、药物治疗:(1)常用治疗溃疡药物的药理特点和使用方法，包括对抗胃酸药 物(质子泵抑制剂、组织胺 H2-受体拮抗剂、抗酸药)以及黏膜保护药物等。(2) 幽门螺杆菌根除治疗的方案及耐药等主要问题。(3)NSAID 溃疡的治疗和预防</p>
+<p class="syl-item">4、消化性溃疡的复发和预防。</p>
+<p class="syl-item">5、外科治疗:治疗指征及常用手术方法。</p>
+<div class="syl-sub-hd">【思政要素和案例】通过李兆申院士修订诊疗指南彰显学科担当。</div>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1、幽门螺杆菌致消化性溃疡的机理;</p>
+<p class="syl-item">2、消化性溃疡的并发症;</p>
+<p class="syl-item">3、幽门螺杆菌根除方案。</p>
+<div class="syl-ch-hd">第七章  肠结核及结核性腹膜炎（授课 0.5学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>肠结核与结核性腹膜炎的临床表现、诊断与治疗。</p>
+<p class="syl-item">二、<strong class="kw-f">熟悉</strong>发病机理、病理特点及鉴别诊断。</p>
+<p class="syl-item">三、<strong class="kw-f">熟悉</strong>并发症及处理。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<div class="syl-ch-hd">第一节 肠结核</div>
+<p class="syl-para">[病因与发病机理]</p>
+<p class="syl-item">1、致病菌及其入侵途径;</p>
+<p class="syl-item">2、肠结核的发病部位及其发病机理。说明结核病的发病是人体和结核分枝杆菌 相互作用的结果。</p>
+<p class="syl-para">[病理]</p>
+<p class="syl-item">1.常见部位</p>
+<p class="syl-item">2.病理分型:(1)溃疡型;(2)增殖型;(3)混合型。</p>
+<p class="syl-para">说明结核菌数量和毒力与 人体对结核菌的免疫反应程度影响本病的病理性质。</p>
+<p class="syl-para">[临床表现]</p>
+<p class="syl-item">1、腹部表现 腹痛、腹块、腹泻与便秘交替。</p>
+<p class="syl-item">2、全身表现和腹外结核表现。</p>
+<p class="syl-item">3、并发症</p>
+<p class="syl-para">[实验室和其它检查]</p>
+<p class="syl-item">1、血常规、血沉、结核菌素、粪便结核菌检查的临床意义。</p>
+<p class="syl-item">2、X 线检查:典型征象。</p>
+<p class="syl-item">3、结肠镜检查:内镜下表现。</p>
+<p class="syl-para">[诊断] 诊断标准:根据年龄、临床表现、肠外结核灶、有关实验室检查，特别是 X 线及结肠镜检查资料综合分析，部分病人需试验性抗结核治疗或剖腹探查。</p>
+<p class="syl-para">[鉴别诊断]</p>
+<p class="syl-para">克罗恩病、右侧结肠癌、阿米巴及血吸虫病性肉芽肿，其他。重点为克罗恩病和右侧结肠癌。</p>
+<p class="syl-para">[治疗]强调早期治疗的重要性。</p>
+<p class="syl-item">1、休息与加强营养。</p>
+<p class="syl-item">2、抗结核药物治疗</p>
+<p class="syl-item">3、对症治疗。</p>
+<p class="syl-item">4、手术治疗指征。</p>
+<p class="syl-para">[预后]主要取决早期诊断、早期治疗。合理选用抗结核药物，保证充分剂量与足够疗程，也是决定预后的关键。</p>
+<p class="syl-para">[预防]强调肠外结核特别是肺结核的早期诊断与积极治疗，牛奶应经过灭菌。</p>
+<div class="syl-ch-hd">第二节 结核性腹膜炎</div>
+<p class="syl-para">[概述] 定义、发病率、年龄和性别。</p>
+<p class="syl-para">[发病机理] 多继发于体内其它部位结核病，感染途径以直接蔓延为主，少数病例由血行播散引起。</p>
+<p class="syl-para">[病理] 可分为渗出型、粘连型、干酪型，若两种或三种类型并存为混合型。</p>
+<p class="syl-para">[临床表现]</p>
+<p class="syl-item">1、全身表现 结核病毒血症及营养不良。</p>
+<p class="syl-item">2、腹部表现 由于病理类型不同而使腹部表现多样化，常见症状为腹痛、腹胀与腹水、腹壁柔韧感及压痛、腹部肿块、腹泻或腹泻便秘交替等。</p>
+<p class="syl-item">3、并发症</p>
+<p class="syl-para">[实验室和其它检查]</p>
+<p class="syl-item">1、血常规、血沉、结核菌素试验。</p>
+<p class="syl-item">2、腹水检查 腹水性质、ADA 及细胞学检查，具有重要临床意义。</p>
+<p class="syl-item">3、腹部 B 超。</p>
+<p class="syl-item">4、X 线检查。</p>
+<p class="syl-item">5、腹腔镜检查 禁忌证与适应证。活组织检查有确诊价值。</p>
+<p class="syl-para">[诊断和鉴别诊断]</p>
+<p class="syl-item">1、诊断 根据年龄、临床表现及有关检查，不典型者可试用抗结核药物治疗。部分病人需腹腔镜活检或剖腹探查。</p>
+<p class="syl-item">2、鉴别诊断 从腹水、腹部包块、发热和腹痛等方面考虑相应的鉴别诊断。</p>
+<p class="syl-para">[治疗]本病治疗的关键是及早给予合理、足够疗程的抗结核化学药物治疗。</p>
+<p class="syl-item">1、抗结核药物治疗:强调全程规则治疗，必要时加强抗结核化疗的联合应 用及适当延长抗结核的疗程。</p>
+<p class="syl-item">2、大量腹水，可适当放腹水以减轻症状。</p>
+<p class="syl-para">[预防] 对腹腔外结核病的早期诊断与积极治疗，是预防本病的重要措施。</p>
+<div class="syl-sub-hd">【思政要素和案例】结合结核病防治呼应我国公卫战略。</div>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1、 肠结核的病理类型</p>
+<p class="syl-item">2、 肠结核的临床表现</p>
+<p class="syl-item">3、 结核性腹膜炎的临床表现</p>
+<p class="syl-item">4、 肠结核和结核性腹膜炎的诊断与鉴别诊断</p>
+<p class="syl-item">5、 肠结核和结核性腹膜炎的检查方法</p>
+<p class="syl-item">6、 肠结核和结核性腹膜炎的治疗原则。</p>
+<div class="syl-ch-hd">第八章 炎症性肠病（授课 2学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>溃疡性结肠炎和克罗恩病的临床表现、诊断和治疗。</p>
+<p class="syl-item">二、<strong class="kw-f">熟悉</strong>溃疡性结肠炎和克罗恩病的鉴别诊断，并发症。</p>
+<p class="syl-item">三、<strong class="kw-u">了解</strong>溃疡性结肠炎和克罗恩病的病因和发病原理。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<div class="syl-ch-hd">第一节 溃疡性结肠炎</div>
+<p class="syl-para">[教学内容]</p>
+<p class="syl-item">一、理论讲授部分</p>
+<p class="syl-para">[概述] 基本概念、发病率、国内发病情况。明确炎症性肠病的概念及起分类。</p>
+<p class="syl-para">[病因和发病机理] 尚未完全明确，一般认为是一种自身免疫病。</p>
+<p class="syl-para">[病理] 早期病理改变，随病程进展发生相应的病理改变。</p>
+<p class="syl-para">[临床表现] 起病方式、病程、发作诱因，影响临床表现的有关因素。</p>
+<p class="syl-item">1、消化系统表现</p>
+<p class="syl-item">（1）腹泻；（2）腹痛、（3）其它症状；（4）体征  因病型不同及有无并发症而异。</p>
+<p class="syl-item">2、全身表现：见于中及重症患者。</p>
+<p class="syl-item">3、肠外表现：发生率较低。</p>
+<p class="syl-item">4、临床诊断：临床类型（初发型／慢性复发型／慢性持续型／急性爆发型）、临床严重程度（轻型／中型重型）、病变范围、临床分期（活动期／缓解期）。</p>
+<p class="syl-para">[并发症]</p>
+<p class="syl-item">1、中毒性巨结肠：诱发因素。</p>
+<p class="syl-item">2、直肠结肠癌变：与病型轻重，病变累及范围及有无息肉生成有关。</p>
+<p class="syl-item">3、其他并发症：大量出血；急性穿孔；肠梗阻；瘘管形成及肛门直肠周围病变等。</p>
+<p class="syl-para">[实验室和其它检查]</p>
+<p class="syl-item">1、血液检查。</p>
+<p class="syl-item">2、粪便检查：反复多种方法检查无致病病原体发现。</p>
+<p class="syl-item">3、结肠镜检查：具有重要诊断价值。</p>
+<p class="syl-item">4、X线钡剂灌肠检查：气钡双重结肠造影及其征象。</p>
+<p class="syl-para">[诊断和鉴别诊断]</p>
+<p class="syl-item">1、诊断：无特异病理改变，需根据临床表现、实验室检查、X线检查和纤维结肠镜检查综合分析，排除有关疾病后方可作出诊断。</p>
+<p class="syl-item">2、鉴别诊断：</p>
+<p class="syl-item">（1）急性自限性结肠炎；（2）阿米巴肠炎；（3）血吸虫病；（4）克罗恩病；（5）大肠癌；（6）肠易激综合征。重点介绍与大肠癌和克罗恩病鉴别诊断。</p>
+<p class="syl-para">[治疗] 控制急性发作，缓解病情，减少复发，防治并发症。</p>
+<p class="syl-item">1、一般治疗：休息，饮食调节，水电平衡，支持治疗，慎用抗胆碱能药及止泻药，发作期间重症者避免X线钡剂灌肠及纤维结肠镜检查。</p>
+<p class="syl-item">2、氨基水肠酸制剂：应用指征、疗程和副反应。</p>
+<p class="syl-item">3、肾上腺糖皮质激素：应用指征、给药途径、剂量、疗程。</p>
+<p class="syl-item">4、其它免疫抑制剂：一般不单独使用。</p>
+<p class="syl-item">5、生物质剂：应用日益广泛。</p>
+<p class="syl-item">6、手术治疗指征。</p>
+<p class="syl-para">[预后] 与病型、发作频度、有无并发症有关。</p>
+<div class="syl-ch-hd">第二节 克罗恩病</div>
+<p class="syl-para">[教学内容]</p>
+<p class="syl-item">一、理论讲授部分</p>
+<p class="syl-para">[概述] 基本概念、发病率、国内发病情况。</p>
+<p class="syl-para">[病因和发病机理] 尚未完全明确，一般认为是一种自身免疫病，可能与变态反应及遗传有关。</p>
+<p class="syl-para">[病理] 病变分布，大体形态为节段性，溃疡呈鹅口疮样，纵行或裂隙样溃疡， 鹅卵石样;组织学特点为非干酪样肉芽肿，全层炎症。</p>
+<p class="syl-para">[临床表现] 起病方式、病程、发作诱因，影响临床表现的有关因素。</p>
+<p class="syl-item">1、消化系统表现 (1)腹痛;(2)腹泻;(3)腹部包块;(4)瘘管形成;(5)肛门周围病变。</p>
+<p class="syl-item">2、全身表现:发热，营养障碍。</p>
+<p class="syl-item">3、肠外表现:与溃疡性结肠炎类似。</p>
+<p class="syl-item">4、临床分型:类型、部位、严重程度。</p>
+<p class="syl-para">[并发症]</p>
+<p class="syl-para">肠梗阻，脓肿，穿孔，便血。</p>
+<p class="syl-para">[实验室和其它检查]</p>
+<p class="syl-item">1、实验室检查。</p>
+<p class="syl-item">2、影像学检查:CT 或 MRE(磁共振肠道显像)。</p>
+<p class="syl-item">3、肠镜检查。</p>
+<p class="syl-para">[诊断和鉴别诊断]</p>
+<p class="syl-item">1、诊断:非连续性或节段性病变，卵石样粘膜或纵行溃疡，全壁性炎性反应改 变，非干酪性肉芽肿，裂沟，瘘管，肛门部病变。</p>
+<p class="syl-item">2、鉴别诊断: (1)肠结核;(2)小肠恶性淋巴瘤;(3)溃疡性结肠炎;(4)急性阑尾炎;(5) 其他。</p>
+<p class="syl-para">[治疗] 与溃疡性结肠炎相似，但具体实施有所不同。</p>
+<p class="syl-item">1、控制炎症反应 (1)活动期:5-ASA，糖皮质激素，免疫抑制剂，抗菌药物，生物制剂 (2)缓解期:5-ASA，免疫抑制剂，生物制剂</p>
+<p class="syl-item">2、对症治疗</p>
+<p class="syl-item">3、患者教育:戒烟。</p>
+<p class="syl-item">4、手术治疗。</p>
+<p class="syl-para">[预后] 多数反复发作，迁延不愈，预后较差。</p>
+<div class="syl-sub-hd">【思政要素和案例】 结合国家慢病管理试点强化分级诊疗担当。</div>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1、 炎症性肠病的发病机理</p>
+<p class="syl-item">2、 炎症性肠病的诊断和鉴别诊断</p>
+<p class="syl-item">3、 溃疡性结肠炎、克罗恩病和肠结核的鉴别;</p>
+<p class="syl-item">4、 炎症性肠病的治疗原则</p>
+<div class="syl-ch-hd">第十章 功能性胃肠病（授课 2学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1、功能性消化不良的发病率，临床特点;</p>
+<p class="syl-item">2、功能性消化不良诊断标准;</p>
+<p class="syl-item">3、治疗原则</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<div class="syl-ch-hd">第一节 功能性消化不良</div>
+<p class="syl-item">一、理论讲授部分</p>
+<p class="syl-para">[病因和发病机制]</p>
+<p class="syl-item">1、胃肠动力障碍;</p>
+<p class="syl-item">2、内脏感觉过敏;</p>
+<p class="syl-item">3、胃底容受性舒张下降;</p>
+<p class="syl-item">4、精神和社会因素。</p>
+<p class="syl-para">[临床表现] 餐后饱胀、早饱感、上腹胀痛、上腹灼热感、嗳气、食欲不振、恶心等。</p>
+<p class="syl-para">[诊断和鉴别诊断]</p>
+<p class="syl-item">1、诊断标准:罗马 III 诊断标准;</p>
+<p class="syl-item">2、临床亚型:上腹痛综合征，餐后不适综合征。</p>
+<p class="syl-item">3、鉴别诊断: (1)食管、胃和十二指肠器质性疾病;(2)肝胆胰疾病;(3)全</p>
+<p class="syl-para">身性疾病;(4)药物导致;(5)其他功能性胃肠病重叠。</p>
+<p class="syl-para">[治疗]</p>
+<p class="syl-item">1、一般治疗:饮食，健康教育;</p>
+<p class="syl-item">2、药物治疗:(1)抑制胃酸药;(2)促胃肠动力药;(3)助消化药;(4)抗抑郁药。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1、 功能性胃肠病的发病机制</p>
+<p class="syl-item">2、 功能性消化不良的分型和诊断标准</p>
+<div class="syl-ch-hd">第二节 肠易激综合征</div>
+<p class="syl-item">一、理论讲授部分</p>
+<p class="syl-para">[病因和发病机制]</p>
+<p class="syl-item">1、胃肠动力障碍；</p>
+<p class="syl-item">2、内脏感觉异常；</p>
+<p class="syl-item">3、肠道感染治愈后；</p>
+<p class="syl-item">4、胃肠道激素；</p>
+<p class="syl-item">5、精神心理障碍</p>
+<p class="syl-para">[临床表现]</p>
+<p class="syl-para">消化道症状：腹痛或腹部不适，排便习惯和粪便性状的改变，腹泻为主和便秘为主；</p>
+<p class="syl-para">全身症状：失眠、焦虑、抑郁、头痛等；</p>
+<p class="syl-para">体征：无明显阳性体征；</p>
+<p class="syl-para">分型：腹泻性、便秘型、腹泻便秘交替型。</p>
+<p class="syl-para">[诊断和鉴别诊断]</p>
+<p class="syl-item">1、诊断标准：罗马III诊断标准。(1)病程半年以上且近3个月来持续存在腹部不适或腹痛，并伴有下列特点中至少2项：①症状在排便后改善；②症状发生伴随排便次数改变；③症状发生伴随粪便性状改变。</p>
+<p class="syl-para">以下症状不是诊断所必备，但属常见症状，这些症状越多越支持IBS的诊断：①排便频率异常(每天排便&gt;3次或每周&lt;3次)；②粪便性状异常(块状／硬便或稀水样便)；③粪便排出过程异常(费力、急迫感、排便不尽感)；④黏液便；⑤胃肠胀气或腹部膨胀感。</p>
+<p class="syl-item">(3)缺乏可解释症状的形态学改变和生化异常。</p>
+<p class="syl-item">2、鉴别诊断：腹泻为主者，乳糜泻；便秘为主者，功能性便秘，器质性便秘。</p>
+<p class="syl-para">[治疗]</p>
+<p class="syl-item">1、一般治疗：饮食，健康教育；</p>
+<p class="syl-item">2、药物治疗：（1）解痉药；（2）止泻药；（3）泻药；（4）抗抑郁药。</p>
+<p class="syl-item">3、心理和行为治疗。</p>
+<p class="syl-para">[预后]良性过程。</p>
+<div class="syl-sub-hd">【思政要素和案例】社区“胃肠健康日”活动落实健康共建。</div>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-para">肠易激综合征的分型和诊断标准</p>
+<div class="syl-ch-hd">第十五章 肝硬化（授课1.5学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>肝硬化的临床表现、诊断、鉴别诊断及治疗。</p>
+<p class="syl-item">二、<strong class="kw-f">熟悉</strong>肝硬化并发症的基本发病机制及治疗原则。</p>
+<p class="syl-item">三、<strong class="kw-u">了解</strong>肝硬化的分类、病因及病理特征。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-para">[概述] 基本概念和发病率。</p>
+<p class="syl-para">[病因和发病机制]主要病因有病毒性肝炎、脂肪性肝病、免疫性疾病、药物及化学毒物、胆汁淤积、循环障碍、寄生虫感染、遗传和代谢性疾病、隐源性肝硬化等。</p>
+<p class="syl-para">[病理和病理生理]肝脏、脾脏、胃肠道、肾脏、内分泌腺等病理改变以及门脉高压、腹水、内分泌变化、呼吸系统、泌尿系统等病理生理变化，作为理解临床表现的基础。</p>
+<p class="syl-para">[临床表现]</p>
+<p class="syl-item">1、代偿期  无症状或症状较轻，缺乏特异性，常见症状为乏力和食欲不振，可有肝脾肿大。肝功能正常或轻度异常。</p>
+<p class="syl-item">2、失代偿期</p>
+<p class="syl-item">（1）症状：食欲减退、乏力、腹胀、腹痛、体重减轻、黄疸、出血倾向、内分泌系统激素紊乱、神经精神症状。</p>
+<p class="syl-item">（2）体征：肝病面容、肝掌、蜘蛛痣、腹水等。</p>
+<p class="syl-item">3、并发症  上消化道出血；胆石症；感染；肝性脑病；门静脉血栓或海绵样变；原发性肝癌；肝肾综合症；肝肺综合征；电解质和酸碱平衡紊乱。</p>
+<p class="syl-para">[实验室检查和其他检查]</p>
+<p class="syl-item">1、实验室检查  重点为反映肝细胞受损、胆红素代谢障碍、肝脏合成功能减退的实验室检查。</p>
+<p class="syl-item">2、影像学检查  B型超声检查、CT、MRI等。</p>
+<p class="syl-item">3、特殊检查  内镜检查、肝穿刺活组织检查、门静脉及脾静脉内径测量、腹水的实验室检查。</p>
+<p class="syl-para">[诊断和鉴别诊断]</p>
+<p class="syl-item">1、诊断  病史、体格检查、肝功能试验、影像学检查等一般可明确诊断。少数疑难者在<strong class="kw-m">掌握</strong>指征情况下可进行肝穿刺活组织检查。完整诊断应包括确定有无肝硬化、寻找肝硬化原因、肝功能评估及并发症诊断。</p>
+<p class="syl-item">2、鉴别诊断</p>
+<p class="syl-para">肝大及肝结节病例—慢性肝炎、肝癌、血液病、血吸虫病等；</p>
+<p class="syl-para">腹水病例—结核性腹膜炎、腹腔肿瘤、缩窄性心包炎、巨大卵巢囊肿等；</p>
+<p class="syl-para">出血病例—消化性溃疡、急性糜烂性胃炎、胃癌等；</p>
+<p class="syl-para">肝性脑病—低血糖、糖尿病酮症酸中毒、尿毒症、脑血管意外、颅内感染及镇静药过量等；</p>
+<p class="syl-para">肝肾综合征—慢性肾炎、急性肾小管坏死及其他原因所引起的肾功能衰竭；肝肺综合症—肺部感染、哮喘等。</p>
+<p class="syl-item">3、并发症的诊断和鉴别诊断。</p>
+<p class="syl-para">[防治]</p>
+<p class="syl-item">1、治疗原则 改善肝功能、治疗及预防并发症。</p>
+<p class="syl-item">2、一般治疗  劳逸结合、休息、饮食、营养支持、去除或减轻病因、慎用肝损害相关药物。</p>
+<p class="syl-item">3、药物治疗  护肝、抗肝纤维化药物酌情应用；针对病毒性肝炎进行抗病毒治疗；降低门脉压力治疗。</p>
+<p class="syl-item">4、门脉高压及并发症的治疗  腹腔积液应限制钠、水摄入；利尿药的合理使用；腹腔穿刺放液；提高血浆胶体渗透压等。食管胃底静脉曲张破裂出血应尽快行药物及内镜下治疗，必要时可行TIPS治疗。肝性脑病应及早识别及去除诱因，促进氨的代谢，调节神经递质等。</p>
+<p class="syl-item">5、其他并发症的治疗  包括感染、胆石症、电解质紊乱、肝肾综合征、肝肺综合征、门静脉血栓、脾功能亢进的治疗。</p>
+<div class="syl-sub-hd">【思政要素和案例】庄辉院士团队推行乙肝疫苗接种阻断肝病进程。</div>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1、肝硬化的病因和发病机制</p>
+<p class="syl-item">2、肝硬化的临床表现</p>
+<p class="syl-item">3、肝硬化腹水的形成机制</p>
+<p class="syl-item">4、肝硬化并发症及处理原则</p>
+<div class="syl-ch-hd">第十五章 肝性脑病（授课0.5学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>肝性脑病的诱因、临床表现、诊断、鉴别诊断及治疗。</p>
+<p class="syl-item">二、<strong class="kw-f">熟悉</strong>肝性脑病的病因、发病机制。</p>
+<p class="syl-item">三、<strong class="kw-u">了解</strong>病理，辅助检查。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-para">教学内容</p>
+<p class="syl-para">（一）重点讲解：</p>
+<p class="syl-para">[概述] 基本概念及发病率。</p>
+<p class="syl-para">[诱因和发病机理] 发病机理尚未完全阐明，介绍各种学说，重点介绍氨中毒学说。</p>
+<p class="syl-para">[临床表现] 介绍临床分期和各期的基本表现，包括性格、行为，意识状态，神经系统体征，脑电图改变；</p>
+<p class="syl-para">[诊断及鉴别诊断] 肝病病史及诱因，典型临床表现，肝功异常和血氨升高；鉴别诊断包括糖尿病酮症、低血糖、尿毒症、脑血管疾病和镇静剂过量等。</p>
+<p class="syl-para">[实验室和其他检查]</p>
+<p class="syl-item">1、实验室检查  重点为肝功能、电解质及血氨检查。</p>
+<p class="syl-item">2、影像学检查  颅脑CT、磁共振检查。</p>
+<p class="syl-para">[防治]</p>
+<p class="syl-item">1、治疗原则  去除诱因，促进氨的代谢和清除。</p>
+<p class="syl-item">2、一般治疗  劳逸结合、休息、饮食、营养支持。</p>
+<p class="syl-item">3、 药物治疗 纠正电解质及酸碱平衡紊乱、改善肠道微生态、防治便秘等；</p>
+<div class="syl-sub-hd">【思政要素和案例】段钟平教授团队建立肝衰竭预警体系服务健康中国。</div>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1、肝性脑病的诱因及发病机制</p>
+<p class="syl-item">2、肝性脑病的临床表现及分期</p>
+<p class="syl-item">3、肝性脑病发病机理的各种学说</p>
+<p class="syl-item">4、肝性脑病处理原则</p>
+<p class="syl-para">第十八、二十章 胆胰系统疾病（授课2学时）</p>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>急性胰腺炎、肝外胆管结石的临床表现、诊断、鉴别诊断及治疗原则。</p>
+<p class="syl-item">二、<strong class="kw-f">熟悉</strong>急性胰腺炎的病因及发病机制。</p>
+<p class="syl-item">三、<strong class="kw-u">了解</strong>本病的分类及并发症处理。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-para">[概述] 基本概念（轻症、重症胰腺炎的区别）。</p>
+<p class="syl-para">[病因和发病机制] 主要讲解肝外胆管结石（胆源性）内容</p>
+<p class="syl-para">[病理] 主要分为急性水肿型和急性出血坏死型。</p>
+<p class="syl-para">[临床表现]</p>
+<p class="syl-item">1、轻症急性胰腺炎：急性腹痛，向背部放射，中上腹压痛。</p>
+<p class="syl-item">2、重症急性胰腺炎：在轻症基础上，出现器官功能障碍表现（APACHE II评分）。</p>
+<p class="syl-item">3、中度重症急性胰腺炎：介于两者之间，器官衰竭在48小时内恢复。</p>
+<p class="syl-para">[并发症]</p>
+<p class="syl-item">1、局部并发症：胰瘘、假性囊肿、胰腺脓肿、左侧门静脉高压等。</p>
+<p class="syl-item">2、全身并发症：急性呼吸衰竭、急性肾衰竭、消化道出血、胰性脑病、多脏器功能衰竭、慢性胰腺炎等。</p>
+<p class="syl-para">[实验室检查和其他检查]</p>
+<p class="syl-item">1、诊断急性胰腺炎的标志物：淀粉酶、脂肪酶；</p>
+<p class="syl-item">2、反应病理生理变化的实验室检测指标；</p>
+<p class="syl-item">3、胰腺形态学改变：腹部CT分级。</p>
+<p class="syl-para">[诊断与鉴别诊断]</p>
+<p class="syl-item">1、诊断：定性诊断、病情分级、寻找病因。</p>
+<p class="syl-item">2、鉴别诊断：胆石症、消化性溃疡、心肌梗死、急性肠梗阻等。</p>
+<p class="syl-para">[治疗]</p>
+<p class="syl-item">1、治疗原则：去除病因，控制炎症。</p>
+<p class="syl-item">2、监护与器官支持：液体复苏、呼吸功能支持、肠功能维护、连续性血液净化。</p>
+<p class="syl-item">3、减少胰液分泌：禁食、抑制胃酸、生长抑素等。</p>
+<p class="syl-item">4、控制炎症和抗感染。</p>
+<p class="syl-item">5、内镜或外科手术治疗去除病因。</p>
+<p class="syl-item">6、营养支持。</p>
+<p class="syl-item">7、局部并发症的处理。</p>
+<p class="syl-para">[预后] 轻症多在一周左右康复，重症死亡率15%，幸存者往往遗留有并发症。</p>
+<p class="syl-para">[预防]治疗原发病，戒酒，控制血脂。</p>
+<div class="syl-sub-hd">【思政要素和案例】科技创新驱动微创诊疗，中西医结合防治并发症。</div>
+<div class="syl-sub-hd">【教学/难点重点】</div>
+<p class="syl-item">1、急性胰腺炎的病因和发病机制；</p>
+<p class="syl-item">2、急性重症胰腺炎的并发症及处理原则。</p>
+<p class="syl-item">第三、六、九、十六、十九、二十一章 消化道肿瘤（授课2学时）</p>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">一、对比<strong class="kw-m">掌握</strong>消化道肿瘤（食管癌、胃癌、结直肠癌）、实性肿瘤（肝癌、胆管癌、胰腺癌）的病理、临床表现、诊断方法。</p>
+<p class="syl-item">二、<strong class="kw-f">熟悉</strong>消化道肿瘤的病因及发病机制。</p>
+<p class="syl-item">三、<strong class="kw-u">了解</strong>内镜诊断和治疗其中的作用。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-para">[概述] 对比流行病学，明确早期肿瘤概念</p>
+<p class="syl-para">[病因] 主要相关危险因素，比较异同</p>
+<p class="syl-para">[病理] 大体病理与组织病理，对比讲授</p>
+<p class="syl-para">[临床表现]早期症状难以发现，多表现为中晚期症状和体征</p>
+<p class="syl-para">[诊断] 染色内镜，CT，超声内镜等</p>
+<p class="syl-para">[治疗] 早期消化道肿瘤在内镜下切除常可达到根治效果。中晚期肿瘤可采取手术、 放疗、 化疗及内镜治疗或多种方式联合应用。</p>
+<p class="syl-para">[预防]生活习惯、根除幽门螺杆菌、控制乙肝病毒感染等</p>
+<div class="syl-sub-hd">【思政要素和案例】基层医院内镜诊疗能力提升，健康社区早筛早治实践。</div>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1. 对比讲解几种消化道肿瘤（食管、胃、结直肠）的共同点和区别</p>
+<p class="syl-item">2. 对比实体肿瘤与空腔脏器肿瘤的诊疗差异。</p>
+<div class="syl-ch-hd">第二十五章 消化道出血（授课2学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">一、<strong class="kw-f">熟悉</strong>消化道出血的部位及病因。</p>
+<p class="syl-item">二、<strong class="kw-m">掌握</strong>消化道出血的临床表现，诊断和治疗。</p>
+<p class="syl-item">三、<strong class="kw-u">了解</strong>全身性疾病所致消化道出血。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-para">[概述] 消化道出血早期诊断及积极治疗的重要性。</p>
+<p class="syl-para">[病因] 上消化道出血的常见病因包括消化性溃疡、食管胃底静脉曲张破裂出血、急性糜烂出血性胃炎和上消化道肿瘤。中消化道出血的常见病因包括小肠血管畸形、小肠憩室、克罗恩病、NSAIDs药物损伤、各种良恶性肿瘤等。下消化道出血的常见病因包括痔、肛裂、息肉、恶性肿瘤、炎症性病变、憩室、血管病变等。此外还有全身性疾病。</p>
+<p class="syl-para">[临床表现]</p>
+<p class="syl-item">1、呕血与黑便是上消化道出血的表现，便血多为中下消化道出血的表现。</p>
+<p class="syl-item">2、失血性周围循环衰竭：其程度轻重随出血量大小和失血速度而异。</p>
+<p class="syl-item">3、贫血和血象变化。</p>
+<p class="syl-item">4、发热和氮质血症。</p>
+<p class="syl-para">[诊断]</p>
+<p class="syl-item">1、确定消化道出血。</p>
+<p class="syl-item">2、出血程度的评估和周围循环状态的判断。</p>
+<p class="syl-item">3、出血是否停止的判断。</p>
+<p class="syl-item">4、出血部位和病因诊断：病史、体征、影像学检查、重点说明内镜检查的重要意义。</p>
+<p class="syl-para">[治疗]</p>
+<p class="syl-item">1、一般急救措施：卧床休息、保持呼吸道通畅、密切观察心率、血压、尿量、周围循环状态等。</p>
+<p class="syl-item">2、积极补充血容量：输血、林格氏液等以恢复血容量及维持组织灌注。</p>
+<p class="syl-item">3、止血措施：上消化道出血可应用药物、三腔气囊管压迫，内镜治疗，介入治疗，手术治疗。中消化道出血可应用缩血管药物、糖皮质激素、内镜治疗，介入治疗，手术治疗。下消化道出血可应用内镜、介入及手术治疗。</p>
+<p class="syl-para">[预后] 提示预后不良危险性增高的主要因素。</p>
+<div class="syl-sub-hd">【思政要素和案例】落实“健康中国行动”急危重症救治能力提升工程。</div>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1、消化道出血的诊断思路</p>
+<p class="syl-item">2、消化道出血出血量的估计及输血指征</p>
+<p class="syl-item">3、消化道出血的治疗原则</p>
+            </div>
+          </details>
+          <details class="raw-details"><summary>展开：教学内容对课程目标的支撑关系表</summary><div class="raw-details-body"><div class="syl-tbl-wrap"><table class="syl-tbl"><thead><tr>
+<th></th><th>课程目标1</th><th>课程目标2</th><th>课程目标3</th>
+</tr></thead><tbody>
+<tr><td>第一章</td><td>掌握消化系统常见病的基本临床表现、诊断步骤、鉴别诊断方法、治疗原则</td><td>熟悉消化系统结构与功能特点</td><td>了解消化系统疾病近年发展概况</td></tr>
+<tr><td>第二章</td><td>掌握胃食管反流病的基本临床表现、临床分类、诊断与鉴别诊断</td><td>熟悉胃食管反流病的发病机制</td><td>了解胃食管反流病的治疗方法</td></tr>
+<tr><td>第四章</td><td>了解胃炎是一常见病</td><td>掌握本病的临床表现和诊断要点，熟悉鉴别诊断</td><td>掌握本病的治疗原则</td></tr>
+<tr><td>第五章</td><td>掌握本病的临床表现、诊断和治疗</td><td>熟悉本病的鉴别诊断、防治原则和并发症</td><td>熟悉本病的病因和发病机理</td></tr>
+<tr><td>第七章</td><td>掌握肠结核与结核性腹膜炎的临床表现、诊断与治疗</td><td>熟悉发病机理、病理特点及鉴别诊断</td><td>熟悉并发症及处理</td></tr>
+<tr><td>第八章</td><td>掌握溃疡性结肠炎和克罗恩病的临床表现、诊断和治疗</td><td>熟悉溃疡性结肠炎和克罗恩病的鉴别诊断，并发症</td><td>了解溃疡性结肠炎和克罗恩病的病因和发病原理</td></tr>
+<tr><td>第十章</td><td>熟悉功能性消化不良及肠易激综合征的发病率，临床特点</td><td>掌握功能性消化不良及肠易激综合征的诊断标准</td><td>了解肠易激综合征的治疗原则</td></tr>
+<tr><td>第十五章</td><td>掌握肝硬化的临床表现、诊断、鉴别诊断及治疗</td><td>熟悉肝硬化并发症的基本发病机制及治疗原则</td><td>了解肝硬化的分类、病因及病理特征</td></tr>
+<tr><td>第十五章</td><td>掌握肝性脑病的诱因、临床表现、诊断、鉴别诊断及治疗</td><td>熟悉肝性脑病的病因、发病机制</td><td>了解病理，辅助检查</td></tr>
+<tr><td>第十八、二十章</td><td>掌握急性胰腺炎、肝外胆管结石的临床表现、诊断、鉴别诊断及治疗原则</td><td>熟悉急性胰腺炎的病因及发病机制</td><td>了解本病的分类及并发症处理</td></tr>
+<tr><td>第三、六、九、十六、十九、二十一章</td><td>对比掌握消化道肿瘤（食管癌、胃癌、结直肠癌）、实性肿瘤（肝癌、胰腺癌）的病理、临床表现、诊断方法</td><td>熟悉消化道肿瘤的病因及发病机制</td><td>了解内镜诊断和治疗其中的作用</td></tr>
+<tr><td>第二十五章</td><td>熟悉消化道出血的部位及病因</td><td>掌握消化道出血的临床表现，诊断和治疗</td><td>了解全身性疾病所致消化道出血</td></tr>
+</tbody></table></div></div></details>
+        </div>
+      </section>
+      <section class="syl-panel" id="syl-urinary" data-syl-panel="urinary">
+        <div class="syl-panel-hd">
+          <div>
+            <h3>第五篇 · 泌尿系统疾病（8 学时 / 4 讲）</h3>
+            <p class="syl-panel-sub">课本 P466–532 · PDF P497–563 · <strong class="warn-inline">⚠ Audit Not Completed</strong></p>
+          </div>
+          <a class="btn-primary btn-sm" href="./urinary.html">打开本系统学习页 →</a>
+        </div>
+
+        <div class="syl-view-curated">
+          <h4 class="sub-sec-title">精编分层大纲（掌握 / 熟悉 / 已剔除 · 点击模块直达对应章节）</h4>
+          <div class="cur-mod-grid">
+            
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./urinary.html#mod-1">Ⅰ、泌尿系统总论与肾小球疾病概述 ↗</a>
+              <span class="cur-mod-src">第10版 第一章《总论》（课本 P466–472 / PDF P497–503）+ 第二章第一节《肾小球疾病概述》（课本 P473–475 / PDF P504–506）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>肾脏疾病的基本临床表现与四大检查方法（尿液检查、肾功能检查与 eGFR 公式、影像学、病理学）；肾脏疾病四维诊断要点与防治原则；原发性肾小球疾病的分类（临床与病理分型）、发病机制（免疫反应、炎症反应、非免疫因素）及临床表现。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>肾脏解剖结构（肾单位/滤过屏障/球旁器）与三大生理功能复习；肾脏疾病五大常见临床综合征的概念及常见病因。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：本学科进展动态（教材第一章未设专节）；未列大纲的第二章第二/三/四/六/七节及第三～八、十一章；大纲难点提及但第 10 版第一章未设定义专节的白细胞尿/管型尿分类/菌尿及肾活检适应证与禁忌证严守原文不补写。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./urinary.html#mod-2">Ⅱ、肾病综合征（NS） ↗</a>
+              <span class="cur-mod-src">第10版 第二章第五节《肾病综合征》（课本 P480–485 / PDF P511–516）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>肾病综合征的概念、必备诊断条件与病因分类（表 5-2-1）；原发性肾病综合征 5 种病理类型（光镜/免疫荧光/电镜）及其临床特征；4 大常见并发症；诊断（3 方面）与 6 大继发性疾病鉴别诊断；总体治疗原则（一般/利尿/降尿蛋白/并发症防治）及糖皮质激素三大使用原则。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>难治性/激素依赖及抵抗型肾病综合征常用免疫抑制剂（细胞毒药物、钙调神经蛋白抑制剂、吗替麦考酚酯、利妥昔单抗）的适应定位、剂量疗程与主要不良反应。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：肾病综合征【病理生理】专节（据《支撑关系表》目标 2 剔除）；【预后】专节（大纲目标与支撑表未列）；大纲教学内容提及的“肾活检适应证、相对禁忌证及并发症”在第 10 版对应章节未设专节，严守原文不补写。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./urinary.html#mod-3">Ⅲ、急性肾损伤（AKI） ↗</a>
+              <span class="cur-mod-src">第10版 第九章《急性肾损伤》（课本 P518–524 / PDF P549–555）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>AKI 定义与 2012 KDIGO 分期标准（表 5-9-1）；临床表现（ATN 临床三期与全身尿毒症表现）及实验室/辅助检查（血、尿、FENa 公式、影像、肾活检）；四步诊断思路与系统鉴别诊断（含表 5-9-2、PLR 与补液试验、与 CKD 鉴别）；治疗原则、营养与液体管理、高钾/代酸/心衰/感染急症处理及 RRT 紧急透析指征。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>AKI 肾前性（约 55%）、肾性（约 40%，以 ATN 最常见）、肾后性（约 5%）三大解剖分类及常见病因谱。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>了解项：AKI【发病机制和病理生理】专节（含缺血性 ATN 机制演变与肾内病理生理）及【病理】专节（大纲目标栏与《支撑关系表》双方一致定为“了解”）；大纲目标与支撑表未列的【预后】与【预防】专节。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./urinary.html#mod-4">Ⅳ、慢性肾衰竭（CRF / CKD） ↗</a>
+              <span class="cur-mod-src">第10版 第十章《慢性肾衰竭》（课本 P525–532 / PDF P556–563）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>CKD 定义与 K/DOQI 1～5 期分期标准（表 5-10-1）及 CRF 概念；慢性肾衰竭全身九大系统临床表现；诊断与鉴别诊断（与肾前性氮质血症、AKI 鉴别及双肾不缩小特例）；早期防治目标（表 5-10-2）、营养治疗、核心并发症药物处理（尤其高血压、肾性贫血、钙磷代谢紊乱及肾性骨病、高钾/代酸）及 RRT 启动时机。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>CKD 患病率与主要病因（发达国家 vs 我国）；CKD 渐进性发展与急性加重恶化的两类危险因素；CKD 进展的 5 大发病机制及尿毒症症状的 3 大发生机制（小/中/大分子毒素分类）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>未列入大纲的第十一章《肾脏替代治疗》（课本 P533–537 / PDF P564–568）整章剔除，本模块仅忠实收录第十章末尾自带的（四）肾脏替代治疗小节原文。</span></div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="syl-view-raw">
+          <h4 class="sub-sec-title">《内科学》理论课程教学大纲原文（源自官方 DOCX）</h4>
+          <div class="meta-card">
+            <div class="meta-row"><div class="meta-k">课程名称</div><div class="meta-v">内科学-泌尿系统</div></div><div class="meta-row"><div class="meta-k">英文名称</div><div class="meta-v">Internal Medicine -Nephrology</div></div><div class="meta-row"><div class="meta-k">理论学时</div><div class="meta-v">总学时8学时，其中：理论8学时；实验0学时；上机0学时；实践0学时。</div></div><div class="meta-row"><div class="meta-k">教学方式</div><div class="meta-v">翻转式课堂、TBL（基于团队的教学方法）、PBL（基于问题的教学方法）、CBL（基于案例的教学方法）</div></div><div class="meta-row"><div class="meta-k">考核与成绩评定</div><div class="meta-v">【考核方式】章节考试，期末考试。<br />【成绩评定】章节考试50%，期末考试50%</div></div><div class="meta-row"><div class="meta-k">课程描述</div><div class="meta-v">内科学教学强调实践性教学，重点培养学生临床逻辑思维能力、临床实践技能、临床独立处理问题能力，以及临床科研思路。通过肾内科理论教学，使学生掌握肾脏损伤病因、病理生理及发病机制，肾小球疾病病理表现，肾衰竭的肾脏替代治疗以及肾小球肾炎、慢性肾脏病、急性肾损伤、继发性肾脏病、泌尿系感染的病因、临床表现、诊断和防治。</div></div><div class="meta-row"><div class="meta-k">课程目标</div><div class="meta-v">【课程目标1】培养诊治以原发性肾小球疾病、肾病综合征、急性肾损伤和慢性肾衰竭为代表的肾内科疾病的能力。<br />【课程目标2】增进对肾脏疾病治疗目标和治疗手段的了解和运用。<br />【课程目标3】培养医学整体观，提高运用生物-心理-社会医学模式进行诊疗的素质。<br />【课程思政目标】强调立德树人、医德并重、服务人民健康。强化家国情怀与责任担当，弘扬医学人文精神与医德医风，树立科学精神与批判思维，提升法治观念与职业规范，培养职业认同与奉献精神，增强健康意识与公共卫生责任感。</div></div><div class="meta-row"><div class="meta-k">教材及参考资料</div><div class="meta-v">【教材1】葛均波，王辰，王建安主编，《内科学》（第十版），人民卫生出版社，2024.6，国家卫生和计划生育委员会“十四五”规划教材。<br />【参考资料1】王海燕主编，《肾脏病学》（第三版）。</div></div>
+          </div>
+          <details class="raw-details" open>
+            <summary>展开 / 收起：泌尿系统逐讲教学大纲原文条目（共 73 段）</summary>
+            <div class="raw-details-body">
+              <div class="syl-ch-hd">泌尿系统总论+肾小球疾病概述（第一章、第二章第一节，各1学时，共2学时，其中授课2学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-para">培养识别肾脏疾病的能力。</p>
+<p class="syl-para">讲解肾脏结构和功能、肾脏疾病的临床表现，增进对各种肾脏疾病的了解。</p>
+<p class="syl-para">培养解读肾脏疾病常见尿液检测、肾功能检查方法、肾脏病理及相关辅助检查结果的能力。</p>
+<p class="syl-para">讲解肾脏疾病常见的综合征，培养对肾脏疾病诊断及防治的能力。</p>
+<p class="syl-para">扩展肾脏病学科发展动态的了解。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-para">扼要复习肾脏病学有关的解剖，生理学知识。</p>
+<p class="syl-para">重点讲述泌尿系统疾病的临床表现，症状，检查方法、常见的综合征（肾病综合征、肾炎综合征、急进性肾炎综合征等）及防治原则。</p>
+<p class="syl-para">肾小球疾病的概念，原发性肾小球疾病的分类、发病机制（免疫介导损伤、其它炎症介导过程和非免疫、非炎症肾小球损伤过程）及临床表现。</p>
+<p class="syl-para">介绍肾脏病学发展动态。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">强调立德树人、医德并重、服务人民健康。强化家国情怀与责任担当，弘扬医学人文精神与医德医风，树立科学精神与批判思维，提升法治观念与职业规范，培养职业认同与奉献精神，增强健康意识与公共卫生责任感。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-para">蛋白尿、白细胞尿、血尿、管型尿、菌尿等基本概念；肾功能检查方法及评估公式。</p>
+<p class="syl-para">肾脏疾病常见综合征及病因。</p>
+<p class="syl-para">原发性肾小球疾病的临床、病理分型及常见临床表现。</p>
+<p class="syl-para">{见最后}</p>
+<p class="syl-para">肾病综合征（第二章第五节，2学时，其中授课2学时）</p>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-para">提高对肾病综合征的概念、病因及常见继发性因素的掌握能力。</p>
+<p class="syl-para">增进肾病综合征的病理生理认识。</p>
+<p class="syl-para">通过对原发性肾病综合征的病理类型及其临床表现、常见并发症的熟练掌握，培养运用生物-心理-社会医学模式对原发性肾病综合征的诊治的能力。</p>
+<p class="syl-para">增进对原发性肾病综合征的糖皮质激素治疗和常用免疫抑制剂的使用。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-para">病因和发病机理:肾病综合征定义、分类及常见病因，发病机制。</p>
+<p class="syl-para">病理生理:原发性肾病综合征的病理生理。</p>
+<p class="syl-para">病理:原发性肾病综合征的五种病理类型。</p>
+<p class="syl-para">临床表现:大量蛋白尿、低白蛋白血症、水肿及高脂血症。</p>
+<p class="syl-para">原发性肾病综合征不同病理类型的临床特点。</p>
+<p class="syl-para">并发症:感染、血栓及栓塞、急性肾功能衰竭、蛋白质及脂肪代谢紊乱。</p>
+<p class="syl-para">诊断：临床表现及实验室检查。肾活检病理诊断的临床意义、适应症、相对禁忌症及并发症。</p>
+<p class="syl-para">鉴别诊断：与其他以肾病综合征为主要临床表现的继发性肾小球疾病鉴别。</p>
+<p class="syl-para">治疗：一般治疗，利尿对症治疗及特殊免疫治疗；降脂和抗凝治疗。</p>
+<p class="syl-para">预后：决定肾病综合征预后的因素。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">强调立德树人、医德并重、服务人民健康。强化家国情怀与责任担当，弘扬医学人文精神与医德医风，树立科学精神与批判思维，提升法治观念与职业规范，培养职业认同与奉献精神，增强健康意识与公共卫生责任感。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-para">原发性肾病综合征的不同病理类型特点（光镜、电镜及免疫荧光特点）。</p>
+<p class="syl-para">肾病综合征的临床表现和并发症；肾病综合征的诊断及治疗（糖皮质激素的使用，常用的免疫抑制剂等）。</p>
+<p class="syl-para">急性肾损伤（第九章，2学时，其中授课2学时)</p>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-para">提高对急性肾损伤的定义及分期标准的掌握，进一步增加对急性肾损伤的常见病因的认识。</p>
+<p class="syl-para">增进对急性肾损伤的发病机制及病理表现的了解。</p>
+<p class="syl-para">通过对急性肾损伤的临床表现、实验室检查的掌握，培养学生运用生物-心理-社会医学模式对急性肾损伤（肾前性、肾性及肾后性的临床思路）进行诊断及鉴别诊断能力，并进一步对急性肾损伤分期，掌握疾病治疗原则，提高对该病的诊治能力。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-para">概述急性肾损伤的肾前性、肾性、肾后性三大病因及其发病机制。</p>
+<p class="syl-para">重点讲解急性肾小管坏死的病因、病理、临床表现，急性肾损伤的诊断及鉴别诊断。</p>
+<p class="syl-para">讲解急性肾损伤的治疗：特别是早期病因干预治疗、并发症（包括高钾、酸中毒、感染、心力衰竭等）的处理及肾脏替代治疗。</p>
+<p class="syl-para">概述急性肾损伤的预防。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">强调立德树人、医德并重、服务人民健康。强化家国情怀与责任担当，弘扬医学人文精神与医德医风，树立科学精神与批判思维，提升法治观念与职业规范，培养职业认同与奉献精神，增强健康意识与公共卫生责任感。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-para">急性肾损伤的定义及分期。</p>
+<p class="syl-para">急性肾损伤的临床表现、诊断及鉴别诊断、治疗原则及并发症的处理。</p>
+<p class="syl-para">慢性肾衰竭（第十章，2学时，其中授课2学时)</p>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-para">提高对慢性肾脏病的定义和分期的掌握能力。</p>
+<p class="syl-para">增进对慢性肾脏病的病因、疾病进展的危险因素及发病机制认识。</p>
+<p class="syl-para">通过对慢性肾衰竭的临床表现的熟练掌握，培养运用生物-心理-社会医学模式对慢性肾衰竭的诊治的能力。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-para">概述：慢性肾脏病的定义，分期标准。</p>
+<p class="syl-para">病因和发病原理：重点讲授慢性肾脏病的致病因素及肾功能恶化的机制。</p>
+<p class="syl-para">临床表现：着重讲授慢性肾衰竭累及全身各系统出现的相应症状。</p>
+<p class="syl-para">诊断与鉴别诊断：重点讲授慢性肾脏病与急性肾损伤的鉴别诊断思路。</p>
+<p class="syl-para">预防和治疗：重点讲解早期防治措施、营养治疗、并发症的药物治疗及肾脏替代治疗。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">强调立德树人、医德并重、服务人民健康。强化家国情怀与责任担当，弘扬医学人文精神与医德医风，树立科学精神与批判思维，提升法治观念与职业规范，培养职业认同与奉献精神，增强健康意识与公共卫生责任感。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-para">慢性肾脏病的定义及分期。</p>
+<p class="syl-para">慢性肾衰竭的临床表现、治疗原则，</p>
+<p class="syl-para">慢性肾衰竭并发症的处理，重点高血压、肾性贫血、钙磷代谢紊乱及肾性骨病的治疗，</p>
+            </div>
+          </details>
+          <details class="raw-details"><summary>展开：教学内容对课程目标的支撑关系表</summary><div class="raw-details-body"><div class="syl-tbl-wrap"><table class="syl-tbl"><thead><tr>
+<th></th><th>课程目标1</th><th>课程目标2</th><th>课程目标3</th><th>课程目标4</th><th>课程目标5</th>
+</tr></thead><tbody>
+<tr><td>泌尿系统总论、肾小球疾病概述</td><td>复习肾脏的结构与生理功能</td><td>重点掌握肾脏疾病的检查方法及临床意义、病理学检查、影像学检查</td><td>熟悉肾脏疾病常见综合征的概念及常见病因；掌握肾脏疾病的诊断要点及防治原则</td><td>掌握原发性肾小球疾病的分类、发病机制及临床表现</td><td>了解本学科的进展动态</td></tr>
+<tr><td>肾病综合征</td><td>掌握肾病综合征的概念、病因及常见继发性因素</td><td>了解肾病综合征的病理生理</td><td>掌握原发性肾病综合征的病理类型及其临床表现、常见并发症</td><td>重点掌握原发性肾病综合征的诊断、鉴别诊断及治疗原则</td><td>掌握原发性肾病综合征糖皮质激素治疗原则</td></tr>
+<tr><td>急性肾损伤</td><td>掌握急性肾损伤的定义及分期标准，熟悉急性肾损伤的常见病因</td><td>掌握急性肾损伤的临床表现、实验室检查</td><td>掌握急性肾损伤的临床诊断思路、鉴别诊断、分期及治疗原则</td><td>了解急性肾损伤的发病机制及病理表现</td><td></td></tr>
+<tr><td>慢性肾衰竭</td><td>掌握慢性肾脏病的定义和分期，熟悉慢性肾脏病的病因</td><td>掌握慢性肾衰竭的临床表现、诊断和鉴别诊断</td><td>掌握慢性肾衰竭的预防和治疗原则，尤其并发症的处理</td><td>熟悉慢性肾脏病的病因、疾病进展的危险因素及发病机制</td><td></td></tr>
+</tbody></table></div></div></details>
+        </div>
+      </section>
+      <section class="syl-panel" id="syl-hematology" data-syl-panel="hematology">
+        <div class="syl-panel-hd">
+          <div>
+            <h3>第六篇 · 血液系统疾病（8 学时 / 8 讲）</h3>
+            <p class="syl-panel-sub">课本 P544–623 · PDF P575–654 · <strong class="warn-inline">⚠ Audit Not Completed</strong></p>
+          </div>
+          <a class="btn-primary btn-sm" href="./hematology.html">打开本系统学习页 →</a>
+        </div>
+
+        <div class="syl-view-curated">
+          <h4 class="sub-sec-title">精编分层大纲（掌握 / 熟悉 / 已剔除 · 点击模块直达对应章节）</h4>
+          <div class="cur-mod-grid">
+            
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./hematology.html#mod-1">Ⅰ、贫血概述 ↗</a>
+              <span class="cur-mod-src">第10版 第二章《贫血概述》（课本 P544–548 / PDF P575–579）· 0.5学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>贫血的常见分类及其临床表现（含国内与 WHO 贫血定义阈值及血浆容量干扰前提）。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>不同类型贫血的血常规特点（细胞学参数 MCV/MCH/MCHC、Hb 严重度分层、网织红细胞及外周血涂片特征）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>严格按【对应课程目标】剔除仅列于教学内容/难点重点但未列入目标的骨髓检查（涂片与活检）、发病机制实验室检查、临床诊断步骤、鉴别诊断及对症/对因治疗。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./hematology.html#mod-2">Ⅱ、缺铁性贫血（IDA） ↗</a>
+              <span class="cur-mod-src">第10版 第三章《缺铁性贫血》（课本 P549–551 / PDF P580–582）· 0.5学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>缺铁性贫血的常见病因、临床表现、诊断及治疗。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>缺铁性贫血的血常规、铁蛋白等实验室检查特点。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>严格按【对应课程目标】剔除流行病学调查、正常铁代谢生理详述、发病机制详述、预后与预防专节。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./hematology.html#mod-3">Ⅲ、再生障碍性贫血（AA） ↗</a>
+              <span class="cur-mod-src">第10版 第五章《再生障碍性贫血》（课本 P555–558 / PDF P586–589）· 1学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>再生障碍性贫血的常见病因、临床表现、诊断及治疗。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>再生障碍性贫血的血常规、骨髓细胞学、EPO 等特异性实验室检查特点（注：第 10 版第 5 章实验室检查未列血清 EPO 检测）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>严格按【对应课程目标】剔除流行病学、三种发病机制（干祖细胞/微环境/免疫）专述、疗效标准（CR/PR/NR）、预防与预后专节；所有分型与治疗严格忠实第 10 版原文。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./hematology.html#mod-4">Ⅳ、白血病（急性白血病 + 慢性髓系白血病） ↗</a>
+              <span class="cur-mod-src">第10版 第九章《白血病》第一～三节（课本 P576–588 / PDF P607–619；全章至 P590/PDF P621，已剔除第四节 CLL）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>白血病的临床表现和 MICM 检查（覆盖急性白血病 AML/ALL 与慢性髓系白血病 CML）。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>白血病的诊断和治疗（含鉴别诊断、一般支持治疗、按危险度分层的抗白血病治疗与 CML 疗效监测，初步形成白血病诊疗思路）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>严格按大纲教学内容与确认边界剔除第九章第四节《慢性淋巴细胞白血病》（课本 P588–590 / PDF P619–621），并按目标栏剔除发病情况、病因发病机制（含“二次打击”学说）及预后专节。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./hematology.html#mod-5">Ⅴ、淋巴瘤（全章仅【熟悉】层，无【掌握】项） ↗</a>
+              <span class="cur-mod-src">第10版 第十章《淋巴瘤》（课本 P591–599 / PDF P622–630）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>（本模块大纲【对应课程目标】未设“掌握”条目——切换“仅看掌握”时本模块不展示核心卡片。）</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>淋巴瘤的诊断方法和治疗原则（涵盖活检病理与免疫分型诊断路径、关键影像/实验室检查、Ann Arbor 临床分期、鉴别诊断、HL 与惰性/侵袭性 NHL 治疗原则及方案）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>严格剔除了解项“WHO 2022 分类和临床特征”（含第 10 版表 6-10-2 WHO 2016 大表、HL 亚型病理细节、9 种 NHL 特征及临床表现专节），并剔除病因发病机制、流行病学及预后（含 IPI 表 6-10-4）；仅在治疗原则中保留最小必要分层标签（HL / 惰性 NHL / 侵袭性 NHL / DLBCL / 胃 MALT 等）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./hematology.html#mod-6">Ⅵ、多发性骨髓瘤（MM） ↗</a>
+              <span class="cur-mod-src">第10版 第十一章《多发性骨髓瘤》（课本 P600–604 / PDF P631–635）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>多发性骨髓瘤的临床表现和诊断标准（含活动性与冒烟性诊断标准及直接支撑的实验室/影像核心指标与鉴别诊断）。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>多发性骨髓瘤的分型分期（12 种亚型 + DS / ISS / R-ISS 分期）和治疗原则与方案。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>严格按【对应课程目标】剔除流行病学、病因和发病机制及预后专节（中位生存期详述）；表 6-11-4 按第 10 版原文同步收录 ISS 与 R-ISS。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./hematology.html#mod-7">Ⅶ、出血性疾病概述（正常止凝血机制 + 分类与诊断步骤） ↗</a>
+              <span class="cur-mod-src">第10版 第十四章《出血性疾病概述》（课本 P612–619 / PDF P643–650）· 0.5学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>正常的止血和凝血机理（血管/血小板/凝血三因素、14 个凝血因子特性、传统瀑布三阶段与现代双阶段凝血学说、抗凝及纤溶机制）。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>出血性疾病的分类和诊断步骤（五大病因分类、病史体检鉴别、筛选与确诊试验、五步程序性诊断）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>严格按【对应课程目标】剔除标为“了解”的【出血性疾病的防治】全节（含病因防治、止血药物、促血小板药物、局部处理及免疫/血浆置换/手术/中药/基因治疗）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./hematology.html#mod-8">Ⅷ、原发免疫性血小板减少症（ITP） ↗</a>
+              <span class="cur-mod-src">第10版 第十五章《紫癜性疾病》第二节（课本 P622–623 / PDF P653–654；已剔除第一节过敏性紫癜与第三节 TTP）· 1.5学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>ITP 的诊断要点（含诊断直接必需的临床表现简述、实验室检查与骨髓巨核细胞成熟障碍、排除性诊断 4 要点、出血评分、鉴别诊断与 5 型分期）。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>ITP 的治疗方法（观察随访指征、一般治疗、急症处理、一线/二线/三线阶梯方案）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>严格按【对应课程目标】剔除标为“了解”的【病因和发病机制】全节；并彻底剔除同章第一节《过敏性紫癜》（P620–621）与第三节《血栓性血小板减少性紫癜》（P624–625）；第 10 版原文仅述成人 ITP，未展开儿童 ITP 对比与血块退缩试验。</span></div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="syl-view-raw">
+          <h4 class="sub-sec-title">《内科学》理论课程教学大纲原文（源自官方 DOCX）</h4>
+          <div class="meta-card">
+            <div class="meta-row"><div class="meta-k">课程名称</div><div class="meta-v">内科学-血液病</div></div><div class="meta-row"><div class="meta-k">英文名称</div><div class="meta-v">Internal Medicine -Hematology</div></div><div class="meta-row"><div class="meta-k">理论学时</div><div class="meta-v">总学时8学时，其中：理论8学时；实验0学时；上机0学时；实践0学时。</div></div><div class="meta-row"><div class="meta-k">教学方式</div><div class="meta-v">PBL（基于问题的教学方法）、CBL（基于案例的教学方法）等。</div></div><div class="meta-row"><div class="meta-k">考核与成绩评定</div><div class="meta-v">【考核方式】例如：课堂互动、章节考试、期中考试、期末考试、课程论文等，鼓励过程性的多元考核。<br />【成绩评定】例如：课堂研讨占10%，单元测试10%，期中考核20%，期末考核50%，课程论文10%。</div></div><div class="meta-row"><div class="meta-k">课程描述</div><div class="meta-v">血液病学是包括原发于造血系统疾病和主要累及造血系统疾病。通过血液病学的讲授，可以使学生掌握血液系统疾病常见的症状、体征，初步掌握血液系统常见病、多发病的诊断、与治疗, 了解血液系统疾病与全身疾病的关系。本科教学着重于培养学生在血液系统疾病方面的基本知识和基本操作技能。</div></div><div class="meta-row"><div class="meta-k">课程目标</div><div class="meta-v">【课程目标1】初步掌握血液系统疾病常见的症状、体征及诊断。<br />【课程目标2】解血液系统疾病与全身疾病的关系。<br />【课程目标3】培养学生在血液系统疾病方面的基本知识和基本操作技能。<br />【课程思政目标】促进学生主动探索理论知识，同时传承医德医风，鉴定医学理想信念。</div></div><div class="meta-row"><div class="meta-k">教材及参考资料</div><div class="meta-v">【教材1】 葛均波，王辰，王建安主编, 《内科学》(第10版),人民卫生出版社 2024.7；国家卫生和计划生育委员会“十四五”规划教材。<br />【参考资料1】张之南，郝玉书，赵永强，王建祥编著，《血液病学》（第二版）<br />【参考资料2】邓家栋，杨崇礼，杨天楹，王振义主编，《临床血液病学》（第二版）<br />【参考资料3】陈竺，陈赛娟译，《威廉姆斯血液学》（第九版）。</div></div>
+          </div>
+          <details class="raw-details" open>
+            <summary>展开 / 收起：血液系统逐讲教学大纲原文条目（共 176 段）</summary>
+            <div class="raw-details-body">
+              <div class="syl-ch-hd">知识点一/第一章 贫血概述（共0.5学时，其中授课0.1学时，研讨0.1学时，实验0.1学时、上机0.1学时、考试0.1学时等）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">第一、<strong class="kw-m">掌握</strong>贫血的常见分类及其临床表现。</p>
+<p class="syl-item">第二、<strong class="kw-f">熟悉</strong>不同类型贫血的血常规特点。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">第一、分类：营养性贫血、溶血性贫血、再生障碍性贫血、失血性贫血。</p>
+<p class="syl-item">第二、临床表现：急性失血性贫血、慢性贫血、溶血性贫血、再生障碍性贫血时乏力、头晕等共性临床表现即特异性临床表现。</p>
+<p class="syl-item">第三、实验室检查：不同类型贫血血象、骨髓象的特点，血液生化改变，溶血特异性实验室检查特点。</p>
+<p class="syl-item">第四、诊断和鉴别诊断：主要依据实验室检查来诊断和鉴别诊断，组织化学和分子生物学检查在辅助诊断上的意义。</p>
+<p class="syl-item">第五、治疗：一般治疗及治疗原则。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">本例以贫血为教学内容，教学过程中引入再贫血案例，应用临床病例讨论教学的方案促进学生主动探索理论知识，同时传承医德医风，鉴定医学理想信念。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-para">贫血的诊断及鉴别诊断。</p>
+<div class="syl-ch-hd">知识点二/第二章 缺铁性贫血（共0.5学时，其中授课0.1学时，研讨0.1学时，实验0.1学时、上机0.1学时、考试0.1学时等）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">第一、<strong class="kw-m">掌握</strong>缺铁性贫血的常见病因、临床表现，诊断及治疗。</p>
+<p class="syl-item">第二、<strong class="kw-f">熟悉</strong>缺铁性贫血的血常规、铁蛋白等实验室检查特点。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">第一、分类：铁摄入不足、铁丢失过多。</p>
+<p class="syl-item">第二、临床表现：乏力、头晕、心慌等共性临床表现及特异性临床表现。</p>
+<p class="syl-item">第三、实验室检查：排查失血原因的实验室检查。缺铁性贫血血象、骨髓象的特点，血液生化改变，特异性实验室检查特点。</p>
+<p class="syl-item">第四、诊断和鉴别诊断：主要依据实验室检查来诊断和鉴别诊断，组织化学和分子生物学检查在辅助诊断上的意义。</p>
+<p class="syl-item">第四、治疗</p>
+<p class="syl-para">一般治疗。</p>
+<p class="syl-para">积极查找原发病，纠正慢性失血。</p>
+<p class="syl-para">补铁治疗，方式，剂量，时间。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">本例以缺铁性贫血为教学内容，教学过程中引入缺铁性贫血案例，应用临床病例讨论教学的方案促进学生主动探索理论知识，同时传承医德医风，鉴定医学理想信念。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-para">缺铁性贫血的诊断及鉴别诊断。</p>
+<div class="syl-ch-hd">知识点三/第三章 再生障碍性贫血（共1学时，其中授课0.5学时，研讨0.2学时，实验0.1学时、上机0.1学时、考试0.1学时等）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>再生障碍性贫血的常见病因、临床表现，诊断及治疗。</p>
+<p class="syl-item">二、<strong class="kw-f">熟悉</strong>再生障碍性贫血的血常规、骨髓细胞学、EPO等特异性实验室检查特点。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">第一、分型：普通型再生障碍性贫血，重度再生障碍性贫血，极重度再生障碍性贫血。</p>
+<p class="syl-item">第二、临床表现：再生障碍性贫血临床表现，及其他系（粒系、血小板）受累后临床表现。</p>
+<p class="syl-item">第三、实验室检查：再生障碍性贫血血象、骨髓象的特点，血液生化改变。</p>
+<p class="syl-item">第四、诊断和鉴别诊断：主要依据实验室检查来诊断和鉴别诊断，组织化学和分子生物学检查在辅助诊断上的意义。</p>
+<p class="syl-item">第四、治疗</p>
+<p class="syl-para">一般治疗，支持治疗。</p>
+<p class="syl-para">异基因造血干细胞移植治疗。</p>
+<p class="syl-para">不适合移植患者治疗：三联IST(hATG、环孢素、艾曲泊帕)。</p>
+<p class="syl-para">低强度治疗。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">本例以再生障碍性贫血为教学内容，教学过程中引入再生障碍性贫血案例，应用临床病例讨论教学的方案促进学生主动探索理论知识，同时传承医德医风，鉴定医学理想信念。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-para">再生障碍性贫血的诊断及鉴别诊断。</p>
+<div class="syl-ch-hd">知识点四/第四章白血病（共2学时，其中授课1学时，研讨0.3学时，实验0.2学时、上机0.3学时、考试0.2学时等）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-para">掌握白血病的临床表现和MICM检查。</p>
+<p class="syl-para">熟悉白血病的诊断和治疗。</p>
+<p class="syl-para">初步形成白血病的诊疗思路。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">一、介绍白血病的定义、分类、发病率、病因、发病机制。</p>
+<p class="syl-item">二、讲解急性髓系白血病和急性淋巴细胞白血病的FAB及WHO分型。</p>
+<p class="syl-item">三、重点讲述急性白血病的临床表现。</p>
+<p class="syl-item">四、重点讲述急性白血病的实验室检查（MICM）。</p>
+<p class="syl-item">五、讲解急性白血病的诊断、鉴别诊断。</p>
+<p class="syl-item">六、介绍不同类型急性白血病的危险度分层。</p>
+<p class="syl-item">七、讲解急性白血病的治疗策略及不同类型急性白血病的治疗方案。</p>
+<p class="syl-item">八、介绍不同类型急性白血病的预后。</p>
+<p class="syl-item">九、介绍慢性髓性白血病的定义、发病率。</p>
+<p class="syl-item">十、讲解慢性髓性白血病的发病机制。</p>
+<p class="syl-item">十一、讲解慢性髓性白血病的分期。</p>
+<p class="syl-item">十二、重点讲述慢性髓性白血病的临床表现。</p>
+<p class="syl-item">十三、重点讲述慢性髓性白血病的实验室检查。</p>
+<p class="syl-item">十四、讲解慢性髓性白血病的诊断、鉴别诊断。</p>
+<p class="syl-item">十五、讲解慢性髓性白血病的治疗。</p>
+<p class="syl-item">十六、介绍慢性髓性白血病的预后及随访。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">本例以白血病为教学内容，教学过程中引入白血病案例，应用临床病例讨论教学的方案促进学生主动探索理论知识，同时传承医德医风，鉴定医学理想信念。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">一、白血病的临床症状及体征。</p>
+<p class="syl-item">二、白血病的MICM检查。</p>
+<div class="syl-ch-hd">知识点五/第五章淋巴瘤（共2学时，其中授课1学时，研讨0.3学时，实验0.2学时、上机0.3学时、考试0.2学时等）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">一、<strong class="kw-u">了解</strong>淋巴瘤的WHO 2022分类和临床特征。</p>
+<p class="syl-item">二、<strong class="kw-f">熟悉</strong>淋巴瘤的诊断方法和治疗原则。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">一、一般概念，发病率。</p>
+<p class="syl-item">二、病因和发病机理。</p>
+<p class="syl-para">病毒感染和免疫缺陷。</p>
+<p class="syl-item">三、病理和分类。</p>
+<p class="syl-para">典型淋巴瘤的淋巴结病理学特征。</p>
+<p class="syl-para">分为霍奇金淋巴瘤和非霍奇金淋巴瘤两大类。</p>
+<p class="syl-para">介绍该两大类淋巴瘤的新分类法。</p>
+<p class="syl-item">四、临床表现</p>
+<p class="syl-para">全身症状。</p>
+<p class="syl-para">淋巴结肿大。</p>
+<p class="syl-para">淋巴结结外受累。</p>
+<p class="syl-item">五、实验室检查</p>
+<p class="syl-para">血液和骨髓象。</p>
+<p class="syl-para">化验检查。</p>
+<p class="syl-para">影像学检查。</p>
+<p class="syl-para">病理学检查。</p>
+<p class="syl-item">六、诊断和鉴别诊断</p>
+<p class="syl-para">明确类型和分期，要与引起淋巴结肿大以及发热为主要表现的其他疾病相鉴别。淋巴活检病理学及免疫学分型诊断。</p>
+<p class="syl-item">七、治疗</p>
+<p class="syl-para">化学治疗：适应证和常用药介绍，联合化疗如COP、CHOP、BACOP、Hyper-CVAD等方案。</p>
+<p class="syl-para">生物治疗：利妥昔单抗、替雷利珠单抗、BTK抑制剂、CAR-T细胞治疗、干扰素等。</p>
+<p class="syl-para">放射治疗：放射治疗的适应症。</p>
+<p class="syl-para">造血干细胞移植。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">本例以淋巴瘤为教学内容，教学过程中引入白血病案例，应用临床病例讨论教学的方案促进学生主动探索理论知识，同时传承医德医风，鉴定医学理想信念。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">一、淋巴瘤的诊断及鉴别诊断。</p>
+<p class="syl-item">二、淋巴瘤的治疗原则。</p>
+<div class="syl-ch-hd">知识点六/第六章多发性骨髓瘤（共2学时，其中授课1.5学时，研讨0.2学时，实验0.1学时、上机0.1学时、考试0.1学时等）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-para">掌握多发性骨髓瘤临床表现和诊断标准。</p>
+<p class="syl-para">熟悉多发性骨髓瘤的分型分期和治疗原则。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">一、多发性骨髓瘤的病理生理过程和临床表现。</p>
+<p class="syl-item">二、实验室检查（包括血液学、骨髓、细胞遗传学及影像学检查）。</p>
+<p class="syl-item">三、诊断标准（症状性骨髓瘤和冒烟性骨髓瘤的诊断标准）和鉴别诊断。</p>
+<p class="syl-item">四、多发性骨髓瘤的临床分期（DS分期和ISS分期）和分型。</p>
+<p class="syl-item">五、治疗原则。</p>
+<p class="syl-item">六、治疗方案（诱导治疗、自体干细胞移植、巩固治疗、维持治疗、支持治疗）。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">本例以多发性骨髓瘤为教学内容，教学过程中引入多发性骨髓瘤案例，应用临床病例讨论教学的方案促进学生主动探索理论知识，同时传承医德医风，鉴定医学理想信念。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-para">多发性骨髓瘤的临床表现和诊断标准。</p>
+<div class="syl-ch-hd">知识点七/第七章出凝血性疾病概述（共0.5学时，其中授课0.1学时，研讨0.1学时，实验0.1学时、上机0.1学时、考试0.1学时等）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">一、<strong class="kw-m">掌握</strong>正常的止血和凝血机理。</p>
+<p class="syl-item">二、<strong class="kw-f">熟悉</strong>出血性疾病的分类和诊断步骤。</p>
+<p class="syl-item">三、<strong class="kw-u">了解</strong>出血性疾病的治疗原则。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">一、概述：简单介绍出血性疾病的定义。</p>
+<p class="syl-item">二、正常止血机制</p>
+<p class="syl-para">血管因素在止血中的作用及机制。</p>
+<p class="syl-para">血小板在止血中作用及机制。</p>
+<p class="syl-para">凝血机制在止血中的地位，纤溶系统的组成、作用机制。</p>
+<p class="syl-para">简单介绍凝血过程中三个阶段，指出内源性和外源性凝血过程。</p>
+<p class="syl-item">三、分类</p>
+<p class="syl-para">血管因素所致的出血性疾病。</p>
+<p class="syl-para">血小板质和量的异常。</p>
+<p class="syl-para">凝血因子异常。</p>
+<p class="syl-item">四、诊断</p>
+<p class="syl-para">临床诊断步骤，着重注意病史和临床症状、体格检查，尤其是家族史、药物及毒物接触史。</p>
+<p class="syl-para">实验室检查的主要项目：过筛试验和特殊检查的选择及临床意义，有关血小板功能检查的实验及意义，凝血因子缺乏的特殊检查及抑制物分析。</p>
+<p class="syl-para">分类及鉴别血管/血小板性因素所致的出血性疾病与凝血因子缺乏所致的出血性疾病。</p>
+<p class="syl-item">五、防治</p>
+<p class="syl-para">扼要叙述消除病因和预防出血。</p>
+<p class="syl-para">简要介绍常用的止血措施。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">本例以出凝血性疾病为教学内容，教学过程中引入出凝血性疾病案例，应用临床病例讨论教学的方案促进学生主动探索理论知识，同时传承医德医风，鉴定医学理想信念。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">一、内源性和外源性凝血过程。</p>
+<p class="syl-item">二、出血性疾病的分类和诊断步骤。</p>
+<div class="syl-ch-hd">知识点八/第八章原发免疫性血小板减少症（共1.5学时，其中授课1学时，研讨0.2学时，实验0.1学时、上机0.1学时、考试0.1学时等）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">一、<strong class="kw-u">了解</strong>原发免疫性血小板减少症（ITP）的发病机理。</p>
+<p class="syl-item">二、<strong class="kw-m">掌握</strong>诊断要点。</p>
+<p class="syl-item">三、<strong class="kw-f">熟悉</strong>治疗方法。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">一、概述：介绍本病的定义和发病率。</p>
+<p class="syl-item">二、病因和发病机理：简述免疫异常在血小板破坏、血小板生成障碍中的作用及其机制，<strong class="kw-u">了解</strong>成人与儿童在病因及发病机理的区别。</p>
+<p class="syl-item">三、临床表现：介绍ITP的常见临床表现，<strong class="kw-u">了解</strong>成人与儿童ITP在起病及病程方面按的区别。</p>
+<p class="syl-item">四、实验室检查：血小板计数和形态、出血时间、凝血时间、血块退缩试验、束臂试验、骨髓象（重点讲述巨核细胞成熟障碍）、抗血小板自身抗体。</p>
+<p class="syl-item">五、诊断和鉴别诊断</p>
+<p class="syl-para">本病临床诊断要点及注意事项。</p>
+<p class="syl-para">鉴别诊断 与其他自身免疫性疾病、急性白血病、再生障碍性贫血、淋巴系统增殖性疾病、MDS、Evans、TTP、DIC、普通变异性免疫缺陷病、假性血小板减少、脾功能亢进等的鉴别。</p>
+<p class="syl-item">六、治疗</p>
+<p class="syl-item">1、ITP的急症处理。</p>
+<p class="syl-item">2、ITP的一线治疗。</p>
+<p class="syl-item">3、ITP的二线治疗。</p>
+<p class="syl-item">4、支持治疗：止血药物，输血适应证等。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-para">本例以原发免疫性血小板减少症为教学内容，教学过程中引入原发免疫性血小板减少症案例，应用临床病例讨论教学的方案促进学生主动探索理论知识，同时传承医德医风，鉴定医学理想信念。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">一、ITP的鉴别诊断。</p>
+<p class="syl-item">二、ITP的急症处理。</p>
+<p class="syl-item">三、ITP的一线治疗。</p>
+            </div>
+          </details>
+          <details class="raw-details"><summary>展开：教学内容对课程目标的支撑关系表</summary><div class="raw-details-body"><div class="syl-tbl-wrap"><table class="syl-tbl"><thead><tr>
+<th></th><th>课程目标1</th><th>课程目标2</th><th>课程目标3</th>
+</tr></thead><tbody>
+<tr><td>第一章/
+知识点1</td><td>掌握贫血的常见分类及其临床表现</td><td>熟悉不同类型贫血的血常规特点</td><td></td></tr>
+<tr><td>第二章</td><td>掌握缺铁性贫血的常见病因、临床表现，诊断及治疗</td><td>第二、熟悉缺铁性贫血的血常规、铁蛋白等实验室检查特点</td><td></td></tr>
+<tr><td>第三章</td><td>掌握再生障碍性贫血的常见病因、临床表现，诊断及治疗</td><td>熟悉再生障碍性贫血的血常规、骨髓细胞学、EPO等特异性实验室检查特点</td><td></td></tr>
+<tr><td>第四章</td><td>掌握白血病的临床表现和MICM检查</td><td>熟悉白血病的诊断和治疗</td><td>初步形成白血病的诊疗思路</td></tr>
+<tr><td>第五章</td><td>了解淋巴瘤的WHO 2022分类和临床特征</td><td>熟悉淋巴瘤的诊断方法和治疗原则</td><td></td></tr>
+<tr><td>第六章</td><td>掌握多发性骨髓瘤临床表现和诊断标准</td><td>熟悉多发性骨髓瘤的分型分期和治疗原则</td><td></td></tr>
+<tr><td>第七章</td><td>掌握正常的止血和凝血机理</td><td>熟悉出血性疾病的分类和诊断步骤</td><td>了解出血性疾病的治疗原则</td></tr>
+<tr><td>第八章</td><td>、了解原发免疫性血小板减少症（ITP）的发病机理</td><td>掌握诊断要点</td><td>熟悉治疗方法</td></tr>
+</tbody></table></div></div></details>
+        </div>
+      </section>
+      <section class="syl-panel" id="syl-endocrine" data-syl-panel="endocrine">
+        <div class="syl-panel-hd">
+          <div>
+            <h3>第七篇 · 内分泌和代谢性疾病（10 学时 / 5 讲）</h3>
+            <p class="syl-panel-sub">课本 P654–745 · PDF P685–776 · <strong class="warn-inline">⚠ Audit Not Completed</strong></p>
+          </div>
+          <a class="btn-primary btn-sm" href="./endocrine.html">打开本系统学习页 →</a>
+        </div>
+
+        <div class="syl-view-curated">
+          <h4 class="sub-sec-title">精编分层大纲（掌握 / 熟悉 / 已剔除 · 点击模块直达对应章节）</h4>
+          <div class="cur-mod-grid">
+            
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./endocrine.html#mod-1">Ⅰ、内分泌和代谢疾病总论 ↗</a>
+              <span class="cur-mod-src">第10版 第七篇 第一章《总论》（课本 P654–662 / PDF P685–693）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>（目标栏“记忆”+内容栏内嵌“掌握”）神经内分泌系统生理及病理理论基础（激素分泌节律、脉冲性、各层次反馈调节及在内分泌功能诊断中的意义、三大系统网络）；常见内分泌与代谢疾病的常用诊断方法（功能/定位/病因）和防治原则（亢进与减退）。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>（目标栏“理解”+内容栏内嵌“熟悉”）临床内分泌学的范围及其重要性；激素的化学分类、合成释放、分泌途径、转运代谢与胞内/膜受体作用原理。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>与临床各科密切相关性、国内外内分泌学发展状况、激素在发病机制与药物基因学中的意义（均标“了解”）；本章第一节“三、代谢（营养素与能量代谢）”未纳入目标栏，不设专节展开。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./endocrine.html#mod-2">Ⅱ、甲状腺功能亢进症（Graves 病） ↗</a>
+              <span class="cur-mod-src">第10版 第五章《甲状腺疾病》第一节（课本 P686–692 / PDF P717–723）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>（目标栏“记忆”）Graves 病的临床表现（含特殊临床表现）、诊断要点及鉴别诊断；抗甲状腺药物（ATD）的适应证与副作用（含实用支撑：机制、分期用法疗程及一般/β阻滞辅助）；甲状腺功能亢进症危象的诱因、临床表现及处理原则。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>大纲本讲【对应课程目标】仅设“记忆”与“了解”两档，未设“理解/熟悉”项。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>¹³¹I 同位素治疗与手术治疗（适应证/禁忌/剂量/术前准备/并发症）、Graves 病病因分类与自身免疫发病机制、病理改变与病理生理改变（均标“了解”）；目标栏未列之 GO 专项治疗与妊娠期甲亢治疗专述；同章第 2～5 节（甲减、甲状腺炎、甲状腺肿、结节与甲状腺癌）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./endocrine.html#mod-3">Ⅲ、糖尿病与糖尿病酮症酸中毒（DKA） ↗</a>
+              <span class="cur-mod-src">第10版 第八章《糖尿病》第一、二节（课本 P724–745 / PDF P755–776）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>糖尿病的诊断标准（含 WHO 糖代谢分类、OGTT、HbA1c 及 GDM）；糖尿病酮症酸中毒（DKA）的诊断依据（含最小临床线索与酸中毒分级）和治疗原则。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>糖尿病的分型（2019 WHO 6 类）、病因和发病机制；临床表现和常见并发症（含 CKD-GA 分期与 DR 两型六期）；口服降糖药物（7 大类）的种类、适应证与禁忌证，以及胰岛素的种类、适应证、治疗原则和方法（附注注射剂 GLP-1RA 精要）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>糖尿病基本概念与流行病学数据、糖尿病综合治疗原则专节（五驾马车/健康教育/医学营养 MNT/运动/TIR监测/代谢手术/移植/慢性并发症防治/妊娠及围术期管理/预防）、高渗高血糖综合征（HHS，第八章第三节 P746–747 / PDF P777–778）诊断与治疗（以上在目标栏均标“了解”，仅 DKA 鉴别诊断保留 HHS 病名）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./endocrine.html#mod-4">Ⅳ、皮质醇增多症（库欣综合征） ↗</a>
+              <span class="cur-mod-src">第10版 第七章《肾上腺疾病》第一节（课本 P709–711 / PDF P740–742）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>（目标栏“记忆”）库欣综合征的诊断步骤、实验室检查的要点及鉴别诊断（含定性三联、表 7-7-1 病因鉴别、大/小剂量地塞米松抑制试验、IPSS 与 3 类假性库欣鉴别）。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>（目标栏“理解”）库欣综合征的病因分类及发病机制（两大类 6 亚型）；病理生理及临床表现（7 大系统）；治疗原则（按病因分治、4 种合成阻滞药与围术期激素替代）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>大纲本讲目标栏无“了解”项；同章未列入大纲之第 3～5 节（Addison 病、先天性肾上腺皮质增生症、嗜铬细胞瘤）全部剔除（第二节原醛单列模块 Ⅴ）。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./endocrine.html#mod-5">Ⅴ、原发性醛固酮增多症（原醛症） ↗</a>
+              <span class="cur-mod-src">第10版 第七章《肾上腺疾病》第二节（课本 P712–714 / PDF P743–745）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>（目标栏“记忆”）原发性醛固酮增多症的病因（5 大类）；原发性醛固酮增多症的治疗原则（单侧腹腔镜手术与术前螺内酯准备、特醛症与 GRA 药物方案、醛固酮癌处理）。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>（目标栏“理解”）原发性醛固酮增多症的病理生理（含盐皮质激素“脱逸”现象）及临床表现；诊断（筛查 ARR、盐水确诊、卧立位动态试验、影像及 AVS 分型）及三类低钾高血压鉴别诊断。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>大纲本讲目标栏无“了解”项；大纲内容栏提及的卡托普利试验、依普利酮及“醛固酮瘤约占 80%”在第 10 版原文未载录，严格忠实教材不予外部补写；同章第 3～5 节（Addison 病、CAH、嗜铬细胞瘤）全部剔除。</span></div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="syl-view-raw">
+          <h4 class="sub-sec-title">《内科学》理论课程教学大纲原文（源自官方 DOCX）</h4>
+          <div class="meta-card">
+            <div class="meta-row"><div class="meta-k">课程名称</div><div class="meta-v">内科学-内分泌与代谢病学</div></div><div class="meta-row"><div class="meta-k">英文名称</div><div class="meta-v">Internal Medicine -Endocrinology and Metabolism</div></div><div class="meta-row"><div class="meta-k">理论学时</div><div class="meta-v">总学时10学时，其中：理论10学时；实验0学时；上机0学时；实践0学时。</div></div><div class="meta-row"><div class="meta-k">教学方式</div><div class="meta-v">幻灯片讲授，结合典型病例示教举例分析。</div></div><div class="meta-row"><div class="meta-k">考核与成绩评定</div><div class="meta-v">【考核方式】过程性考核及期末考试（笔试、闭卷）。<br />【成绩评定】过程性考核占50%，期末考核50%。</div></div><div class="meta-row"><div class="meta-k">课程描述</div><div class="meta-v">内分泌与代谢疾病学是临床医学的一个分支学科，主要研究内分泌腺或内分泌组织本身的分泌功能和（或）结构异常时引起的疾病及物质代谢失常引起的疾病。有着很强的专业特点，但又与其他临床学科和基础医学学科有着广泛的联系。通过内分泌与代谢病学的讲授，可以使学生了解内分泌系统疾病与全身疾病的联系，初步掌握内分泌科常见病、多发病的防治。本科教学着重于培养学生在内分泌学科方面的基本知识和基本操作技能。</div></div><div class="meta-row"><div class="meta-k">课程目标</div><div class="meta-v">【课程目标1】通过内分泌与代谢病学的讲授，培养学生树立内分泌与代谢病学科疾病与全身疾病的联系。<br />【课程目标2】增进其对内分泌与代谢病学科常见病、多发病的理解及应用能力、特别是内分泌与代谢病学科急症的急救处理。<br />【课程目标3】培养医学整体观，提高运用生物-心理-社会医学模式进行诊疗的素质。<br />【课程思政目标】提高医生的职业素质，培养高尚的医德。</div></div><div class="meta-row"><div class="meta-k">教材及参考资料</div><div class="meta-v">【教材】<br />葛均波，王辰，王建安主编, 《内科学》(第10版),人民卫生出版社 2024.7；国家卫生和计划生育委员会“十四五”规划教材。<br />【参考资料】<br />《临床内分泌学》 (第1版) 陈家伦编<br />《内分泌代谢病学》(第3版) 廖二元编<br />《Williams Textbook of Endocrinology》（13th edition）HM Kronenberg</div></div>
+          </div>
+          <details class="raw-details" open>
+            <summary>展开 / 收起：内分泌系统逐讲教学大纲原文条目（共 182 段）</summary>
+            <div class="raw-details-body">
+              <div class="syl-ch-hd">知识点一/第一章：内分泌和代谢疾病总论（共2学时，其中授课2学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1、<strong class="kw-f">理解</strong>临床内分泌学的范围及其临床上的重要性，<strong class="kw-u">了解</strong>与临床各科的密切相关性。</p>
+<p class="syl-item">2、<strong class="kw-m">记忆</strong>神经内分泌系统生理及病理理论基础，特别是各种激素的生理作用与病理变化。</p>
+<p class="syl-item">3、<strong class="kw-m">记忆</strong>常见内分泌与代谢疾病的常用诊断方法和防治原则。</p>
+<p class="syl-item">4、<strong class="kw-u">了解</strong>目前国内外内分泌学的发展状况。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">一、概述内分泌激素的生理和生化</p>
+<p class="syl-item">1、概述内分泌系统的涵义及范围，从腺体、细胞和分子水平阐述近代内分泌不仅限于传统的内分泌腺，内分泌的概念已发展到人体几乎每个脏器和组织，包括中枢和外周神经以及胃肠胰的APUD细胞、肾脏、心血管、肺、皮肤、脂肪细胞及免疫细胞等。</p>
+<p class="syl-item">2、<strong class="kw-f">熟悉</strong>激素的种类、分泌途径、作用原理，<strong class="kw-u">了解</strong>激素在发病机制与药物基因学中的重要意义；<strong class="kw-m">掌握</strong>激素分泌节律、各层次的反馈调节及其在内分泌疾病功能诊断中的意义。</p>
+<p class="syl-item">3、神经-内分泌-免疫系统互相紧密联系，构成调节人体内环境稳定性的网络。</p>
+<p class="syl-item">4、下丘脑-垂体-靶腺轴是内分泌系统的主要组成部分，在生理机能方面起相互调节制约的反馈作用。</p>
+<p class="syl-item">二、概述内分泌病的分类，常见症状与体征</p>
+<p class="syl-para">本篇重点阐述垂体病、甲状腺病及肾上腺病。</p>
+<p class="syl-item">三、概述内分泌病的诊断依据及方法</p>
+<p class="syl-para">概括介绍常用的功能试验。诊断依据强调临床症群与实验室检查相结合。诊断内容分：</p>
+<p class="syl-item">（1）功能诊断</p>
+<p class="syl-item">（2）病理诊断</p>
+<p class="syl-item">（3）病因诊断</p>
+<p class="syl-item">四、概述内分泌病的防治原则</p>
+<p class="syl-para">强调预防为主的重要性，治疗原则可按功能诊断分亢进及减退两大类。亢进者以手术切除，放疗或化疗，核素治疗或介人疗法等抑制功能的疗法为主，减退者以补充激素及病因治疗为主。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-item">1.注重患者隐私保护及爱伤意识的培养。</p>
+<p class="syl-item">2.案例根据讲课时的具体患者确定。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1、神经-内分泌-免疫的相互关系。</p>
+<p class="syl-item">2、下丘脑-垂体-内分泌轴的反馈作用。</p>
+<div class="syl-ch-hd">知识点二/第二章：甲状腺功能亢进症（共2学时，其中授课2学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1、<strong class="kw-m">记忆</strong>Graves病的临床表现（包括特殊临床表现）、诊断要点及鉴别诊断。</p>
+<p class="syl-item">2、<strong class="kw-m">记忆</strong>抗甲药物的适应症与副作用，<strong class="kw-u">了解</strong>同位素治疗和手术治疗的适应证。</p>
+<p class="syl-item">3、<strong class="kw-u">了解</strong>Graves病的病因分类和发病机制。了解甲状腺激素过多时的病理生理改变。</p>
+<p class="syl-item">4、<strong class="kw-m">记忆</strong>甲状腺功能亢进症危象的诱因、临床表现及处理原则。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">1、甲状腺功能亢进症的定义与分类，指出本章主要讲授Graves病。</p>
+<p class="syl-item">2、Graves病自身免疫机理的近代观点。</p>
+<p class="syl-item">3、甲状腺的病理改变和浸润突眼的病理基础。</p>
+<p class="syl-item">4、临床表现：</p>
+<p class="syl-item">（1）典型表现：结合甲状腺激素的生理作用，讲述甲状腺激素分泌过多时神经系统、垂体功能及周围组织代谢系统紊乱的表现。重点讲授交感神经兴奋性增高和代谢亢进所引起的症状，如心血管系统、消化系统、肌肉骨骼系统等的临床表现。</p>
+<p class="syl-item">（2）其他表现：重点讲授浸润性突眼、甲状腺功能亢进危象，甲状腺功能亢进性心脏病的表现。</p>
+<p class="syl-item">（3）特殊类型的甲亢表现。重点讲授妊娠甲亢和周期性麻痹的临床表现。</p>
+<p class="syl-item">5、实验室检查：甲状腺激素的测定和甲状腺功能间接检查两大类，可结合具体情况重点讲授一些测定方法的原理和优缺点。</p>
+<p class="syl-item">（1）甲状腺激素测定：如血清总T4、T3、FT3、FT4、STSH等。</p>
+<p class="syl-item">（2）甲状腺功能的间接检查：如BMR、甲状腺摄131碘率测定等。</p>
+<p class="syl-item">（3）TRH兴奋试验。</p>
+<p class="syl-item">（4）自身抗体的测定:如TRAb、TPOAb、TgAb，兴奋性抗体及阻断性抗体及其临床意义。</p>
+<p class="syl-item">6、诊断和鉴别诊断</p>
+<p class="syl-item">（1）Graves病的诊断要点。多数病例可根据症状和体征作出初步诊断，对一些不典型病例需选择必要的实验室检查以帮助确诊。</p>
+<p class="syl-item">（2）鉴别诊断：包括甲状腺功能亢进与其他疾病的鉴别（单纯性甲状腺肿、神经官能症、结节性甲状腺肿、器质性心脏病、肺结核、恶性肿瘤等）、甲状腺功能亢进的病因鉴别（尤其是甲状腺炎的鉴别）。</p>
+<p class="syl-item">7、治疗</p>
+<p class="syl-item">（1）一般治疗：适当休息，镇静剂、肾上腺素能β受体阻滞剂等。饮食中忌碘的意义。</p>
+<p class="syl-item">（2）药物治疗：</p>
+<p class="syl-para">①抗甲状腺药物：硫脲类与咪唑类药物的作用机制、适应证、用法与疗程、副作用。</p>
+<p class="syl-para">②其他药物：β受体阻滞剂、复方碘液等的适应证与用法。</p>
+<p class="syl-item">（3）放射性同位素131碘治疗的适应证和禁忌证。</p>
+<p class="syl-item">（4）手术治疗法的适应证、禁忌证和并发症。</p>
+<p class="syl-item">（5）甲亢危象的治疗原则。防治危象的诱因，早期发现和早期治疗可预防或中止病情的发展；阐明大剂量硫脲类和碘剂、肾上腺素能β受体阻滞剂、肾上腺皮质激素等药物应用的原理及用法；其他辅助治疗在防治危象中的重要意义。</p>
+<p class="syl-item">（6）浸润性突眼的防治。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-item">1.注重患者隐私保护及爱伤意识的培养。</p>
+<p class="syl-item">2.案例根据讲课时的具体患者确定。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1、Graves病的临床表现及诊断要点。</p>
+<p class="syl-item">2、抗甲药物治疗的适应症与副作用。</p>
+<p class="syl-item">3、甲亢危象的处理原则。</p>
+<div class="syl-ch-hd">知识点三/第三章：糖尿病（共2学时，其中授课2学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1、<strong class="kw-u">了解</strong>糖尿病的基本概念、流行病学特点。</p>
+<p class="syl-item">2、<strong class="kw-f">熟悉</strong>糖尿病的分型、病因和发病机制。</p>
+<p class="syl-item">3、在复习糖尿病的病理生理改变的基础上，<strong class="kw-f">熟悉</strong>本病的临床表现和常见并发症。</p>
+<p class="syl-item">4、<strong class="kw-m">掌握</strong>糖尿病的诊断标准。</p>
+<p class="syl-item">5、<strong class="kw-u">了解</strong>糖尿病综合治疗原则，<strong class="kw-f">熟悉</strong>口服降糖药物的种类、适应症和禁忌症以及胰岛素的种类、适应证、治疗原则和方法。</p>
+<p class="syl-item">6、<strong class="kw-m">掌握</strong>糖尿病酮症酸中毒的诊断依据和治疗原则。</p>
+<p class="syl-item">7、<strong class="kw-u">了解</strong>高渗高血糖综合征的诊断依据和治疗原则。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<div class="syl-ch-hd">第一节 糖尿病</div>
+<p class="syl-item">1、概述糖尿病的基本概念、流行病学特点、病因、发病机制及病理生理。</p>
+<p class="syl-item">2、临床表现：</p>
+<p class="syl-item">（1）糖尿病自然病程。</p>
+<p class="syl-item">（2）糖尿病分型及各型临床特点。</p>
+<p class="syl-item">3、并发症和伴发症。</p>
+<p class="syl-item">（1）急性并发症：包括糖尿病酮症酸中毒、高渗性高血糖状态、乳酸酸中毒、低血糖症。</p>
+<p class="syl-item">（2）慢性并发症:包括大血管并发症、微血管并发症及糖尿病神经病变等。</p>
+<p class="syl-item">（3）伴发症：肥胖、高血压、血脂紊乱、高尿酸血症等。</p>
+<p class="syl-item">4、实验室检查：尿糖、血糖、口服葡萄糖耐量试验、胰岛素（C肽）释放试验、糖化血红蛋白、自身抗体检测等。</p>
+<p class="syl-item">5、诊断和鉴别诊断：</p>
+<p class="syl-item">（1）糖尿病的诊断标准。</p>
+<p class="syl-item">（2）糖尿病与其他疾病的鉴别诊断及糖尿病分型诊断。</p>
+<p class="syl-item">（3）并发症和伴发病的诊断。</p>
+<p class="syl-item">6、防治：阐述治疗的目的与原则，强调综合性治疗以及患者长期密切配合的重要性。</p>
+<p class="syl-item">（1）糖尿病教育、医学营养治疗、运动治疗、药物治疗及血糖监测是糖尿病的五大基本治疗原则。</p>
+<p class="syl-item">（2） 口服降糖药物种类、作用机制和适应症及禁忌症，胰岛素分类及其治疗的适应症。</p>
+<p class="syl-item">（3） 糖尿病治疗进展：新型药物、手术、干细胞/胰岛/胰腺移植等。</p>
+<div class="syl-ch-hd">第二节  糖尿病酮症酸中毒与高渗高血糖综合征</div>
+<p class="syl-item">1、简介导致糖尿病酮症酸中毒与高渗高血糖综合征的诱因，如感染、创伤、妊娠、 不适当中断胰岛素治疗等。</p>
+<p class="syl-item">2、糖尿病酮症酸中毒的病理生理和临床表现。</p>
+<p class="syl-item">3、糖尿病酮症酸中毒的诊断和鉴别诊断，介绍与高渗高血糖综合征、乳酸性酸中毒之间的鉴别要点。</p>
+<p class="syl-item">4、糖尿病酮症酸中毒的治疗原则。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-item">1.注重患者隐私保护及爱伤意识的培养。</p>
+<p class="syl-item">2.案例根据讲课时的具体患者确定。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1、糖尿病的临床表现和诊断标准。</p>
+<p class="syl-item">2、糖尿病常见急慢性并发症。</p>
+<p class="syl-item">3、糖尿病综合治疗的原则</p>
+<p class="syl-item">4、口服降糖药物分类、机制及胰岛素治疗适应症</p>
+<p class="syl-item">5、糖尿病酮症酸中毒处理。</p>
+<div class="syl-ch-hd">知识点四/第四章：皮质醇增多症（共2学时，其中授课2学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1、<strong class="kw-f">理解</strong>库欣综合征的病因分类及发病机制。</p>
+<p class="syl-item">2、<strong class="kw-f">理解</strong>库欣综合征的病理生理及临床表现。</p>
+<p class="syl-item">3、<strong class="kw-m">记忆</strong>库欣综合征的诊断步骤、实验室检查的要点及鉴别诊断。</p>
+<p class="syl-item">4、<strong class="kw-f">理解</strong>库欣综合征的治疗原则。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">1、库欣综合征的病因。</p>
+<p class="syl-item">（1）依赖ACTH的库欣综合征；</p>
+<p class="syl-item">（2）不依赖ACTH的库欣综合征。</p>
+<p class="syl-item">2、库欣综合征的临床表现：皮质醇分泌过多引起的糖、脂、蛋白等代谢障碍和对感染抵抗力降低等为引起本病临床表现的基础。</p>
+<p class="syl-item">3、各种类型的病因及临床特点：</p>
+<p class="syl-item">（1）库欣病；</p>
+<p class="syl-item">（2）异位ACTH综合征；</p>
+<p class="syl-item">（3）肾上腺皮质瘤；</p>
+<p class="syl-item">（4）肾上腺皮质癌；</p>
+<p class="syl-item">（5）原发性色素沉着结节性肾上腺病；</p>
+<p class="syl-item">（6）不依赖增生ACTH的肾上腺大结节性。</p>
+<p class="syl-item">3、诊断与鉴别诊断：通过病史、临床表现、体格检查、功能实验及影像学检查等做出诊断与鉴别诊断，讲授从功能到定位与病因诊断的诊断思路，地塞米松抑制试验的临床意义。</p>
+<p class="syl-para">①皮质醇测定是一种可靠的诊断方法，测定项目包括血皮质醇，24小时尿游离皮质醇和17-羟皮质类固醇激素测定。</p>
+<p class="syl-para">②血浆皮质醇的昼夜节律变化，本病患者的昼夜节律消失。</p>
+<p class="syl-para">③血浆ACTH测定，肾上腺肿瘤的病人血浆ACTH常降低，库欣病的病例血浆ACTH轻度或中度升高，异位ACTH综合征的病人则明显升高。</p>
+<p class="syl-para">④地塞米松抑制试验：小剂量地塞米松抑制试验和大剂量地塞米松抑制试验，前者对本病的诊断和鉴别诊断有帮助，后者对诊断病变不同部位有帮助。</p>
+<p class="syl-para">⑤影像学检查 垂体MRI、CT扫描,肾上腺B型超声波检查，MRI和CT扫描检查及肾上腺同位索扫描等。</p>
+<p class="syl-item">4、治疗：应根据不同的病因作相应的治疗，重点介绍以下三种治疗方法的适应证及预后。</p>
+<p class="syl-item">（1）手术治疗；</p>
+<p class="syl-item">（2）放射治疗；</p>
+<p class="syl-item">（3）药物治疗。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-item">1.注重患者隐私保护及爱伤意识的培养。</p>
+<p class="syl-item">2.案例根据讲课时的具体患者确定。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1、库欣综合征的病理生理及临床表现。</p>
+<p class="syl-item">2、库欣综合征的诊断及鉴别诊断。</p>
+<div class="syl-ch-hd">知识点五/第五章：原发性醛固酮增多症（共2学时，其中授课2学时）</div>
+<div class="syl-sub-hd">【对应课程目标】</div>
+<p class="syl-item">1.<strong class="kw-m">记忆</strong>原发性醛固酮增多症的病因。</p>
+<p class="syl-item">2.<strong class="kw-f">理解</strong>原发性醛固酮增多症的病理生理及临床表现。</p>
+<p class="syl-item">3.<strong class="kw-f">理解</strong>原发性醛固酮增多症的诊断及鉴别诊断。</p>
+<p class="syl-item">4.<strong class="kw-m">记忆</strong>原发性醛固酮增多症的治疗原则。</p>
+<div class="syl-sub-hd">【教学内容和要求】</div>
+<p class="syl-item">一、病因与分类</p>
+<p class="syl-para">原发性醛固酮增多症</p>
+<p class="syl-para">醛固酮瘤：最常见，约占80%，多为单侧肾上腺腺瘤，醛固酮分泌不受肾素-血管紧张素系统调节。</p>
+<p class="syl-para">特发性醛固酮增多症：双侧肾上腺皮质球状带增生，对血管紧张素敏感。</p>
+<p class="syl-para">家族性醛固酮增多症：常染色体显性遗传，部分与基因突变相关。</p>
+<p class="syl-para">醛固酮癌：罕见，瘤体较大，可分泌糖皮质激素和性激素。</p>
+<p class="syl-para">继发性醛固酮增多症</p>
+<p class="syl-para">常继发于肾动脉狭窄、恶性高血压、肾素瘤等，因肾灌注减少激活肾素-血管紧张素系统，导致醛固酮分泌增多。</p>
+<p class="syl-item">二、临床表现</p>
+<p class="syl-para">高血压：持续性或顽固性高血压，对常规降压药反应不佳。</p>
+<p class="syl-para">低血钾：肌无力、周期性瘫痪，严重时累及呼吸肌，可出现心律失常。</p>
+<p class="syl-para">其他症状：多尿、夜尿增多，长期低血钾可导致心肌肥厚、心力衰竭，部分患者有生长发育障碍。</p>
+<p class="syl-item">三、诊断方法</p>
+<p class="syl-para">筛查试验</p>
+<p class="syl-para">醛固酮与肾素活性比值（ARR）：常用筛查指标，ARR升高提示可能为原醛症。</p>
+<p class="syl-para">适用人群：持续性高血压、难治性高血压、高血压合并低钾血症、肾上腺意外瘤等患者。</p>
+<p class="syl-para">确诊试验</p>
+<p class="syl-para">生理盐水试验：灵敏度和特异度较高，但可能诱发高血压危象，需谨慎使用。</p>
+<p class="syl-para">卡托普利试验：操作简单，安全性高，但存在假阴性可能。</p>
+<p class="syl-para">分型诊断</p>
+<p class="syl-para">肾上腺CT扫描：排查肾上腺肿瘤或增生。</p>
+<p class="syl-para">双侧肾上腺静脉采血（AVS）：区分单侧或双侧病变，是分型诊断的“金标准”。</p>
+<p class="syl-item">四、治疗策略</p>
+<p class="syl-para">手术治疗：适用于醛固酮瘤、单侧肾上腺增生，腹腔镜下肾上腺切除术效果良好。</p>
+<p class="syl-para">药物治疗：</p>
+<p class="syl-para">醛固酮受体拮抗剂：如螺内酯、依普利酮，用于特醛症或手术禁忌者。</p>
+<p class="syl-para">糖皮质激素：适用于糖皮质激素可治性醛固酮增多症（GRA）。</p>
+<p class="syl-para">继发性醛固酮增多症：针对原发病治疗，如肾动脉狭窄患者可进行介入治疗或手术。</p>
+<div class="syl-sub-hd">【思政要素和案例】</div>
+<p class="syl-item">1.注重患者隐私保护及爱伤意识的培养。</p>
+<p class="syl-item">2.案例根据讲课时的具体患者确定。</p>
+<div class="syl-sub-hd">【教学难点重点】</div>
+<p class="syl-item">1.原发性醛固酮增多症的诊断及鉴别诊断。</p>
+<p class="syl-item">2.原发性醛固酮增多症的治疗选择。</p>
+            </div>
+          </details>
+          <details class="raw-details"><summary>展开：教学内容对课程目标的支撑关系表</summary><div class="raw-details-body"><div class="syl-tbl-wrap"><table class="syl-tbl"><thead><tr>
+<th></th><th>课程目标1</th><th>课程目标2</th><th>课程目标3</th><th>课程目标4</th><th>课程目标5</th>
+</tr></thead><tbody>
+<tr><td>第一章</td><td>1、理解临床内分泌学的范围及其临床上的重要性，了解与临床各科的密切相关性。</td><td>2、记忆神经内分泌系统生理及病理理论基础，特别是各种激素的生理作用与病理变化。</td><td>3、记忆常见内分泌与代谢疾病的常用诊断方法和防治原则。</td><td>4、了解目前国内外内分泌学的发展状况。</td><td></td></tr>
+<tr><td>第二章</td><td>1、记忆Graves病的临床表现（包括特殊临床表现）、诊断要点及鉴别诊断。</td><td>2、记忆抗甲药物的适应症与副作用，了解同位素治疗和手术治疗的适应证。</td><td>3、了解Graves病的病因分类和发病机制。了解甲状腺激素过多时的病理生理改变。</td><td>4、记忆甲状腺功能亢进症危象的诱因、临床表现及处理原则。</td><td></td></tr>
+<tr><td>第三章</td><td>1、了解糖尿病的基本概念、流行病学特点。</td><td>2、熟悉糖尿病的分型、病因和发病机制。</td><td>3、在复习糖尿病的病理生理改变的基础上，熟悉本病的临床表现和常见并发症。</td><td>4、掌握糖尿病的诊断标准。</td><td>5、了解糖尿病综合治疗原则，熟悉口服降糖药物的种类、适应症和禁忌症以及胰岛素的种类、适应证、治疗原则和方法。</td></tr>
+<tr><td>第四章</td><td>1、理解库欣综合征的病因分类及发病机制。</td><td>2、理解库欣综合征的病理生理及临床表现。</td><td>3、记忆库欣综合征的诊断步骤、实验室检查的要点及鉴别诊断。</td><td>4、理解库欣综合征的治疗原则。</td><td></td></tr>
+<tr><td>第五章</td><td>1.记忆原发性醛固酮增多症的病因。</td><td>2.理解原发性醛固酮增多症的病理生理及临床表现。</td><td>3.理解原发性醛固酮增多症的诊断及鉴别诊断。</td><td>4.记忆原发性醛固酮增多症的治疗原则。</td><td></td></tr>
+</tbody></table></div></div></details>
+        </div>
+      </section>
+      <section class="syl-panel" id="syl-rheumatology" data-syl-panel="rheumatology">
+        <div class="syl-panel-hd">
+          <div>
+            <h3>第八篇 · 风湿免疫病（6 学时 / 4 讲）</h3>
+            <p class="syl-panel-sub">课本 P808–844 · PDF P839–875 · <strong class="warn-inline">⚠ Audit Not Completed</strong></p>
+          </div>
+          <a class="btn-primary btn-sm" href="./rheumatology.html">打开本系统学习页 →</a>
+        </div>
+
+        <div class="syl-view-curated">
+          <h4 class="sub-sec-title">精编分层大纲（掌握 / 熟悉 / 已剔除 · 点击模块直达对应章节）</h4>
+          <div class="cur-mod-grid">
+            
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./rheumatology.html#mod-1">Ⅰ、风湿病总论 ↗</a>
+              <span class="cur-mod-src">第10版 第一章《总论》（课本 P808–813 / PDF P839–844）· 1学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>风湿性疾病定义；常见自身抗体（ANA 谱、类风湿谱、ANCA、aPLs 等）、HLA-B27、关节液、病理活检与脊柱/关节/内脏影像学解读；抗风湿五大类药物分类、作用机制与安全监测（方案 A 核心口径）。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>1983 年 ARA 风湿性疾病 10 大类分类（重点熟悉第 1 类弥漫性结缔组织病与第 2 类血清阴性脊柱关节病）；病史采集与体格检查要点、常见关节/软组织病变鉴别（表 8-1-2）及常见弥漫性结缔组织病表现（表 8-1-3）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>未列入大纲的第八篇其余 12 章专节内容（本模块仅保留第一章原文表格中原有之病名/抗体/体征条目）；第 10 版第一章未设“风湿性疾病主要病理特点总论表”，仅述 4 类活检意义，具体病理分述于模块 2–4。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./rheumatology.html#mod-2">Ⅱ、类风湿关节炎（RA） ↗</a>
+              <span class="cur-mod-src">第10版 第二章《类风湿关节炎》（课本 P814–819 / PDF P845–850）· 1学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>RA 定义与病理特点（滑膜炎、血管翳、血管炎、类风湿结节）；临床表现（晨僵、受累关节、纽扣花/天鹅颈/尺偏畸形及 8 大系统关节外表现）；RF 与 ACPA（抗 CCP）定义及意义；2010 年 ACR/EULAR 分类标准（表 8-2-1）与鉴别诊断；早期/达标治疗（T2T）与六类药物使用原则。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>流行病学、病因与免疫发病机制；特殊关节受累（肩/髋、颞下颌、颈椎 C1–C2 半脱位）及 ACR 功能 4 级；血常规/炎性指标/滑液检查/X 线 Ⅰ–Ⅳ 期与 MRI/超声；DAS28 活动度评估、一般/外科治疗及预后。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>大纲提及的 1987 年 ACR 分类标准第 10 版已删除未收录；鉴别诊断“痛风”第 10 版仅在关节滑液中简提及而未单设鉴别段，严格忠实第 10 版原文不凭记忆补写。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./rheumatology.html#mod-3">Ⅲ、系统性红斑狼疮（SLE） ↗</a>
+              <span class="cur-mod-src">第10版 第三章《系统性红斑狼疮》（课本 P820–826 / PDF P851–857）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>SLE 定义与 13 大系统临床表现（蝶形红斑、浆膜炎、Jaccoud 关节病、肾、Libman-Sacks 心内膜炎、DAH/PAH、NPLE、血液、合并 APS/SS、眼底血管炎）；核心自身抗体（ANA、抗 dsDNA、抗 ENA 谱、aPLs）与补体/活动度指标；2012 年 SLICC 分类标准（表 8-3-1）、狼疮危象与 SLEDAI 评分（表 8-3-2）；个体化及诱导/维持缓解治疗（激素常规/冲击、羟氯喹基础治疗、免疫抑制剂表 8-3-3、生物制剂及其他）。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>流行病学、病因（遗传/环境/雌激素）与免疫发病机制；基本与特征性病理（苏木紫小体、洋葱皮样病变、心瓣膜赘生物）；影像学检查、鉴别诊断（药物性狼疮）与预后及急/远期主要死因。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>大纲提及的 1997 年 ACR 标准第 10 版未收录（改用 2012 SLICC，正文提及 2019 EULAR/ACR 无细则表）；第 10 版第三章未提及“狼疮带试验”“满堂亮”“干细胞移植”与“妊娠生育管理”；狼疮性肾炎病理分型与 APS 细则原文分别跨篇指向第五篇第三章及第十二章（未入本大纲），严格保留最小提及不跨篇补写。</span></div>
+            </div>
+          </div>
+          <div class="cur-mod-card">
+            <div class="cur-mod-hd">
+              <a class="cur-mod-link" href="./rheumatology.html#mod-4">Ⅳ、系统性血管炎（概论 + 5 种血管炎） ↗</a>
+              <span class="cur-mod-src">第10版 第六章《系统性血管炎》（课本 P835–844 / PDF P866–875）· 2学时</span>
+            </div>
+            <div class="cur-mod-body">
+              <div class="cur-row"><span class="cur-tag tag-m">掌握</span><span>系统性血管炎范畴、2012 年 Chapel Hill 分类（表 8-6-1）、基本病理、诊断（活检金标准、ANCA、血管造影/CTA/MRA）与两阶段治疗原则；以及大纲明示重点理解的 3 种血管炎：大动脉炎（TA，含 Numano 5 型与 2022 分类标准表 8-6-2）、巨细胞动脉炎（GCA）、ANCA 相关血管炎（AAV：MPA/GPA/EGPA）。</span></div><div class="cur-row"><span class="cur-tag tag-f">熟悉</span><span>总论病因机制细节，以及大纲具体教学内容列出的其余 2 种血管炎：结节性多动脉炎（PAN，含 1990 ACR 分类标准）与贝赫切特病（BD / 白塞综合征，含针刺反应与 2014 国际诊断标准表 8-6-3）。</span></div><div class="cur-row"><span class="cur-tag tag-x">已剔除</span><span>第 10 版第六章未列出 2022 年 AAV 分类积分细则表（仅作原文概述不凭记忆补写）；第六章 L74 间接免疫荧光 cANCA/pANCA 印刷误反已依同篇第一章表 8-1-4 正文纠偏并在下文与审计表透明勘误溯源。</span></div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="syl-view-raw">
+          <h4 class="sub-sec-title">《内科学》理论课程教学大纲原文（源自官方 DOCX）</h4>
+          <div class="meta-card">
+            <div class="meta-row"><div class="meta-k">课程名称</div><div class="meta-v">内科学-风湿病</div></div><div class="meta-row"><div class="meta-k">英文名称</div><div class="meta-v">Internal Medicine -Rheumatology</div></div><div class="meta-row"><div class="meta-k">理论学时</div><div class="meta-v">总学时6学时，其中：理论6学时；实验0学时；上机0学时；实践0学时。</div></div><div class="meta-row"><div class="meta-k">教学方式</div><div class="meta-v">PPT，CBL</div></div><div class="meta-row"><div class="meta-k">考核与成绩评定</div><div class="meta-v">【考核方式】<br />课堂表现+期末考试（笔试、闭卷）。<br />【成绩评定】<br />课堂表现占比50%  期末考试占比50%。</div></div><div class="meta-row"><div class="meta-k">课程描述</div><div class="meta-v">风湿病学是内科学的重要分支。风湿性疾病泛指影响骨、关节及周围软组织的一组疾病，同时风湿性疾病常累及全身多系统，与临床多学科有广泛联系。通过风湿病学的讲授，可以使学生了解风湿性疾病的重要性，初步掌握风湿科常见疾病的诊断与治疗原则。</div></div><div class="meta-row"><div class="meta-k">课程目标</div><div class="meta-v">教学目标1：培养诊治以类风湿关节炎、系统性红斑狼疮和系统性血管炎为代表的风湿性疾病的能力。<br />教学目标2：增进对风湿性疾病治疗目标和治疗手段的了解和运用。<br />教学目标3：培养医学整体观，提高运用生物-心理-社会医学模式进行诊疗的素质。</div></div><div class="meta-row"><div class="meta-k">教材及参考资料</div><div class="meta-v">【教材】<br />葛均波，王辰，王建安主编，内科学第10版，人民卫生出版社，2024年出版，卫生部“十四五”规划教材<br />【参考书】<br />《凯利风湿病学》<br />《中华风湿病学杂志》<br />中华风湿网http://zhfsw.studyinhand.com</div></div>
+          </div>
+          <details class="raw-details" open>
+            <summary>展开 / 收起：风湿免疫病逐讲教学大纲原文条目（共 78 段）</summary>
+            <div class="raw-details-body">
+              <div class="syl-ch-hd">第一章 风湿病总论及类风湿关节炎</div>
+<div class="syl-ch-hd">第一节 风湿病总论（授课1学时）</div>
+<div class="syl-sub-hd">【教学目标和要求】</div>
+<p class="syl-para">培养识别风湿病的能力。</p>
+<p class="syl-para">增进对各种风湿性疾病的了解。</p>
+<p class="syl-para">培养解读风湿病常见自身抗体及相关辅助检查结果的能力。</p>
+<p class="syl-para">扩展对风湿病治疗药物作用机制的理解。</p>
+<div class="syl-sub-hd">【具体教学内容】</div>
+<p class="syl-para">概述：风湿性疾病的定义。</p>
+<p class="syl-para">风湿性疾病分类（十大类，熟悉第一类和第二类中的疾病）。</p>
+<p class="syl-para">常见风湿性疾病的病理特点、病史采集、体格检查要点、常见关节炎的主要特点、常见弥漫性结缔组织病的临床症状和体征。</p>
+<p class="syl-para">风湿病的实验室和辅助检查：常见自身抗体（ANA谱、类风湿谱、ANCA、aPLs等）及HLA-B27；脊柱和关节的影像学检查（X线、CT、MRI和超声）。</p>
+<p class="syl-para">风湿病治疗药物的分类及机制：NSAIDs、DMARDs（csDMARDs、bDMARDs和tsDMARDs）、激素、细胞毒药物等。</p>
+<div class="syl-sub-hd">【教学和学习建议】建议采用的教学方法；学生学习时应该注意的问题。比如练习、实验、研讨要求等。</div>
+<p class="syl-para">教学方法：课文与幻灯相结合，图文并茂，将病例与临床穿插于讲课当中，使学生记忆深刻，易于理解。</p>
+<p class="syl-para">应注意的问题：风湿病是系统性疾病，会累及全身多个器官，所以要系统记忆。</p>
+<div class="syl-sub-hd">【教学/考核难点重点】</div>
+<p class="syl-para">风湿病的定义、风湿性疾病的主要病理特点、自身抗体（ANA、ANCA）的意义。</p>
+<div class="syl-ch-hd">第二节 类风湿关节炎（授课1学时）</div>
+<div class="syl-sub-hd">【教学目标和要求】</div>
+<p class="syl-para">提高对该病发病机制、临床特点和分类标准的理解。</p>
+<p class="syl-para">培养运用生物-心理-社会医学模式对该病进行诊治的能力。</p>
+<p class="syl-para">增进对该病治疗目标和治疗手段的了解和运用。</p>
+<div class="syl-sub-hd">【具体教学内容】</div>
+<p class="syl-para">概述：本病的定义。</p>
+<p class="syl-para">病因及发病机制：病因不明，发病机制与自身免疫有关。</p>
+<p class="syl-para">病理：关节病变（滑膜、血管翳、软骨及骨破坏）、血管炎。</p>
+<p class="syl-para">临床表现：关节表现（晨僵、部位、疼痛和肿胀、畸形和骨质疏松）；关节外表现（类风湿结节、呼吸系统、心、肾、神经系统、眼、干燥综合征、Felty综合征和血管炎）。</p>
+<p class="syl-para">实验室检查：炎症指标、自身抗体（类风湿因子和抗环瓜氨酸抗体的定义及临床意义）、关节超声、X线检查及MRI检查。</p>
+<p class="syl-para">诊断与鉴别诊断：分类标准（1987年和2010年标准），鉴别诊断（与骨关节炎、强直性脊柱炎、银屑病关节炎、痛风等鉴别）。</p>
+<p class="syl-para">治疗原则：一般治疗、病情评估、药物种类和使用原则（NSAIDs、csDMARDs、tsDMARDs和bDMARDs的机制和特点）。</p>
+<p class="syl-para">预后：强调早诊断、早治疗和达标治疗（T2T）。</p>
+<div class="syl-sub-hd">【教学和学习建议】</div>
+<p class="syl-para">教学方法：课文与幻灯相结合，图文并茂，将病例与临床穿插于讲课当中，使学生记忆深刻，易于理解；</p>
+<p class="syl-para">应注意的问题：类风湿关节炎属于弥漫性结缔组织病， 注意与其他关节炎的鉴别。</p>
+<div class="syl-sub-hd">【教学/考核难点重点】</div>
+<p class="syl-para">关节炎的病理特点。</p>
+<p class="syl-para">临床表现：晨僵、特异的关节畸形（纽扣花、天鹅颈样畸形）、类风湿结节。</p>
+<p class="syl-para">类风湿因子和抗环瓜氨酸多肽抗体的定义及临床意义。</p>
+<p class="syl-para">分类标准和鉴别诊断。</p>
+<div class="syl-ch-hd">第二章 系统性红斑狼疮（授课2学时）</div>
+<div class="syl-sub-hd">【教学目标和要求】</div>
+<p class="syl-para">提高对该病的发病机制、病理特点、临床特点、分类标准和治疗原则的理解。</p>
+<p class="syl-para">培养医学整体观，提高运用生物-心理-社会医学模式对该病进行诊治的能力。</p>
+<div class="syl-sub-hd">【具体教学内容】</div>
+<p class="syl-para">概述：本病的定义和特点：多系统受累、多种自身抗体的自身免疫病。</p>
+<p class="syl-para">病因及发病机制：病因不明，与遗传、环境、性激素及免疫学异常等因素有关。</p>
+<p class="syl-para">病理：一般病理改变（狼疮带实验）及特殊性病理改变（狼疮肾炎免疫病理特征：满堂亮）</p>
+<p class="syl-para">临床表现：一般症状、皮肤黏膜损害、关节肌肉病变、肾脏损害、心血管、呼吸系统、消化系统、血液系统、凝血及妊娠异常、神经精神表现等。</p>
+<p class="syl-para">实验室检查：抗核抗体、抗双链DNA抗体、抗ENA抗体、抗心磷脂抗体、免疫球蛋白、补体及肾活检的病理分型。</p>
+<p class="syl-para">诊断与鉴别诊断：1997年ACR分类标准。SLE病情活动性和轻重程度评价方法。</p>
+<p class="syl-para">治疗原则：个体化治疗策略、一般治疗（防晒和患者宣教）、药物种类（糖皮质激素、免疫抑制剂、非甾体类抗炎药、抗疟药和中草药）及适应症；重症狼疮治疗的诱导缓解和维持治疗；生物制剂和其他治疗（免疫球蛋白封闭、血浆置换、干细胞移植等）。</p>
+<p class="syl-para">预后：生存率和死亡因素，患者的妊娠生育。</p>
+<div class="syl-sub-hd">【教学和学习建议】</div>
+<p class="syl-para">教学方法：课文与幻灯相结合，图文并茂，将病例与临床穿插于讲课当中，使学生记忆深刻，易于理解。</p>
+<p class="syl-para">应注意的问题：系统性红斑狼疮是系统性疾病，会累及全身多个器官，所以要系统理解和记忆。</p>
+<div class="syl-sub-hd">【教学/考核难点重点】</div>
+<p class="syl-para">SLE常见临床表现。</p>
+<p class="syl-para">自身抗体：ANA、dsDNA、aPLs及APS。</p>
+<p class="syl-para">该病的分类标准。</p>
+<p class="syl-para">该病的个体化治疗原则。</p>
+<div class="syl-ch-hd">第三章 系统性血管炎（授课2学时）</div>
+<div class="syl-sub-hd">【教学目标和要求】</div>
+<p class="syl-para">提高对系统性血管炎的范畴、分类、临床表现和治疗原则的理解。重点理解大动脉炎、巨细胞动脉炎和ANCA相关性血管炎。</p>
+<p class="syl-para">培养医学整体观，提高运用生物-心理-社会医学模式对该病进行诊治的能力。</p>
+<div class="syl-sub-hd">【具体教学内容】</div>
+<p class="syl-para">概述：系统性血管炎的分类、病因和发病机制、诊断和治疗原则。</p>
+<p class="syl-para">大动脉炎的发病机制、病理、临床表现、辅助检查、诊断、治疗和预后。</p>
+<p class="syl-para">巨细胞动脉炎的发病机制、病理、临床表现、辅助检查、诊断、治疗和预后。</p>
+<p class="syl-para">结节性多动脉炎的发病机制、病理、临床表现、辅助检查、诊断、治疗和预后。</p>
+<p class="syl-para">ANCA相关性血管炎的发病机制、病理、临床表现、辅助检查、诊断、治疗和预后。</p>
+<p class="syl-para">贝赫切特病的发病机制、病理、临床表现、辅助检查、诊断、治疗和预后。</p>
+<div class="syl-sub-hd">【教学和学习建议】</div>
+<p class="syl-para">教学方法：课文与幻灯相结合，图文并茂，将病例与临床穿插于讲课当中，使学生记忆深刻，易于理解。</p>
+<p class="syl-para">应注意的问题：系统性血管炎是一大类疾病，会累及全身多个器官，所以要系统理解和记忆。</p>
+<div class="syl-sub-hd">【教学/考核难点重点】</div>
+<p class="syl-para">系统性血管炎的分类。</p>
+<p class="syl-para">几种常见的血管炎的临床表现。</p>
+            </div>
+          </details>
+          <details class="raw-details"><summary>展开：教学内容对课程目标的支撑关系表</summary><div class="raw-details-body"><div class="syl-tbl-wrap"><table class="syl-tbl"><thead><tr>
+<th></th><th>课程目标1</th><th>课程目标2</th><th>课程目标3</th>
+</tr></thead><tbody>
+<tr><td>风湿病总论</td><td>培养识别风湿病的能力。</td><td>增进对各种风湿性疾病的了解</td><td>培养解读风湿病常见自身抗体及相关辅助检查结果的能力</td></tr>
+<tr><td>类风湿关节炎</td><td>提高对该病发病机制、临床特点和分类标准的理解。</td><td>培养运用生物-心理-社会医学模式对该病进行诊治的能力</td><td>增进对该病治疗目标和治疗手段的了解和运用</td></tr>
+<tr><td>系统性红斑狼疮</td><td>提高对该病的发病机制、病理特点、临床特点、分类标准和治疗原则的理解。</td><td>培养医学整体观，提高运用生物-心理-社会医学模式对该病进行诊治的能力</td><td></td></tr>
+<tr><td>系统性血管炎</td><td>提高对系统性血管炎的范畴、分类、临床表现和治疗原则的理解</td><td>重点理解大动脉炎、巨细胞动脉炎和ANCA相关性血管炎</td><td>培养医学整体观，提高运用生物-心理-社会医学模式对该病进行诊治的能力</td></tr>
+</tbody></table></div></div></details>
+        </div>
+      </section>
+  </section>
+
+  <footer class="footer">
+    <div>依据：人民卫生出版社《内科学》（第10版）第二篇至第八篇 &amp; 《内科学》理论课程教学大纲 · 状态：<strong>Audit Not Completed</strong></div>
+    <div>
+      <a href="../../presentations.html">演示报告集</a> ·
+      <a href="https://app.notion.com/p/4249530ba4dc8048bf97f49fffac6c77" target="_blank" rel="noopener noreferrer">Notion ↗</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  // Theme toggle synced with all 7 system pages
+  var root = document.documentElement;
+  var themeBtn = document.getElementById("hubThemeBtn");
+  var themeState = document.getElementById("hubThemeState");
+  var saved = null;
+  try {
+    saved = localStorage.getItem("study_guide_theme") || localStorage.getItem("resp_guide_theme");
+  } catch (e) {}
+  var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  var theme = saved || (prefersDark ? "dark" : "light");
+
+  function applyTheme(t) {
+    root.setAttribute("data-theme", t);
+    if (themeState) themeState.textContent = t === "dark" ? "开" : "关";
+    try {
+      localStorage.setItem("study_guide_theme", t);
+      localStorage.setItem("resp_guide_theme", t);
+    } catch (e) {}
+  }
+  applyTheme(theme);
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      theme = theme === "dark" ? "light" : "dark";
+      applyTheme(theme);
+    });
+  }
+
+  // Syllabus system tabs
+  var tabs = Array.from(document.querySelectorAll(".syl-tab"));
+  var panels = Array.from(document.querySelectorAll(".syl-panel"));
+  var expandBtn = document.getElementById("sylExpandAllBtn");
+  var showAll = false;
+
+  function activateSyl(slug) {
+    tabs.forEach(function (t) {
+      var on = t.dataset.sylTab === slug;
+      t.classList.toggle("active", on);
+      t.setAttribute("aria-selected", on ? "true" : "false");
+    });
+    panels.forEach(function (p) {
+      p.classList.toggle("active", p.dataset.sylPanel === slug);
+    });
+  }
+
+  tabs.forEach(function (t) {
+    t.addEventListener("click", function () {
+      if (showAll) {
+        showAll = false;
+        document.body.classList.remove("syl-show-all");
+        if (expandBtn) expandBtn.querySelector("span").textContent = "关";
+      }
+      activateSyl(t.dataset.sylTab);
+    });
+  });
+
+  document.querySelectorAll(".jump-syl-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var slug = btn.dataset.sylTarget;
+      activateSyl(slug);
+      var sec = document.getElementById("syllabus-explorer");
+      if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  if (expandBtn) {
+    expandBtn.addEventListener("click", function () {
+      showAll = !showAll;
+      document.body.classList.toggle("syl-show-all", showAll);
+      expandBtn.querySelector("span").textContent = showAll ? "开" : "关";
+    });
+  }
+
+  // Syllabus view mode toggle
+  var modeBtns = Array.from(document.querySelectorAll(".syl-mode-btn"));
+  modeBtns.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var mode = b.dataset.sylMode;
+      document.body.classList.remove("syl-mode-both", "syl-mode-curated", "syl-mode-raw");
+      document.body.classList.add("syl-mode-" + mode);
+      modeBtns.forEach(function (x) { x.classList.toggle("active", x === b); });
+    });
+  });
+})();
+</script>
+</body>
+</html>

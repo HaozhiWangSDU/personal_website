@@ -1,0 +1,2972 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>内科学（第10版）· 呼吸系统教学大纲精要（掌握 / 熟悉 + SVG图解）</title>
+<style id="theme-tokens">
+:root, [data-theme="light"] {
+  --background: #f6f8fb;
+  --content: #f6f8fb;
+  --card: #ffffff;
+  --sidebar: #eef2f7;
+  --border: #d5dde8;
+  --card-border: #e5ebf3;
+  --foreground: #182230;
+  --muted-foreground: #526075;
+  --placeholder: #7a889d;
+  --primary: #1d4ed8;
+  --primary-foreground: #ffffff;
+  --secondary: #e8eef6;
+  --secondary-foreground: #1e293b;
+  --accent: #dbeafe;
+  --link: #1d4ed8;
+  --success: #15803d;
+  --warning: #d97706;
+  --error: #dc2626;
+  --chart-1: #0284c7;
+  --chart-2: #0d9488;
+  --chart-3: #7c3aed;
+  --chart-4: #ea580c;
+  --chart-5: #be123c;
+  --chart-6: #4f46e5;
+}
+[data-theme="dark"] {
+  --background: #0f172a;
+  --content: #0f172a;
+  --card: #162033;
+  --sidebar: #111b2e;
+  --border: #2a3952;
+  --card-border: #223047;
+  --foreground: #e6edf7;
+  --muted-foreground: #9cb0c9;
+  --placeholder: #7488a3;
+  --primary: #60a5fa;
+  --primary-foreground: #0b1220;
+  --secondary: #1e2c45;
+  --secondary-foreground: #dce7f7;
+  --accent: #1d3557;
+  --link: #60a5fa;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --error: #f87171;
+  --chart-1: #38bdf8;
+  --chart-2: #2dd4bf;
+  --chart-3: #a78bfa;
+  --chart-4: #fb923c;
+  --chart-5: #fb7185;
+  --chart-6: #818cf8;
+}
+</style>
+<style id="app-styles">
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .app-shell {
+    display: flex;
+    min-height: 100vh;
+    background: var(--background);
+  }
+  /* Sidebar */
+  .sidebar {
+    width: 256px;
+    flex-shrink: 0;
+    background: var(--sidebar);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 30;
+    transition: width 0.2s ease, transform 0.2s ease, opacity 0.18s ease;
+  }
+  body.sidebar-collapsed .sidebar {
+    width: 0;
+    min-width: 0;
+    border-right: none;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .sidebar-header {
+    padding: 14px 14px 10px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .sidebar-close-btn {
+    padding: 3px 7px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--muted-foreground);
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+  .sidebar-close-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .sidebar-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--foreground);
+    line-height: 1.35;
+  }
+  .sidebar-sub {
+    font-size: 11.5px;
+    color: var(--muted-foreground);
+    margin-top: 3px;
+  }
+  .nav-list {
+    padding: 8px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+    overflow-y: auto;
+  }
+  .nav-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 9px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--foreground);
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-size: 13px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .nav-item:hover {
+    background: var(--card);
+    border-color: var(--card-border);
+  }
+  .nav-item.active {
+    background: var(--card);
+    border-color: var(--primary);
+    box-shadow: inset 3px 0 0 var(--primary);
+  }
+  .nav-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+  .nav-item.active .nav-num {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+  .nav-meta {
+    display: block;
+    font-size: 11px;
+    color: var(--muted-foreground);
+    margin-top: 2px;
+  }
+  .sidebar-controls {
+    padding: 10px 10px 8px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .sidebar-controls-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted-foreground);
+    letter-spacing: 0.03em;
+    padding: 0 2px;
+  }
+  .sidebar-controls .tool-btn {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sidebar-footer {
+    padding: 8px 12px 10px;
+    border-top: 1px solid var(--card-border);
+    font-size: 11px;
+    color: var(--muted-foreground);
+  }
+
+  /* Main area */
+  .main-wrap {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
+    padding: 7px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .menu-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--foreground);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .menu-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .filter-group {
+    display: inline-flex;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2px;
+    gap: 2px;
+  }
+  .filter-btn {
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: var(--muted-foreground);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .filter-btn.active {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+  .tool-btn {
+    padding: 6px 10px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--foreground);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .tool-btn:hover {
+    border-color: var(--primary);
+  }
+  .tool-btn.active {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border-color: var(--primary);
+  }
+
+  /* Content */
+  .content {
+    padding: 14px 22px 44px;
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .module-section {
+    display: none;
+  }
+  .module-section.active,
+  body.view-all .module-section {
+    display: block;
+  }
+  body.view-all .module-section {
+    margin-bottom: 42px;
+    padding-bottom: 32px;
+    border-bottom: 2px dashed var(--border);
+  }
+  .mod-header {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+  }
+  .mod-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .mod-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--foreground);
+  }
+  .mod-source {
+    font-size: 12px;
+    color: var(--muted-foreground);
+    background: var(--secondary);
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+  .syllabus-box {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+    font-size: 12.5px;
+    border-top: 1px solid var(--card-border);
+    padding-top: 10px;
+  }
+  .syl-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .syl-tag {
+    flex-shrink: 0;
+    padding: 1px 7px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .syl-tag.m { background: var(--error); color: #ffffff; }
+  .syl-tag.f { background: var(--chart-1); color: #ffffff; }
+  .syl-tag.x { background: var(--secondary); color: var(--muted-foreground); border: 1px solid var(--border); }
+  .syl-excluded { color: var(--muted-foreground); font-size: 12px; }
+
+  /* Tier sections */
+  .tier-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 22px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--border);
+    font-size: 16px;
+    font-weight: 800;
+  }
+  .tier-heading.master-hd { border-bottom-color: var(--error); }
+  .tier-heading.familiar-hd { border-bottom-color: var(--chart-1); }
+
+  /* Cards */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .card.tier-master {
+    border-left: 4px solid var(--error);
+  }
+  .card.tier-familiar {
+    border-left: 4px solid var(--chart-1);
+    opacity: 0.96;
+  }
+  .card-hd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .card-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--foreground);
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .badge-m {
+    background: var(--error);
+    color: #ffffff;
+  }
+  .badge-f {
+    background: transparent;
+    color: var(--chart-1);
+    border: 1px solid var(--chart-1);
+  }
+  .badge-note {
+    background: var(--warning);
+    color: #111111;
+  }
+
+  /* Filtering */
+  body.filter-master [data-tier="familiar"] { display: none !important; }
+  body.filter-familiar [data-tier="master"] { display: none !important; }
+
+  /* Typography inside cards */
+  .card p { margin: 6px 0; }
+  .card ul, .card ol { margin: 6px 0; padding-left: 20px; }
+  .card li { margin: 4px 0; }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .mini-box {
+    background: var(--background);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  .mini-box h4 {
+    margin: 0 0 5px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  /* Tables */
+  .tbl-wrap {
+    overflow-x: auto;
+    margin: 8px 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  table.med-tbl {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+  table.med-tbl th {
+    background: var(--secondary);
+    color: var(--foreground);
+    font-weight: 700;
+    text-align: left;
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  table.med-tbl td {
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--card-border);
+    vertical-align: top;
+  }
+  table.med-tbl tr:last-child td { border-bottom: none; }
+
+  /* Callouts */
+  .callout {
+    margin: 8px 0;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    border: 1px solid var(--border);
+    background: var(--background);
+  }
+  .callout.warn {
+    border-left: 3px solid var(--warning);
+  }
+  .callout.danger {
+    border-left: 3px solid var(--error);
+  }
+  .callout.info {
+    border-left: 3px solid var(--chart-1);
+  }
+
+  /* Cloze self-test spans */
+  .k {
+    font-weight: 700;
+    color: var(--primary);
+    border-bottom: 1px dotted var(--primary);
+    padding: 0 2px;
+    border-radius: 3px;
+    transition: background 0.15s, color 0.15s;
+  }
+  body.cloze-on .k:not(.revealed) {
+    background: var(--foreground);
+    color: transparent;
+    border-bottom-color: transparent;
+    cursor: pointer;
+    user-select: none;
+  }
+  body.cloze-on .k:not(.revealed):hover {
+    opacity: 0.85;
+  }
+  body.cloze-on .k.revealed {
+    background: var(--secondary);
+    color: var(--primary);
+    cursor: pointer;
+  }
+
+  /* SVG diagram box */
+  .svg-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin: 12px 0 16px;
+  }
+  .svg-hd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .svg-zoom-btn {
+    padding: 3px 9px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--background);
+    color: var(--foreground);
+    font-size: 11.5px;
+    cursor: pointer;
+  }
+  .svg-zoom-btn:hover { border-color: var(--primary); color: var(--primary); }
+  .svg-stage {
+    width: 100%;
+    overflow-x: auto;
+    cursor: zoom-in;
+  }
+  .svg-stage svg {
+    display: block;
+    width: 100%;
+    min-width: 680px;
+    height: auto;
+  }
+
+  /* Lightbox modal */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    max-width: 1200px;
+    width: 96%;
+    max-height: 92vh;
+    overflow: auto;
+    padding: 16px;
+  }
+  .modal-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .modal-body svg { width: 100%; height: auto; display: block; }
+
+  /* Responsive */
+  @media (max-width: 860px) {
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 264px;
+      transform: translateX(-100%);
+      box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .sidebar.open { transform: translateX(0); }
+    body.sidebar-collapsed .sidebar { width: 264px; opacity: 1; pointer-events: auto; border-right: 1px solid var(--border); }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .content { padding: 12px 12px 40px; }
+  }
+  @media print {
+    .sidebar, .topbar, .svg-zoom-btn { display: none !important; }
+    .module-section { display: block !important; page-break-after: always; }
+    .card, .svg-card { break-inside: avoid; }
+    body.cloze-on .k { background: transparent !important; color: inherit !important; }
+  }
+
+  /* Published Portal Integration (Audit Not Completed + Back Navigation) */
+  .portal-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--foreground);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .portal-back-link:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .audit-pill {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 700;
+    background: rgba(217, 119, 6, 0.14);
+    color: var(--warning);
+    border: 1px solid var(--warning);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .portal-audit-banner {
+    margin: 0 0 14px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--warning);
+    border-left: 4px solid var(--warning);
+    background: rgba(217, 119, 6, 0.09);
+    color: var(--foreground);
+    font-size: 12.5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .portal-audit-banner strong { color: var(--warning); }
+  .portal-audit-links { display: inline-flex; gap: 10px; flex-wrap: wrap; }
+  .portal-audit-links a {
+    color: var(--link);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .portal-audit-links a:hover { text-decoration: underline; }
+  @media print {
+    .portal-back-link, .audit-pill { display: none !important; }
+  }
+</style>
+</head>
+<body >
+<div class="app-shell">
+  <!-- Left Navigation Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div>
+        <div class="sidebar-title">内科学（第10版）呼吸系统</div>
+        <div class="sidebar-sub">理论课程大纲精要 · 8讲 / 16学时<br />严守【掌握】核心 + 【熟悉】次重点</div>
+      </div>
+      <button class="sidebar-close-btn" id="sidebarCloseBtn" type="button" title="收起侧边栏">✕</button>
+    </div>
+    <nav class="nav-list" id="navList">
+      <button class="nav-item active" data-target="mod-1"><span class="nav-num">Ⅰ</span><span><strong>肺炎（含肺脓肿）</strong><span class="nav-meta">第6、7章 · 课本P46-70 / PDF P77-101</span></span></button>
+      <button class="nav-item" data-target="mod-2"><span class="nav-num">Ⅱ</span><span><strong>肺结核</strong><span class="nav-meta">第8章 · 课本P71-85 / PDF P102-116</span></span></button>
+      <button class="nav-item" data-target="mod-3"><span class="nav-num">Ⅲ</span><span><strong>慢性阻塞性肺疾病</strong><span class="nav-meta">第3章 · 课本P23-30 / PDF P54-61</span></span></button>
+      <button class="nav-item" data-target="mod-4"><span class="nav-num">Ⅳ</span><span><strong>支气管哮喘</strong><span class="nav-meta">第4章 · 课本P31-39 / PDF P62-70</span></span></button>
+      <button class="nav-item" data-target="mod-5"><span class="nav-num">Ⅴ</span><span><strong>肺血栓栓塞症（肺栓塞）</strong><span class="nav-meta">第11章 · 课本P110-117 / PDF P141-148</span></span></button>
+      <button class="nav-item" data-target="mod-6"><span class="nav-num">Ⅵ</span><span><strong>间质性肺疾病</strong><span class="nav-meta">第10章 · 课本P99-109 / PDF P130-140</span></span></button>
+      <button class="nav-item" data-target="mod-7"><span class="nav-num">Ⅶ</span><span><strong>胸膜疾病（胸液/气胸）</strong><span class="nav-meta">第13章 · 课本P126-137 / PDF P157-168</span></span></button>
+      <button class="nav-item" data-target="mod-8"><span class="nav-num">Ⅷ</span><span><strong>原发性肺癌</strong><span class="nav-meta">第9章 · 课本P86-98 / PDF P117-129</span></span></button>
+      <button class="nav-item" data-target="mod-audit"><span class="nav-num">审</span><span><strong>大纲边界与差异审计表</strong><span class="nav-meta">剔除清单 · 4处内部口径对照</span></span></button>
+    </nav>
+    <div class="sidebar-controls">
+      <div class="sidebar-controls-title">阅读与自测选项</div>
+      <button class="tool-btn" id="clozeBtn" type="button" title="遮罩关键数字、阈值、首选药物用于闭卷自测"><span>背诵遮罩</span><span id="clozeState">关</span></button>
+      <button class="tool-btn" id="viewAllBtn" type="button" title="切换单章精读或全篇展开以便通读/打印"><span>全篇展开</span><span id="viewAllState">关</span></button>
+      <button class="tool-btn" id="themeToggleBtn" type="button" title="切换浅色/深色主题"><span>深色主题</span><span id="themeState">关</span></button>
+    </div>
+    <div class="sidebar-footer">
+      依据：人卫第10版《内科学》第二篇<br />
+      口径：严格仅取【教学目标和要求】掌握/熟悉
+    </div>
+  </aside>
+
+  <!-- Right Workspace -->
+  <div class="main-wrap">
+    <header class="topbar">
+      <a class="portal-back-link" href="./index.html" title="返回内科学七大系统总导航">← 七大系统导航</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="切换侧边栏">☰ 收起侧边栏</button>
+      <div class="filter-group" role="group" aria-label="重要程度筛选">
+        <button class="filter-btn active" data-filter="all" type="button">全部内容</button>
+        <button class="filter-btn" data-filter="master" type="button">仅看掌握（核心）</button>
+        <button class="filter-btn" data-filter="familiar" type="button">仅看熟悉（次重点）</button>
+      </div>
+      <span class="audit-pill" title="Audit Not Completed · 首轮独立审计检出待修项，尚未修订放行">⚠ Audit Not Completed</span>
+    
+    </header>
+
+    <main class="content" id="mainContent">
+<div class="portal-audit-banner" role="note"><span><strong>⚠ Audit Not Completed</strong> — Audit Not Completed · 首轮独立审计检出待修项，尚未修订放行。临床阈值、药物剂量与诊疗标准请以人卫第10版教材原文为准。</span><span class="portal-audit-links"><a href="./index.html">七大系统导航与大纲</a><a href="https://app.notion.com/p/4249530ba4dc8048bf97f49fffac6c77" target="_blank" rel="noopener noreferrer">Notion 配套页面 ↗</a></span></div>
+
+
+<!-- ==================== MODULE 1 ==================== -->
+<section class="module-section active" id="mod-1" data-mod-title="Ⅰ、肺炎（含肺脓肿）">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅰ、肺炎（含肺脓肿）</h1>
+      <span class="mod-source">第10版 第六章《肺部感染性疾病》（课本 P46–67 / PDF P77–98）+ 第七章《肺脓肿》（课本 P68–70 / PDF P99–101）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>肺炎球菌及其他病原体导致 CAP 的病理、临床表现，重症肺炎病情评估（CURB-65）及抢救治疗方案；肺炎的诊断、鉴别诊断、治疗原则和方法。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>葡萄球菌肺炎、肺炎支原体肺炎、肺炎衣原体肺炎、病毒性肺炎的临床特征、诊断要点及治疗药物选择；常见肺部真菌感染的诊断和治疗；肺脓肿的病因、发病机理。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">了解项：肺炎流行病学概况、CAP/HAP/VAP 分类及细菌分布专述；大纲目标未要求的肺脓肿临床表现/诊断/鉴别/治疗（详见文末审计表）。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 1 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 1 · 肺炎链球菌病理演变 + CAP 重症评估（CURB-65 / 重症标准）与 72h 临床稳定决策链</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 430" width="100%" role="img" aria-label="肺炎链球菌病理演变与CAP重症评估决策链">
+        <defs>
+          <marker id="arr1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr1r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+        <!-- Top Band: SP Pathology 4 Stages -->
+        <rect x="8" y="8" width="864" height="108" rx="10" fill="var(--primary)" fill-opacity="0.06" stroke="var(--border)" />
+        <text x="22" y="29" font-size="13" font-weight="700" fill="var(--primary)">① 肺炎链球菌（SP）大叶性肺炎典型 4 期病理演变（多糖荚膜侵袭，经 Cohn 孔扩散，不产毒素/不坏死/无空洞）</text>
+
+        <rect x="22" y="40" width="180" height="64" rx="7" fill="var(--card)" stroke="var(--chart-1)" stroke-width="1.5" />
+        <text x="112" y="59" text-anchor="middle" font-size="13" font-weight="700" fill="var(--foreground)">1. 充血期</text>
+        <text x="112" y="76" text-anchor="middle" font-size="11.5" fill="var(--muted-foreground)">肺泡壁充血水肿</text>
+        <text x="112" y="93" text-anchor="middle" font-size="11.5" fill="var(--muted-foreground)">浆液渗出、少量红/白细胞</text>
+
+        <line x1="204" y1="72" x2="234" y2="72" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr1)" />
+
+        <rect x="238" y="40" width="188" height="64" rx="7" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" stroke-width="1.5" />
+        <text x="332" y="59" text-anchor="middle" font-size="13" font-weight="700" fill="var(--error)">2. 红肝变期</text>
+        <text x="332" y="76" text-anchor="middle" font-size="11.5" fill="var(--foreground)">大量红细胞 + 纤维蛋白渗出</text>
+        <text x="332" y="93" text-anchor="middle" font-size="11.5" fill="var(--error)" font-weight="600">→ 铁锈色痰 + 典型实变体征</text>
+
+        <line x1="428" y1="72" x2="458" y2="72" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr1)" />
+
+        <rect x="462" y="40" width="188" height="64" rx="7" fill="var(--card)" stroke="var(--warning)" stroke-width="1.5" />
+        <text x="556" y="59" text-anchor="middle" font-size="13" font-weight="700" fill="var(--foreground)">3. 灰肝变期</text>
+        <text x="556" y="76" text-anchor="middle" font-size="11.5" fill="var(--muted-foreground)">大量白细胞吞噬细菌</text>
+        <text x="556" y="93" text-anchor="middle" font-size="11.5" fill="var(--muted-foreground)">肺实变持续（支气管充气征）</text>
+
+        <line x1="652" y1="72" x2="682" y2="72" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr1)" />
+
+        <rect x="686" y="40" width="174" height="64" rx="7" fill="var(--success)" fill-opacity="0.10" stroke="var(--success)" stroke-width="1.5" />
+        <text x="773" y="59" text-anchor="middle" font-size="13" font-weight="700" fill="var(--success)">4. 消散期</text>
+        <text x="773" y="76" text-anchor="middle" font-size="11.5" fill="var(--foreground)">纤维蛋白溶解吸收/湿啰音</text>
+        <text x="773" y="93" text-anchor="middle" font-size="11.5" fill="var(--muted-foreground)">多不留瘢痕（偶“假空洞”）</text>
+
+        <!-- Bottom Left: CURB-65 -->
+        <rect x="8" y="130" width="280" height="290" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <rect x="8" y="130" width="280" height="32" rx="10" fill="var(--chart-1)" fill-opacity="0.16" />
+        <text x="22" y="151" font-size="13" font-weight="700" fill="var(--foreground)">② CURB-65 评分（每项 1 分）</text>
+
+        <text x="22" y="182" font-size="12.5" font-weight="700" fill="var(--error)">C</text>
+        <text x="42" y="182" font-size="12" fill="var(--foreground)">意识障碍（Confusion）</text>
+        <text x="22" y="206" font-size="12.5" font-weight="700" fill="var(--error)">U</text>
+        <text x="42" y="206" font-size="12" fill="var(--foreground)">血尿素氮 BUN &gt; 7 mmol/L</text>
+        <text x="22" y="230" font-size="12.5" font-weight="700" fill="var(--error)">R</text>
+        <text x="42" y="230" font-size="12" fill="var(--foreground)">呼吸频率 RR ≥ 30 次/分</text>
+        <text x="22" y="254" font-size="12.5" font-weight="700" fill="var(--error)">B</text>
+        <text x="42" y="254" font-size="12" fill="var(--foreground)">SBP &lt; 90 或 DBP ≤ 60 mmHg</text>
+        <text x="22" y="278" font-size="12.5" font-weight="700" fill="var(--error)">65</text>
+        <text x="42" y="278" font-size="12" fill="var(--foreground)">年龄 ≥ 65 岁</text>
+
+        <line x1="22" y1="294" x2="274" y2="294" stroke="var(--card-border)" />
+        <rect x="20" y="304" width="256" height="30" rx="6" fill="var(--success)" fill-opacity="0.14" />
+        <text x="30" y="324" font-size="12" font-weight="700" fill="var(--success)">0～1 分：原则上门诊治疗</text>
+        <rect x="20" y="341" width="256" height="30" rx="6" fill="var(--warning)" fill-opacity="0.18" />
+        <text x="30" y="361" font-size="12" font-weight="700" fill="var(--foreground)">2 分：建议住院或严格随访院外</text>
+        <rect x="20" y="378" width="256" height="30" rx="6" fill="var(--error)" fill-opacity="0.16" />
+        <text x="30" y="398" font-size="12" font-weight="700" fill="var(--error)">3～5 分：应住院治疗</text>
+
+        <!-- Bottom Middle: Severe CAP -->
+        <rect x="302" y="130" width="286" height="290" rx="10" fill="var(--card)" stroke="var(--error)" stroke-width="1.5" />
+        <rect x="302" y="130" width="286" height="32" rx="10" fill="var(--error)" fill-opacity="0.16" />
+        <text x="316" y="151" font-size="13" font-weight="700" fill="var(--error)">③ 重症 CAP 标准（收住 ICU）</text>
+
+        <text x="316" y="180" font-size="12" font-weight="700" fill="var(--error)">主要标准（满足 ≥ 1 项即确诊）：</text>
+        <text x="322" y="199" font-size="11.5" fill="var(--foreground)">1. 需气管插管行机械通气</text>
+        <text x="322" y="217" font-size="11.5" fill="var(--foreground)">2. 感染性休克液体复苏后仍需升压药</text>
+
+        <line x1="316" y1="229" x2="574" y2="229" stroke="var(--card-border)" />
+        <text x="316" y="247" font-size="12" font-weight="700" fill="var(--foreground)">次要标准（满足 ≥ 3 项即确诊）：</text>
+        <text x="322" y="266" font-size="11.5" fill="var(--foreground)">① RR ≥ 30 次/分　　② PaO₂/FiO₂ ≤ 250</text>
+        <text x="322" y="284" font-size="11.5" fill="var(--foreground)">③ 多肺叶浸润　　　④ 意识/定向障碍</text>
+        <text x="322" y="302" font-size="11.5" fill="var(--foreground)">⑤ BUN ≥ 7.14 mmol/L（20 mg/dl）</text>
+        <text x="322" y="320" font-size="11.5" fill="var(--foreground)">⑥ SBP &lt; 90 mmHg 需积极液体复苏</text>
+
+        <rect x="314" y="335" width="262" height="74" rx="7" fill="var(--error)" fill-opacity="0.09" stroke="var(--error)" stroke-dasharray="4 2" />
+        <text x="324" y="354" font-size="12" font-weight="700" fill="var(--error)">重症 CAP 经验抗菌（足量广谱联合）：</text>
+        <text x="324" y="373" font-size="11.5" fill="var(--foreground)">• β-内酰胺类 + 大环内酯类 / 呼吸喹诺酮</text>
+        <text x="324" y="392" font-size="11.5" fill="var(--foreground)">• 青霉素过敏：呼吸喹诺酮 + 氨曲南</text>
+
+        <!-- Bottom Right: 72h Eval -->
+        <rect x="602" y="130" width="270" height="290" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <rect x="602" y="130" width="270" height="32" rx="10" fill="var(--success)" fill-opacity="0.16" />
+        <text x="616" y="151" font-size="13" font-weight="700" fill="var(--success)">④ 初始治疗 72h 评价节点</text>
+
+        <text x="616" y="179" font-size="12" font-weight="700" fill="var(--success)">临床稳定 5 项标准（全满足）：</text>
+        <text x="622" y="198" font-size="11.5" fill="var(--foreground)">① 体温 ≤ 37.8℃　　② 心率 ≤ 100 次/分</text>
+        <text x="622" y="216" font-size="11.5" fill="var(--foreground)">③ 呼吸频率 ≤ 24 次/分</text>
+        <text x="622" y="234" font-size="11.5" fill="var(--foreground)">④ 收缩压 ≥ 90 mmHg</text>
+        <text x="622" y="252" font-size="11.5" fill="var(--foreground)">⑤ 吸空气 SpO₂ ≥ 90%（PaO₂ ≥ 60）</text>
+
+        <rect x="614" y="263" width="246" height="30" rx="6" fill="var(--success)" fill-opacity="0.12" />
+        <text x="737" y="282" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--success)">达标且能口服 → 序贯口服（热退2～3天停药）</text>
+
+        <line x1="616" y1="305" x2="858" y2="305" stroke="var(--card-border)" />
+        <text x="616" y="323" font-size="12" font-weight="700" fill="var(--warning)">72h 无改善 5 大排查原因：</text>
+        <text x="622" y="342" font-size="11.5" fill="var(--foreground)">1. 药物未覆盖致病菌或细菌耐药</text>
+        <text x="622" y="360" font-size="11.5" fill="var(--foreground)">2. 特殊病原体（结核/真菌/病毒）</text>
+        <text x="622" y="378" font-size="11.5" fill="var(--foreground)">3. 并发脓胸等或宿主免疫抑制</text>
+        <text x="622" y="396" font-size="11.5" fill="var(--foreground)">4. 非感染误诊　5. 药物热</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心重点</span> 肺炎病理、临床表现、重症评估与诊疗原则</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">1. 肺炎链球菌及其他常见 CAP 病原体的病理与临床表现</h3><span class="badge badge-m">掌握</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>肺炎总病理与解剖分型</h4>
+        <ul>
+          <li><strong>基本病理</strong>：肺泡毛细血管充血水肿，肺泡内纤维蛋白渗出及细胞浸润。除<span class="k">金葡菌、铜绿假单胞菌、肺炎克雷伯菌</span>等易致坏死形成空洞外，治愈后多不留瘢痕。</li>
+          <li><strong>大叶性（肺泡性）</strong>：经肺泡间孔（<span class="k">Cohn孔</span>）扩散，通常不累及支气管，多为肺炎链球菌，X线呈肺叶/段实变。</li>
+          <li><strong>小叶性（支气管性）</strong>：沿支气管入侵，沿肺纹理不规则斑片影，无实变，下叶常受累。</li>
+          <li><strong>间质性</strong>：累及支气管壁及肺泡壁，呼吸道症状轻而病变广泛时呼吸困难重，X线呈磨玻璃/网格状。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>肺炎链球菌（SP）肺炎（约占 CAP 半数）</h4>
+        <ul>
+          <li><strong>致病与 4 期病理</strong>：依靠<span class="k">高分子多糖荚膜</span>侵袭（成人多属 1～9 及 12 型，第 3 型毒力最强），<span class="k">不产毒素、不致组织坏死或空洞</span>。典型病理依次为：①<span class="k">充血期</span>（肺泡壁充血水肿、浆液渗出及少量红/白细胞）；②<span class="k">红肝变期</span>（大量红细胞与纤维蛋白渗出，致铁锈色痰与典型实变）；③<span class="k">灰肝变期</span>（大量白细胞吞噬细菌，持续肺实变）；④<span class="k">消散期</span>（纤维蛋白溶解吸收、肺泡重新充气，闻湿啰音）。早期抗菌后典型分期少见，愈后多<span class="k">不留纤维瘢痕</span>（极个别成机化性肺炎）。未及时治 5%～10% 并发脓胸，10%～20% 菌血症致脑膜炎/心包炎/心内膜炎/关节炎/中耳炎等肺外感染。</li>
+          <li><strong>症状</strong>：受凉/淋雨/醉酒/病毒前驱 → 急骤起病、寒战高热（39～40℃<span class="k">稽留热</span>）、患侧胸痛可放射至肩或腹（易误诊急腹症）、<span class="k">铁锈色痰</span>。</li>
+          <li><strong>体征</strong>：急性热病容、面颊绯红、鼻翼扇动、<span class="k">口角鼻周单纯疱疹</span>；实变期<span class="k">叩诊浊音、语颤增强、支气管呼吸音</span>；消散期湿啰音；自然病程 1～2 周，有效抗菌 1～3 天退热；老年重症易发<span class="k">感染性休克</span>。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>常见病原体（表2-6-1要点）</th><th>核心病史、症状与体征</th><th>典型胸部 X 线征象</th></tr></thead>
+        <tbody>
+          <tr><td><strong>肺炎链球菌</strong></td><td>起病急，寒战高热、咳<span class="k">铁锈色痰</span>、胸痛、肺实变体征</td><td>肺叶或肺段实变（可见<span class="k">支气管充气征</span>），无空洞，可伴胸液；消散期可现“假空洞”</td></tr>
+          <tr><td><strong>肺炎克雷伯菌</strong></td><td>起病急，寒战高热、全身衰竭、咳<span class="k">砖红色胶冻状痰</span></td><td>肺叶/段实变、蜂窝状脓肿、<span class="k">叶间隙下坠</span></td></tr>
+          <tr><td><strong>流感嗜血杆菌</strong></td><td>高热、呼吸困难、衰竭</td><td>支气管肺炎或肺叶实变，无空洞</td></tr>
+          <tr><td><strong>军团菌</strong></td><td>水汽/空调暴露，高热(&gt;38.8℃)、肌痛、<span class="k">相对缓脉</span>、腹泻/谵妄</td><td>下叶斑片浸润，进展迅速，无空洞（尿抗原15min快检血清1型）</td></tr>
+          <tr><td><strong>铜绿假单胞菌</strong></td><td>毒血症明显，脓痰可呈<span class="k">蓝绿色</span></td><td>弥漫性支气管炎、早期肺脓肿</td></tr>
+          <tr><td><strong>厌氧菌</strong></td><td>误吸病史，高热、腥臭痰、毒血症明显</td><td>支气管肺炎、脓胸、脓气胸、多发肺脓肿</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">2. 肺炎诊断程序、重症病情评估（CURB-65 与重症 CAP 标准）及鉴别诊断</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>第一步：确定肺炎诊断</strong> — CAP 临床诊断须同时满足 <span class="k">①社区发病 + ③胸部影像学浸润/间质改变 + ②临床表现4项任1项</span>（a.新近咳嗽咳痰或原有加重伴脓痰；b.发热；c.实变体征和/或湿啰音；d.WBC &gt;10×10⁹/L 或 &lt;4×10⁹/L），并除外结核、肿瘤、非感染性肺浸润、肺水肿、肺不张、肺栓塞、肺血管炎等。（HAP/VAP：入院≥48h或机械通气≥48h/拔管48h内新发浸润影 + 发热&gt;38℃/脓性分泌物/WBC异常3项中≥2项）。</p>
+    <p><strong>第二步：评估严重程度（决定门诊、普通病房或 ICU 治疗）</strong> — 取决于肺部局部炎症程度、播散范围和全身炎症反应程度；需呼吸支持、循环支持和加强监护者可认为重症肺炎。</p>
+    <div class="grid-2" style="margin:8px 0;">
+      <div class="mini-box">
+        <h4>CURB-65 评分（我国推荐判断 CAP 住院标准，每项 1 分）</h4>
+        <ul>
+          <li><strong>C</strong>：<span class="k">意识障碍</span>（Confusion）；</li>
+          <li><strong>U</strong>：<span class="k">血尿素氮（BUN）&gt; 7 mmol/L</span>；</li>
+          <li><strong>R</strong>：<span class="k">呼吸频率（RR）≥ 30 次/分</span>；</li>
+          <li><strong>B</strong>：<span class="k">收缩压 &lt; 90 mmHg 或舒张压 ≤ 60 mmHg</span>；</li>
+          <li><strong>65</strong>：<span class="k">年龄 ≥ 65 岁</span>。</li>
+        </ul>
+        <p style="margin-top:6px;"><strong>分层决策</strong>：<span class="k">0～1 分</span>原则上门诊治疗；<span class="k">2 分</span>建议住院或严格随访下的院外治疗；<span class="k">3～5 分</span>应住院治疗（并结合年龄、基础病、社会经济、胃肠功能及依从性综合判断）。</p>
+      </div>
+      <div class="mini-box">
+        <h4>CAP 重症肺炎诊断标准（满足 ≥1 项主要标准 或 ≥3 项次要标准 → 收住 ICU）</h4>
+        <ul>
+          <li><strong>主要标准（2 项）</strong>：①需要<span class="k">气管插管行机械通气</span>治疗；②<span class="k">感染性休克</span>经积极液体复苏后仍需血管活性药物治疗。</li>
+          <li><strong>次要标准（6 项）</strong>：①呼吸频率 <span class="k">≥ 30 次/分</span>；②氧合指数 <span class="k">PaO₂/FiO₂ ≤ 250 mmHg</span>；③<span class="k">多肺叶浸润</span>；④<span class="k">意识障碍和/或定向障碍</span>；⑤血尿素氮 <span class="k">≥ 7.14 mmol/L（20 mg/dl）</span>；⑥<span class="k">收缩压 &lt; 90 mmHg</span> 需要积极液体复苏。</li>
+        </ul>
+      </div>
+    </div>
+    <p><strong>第三步：确定病原体（尽量在用抗菌药前采样）</strong>：</p>
+    <ul>
+      <li><strong>合格痰涂片标准</strong>：室温 2h 内送检，光镜每低倍视野<span class="k">鳞状上皮细胞 &lt;10 个、白细胞 &gt;25 个</span>（或比值 &lt;1:2.5）。</li>
+      <li><strong>下呼吸道定量培养致病菌阈值</strong>：痰定量 <span class="k">≥10⁷ cfu/ml</span>（≤10⁴为污染；10⁵～10⁶连续2次同菌也可认定）；经支气管镜/人工气道吸引 <span class="k">≥10⁵</span>；支气管肺泡灌洗 BAL <span class="k">≥10⁴</span>；防污染样本毛刷（PSB）及防污染 BAL <span class="k">≥10³ cfu/ml</span>。</li>
+      <li><strong>其他确诊手段</strong>：血与痰分离到同菌、胸液培养阳性；尿抗原（军团菌、SP）；双份血清特异性抗体滴度 <span class="k">4倍增高</span>（回顾性）；核酸 PCR 与 <span class="k">mNGS</span>（用于重症、疑特殊病原体或传统未明时）。</li>
+    </ul>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>需鉴别的疾病</th><th>核心鉴别要点</th></tr></thead>
+        <tbody>
+          <tr><td><strong>急性上感 / 气管支气管炎</strong></td><td>有咳嗽发热但<span class="k">无肺实质浸润</span>，胸片可鉴别。</td></tr>
+          <tr><td><strong>肺结核</strong></td><td>午后低热、盗汗、乏力消瘦；多见<span class="k">肺尖或锁骨上下</span>，密度不匀、消散慢、可空洞播散；查痰抗酸杆菌；一般抗菌无效。</td></tr>
+          <tr><td><strong>肺癌</strong></td><td>多无急性感染中毒症状，WBC不高，痰中带血丝；可致<span class="k">阻塞性肺炎</span>，抗菌后炎症消退但肿瘤影显现，或<span class="k">同一部位反复肺炎</span>，需CT/支气管镜确诊。</td></tr>
+          <tr><td><strong>肺栓塞</strong></td><td>有静脉血栓危险因素，呼吸困难明显，可咯血、晕厥；胸片肺纹理减少、楔形影；血气低氧+低碳酸；D-二聚体、CTPA/V/Q 鉴别。</td></tr>
+          <tr><td><strong>非感染性肺浸润</strong></td><td>间质性肺炎、肺水肿、肺不张、肺血管炎等。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">3. 肺炎的治疗原则、分级抗菌方案、72h 疗效评估与抢救要点</h3><span class="badge badge-m">掌握</span></div>
+    <ul>
+      <li><strong>总原则</strong>：抗感染是关键（经验性 + 抗病原体），<span class="k">怀疑肺炎即尽早给予首剂</span>，综合年龄、基础病、场所、严重程度选药；重症必须足量、广谱、强力、联合。</li>
+      <li><strong>经验性分层选药</strong>：
+        <ul>
+          <li><strong>青壮年无基础病 CAP</strong>：青霉素类、一代头孢；因我国 SP 对大环内酯耐药率高，<span class="k">不单用大环内酯治疗 SP 肺炎</span>；耐药 SP 用呼吸氟喹诺酮（莫西沙星、吉米沙星、左氧氟沙星）。</li>
+          <li><strong>老年/有基础病/住院 CAP</strong>：呼吸氟喹诺酮，或二/三代头孢、β-内酰胺/酶抑制剂或厄他培南，可联大环内酯。</li>
+          <li><strong>重症 CAP</strong>：β-内酰胺类 + 大环内酯类或呼吸氟喹诺酮；青霉素过敏用呼吸氟喹诺酮 + 氨曲南。</li>
+          <li><strong>重症 HAP</strong>：抗假单胞菌 β-内酰胺类/广谱青霉素-酶抑制剂/碳青霉烯类 + 呼吸氟喹诺酮或氨基糖苷；疑 MDR 球菌联万古霉素/替考拉宁/利奈唑胺。</li>
+        </ul>
+      </li>
+      <li><strong>肺炎链球菌肺炎治疗与抢救要点</strong>：
+        <ul>
+          <li>首选<span class="k">青霉素 G</span>：轻症 240万 U/d 分3次 IM；稍重 240～480万 U/d 静滴 q6-8h；重症/脑膜炎 1000～3000万 U/d 分4次静滴（欧洲指南推荐大剂量 320万 U q4h 对 MIC≤8mg/L 有效）；过敏或耐药换呼吸氟喹诺酮/头孢噻肟/头孢曲松；MDR 换万古/替考/利奈唑胺。</li>
+          <li>支持抢救：卧床补液、PaO₂&lt;60mmHg 或发绀吸氧、防休克；<span class="k">不用阿司匹林等解热镇痛药</span>（防大汗脱水及干扰真实热型）；<span class="k">禁用抑制呼吸的镇静药</span>；体温降而复升或3天不降警惕脓胸/心包炎/关节炎等肺外并发症，脓胸积极引流。</li>
+        </ul>
+      </li>
+      <li><strong>疗程与停药指征</strong>：一般<span class="k">热退 2～3 天且主要呼吸道症状明显改善后停药</span>，<span class="k">不必以肺部阴影完全吸收为停药指征</span>。轻中度 CAP <span class="k">5～7 天</span>；非典型病原体反应慢者 <span class="k">10～14 天</span>；金葡/铜绿/克雷伯/厌氧菌等易致坏死者 <span class="k">14～21 天</span>。</li>
+      <li><strong>初始治疗 72 小时评估与序贯治疗</strong>：大多数 CAP 于初始治疗后 <span class="k">72 小时</span>临床改善（影像改善滞后于症状）；达<strong>临床稳定 5 项标准（须全满足）</strong>：①<span class="k">体温 ≤ 37.8℃</span>；②<span class="k">心率 ≤ 100 次/分</span>；③<span class="k">呼吸频率 ≤ 24 次/分</span>；④<span class="k">收缩压 ≥ 90 mmHg</span>；⑤<span class="k">吸空气 SpO₂ ≥ 90%（或 PaO₂ ≥ 60 mmHg）</span> → 且能口服者改用同类/近谱口服药序贯治疗。若 <strong>72h 症状无改善，排查 5 大原因</strong>：①药物未覆盖致病菌或细菌耐药；②特殊病原体感染（结核、真菌、病毒）；③出现并发症（如脓胸）或宿主免疫抑制；④非感染性疾病误诊；⑤药物热。</li>
+    </ul>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 特殊病原体肺炎、常见肺真菌病及肺脓肿病因机制</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">1. 葡萄球菌、支原体、衣原体与病毒性肺炎速查对比</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>类型</th><th>核心临床特征</th><th>诊断要点与影像</th><th>首选及备选治疗药物</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>葡萄球菌肺炎</strong></td>
+            <td>基础病/流感后/皮肤疖痈/吸毒史；急骤高热、寒战、胸痛、<span class="k">脓血痰</span>，毒血症重、可早期循环衰竭（院内感染起病隐袭）。</td>
+            <td>WBC显著升高核左移（产杀白细胞素者反可降低）；X线<span class="k">易变性</span>、早期空洞、<span class="k">肺气囊肿（液气囊腔）</span>、脓胸/气胸；培养确诊。</td>
+            <td>早期清除引流原发灶；耐酶半合成青霉素（<span class="k">苯唑西林/氯唑西林</span>）、头孢呋辛、酶抑制剂复方 ± 阿米卡星；<strong>MRSA</strong> 首选<span class="k">万古霉素</span>(1.5～2g/d)、替考拉宁或利奈唑胺。</td>
+          </tr>
+          <tr>
+            <td><strong>肺炎支原体肺炎</strong></td>
+            <td>儿童青少年多见，起病缓，乏力肌痛咽痛，<span class="k">持久阵发性干咳（夜间重）</span>，可伴鼓膜充血/斑丘疹；<span class="k">症状重、体征轻</span>。</td>
+            <td>起病2周约2/3<span class="k">冷凝集试验 ≥1:32</span>；IgM ≥1:64 或恢复期 4 倍升高；PCR/抗原快检。X线肺下野多形态浸润，3～4周自吸收。</td>
+            <td>无细胞壁，<span class="k">青霉素/头孢无效</span>；首选<span class="k">大环内酯类</span>（红霉素/罗红/阿奇霉素），不敏感换呼吸氟喹诺酮或四环素，疗程 2～3 周。</td>
+          </tr>
+          <tr>
+            <td><strong>肺炎衣原体肺炎</strong></td>
+            <td>隐袭起病，咽痛声嘶、干咳，部分呈<span class="k">双阶段病程</span>（先咽炎好转，1～3周后发肺炎）；肺部体征多无异常。</td>
+            <td>β-内酰胺无效且持续干咳警惕；主要靠血清学（原发 IgM≥1:32 或4倍；再感染 IgG≥1:512 或4倍）。X线早期单侧下叶肺泡渗出，后双侧混合。</td>
+            <td>首选<span class="k">大环内酯类</span>；也可用喹诺酮类或四环素类（多西环素）；疗程 <span class="k">14～21 天</span>。</td>
+          </tr>
+          <tr>
+            <td><strong>病毒性肺炎</strong><br /><span style="font-size:11px;color:var(--muted-foreground)">（含流感/SARS/禽流感/COVID-19）</span></td>
+            <td>冬春流行，起病急，发热头痛全身酸痛突出，咳嗽少痰/白黏痰，体征轻；小儿/老年易重症、ARDS。COVID-19分轻/中/重（RR≥30、SpO₂≤93%、氧合≤300、24～48h进展&gt;50%）/危重型。</td>
+            <td>WBC正常或偏低（COVID-19淋巴细胞↓、PCT常正常），痰涂片单核为主、培养无菌；X线/CT<span class="k">磨玻璃影</span>、小结节、索条影，大叶实变及胸液少见；PCR核酸/抗原/双份血清4倍确诊。</td>
+            <td>对症+氧疗，原则上<span class="k">不预防性用抗生素</span>。抗病毒：<span class="k">奥司他韦</span>（甲乙流/H5N1，150mg/d×5d）、利巴韦林（RSV/腺/副流）、阿昔洛韦（疱疹/水痘）、更昔洛韦（CMV）；COVID-19可用奈玛特韦/利托那韦、阿兹夫定、莫诺拉韦等；激素酌情短期用于重症过度炎症。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">2. 常见肺部真菌感染（肺真菌病）的诊断与治疗</h3><span class="badge badge-f">熟悉</span></div>
+    <p style="font-size:12.5px;color:var(--muted-foreground)">总原则：综合宿主因素、临床特征、微生物学和组织病理学，<strong>组织病理学诊断仍是“金标准”</strong>。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>肺真菌病类型</th><th>核心诊断依据与特征</th><th>主要治疗选择</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>肺念珠菌病</strong></td>
+            <td>分支气管炎型（白泡沫稀痰→糨糊痰）和肺炎型（白泡沫黏痰有酵臭/胶冻状）。诊断需合格痰<span class="k">2次镜检假菌丝/菌丝(+) + 2次培养同菌种</span> + 血清<span class="k">G试验连续2次(+)</span>（确诊靠病理）。</td>
+            <td>轻症祛诱因；重症用<span class="k">氟康唑</span>（200mg/d首剂加倍，重400mg/d）、伊曲/伏立/泊沙康唑、棘白菌素（卡泊/米卡芬净）或两性霉素B。</td>
+          </tr>
+          <tr>
+            <td><strong>肺曲霉病</strong><br /><span style="font-size:11px;color:var(--muted-foreground)">IPA / CPA / ABPA</span></td>
+            <td>病理见<span class="k">锐角分支分隔无色素菌丝</span>；<span class="k">GM试验</span>有价值。<strong>IPA</strong>：CT早期<span class="k">晕轮征</span>、后期<span class="k">新月征</span>。<strong>CPA曲霉球</strong>：空洞内球形灶随体位移动（<span class="k">Monad征</span>）、反复咯血。<strong>ABPA</strong>：喘息+棕黄痰、总<span class="k">IgE &gt;1000 IU/ml</span>、<span class="k">中央性支扩</span>。</td>
+            <td><strong>IPA</strong>首选<span class="k">伏立康唑</span>（首日6mg/kg q12h后4mg/kg q12h，序贯200mg q12h，≥6～12周）或艾沙康唑，难治联棘白菌素；<strong>CPA</strong>进展口服伊曲/伏立康唑，曲霉球防大咯血首选手术/BAE；<strong>ABPA</strong>首选<span class="k">糖皮质激素</span>（泼尼松0.5mg/kg·d）± 伊曲康唑。</td>
+          </tr>
+          <tr>
+            <td><strong>肺隐球菌病</strong></td>
+            <td>多起病隐匿，胸片结节/斑片易误诊结核或肺癌；痰培养不足以确诊（可定植），需下呼吸道/肺组织培养；脑脊液<span class="k">墨汁染色</span>见透光厚壁菌体；组织六铵银/FMS染色；<span class="k">乳胶凝集测隐球菌抗原</span>高价值。</td>
+            <td>免疫正常无症状可随访或口服<span class="k">氟康唑</span> 200～400mg/d×3～6月；有症状6～12月；重症/脑膜炎用<span class="k">两性霉素B + 5-氟胞嘧啶</span>。</td>
+          </tr>
+          <tr>
+            <td><strong>肺孢子菌肺炎（PCP）</strong></td>
+            <td>免疫低下（AIDS等）最严重机会感染；<span class="k">症状重体征轻分离</span>；LDH明显↑、G试验↑；X线双肺门<span class="k">蝶状影</span>；诱导痰/BAL染色查包囊/子孢子及核酸检测。</td>
+            <td>首选<span class="k">复方磺胺甲噁唑（TMP-SMZ）</span>（TMP 15～20 / SMZ 75～100 mg/kg·d，2～3周）；耐药/不耐受选氨苯砜、克林霉素+伯氨喹等；HIV合并且<span class="k">PaO₂≤70mmHg</span>尽早加用泼尼松降病死率。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">3. 肺脓肿的病因与发病机理（第七章）</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="grid-3">
+      <div class="mini-box">
+        <h4>① 原发性（吸入性）肺脓肿</h4>
+        <p>口鼻咽部<span class="k">厌氧菌为主</span>（消化链球菌、普雷沃菌、梭杆菌、脆弱拟杆菌）+ 需氧/兼性厌氧菌。误吸与气道清除功能下降是主因；<strong>右主支气管陡直粗大</strong>易入右肺。好发部位与体位相关：<span class="k">仰卧→上叶后段/下叶背段</span>；<span class="k">坐位→下叶后基底段</span>；右侧卧→右上叶前/后段。</p>
+      </div>
+      <div class="mini-box">
+        <h4>② 继发性肺脓肿</h4>
+        <p>①细菌性肺炎继发（金葡菌、铜绿假单胞菌、肺炎克雷伯菌）；②肺基础病阻塞/空洞继发感染（异物、支扩、肺癌、结核空洞）；③邻近化脓病变波及（膈下/肾周/脊柱脓肿、食管穿孔；阿米巴肝脓肿破膈→<span class="k">右肺下叶</span>）。</p>
+      </div>
+      <div class="mini-box">
+        <h4>③ 血源性肺脓肿</h4>
+        <p>皮肤软组织感染/吸毒（<span class="k">金葡菌</span>）、高毒力<span class="k">肺炎克雷伯菌</span>（常伴糖尿病→肝肺多发脓肿）、咽峡炎链球菌群经血行播散，引起肺小血管栓塞、炎症与坏死。</p>
+      </div>
+    </div>
+    <p><strong>发病病理演变链</strong>：病原体致肺炎 → 阻塞细支气管 → 小血管炎性栓塞 → 肺组织坏死液化 → 破溃入支气管排出部分脓液 → 形成含气液平面的脓腔（破溃入胸膜腔致脓胸/脓气胸/支气管胸膜瘘）；急性通常≤4～6周，引流不畅迁延<span class="k">&gt;3个月</span>转慢性肺脓肿。</p>
+  </div>
+</section>
+
+<!-- ==================== MODULE 2 ==================== -->
+<section class="module-section" id="mod-2" data-mod-title="Ⅱ、肺结核">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅱ、肺结核</h1>
+      <span class="mod-source">第10版 第八章《肺结核》（课本 P71–85 / PDF P102–116）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>临床类型、检查方法、诊断要点和诊断程序、鉴别诊断；短程和间歇治疗理论；治疗原则；标准与短程治疗方案。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>发生发展过程、各种影像表现、病原菌生物学特性、结核菌素试验、卡介苗接种的方法及意义、并发咯血的处理。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">了解项：肺结核手术指征、预防原则和预防方法（病例报告/登记/预防性化疗）；结核性胸膜炎并入模块Ⅶ讲授。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 2 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 2 · 结核分枝杆菌 A/B/C/D 四菌群定位、杀菌谱与 2HRZE/4HR 间歇-短程化疗理论图</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 400" width="100%" role="img" aria-label="肺结核ABCD四菌群与化疗生物学机制图">
+        <defs>
+          <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+        </defs>
+        <!-- Four Bacterial Populations -->
+        <text x="16" y="24" font-size="13.5" font-weight="700" fill="var(--primary)">① 结核分枝杆菌 4 大代谢菌群与抗结核药物作用强弱（化疗生物学机制核心）</text>
+
+        <!-- Group A -->
+        <rect x="14" y="36" width="204" height="156" rx="10" fill="var(--error)" fill-opacity="0.09" stroke="var(--error)" stroke-width="1.5" />
+        <circle cx="42" cy="60" r="14" fill="var(--error)" />
+        <text x="42" y="65" text-anchor="middle" font-size="14" font-weight="800" fill="#ffffff">A</text>
+        <text x="64" y="58" font-size="13" font-weight="700" fill="var(--error)">快速繁殖菌群</text>
+        <text x="64" y="74" font-size="11" fill="var(--muted-foreground)">占绝大部分 · 极易耐药</text>
+        <text x="24" y="98" font-size="11.5" fill="var(--foreground)">• 部位：巨噬细胞外、空洞</text>
+        <text x="32" y="114" font-size="11.5" fill="var(--foreground)">干酪液化部分（碱性/需氧）</text>
+        <text x="24" y="136" font-size="11.5" font-weight="700" fill="var(--foreground)">• 作用顺序：</text>
+        <text x="24" y="154" font-size="12" font-weight="800" fill="var(--error)">INH &gt; SM &gt; RFP &gt; EMB</text>
+        <text x="24" y="176" font-size="11" fill="var(--muted-foreground)">INH+RFP 48h早期杀菌→痰阴转</text>
+
+        <!-- Group B -->
+        <rect x="230" y="36" width="204" height="156" rx="10" fill="var(--warning)" fill-opacity="0.11" stroke="var(--warning)" stroke-width="1.5" />
+        <circle cx="258" cy="60" r="14" fill="var(--warning)" />
+        <text x="258" y="65" text-anchor="middle" font-size="14" font-weight="800" fill="#111111">B</text>
+        <text x="280" y="58" font-size="13" font-weight="700" fill="var(--foreground)">半静止“顽固菌”</text>
+        <text x="280" y="74" font-size="11" fill="var(--muted-foreground)">杀灭之可防复发</text>
+        <text x="240" y="98" font-size="11.5" fill="var(--foreground)">• 部位：巨噬细胞内酸性环境</text>
+        <text x="248" y="114" font-size="11.5" fill="var(--foreground)">及空洞壁坏死组织中</text>
+        <text x="240" y="136" font-size="11.5" font-weight="700" fill="var(--foreground)">• 作用顺序：</text>
+        <text x="240" y="154" font-size="12" font-weight="800" fill="var(--primary)">PZA &gt; RFP &gt; INH</text>
+        <text x="240" y="176" font-size="11" fill="var(--muted-foreground)">PZA 仅需头 2 个月强化期使用</text>
+
+        <!-- Group C -->
+        <rect x="446" y="36" width="204" height="156" rx="10" fill="var(--chart-1)" fill-opacity="0.10" stroke="var(--chart-1)" stroke-width="1.5" />
+        <circle cx="474" cy="60" r="14" fill="var(--chart-1)" />
+        <text x="474" y="65" text-anchor="middle" font-size="14" font-weight="800" fill="#ffffff">C</text>
+        <text x="496" y="58" font-size="13" font-weight="700" fill="var(--chart-1)">半静止偶短暂繁殖</text>
+        <text x="496" y="74" font-size="11" fill="var(--muted-foreground)">“顽固菌”· 关乎复发</text>
+        <text x="456" y="98" font-size="11.5" fill="var(--foreground)">• 特点：处于半静止状态，</text>
+        <text x="464" y="114" font-size="11.5" fill="var(--foreground)">可有突然间歇性短暂繁殖</text>
+        <text x="456" y="136" font-size="11.5" font-weight="700" fill="var(--foreground)">• 作用顺序：</text>
+        <text x="456" y="154" font-size="12" font-weight="800" fill="var(--chart-1)">RFP &gt; INH</text>
+        <text x="456" y="176" font-size="11" fill="var(--muted-foreground)">RFP独特灭C群，联INH显著缩程</text>
+
+        <!-- Group D -->
+        <rect x="662" y="36" width="204" height="156" rx="10" fill="var(--secondary)" stroke="var(--border)" stroke-width="1.5" />
+        <circle cx="690" cy="60" r="14" fill="var(--muted-foreground)" />
+        <text x="690" y="65" text-anchor="middle" font-size="14" font-weight="800" fill="#ffffff">D</text>
+        <text x="712" y="58" font-size="13" font-weight="700" fill="var(--foreground)">休眠菌群</text>
+        <text x="712" y="74" font-size="11" fill="var(--muted-foreground)">不繁殖 · 数量很少</text>
+        <text x="672" y="98" font-size="11.5" fill="var(--foreground)">• 特点：长期休眠</text>
+        <text x="672" y="122" font-size="11.5" font-weight="700" fill="var(--muted-foreground)">• 抗结核药物无作用</text>
+        <text x="672" y="150" font-size="11" fill="var(--muted-foreground)">依靠宿主细胞免疫控制，</text>
+        <text x="672" y="168" font-size="11" fill="var(--muted-foreground)">免疫力下降时可内源性复发</text>
+
+        <!-- Bottom Left: Standard 6-Month Regimen Timeline -->
+        <rect x="14" y="208" width="484" height="178" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="28" y="232" font-size="13" font-weight="700" fill="var(--foreground)">② 经典初治标准短程方案：2HRZE / 4HR（或间歇 2H₃R₃Z₃E₃ / 4H₃R₃）</text>
+
+        <rect x="28" y="248" width="176" height="62" rx="8" fill="var(--error)" fill-opacity="0.14" stroke="var(--error)" />
+        <text x="116" y="269" text-anchor="middle" font-size="13" font-weight="800" fill="var(--error)">强化期（2 个月）</text>
+        <text x="116" y="287" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">H + R + Z + E（顿服）</text>
+        <text x="116" y="303" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">快速杀 A 群 + Z 灭 B 群 + 防耐药</text>
+
+        <line x1="206" y1="279" x2="238" y2="279" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr2)" />
+
+        <rect x="242" y="248" width="242" height="62" rx="8" fill="var(--chart-1)" fill-opacity="0.13" stroke="var(--chart-1)" />
+        <text x="363" y="269" text-anchor="middle" font-size="13" font-weight="800" fill="var(--chart-1)">巩固期（4 个月）</text>
+        <text x="363" y="287" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">H + R（顿服）</text>
+        <text x="363" y="303" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">彻底清除残留 B、C 顽固菌，防止复发</text>
+
+        <text x="28" y="334" font-size="11.5" fill="var(--foreground)">• 2个月末痰菌仍(+) → 强化期延 1 月（3HRZE/4HR）；5月末/疗程末涂(+) = 初治失败</text>
+        <text x="28" y="354" font-size="11.5" fill="var(--foreground)">• WHO 新4个月短程：≥12岁药敏 <tspan font-weight="700" fill="var(--primary)">2HPMZ/2HPM</tspan>；儿童非重症 <tspan font-weight="700" fill="var(--primary)">2HRZ(E)/2HR</tspan></text>
+        <text x="28" y="374" font-size="11.5" fill="var(--muted-foreground)">• 十字原则：早期、规律、全程、适量、联合</text>
+
+        <!-- Bottom Right: Intermittent & Single-dose Theory -->
+        <rect x="512" y="208" width="354" height="178" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="526" y="232" font-size="13" font-weight="700" fill="var(--foreground)">③ 间歇化疗与顿服理论基础</text>
+
+        <text x="526" y="255" font-size="12" font-weight="700" fill="var(--primary)">间歇化疗核心：延缓生长期（PAE）</text>
+        <rect x="526" y="264" width="324" height="22" rx="4" fill="var(--secondary)" />
+        <rect x="526" y="264" width="290" height="22" rx="4" fill="var(--chart-2)" fill-opacity="0.35" />
+        <text x="534" y="279" font-size="11.5" font-weight="700" fill="var(--foreground)">INH 接触24h → 延缓生长期 6～9 日（适于间歇）</text>
+
+        <rect x="526" y="292" width="324" height="22" rx="4" fill="var(--secondary)" />
+        <rect x="526" y="292" width="140" height="22" rx="4" fill="var(--chart-1)" fill-opacity="0.35" />
+        <text x="534" y="307" font-size="11.5" font-weight="700" fill="var(--foreground)">RFP 接触24h → 2～3 日（氨硫脲无延缓期不适间歇）</text>
+
+        <line x1="526" y1="326" x2="850" y2="326" stroke="var(--card-border)" />
+        <text x="526" y="346" font-size="12" font-weight="700" fill="var(--primary)">顿服优势：高峰血药浓度杀菌</text>
+        <text x="526" y="366" font-size="11.5" fill="var(--foreground)">每日剂量一次顿服的高峰浓度比分2～3次服高约 <tspan font-weight="800" fill="var(--error)">3 倍</tspan></text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心重点</span> 临床类型、检查、诊断程序、鉴别与化学治疗</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">1. 结核病分类标准（WS 196—2017）与规范记录方式</h3><span class="badge badge-m">掌握</span></div>
+    <p>分为<strong>结核分枝杆菌潜伏感染者</strong>（无临床、细菌学、影像学活动性证据）与<strong>活动性结核病</strong>（按 4 维度分类）：</p>
+    <ul>
+      <li><strong>① 按病变部位分 5 型肺结核</strong>（另设肺外结核）：
+        <ol>
+          <li><strong>原发性肺结核</strong>：含<span class="k">原发综合征</span>（原发病灶+淋巴管炎+肿大肺门淋巴结呈“哑铃形”）和<span class="k">胸内淋巴结结核</span>（肿瘤型/炎症型），多见少年儿童，PPD多强阳性。</li>
+          <li><strong>血行播散性肺结核</strong>：<span class="k">急性粟粒性</span>（婴幼儿/青少年及成人免疫力低下，高热中毒重、肝脾淋巴结大、脑膜刺激征、1/3眼底脉络膜结核结节）与<span class="k">亚急性/慢性</span>（起病缓、上中部新旧病灶共存）。</li>
+          <li><strong>继发性肺结核</strong>（成人最常见）：包括<strong>浸润性肺结核</strong>（可现虫蚀样空洞、薄壁/张力性空洞；化疗后空洞不闭但长期查痰阴性：无干酪称<span class="k">净化空洞</span>，残干酪称<span class="k">开放菌阴综合征</span>）、<strong>干酪性肺炎</strong>（大叶/小叶）、<strong>结核球</strong>（直径2～4cm多&lt;3cm，<span class="k">80%以上有卫星灶</span>）、<strong>慢性纤维空洞性肺结核和毁损肺</strong>（纤维厚壁空洞、肺容积缩小、纵隔牵拉移位、胸廓塌陷、对侧代偿肺气肿）。</li>
+          <li><strong>气管、支气管结核</strong>：黏膜及黏膜下层病变，管腔狭窄致肺不张/实变/支扩/播散。</li>
+          <li><strong>结核性胸膜炎</strong>：干性、渗出性、结核性脓胸（详见模块Ⅶ）。</li>
+        </ol>
+      </li>
+      <li><strong>② 按病原学</strong>：阳性[涂(+)/培(+)/分子生物学(+)]、阴性、未查。</li>
+      <li><strong>③ 按耐药</strong>：敏感 vs 耐药（单耐药、多耐药、耐多药 MDR[至少耐 H+R]、广泛耐药 XDR、利福平耐药 RR）。</li>
+      <li><strong>④ 按既往治疗史</strong>：
+        <ul>
+          <li><strong>初治</strong>（任1条）：①未开始抗结核；②正标准化疗未满疗程；③不规则化疗<span class="k">未满 1 个月</span>。</li>
+          <li><strong>复治</strong>（任1条）：①初治失败；②规则满疗程后痰菌复阳；③不合理/不规律抗结核<span class="k">≥1 个月</span>。</li>
+        </ul>
+      </li>
+    </ul>
+    <div class="callout info"><strong>规范记录程序</strong>：分类 → 病变部位/范围 → 痰菌 → 化疗史（→ 并发症 → 共病 → 手术）。例：<em>继发性肺结核，双上肺，涂(+)，复治</em>。</div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">2. 检查方法、诊断要点与诊断 6 步程序</h3><span class="badge badge-m">掌握</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>四大检查方法</h4>
+        <ul>
+          <li><strong>影像学</strong>：X线为<span class="k">常规首选</span>；CT提高分辨率，早发粟粒、清显空洞与纵隔淋巴结。</li>
+          <li><strong>痰菌检查（确诊主要方法）</strong>：初诊送<span class="k">3份痰</span>（清晨、夜间、即时），复诊2份。
+            <br />• 涂片抗酸染色（齐-尼 / WHO推荐LED荧光）：需<span class="k">5000～10000菌/ml</span>方阳性，<strong>不能区分MTB与NTM</strong>。
+            <br />• 培养法：诊断<span class="k">“金标准”</span>（改良罗氏 2～8 周；液体 BACTEC-TB960 仅 10 日）。
+            <br />• 药敏测定：WHO以<span class="k">比例法</span>为金标准（复治/失败必做）。
+            <br />• 分子生物学：<span class="k">Xpert MTB/RIF</span>（快检MTB及利福平耐药）、LAMP/CPA/SAT，阳性可作病原学阳性依据；mNGS/tNGS需结合临床综合判断。</li>
+          <li><strong>电子支气管镜</strong>：确诊支气管结核、淋巴结支气管瘘、活检/灌洗取材。</li>
+          <li><strong>免疫学（辅助参考，不可确诊或评疗效）</strong>：PPD 与 <span class="k">IGRAs</span>（ESAT-6/CFP-10，可区分BCG及多数NTM，特异性高于PPD，辅助菌阴肺结核）。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>诊断原则、6 步程序与菌阴诊断标准</h4>
+        <p><strong>原则</strong>：以病原学（细菌学+分子生物学）为主，综合流行病学、临床、影像及辅助检查（儿童重视胃液提取物）。</p>
+        <ol>
+          <li><strong>可疑症状筛选</strong>：咳嗽咳痰<span class="k">≥2周</span>或咯血；午后潮热、乏力、盗汗、月经不调、接触史。</li>
+          <li><strong>是否为肺结核</strong>：病原/病理确诊；难定者系统抗常见菌 <span class="k">10～14天</span>复查，结核影像变化不大。</li>
+          <li><strong>有无活动性</strong>：模糊斑片/中心溶解/空洞/播散 = 活动；钙化/硬结/纤维化 + 不排菌 + 无症状 = 无活动。</li>
+          <li><strong>是否排菌</strong>：确定传染源的唯一依据。</li>
+          <li><strong>是否耐药</strong>：药敏试验确定。</li>
+          <li><strong>明确初、复治</strong>：直接决定方案选择。</li>
+        </ol>
+        <p><strong>病原学阴性肺结核（需排他）</strong>：肺组织结核须具<span class="k">①典型影像</span> + ②典型临床 / ③免疫学阳性（PPD中度以上+ / IGRAs+ / 抗体+） / ④肺外病理证实 任1项；支气管结核须①影像+②支气管镜符合；结核性胸膜炎须①影像+②渗出液ADA高+③免疫学任1项。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">3. 肺结核按病灶形态的鉴别诊断（6 类）</h3><span class="badge badge-m">掌握</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>肺结核类型</th><th>主要鉴别疾病及核心差异</th></tr></thead>
+        <tbody>
+          <tr><td><strong>浸润性肺结核</strong></td><td>细菌性肺炎、肺真菌病、肺寄生虫病（病史、病原学、抗感染10～14天反应鉴别）。</td></tr>
+          <tr><td><strong>肺结核球</strong></td><td>①<strong>周围型肺癌</strong>（经皮穿刺/TBLB病理确诊）；②<strong>炎性假瘤</strong>（慢性感染史，抗感染缩小）；③<strong>肺错构瘤</strong>（孤立、<span class="k">爆米花样</span>钙化）；④<strong>肺隔离症</strong>（年轻人、好发<span class="k">左下叶后基底段</span>、增强CT见单独体循环血供）。</td></tr>
+          <tr><td><strong>血行播散性肺结核</strong></td><td>支气管肺泡癌、肺含铁血黄素沉着症、弥漫性间质性肺疾病。</td></tr>
+          <tr><td><strong>支气管淋巴结结核</strong></td><td>中央型肺癌、淋巴瘤、结节病（支气管镜/EBUS取病理确诊）。</td></tr>
+          <tr><td><strong>肺结核空洞</strong></td><td>①<strong>癌性空洞</strong>（洞壁厚且不规则、偏心、内见结节突起、无卫星灶、增大快）；②<strong>肺囊肿</strong>（多肺上野、先天性、无卫星灶、感染见液平）；③<strong>囊性支扩</strong>（双肺中下野、大量脓痰咯血、薄层CT确诊）。</td></tr>
+          <tr><td><strong>NTM 肺病</strong></td><td>涂片抗酸染色不能区分，需<span class="k">培养菌种鉴定或 mNGS/tNGS</span>；NTM病理多为类上皮肉芽肿、<span class="k">无明显干酪样坏死</span>、胶原纤维玻璃样变；对常规抗结核药多耐药（阴转后仍治18～24月，至少12月）。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">4. 短程与间歇治疗理论、化学治疗原则及标准/短程/耐药方案</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>原则</strong>：<span class="k">早期、规律、全程、适量、联合</span>（分强化期与巩固期）。<strong>三大作用</strong>：①杀菌（迅速杀死大量繁殖菌，使痰菌速转阴）；②防止耐药菌产生（联合交叉杀菌+规律不中断，短程最好采用全程督导化疗）；③灭菌（彻底杀灭半静止顽固菌，防复发）。推荐初治使用固定剂量复合制剂（FDC，如卫非特、卫非宁）防漏服。</p>
+    <p><strong>短程与间歇治疗的生物学机制（4 大核心理论）</strong>：</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>菌群</th><th>代谢状态与解剖定位</th><th>抗结核药物作用强弱排序</th><th>临床与化疗意义</th></tr></thead>
+        <tbody>
+          <tr><td><strong>A 菌群</strong></td><td>快速繁殖；位于巨噬细胞外及空洞干酪液化部分（占绝大部分）</td><td><span class="k">INH &gt; SM &gt; RFP &gt; EMB</span></td><td>菌量最大、极易产生耐药变异菌；INH 与 RFP 具 <span class="k">48h 早期杀菌作用</span>，迅速降低传染性、促痰阴转。</td></tr>
+          <tr><td><strong>B 菌群</strong></td><td>半静止状态（“顽固菌”）；位于巨噬细胞内酸性环境及空洞壁坏死组织</td><td><span class="k">PZA &gt; RFP &gt; INH</span></td><td>杀灭之可防止复发；PZA 作用独特，初治涂阳仅需于<span class="k">强化期头 2 个月</span>使用即可。</td></tr>
+          <tr><td><strong>C 菌群</strong></td><td>半静止状态（“顽固菌”）；可有突然间歇性短暂繁殖</td><td><span class="k">RFP &gt; INH</span></td><td>RFP 具独特杀菌作用；INH 与 RFP 联用可<span class="k">显著缩短疗程</span>并防复发。</td></tr>
+          <tr><td><strong>D 菌群</strong></td><td>休眠状态，不繁殖，数量很少</td><td><span class="k">抗结核药物无作用</span></td><td>靠宿主细胞免疫控制。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li><strong>耐药性机制</strong>：基因突变引起；单药治疗会筛选出自然耐药变异菌并使其成为优势菌群，故须联合用药交叉杀菌，且不可随意中断。</li>
+      <li><strong>间歇化疗理论基础</strong>：<span class="k">结核分枝杆菌的延缓生长期</span> — 接触 <span class="k">INH 24h 后延缓生长期 6～9 日</span>，接触 <span class="k">RFP 24h 后 2～3 日</span>，故可间歇用药；氨硫脲无延缓生长期，不适于间歇应用。</li>
+      <li><strong>顿服理论</strong>：血中高峰浓度杀菌优于持续低浓度，每日剂量一次顿服的高峰血药浓度比分 2～3 次服高约 <span class="k">3 倍</span>，疗效更优。</li>
+    </ul>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>一线药（缩写）</th><th>成人每日剂量</th><th>间歇一日量</th><th>核心药理特点与典型不良反应</th></tr></thead>
+        <tbody>
+          <tr><td><strong>异烟肼（H, INH）</strong></td><td><span class="k">0.3g</span> 顿服</td><td>0.3～0.6g</td><td>单一药中<span class="k">早期杀菌力最强</span>，胞内外均杀菌，脑脊液浓度高；不良反应：<span class="k">周围神经炎（加服Vit B₆）</span>、偶发药物性肝炎。</td></tr>
+          <tr><td><strong>利福平（R, RFP）</strong></td><td><span class="k">0.45g(&lt;50kg)<br />0.6g(&gt;50kg)</span></td><td>0.6～0.9g<br />（每周2～3次）</td><td>胞内外快速杀菌，独特灭 C 群，肠肝循环故<span class="k">早空腹服</span>；体液橘红；不良反应：<span class="k">肝损（出现黄疸立即停药）</span>、流感样症/血小板减少；<span class="k">孕3月内忌用</span>。（利福喷丁RFT半衰期12～15h适于间歇，与RFP完全交叉耐药）</td></tr>
+          <tr><td><strong>吡嗪酰胺（Z, PZA）</strong></td><td>1.5～2.0g</td><td>2～3g</td><td>独特杀灭胞内酸性环境 <span class="k">B 菌群</span>，仅强化期前 2 月用；不良反应：<span class="k">高尿酸血症、关节痛</span>、肝损、胃肠不适。</td></tr>
+          <tr><td><strong>乙胺丁醇（E, EMB）</strong></td><td>0.75～1.0g</td><td>1.5～2.0g</td><td>不良反应：<span class="k">视神经炎</span>（用药前测视力视野；<span class="k">儿童不用</span>）。</td></tr>
+          <tr><td><strong>链霉素（S, SM）</strong></td><td>0.75～1.0g IM</td><td>0.75～1.0g</td><td>杀胞外碱性环境菌；不良反应：<span class="k">耳毒性、前庭损害、肾毒性</span>（儿童/老人/孕妇/听力肾功能不良慎或不用）。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li><strong>初治活动性肺结核标准/短程方案</strong>：
+        <ul>
+          <li>经典 6 个月：<span class="k">2HRZE / 4HR</span> 或间歇 <span class="k">2H₃R₃Z₃E₃ / 4H₃R₃</span>（2月末涂阳延长强化期1月为 3HRZE/4HR；5月末或疗程末涂阳 = 初治失败）。</li>
+          <li>WHO 2022 4个月短程：≥12岁药敏 <span class="k">2HPMZ / 2HPM</span>（P为利福喷丁、M为莫西沙星）；3月～16岁非重症 <span class="k">2HRZ(E) / 2HR</span>（我国 2HRZE/4HR 仍为稳妥选择）。</li>
+        </ul>
+      </li>
+      <li><strong>复治方案</strong>：不再规定统一标准复治方案，<strong>均须行药敏试验</strong>；利福平敏感/未知者按初治标准方案，耐药者转耐药方案。</li>
+      <li><strong>MDR/RR-TB 方案</strong>（适合短程优先短程）：
+        <ul>
+          <li><strong>长程方案（18～20月，至少4种有效药）</strong>：A组首选（<span class="k">左氧/莫西沙星、贝达喹啉Bdq、利奈唑胺Lzd</span>）全选 + 至少1种B组（氯法齐明Cfz、环丝氨酸Cs），不足再加C组（E/Dlm/Z/碳青霉烯/Am/S/Pto/PAS等）。FQ敏感推荐：<code>6Lfx(Mfx) Bdq Lzd(Cs) Cfz / 12Lfx(Mfx) Cfz Lzd(Cs)</code>；FQ耐药推荐：<code>6Bdq Lzd Cfz Cs / 14Lzd Cfz Cs</code>。</li>
+          <li><strong>短程方案（9～12月）</strong>：<code>4~6 Am Mfx Pto Cfz Z H(高剂量) E / 5 Mfx Cfz Z E</code>（仅限未用二线药&gt;1月且FQ及二线注射剂敏感者；排除妊娠、血行播散/CNS结核、HIV肺外结核）。</li>
+        </ul>
+      </li>
+      <li><strong>特殊辅助</strong>：严重肝炎必治肺结核可用 <span class="k">2SHE / 10HE</span>；结核毒性症状严重者可在有效抗结核前提下短程用泼尼松 20mg/d×1～2周后每周递减5mg（共4～8周）。</li>
+    </ul>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 病原生物学、发生发展、影像、PPD/BCG 与咯血处理</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">1. 病原菌生物学特性 & 发生发展过程（含 Koch 现象与基本病理）</h3><span class="badge badge-f">熟悉</span></div>
+    <ul>
+      <li><strong>生物学特性</strong>：人肺结核 90% 以上为结核分枝杆菌（MTB）；<span class="k">抗酸染色呈红色</span>（抗盐酸酒精脱色）；<span class="k">专性需氧</span>，增代时间 <span class="k">14～20h</span>，培养需 2～8 周；耐干燥/冷/酸/碱，对<span class="k">紫外线敏感</span>（日光直射 2～7h，10W 紫外灯 0.5～1m 照 30min 杀菌）。菌体成分：类脂质（50%～60%，含蜡质→组织坏死、干酪液化、空洞、变态反应）、蛋白质（结核菌素主成分→皮肤变态反应）、多糖（血清反应）。</li>
+      <li><strong>发生发展</strong>：①<strong>原发感染</strong>：首次吸入气溶胶 → 原发病灶 + 淋巴管炎 + 肺门淋巴结肿大 = 原发综合征 → 大多经细胞免疫良性吸收/钙化，留少量休眠菌；②<strong>免疫与迟发性变态反应</strong>：以 <span class="k">T细胞为主的细胞免疫</span>（体液免疫不重要）；巨噬细胞分泌 IL-1/6/TNF-α 形成结核肉芽肿，CD4⁺ Th1 产 IFN-γ 激活巨噬细胞，CD8⁺ 产颗粒溶素/穿孔素直接杀菌。<span class="k">Koch 现象</span>（初染豚鼠10～14日深溃疡播散死亡 vs 再染豚鼠2～3日表浅溃烂快愈不播散）说明：速发红肿溃烂是迟发性变态反应，无播散快愈是免疫力，<strong>变态反应≠免疫力</strong>；③<strong>继发性肺结核</strong>：经<span class="k">内源性复发</span>（约10%感染者）或<span class="k">外源性重染</span>发病，易形成空洞和排菌。</li>
+      <li><strong>基本病理 3 变化（常共存且互转）</strong>：炎性渗出（初期/恶化）、增生（抵抗力强/恢复，形成典型<span class="k">结核结节</span>与<span class="k">朗汉斯巨细胞</span>）、干酪样坏死（毒力强/菌多/抵抗力低）。</li>
+    </ul>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">2. 各型肺结核影像特征、PPD 试验、卡介苗接种与并发咯血处理</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>典型影像表现</h4>
+        <ul>
+          <li><strong>共性</strong>：好发<span class="k">上叶尖后段、下叶背段和后基底段</span>；呈<span class="k">多态性</span>（浸润、增殖、干酪、纤维钙化共存）。</li>
+          <li><strong>原发性</strong>：原发综合征“哑铃形”；胸内淋巴结结核分肿瘤型/炎症型。</li>
+          <li><strong>血行播散性</strong>：急性粟粒呈<span class="k">“三均匀”</span>（两肺分布、大小、密度均匀）；亚急/慢性多分布上中部、大小密度不等、新旧共存。</li>
+          <li><strong>继发性</strong>：浸润性斑片/空洞；干酪肺炎大叶磨玻璃+虫蚀空洞；结核球 2～4cm+80%卫星灶；慢纤空厚壁空洞+纵隔向患侧牵拉+胸廓塌陷。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>PPD 试验、卡介苗与咯血处理</h4>
+        <ul>
+          <li><strong>结核菌素试验（PPD）</strong>：用于检出<span class="k">结核感染（非结核病）</span>，不能区分自然感染与 BCG；感染后需 <span class="k">4～8 周</span>建立充分变态反应；营养不良、HIV、麻疹水痘、癌症、<strong>重症结核（粟粒性/结脑）</strong>可呈阴性或弱阳性。</li>
+          <li><strong>卡介苗（BCG）接种意义</strong>：对预防成人肺结核效果很差，但对预防<span class="k">儿童结核性脑膜炎和粟粒性肺结核</span>有较好作用；新生儿接种后仍须与肺结核病人隔离。</li>
+          <li><strong>并发咯血处理</strong>：少量咯血以安慰、卧床及氨基己酸/氨甲苯酸/酚磺乙胺/卡巴克洛止血；大咯血首选<span class="k">垂体后叶素</span>缩肺小动脉（<span class="k">禁用：高血压、冠心病、心衰、孕妇</span>；警惕低钠/低钾/高血压），支气管动脉破裂可行<span class="k">支气管动脉栓塞术</span>；突停咯血伴气促/苍白/发绀/烦躁为<span class="k">咯血窒息</span>，立即抢救。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MODULE 3 ==================== -->
+<section class="module-section" id="mod-3" data-mod-title="Ⅲ、慢性阻塞性肺疾病">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅲ、慢性阻塞性肺疾病（COPD）</h1>
+      <span class="mod-source">第10版 第三章《慢性阻塞性肺疾病》（课本 P23–30 / PDF P54–61）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>临床表现、诊断及鉴别诊断、并发症及治疗原则（含第10版 ABE 综合评估与分级治疗）。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>慢阻肺病的定义、与慢性支气管炎及肺气肿的关系、肺功能检查对本病诊断的意义。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">了解项：病因、发病机理（炎症/蛋白酶失衡/氧化应激）、病理（小叶中央/全小叶）与病理生理、国际动向及流行病学。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 3 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 3 · 慢支炎/肺气肿/COPD 概念判别集合图 & 第10版 GOLD ABE 综合评估-选药矩阵</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 390" width="100%" role="img" aria-label="COPD概念集合与第10版ABE分组治疗矩阵">
+        <!-- Left Panel: Concept Venn -->
+        <rect x="8" y="8" width="386" height="372" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="22" y="32" font-size="13" font-weight="700" fill="var(--primary)">① COPD 与慢支炎、肺气肿关系（熟悉→诊断基石）</text>
+
+        <!-- Chronic bronchitis circle -->
+        <circle cx="122" cy="146" r="82" fill="var(--chart-1)" fill-opacity="0.14" stroke="var(--chart-1)" stroke-width="1.6" />
+        <text x="86" y="102" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-1)">慢性支气管炎</text>
+        <text x="86" y="119" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">≥3月/年 · 连续≥2年</text>
+        <text x="86" y="135" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">（仅无气流受限</text>
+        <text x="86" y="150" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">≠ COPD）</text>
+
+        <!-- Emphysema circle -->
+        <circle cx="272" cy="146" r="82" fill="var(--chart-3)" fill-opacity="0.14" stroke="var(--chart-3)" stroke-width="1.6" />
+        <text x="310" y="102" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-3)">肺气肿</text>
+        <text x="310" y="119" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">远端气腔持久扩张</text>
+        <text x="310" y="135" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">+ 肺泡壁破坏</text>
+        <text x="310" y="150" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">（无受限 ≠ COPD）</text>
+
+        <!-- COPD central ellipse -->
+        <ellipse cx="197" cy="202" rx="92" ry="52" fill="var(--error)" fill-opacity="0.18" stroke="var(--error)" stroke-width="2" />
+        <text x="197" y="191" text-anchor="middle" font-size="14" font-weight="800" fill="var(--error)">COPD（慢阻肺病）</text>
+        <text x="197" y="210" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--foreground)">吸支扩剂后 FEV₁/FVC &lt; 70%</text>
+        <text x="197" y="227" text-anchor="middle" font-size="10.5" fill="var(--foreground)">（持续/不可逆气流受限必备）</text>
+
+        <!-- Excluded box -->
+        <rect x="22" y="274" width="358" height="92" rx="8" fill="var(--secondary)" stroke="var(--border)" stroke-dasharray="4 2" />
+        <text x="34" y="294" font-size="12" font-weight="700" fill="var(--foreground)">以下虽可致持续气流受限，但均不属于 COPD：</text>
+        <text x="34" y="314" font-size="11.5" fill="var(--muted-foreground)">• 支气管扩张症、肺结核纤维化病变、严重间质性肺疾病</text>
+        <text x="34" y="332" font-size="11.5" fill="var(--muted-foreground)">• 弥漫性泛细支气管炎（DPB）、闭塞性细支气管炎（BO）</text>
+        <text x="34" y="352" font-size="11.5" fill="var(--muted-foreground)">• 代偿性/老年性肺气肿（无肺泡壁破坏，须鉴别）</text>
+
+        <!-- Right Panel: GOLD ABE Matrix -->
+        <rect x="408" y="8" width="464" height="372" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="422" y="32" font-size="13" font-weight="700" fill="var(--error)">② 第10版稳定期 ABE 综合评估与首选药物（表2-3-3）</text>
+
+        <!-- Y-axis label -->
+        <text x="422" y="84" font-size="11.5" font-weight="700" fill="var(--error)">高风险</text>
+        <text x="422" y="100" font-size="10.5" fill="var(--muted-foreground)">≥2次中度</text>
+        <text x="422" y="114" font-size="10.5" fill="var(--muted-foreground)">或≥1次住院</text>
+
+        <text x="422" y="186" font-size="11.5" font-weight="700" fill="var(--chart-1)">低风险</text>
+        <text x="422" y="202" font-size="10.5" fill="var(--muted-foreground)">0或1次中度</text>
+        <text x="422" y="216" font-size="10.5" fill="var(--muted-foreground)">（无住院）</text>
+
+        <!-- E Group (spans top) -->
+        <rect x="492" y="48" width="366" height="86" rx="8" fill="var(--error)" fill-opacity="0.14" stroke="var(--error)" stroke-width="1.8" />
+        <text x="506" y="70" font-size="14" font-weight="800" fill="var(--error)">E 组（合并原 C + D 组，不考虑症状评分）</text>
+        <text x="506" y="92" font-size="12" font-weight="700" fill="var(--foreground)">首选：LABA + LAMA</text>
+        <text x="506" y="113" font-size="12" font-weight="700" fill="var(--error)">若血 EOS ≥ 300 个/μl → LABA + LAMA + ICS（三联）</text>
+
+        <!-- A Group -->
+        <rect x="492" y="146" width="176" height="96" rx="8" fill="var(--success)" fill-opacity="0.12" stroke="var(--success)" stroke-width="1.5" />
+        <text x="580" y="169" text-anchor="middle" font-size="14" font-weight="800" fill="var(--success)">A 组</text>
+        <text x="580" y="188" text-anchor="middle" font-size="11.5" fill="var(--muted-foreground)">低风险 · 症状少</text>
+        <text x="580" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">首选：一种支气管扩张剂</text>
+        <text x="580" y="229" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">mMRC 0～1 / CAT &lt; 10</text>
+
+        <!-- B Group -->
+        <rect x="682" y="146" width="176" height="96" rx="8" fill="var(--warning)" fill-opacity="0.15" stroke="var(--warning)" stroke-width="1.5" />
+        <text x="770" y="169" text-anchor="middle" font-size="14" font-weight="800" fill="var(--foreground)">B 组</text>
+        <text x="770" y="188" text-anchor="middle" font-size="11.5" fill="var(--muted-foreground)">低风险 · 症状多</text>
+        <text x="770" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">首选：LABA + LAMA</text>
+        <text x="770" y="229" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">mMRC ≥ 2 / CAT ≥ 10</text>
+
+        <!-- GOLD 1-4 strip -->
+        <rect x="422" y="256" width="436" height="44" rx="7" fill="var(--secondary)" stroke="var(--border)" />
+        <text x="434" y="274" font-size="11.5" font-weight="700" fill="var(--primary)">GOLD 肺功能分级（FEV₁%pred）：</text>
+        <text x="434" y="292" font-size="11.5" fill="var(--foreground)">1级(轻) ≥80% ｜ 2级(中) 50～&lt;80% ｜ 3级(重) 30～&lt;50% ｜ 4级(极重) &lt;30%</text>
+
+        <!-- LTOT Strip -->
+        <rect x="422" y="309" width="436" height="58" rx="7" fill="var(--chart-1)" fill-opacity="0.10" stroke="var(--chart-1)" />
+        <text x="434" y="327" font-size="11.5" font-weight="700" fill="var(--chart-1)">长期家庭氧疗（LTOT）指征（鼻导管 1～2 L/min，&gt;15 h/d）：</text>
+        <text x="434" y="344" font-size="11" fill="var(--foreground)">① PaO₂ ≤ 55 mmHg 或 SaO₂ ≤ 88%（伴或不伴高碳酸血症）</text>
+        <text x="434" y="359" font-size="11" fill="var(--foreground)">② PaO₂ 55～60 或 SaO₂ &lt; 89% + 肺动脉高压 / 右心衰 / 红细胞增多（Hct&gt;0.55）</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心重点</span> 临床表现、诊断评估、鉴别诊断、并发症与治疗原则</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">1. 临床表现与三大并发症</h3><span class="badge badge-m">掌握</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>典型症状与体征</h4>
+        <ul>
+          <li><strong>症状</strong>：①慢性咳嗽（晨间明显，夜间阵咳）；②咳痰（白色黏液/浆液泡沫，急性加重增多变脓性）；③<span class="k">气短或呼吸困难（标志性症状）</span>，劳力性渐至静息；④重度或加重时喘息胸闷；⑤晚期体重下降、纳差。</li>
+          <li><strong>体征（肺气肿体征）</strong>：视诊<span class="k">桶状胸</span>、肋间隙及胸骨下角增宽、呼吸浅快、缩唇呼吸；触诊双侧语颤减弱；叩诊<span class="k">过清音</span>、心浊音界缩小、肺下界和肝浊音界下降；听诊呼吸音减弱、<span class="k">呼气期延长</span>、可闻干/湿啰音。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>三大并发症</h4>
+        <ol>
+          <li><strong>慢性呼吸衰竭</strong>：常于急性加重时出现低氧血症和/或高碳酸血症。</li>
+          <li><strong>自发性气胸</strong>：突发加重呼吸困难+明显发绀+患侧<span class="k">叩诊鼓音、呼吸音减弱/消失</span>，X线确诊。</li>
+          <li><strong>慢性肺源性心脏病</strong>：肺血管床减少 + 缺氧致肺动脉收缩和血管重塑 → 肺动脉高压 → 右心室肥厚扩大 → 右心功能不全（我国约80%慢呼衰及肺心病源于COPD）。</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">2. 诊断、严重程度评估（稳定期 + 急性加重期）与鉴别诊断</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>诊断标准</strong>：吸烟等高危因素史 + 临床症状体征 + <span class="k">吸入支气管扩张剂后 FEV₁/FVC &lt; 70%</span>（必备条件，确定持续气流受限）+ 排除其他已知病因或特征病理的气流受限疾病。</p>
+    <p><strong>稳定期综合性严重程度评估（三维度 + ABE 分组）</strong>：同时关注心血管疾病、骨质疏松、焦虑抑郁、肺癌、感染、代谢综合征和糖尿病等全身合并症（吸烟所致 COPD 推荐低剂量 CT 筛查肺癌）。</p>
+    <div class="grid-2" style="margin:8px 0;">
+      <div class="mini-box">
+        <h4>① 肺功能评估（GOLD 1～4 级，表 2-3-1）</h4>
+        <p style="font-size:12px;color:var(--muted-foreground)">前提：吸入支气管扩张剂后 FEV₁/FVC &lt; 70%</p>
+        <ul>
+          <li><strong>GOLD 1 级（轻度）</strong>：FEV₁ 占预计值 <span class="k">≥ 80%</span></li>
+          <li><strong>GOLD 2 级（中度）</strong>：<span class="k">50% ～ &lt;80%</span></li>
+          <li><strong>GOLD 3 级（重度）</strong>：<span class="k">30% ～ &lt;50%</span></li>
+          <li><strong>GOLD 4 级（极重度）</strong>：<span class="k">&lt; 30%</span></li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>② 症状评估（mMRC 问卷表 2-3-2 / CAT 评分）</h4>
+        <ul>
+          <li><strong>mMRC 0 级</strong>：剧烈活动时呼吸困难；<strong>1 级</strong>：平地快走或爬缓坡时呼吸困难；</li>
+          <li><strong>mMRC 2 级</strong>：平地行走比同龄人慢或需停下休息；</li>
+          <li><strong>mMRC 3 级</strong>：平地行走约 100 米或数分钟即需停下喘气；</li>
+          <li><strong>mMRC 4 级</strong>：严重呼吸困难不能离家，或穿脱衣时即呼吸困难。</li>
+        </ul>
+        <p style="font-size:12px;margin-top:4px;">症状分界：mMRC <span class="k">0～1 级 / CAT &lt;10 分</span>（症状少）vs <span class="k">mMRC ≥2 级 / CAT ≥10 分</span>（症状多）。</p>
+      </div>
+    </div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>第10版 ABE 综合分组（表2-3-3）</th><th>特征</th><th>上一年急性加重风险</th><th>症状（mMRC / CAT）</th><th>首选稳定期治疗药物</th></tr></thead>
+        <tbody>
+          <tr><td><strong>A 组</strong></td><td>低风险，症状少</td><td>0 或 1 次中度加重（无住院）</td><td>0～1 级 或 &lt;10 分</td><td><span class="k">一种支气管扩张剂</span></td></tr>
+          <tr><td><strong>B 组</strong></td><td>低风险，症状多</td><td>0 或 1 次中度加重（无住院）</td><td>≥2 级 或 ≥10 分</td><td><span class="k">LABA + LAMA</span></td></tr>
+          <tr><td><strong>E 组</strong>（原 C+D 合并）</td><td>高风险</td><td><span class="k">≥2 次中度加重或 ≥1 次住院</span></td><td>不考虑症状评分</td><td><span class="k">LABA + LAMA</span>；若血 <span class="k">EOS ≥300 个/μl</span> → <span class="k">LABA + LAMA + ICS</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>急性加重分级（14天内加重，表2-3-4）</th><th>轻度</th><th>中度</th><th>重度</th></tr></thead>
+        <tbody>
+          <tr><td>呼吸衰竭 / 辅助呼吸肌 / 意识改变</td><td>无 / 无 / 无</td><td>有 / 有 / 无</td><td>有 / 有 / <span class="k">有意识改变</span></td></tr>
+          <tr><td>呼吸频率（次/分）</td><td>20～30</td><td>&gt;30</td><td>&gt;30</td></tr>
+          <tr><td>低氧血症改善情况</td><td>28%～35%吸氧可改善</td><td>文丘里面罩28%～35%可改善</td><td><span class="k">面罩或 &gt;40% 吸氧不能改善</span></td></tr>
+          <tr><td>高碳酸血症 / 酸中毒</td><td>无</td><td>PaCO₂ 增至 50～60 mmHg</td><td><span class="k">PaCO₂ &gt; 60 mmHg 或 pH ≤ 7.25</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>鉴别诊断（4类）</strong>：①<strong>支气管哮喘</strong>（多儿童青少年起病、症状起伏大、过敏史/家族史、气流受限显著可逆、ICS反应佳；病程长气道重塑时难鉴别，可重叠）；②其他慢性咳嗽咳痰病（支扩、肺结核、肺癌、IPF、DPB）；③劳力性气促心脏病（冠心病、高心病、瓣膜病）；④其他呼吸气腔扩大（代偿性/老年性肺气肿，无肺泡壁破坏）。</p>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">3. 治疗原则（稳定期 vs 急性加重期）</h3><span class="badge badge-m">掌握</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>稳定期治疗原则</h4>
+        <ol>
+          <li><strong>教育与管理</strong>：<span class="k">戒烟是减慢肺功能损害最有效措施</span>，脱离粉尘污染。</li>
+          <li><strong>支气管扩张剂（核心控症状）</strong>：按 ABE 分组选择（A单支扩、B双支扩 LABA+LAMA、E双支扩或三联）。含 SABA（沙丁胺醇）/LABA（沙美/福莫/茚达/维兰特罗）、SAMA（异丙托溴铵）/LAMA（噻托/格隆/乌美溴铵）、茶碱类。</li>
+          <li><strong>吸入糖皮质激素（ICS）指征</strong>：充分双支扩后仍加重者，具备<span class="k">急性加重住院史、≥2次/年中度加重、血EOS ≥300/μl、哮喘史</span>→推荐三联；1次中度+EOS 100～300→可加；<span class="k">EOS &lt;100、反复肺炎、分枝杆菌感染不建议</span>。</li>
+          <li><strong>祛痰与其他</strong>：氨溴索；乙酰半胱氨酸/羧甲司坦、罗氟司特（PDE-4抑制剂）、大环内酯（1年，注意耐药和听力受损）可降频繁加重风险。</li>
+          <li><strong>长期家庭氧疗（LTOT）</strong>：可提高慢呼衰者生活质量和生存率。指征：①<span class="k">PaO₂ ≤ 55 mmHg 或 SaO₂ ≤ 88%</span>（伴或不伴高碳酸血症）；②<span class="k">PaO₂ 55～60 mmHg 或 SaO₂ &lt; 89%</span>，并伴有<span class="k">肺动脉高压、右心衰竭或红细胞增多症（Hct &gt; 0.55）</span>。用法：鼻导管 <span class="k">1.0～2.0 L/min</span>，吸氧时间 <span class="k">&gt; 15 h/d</span>，目标海平面静息 PaO₂ ≥ 60 mmHg 和/或 SaO₂ &gt; 90%。</li>
+          <li><strong>肺康复</strong>（呼吸生理、肌力、营养、宣教）及少数特殊病例支气管镜介入减容/外科肺大疱切除、肺减容、肺移植。</li>
+        </ol>
+      </div>
+      <div class="mini-box">
+        <h4>急性加重期治疗原则</h4>
+        <ol>
+          <li><strong>明确病因（最常见细菌/病毒感染）及分级</strong>，决定门诊或住院。</li>
+          <li><strong>支气管扩张剂</strong>：重度喘息予大剂量雾化 SABA ± SAMA（如沙丁胺醇 + 异丙托溴铵）。</li>
+          <li><strong>控制性低流量吸氧</strong>：鼻导管或 Venturi 面罩，<span class="k">吸氧浓度 28%～30%</span>，防高浓度氧加重 CO₂ 潴留。</li>
+          <li><strong>抗生素</strong>：呼吸困难加重伴痰量增、脓性痰时积极选用（门诊阿莫西林/克拉维酸、头孢呋辛、左氧/莫西沙星；较重三代头孢；住院 β-内酰胺/酶抑制剂 + 大环内酯或呼吸喹诺酮）。</li>
+          <li><strong>全身糖皮质激素</strong>：住院者予泼尼松龙 <span class="k">30～40 mg/d</span> 或静滴甲泼尼龙 40～80 mg/d，<span class="k">连用 5 天</span>。</li>
+          <li><strong>机械通气与综合支持</strong>：重度呼衰行机械通气；水电解质营养、充分补液稀释排痰、处理并发症。</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> COPD 定义、与慢支炎/肺气肿的关系及肺功能诊断意义</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">COPD 定义、三者概念边界与肺功能检查的核心意义</h3><span class="badge badge-f">熟悉</span></div>
+    <ul>
+      <li><strong>COPD 定义</strong>：一种异质性肺部疾病，因气道异常（支气管炎、细支气管炎）和/或肺泡异常（肺气肿）引起慢性呼吸症状（呼吸困难、咳嗽、咳痰）及<span class="k">持续的、进行性加重的气流受限</span>（不可逆气流受限是关键）。</li>
+      <li><strong>与慢支炎、肺气肿的关系</strong>：慢支炎为每年咳嗽咳痰≥3月、连续≥2年并排他；肺气肿为终末细支气管远端气腔异常持久扩张伴肺泡细支气管破坏而无明显纤维化。二者<strong>仅当出现持续气流受限（吸支扩后 FEV₁/FVC &lt; 70%）时才诊断 COPD</strong>；反之则不属 COPD。同时，一些已知病因或具特征病理表现的疾病虽可致持续气流受限（如<span class="k">支气管扩张症、肺结核纤维化病变、严重间质性肺疾病、弥漫性泛细支气管炎、闭塞性细支气管炎</span>），<strong>均不属于 COPD</strong>。</li>
+      <li><strong>肺功能检查的三大意义</strong>：①<strong>确诊必备</strong>（吸支扩后 FEV₁/FVC &lt; 70%）；②<strong>反映肺过度充气</strong>（<span class="k">TLC、FRC、RV 增高，VC 减低</span>）；③<strong>气流受限严重度分级</strong>（GOLD 1～4 级依据 FEV₁ 占预计值%）。（辅查：X线用于鉴别及查气胸/肺炎；HRCT分辨小叶中央/全小叶肺气肿及大疱；血气判呼衰及酸碱失衡）。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== MODULE 4 ==================== -->
+<section class="module-section" id="mod-4" data-mod-title="Ⅳ、支气管哮喘">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅳ、支气管哮喘</h1>
+      <span class="mod-source">第10版 第四章《支气管哮喘》（课本 P31–39 / PDF P62–70）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>常见病因和发病机理、炎症特征、气道高反应性（AHR）特点及哮喘异质性特点；临床表现、分型（不含表型细分）、分级、诊断和鉴别诊断基本知识。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>哮喘治疗常用药物（控制用药与缓解用药）；哮喘急性加重的处理原则。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">了解项：哮喘流行病学/年龄分布/危害性、哮喘表型细分、长期进展气道重塑与并发症专述、国际防治新动向与预后。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 4 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 4 · 支气管哮喘免疫-炎症网络、神经调节失衡与可变气流受限确诊标准</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 415" width="100%" role="img" aria-label="支气管哮喘发病机制与确诊标准图">
+        <defs>
+          <marker id="arr4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr4r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+        <!-- Top: Immune-Inflammation Network -->
+        <rect x="8" y="8" width="864" height="248" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="22" y="30" font-size="13" font-weight="700" fill="var(--error)">① 气道免疫-炎症机制与气道高反应性（AHR）核心通路</text>
+
+        <!-- Triggers -->
+        <rect x="22" y="46" width="144" height="72" rx="8" fill="var(--secondary)" stroke="var(--border)" />
+        <text x="94" y="67" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--foreground)">遗传易感 + 环境</text>
+        <text x="94" y="85" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">变应原（尘螨/花粉）</text>
+        <text x="94" y="102" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">污染物 / 微生物 / 运动</text>
+
+        <line x1="168" y1="82" x2="196" y2="82" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr4)" />
+
+        <!-- Airway Epithelium -->
+        <rect x="200" y="46" width="148" height="72" rx="8" fill="var(--chart-1)" fill-opacity="0.14" stroke="var(--chart-1)" stroke-width="1.5" />
+        <text x="274" y="67" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-1)">气道上皮细胞</text>
+        <text x="274" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--foreground)">释放 IL-33、IL-25</text>
+        <text x="274" y="104" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--foreground)">及 TSLP</text>
+
+        <line x1="350" y1="82" x2="378" y2="82" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr4)" />
+
+        <!-- Th2 & ILC2 -->
+        <rect x="382" y="46" width="124" height="72" rx="8" fill="var(--warning)" fill-opacity="0.16" stroke="var(--warning)" stroke-width="1.5" />
+        <text x="444" y="70" text-anchor="middle" font-size="13" font-weight="800" fill="var(--foreground)">Th2 / ILC2</text>
+        <text x="444" y="90" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--primary)">IL-4 · IL-5 · IL-13</text>
+        <text x="444" y="107" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">（2型炎症中枢）</text>
+
+        <!-- Dual arrows right -->
+        <line x1="508" y1="64" x2="544" y2="64" stroke="var(--error)" stroke-width="1.8" marker-end="url(#arr4r)" />
+        <line x1="508" y1="100" x2="544" y2="146" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr4)" />
+
+        <!-- Arm 1: IgE / Mast cell -->
+        <rect x="548" y="38" width="310" height="76" rx="8" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" />
+        <text x="560" y="57" font-size="12" font-weight="700" fill="var(--error)">速发变态反应支路（IgE 介导）</text>
+        <text x="560" y="76" font-size="11.5" fill="var(--foreground)">B细胞产特异性 IgE → 结合肥大/嗜碱细胞受体</text>
+        <text x="560" y="94" font-size="11.5" fill="var(--foreground)">再遇变应原交联脱颗粒 → 平滑肌痉挛/黏液分泌↑</text>
+
+        <!-- Arm 2: EOS / Chronic Inflammation -->
+        <rect x="548" y="124" width="310" height="76" rx="8" fill="var(--chart-2)" fill-opacity="0.12" stroke="var(--chart-2)" />
+        <text x="560" y="143" font-size="12" font-weight="700" fill="var(--chart-2)">慢性气道炎症支路（嗜酸性粒细胞核心）</text>
+        <text x="560" y="162" font-size="11.5" fill="var(--foreground)">募集激活嗜酸性粒细胞（效应+免疫调节）、巨噬细胞</text>
+        <text x="560" y="180" font-size="11.5" fill="var(--foreground)">释放组胺/白三烯/前列腺素/神经肽 → 慢性炎症网络</text>
+
+        <!-- Th17 branch -->
+        <rect x="22" y="138" width="326" height="58" rx="8" fill="var(--secondary)" stroke="var(--border)" stroke-dasharray="4 2" />
+        <text x="34" y="159" font-size="12" font-weight="700" fill="var(--foreground)">非2型/重度哮喘支路：Th17 细胞</text>
+        <text x="34" y="180" font-size="11.5" fill="var(--muted-foreground)">介导以中性粒细胞浸润为主的激素抵抗型及重度哮喘</text>
+
+        <!-- AHR outcome banner -->
+        <rect x="22" y="206" width="836" height="38" rx="7" fill="var(--error)" fill-opacity="0.14" stroke="var(--error)" />
+        <text x="440" y="230" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--error)">慢性炎症 → 气道上皮损伤 + 上皮下神经末梢裸露 → 气道高反应性（AHR，哮喘基本特征，但非哮喘独有）</text>
+
+        <!-- Bottom Left: Neural Regulation -->
+        <rect x="8" y="270" width="424" height="136" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="22" y="294" font-size="13" font-weight="700" fill="var(--primary)">② 神经调节失衡与神经源性炎症</text>
+        <text x="22" y="318" font-size="12" fill="var(--foreground)">• <tspan font-weight="700">β 肾上腺素能受体</tspan>功能低下（舒张力↓）</text>
+        <text x="22" y="340" font-size="12" fill="var(--foreground)">• <tspan font-weight="700">胆碱能神经</tspan>张力增高（对组胺/醋甲胆碱高度敏感）</text>
+        <text x="22" y="362" font-size="12" fill="var(--foreground)">• <tspan font-weight="700">NANC 失衡</tspan>：舒张介质（VIP、NO）↓ vs 收缩（P物质、神经激肽）↑</text>
+        <text x="22" y="384" font-size="12" fill="var(--foreground)">• <tspan font-weight="700">神经源性炎症</tspan>：P物质/CGRP/神经激肽A → 轴突反射促发作</text>
+
+        <!-- Bottom Right: Variable Airflow Limitation -->
+        <rect x="446" y="270" width="426" height="136" rx="10" fill="var(--card)" stroke="var(--success)" stroke-width="1.5" />
+        <text x="460" y="294" font-size="13" font-weight="700" fill="var(--success)">③ 可变气流受限客观检查（3 选 1 确诊）</text>
+        <text x="460" y="319" font-size="12" fill="var(--foreground)">1. <tspan font-weight="700" fill="var(--primary)">支气管舒张试验（BDT）+</tspan>：吸沙丁胺醇20min后</text>
+        <text x="476" y="336" font-size="11.5" font-weight="700" fill="var(--error)">FEV₁ 增加 ≥ 12% 且绝对值增加 ≥ 200 ml</text>
+        <text x="460" y="358" font-size="12" fill="var(--foreground)">2. <tspan font-weight="700" fill="var(--primary)">支气管激发试验（BPT）+</tspan>：FEV₁ 下降 ≥ 20%</text>
+        <text x="476" y="374" font-size="11" fill="var(--muted-foreground)">（仅用于非发作期且 FEV₁ &gt; 70% 预计值者）</text>
+        <text x="460" y="394" font-size="12" fill="var(--foreground)">3. <tspan font-weight="700" fill="var(--primary)">PEF 变异率</tspan>：日平均昼夜 &gt; 10% 或周变异率 &gt; 20%</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心重点</span> 病因机制、炎症/AHR/异质性、临床表现、分型分级与诊断鉴别</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">1. 哮喘异质性、病因、气道免疫-炎症机制、神经机制与 AHR 特点</h3><span class="badge badge-m">掌握</span></div>
+    <ul>
+      <li><strong>异质性定义</strong>：以<span class="k">慢性气道炎症</span>和<span class="k">气道高反应性（AHR）</span>为特征的异质性疾病；呼吸道症状与<span class="k">可变的呼气气流受限</span>均随时间变化且严重程度可变。</li>
+      <li><strong>病因</strong>：①<strong>多基因遗传倾向</strong>（GWAS 易感基因：<span class="k">TSLP、ORMDL3、GSDMB、HLA-DQ、IL-33</span>）；②<strong>环境因素</strong>（变应原性：尘螨、宠物、霉菌、蟑螂、花粉、职业酶/化合物、鱼虾蛋奶、阿司匹林/抗生素；非变应原性：大气污染、吸烟、运动、肥胖、精神焦虑）。</li>
+      <li><strong>气道免疫-炎症机制</strong>：在变应原、污染物或微生物刺激下，气道上皮细胞释放 <span class="k">IL-33、IL-25 和胸腺基质淋巴细胞生成素（TSLP）</span>，激活 <span class="k">Th2 及 ILC2</span>：
+        <ul>
+          <li><strong>IgE 介导速发变态反应</strong>：活化的 Th2/ILC2 分泌 <span class="k">IL-4、IL-5、IL-13</span> 激活 B 细胞合成特异性 IgE 并结合于肥大/嗜碱性粒细胞表面受体；再遇变应原交联脱颗粒，释放活性介质致平滑肌收缩、黏液分泌增加与炎症浸润。</li>
+          <li><strong>慢性气道炎症网络</strong>：上述细胞因子直接激活并募集肥大细胞、<span class="k">嗜酸性粒细胞</span>（兼具终末效应与免疫调节作用）及巨噬细胞，分泌组胺、白三烯、前列腺素、活性神经肽与趋化因子，形成慢性气道炎症（见于所有哮喘，病理表现为黏膜水肿、平滑肌痉挛、纤毛脱落、杯状细胞增殖）。</li>
+          <li><strong>非 2 型/重度哮喘</strong>：<span class="k">Th17 细胞</span>在以中性粒细胞浸润为主的激素抵抗型哮喘和重度哮喘中起重要作用。</li>
+        </ul>
+      </li>
+      <li><strong>气道高反应性（AHR）特点</strong>：气道对变应原、理化因素、运动、药物等刺激呈现过强或过早收缩，是<span class="k">哮喘的基本特征</span>（有症状者几乎均存在），可由支气管激发试验量化。气道慢性炎症致<span class="k">上皮损伤、上皮下神经末梢裸露</span>是 AHR 的重要机制。但<span class="k">出现 AHR 并非都是哮喘</span>（长期吸烟、臭氧、病毒上感、COPD 亦可轻度出现）。</li>
+      <li><strong>神经调节机制</strong>：①<span class="k">β 肾上腺素受体功能低下</span>；②<span class="k">胆碱能神经张力增加</span>（对组胺/醋甲胆碱敏感）；③<strong>NANC 神经系统失衡</strong>（舒张介质 <span class="k">VIP、NO</span> 与收缩介质 <span class="k">P 物质、神经激肽</span> 失衡）；④<strong>神经源性炎症</strong>（感觉神经末梢释放 P 物质、CGRP、神经激肽 A 致血管扩张/渗出，并经局部轴突反射引起哮喘发作）。</li>
+    </ul>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">2. 临床表现、特殊临床类型、辅助检查与诊断标准</h3><span class="badge badge-m">掌握</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>临床表现与不典型分型</h4>
+        <ul>
+          <li><strong>典型症状</strong>：发作性伴哮鸣音的<span class="k">呼气性呼吸困难</span>（可伴气促、胸闷、咳嗽），<span class="k">夜间及凌晨发作或加重</span>，可自行或平喘药缓解。</li>
+          <li><strong>特殊临床类型</strong>：<strong>运动性哮喘</strong>（多见青少年）；<strong>咳嗽变异性哮喘（CVA）</strong>（咳嗽为唯一症状）；<strong>胸闷变异性哮喘（CTVA）</strong>（胸闷为唯一症状）。</li>
+          <li><strong>体征</strong>：发作时双肺广泛哮鸣音、呼气相延长；危重发作哮鸣音减弱甚至消失称<span class="k">“沉默肺”</span>；非发作期可无阳性体征（无哮鸣音不能除外哮喘）。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>辅助检查与诊断标准</h4>
+        <ul>
+          <li><strong>炎症/变应原/血气</strong>：诱导痰 EOS <span class="k">&gt;2.5%</span>（评炎症及ICS反应）；FeNO（评控制及ICS反应）；血总IgE用于重度哮喘抗IgE选药定剂量；发作时通气呈阻塞性障碍（FEV₁/FVC&lt;70%）；<strong>血气分析</strong>：早期呼碱，恶化呼酸，<span class="k">PaCO₂ 虽在正常范围但较前增高即警惕严重气道阻塞</span>。</li>
+          <li><strong>可变气流受限客观检查（诊断必备 3 选 1）</strong>：
+            <br />①<span class="k">支气管舒张试验（BDT）阳性</span>：吸沙丁胺醇/特布他林 20min 后，<span class="k">FEV₁ 增加 ≥12% 且绝对值增加 ≥200 ml</span>；
+            <br />②<span class="k">支气管激发试验（BPT）阳性</span>：仅适用于非发作期、<span class="k">FEV₁ &gt;70% 预计值</span>者，吸醋甲胆碱/组胺致 <span class="k">FEV₁ 下降 ≥20%</span>（PD₂₀/PC₂₀）；
+            <br />③<span class="k">PEF 变异率达标</span>：平均每日昼夜变异率 <span class="k">&gt;10%</span>（连测7天）或周变异率 <span class="k">&gt;20%</span>。
+          </li>
+          <li><strong>诊断标准</strong>：典型症状体征 + 上述可变气流受限任 1 条 + 除外他病。CVA/CTVA 为咳嗽或胸闷唯一/主要症状 + 可变气流受限任 1 条 + 排他 + 哮喘治疗有效。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">3. 哮喘分期、急性发作严重度分级与控制水平分级</h3><span class="badge badge-m">掌握</span></div>
+    <p>分为<strong>急性发作期</strong>、<strong>慢性持续期</strong>（初始治疗分间歇/轻/中/重度持续4级，目前最常用控制水平分级）与<strong>临床控制期</strong>（无症状 &gt;4 周、近 1 年无急性发作、肺功能正常）。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>急性发作分级</th><th>气短 / 讲话 / 体位</th><th>呼吸 / 三凹 / 哮鸣音</th><th>心率 / 奇脉</th><th>PEF（用支扩后）与血气</th></tr></thead>
+        <tbody>
+          <tr><td><strong>轻度</strong></td><td>步行或上楼气短；可焦虑</td><td>RR轻增；散在哮鸣音</td><td>正常</td><td>通气功能和血气正常</td></tr>
+          <tr><td><strong>中度</strong></td><td>稍事活动气短；讲话常中断</td><td>RR增；可有三凹征；响亮弥漫哮鸣音</td><td>心率增快；可现奇脉</td><td>PEF <span class="k">60%～80%pred</span>；SaO₂ <span class="k">91%～95%</span></td></tr>
+          <tr><td><strong>重度</strong></td><td>休息时气短、<span class="k">端坐呼吸</span>、只能发<span class="k">单字</span>、大汗烦躁</td><td>RR <span class="k">&gt;30</span>；常有三凹征；响亮弥漫哮鸣音</td><td>HR <span class="k">&gt;120</span>；常有奇脉</td><td>PEF <span class="k">&lt;60%</span>或&lt;100L/min；PaO₂&lt;60、<span class="k">PaCO₂&gt;45</span>、SaO₂≤90%、pH正常或降</td></tr>
+          <tr><td><strong>危重度</strong></td><td><span class="k">不能讲话、嗜睡或意识模糊</span></td><td><span class="k">胸腹矛盾运动、哮鸣音减弱或消失（沉默肺）</span></td><td>脉率变慢或不规则</td><td>严重低氧 + 高碳酸血症，pH降低</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout info">
+      <strong>慢性持续期哮喘控制水平分级（表 2-4-1，评估过去 4 周 4 项）：</strong>
+      ①日间症状 &gt;2次/周；②夜间因哮喘憋醒；③用缓解药 &gt;2次/周；④哮喘致活动受限。
+      → <span class="k">0 项 = 良好控制</span> ｜ <span class="k">1～2 项 = 部分控制</span> ｜ <span class="k">3～4 项 = 未控制</span>。（同时评估未来风险：频繁发作、低FEV₁、高EOS/FeNO、过度用SABA/ICS不足等）。
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">4. 支气管哮喘的鉴别诊断（4 大重点）</h3><span class="badge badge-m">掌握</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>鉴别疾病</th><th>核心鉴别要点与急救禁忌</th></tr></thead>
+        <tbody>
+          <tr><td><strong>左心衰竭（心源性哮喘）</strong></td><td>高血压/冠心病/风心病史，突发端坐呼吸、<span class="k">粉红色泡沫痰</span>、双肺广泛湿啰音+哮鸣音、左心界大、心尖部<span class="k">奔马律</span>、胸片心脏大+肺淤血。一时难鉴别可雾化 β₂ 激动剂或静注氨茶碱，<span class="k">忌用肾上腺素或吗啡</span>。</td></tr>
+          <tr><td><strong>慢阻肺病（COPD）</strong></td><td>中老年、长期吸烟史、慢性咳嗽、喘息常年存在、呼吸音明显下降+肺气肿体征、气流受限不可逆；二者可重叠存在。</td></tr>
+          <tr><td><strong>上气道阻塞</strong></td><td>中央型肺癌、气管支气管结核、复发性多软骨炎、异物；典型为<span class="k">吸气性呼吸困难</span>，靠胸部影像与支气管镜确诊。</td></tr>
+          <tr><td><strong>变应性支气管肺曲霉病（ABPA）</strong></td><td>反复哮喘发作、咳棕褐色黏稠痰块/树枝状管型、痰EOS高、CT示<span class="k">近端/中央支扩</span>、曲霉sIgE(+)及总IgE显著升高。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 常用药物（控制 vs 缓解）与急性加重处理原则</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">1. 哮喘治疗常用药物分类与用药要点（表 2-4-2）</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>控制性药物（长期抗炎，维持控制）</h4>
+        <ul>
+          <li><strong>吸入糖皮质激素（ICS）</strong>：<span class="k">长期治疗首选</span>（倍氯米松、布地奈德、氟替卡松）；规律吸 1～2 周起效；吸后<span class="k">清水漱口</span>防口咽念珠菌/声嘶。</li>
+          <li><strong>ICS + LABA 联合</strong>（沙美/福莫特罗）：最常用联合控制药；<span class="k">LABA 不可单独用于哮喘</span>！福莫特罗速效，布地奈德/福莫特罗可兼作缓解与维持。</li>
+          <li><strong>ICS + LABA + LAMA 三联</strong>：用于中高剂量 ICS+LABA 未控或重度哮喘（噻托/格隆/乌美溴铵）。</li>
+          <li><strong>白三烯调节剂（LTRA）</strong>：孟鲁司特，尤适<span class="k">阿司匹林哮喘、运动性哮喘、合并过敏性鼻炎</span>。</li>
+          <li><strong>缓释茶碱</strong>：抑制PDE增cAMP；<span class="k">安全血药浓度 6～15 mg/L</span>（合用西咪替丁/喹诺酮/大环内酯减慢排泄需减量）。</li>
+          <li><strong>生物制剂（重度哮喘附加）</strong>：抗 IgE（奥马珠）、抗 IL-5（美泊利）/IL-5R（贝那利珠）、抗 IL-4R（度普利尤）、抗 TSLP。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>缓解性药物（按需速效解痉）</h4>
+        <ul>
+          <li><strong>ICS + 福莫特罗</strong>：<span class="k">首选缓解性药物</span>（第10版阶梯治疗表2-4-3推荐轨道）。</li>
+          <li><strong>SABA（沙丁胺醇、特布他林）</strong>：首选吸入，维持4～6h；不良反应心悸/震颤/低钾；<span class="k">不推荐单用 SABA</span>，按需用时须联合 ICS。</li>
+          <li><strong>SAMA（异丙托溴铵）</strong>：主要用于急性发作，多与 SABA 联用。</li>
+          <li><strong>短效茶碱</strong>：静脉负荷 4～6mg/kg（速度≤0.25mg/kg·min），维持 0.6～0.8mg/kg·h，日总量≤1.0g。</li>
+          <li><strong>全身用糖皮质激素</strong>：口服泼尼松/泼尼松龙 30～60mg/d 短期加强；重度静滴<span class="k">琥珀酸氢化可的松 100～400mg/d 或甲泼尼龙 80～160mg/d</span>（地塞米松半衰期长慎用）。</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:12.5px;color:var(--muted-foreground);margin-top:8px;"><strong>长期 5 级阶梯原则（表2-4-3）</strong>：1～2级按需低剂量ICS+福莫特罗 → 3级低剂量维持 → 4级中剂量维持 → 5级加LAMA/高剂量/评估表型加生物制剂；控制且肺功能稳定<span class="k">3个月以上</span>可降级（先减激素量→减次数→减联用药）。</p>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">2. 哮喘急性加重的分级处理原则</h3><span class="badge badge-f">熟悉</span></div>
+    <ul>
+      <li><strong>轻度</strong>：MDI 吸 SABA 第 1h 每 20min 1～2 喷，后每 3～4h 1～2 喷；同时 ICS 剂量至少<span class="k">加倍</span>（若用布地奈德/福莫特罗160/4.5μg可直接加1～2吸，日≤8吸）。</li>
+      <li><strong>中度</strong>：第 1h 持续雾化 SABA + 雾化 SAMA + 雾化激素混悬液 ± 静脉茶碱；效果欠佳尽早口服激素 + 吸氧。</li>
+      <li><strong>重度至危重度</strong>：持续雾化 SABA + SAMA + 激素混悬液 + 静脉茶碱 + 吸氧 + <span class="k">尽早静脉应用糖皮质激素</span>；维持水电解质，仅在 <span class="k">pH &lt; 7.20 且合并代谢性酸中毒</span>时适当补碱；无效恶化及时机械通气（指征：<span class="k">呼吸肌疲劳、PaCO₂ ≥ 45 mmHg、意识改变</span>→有创机械通气）；预防感染并制订个体化长期方案。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== MODULE 5 ==================== -->
+<section class="module-section" id="mod-5" data-mod-title="Ⅴ、肺血栓栓塞症（肺栓塞）">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅴ、肺血栓栓塞症（肺栓塞）</h1>
+      <span class="mod-source">第10版 第十一章《肺血栓栓塞症》（课本 P110–117 / PDF P141–148）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>VTE、PE、PTE 及肺梗死（大纲称肺梗塞）的概念；临床表现；实验室及辅助检查；诊断策略及危险分层。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>肺血栓栓塞症病因及病理生理；溶栓及抗凝治疗的适应证、禁忌证。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">了解项：流行病学、病理学、抗凝及溶栓具体用药方案/剂量/疗程、介入/手术及预防细节（大纲内部冲突详见文末审计表）。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 5 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 5 · 急性 PTE 血流动力学诊断策略与“高 / 中高 / 中低 / 低危”危险分层决策树</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 430" width="100%" role="img" aria-label="急性肺血栓栓塞症诊断策略与危险分层决策树">
+        <defs>
+          <marker id="arr5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr5r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+        <!-- Top Start Node -->
+        <rect x="260" y="10" width="360" height="58" rx="10" fill="var(--primary)" fill-opacity="0.14" stroke="var(--primary)" stroke-width="1.8" />
+        <text x="440" y="33" text-anchor="middle" font-size="13.5" font-weight="800" fill="var(--primary)">疑诊急性 PTE：评估血流动力学是否稳定？</text>
+        <text x="440" y="54" text-anchor="middle" font-size="11" fill="var(--foreground)">不稳定（表2-11-2三选一）：心搏骤停 / 梗阻性休克 / 持续低血压（&gt;15min）</text>
+
+        <!-- Split arrows -->
+        <path d="M 320 68 L 160 104" stroke="var(--error)" stroke-width="2" fill="none" marker-end="url(#arr5r)" />
+        <text x="206" y="84" font-size="11.5" font-weight="700" fill="var(--error)">不稳定</text>
+
+        <path d="M 560 68 L 620 104" stroke="var(--primary)" stroke-width="2" fill="none" marker-end="url(#arr5)" />
+        <text x="610" y="84" font-size="11.5" font-weight="700" fill="var(--primary)">稳定</text>
+
+        <!-- Left Branch: High Risk -->
+        <rect x="16" y="108" width="286" height="92" rx="9" fill="var(--error)" fill-opacity="0.09" stroke="var(--error)" stroke-width="1.5" />
+        <text x="30" y="130" font-size="12.5" font-weight="700" fill="var(--error)">不稳定诊断路径</text>
+        <text x="30" y="150" font-size="11.5" fill="var(--foreground)">• 条件允许 → 立即行 <tspan font-weight="700">CTPA</tspan> 确诊/排除</text>
+        <text x="30" y="170" font-size="11.5" fill="var(--foreground)">• 无条件/不适合 → <tspan font-weight="700">床旁超声心动图</tspan></text>
+        <text x="38" y="188" font-size="11" fill="var(--muted-foreground)">见右心负荷↑和/或血栓且排他 → 按PTE治疗</text>
+
+        <line x1="159" y1="202" x2="159" y2="232" stroke="var(--error)" stroke-width="2" marker-end="url(#arr5r)" />
+
+        <rect x="16" y="236" width="286" height="108" rx="9" fill="var(--error)" fill-opacity="0.16" stroke="var(--error)" stroke-width="2" />
+        <text x="159" y="259" text-anchor="middle" font-size="14" font-weight="800" fill="var(--error)">高危 PTE</text>
+        <text x="159" y="279" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--foreground)">（早期死亡高风险）</text>
+        <text x="28" y="301" font-size="11.5" fill="var(--foreground)">• 无禁忌证：<tspan font-weight="700" fill="var(--error)">积极尽早溶栓</tspan>（时间窗≤14d）</text>
+        <text x="28" y="320" font-size="11.5" fill="var(--foreground)">• 溶栓后规范续贯<tspan font-weight="700">抗凝治疗</tspan></text>
+        <text x="28" y="337" font-size="10.5" fill="var(--muted-foreground)">注：致命性高危PTE绝对禁忌亦视为相对禁忌</text>
+
+        <!-- Right Branch: Stable -->
+        <rect x="328" y="108" width="536" height="82" rx="9" fill="var(--card)" stroke="var(--chart-1)" stroke-width="1.5" />
+        <text x="342" y="130" font-size="12.5" font-weight="700" fill="var(--chart-1)">稳定诊断路径（疑诊 → 确诊）</text>
+        <text x="342" y="150" font-size="11.5" fill="var(--foreground)">1. 临床可能性评估（修订版 Geneva / Wells）+ <tspan font-weight="700">D-二聚体</tspan>（&lt;500μg/L 或 &gt;50岁年龄×10 排除低度可能）</text>
+        <text x="342" y="172" font-size="11.5" fill="var(--foreground)">2. 确诊首选 <tspan font-weight="700" fill="var(--primary)">CTPA</tspan>；相对禁忌（碘过敏/肾衰/妊娠）→ 选 <tspan font-weight="700">V/Q 显像</tspan> 或 <tspan font-weight="700">MRPA</tspan></text>
+
+        <line x1="596" y1="192" x2="596" y2="218" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr5)" />
+
+        <!-- RVD + Biomarker box -->
+        <rect x="328" y="220" width="536" height="32" rx="6" fill="var(--secondary)" stroke="var(--border)" />
+        <text x="596" y="241" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">评估右心功能不全（RVD：超声/CT RV/LV&gt;1.0等） + 心脏标志物（BNP / NT-proBNP / cTn）</text>
+
+        <!-- 3 risk tiers -->
+        <line x1="416" y1="252" x2="416" y2="268" stroke="var(--warning)" stroke-width="1.8" marker-end="url(#arr5)" />
+        <line x1="596" y1="252" x2="596" y2="268" stroke="var(--chart-1)" stroke-width="1.8" marker-end="url(#arr5)" />
+        <line x1="776" y1="252" x2="776" y2="268" stroke="var(--success)" stroke-width="1.8" marker-end="url(#arr5)" />
+
+        <rect x="328" y="272" width="174" height="72" rx="8" fill="var(--warning)" fill-opacity="0.18" stroke="var(--warning)" stroke-width="1.5" />
+        <text x="415" y="293" text-anchor="middle" font-size="13" font-weight="800" fill="var(--foreground)">中高危 PTE</text>
+        <text x="415" y="311" text-anchor="middle" font-size="11" fill="var(--foreground)">RVD(+) 且 标志物(+)</text>
+        <text x="415" y="330" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">抗凝+监测；恶化抢救溶栓</text>
+
+        <rect x="510" y="272" width="172" height="72" rx="8" fill="var(--chart-1)" fill-opacity="0.12" stroke="var(--chart-1)" stroke-width="1.5" />
+        <text x="596" y="293" text-anchor="middle" font-size="13" font-weight="800" fill="var(--chart-1)">中低危 PTE</text>
+        <text x="596" y="311" text-anchor="middle" font-size="11" fill="var(--foreground)">RVD(+) 或 标志物(+)</text>
+        <text x="596" y="330" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">抗凝；不常规溶栓</text>
+
+        <rect x="690" y="272" width="174" height="72" rx="8" fill="var(--success)" fill-opacity="0.13" stroke="var(--success)" stroke-width="1.5" />
+        <text x="777" y="293" text-anchor="middle" font-size="13" font-weight="800" fill="var(--success)">低危 PTE</text>
+        <text x="777" y="311" text-anchor="middle" font-size="11" fill="var(--foreground)">RVD(-) 且 标志物(-)</text>
+        <text x="777" y="330" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">抗凝；不建议溶栓</text>
+
+        <!-- Bottom Strip: Etiology -->
+        <rect x="16" y="358" width="848" height="60" rx="9" fill="var(--secondary)" stroke="var(--border)" />
+        <text x="30" y="381" font-size="12.5" font-weight="700" fill="var(--primary)">第三步 · 求因（所有疑诊/确诊病例必做）：</text>
+        <text x="30" y="403" font-size="11.5" fill="var(--foreground)">① 下肢深静脉加压超声明确 DVT（无论有无症状）　② 查诱因/抗磷脂抗体（间隔≥12周两次阳性）　③ &lt;50岁/复发/家族史查遗传易栓症（AT、PC、PS）　④ 老年警惕隐匿肿瘤</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心重点</span> 四大概念、临床表现、辅助检查、诊断策略与危险分层</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">1. 核心概念（4 个基本概念 + CTEPH 衔接）</h3><span class="badge badge-m">掌握</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>PE 与 PTE</h4>
+        <ul>
+          <li><strong>肺栓塞（PE）</strong>：以<span class="k">各种栓子</span>（血栓、脂肪、羊水、空气、肿瘤等）阻塞肺动脉或其分支为发病原因的一组疾病或临床综合征总称。</li>
+          <li><strong>肺血栓栓塞症（PTE）</strong>：PE 最常见类型，来自<span class="k">静脉系统或右心</span>的血栓阻塞肺动脉或其分支所致的肺循环和呼吸功能障碍。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>VTE 与肺梗死（肺梗塞）</h4>
+        <ul>
+          <li><strong>静脉血栓栓塞症（VTE）</strong>：<span class="k">DVT 与 PTE</span> 实质为同一疾病过程在不同部位、不同阶段的表现，合称 VTE。</li>
+          <li><strong>肺梗死</strong>：远端小栓子造成局部的<span class="k">出血性肺不张</span>，引起局部肺泡出血（咯血）并可伴胸膜炎和胸腔积液。（反复栓塞不溶机化致肺血管重塑、PAH与右心衰称 CTEPH）。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">2. PTE 与 DVT 的临床表现</h3><span class="badge badge-m">掌握</span></div>
+    <ul>
+      <li><strong>症状（缺乏特异性）</strong>：①<span class="k">呼吸困难及气促（最多见</span>，活动后明显）；②胸痛（胸膜炎样多见，偶心绞痛样）；③咯血（约1/3，多发于肺梗死24h内，小量）；④烦躁惊恐濒死感；⑤咳嗽（约1/3，干咳/少量白痰）；⑥<span class="k">晕厥</span>（可为唯一或首发症状，大块栓塞阻塞 &gt;50% 肺血管致心排骤降）。<span class="k">“肺梗死三联征”（呼吸困难+胸痛+咯血）仅见约 20%</span>。</li>
+      <li><strong>体征</strong>：呼吸急促、发绀、哮鸣/细湿啰音；循环系统以<span class="k">窦性心动过速最常见</span>，可有 P₂&gt;A₂ 或分裂、颈静脉怒张、三尖瓣区收缩期杂音、右心奔马律、肝大水肿、低血压/休克；多伴低热。</li>
+      <li><strong>DVT 表现</strong>：双下肢<span class="k">不对称性肿胀</span>、疼痛压痛、色素沉着。测量点：<span class="k">髌骨上缘上 15cm、髌骨下缘下 10cm</span>，双侧周径相差 <span class="k">&gt;1cm</span> 有临床意义（半数以上无自觉症状和明显体征）。</li>
+    </ul>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">3. 实验室及辅助检查（疑诊 / 确诊 / 求因分层）</h3><span class="badge badge-m">掌握</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>检查类别</th><th>检查项目</th><th>核心阳性表现与临床价值</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="5"><strong>疑诊筛查</strong></td><td><strong>血浆 D-二聚体</strong></td><td>急性 PTE 敏感度 <span class="k">92%～100%</span>，低临床可能性时 <span class="k">&lt;500 μg/L 基本排除</span>；&gt;50 岁用年龄调整界值（<span class="k">年龄×10 μg/L</span>）提特异度；肿瘤/炎症/创伤/手术亦可高。</td></tr>
+          <tr><td><strong>动脉血气分析</strong></td><td>阻塞 &gt;15% 即低氧；典型呈<span class="k">低氧血症、低碳酸血症、P(A-a)O₂ 增大</span>（部分正常）。</td></tr>
+          <tr><td><strong>肌钙蛋白 / BNP·NT-proBNP</strong></td><td>反映<span class="k">右心功能不全（RVD）与心肌损伤</span>，用于危险分层及预后判断。</td></tr>
+          <tr><td><strong>心电图</strong></td><td>常见窦速、V₁～V₄ T波/ST异常；典型 <span class="k">SⅠQⅢTⅢ</span>、右束支阻滞、肺型P波、电轴右偏；<strong>动态改变</strong>更有意义。</td></tr>
+          <tr><td><strong>超声心动图</strong></td><td>发现 RVD 征象、排除他病、偶见右心/肺动脉血栓；血流动力学不稳定无法 CTPA 时可床旁确诊。</td></tr>
+          <tr><td rowspan="4"><strong>影像确诊</strong></td><td><strong>CTPA（首选确诊）</strong></td><td>直接征象：<span class="k">肺动脉内充盈缺损、轨道征</span>或完全阻断；间接征象：楔形影、盘状肺不张、中心肺动脉扩张。</td></tr>
+          <tr><td><strong>V/Q 显像</strong></td><td>呈肺段分布<span class="k">灌注缺损与通气不匹配</span>；优先用于低可能门诊、年轻女性、妊娠、造影剂过敏、严重肾不全。</td></tr>
+          <tr><td><strong>MRPA</strong></td><td>无辐射无碘，肺段以下价值有限，用于肾衰/碘过敏/妊娠。</td></tr>
+          <tr><td><strong>肺动脉造影（金标准）</strong></td><td>有创（严重并发症1.5%），直接征象充盈缺损/轨道征，严控指征。</td></tr>
+          <tr><td><strong>求因检查</strong></td><td><strong>加压超声 / 易栓筛查</strong></td><td>下肢加压超声查 DVT；抗磷脂抗体间隔 <span class="k">≥12周两次阳性</span>；中国人群常见遗传易栓症为 <span class="k">AT、蛋白C、蛋白S</span> 缺陷。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">4. 诊断策略（疑诊→确诊→求因）与危险分层标准（含 RVD 条件）</h3><span class="badge badge-m">掌握</span></div>
+    <ul>
+      <li><strong>三步诊断策略</strong>：按<span class="k">疑诊 → 确诊 → 求因</span>三步进行，其中疑诊后依据<strong>是否合并血流动力学障碍</strong>采取不同路径：
+        <ul>
+          <li><strong>血流动力学不稳定的疑诊病人</strong>：条件允许立即完善 <span class="k">CTPA</span> 确诊或排除；无条件或不适合行 CTPA 者，行<span class="k">床旁超声心动图</span>，如发现右心负荷增加和/或肺动脉、右心腔血栓证据并排除其他疾病，即按 PTE 治疗。</li>
+          <li><strong>血流动力学稳定的疑诊病人</strong>：先行临床可能性评估（<span class="k">修订版 Geneva 评分 / Wells 评分</span>），低度可能性结合血浆 D-二聚体排除；确诊首选 <span class="k">CTPA</span>，若存在相对禁忌（碘造影剂过敏、肾功能不全、妊娠等）改选 <span class="k">V/Q 显像</span>或 <span class="k">MRPA</span>。</li>
+          <li><strong>第三步 · 求因</strong>：①无论有无 DVT 症状均行<span class="k">下肢深静脉加压超声</span>明确血栓来源；②排查诱因及抗磷脂综合征（间隔 <span class="k">≥12 周</span>两次抗磷脂抗体阳性）；③<span class="k">&lt;50 岁</span>、复发或突出家族史查遗传性易栓症（中国人群常见 <span class="k">AT、蛋白 C、蛋白 S</span> 缺陷，必要时基因检测）；④老年警惕隐匿性恶性肿瘤并随访。</li>
+        </ul>
+      </li>
+      <li><strong>血流动力学不稳定定义（表 2-11-2，任 1 条 = 高危 PTE）</strong>：①心搏骤停需 CPR；②梗阻性休克（SBP &lt;90mmHg 或容量足仍需升压药 + 外周低灌注）；③持续低血压（<span class="k">SBP &lt;90mmHg 或下降 ≥40mmHg 持续 &gt;15min</span>，除外新发心律失常/低容量/脓毒症）。</li>
+      <li><strong>右心功能不全（RVD）影像诊断标准</strong>：超声符合①<span class="k">RV/LV 舒张末内径比 &gt;1.0</span>、②RV 游离壁运动减低、③三尖瓣反流速度增快、④<span class="k">TAPSE &lt;17mm</span>；或 CTPA 四腔心层面 RV/LV &gt;1.0。</li>
+      <li><strong>中危与低危</strong>：血流动力学稳定 + RVD 与心脏标志物（BNP/NT-proBNP/肌钙蛋白）<strong>双阳性 = 中高危</strong>、<strong>仅一阳性 = 中低危</strong>、<strong>双阴性 = 低危</strong>。</li>
+      <li><strong>CTEPH 诊断要点</strong>：慢性 PAH 症状 → 影像证实多发贴壁/钙化慢性阻塞 → 静息右心导管 <span class="k">mPAP ≥ 25 mmHg</span> 且除外血管炎/肉瘤。</li>
+    </ul>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 病因（危险因素）、病理生理及溶栓/抗凝适应证与禁忌证</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">1. PTE 病因（Virchow 三要素）与病理生理机制</h3><span class="badge badge-f">熟悉</span></div>
+    <ul>
+      <li><strong>危险因素（Virchow 三要素：静脉血流淤滞、血管内皮损伤、血液高凝状态，表2-11-1）</strong>：
+        <br />• <strong>遗传性</strong>：AT/PS/PC 缺乏、V 因子 Leiden 突变、凝血酶原 20210A 等（<span class="k">&lt;50 岁</span>无诱因复发或家族史警惕易栓症）。
+        <br />• <strong>获得性</strong>：高凝（高龄、恶性肿瘤、抗磷脂综合征、口服避孕药、妊娠产褥、肥胖、肾病综合征等）；内皮损伤（髋膝关节置换等手术、创伤骨折、中心静脉置管、吸烟、化疗）；血流淤滞（瘫痪、长途旅行、急性内科住院）。无明确诱因称特发性 VTE（需警惕隐匿肿瘤）。</li>
+      <li><strong>病理生理三大环节</strong>：
+        <ol>
+          <li><strong>PVR 增高与心功能不全</strong>：阻塞 <span class="k">30%～50%</span> → PVR↑ → 右心后负荷↑、肺动脉高压 → 右室扩大致<span class="k">室间隔左移</span> → 左室舒张早期充盈受阻 → 心排↓、体循环低血压、冠脉灌注压↓（右室内膜下心肌缺血）。</li>
+          <li><strong>呼吸功能不全</strong>：心排↓致混合静脉血氧↓；肺泡无效腔↑ + 血流重分布致 V/Q 失调 → 低氧血症；约 <span class="k">1/3 右房压↑致卵圆孔再开放</span> → 右向左分流（重度低氧 + 矛盾栓塞）；远端小栓子 → 肺梗死/咯血/胸液。</li>
+          <li><strong>CTEPH 形成</strong>：血栓机化不溶 + 反复脱落 + 血管重塑 → 管腔狭窄闭塞、mPAP 进行性↑ → 右心衰竭。</li>
+        </ol>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">2. 抗凝与溶栓治疗的适应证与禁忌证（表 2-11-3）</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>抗凝治疗：适应证与禁忌证</h4>
+        <ul>
+          <li><strong>适应证（基础治疗，确诊尽早启动）</strong>：低危 PTE 予抗凝；高危 PTE <span class="k">先溶栓后抗凝</span>；中危 PTE 无论是否溶栓均应抗凝。</li>
+          <li><strong>禁忌证与并发症</strong>：活动性出血、未控制严重高血压等（在急性 PTE 时多非绝对禁忌证）；主要并发症为出血。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>溶栓治疗：时间窗与适应证</h4>
+        <ul>
+          <li><strong>时间窗</strong>：一般定为 <span class="k">14 天以内</span>（确诊前提下慎重进行）。</li>
+          <li><strong>适应证</strong>：<strong>高危 PTE</strong> 无禁忌应积极尽早溶栓；<strong>中危 PTE</strong> 不建议常规系统性溶栓（个体化权衡），但抗凝中血流动力学恶化者行<span class="k">抢救性溶栓</span>；<strong>低危 PTE</strong> 不建议溶栓。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>溶栓绝对禁忌证（7 条）</th><th>溶栓相对禁忌证（12 条）</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>①结构性颅内疾病；②出血性脑卒中病史；③<span class="k">3个月内</span>缺血性脑卒中；④活动性出血；⑤近期脑或脊髓手术；⑥近期头部骨折性外伤或头部损伤；⑦出血倾向（自发性出血）。</td>
+            <td>①SBP &gt;180mmHg；②DBP &gt;110mmHg；③近期非颅内出血；④近期侵入性操作；⑤近期手术；⑥<span class="k">&gt;3个月</span>缺血性脑卒中；⑦口服抗凝药治疗；⑧创伤性 CPR；⑨心包炎或心包积液；⑩糖尿病视网膜病变；⑪妊娠；⑫年龄 &gt;75 岁。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout warn"><strong>特别提示</strong>：对于<span class="k">致命性高危 PTE</span>，上述绝对禁忌证亦应被视为相对禁忌证；溶栓主要并发症为出血（链激酶多见过敏）。</div>
+  </div>
+</section>
+
+<!-- ==================== MODULE 6 ==================== -->
+<section class="module-section" id="mod-6" data-mod-title="Ⅵ、间质性肺疾病">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅵ、间质性肺疾病（ILD / DPLD）</h1>
+      <span class="mod-source">第10版 第十章《间质性肺疾病》（课本 P99–109 / PDF P130–140）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>ILD/DPLD 分类（ATS/ERS 共识）；IPF 非外科肺活检临床诊断标准及 HRCT 表现；常见 ILD（结节病、过敏性肺炎、药物性肺疾病、肉芽肿性多血管炎 GPA）的定义、诊断标准与治疗方法。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>IPF 的临床表现、肺功能检查表现。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">了解项：DPLD 流行病学总体趋势、IPF 病因机制及治疗研究新药（吡非尼酮/尼达尼布等，详见文末审计表）、其余罕见 ILD（CEP/PLCH/PLAM/PAP/IPH）。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 6 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 6 · ATS/ERS ILD &amp; IIP 分类树与 IPF 非外科肺活检（HRCT-UIP + MDD）诊断流程</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 430" width="100%" role="img" aria-label="ILD与IIP分类树及IPF非外科肺活检诊断流程">
+        <defs>
+          <marker id="arr6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+        </defs>
+        <!-- Left Panel: Classification Tree -->
+        <rect x="8" y="8" width="446" height="412" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="22" y="31" font-size="13" font-weight="700" fill="var(--primary)">① ILD（2002）与 IIP（2013 ATS/ERS）分类树</text>
+
+        <!-- Root -->
+        <rect x="22" y="44" width="418" height="30" rx="6" fill="var(--primary)" fill-opacity="0.14" stroke="var(--primary)" />
+        <text x="231" y="64" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--primary)">间质性肺疾病（ILD / DPLD）四大临床分类</text>
+
+        <!-- 4 branches -->
+        <rect x="22" y="84" width="418" height="62" rx="7" fill="var(--chart-1)" fill-opacity="0.10" stroke="var(--chart-1)" />
+        <text x="32" y="102" font-size="12" font-weight="700" fill="var(--chart-1)">1. 已知原因的 ILD</text>
+        <text x="32" y="120" font-size="11" fill="var(--foreground)">• 职业/环境：<tspan font-weight="700">过敏性肺炎（HP）</tspan>、尘肺（石棉/硅肺）</text>
+        <text x="32" y="137" font-size="11" fill="var(--foreground)">• 药物/治疗（胺碘酮/博来/MTX/靶向/免疫） • CTD/ANCA血管炎（GPA）</text>
+
+        <rect x="22" y="155" width="418" height="162" rx="7" fill="var(--error)" fill-opacity="0.08" stroke="var(--error)" stroke-width="1.5" />
+        <text x="32" y="174" font-size="12" font-weight="800" fill="var(--error)">2. 特发性间质性肺炎（IIP）— 2013 ATS/ERS 三大类</text>
+        <text x="32" y="195" font-size="11.5" font-weight="700" fill="var(--foreground)">① 主要的 IIP（6 种，按病程/诱因分 3 组）：</text>
+        <text x="44" y="213" font-size="11" fill="var(--foreground)">• 慢性纤维化：<tspan font-weight="700" fill="var(--error)">IPF（UIP）</tspan>、iNSIP（NSIP）</text>
+        <text x="44" y="230" font-size="11" fill="var(--foreground)">• 吸烟相关性：RB-ILD（RB）、DIP（DIP）</text>
+        <text x="44" y="247" font-size="11" fill="var(--foreground)">• 急性/亚急性：COP（OP）、AIP（DAD）</text>
+        <text x="32" y="269" font-size="11.5" font-weight="700" fill="var(--foreground)">② 罕见的 IIP（2 种）：<tspan font-weight="400">iLIP（LIP）、iPPFE（PPFE）</tspan></text>
+        <text x="32" y="290" font-size="11.5" font-weight="700" fill="var(--foreground)">③ 未分类的 IIP</text>
+        <text x="32" y="308" font-size="10.5" fill="var(--muted-foreground)">注：括号内为对应影像/组织病理形态学类型</text>
+
+        <rect x="22" y="326" width="204" height="40" rx="7" fill="var(--warning)" fill-opacity="0.14" stroke="var(--warning)" />
+        <text x="32" y="344" font-size="12" font-weight="700" fill="var(--foreground)">3. 肉芽肿性 ILD</text>
+        <text x="32" y="360" font-size="11" font-weight="700" fill="var(--primary)">结节病（Sarcoidosis）</text>
+
+        <rect x="236" y="326" width="204" height="40" rx="7" fill="var(--secondary)" stroke="var(--border)" />
+        <text x="246" y="344" font-size="12" font-weight="700" fill="var(--foreground)">4. 罕见 ILD（7 种）</text>
+        <text x="246" y="360" font-size="10.5" fill="var(--muted-foreground)">PLAM/PLCH/CEP/PAP/IPH/PAM/淀粉样变</text>
+
+        <rect x="22" y="375" width="418" height="34" rx="6" fill="var(--secondary)" />
+        <text x="32" y="396" font-size="11" fill="var(--muted-foreground)">ILD 共性：进行性呼吸困难 + 限制性通气/DLCO↓ + 低氧 + 双肺弥漫病变</text>
+
+        <!-- Right Panel: IPF Non-surgical Diagnosis -->
+        <rect x="468" y="8" width="404" height="412" rx="10" fill="var(--card)" stroke="var(--error)" stroke-width="1.5" />
+        <text x="482" y="31" font-size="13" font-weight="700" fill="var(--error)">② IPF 非外科肺活检临床诊断流程（图2-10-4）</text>
+
+        <rect x="494" y="46" width="352" height="44" rx="8" fill="var(--secondary)" stroke="var(--border)" />
+        <text x="670" y="65" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--foreground)">疑诊 IPF（&gt;50岁隐匿呼吸困难、Velcro啰音、限制性/DLCO↓）</text>
+        <text x="670" y="82" text-anchor="middle" font-size="11" fill="var(--primary)">第 1 步：详细病史与抗体检查 → 排除环境/药物/CTD 等已知病因</text>
+
+        <line x1="670" y1="92" x2="670" y2="118" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr6)" />
+
+        <rect x="520" y="122" width="300" height="32" rx="7" fill="var(--primary)" fill-opacity="0.14" stroke="var(--primary)" />
+        <text x="670" y="143" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--primary)">第 2 步：胸部高分辨率 CT（HRCT）分型</text>
+
+        <path d="M 590 154 L 566 184" stroke="var(--success)" stroke-width="2" fill="none" marker-end="url(#arr6)" />
+        <path d="M 750 154 L 774 184" stroke="var(--warning)" stroke-width="2" fill="none" marker-end="url(#arr6)" />
+
+        <!-- Typical / Probable UIP -->
+        <rect x="482" y="188" width="194" height="122" rx="8" fill="var(--success)" fill-opacity="0.11" stroke="var(--success)" stroke-width="1.5" />
+        <text x="579" y="208" text-anchor="middle" font-size="12" font-weight="800" fill="var(--success)">典型 UIP / 可能 UIP</text>
+        <text x="492" y="227" font-size="11" font-weight="700" fill="var(--foreground)">典型 UIP（符合率 &gt;90%）：</text>
+        <text x="492" y="243" font-size="10.5" fill="var(--foreground)">网格 + 蜂窝影 ± 牵拉支扩</text>
+        <text x="492" y="258" font-size="10.5" fill="var(--foreground)">胸膜下、基底部为主</text>
+        <text x="492" y="277" font-size="11" font-weight="700" fill="var(--foreground)">可能 UIP（70%～89%）：</text>
+        <text x="492" y="293" font-size="10.5" fill="var(--foreground)">网格 + 牵拉支扩，无蜂窝</text>
+        <text x="492" y="305" font-size="10.5" fill="var(--foreground)">胸膜下、基底部为主</text>
+
+        <!-- Indeterminate / Non-UIP -->
+        <rect x="688" y="188" width="172" height="122" rx="8" fill="var(--warning)" fill-opacity="0.13" stroke="var(--warning)" stroke-width="1.5" />
+        <text x="774" y="208" text-anchor="middle" font-size="12" font-weight="800" fill="var(--foreground)">不确定 / 非 UIP</text>
+        <text x="698" y="229" font-size="10.5" fill="var(--foreground)">不符合胸膜下/基底部</text>
+        <text x="698" y="246" font-size="10.5" fill="var(--foreground)">分布或呈现广泛磨玻璃</text>
+        <text x="698" y="263" font-size="10.5" fill="var(--foreground)">/小叶中心结节/囊腔等</text>
+        <text x="698" y="287" font-size="11" font-weight="700" fill="var(--error)">→ 需 SLB 或 TBLC 活检</text>
+        <text x="698" y="303" font-size="10.5" fill="var(--muted-foreground)">（TBLB 对 IPF 无意义）</text>
+
+        <line x1="579" y1="312" x2="579" y2="342" stroke="var(--success)" stroke-width="2" marker-end="url(#arr6)" />
+        <line x1="774" y1="312" x2="774" y2="342" stroke="var(--warning)" stroke-width="2" marker-end="url(#arr6)" />
+
+        <rect x="482" y="346" width="194" height="60" rx="8" fill="var(--success)" fill-opacity="0.18" stroke="var(--success)" />
+        <text x="579" y="368" text-anchor="middle" font-size="12" font-weight="800" fill="var(--success)">替代外科肺活检</text>
+        <text x="579" y="388" text-anchor="middle" font-size="11.5" fill="var(--foreground)">经 MDD 直接诊断 IPF</text>
+
+        <rect x="688" y="346" width="172" height="60" rx="8" fill="var(--secondary)" stroke="var(--border)" />
+        <text x="774" y="368" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">病理 UIP + HRCT</text>
+        <text x="774" y="388" text-anchor="middle" font-size="11.5" fill="var(--foreground)">经 MDD 综合诊断 IPF</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心重点</span> ILD/IIP 分类、IPF 非外科诊断标准及常见 ILD 诊疗</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">1. ILD/DPLD 临床分类（表 2-10-1）与 2013 ATS/ERS IIP 分类（表 2-10-2）</h3><span class="badge badge-m">掌握</span></div>
+    <p>ILD（亦称 DPLD）是一组主要累及肺间质和肺泡腔、导致肺泡-毛细血管功能单位丧失的弥漫性肺疾病（共性表现：进行性呼吸困难、限制性通气功能障碍伴弥散降低、低氧血症、双肺弥漫病变）。</p>
+    <p><strong>（一）2002 ATS/ERS 间质性肺疾病四大临床分类（表 2-10-1）</strong>：</p>
+    <ol>
+      <li><strong>已知原因的 ILD</strong>：①职业或环境因素相关（吸入致敏原→<span class="k">过敏性肺炎</span>；吸入有害粉尘→石棉肺、硅沉着病、硬金属尘肺等）；②药物或治疗相关（胺碘酮、博来霉素、甲氨蝶呤、EGFR-TKI、PD-1/PD-L1 单抗、放疗、高浓度氧疗）；③结缔组织疾病（SSc、RA、特发性炎性肌病、干燥综合征、SLE）或 ANCA 相关性血管炎（坏死性肉芽肿性多血管炎、变应性肉芽肿性多血管炎、显微镜下多血管炎）。</li>
+      <li><strong>特发性间质性肺炎（IIP）</strong>（见下表 2-10-2 细分）。</li>
+      <li><strong>肉芽肿性 ILD</strong>：<span class="k">结节病（sarcoidosis）</span>。</li>
+      <li><strong>罕见 ILD</strong>：肺淋巴管平滑肌瘤病（PLAM）、肺朗格汉斯细胞组织细胞增生症（PLCH）、慢性嗜酸性粒细胞性肺炎（CEP）、肺泡蛋白沉积症（PAP）、特发性肺含铁血黄素沉着症（IPH）、肺泡微石症（PAM）、肺淀粉样变。</li>
+    </ol>
+    <p><strong>（二）2013 ATS/ERS 特发性间质性肺炎（IIP）三大类（表 2-10-2）</strong>：</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>大类</th><th>亚类</th><th>临床-影像-病理诊断</th><th>对应影像和/或组织病理形态学类型</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="6"><strong>1. 主要的 IIP（6 种）</strong></td><td rowspan="2">慢性纤维化性 IP</td><td><span class="k">特发性肺纤维化（IPF）</span></td><td><span class="k">普通型间质性肺炎（UIP）</span></td></tr>
+          <tr><td>特发性非特异性间质性肺炎（iNSIP）</td><td>非特异性间质性肺炎（NSIP）</td></tr>
+          <tr><td rowspan="2">吸烟相关性 IP</td><td>呼吸性细支气管炎伴间质性肺疾病（RB-ILD）</td><td>呼吸性细支气管炎（RB）</td></tr>
+          <tr><td>脱屑性间质性肺炎（DIP）</td><td>DIP</td></tr>
+          <tr><td rowspan="2">急性/亚急性 IP</td><td>隐源性机化性肺炎（COP）</td><td>机化性肺炎（OP）</td></tr>
+          <tr><td>急性间质性肺炎（AIP）</td><td>弥漫性肺泡损伤（DAD）</td></tr>
+          <tr><td rowspan="2"><strong>2. 罕见的 IIP（2 种）</strong></td><td>—</td><td>特发性淋巴细胞性间质性肺炎（iLIP）</td><td>LIP</td></tr>
+          <tr><td>—</td><td>特发性胸膜肺实质弹力纤维增生症（iPPFE）</td><td>PPFE</td></tr>
+          <tr><td><strong>3. 未分类的 IIP</strong></td><td colspan="3">未能归入上述类别的特发性间质性肺炎</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">2. IPF 非外科肺活检临床诊断标准与 HRCT-UIP 影像学表现</h3><span class="badge badge-m">掌握</span></div>
+    <ul>
+      <li><strong>IPF 定义</strong>：病因不清、好发于老年人的慢性、进行性、纤维化性间质性肺炎，组织学和/或胸部 HRCT 特征性表现为<span class="k">普通型间质性肺炎（UIP）</span>。</li>
+      <li><strong>IPF 诊断标准（非外科核心）</strong>：①ILD 且<span class="k">排除其他原因</span>（环境、药物、结缔组织病等）；②<span class="k">HRCT 表现为典型 UIP 或可能 UIP 型</span>（可直接替代外科肺活检！）；或③联合 HRCT 和 SLB/TBLC 病理诊断 UIP，经<span class="k">多学科讨论（MDD）</span>诊断。</li>
+      <li><strong>HRCT 表现区分</strong>：
+        <ul>
+          <li><strong>典型 UIP</strong>（与病理符合率 <span class="k">&gt;90%</span>）：①<span class="k">网格、蜂窝样改变</span>伴或不伴牵拉性支气管扩张；②以<span class="k">胸膜下、基底部</span>分布为主。</li>
+          <li><strong>可能 UIP</strong>（符合率 <span class="k">70%～89%</span>）：①网格伴牵拉性支扩，<span class="k">缺乏蜂窝样改变</span>；②胸膜下、基底部为主。</li>
+          <li><strong>不支持/非 UIP 提示（表2-10-3鉴别）</strong>：如广泛磨玻璃影（NSIP/DIP/AIP）、支气管周围多发实变（COP）、小叶中心结节/气体陷闭（RB-ILD/HP）、薄壁囊腔（LIP/PLAM/PLCH）或中上肺为主分布 → 需进一步活检与 MDD。（注：UIP 并非 IPF 独有，亦可见于纤维化性 HP、石棉肺、CTD-ILD，故必须先排他；TBLB 对 IPF 无诊断意义）。</li>
+        </ul>
+      </li>
+      <li><strong>附 · IPF 急性加重（AEIPF）4 条诊断标准</strong>：①既往或现诊 IPF；②<span class="k">1 个月内</span>显著呼吸困难加重；③CT 于 UIP 背景下现新的双侧磨玻璃影 ± 实变影；④不能完全用心衰或液体过载解释。</li>
+    </ul>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">3. 常见 ILD 的定义、诊断标准与治疗（结节病、过敏性肺炎、药物性/GPA 边界说明）</h3><span class="badge badge-m">掌握</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>① 结节病（Sarcoidosis）</h4>
+        <ul>
+          <li><strong>定义</strong>：原因不明的多系统累及肉芽肿性疾病，主要侵犯肺和淋巴系统，其次眼和皮肤；急性称 <span class="k">Löfgren 综合征</span>（双肺门淋巴结肿大+关节炎+结节性红斑，85% 1年内自缓）。</li>
+          <li><strong>诊断三条件</strong>：①临床与胸部影像相符（<span class="k">双侧肺门淋巴结肿大 BHL</span> 最常见；HRCT 沿支气管血管束/小叶间隔微小结节，多累上叶；BALF 淋巴细胞↑且 <span class="k">CD4/CD8 &gt; 3.5</span>；血清 ACE 反映负荷与活动性；PPD 无或弱反应；⁶⁷Ga “熊猫征”/“λ征”）；②活检证实<span class="k">非干酪样坏死性类上皮肉芽肿</span>（TBB/TBLB/EBUS-TBNA，一般不需外科活检）；③除外肺门淋巴结结核、淋巴瘤、转移瘤及其他肉芽肿病。</li>
+          <li><strong>胸部 X 线分期（表2-10-4）</strong>：0期正常；Ⅰ期仅 BHL；Ⅱ期 BHL + 肺浸润；Ⅲ期仅肺浸润无 BHL；Ⅳ期肺纤维化/蜂窝肺/肺大疱。</li>
+          <li><strong>治疗</strong>：60%～70% 自缓，无症状无活动仅随访；有明显症状、显著肺功能异常和肺实质病变或累及心、神经、肝、脾等肺外器官 → <span class="k">全身糖皮质激素</span>（泼尼松起始 <span class="k">0.5mg/kg·d 或 20～40mg/d</span>，2～4周渐减至 5～10mg/d 维持，总疗程 <span class="k">6～24 个月</span>）；不耐受/无效用 MTX/AZA/LEF/MMF 或英夫利昔/阿达木单抗；停药后每 3～6 月随访至少 3 年。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>② 过敏性肺炎（HP / 外源性过敏性肺泡炎 EAA）</h4>
+        <ul>
+          <li><strong>定义</strong>：易感个体反复吸入有机/无机粉尘抗原（如农民肺[嗜热放线菌]、饲鸟者肺、空调器肺）诱发的细胞+体液免疫介导的<span class="k">肺部迟发性变态反应性疾病</span>。病理为淋巴细胞为主慢性肺泡炎 + 细胞性细支气管炎 + 散在非干酪样肉芽肿。</li>
+          <li><strong>临床分型</strong>：<strong>非纤维化性 HP</strong>（急/亚急性，接触抗原后 4～8h 畏寒发热呼吸困难，脱离 24～48h 恢复）；<strong>纤维化性 HP</strong>（慢性长期暴露致纤维化、进行性呼吸困难、肺底 Velcro 啰音）。</li>
+          <li><strong>诊断标准</strong>：明确抗原接触史 + 典型症状发作特点 + HRCT（小叶中心性微结节、斑片磨玻璃影、<span class="k">气体陷闭形成马赛克征</span>、中上肺为著纤维化）+ <span class="k">BALF 淋巴细胞比例明显增加</span>；必要时 TBLB/TBLC/SLB 支持。</li>
+          <li><strong>治疗</strong>：根本措施为<span class="k">脱离或避免抗原接触</span>；伴明显肺部渗出和低氧血症者予<span class="k">糖皮质激素</span>治疗。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout warn" style="margin-top:10px;">
+      <strong>③ 药物性肺疾病 &amp; ④ 肉芽肿性多血管炎（GPA）— 第 10 版《呼吸系统疾病》原文边界实录：</strong><br />
+      按本次任务约定严守第 10 版《02-第二篇 呼吸系统疾病》，<strong>第十章未对“药物性肺疾病”与“GPA”单设专节详述定义、诊断标准与治疗</strong>（GPA 专节在风湿病篇），该篇全部原文提及信息如下：
+      <ul style="margin:4px 0 0;padding-left:18px;">
+        <li><strong>药物性肺疾病（表2-10-1 及相关病史）</strong>：归属“1.2 药物或治疗相关 ILD”，明确列举易诱发肺纤维化的代表药物/治疗：<span class="k">胺碘酮、博来霉素、甲氨蝶呤、抗肿瘤靶向治疗（如 EGFR-TKI）、免疫治疗（如 PD-1/PD-L1 单克隆抗体）</span>，以及放射线治疗、高浓度氧疗。</li>
+        <li><strong>肉芽肿性多血管炎（GPA，表2-10-1 及实验室检查）</strong>：归属“1.3 结缔组织疾病或血管炎相关 ILD”下的 <span class="k">ANCA 相关性血管炎</span>（坏死性肉芽肿性多血管炎、变应性肉芽肿性多血管炎、显微镜下多血管炎）；常规实验室检查需检测 <span class="k">ANCA</span> 等自身抗体以明确 ILD 病因。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> IPF 的临床表现与肺功能检查表现</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">IPF 临床表现与肺功能特征</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>临床表现</h4>
+        <ul>
+          <li>多于 <span class="k">50 岁以后</span>隐匿起病，<span class="k">75% 有吸烟史</span>。</li>
+          <li><strong>症状</strong>：活动性呼吸困难渐进性加重，常伴<span class="k">干咳</span>；全身症状不明显，<strong>很少发热</strong>。</li>
+          <li><strong>体征</strong>：<span class="k">90%</span> 病人双肺基底部闻及<span class="k">吸气末细小 Velcro 啰音（爆裂音，早期体征）</span>；约<span class="k">半数</span>见<span class="k">杵状指</span>；晚期发绀、PAH、右心功能不全征象。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>肺功能检查表现</h4>
+        <ul>
+          <li><strong>限制性通气功能障碍</strong>：<span class="k">TLC、VC、FVC 均减少</span>，肺顺应性降低；<span class="k">FEV₁/FVC 正常或增加</span>。</li>
+          <li><strong>气体交换/弥散障碍</strong>：<span class="k">DLCO 降低</span>，伴低氧血症或 Ⅰ 型呼吸衰竭。</li>
+          <li><strong>早期特点</strong>：早期静息肺功能可正常或接近正常，但<span class="k">运动肺功能即现 P(A-a)O₂ 增加和氧分压降低</span>。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MODULE 7 ==================== -->
+<section class="module-section" id="mod-7" data-mod-title="Ⅶ、胸膜疾病（胸液 / 气胸）">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅶ、胸膜疾病（胸腔积液、结核性胸膜炎与气胸）</h1>
+      <span class="mod-source">第10版 第十三章《胸膜疾病》（课本 P126–137 / PDF P157–168）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>胸腔积液诊断要点、鉴别诊断及结核性胸膜炎的治疗原则；气胸的临床表现、诊断和鉴别诊断、防治原则及治疗方法。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>胸腔积液的临床表现；气胸的病因、发病机理和临床类型。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">了解项：胸腔积液的循环压力机制、病因和发病机理（大纲跨栏冲突详见文末审计表）；肺炎旁胸腔积液及恶性胸腔积液的具体治疗。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 7 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 7 · 胸腔积液 Light 标准鉴别流程 &amp; 自发性气胸三型破口压力机制/定量尺</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 435" width="100%" role="img" aria-label="胸腔积液Light标准鉴别与气胸三型压力机制图">
+        <defs>
+          <marker id="arr7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr7r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+        <!-- Left Half: Pleural Effusion -->
+        <rect x="8" y="8" width="424" height="418" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="22" y="31" font-size="13" font-weight="700" fill="var(--primary)">① 胸腔积液三步诊断与 Light 标准（表2-13-1）</text>
+
+        <rect x="22" y="44" width="396" height="42" rx="7" fill="var(--secondary)" stroke="var(--border)" />
+        <text x="220" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="var(--foreground)">第一步：确定积液（X线肋膈角钝/外高内低弧影 · 患侧卧位 · 超声最灵敏）</text>
+        <text x="220" y="79" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">→ 诊断性胸腔穿刺（超声引导降低风险）</text>
+
+        <line x1="220" y1="88" x2="220" y2="112" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr7)" />
+
+        <rect x="22" y="116" width="396" height="82" rx="8" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" stroke-width="1.5" />
+        <text x="34" y="136" font-size="12.5" font-weight="800" fill="var(--error)">第二步：Light 标准（满足任意 1 项 = 渗出液）</text>
+        <text x="34" y="156" font-size="11.5" fill="var(--foreground)">1. 胸液 / 血清蛋白比值 &gt; 0.5</text>
+        <text x="34" y="173" font-size="11.5" fill="var(--foreground)">2. 胸液 LDH &gt; 血清正常值上限的 2/3</text>
+        <text x="34" y="190" font-size="11.5" fill="var(--foreground)">3. 胸液 / 血清 LDH 比值 &gt; 0.6（注：约25%漏出液可误判）</text>
+
+        <path d="M 120 198 L 106 226" stroke="var(--chart-1)" stroke-width="1.8" fill="none" marker-end="url(#arr7)" />
+        <path d="M 320 198 L 320 226" stroke="var(--error)" stroke-width="1.8" fill="none" marker-end="url(#arr7r)" />
+
+        <!-- Transudate -->
+        <rect x="22" y="230" width="166" height="182" rx="8" fill="var(--chart-1)" fill-opacity="0.10" stroke="var(--chart-1)" />
+        <text x="105" y="250" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--chart-1)">漏出液（3项均不符）</text>
+        <text x="32" y="272" font-size="11" fill="var(--foreground)">• <tspan font-weight="700">充血性心衰</tspan>（双侧右侧多）</text>
+        <text x="40" y="289" font-size="10.5" fill="var(--primary)">胸液 NT-proBNP &gt;1500</text>
+        <text x="40" y="305" font-size="10.5" fill="var(--muted-foreground)">强利尿可致假性渗出液</text>
+        <text x="32" y="327" font-size="11" fill="var(--foreground)">• <tspan font-weight="700">肝硬化</tspan>（多右侧伴腹水）</text>
+        <text x="32" y="347" font-size="11" fill="var(--foreground)">• <tspan font-weight="700">肾病综合征</tspan>（多双侧）</text>
+        <text x="32" y="369" font-size="10.5" fill="var(--muted-foreground)">清亮、不凝、比重&lt;1.018</text>
+        <text x="32" y="386" font-size="10.5" fill="var(--muted-foreground)">蛋白&lt;30g/L、细胞&lt;100×10⁶/L</text>
+
+        <!-- Exudate -->
+        <rect x="198" y="230" width="220" height="182" rx="8" fill="var(--warning)" fill-opacity="0.10" stroke="var(--warning)" />
+        <text x="308" y="250" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--foreground)">渗出液三大核心病因</text>
+        <text x="208" y="272" font-size="11" font-weight="700" fill="var(--primary)">1. 结核性胸膜炎：</text>
+        <text x="214" y="288" font-size="10.5" fill="var(--foreground)">淋巴为主、间皮&lt;5%、ADA&gt;45</text>
+        <text x="214" y="303" font-size="10.5" fill="var(--muted-foreground)">IFN-γ/IL-27↑ · 活检肉芽肿</text>
+        <text x="208" y="324" font-size="11" font-weight="700" fill="var(--error)">2. 恶性胸腔积液：</text>
+        <text x="214" y="340" font-size="10.5" fill="var(--foreground)">血性量大增长快、CEA&gt;10、LDH&gt;500</text>
+        <text x="214" y="355" font-size="10.5" fill="var(--muted-foreground)">脱落细胞/胸腔镜（敏感92～97%）</text>
+        <text x="208" y="376" font-size="11" font-weight="700" fill="var(--chart-2)">3. 肺炎旁 / 脓胸：</text>
+        <text x="214" y="392" font-size="10.5" fill="var(--foreground)">中性粒↑；复杂性 pH&lt;7.2、糖&lt;3.3</text>
+        <text x="214" y="406" font-size="10.5" fill="var(--foreground)">LDH&gt;1000；脓胸 pH&lt;7.0</text>
+
+        <!-- Right Half: Pneumothorax 3 Types -->
+        <rect x="446" y="8" width="426" height="418" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="460" y="31" font-size="13" font-weight="700" fill="var(--error)">② 自发性气胸三型破口压力机制（熟悉）与定量尺（掌握）</text>
+
+        <!-- Type 1: Closed -->
+        <rect x="460" y="44" width="398" height="86" rx="8" fill="var(--success)" fill-opacity="0.10" stroke="var(--success)" />
+        <!-- Mini chest graphic -->
+        <rect x="472" y="54" width="66" height="66" rx="10" fill="var(--card)" stroke="var(--success)" stroke-width="1.5" />
+        <ellipse cx="500" cy="87" rx="18" ry="24" fill="var(--success)" fill-opacity="0.25" stroke="var(--success)" />
+        <line x1="517" y1="82" x2="523" y2="82" stroke="var(--foreground)" stroke-width="2" />
+        <text x="505" y="114" text-anchor="middle" font-size="9.5" fill="var(--success)">破口闭合</text>
+        <text x="550" y="64" font-size="12.5" font-weight="800" fill="var(--success)">1. 闭合性（单纯性）气胸</text>
+        <text x="550" y="84" font-size="11.5" fill="var(--foreground)">• 破口小，随肺萎陷而<tspan font-weight="700">闭合</tspan>，空气不再进入</text>
+        <text x="550" y="103" font-size="11.5" fill="var(--foreground)">• 胸腔内压：接近或高于大气压；<tspan font-weight="700" fill="var(--success)">抽气后不再升高</tspan></text>
+        <text x="550" y="121" font-size="11" fill="var(--muted-foreground)">• 轻者可保守（&lt;20%）或穿刺抽气（20%～50%）</text>
+
+        <!-- Type 2: Open -->
+        <rect x="460" y="140" width="398" height="86" rx="8" fill="var(--warning)" fill-opacity="0.13" stroke="var(--warning)" />
+        <rect x="472" y="150" width="66" height="66" rx="10" fill="var(--card)" stroke="var(--warning)" stroke-width="1.5" />
+        <ellipse cx="497" cy="183" rx="16" ry="22" fill="var(--warning)" fill-opacity="0.25" stroke="var(--warning)" />
+        <line x1="513" y1="183" x2="532" y2="183" stroke="var(--foreground)" stroke-width="1.6" marker-start="url(#arr7)" marker-end="url(#arr7)" />
+        <text x="505" y="210" text-anchor="middle" font-size="9.5" fill="var(--foreground)">双向自由</text>
+        <text x="550" y="160" font-size="12.5" font-weight="800" fill="var(--foreground)">2. 开放性（交通性）气胸</text>
+        <text x="550" y="180" font-size="11.5" fill="var(--foreground)">• 破口大或粘连牵拉持续开放，空气<tspan font-weight="700">自由进出</tspan></text>
+        <text x="550" y="199" font-size="11.5" fill="var(--foreground)">• 胸腔内压：<tspan font-weight="700">0 cmH₂O 上下波动</tspan>；抽后数分钟复升</text>
+        <text x="550" y="217" font-size="11" fill="var(--muted-foreground)">• 处理：尽早胸腔闭式引流（必要时负压 -10～-20cmH₂O）</text>
+
+        <!-- Type 3: Tension -->
+        <rect x="460" y="236" width="398" height="92" rx="8" fill="var(--error)" fill-opacity="0.13" stroke="var(--error)" stroke-width="1.8" />
+        <rect x="472" y="246" width="66" height="72" rx="10" fill="var(--card)" stroke="var(--error)" stroke-width="1.6" />
+        <ellipse cx="490" cy="282" rx="11" ry="18" fill="var(--error)" fill-opacity="0.30" stroke="var(--error)" />
+        <line x1="504" y1="282" x2="528" y2="282" stroke="var(--error)" stroke-width="2" marker-end="url(#arr7r)" />
+        <text x="505" y="311" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--error)">单向活瓣</text>
+        <text x="550" y="256" font-size="12.5" font-weight="800" fill="var(--error)">3. 张力性（高压性）气胸（最危重！）</text>
+        <text x="550" y="276" font-size="11.5" fill="var(--foreground)">• 破口呈<tspan font-weight="700" fill="var(--error)">单向活瓣</tspan>，气体只进不出，纵隔向健侧移</text>
+        <text x="550" y="295" font-size="11.5" fill="var(--foreground)">• 胸腔内压：<tspan font-weight="700" fill="var(--error)">&gt;10 甚至 20 cmH₂O</tspan>；抽后迅速复升</text>
+        <text x="550" y="315" font-size="11" font-weight="700" fill="var(--error)">• 紧急抢救：立即粗针穿刺减压 → 胸腔闭式引流</text>
+
+        <!-- Bottom: Quantitative X-ray & Stability -->
+        <rect x="460" y="340" width="398" height="72" rx="8" fill="var(--secondary)" stroke="var(--border)" />
+        <text x="472" y="360" font-size="12" font-weight="700" fill="var(--primary)">X 线气胸容量判定 &amp; 稳定型 5 项标准（全满足）：</text>
+        <text x="472" y="380" font-size="11.5" fill="var(--foreground)">• <tspan font-weight="700">大量气胸</tspan>：肺尖至胸顶 <tspan font-weight="700" fill="var(--error)">≥ 3 cm</tspan> 或 肺门侧胸壁至肺缘 <tspan font-weight="700" fill="var(--error)">≥ 2 cm</tspan>（≈50%；1cm≈25%）</text>
+        <text x="472" y="400" font-size="11" fill="var(--muted-foreground)">• 稳定型：RR&lt;24 · HR 60～120 · 血压正常 · 吸空气SaO₂&gt;90% · 呼吸间说话成句</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心重点</span> 胸腔积液诊鉴、结核性胸膜炎治疗及气胸诊疗全流程</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">1. 胸腔积液诊断三步骤、Light 标准与渗/漏出液病因鉴别</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>第一步：确定有无胸腔积液</strong> — 少量正位 X 线仅见肋膈角变钝，行<span class="k">患侧卧位 X 线</span>见液体散开于肺外带可与胸膜粘连鉴别；中量呈外高内低弧形影；大量患侧致密影、气管纵隔向健侧移位；<span class="k">超声</span>探测最灵敏并可引导胸穿定位降风险；CT 分辨包裹性积液及肺/纵隔原发病。</p>
+    <p><strong>第二步：区别漏出液与渗出液（Light 标准，表 2-13-1）</strong> — 传统参考（清亮不凝、比重 &lt;1.018、蛋白 &lt;30g/L、Rivalta 阴性、细胞 &lt;500×10⁶/L 倾向漏出液）敏感性及特异性差，临床首选 <span class="k">Light 标准</span>（满足任意 1 项即为渗出液，3 项均不满足为漏出液；注：特异度不高，约 <span class="k">25%</span> 漏出液可被误判为渗出液）：</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>Light 标准指标（表 2-13-1）</th><th>渗出液（符合任意 1 项）</th><th>漏出液（3 项均不满足）</th></tr></thead>
+        <tbody>
+          <tr><td>胸腔积液 / 血清蛋白比值</td><td><span class="k">&gt; 0.5</span></td><td>≤ 0.5</td></tr>
+          <tr><td>胸腔积液乳酸脱氢酶（LDH）水平</td><td><span class="k">&gt; 血清正常值上限的 2/3</span></td><td>≤ 血清正常值上限的 2/3</td></tr>
+          <tr><td>胸腔积液 / 血清 LDH 比值</td><td><span class="k">&gt; 0.6</span></td><td>≤ 0.6</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>第三步：寻找病因（鉴别诊断）</strong></p>
+    <ul>
+      <li><strong>漏出性胸腔积液主要病因</strong>：①<span class="k">充血性心力衰竭</span>（常双侧且右侧多，强烈利尿可致假性渗出液，胸液 <span class="k">NT-proBNP &gt;1500 pg/ml</span> 诊断价值高）；②<span class="k">肾病综合征</span>（常双侧）；③<span class="k">肝硬化</span>（多伴腹水，积液多在右侧）；④缩窄性心包炎、急性肾炎、腹膜透析、黏液性水肿等。</li>
+      <li><strong>渗出性胸腔积液三大核心病因对比</strong>：</li>
+    </ul>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>渗出液三大核心病因</th><th>外观 / 细胞 / 生化关键指标</th><th>特异性与确诊检查</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>肺炎旁胸腔积液与脓胸</strong><br /><span style="font-size:11px;color:var(--muted-foreground)">（表 2-13-2）</span></td>
+            <td><strong>单纯性</strong>：浆液、pH &gt;7.2、糖 &gt;3.3mmol/L、LDH &lt;1000IU/L、培养阴性。<br /><strong>复杂性</strong>：混浊、中性粒为主、<span class="k">pH &lt;7.2、糖 &lt;3.3、LDH &gt;1000</span>。<br /><strong>脓胸</strong>：脓性（厌氧菌有臭味）、WBC &gt;10×10⁹/L、<span class="k">pH &lt;7.0</span>。</td>
+            <td>先有肺实质浸润/脓肿/支扩影再现积液；胸液注入血培养瓶提检出率，mNGS 敏感性高。</td>
+          </tr>
+          <tr>
+            <td><strong>结核性胸膜炎</strong></td>
+            <td>草黄（偶血性）、<span class="k">淋巴细胞为主</span>、<span class="k">间皮细胞 &lt;5%</span>、<span class="k">ADA &gt;45 IU/L</span>（AIDS 合并常 &lt;40）、IFN-γ 及 IL-27 升高；糖与 pH 可降低。</td>
+            <td>涂片抗酸 &lt;10%、培养 18%～40%、Xpert 特异 99%（敏感 37%～51%）；<span class="k">胸膜活检（肉芽肿+DNA/培养）与胸腔镜</span>敏感度高。注：老年可无热、PPD 阴性。</td>
+          </tr>
+          <tr>
+            <td><strong>恶性胸腔积液</strong></td>
+            <td>中老年多见，<span class="k">血性、量大、增长迅速</span>；<span class="k">CEA &gt;10 μg/L 或积液/血清 CEA &gt;1</span>；<span class="k">LDH &gt;500 IU/L</span>。</td>
+            <td>确诊靠<span class="k">病理见恶性肿瘤细胞</span>：脱落细胞学检出率 40%～87%；<span class="k">胸腔镜活检敏感度 92%～97%、特异度 99%～100%</span>。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12.5px;"><strong>特殊胸液高分线索</strong>：乳糜胸（甘油三酯 <span class="k">&gt;1.24mmol/L</span>、苏丹Ⅲ+）vs 假性乳糜（胆固醇 <span class="k">&gt;5.18mmol/L</span>、TG正常、苏丹Ⅲ-，见陈旧结核/RA）；<span class="k">pH &lt;7.0</span> 仅见脓胸与食管破裂；淀粉酶升高见急性胰腺炎、食管破裂、肿瘤；巧克力色提示阿米巴肝脓肿破溃；黑色考虑曲霉；黄绿色多见 RA；尿味且胸液肌酐&gt;血肌酐为尿胸。</p>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">2. 结核性胸膜炎的治疗原则</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>治疗目标</strong>：控制结核病 + 尽量减少胸膜增厚粘连以保护肺功能。</p>
+    <ol>
+      <li><strong>一般治疗</strong>：休息、营养支持与对症治疗。</li>
+      <li><strong>抽液治疗</strong>：蛋白高易粘连，原则上尽快抽尽积液或置管引流。
+        <ul>
+          <li><strong>抽液限速限量</strong>：<span class="k">首次 ≤ 800 ml，以后每次 ≤ 1000 ml</span>，不宜过快，防休克及<span class="k">复张后肺水肿</span>（剧咳、气促、大量泡沫痰、满布湿啰音、PaO₂↓ → 立即吸氧、激素、利尿、限液、必要插管）。</li>
+          <li><strong>胸膜反应</strong>：抽液中出现头晕、苍白、出汗、心悸、四肢发凉 → <span class="k">立即停止抽液、平卧，必要时皮下注射 0.1% 肾上腺素 0.5 ml</span>。</li>
+          <li><strong>胸腔注药</strong>：一般<strong>不必要</strong>胸腔内注抗结核药，但可注<span class="k">尿激酶或链激酶</span>防胸膜粘连。</li>
+        </ul>
+      </li>
+      <li><strong>抗结核治疗</strong>：坚持<span class="k">早期、规律、全程、足量、联合</span>原则（早期尤重要）。</li>
+      <li><strong>糖皮质激素</strong>：全身毒性症状严重、大量胸液时在抗结核基础上加用，泼尼松 <span class="k">20～30 mg/d</span>，体温正常/症状减轻/积液明显减少后渐减停，一般疗程 <span class="k">4～6 周</span>。</li>
+      <li><strong>结核性脓胸 / 脓气胸并支气管胸膜瘘</strong>：全身治疗 + 胸腔闭式引流缩腔 → 多数需外科胸膜剥脱或肺胸膜切除术。</li>
+    </ol>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">3. 气胸的临床表现、诊断、鉴别诊断与防治治疗方法</h3><span class="badge badge-m">掌握</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>临床表现、诊断与鉴别</h4>
+        <ul>
+          <li><strong>症状</strong>：呼吸困难（与基础肺功能/萎陷程度/发病速度有关）；突发单侧前胸/腋下针刺或刀割样胸痛（吸气加剧，<strong>与压缩程度无关</strong>）；刺激性干咳；张力性气胸迅速现呼吸循环衰竭。</li>
+          <li><strong>体征</strong>：大量气胸气管向健侧移、患侧隆起、语颤减弱、<span class="k">叩诊过清音或鼓音</span>、呼吸音减弱/消失；左侧少量或纵隔气肿可闻与心跳一致气泡破裂音（<span class="k">Hamman 征</span>）；液气胸振水声。</li>
+          <li><strong>确诊与容量/稳定性评估</strong>：立位后前位 X 线或 CT 见<span class="k">外凸弧形气胸线</span>（线外无肺纹理）即确诊；危重无法搬动者体征最明显处试验穿刺抽气确诊。<strong>X 线容量估算</strong>：<span class="k">肺尖气胸线至胸顶 ≥3 cm</span> 或<span class="k">肺门水平侧胸壁至肺缘 ≥2 cm（约占单侧胸腔 50%；1 cm 约 25%）</span>为大量气胸，小于此值为小量气胸。<strong>稳定型（须全满足 5 项，否则为不稳定型）</strong>：<span class="k">RR &lt;24 次/分、HR 60～120 次/分、血压正常、吸室内空气 SaO₂ &gt;90%、两次呼吸间隔说话成句</span>。</li>
+          <li><strong>鉴别诊断</strong>：①哮喘/COPD急性发作（解痉无效突发加重警惕并发气胸）；②急性心梗；③急性肺栓塞；④<span class="k">肺大疱</span>（起病缓、圆形/椭圆形腔内有细条状纹理、无发丝状气胸线、压肺向肺尖及肋膈角，<span class="k">忌误抽气以免诱发气胸</span>）；⑤急腹症/胸膜炎/肋软骨炎。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>防治原则与 5 大治疗方法</h4>
+        <ul>
+          <li><strong>① 保守治疗</strong>：仅适于<span class="k">稳定型小量（&lt;20%）初发、无大疱无血胸</span>；卧床观察 + <span class="k">高浓度吸氧（10L/min）</span>借<span class="k">氮-氧转换</span>加速吸收（自然吸收 1.25%～2.20%/24h）；老年或合并 COPD 原则不保守。</li>
+          <li><strong>② 排气治疗（压缩 &gt;20% 首要措施；张力/开放性紧急排气）</strong>：
+            <br />• <strong>穿刺抽气</strong>：20%～50%闭合性轻症，锁骨中线第2前肋间（或腋前4～6肋间），一次<span class="k">≤1000 ml</span>；张力性紧急无置管时粗针减压。
+            <br />• <strong>胸腔闭式引流</strong>：不稳定型/重度压缩/交通或张力性/复发/所有继发性均尽早置管；锁中线外第2肋间或腋前线4～5肋间（沿肋骨上缘），16～22F（瘘/通气24～28F），接水封瓶<span class="k">水面下 1～2 cm</span>（瓶低于胸部）；无气泡症状消后观察 24～48h → 夹管 24h 稳定/X线复张拔管；持续漏气加负压吸引（<span class="k">-10～-20 cmH₂O</span>）。</li>
+          <li><strong>③ 胸膜固定术</strong>：肺复张后先注利多卡因再注硬化剂（<span class="k">滑石粉[警惕ARDS]</span>、聚维酮碘、多西环素、四环素）。</li>
+          <li><strong>④ 支气管内封堵术 / ⑤ 外科肺大疱切除+胸膜固定术</strong>（复发、长期、血气胸、双侧、张力引流失败、多发大疱）。</li>
+          <li><strong>并发症与预防</strong>：脓气胸/血气胸/纵隔皮下气肿（高浓度吸氧，高张力胸骨上窝切开）；<span class="k">气胸禁乘飞机</span>，完全复张后 1 周可乘机（BTS建议未手术者1年内不乘）。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 胸腔积液临床表现及气胸病因、发病机理与临床类型</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">1. 胸腔积液临床表现 &amp; 2. 气胸病因、发病机理与临床类型</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>胸腔积液临床表现</h4>
+        <ul>
+          <li><strong>症状（与积液量相关）</strong>：&lt;0.3～0.5L 多无症状；大量积液以<span class="k">呼吸困难最常见</span>，伴胸痛、咳嗽；<strong>随积液量增加胸痛可缓解而气促加重</strong>。</li>
+          <li><strong>体征</strong>：少量可无或闻及胸膜摩擦音；中大量见患侧胸廓饱满、语颤减弱、叩诊浊音、呼吸音减低或消失、气管纵隔向健侧移位。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>气胸病因、发病机理与临床类型</h4>
+        <ul>
+          <li><strong>生理与机制</strong>：正常毛细血管气体总分压 <span class="k">706 mmHg</span>（低于大气压 54mmHg）+ 胸廓外扩与肺内缩维持负压故无气。进气 3 途径（肺泡-胸腔损伤、胸壁创伤、产气菌）→ 限制性通气障碍 + V/Q降低分流致低氧 + 正压阻静脉回心致休克/纵隔移位。</li>
+          <li><strong>病因分类</strong>：外伤性、医源性、自发性：<strong>原发性（PSP）</strong>无基础肺病，多见瘦高青壮年男性肺尖胸膜下肺大疱破裂；<strong>继发性（SSP）</strong>占我国首位，有 COPD/肺结核等基础病致细支气管活瓣大疱破裂，症状重耐受差；特殊型含<span class="k">月经性气胸</span>（经前后24～72h，异位子宫内膜破裂）与妊娠期气胸。</li>
+          <li><strong>临床 3 型特征对比</strong>（依脏胸膜破口及胸腔内压变化）：</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tbl-wrap" style="margin-top:8px;">
+      <table class="med-tbl">
+        <thead><tr><th>气胸临床类型</th><th>胸膜破口特点</th><th>胸膜腔内压与抽气后变化</th><th>对呼吸循环影响</th></tr></thead>
+        <tbody>
+          <tr><td><strong>闭合性（单纯性）气胸</strong></td><td>破口较小，随肺萎陷而<span class="k">闭合</span>，空气不再继续进入</td><td>接近或高于大气压；<span class="k">抽气后压力不再升高</span></td><td>相对最轻</td></tr>
+          <tr><td><strong>开放性（交通性）气胸</strong></td><td>破口较大或胸膜粘连牵拉持续开放，吸/呼气空气<span class="k">自由进出</span></td><td>在 <span class="k">0 cmH₂O 上下波动</span>；抽气后可呈负压，数分钟又复升至抽气前水平</td><td>较重，肺复张慢</td></tr>
+          <tr><td><strong>张力性（高压性）气胸</strong></td><td>破口呈<span class="k">单向活瓣/活塞作用</span>，气体只进不出</td><td>常超 <span class="k">10 cmH₂O 甚至高达 20 cmH₂O</span>；抽气后下降但<span class="k">迅速复升</span></td><td>最大，纵隔移位/休克/窒息，须紧急抢救</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MODULE 8 ==================== -->
+<section class="module-section" id="mod-8" data-mod-title="Ⅷ、原发性肺癌">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅷ、原发性肺癌</h1>
+      <span class="mod-source">第10版 第九章《肺癌》（课本 P86–98 / PDF P117–129）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>肺癌的临床表现、诊断及治疗原则。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>肺癌的治疗方案（手术、药物、放疗、介入、中医药）。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">了解项：病因与发病机制、解剖及 2021 WHO 组织学分类专节、鉴别诊断、第 9 版 TNM 分期表、三级预防及预后（治疗中仅保留 NSCLC/SCLC 及分期最小必要标签）。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 8 -->
+  <div class="svg-card" data-tier="master">
+    <div class="svg-hd">
+      <span>图解 8 · 原发性肺癌 4 大临床表现定位图 + 诊断 3 步骤与 MDT 治疗路径</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 430" width="100%" role="img" aria-label="肺癌临床表现定位与诊断治疗路径图">
+        <defs>
+          <marker id="arr8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+        </defs>
+        <!-- Left Panel: Clinical Manifestations Map -->
+        <rect x="8" y="8" width="446" height="414" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="22" y="31" font-size="13" font-weight="700" fill="var(--error)">① 肺癌 4 大临床表现解剖-系统速查（掌握）</text>
+
+        <!-- Stylized Chest Outline -->
+        <path d="M 192 64 L 192 128 M 192 128 L 154 156 M 192 128 L 230 156" stroke="var(--muted-foreground)" stroke-width="4" stroke-linecap="round" fill="none" />
+        <!-- Right lung (viewer left) -->
+        <path d="M 184 82 C 136 86 122 146 124 206 C 125 224 148 228 184 218 Z" fill="var(--chart-1)" fill-opacity="0.14" stroke="var(--chart-1)" stroke-width="1.5" />
+        <!-- Left lung (viewer right) -->
+        <path d="M 200 82 C 248 86 262 146 260 206 C 259 224 236 228 200 218 Z" fill="var(--chart-1)" fill-opacity="0.14" stroke="var(--chart-1)" stroke-width="1.5" />
+
+        <!-- Pancoast tumor dot -->
+        <circle cx="154" cy="94" r="6" fill="var(--error)" />
+        <line x1="148" y1="92" x2="108" y2="72" stroke="var(--error)" stroke-width="1.3" />
+        <rect x="18" y="48" width="112" height="42" rx="6" fill="var(--error)" fill-opacity="0.12" stroke="var(--error)" />
+        <text x="74" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="var(--error)">Horner 综合征</text>
+        <text x="74" y="81" text-anchor="middle" font-size="10" fill="var(--foreground)">肺上沟瘤压颈交感</text>
+
+        <!-- SVC dot -->
+        <circle cx="182" cy="112" r="5" fill="var(--warning)" />
+        <line x1="177" y1="114" x2="122" y2="128" stroke="var(--warning)" stroke-width="1.3" />
+        <rect x="18" y="106" width="104" height="44" rx="6" fill="var(--warning)" fill-opacity="0.16" stroke="var(--warning)" />
+        <text x="70" y="123" text-anchor="middle" font-size="11" font-weight="700" fill="var(--foreground)">上腔静脉阻塞</text>
+        <text x="70" y="139" text-anchor="middle" font-size="10" fill="var(--muted-foreground)">头颈上肢水肿暗紫</text>
+
+        <!-- Central airway -->
+        <circle cx="164" cy="154" r="5" fill="var(--primary)" />
+        <line x1="159" y1="158" x2="120" y2="180" stroke="var(--primary)" stroke-width="1.3" />
+        <rect x="18" y="164" width="102" height="54" rx="6" fill="var(--secondary)" stroke="var(--border)" />
+        <text x="69" y="181" text-anchor="middle" font-size="11" font-weight="700" fill="var(--primary)">原发肿瘤</text>
+        <text x="69" y="196" text-anchor="middle" font-size="10" fill="var(--foreground)">金属音干咳/咯血</text>
+        <text x="69" y="210" text-anchor="middle" font-size="10" fill="var(--foreground)">单侧哮鸣/阻塞热</text>
+
+        <!-- Left recurrent laryngeal nerve -->
+        <circle cx="204" cy="108" r="5" fill="var(--error)" />
+        <line x1="209" y1="106" x2="274" y2="74" stroke="var(--error)" stroke-width="1.3" />
+        <rect x="274" y="48" width="166" height="42" rx="6" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" />
+        <text x="357" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="var(--error)">声音嘶哑（多左侧）</text>
+        <text x="357" y="81" text-anchor="middle" font-size="10" fill="var(--foreground)">压迫喉返神经致声带麻痹</text>
+
+        <!-- Esophagus / Pleura / Pericardium -->
+        <line x1="248" y1="144" x2="274" y2="132" stroke="var(--chart-1)" stroke-width="1.3" />
+        <rect x="274" y="102" width="166" height="56" rx="6" fill="var(--secondary)" stroke="var(--border)" />
+        <text x="357" y="119" text-anchor="middle" font-size="11" font-weight="700" fill="var(--foreground)">局部扩展其他表现</text>
+        <text x="357" y="135" text-anchor="middle" font-size="10" fill="var(--muted-foreground)">食管→吞咽困难/气管食管瘘</text>
+        <text x="357" y="150" text-anchor="middle" font-size="10" fill="var(--muted-foreground)">胸膜/心包→积液、胸痛、压塞</text>
+
+        <!-- Distant metastasis -->
+        <rect x="274" y="168" width="166" height="56" rx="6" fill="var(--chart-2)" fill-opacity="0.12" stroke="var(--chart-2)" />
+        <text x="357" y="185" text-anchor="middle" font-size="11" font-weight="700" fill="var(--chart-2)">远处转移（SCLC &gt;95%）</text>
+        <text x="357" y="201" text-anchor="middle" font-size="10" fill="var(--foreground)">脑/脊髓 · 溶骨性骨转移</text>
+        <text x="357" y="216" text-anchor="middle" font-size="10" fill="var(--foreground)">肝/肾上腺 · 锁骨上窝淋巴结</text>
+
+        <!-- Paraneoplastic syndromes strip -->
+        <rect x="18" y="238" width="422" height="172" rx="8" fill="var(--primary)" fill-opacity="0.07" stroke="var(--primary)" />
+        <text x="30" y="258" font-size="12" font-weight="800" fill="var(--primary)">④ 胸外表现：副肿瘤综合征（非转移性，以 SCLC 最多见）</text>
+        <text x="30" y="280" font-size="11.5" fill="var(--foreground)">• <tspan font-weight="700" fill="var(--error)">SIADH</tspan>：低钠、低渗水中毒（ADH/ANP，化疗1～4周多缓）</text>
+        <text x="30" y="300" font-size="11.5" fill="var(--foreground)">• <tspan font-weight="700" fill="var(--error)">异位 ACTH</tspan>：低钾代碱/色素沉着（向心肥胖紫纹罕见，SCLC）</text>
+        <text x="30" y="320" font-size="11.5" fill="var(--foreground)">• <tspan font-weight="700" fill="var(--warning)">高钙血症</tspan>：多见<tspan font-weight="700">鳞癌</tspan>（最常见致命代谢并发症，切瘤恢复）</text>
+        <text x="30" y="340" font-size="11.5" fill="var(--foreground)">• <tspan font-weight="700" fill="var(--chart-1)">肥大性骨关节病</tspan>：30%杵状指 + 长骨骨膜炎（多见<tspan font-weight="700">NSCLC</tspan>）</text>
+        <text x="30" y="360" font-size="11.5" fill="var(--foreground)">• <tspan font-weight="700" fill="var(--error)">Eaton-Lambert</tspan>：骨盆/近端无力，<tspan font-weight="700">活动后暂改善</tspan>，高频波幅↑（SCLC）</text>
+        <text x="30" y="380" font-size="11.5" fill="var(--foreground)">• <tspan font-weight="700">血液/其他</tspan>：Trousseau 游走性血栓静脉炎 · 抗Hu脑炎 · 男性乳房发育</text>
+        <text x="30" y="399" font-size="10.5" fill="var(--muted-foreground)">注：5%～15% 病人无症状，LDCT 筛查高危人群可降肺癌死亡率 20%</text>
+
+        <!-- Right Panel: 3-Step Diagnosis & MDT Treatment -->
+        <rect x="468" y="8" width="404" height="414" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="482" y="31" font-size="13" font-weight="700" fill="var(--primary)">② 肺癌诊断 3 步骤 &amp; MDT 治疗路径（掌握 + 熟悉）</text>
+
+        <rect x="484" y="44" width="372" height="44" rx="7" fill="var(--secondary)" stroke="var(--border)" />
+        <text x="496" y="63" font-size="12" font-weight="700" fill="var(--primary)">步骤 1：胸腹部 CT 确定部位与播散</text>
+        <text x="496" y="80" font-size="11" fill="var(--muted-foreground)">辅以 MRI（脑/大血管）、骨显像、PET-CT（阳性仍须病理确诊）</text>
+
+        <line x1="670" y1="88" x2="670" y2="106" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr8)" />
+
+        <rect x="484" y="108" width="372" height="48" rx="7" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" />
+        <text x="496" y="127" font-size="12" font-weight="700" fill="var(--error)">步骤 2：必须获得组织病理学诊断（确诊金标准）</text>
+        <text x="496" y="145" font-size="11" fill="var(--foreground)">支气管镜/EBUS、胸腔镜、经皮穿刺、淋巴结活检（<tspan font-weight="700">不推荐单用痰检</tspan>）</text>
+
+        <line x1="670" y1="156" x2="670" y2="174" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr8)" />
+
+        <rect x="484" y="176" width="372" height="48" rx="7" fill="var(--chart-1)" fill-opacity="0.12" stroke="var(--chart-1)" />
+        <text x="496" y="195" font-size="12" font-weight="700" fill="var(--chart-1)">步骤 3：分子病理学诊断（指导个体化精准治疗）</text>
+        <text x="496" y="213" font-size="11" fill="var(--foreground)">EGFR/ALK/ROS1/BRAF/RET/MET14/KRAS/NTRK + <tspan font-weight="700">PD-L1</tspan>（不足用ctDNA）</text>
+
+        <line x1="670" y1="224" x2="670" y2="244" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr8)" />
+
+        <!-- MDT Therapy Split -->
+        <rect x="484" y="246" width="180" height="122" rx="8" fill="var(--success)" fill-opacity="0.10" stroke="var(--success)" />
+        <text x="574" y="266" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--success)">NSCLC 综合治疗</text>
+        <text x="494" y="286" font-size="11" fill="var(--foreground)">• 早期Ⅰ～Ⅱ：首选<tspan font-weight="700">根治手术</tspan></text>
+        <text x="494" y="303" font-size="11" fill="var(--foreground)">• Ⅱ～Ⅲ期：术后辅助/新辅助</text>
+        <text x="494" y="320" font-size="11" fill="var(--foreground)">• 晚期驱动基因(+)：<tspan font-weight="700" fill="var(--primary)">靶向首选</tspan></text>
+        <text x="494" y="337" font-size="11" fill="var(--foreground)">• 驱动基因(-)：PD-L1≥1%化+免</text>
+        <text x="502" y="353" font-size="10.5" fill="var(--muted-foreground)">≥50%可免单药；非鳞±贝伐</text>
+
+        <rect x="676" y="246" width="180" height="122" rx="8" fill="var(--warning)" fill-opacity="0.13" stroke="var(--warning)" />
+        <text x="766" y="266" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--foreground)">SCLC 综合治疗</text>
+        <text x="686" y="286" font-size="11" fill="var(--foreground)">• 极少手术（仅T₁₋₂N₀术后化疗）</text>
+        <text x="686" y="303" font-size="11" fill="var(--foreground)">• <tspan font-weight="700">局限期</tspan>：放化疗为主 +</text>
+        <text x="694" y="319" font-size="11" font-weight="700" fill="var(--error)">预防性颅脑放疗（PCI）</text>
+        <text x="686" y="337" font-size="11" fill="var(--foreground)">• <tspan font-weight="700">广泛期</tspan>：含铂化疗（EP/IP）</text>
+        <text x="694" y="353" font-size="11" font-weight="700" fill="var(--primary)">+ 免疫检查点抑制剂</text>
+
+        <rect x="484" y="376" width="372" height="34" rx="6" fill="var(--secondary)" />
+        <text x="670" y="397" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--foreground)">PS 评分 ≤ 2 分可耐受化疗 ｜ 放疗敏感度：<tspan fill="var(--error)">SCLC &gt; 鳞癌 &gt; 腺癌</tspan></text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心重点</span> 肺癌临床表现、诊断检查与诊断步骤、治疗原则</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">1. 肺癌四大类临床表现</h3><span class="badge badge-m">掌握</span></div>
+    <p style="font-size:12.5px;color:var(--muted-foreground)">5%～15% 病人无症状，仅体检影像发现；其余临床表现完整分为以下四类：</p>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>① 原发肿瘤 &amp; ② 局部扩展表现</h4>
+        <ul>
+          <li><strong>原发症状</strong>：早期<span class="k">刺激性干咳（高调金属音）</span>（黏液腺癌大量黏液痰）；中央型多见<span class="k">痰血/咯血</span>；气道部分阻塞致<span class="k">局限或单侧哮鸣音</span>；胸隐痛；阻塞性肺炎致抗生素效差的发热；消瘦恶病质。</li>
+          <li><strong>局部扩展</strong>：侵犯胸膜/胸壁/肋间神经致剧痛；压迫<span class="k">左侧喉返神经→声音嘶哑</span>；压迫食管→吞咽困难/气管食管瘘；胸腔积液、心包积液/压塞；<span class="k">上腔静脉阻塞综合征</span>（头面颈上肢水肿、胸壁静脉曲张、皮肤暗紫）；肺尖<span class="k">肺上沟瘤（Pancoast瘤）</span>压迫颈交感神经→<span class="k">Horner 综合征</span>（患侧眼睑下垂、瞳孔缩小、眼球内陷、同侧额胸少汗无汗）。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>③ 远处转移 &amp; ④ 副肿瘤综合征（SCLC 多见）</h4>
+        <ul>
+          <li><strong>远处转移</strong>：CNS（颅高压、偏瘫、癫痫、脊髓压迫）；<span class="k">溶骨性骨转移</span>（肋骨/脊椎/骨盆/长骨，病理骨折）；肝/胰/肾上腺；<span class="k">锁骨上窝淋巴结</span>（质硬固定无痛融合）。</li>
+          <li><strong>内分泌（约12%）</strong>：<span class="k">SIADH</span>（低钠低渗水中毒，化疗1～4周多缓）；<span class="k">异位 ACTH</span>（低钾代碱色素沉着，向心肥胖紫纹罕见，SCLC）；<span class="k">高钙血症</span>（多见鳞癌，最常见致命代谢并发症）；促性腺激素（男性乳房发育，大细胞癌）；类癌综合征（5-HT，SCLC/腺癌）。</li>
+          <li><strong>骨骼/神经肌病/血液</strong>：<span class="k">原发性肥大性骨关节病</span>（30%杵状指+长骨骨膜炎，多NSCLC）；<span class="k">Eaton-Lambert 肌无力综合征</span>（骨盆/下肢近端无力，<span class="k">反复活动后暂改善</span>，新斯的明反应差，高频刺激波幅升高，多SCLC）；抗Hu/CRMP5副肿瘤脑炎；<span class="k">Trousseau 综合征</span>（游走性血栓性静脉炎）、DIC。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">2. 肺癌的诊断检查与 3 步诊断流程</h3><span class="badge badge-m">掌握</span></div>
+    <ul>
+      <li><strong>影像学检查</strong>：
+        <ul>
+          <li><strong>X 线胸片</strong>：中央型见肺门块影、右上叶典型<span class="k">倒 S 状影像</span>、阻塞性肺气肿/不张/肺炎；周围型见分叶、脐凹征、细毛刺、胸膜牵拉、<span class="k">厚壁偏心内壁凹凸不平癌性空洞</span>。</li>
+          <li><strong>胸部 CT / LDCT</strong>：分辨率高，检出 &lt;5mm 结节及纵隔淋巴结；<span class="k">低剂量 CT（LDCT）</span>已取代胸片成为高危人群早筛与肺结节敏感评估工具；CT 引导经皮穿刺。</li>
+          <li><strong>MRI / 骨显像 / PET-CT</strong>：MRI 明确与大血管关系及脑/脑膜转移优势；骨 γ 闪烁显像查骨转移；<span class="k">PET-CT</span> 整合解剖+代谢，早诊/转移/分期/疗效最优，但<strong>阳性仍必须经病理确诊</strong>。</li>
+        </ul>
+      </li>
+      <li><strong>获得病理学诊断的方法（确诊核心）</strong>：痰细胞学（中央型简便，至少送 3 次深部痰，敏感性 &lt;70%，<span class="k">不推荐单一痰检确诊</span>）；胸液细胞学（细胞块提阳性率）；<span class="k">支气管镜</span>（常规+荧光+EBUS-TBNA+径向超声/导航）；胸腔镜（胸膜下病灶及胸膜转移）；纵隔镜；经胸壁穿刺活检；锁骨上/腋窝淋巴结活检；开胸活检。</li>
+      <li><strong>标志物与分子诊断</strong>：标志物（CEA、NSE、CYFRA21-1、ProGRP）仅参考监测；<strong>分子病理</strong>必检 NSCLC 驱动基因（<span class="k">EGFR、ALK、ROS1、BRAF V600、RET、MET14跳突、NTRK1/2/3、KRAS</span> 及耐药 T790M/C797S/MET扩增；难取组织时用血 <span class="k">ctDNA“液体活检”</span>）及 <span class="k">PD-L1</span> 表达。</li>
+      <li><strong>诊断 3 步骤</strong>：①胸腹部 CT 确定部位与播散 → ②必须获得组织病理学标本确诊（高度疑 Ⅰ～Ⅱ 期可直接手术切除）→ ③分子病理学诊断（驱动基因 + PD-L1）指导个体化治疗。</li>
+    </ul>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">3. 肺癌的治疗原则与体力活动状态（PS）评分（表 2-9-3）</h3><span class="badge badge-m">掌握</span></div>
+    <p>根据<span class="k">体力活动状态（PS）评分</span>、病理类型（含分子病理）及侵及范围，采取<span class="k">多学科综合治疗（MDT）</span>与个体化治疗模式，有计划合理联合手术、化疗、靶向、抗血管生成、免疫、放疗与介入手段。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>PS 评分</th><th>体力活动状态定义（化疗重要准入依据）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>0 分</strong></td><td>正常</td></tr>
+          <tr><td><strong>1 分</strong></td><td>可自由行走或从事轻体力劳动（家务/办公室活动）</td></tr>
+          <tr><td><strong>2 分</strong></td><td>可自由行走及生活自理，但失去工作能力，日间不少于一半时间可起床活动（<span class="k">PS ≤ 2 分且脏器耐受可给予化疗</span>）</td></tr>
+          <tr><td><strong>3 分</strong></td><td>生活部分自理，日间一半时间卧床</td></tr>
+          <tr><td><strong>4 分</strong></td><td>卧床不起，生活不能自理</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12.5px;"><strong>总策略原则（仅保留治疗必需标签）</strong>：<strong>NSCLC</strong> 早期以根治手术为首选，局部晚期多学科综合治疗，晚期/复发按驱动基因与 PD-L1 分层施治；<strong>SCLC</strong> 增殖快早转移、对放化疗高度敏感，一般不手术，局限期以放化疗+预防脑放疗为主，广泛期以化疗联合免疫为主。</p>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 肺癌的具体治疗方案（5 大手段）</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">肺癌五大具体治疗方案要点</h3><span class="badge badge-f">熟悉</span></div>
+    <ol>
+      <li><strong>手术治疗（早期最佳）</strong>：
+        <br />• <strong>NSCLC</strong>：Ⅰ、Ⅱ期首选根治性切除；除Ⅰ期外，Ⅱ～Ⅲ期根治术后需辅助化疗（根据病理/切缘联辅助靶向/免疫/放疗）；部分ⅢA期新辅助化疗降期或 MDT 综合治疗。
+        <br />• <strong>SCLC</strong>：仅经纵隔镜等病理确认 <span class="k">T₁₋₂N₀</span> 可考虑肺叶切除+清扫，术后<strong>一律</strong>行含铂两药化疗 4～6 周期。</li>
+      <li><strong>药物治疗（化疗 + 靶向 + 抗血管生成 + 免疫治疗）</strong>：
+        <ul>
+          <li><strong>化疗（PS≤2）</strong>：NSCLC 一线<span class="k">含铂两药</span>（顺铂/卡铂 + 紫杉醇/长春瑞滨/吉西他滨/培美曲塞/多西他赛）4～6周期，二线多西他赛或培美曲塞单药（或ICIs）；SCLC 一线<span class="k">依托泊苷或伊立替康 + 顺铂/卡铂</span> 4～6周期，广泛期联合免疫（阿替利珠/度伐利尤/阿得贝利/斯鲁利单抗）。</li>
+          <li><strong>分子靶向（主要肺腺癌，选准标靶人群）</strong>：
+            <br />• EGFR 突变 → <span class="k">EGFR-TKI</span>（奥希替尼、阿美替尼、厄洛替尼、吉非替尼、阿法替尼；T790M 耐药用奥希/阿美/伏美替尼）；
+            <br />• ALK 重排 → 克唑替尼、艾乐替尼、色瑞替尼、洛拉替尼、恩沙替尼；ROS1 → 克唑/恩曲替尼；MET14跳突 → 谷美替尼；BRAF V600 → 达拉非尼+曲美替尼；RET → 塞普替尼。</li>
+          <li><strong>抗血管生成</strong>：VEGF 单抗（<span class="k">贝伐珠单抗</span>，用于Ⅳ期非鳞 NSCLC 无咯血及脑转移联合化疗）；VEGFR 单抗（雷莫芦单抗）；VEGFR-TKI（<span class="k">安罗替尼</span>，晚期 NSCLC 三线及以上显著延长 PFS/OS）。</li>
+          <li><strong>免疫检查点抑制剂（ICIs，PD-1/PD-L1 单抗）</strong>：晚期驱动基因阴性 NSCLC 标治（帕博利珠、阿替利珠、卡瑞利珠、信迪利、替雷利珠、舒格利、特瑞普利、阿得贝利单抗）；<span class="k">PD-L1 ≥1%</span> 推荐化疗+免疫，<span class="k">PD-L1 ≥50%</span> 可免疫单药。</li>
+        </ul>
+      </li>
+      <li><strong>放射治疗</strong>：分根治、姑息（缓解咯血/SVCS/骨痛/脑转移）、辅助、新辅助及预防性（<span class="k">SCLC 全身治疗有效后预防性全脑放疗 PCI</span>）。敏感度：<span class="k">SCLC &gt; 鳞癌 &gt; 腺癌</span>（剂量 40～70Gy，5～7周，3DCRT/IMRT；保护肺心食管脊髓，防放射性肺炎/食管炎）。</li>
+      <li><strong>介入治疗</strong>：支气管动脉灌注化疗；支气管镜激光切除、腔内放疗、超声引导瘤内注射。</li>
+      <li><strong>中医药治疗</strong>：与西药协同，减轻放化疗不良反应、促进抵抗力恢复。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== APPENDIX: AUDIT ==================== -->
+<section class="module-section" id="mod-audit" data-mod-title="大纲边界与差异审计表">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">大纲-教材边界与内部差异审计表</h1>
+      <span class="mod-source">透明度与溯源记录</span>
+    </div>
+    <p style="margin:8px 0 0;font-size:13px;color:var(--muted-foreground)">
+      本学习页严格执行以下两条边界规则：① 仅采信《内科学-理论课程教学大纲.docx》呼吸系统部分<strong>【教学目标和要求】</strong>栏中明示的“掌握”与“熟悉”条目，完全剔除标为“了解”及未列入大纲的章节；② 知识内容 100% 严格依据人卫第 10 版《内科学》<strong>02-第二篇 呼吸系统疾病</strong>原文，绝不引入外部或跨篇未授权内容。
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="card-hd"><h3 class="card-title">一、大纲内部不同栏目口径冲突明细（共 4 处，均以【教学目标和要求】为准）</h3><span class="badge badge-note">决策记录</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>模块 / 疾病</th><th>【教学目标和要求】原文</th><th>大纲内其他栏目原文</th><th>本学习页执行结果</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Ⅰ、肺炎（肺脓肿）</strong></td>
+            <td>四、<strong>熟悉</strong>肺脓肿的病因、发病机理。</td>
+            <td>【理论授课内容】3：详述病因、临床特点和诊断，影像表现是重点，鉴别诊断也应掌握，治疗原则为抗感染及引流。</td>
+            <td>严格仅总结“肺脓肿的病因与发病机理”（熟悉层），未展开临床表现/影像/鉴别/治疗。</td>
+          </tr>
+          <tr>
+            <td><strong>Ⅴ、肺栓塞（PTE）</strong></td>
+            <td>二、<strong>了解</strong>流行病学；三、<strong>了解</strong>病理学；九、<strong>了解</strong>溶栓治疗、抗凝治疗方案。</td>
+            <td>【支撑关系表】将流行病学、病理学、病因病理生理并入“掌握”；【考核难点重点】写“肺栓塞的抗凝治疗方案”。</td>
+            <td>严格剔除流行病学、病理学专节及具体抗凝/溶栓给药剂量方案，保留【熟悉】要求的病因病理生理及抗凝/溶栓适应证与禁忌证。</td>
+          </tr>
+          <tr>
+            <td><strong>Ⅶ、胸膜疾病（胸液）</strong></td>
+            <td>三、<strong>了解</strong>胸腔积液的病因和发病机理。</td>
+            <td>【支撑关系表】写“熟悉胸腔积液的临床表现、病因和发病机理”。</td>
+            <td>严格剔除胸腔积液循环压力公式及 6 大病因发病机制，保留【熟悉】的临床表现与【掌握】的诊断鉴别及结核性胸膜炎治疗原则。</td>
+          </tr>
+          <tr>
+            <td><strong>Ⅵ、间质性肺疾病（IPF）</strong></td>
+            <td>二、……<strong>了解</strong>目前 IPF 的治疗研究的新药。</td>
+            <td>【支撑关系表】写“熟悉 IPF 的临床表现、治疗”。</td>
+            <td>严格剔除 IPF 治疗及抗纤维化新药（吡非尼酮、尼达尼布等），保留【熟悉】的临床表现与肺功能检查表现。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hd"><h3 class="card-title">二、第 10 版《02-第二篇 呼吸系统疾病》原文边界处理（2 类）</h3><span class="badge badge-note">溯源说明</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>大纲条目</th><th>第 10 版呼吸篇实际情况</th><th>处理方式</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Ⅵ、药物性肺疾病、肉芽肿性多血管炎（GPA）</strong>（大纲要求掌握定义/诊断标准/治疗）</td>
+            <td>第十章《间质性肺疾病》<strong>未设专节</strong>，仅在表 2-10-1、相关病史和实验室检查中点名列举常见致纤维化药物及 ANCA 相关性血管炎（GPA 专节位于风湿病篇）。</td>
+            <td>在模块 Ⅵ 中完整如实摘录呼吸篇第十章全部提及内容，并显式标明“呼吸篇未设专节”，未跨篇补写。</td>
+          </tr>
+          <tr>
+            <td><strong>Ⅷ、原发性肺癌</strong>（大纲把分类、分期列为“了解”，把治疗原则/方案列为“掌握/熟悉”）</td>
+            <td>第九章《肺癌》治疗原则与方案必然按 NSCLC / SCLC 及临床分期展开。</td>
+            <td>彻底剔除解剖/WHO病理分类专节与第 9 版 TNM 分期表，仅在治疗原则与方案中保留最小必要分层标签（NSCLC/SCLC、早/中/晚期、局限/广泛期）。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hd"><h3 class="card-title">三、呼吸篇未列入本教学大纲的章节（共 8 章，全部剔除）</h3><span class="badge badge-note">范围核对</span></div>
+    <p>第 10 版《02-第二篇 呼吸系统疾病》共 17 章，以下 8 章未列入《内科学-理论课程教学大纲.docx》呼吸系统部分，故未纳入本总结：</p>
+    <p style="color:var(--muted-foreground)">第一章 总论 ｜ 第二章 急性上呼吸道感染和急性气管-支气管炎 ｜ 第五章 支气管扩张症 ｜ 第十二章 肺动脉高压 ｜ 第十四章 睡眠呼吸障碍 ｜ 第十五章 急性呼吸窘迫综合征（ARDS）｜ 第十六章 呼吸衰竭与呼吸支持技术 ｜ 第十七章 烟草病学概要。</p>
+  </div>
+</section>
+
+    </main>
+  </div>
+</div>
+
+<!-- SVG Zoom Lightbox Modal -->
+<div class="modal-backdrop" id="svgModal" role="dialog" aria-modal="true" aria-label="SVG 图解放大预览">
+  <div class="modal-panel">
+    <div class="modal-top">
+      <span id="modalTitle">图解放大查看</span>
+      <button class="tool-btn" id="modalClose" type="button">关闭 (ESC)</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const navItems = Array.from(document.querySelectorAll(".nav-item"));
+  const sections = Array.from(document.querySelectorAll(".module-section"));
+  const sidebar = document.getElementById("sidebar");
+  const menuBtn = document.getElementById("menuBtn");
+  const sidebarCloseBtn = document.getElementById("sidebarCloseBtn");
+  const filterBtns = Array.from(document.querySelectorAll(".filter-btn"));
+  const clozeBtn = document.getElementById("clozeBtn");
+  const clozeState = document.getElementById("clozeState");
+  const viewAllBtn = document.getElementById("viewAllBtn");
+  const viewAllState = document.getElementById("viewAllState");
+  const svgModal = document.getElementById("svgModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalBody = document.getElementById("modalBody");
+  const modalClose = document.getElementById("modalClose");
+
+  function isMobile() {
+    return window.matchMedia("(max-width: 860px)").matches;
+  }
+
+  function updateSidebarBtnLabel() {
+    const collapsed = isMobile()
+      ? !sidebar.classList.contains("open")
+      : document.body.classList.contains("sidebar-collapsed");
+    menuBtn.textContent = collapsed ? "☰ 展开侧边栏" : "☰ 收起侧边栏";
+  }
+
+  function toggleSidebar() {
+    if (isMobile()) {
+      sidebar.classList.toggle("open");
+    } else {
+      document.body.classList.toggle("sidebar-collapsed");
+    }
+    updateSidebarBtnLabel();
+  }
+
+  function closeSidebar() {
+    if (isMobile()) {
+      sidebar.classList.remove("open");
+    } else {
+      document.body.classList.add("sidebar-collapsed");
+    }
+    updateSidebarBtnLabel();
+  }
+
+  menuBtn.addEventListener("click", toggleSidebar);
+  if (sidebarCloseBtn) sidebarCloseBtn.addEventListener("click", closeSidebar);
+  window.addEventListener("resize", updateSidebarBtnLabel);
+  updateSidebarBtnLabel();
+
+  function activateModule(id, scrollTop) {
+    navItems.forEach((btn) => btn.classList.toggle("active", btn.dataset.target === id));
+    sections.forEach((sec) => sec.classList.toggle("active", sec.id === id));
+    if (isMobile()) {
+      sidebar.classList.remove("open");
+      updateSidebarBtnLabel();
+    }
+    if (document.body.classList.contains("view-all")) {
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else if (scrollTop !== false) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+
+  navItems.forEach((btn) => {
+    btn.addEventListener("click", () => activateModule(btn.dataset.target, true));
+  });
+
+  // Filter: all / master / familiar
+  function setFilter(mode) {
+    document.body.classList.remove("filter-master", "filter-familiar");
+    if (mode === "master") document.body.classList.add("filter-master");
+    if (mode === "familiar") document.body.classList.add("filter-familiar");
+    filterBtns.forEach((b) => b.classList.toggle("active", b.dataset.filter === mode));
+  }
+  filterBtns.forEach((btn) => btn.addEventListener("click", () => setFilter(btn.dataset.filter)));
+
+  // Cloze self-test mode
+  let clozeOn = false;
+  clozeBtn.addEventListener("click", () => {
+    clozeOn = !clozeOn;
+    document.body.classList.toggle("cloze-on", clozeOn);
+    clozeBtn.classList.toggle("active", clozeOn);
+    if (clozeState) clozeState.textContent = clozeOn ? "开（点词翻开）" : "关";
+    if (!clozeOn) {
+      document.querySelectorAll(".k.revealed").forEach((el) => el.classList.remove("revealed"));
+    }
+  });
+  document.addEventListener("click", (e) => {
+    if (!clozeOn) return;
+    const span = e.target.closest(".k");
+    if (span) span.classList.toggle("revealed");
+  });
+
+  // View all / Print toggle
+  let viewAll = false;
+  viewAllBtn.addEventListener("click", () => {
+    viewAll = !viewAll;
+    document.body.classList.toggle("view-all", viewAll);
+    viewAllBtn.classList.toggle("active", viewAll);
+    if (viewAllState) viewAllState.textContent = viewAll ? "开" : "关";
+  });
+
+  // SVG zoom lightbox
+  function openSvgModal(svgCard) {
+    const titleEl = svgCard.querySelector(".svg-hd span");
+    const svgEl = svgCard.querySelector("svg");
+    if (!svgEl) return;
+    modalTitle.textContent = titleEl ? titleEl.textContent : "SVG 图解";
+    modalBody.innerHTML = "";
+    const clone = svgEl.cloneNode(true);
+    clone.querySelectorAll("[id]").forEach((n) => {
+      const oldId = n.getAttribute("id");
+      const newId = "m_" + oldId;
+      n.setAttribute("id", newId);
+      clone.querySelectorAll(`[marker-end="url(#${oldId})"]`).forEach((el) => el.setAttribute("marker-end", `url(#${newId})`));
+      clone.querySelectorAll(`[marker-start="url(#${oldId})"]`).forEach((el) => el.setAttribute("marker-start", `url(#${newId})`));
+    });
+    modalBody.appendChild(clone);
+    svgModal.classList.add("open");
+  }
+  document.querySelectorAll(".svg-card").forEach((card) => {
+    const btn = card.querySelector(".svg-zoom-btn");
+    const stage = card.querySelector(".svg-stage");
+    if (btn) btn.addEventListener("click", () => openSvgModal(card));
+    if (stage) stage.addEventListener("click", () => openSvgModal(card));
+  });
+  function closeModal() {
+    svgModal.classList.remove("open");
+    modalBody.innerHTML = "";
+  }
+  modalClose.addEventListener("click", closeModal);
+  svgModal.addEventListener("click", (e) => { if (e.target === svgModal) closeModal(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+})();
+</script>
+
+<script>
+(function () {
+  const root = document.documentElement;
+  const btn = document.getElementById("themeToggleBtn");
+  const state = document.getElementById("themeState");
+  const saved = (function () { try { return localStorage.getItem("resp_guide_theme"); } catch (e) { return null; } })();
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  let theme = saved || (prefersDark ? "dark" : "light");
+  function apply(t) {
+    root.setAttribute("data-theme", t);
+    if (btn) btn.classList.toggle("active", t === "dark");
+    if (state) state.textContent = t === "dark" ? "开" : "关";
+    try { localStorage.setItem("resp_guide_theme", t); } catch (e) {}
+  }
+  apply(theme);
+  if (btn) {
+    btn.addEventListener("click", function () {
+      theme = theme === "dark" ? "light" : "dark";
+      apply(theme);
+    });
+  }
+})();
+</script>
+
+
+<script>
+(function () {
+  function syncFromHash() {
+    var raw = (window.location.hash || "").replace(/^#/, "");
+    if (!raw) return;
+    var btn = document.querySelector('.nav-item[data-target="' + raw + '"]');
+    if (btn) btn.click();
+  }
+  window.addEventListener("hashchange", syncFromHash);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", syncFromHash);
+  } else {
+    syncFromHash();
+  }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>内科学（第10版）· 内分泌系统教学大纲精要（掌握 / 熟悉 + SVG图解）</title>
+<style id="theme-tokens">
+:root, [data-theme="light"] {
+  --background: #f6f8fb;
+  --content: #f6f8fb;
+  --card: #ffffff;
+  --sidebar: #eef2f7;
+  --border: #d5dde8;
+  --card-border: #e5ebf3;
+  --foreground: #182230;
+  --muted-foreground: #526075;
+  --placeholder: #7a889d;
+  --primary: #1d4ed8;
+  --primary-foreground: #ffffff;
+  --secondary: #e8eef6;
+  --secondary-foreground: #1e293b;
+  --accent: #dbeafe;
+  --link: #1d4ed8;
+  --success: #15803d;
+  --warning: #d97706;
+  --error: #dc2626;
+  --chart-1: #0284c7;
+  --chart-2: #0d9488;
+  --chart-3: #7c3aed;
+  --chart-4: #ea580c;
+  --chart-5: #be123c;
+  --chart-6: #4f46e5;
+}
+[data-theme="dark"] {
+  --background: #0f172a;
+  --content: #0f172a;
+  --card: #162033;
+  --sidebar: #111b2e;
+  --border: #2a3952;
+  --card-border: #223047;
+  --foreground: #e6edf7;
+  --muted-foreground: #9cb0c9;
+  --placeholder: #7488a3;
+  --primary: #60a5fa;
+  --primary-foreground: #0b1220;
+  --secondary: #1e2c45;
+  --secondary-foreground: #dce7f7;
+  --accent: #1d3557;
+  --link: #60a5fa;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --error: #f87171;
+  --chart-1: #38bdf8;
+  --chart-2: #2dd4bf;
+  --chart-3: #a78bfa;
+  --chart-4: #fb923c;
+  --chart-5: #fb7185;
+  --chart-6: #818cf8;
+}
+</style>
+<style id="app-styles">
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .app-shell {
+    display: flex;
+    min-height: 100vh;
+    background: var(--background);
+  }
+  /* Sidebar */
+  .sidebar {
+    width: 256px;
+    flex-shrink: 0;
+    background: var(--sidebar);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 30;
+    transition: width 0.2s ease, transform 0.2s ease, opacity 0.18s ease;
+  }
+  body.sidebar-collapsed .sidebar {
+    width: 0;
+    min-width: 0;
+    border-right: none;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .sidebar-header {
+    padding: 14px 14px 10px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .sidebar-close-btn {
+    padding: 3px 7px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--muted-foreground);
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+  .sidebar-close-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .sidebar-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--foreground);
+    line-height: 1.35;
+  }
+  .sidebar-sub {
+    font-size: 11.5px;
+    color: var(--muted-foreground);
+    margin-top: 3px;
+  }
+  .nav-list {
+    padding: 8px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+    overflow-y: auto;
+  }
+  .nav-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 7px 9px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--foreground);
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-size: 12.8px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .nav-item:hover {
+    background: var(--card);
+    border-color: var(--card-border);
+  }
+  .nav-item.active {
+    background: var(--card);
+    border-color: var(--primary);
+    box-shadow: inset 3px 0 0 var(--primary);
+  }
+  .nav-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+  .nav-item.active .nav-num {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+  .nav-meta {
+    display: block;
+    font-size: 10.8px;
+    color: var(--muted-foreground);
+    margin-top: 2px;
+  }
+  .sidebar-controls {
+    padding: 10px 10px 8px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .sidebar-controls-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted-foreground);
+    letter-spacing: 0.03em;
+    padding: 0 2px;
+  }
+  .sidebar-controls .tool-btn {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sidebar-footer {
+    padding: 8px 12px 10px;
+    border-top: 1px solid var(--card-border);
+    font-size: 11px;
+    color: var(--muted-foreground);
+  }
+
+  /* Main area */
+  .main-wrap {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
+    padding: 7px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .menu-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--foreground);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .menu-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .filter-group {
+    display: inline-flex;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2px;
+    gap: 2px;
+  }
+  .filter-btn {
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: var(--muted-foreground);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .filter-btn.active {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+  .tool-btn {
+    padding: 6px 10px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--foreground);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .tool-btn:hover {
+    border-color: var(--primary);
+  }
+  .tool-btn.active {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border-color: var(--primary);
+  }
+
+  /* Content */
+  .content {
+    padding: 14px 22px 44px;
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .module-section {
+    display: none;
+  }
+  .module-section.active,
+  body.view-all .module-section {
+    display: block;
+  }
+  body.view-all .module-section {
+    margin-bottom: 42px;
+    padding-bottom: 32px;
+    border-bottom: 2px dashed var(--border);
+  }
+  .mod-header {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+  }
+  .mod-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .mod-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--foreground);
+  }
+  .mod-source {
+    font-size: 12px;
+    color: var(--muted-foreground);
+    background: var(--secondary);
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+  .syllabus-box {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+    font-size: 12.5px;
+    border-top: 1px solid var(--card-border);
+    padding-top: 10px;
+  }
+  .syl-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .syl-tag {
+    flex-shrink: 0;
+    padding: 1px 7px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .syl-tag.m { background: var(--error); color: #ffffff; }
+  .syl-tag.f { background: var(--chart-1); color: #ffffff; }
+  .syl-tag.x { background: var(--secondary); color: var(--muted-foreground); border: 1px solid var(--border); }
+  .syl-excluded { color: var(--muted-foreground); font-size: 12px; }
+
+  /* Tier sections */
+  .tier-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 22px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--border);
+    font-size: 16px;
+    font-weight: 800;
+  }
+  .tier-heading.master-hd { border-bottom-color: var(--error); }
+  .tier-heading.familiar-hd { border-bottom-color: var(--chart-1); }
+
+  /* Cards */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .card.tier-master {
+    border-left: 4px solid var(--error);
+  }
+  .card.tier-familiar {
+    border-left: 4px solid var(--chart-1);
+    opacity: 0.96;
+  }
+  .card-hd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .card-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--foreground);
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .badge-m {
+    background: var(--error);
+    color: #ffffff;
+  }
+  .badge-f {
+    background: transparent;
+    color: var(--chart-1);
+    border: 1px solid var(--chart-1);
+  }
+  .badge-note {
+    background: var(--warning);
+    color: #111111;
+  }
+
+  /* Filtering */
+  body.filter-master [data-tier="familiar"] { display: none !important; }
+  body.filter-familiar [data-tier="master"] { display: none !important; }
+
+  /* Typography inside cards */
+  .card p { margin: 6px 0; }
+  .card ul, .card ol { margin: 6px 0; padding-left: 20px; }
+  .card li { margin: 4px 0; }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .mini-box {
+    background: var(--background);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  .mini-box h4 {
+    margin: 0 0 5px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  /* Tables */
+  .tbl-wrap {
+    overflow-x: auto;
+    margin: 8px 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  table.med-tbl {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+  table.med-tbl th {
+    background: var(--secondary);
+    color: var(--foreground);
+    font-weight: 700;
+    text-align: left;
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  table.med-tbl td {
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--card-border);
+    vertical-align: top;
+  }
+  table.med-tbl tr:last-child td { border-bottom: none; }
+
+  /* Callouts */
+  .callout {
+    margin: 8px 0;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    border: 1px solid var(--border);
+    background: var(--background);
+  }
+  .callout.warn { border-left: 3px solid var(--warning); }
+  .callout.danger { border-left: 3px solid var(--error); }
+  .callout.info { border-left: 3px solid var(--chart-1); }
+
+  /* Cloze self-test spans */
+  .k {
+    font-weight: 700;
+    color: var(--primary);
+    border-bottom: 1px dotted var(--primary);
+    padding: 0 2px;
+    border-radius: 3px;
+    transition: background 0.15s, color 0.15s;
+  }
+  body.cloze-on .k:not(.revealed) {
+    background: var(--foreground);
+    color: transparent;
+    border-bottom-color: transparent;
+    cursor: pointer;
+    user-select: none;
+  }
+  body.cloze-on .k:not(.revealed):hover { opacity: 0.85; }
+  body.cloze-on .k.revealed {
+    background: var(--secondary);
+    color: var(--primary);
+    cursor: pointer;
+  }
+
+  /* SVG diagram box */
+  .svg-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin: 12px 0 16px;
+  }
+  .svg-hd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .svg-zoom-btn {
+    padding: 3px 9px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--background);
+    color: var(--foreground);
+    font-size: 11.5px;
+    cursor: pointer;
+  }
+  .svg-zoom-btn:hover { border-color: var(--primary); color: var(--primary); }
+  .svg-stage {
+    width: 100%;
+    overflow-x: auto;
+    cursor: zoom-in;
+  }
+  .svg-stage svg {
+    display: block;
+    width: 100%;
+    min-width: 680px;
+    height: auto;
+  }
+
+  /* Lightbox modal */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    max-width: 1200px;
+    width: 96%;
+    max-height: 92vh;
+    overflow: auto;
+    padding: 16px;
+  }
+  .modal-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .modal-body svg { width: 100%; height: auto; display: block; }
+
+  /* Responsive */
+  @media (max-width: 860px) {
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 264px;
+      transform: translateX(-100%);
+      box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .sidebar.open { transform: translateX(0); }
+    body.sidebar-collapsed .sidebar { width: 264px; opacity: 1; pointer-events: auto; border-right: 1px solid var(--border); }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .content { padding: 12px 12px 40px; }
+  }
+  @media print {
+    .sidebar, .topbar, .svg-zoom-btn { display: none !important; }
+    .module-section { display: block !important; page-break-after: always; }
+    .card, .svg-card { break-inside: avoid; }
+    body.cloze-on .k { background: transparent !important; color: inherit !important; }
+  }
+
+  /* Published Portal Integration (Audit Not Completed + Back Navigation) */
+  .portal-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--foreground);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .portal-back-link:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .audit-pill {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 700;
+    background: rgba(217, 119, 6, 0.14);
+    color: var(--warning);
+    border: 1px solid var(--warning);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .portal-audit-banner {
+    margin: 0 0 14px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--warning);
+    border-left: 4px solid var(--warning);
+    background: rgba(217, 119, 6, 0.09);
+    color: var(--foreground);
+    font-size: 12.5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .portal-audit-banner strong { color: var(--warning); }
+  .portal-audit-links { display: inline-flex; gap: 10px; flex-wrap: wrap; }
+  .portal-audit-links a {
+    color: var(--link);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .portal-audit-links a:hover { text-decoration: underline; }
+  @media print {
+    .portal-back-link, .audit-pill { display: none !important; }
+  }
+</style>
+</head>
+<body >
+<div class="app-shell">
+  <!-- Left Navigation Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div>
+        <div class="sidebar-title">内科学（第10版）内分泌系统</div>
+        <div class="sidebar-sub">理论课程大纲精要 · 5讲 / 10学时<br />严守【掌握/记忆】+【熟悉/理解】</div>
+      </div>
+      <button class="sidebar-close-btn" id="sidebarCloseBtn" type="button" title="收起侧边栏">✕</button>
+    </div>
+    <nav class="nav-list" id="navList">
+      <button class="nav-item active" data-target="mod-1"><span class="nav-num">Ⅰ</span><span><strong>内分泌与代谢病总论</strong><span class="nav-meta">第1章 · 课本P654-662 / PDF P685-693</span></span></button>
+      <button class="nav-item" data-target="mod-2"><span class="nav-num">Ⅱ</span><span><strong>甲状腺功能亢进症（GD）</strong><span class="nav-meta">第5章§1 · 课本P686-692 / PDF P717-723</span></span></button>
+      <button class="nav-item" data-target="mod-3"><span class="nav-num">Ⅲ</span><span><strong>糖尿病与酮症酸中毒</strong><span class="nav-meta">第8章§1-2 · 课本P724-745 / PDF P755-776</span></span></button>
+      <button class="nav-item" data-target="mod-4"><span class="nav-num">Ⅳ</span><span><strong>皮质醇增多症（库欣）</strong><span class="nav-meta">第7章§1 · 课本P709-711 / PDF P740-742</span></span></button>
+      <button class="nav-item" data-target="mod-5"><span class="nav-num">Ⅴ</span><span><strong>原发性醛固酮增多症</strong><span class="nav-meta">第7章§2 · 课本P712-714 / PDF P743-745</span></span></button>
+      <button class="nav-item" data-target="mod-audit"><span class="nav-num">审</span><span><strong>大纲边界与差异审计表</strong><span class="nav-meta">动词映射 · 缺项溯源 · 剔除14整章</span></span></button>
+    </nav>
+    <div class="sidebar-controls">
+      <div class="sidebar-controls-title">阅读与自测工具</div>
+      <button class="tool-btn" id="clozeBtn" type="button" title="隐藏重点阈值/药物/标准，点击逐个翻开自测"><span>背诵遮罩</span><span id="clozeState">关</span></button>
+      <button class="tool-btn" id="viewAllBtn" type="button" title="展开全部5讲及审计表以便通读或打印"><span>全篇展开</span><span id="viewAllState">关</span></button>
+      <button class="tool-btn" id="themeToggleBtn" type="button" title="切换浅色/深色主题"><span>深色主题</span><span id="themeState">关</span></button>
+    </div>
+    <div class="sidebar-footer">
+      依据：人卫第10版《内科学》第七篇（偏移恒定：PDF = 课本 + 31）<br />
+      权威口径：严格以【对应课程目标】为准，零“了解”泄露
+    </div>
+  </aside>
+
+  <!-- Main Workspace -->
+  <div class="main-wrap">
+    <header class="topbar">
+      <a class="portal-back-link" href="./index.html" title="返回内科学七大系统总导航">← 七大系统导航</a>
+      <button class="menu-btn" id="menuBtn" type="button">☰ 收起侧边栏</button>
+      <div class="filter-group" role="group" aria-label="考点层级筛选">
+        <button class="filter-btn active" data-filter="all" type="button">全部内容</button>
+        <button class="filter-btn" data-filter="master" type="button">仅看掌握（核心）</button>
+        <button class="filter-btn" data-filter="familiar" type="button">仅看熟悉（次重点）</button>
+      </div>
+      <span class="audit-pill" title="Audit Not Completed · 尚未完成独立审计">⚠ Audit Not Completed</span>
+    
+    </header>
+
+    <main class="content" id="mainContent">
+<div class="portal-audit-banner" role="note"><span><strong>⚠ Audit Not Completed</strong> — Audit Not Completed · 尚未完成独立审计。临床阈值、药物剂量与诊疗标准请以人卫第10版教材原文为准。</span><span class="portal-audit-links"><a href="./index.html">七大系统导航与大纲</a><a href="https://app.notion.com/p/4249530ba4dc8048bf97f49fffac6c77" target="_blank" rel="noopener noreferrer">Notion 配套页面 ↗</a></span></div>
+
+
+<!-- ==================== MODULE 1 ==================== -->
+<section class="module-section active" id="mod-1" data-mod-title="Ⅰ、第一章 内分泌和代谢疾病总论">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅰ、内分泌和代谢疾病总论</h1>
+      <span class="mod-source">第10版 第七篇 第一章《总论》（课本 P654–662 / PDF P685–693）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>（目标栏“记忆”+内容栏内嵌“掌握”）神经内分泌系统生理及病理理论基础（激素分泌节律、脉冲性、各层次反馈调节及在内分泌功能诊断中的意义、三大系统网络）；常见内分泌与代谢疾病的常用诊断方法（功能/定位/病因）和防治原则（亢进与减退）。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>（目标栏“理解”+内容栏内嵌“熟悉”）临床内分泌学的范围及其重要性；激素的化学分类、合成释放、分泌途径、转运代谢与胞内/膜受体作用原理。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">与临床各科密切相关性、国内外内分泌学发展状况、激素在发病机制与药物基因学中的意义（均标“了解”）；本章第一节“三、代谢（营养素与能量代谢）”未纳入目标栏，不设专节展开。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 1 -->
+  <div class="svg-card">
+    <div class="svg-hd">
+      <span>图解 1 · 下丘脑-垂体-靶腺轴四类反馈调节与内分泌三层诊断决策树（辅助视觉，正文已完整涵盖）</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 345" width="100%" role="img" aria-label="下丘脑-垂体-靶腺轴反馈调节及内分泌功能定位病因三层诊断图解">
+        <defs>
+          <marker id="arr1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr1r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+          <marker id="arr1g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--success)" />
+          </marker>
+        </defs>
+        <!-- Left Panel: HPT/HPA/HPG Feedback Axis -->
+        <rect x="10" y="10" width="420" height="325" rx="10" fill="var(--card)" stroke="var(--border)" stroke-width="1.2" />
+        <text x="220" y="34" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--foreground)">下丘脑-垂体-靶腺轴反馈调节（图7-1-1）</text>
+
+        <!-- Hypothalamus -->
+        <rect x="120" y="54" width="200" height="44" rx="8" fill="var(--primary)" fill-opacity="0.14" stroke="var(--primary)" stroke-width="1.4" />
+        <text x="220" y="74" text-anchor="middle" font-size="13" font-weight="700" fill="var(--foreground)">下丘脑（神经内分泌）</text>
+        <text x="220" y="91" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">TRH / CRH / GnRH（脉冲1~2h）</text>
+
+        <!-- Pituitary -->
+        <rect x="120" y="140" width="200" height="44" rx="8" fill="var(--chart-1)" fill-opacity="0.14" stroke="var(--chart-1)" stroke-width="1.4" />
+        <text x="220" y="160" text-anchor="middle" font-size="13" font-weight="700" fill="var(--foreground)">腺垂体（促激素）</text>
+        <text x="220" y="177" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">TSH / ACTH / FSH、LH</text>
+
+        <!-- Target Gland -->
+        <rect x="120" y="226" width="200" height="44" rx="8" fill="var(--chart-2)" fill-opacity="0.14" stroke="var(--chart-2)" stroke-width="1.4" />
+        <text x="220" y="246" text-anchor="middle" font-size="13" font-weight="700" fill="var(--foreground)">靶腺（甲状腺/肾上腺/性腺）</text>
+        <text x="220" y="263" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">T3·T4 / 皮质醇 / 雌·孕·雄激素</text>
+
+        <!-- Forward stimulation arrows -->
+        <line x1="220" y1="98" x2="220" y2="136" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr1)" />
+        <line x1="220" y1="184" x2="220" y2="222" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr1)" />
+        <text x="230" y="121" font-size="11" font-weight="700" fill="var(--primary)">兴奋</text>
+        <text x="230" y="207" font-size="11" font-weight="700" fill="var(--primary)">兴奋</text>
+
+        <!-- Ultra-short feedback (top right loop) -->
+        <path d="M 320 64 C 365 44, 365 92, 324 84" fill="none" stroke="var(--error)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr1r)" />
+        <text x="366" y="72" font-size="10.5" font-weight="700" fill="var(--error)">超短反馈</text>
+
+        <!-- Short feedback (Pituitary -> Hypothalamus right side) -->
+        <path d="M 320 156 L 380 156 L 380 80 L 325 80" fill="none" stroke="var(--error)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr1r)" />
+        <text x="385" y="124" font-size="10.5" font-weight="700" fill="var(--error)">短反馈</text>
+
+        <!-- Long negative feedback (Target -> Pituitary & Hypothalamus left side) -->
+        <path d="M 120 248 L 46 248 L 46 76 L 115 76" fill="none" stroke="var(--error)" stroke-width="1.8" stroke-dasharray="5 3" marker-end="url(#arr1r)" />
+        <path d="M 46 162 L 115 162" fill="none" stroke="var(--error)" stroke-width="1.8" stroke-dasharray="5 3" marker-end="url(#arr1r)" />
+        <text x="20" y="158" font-size="11" font-weight="700" fill="var(--error)">长负</text>
+        <text x="20" y="173" font-size="11" font-weight="700" fill="var(--error)">反馈</text>
+
+        <!-- Positive feedback (Estrogen surge -> FSH/LH right side) -->
+        <path d="M 320 250 L 396 250 L 396 170 L 325 170" fill="none" stroke="var(--success)" stroke-width="1.8" marker-end="url(#arr1g)" />
+        <text x="342" y="216" font-size="10.5" font-weight="700" fill="var(--success)">正反馈(排卵前)</text>
+
+        <!-- Legend bar bottom left -->
+        <rect x="24" y="286" width="392" height="36" rx="6" fill="var(--background)" stroke="var(--card-border)" />
+        <text x="220" y="302" text-anchor="middle" font-size="10.5" fill="var(--foreground)">外围调控：RAAS 轴 · 瘦素/脂联素能量轴 · PTH-CT-骨化三醇骨轴</text>
+        <text x="220" y="317" text-anchor="middle" font-size="10.2" fill="var(--muted-foreground)">实线 = 兴奋刺激 ｜ 虚线 = 负反馈抑制 ｜ 整合/协同/拮抗交互作用</text>
+
+        <!-- Right Panel: Three-Layer Diagnostic Framework -->
+        <rect x="444" y="10" width="426" height="325" rx="10" fill="var(--card)" stroke="var(--border)" stroke-width="1.2" />
+        <text x="657" y="34" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--foreground)">内分泌疾病三层诊断与动态试验法则</text>
+
+        <!-- Step 1: Functional -->
+        <rect x="462" y="50" width="390" height="92" rx="8" fill="var(--error)" fill-opacity="0.09" stroke="var(--error)" stroke-width="1.4" />
+        <text x="472" y="70" font-size="12.5" font-weight="700" fill="var(--error)">① 功能诊断（亢进 / 减退 / 正常）</text>
+        <text x="472" y="89" font-size="11" fill="var(--foreground)">• 间接生化 + 血/尿激素及代谢产物（依节律采血、脉冲复测）</text>
+        <text x="472" y="108" font-size="11" font-weight="700" fill="var(--primary)">• 疑功能减退 → 兴奋试验（查储备：ACTH / 胰岛素低血糖）</text>
+        <text x="472" y="127" font-size="11" font-weight="700" fill="var(--error)">• 疑功能亢进 → 抑制试验（查自主性：小剂量地塞米松 / OGTT）</text>
+
+        <line x1="657" y1="142" x2="657" y2="160" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr1)" />
+
+        <!-- Step 2: Localization -->
+        <rect x="462" y="164" width="390" height="72" rx="8" fill="var(--chart-1)" fill-opacity="0.10" stroke="var(--chart-1)" stroke-width="1.4" />
+        <text x="472" y="184" font-size="12.5" font-weight="700" fill="var(--chart-1)">② 定位诊断 / 解剖诊断（原发腺体 vs 异位肿瘤）</text>
+        <text x="472" y="203" font-size="10.8" fill="var(--foreground)">• 影像（垂体MRI、甲状腺超声、&lt;3mm薄层动态增强）+ 特异PET-CT</text>
+        <text x="472" y="222" font-size="10.8" fill="var(--foreground)">• 静脉插管采血：AVS（原醛单/双侧）、IPSS（库欣病 vs 异位ACTH）</text>
+
+        <line x1="657" y1="236" x2="657" y2="254" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr1)" />
+
+        <!-- Step 3: Etiology -->
+        <rect x="462" y="258" width="390" height="64" rx="8" fill="var(--chart-3)" fill-opacity="0.10" stroke="var(--chart-3)" stroke-width="1.4" />
+        <text x="472" y="278" font-size="12.5" font-weight="700" fill="var(--chart-3)">③ 病因诊断（免疫 / 病理 / 染色体 / 分子基因）</text>
+        <text x="472" y="297" font-size="10.8" fill="var(--foreground)">• 自身抗体（GADA/TRAb/TPOAb）· FNA与包膜血管侵犯</text>
+        <text x="472" y="313" font-size="10.8" fill="var(--foreground)">• 核型（Turner/Klinefelter）· 基因（GCK/CYP21A2/TRβ/MEN1）</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心必背</span> 神经内分泌调节机制、三层诊断体系与防治原则</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">一、激素分泌节律与脉冲、四大反馈调节轴及系统调控网络</h3><span class="badge badge-m">掌握</span></div>
+    <div class="callout warn">
+      <strong>教材范围边界声明（第 10 版第一章《总论》）：</strong>大纲目标 2 要求“记忆神经内分泌系统生理及病理理论基础，特别是各种激素的生理作用与病理变化”，但第 10 版第一章未设逐一罗列各具体激素生理作用与病理变化的专节，而是系统阐述激素分泌节律/脉冲性、四大反馈调节系统、激素间交互及神经-内分泌-免疫/营养调控网络；本节严格忠实原文呈现，不跨章补写。
+    </div>
+    <ul>
+      <li><strong>激素分泌两大时间特征及其功能诊断意义</strong>：
+        <ol>
+          <li><strong>节律性</strong>：受季节、光照、进食和应激影响。女性促性腺激素和性激素呈<span class="k">月周期</span>；褪黑素、生长激素（GH）、皮质醇具<span class="k">昼夜节律</span>——正常成人<span class="k">早晨 8 时血皮质醇最高，午夜 0 时最低</span>；节律消失提示疾病（如<span class="k">库欣综合征皮质醇昼夜节律消失</span>）。</li>
+          <li><strong>脉冲性</strong>：如下丘脑 <span class="k">GnRH 每 1～2 小时</span>脉冲分泌，垂体 LH/FSH 分泌有赖于其脉冲刺激；若 GnRH 持续分泌反而<span class="k">抑制</span> LH/FSH 分泌。</li>
+          <li><strong>临床测定意义</strong>：血液测定须依节律与脉冲定采样时间/频率（早 8 时/午夜 0 时测皮质醇峰谷值；<span class="k">24 小时尿游离皮质醇</span>反映全天总量但<span class="k">无法反映节律变化</span>）；GH 脉冲明显，临床以相对稳定的 <span class="k">IGF-1</span> 衡量 GH 分泌；同时须考虑激素组分不均一性（激素原、变异体、单体/多聚体、降解片段）。</li>
+        </ol>
+      </li>
+      <li><strong>四大内分泌反馈调节系统</strong>（反馈调节是激素最主要的调节方式）：
+        <div class="tbl-wrap">
+          <table class="med-tbl">
+            <thead><tr><th>调节系统</th><th>核心组成与调控方式（第 10 版原文）</th></tr></thead>
+            <tbody>
+              <tr><td><strong>下丘脑-垂体-靶腺轴</strong></td><td>涵盖<span class="k">甲状腺、肾上腺皮质、性腺</span>三轴，存在<span class="k">长负反馈、短反馈、超短反馈</span>及<span class="k">正反馈</span>。<br />• <strong>负反馈</strong>：靶腺激素过高抑制下丘脑-垂体促激素分泌，垂体激素亦负反馈抑制下丘脑；<br />• <strong>正反馈</strong>：主要见于性激素——卵泡期雌激素渐增，接近排卵时高雌激素兴奋下丘脑-垂体，致 <span class="k">FSH/LH 骤然增加</span>促排卵。</td></tr>
+              <tr><td><strong>肾素-血管紧张素-醛固酮轴（RAAS）</strong></td><td>调节血压、血容量及水电解质平衡；<span class="k">心房钠尿肽（ANP）、抗利尿激素（ADH/AVP）</span>亦参与；肾、心、卵巢、睾丸等局部也可合成 AngⅡ 与 ACE 参与组织重构。</td></tr>
+              <tr><td><strong>能量代谢调节系统</strong></td><td>脂肪细胞分泌百余种激素（如<span class="k">瘦素 leptin、脂联素 adiponectin</span>），与营养状态及体重形成负反馈环，控制能量摄取、消耗及糖脂代谢。</td></tr>
+              <tr><td><strong>PTH-降钙素-1,25-(OH)₂D₃ 骨代谢系统</strong></td><td>三大激素（<span class="k">PTH、降钙素 CT、1,25-(OH)₂D₃</span>）与三大器官（<span class="k">骨、肾、肠</span>）维持血钙、磷、镁稳定；骨局部经 <span class="k">OPG / RANK / RANKL</span> 耦联骨吸收与骨形成（GH、TH、性激素、糖皮质激素、胰岛素、IGF-1 亦参与）。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </li>
+      <li><strong>激素间 3 种相互作用方式</strong>：①<span class="k">整合作用</span>（调节不同环节达成同一结局，如低血糖时胰岛素减而胰高血糖素/糖皮质激素增）；②<span class="k">协同作用</span>（多种激素发挥相似作用，如低血糖时肾上腺素、胰高血糖素、糖皮质激素、GH 协同升糖）；③<span class="k">拮抗作用</span>（胰岛素降糖拮抗上述升糖激素）。</li>
+      <li><strong>两大跨系统调节网络</strong>：
+        <ul>
+          <li><strong>神经-内分泌-免疫调节网络</strong>：三大系统共享信息分子及其受体，信号转导相似，相互调节共同维护内环境稳定。</li>
+          <li><strong>神经-内分泌-营养调节网络</strong>：中枢、下丘脑与脂肪/肠道等组成；下丘脑分泌<span class="k">增强食欲的神经肽 Y（NPY）</span>与<span class="k">抑制食欲的阿黑皮素原（POMC）</span>；脂肪细胞分泌<span class="k">瘦素</span>、胃黏膜分泌<span class="k">胃促生长素（ghrelin）</span>作用于下丘脑；<span class="k">GLP-1 受体激动剂</span>作用于此网络治疗糖尿病和肥胖症。</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">二、内分泌与代谢性疾病三层诊断体系（功能 / 定位 / 病因）</h3><span class="badge badge-m">掌握</span></div>
+    <p>内分泌代谢病分为<span class="k">临床型</span>（典型症状体征）与<span class="k">亚临床型</span>（无典型表现、仅实验室轻度异常）。完整诊断涵盖<strong>功能诊断、定位诊断（解剖诊断，对应大纲“病理诊断”）、病因诊断</strong>三层，必要时分型分期。</p>
+    <ul>
+      <li><strong>临床表现线索</strong>：①病史（T1DM 急起“三多一少” vs T2DM 缓起；嗜铬细胞瘤阵发性高血压；垂体前叶减退产后大出血史；<span class="k">Nelson 综合征</span>双侧肾上腺切除史；利尿药/甘草致低钾、糖皮质激素致医源性库欣；<span class="k">线粒体基因突变糖尿病呈母系遗传</span>；甲状腺髓样癌注意家族遗传）；②典型体征（甲亢高代谢/GO、库欣向心性肥胖/满月脸/紫纹、Addison 皮肤色素沉着、肢端肥大症、糖尿病三多一少）。</li>
+      <li><strong>第一层：功能诊断</strong>
+        <ol>
+          <li><strong>激素相关生化检测（间接证据与鉴别）</strong>：原醛→<span class="k">低血钾合并代谢性碱中毒、尿钾不适当增多</span>；肾小管酸中毒→<span class="k">低血钾合并代谢性酸中毒</span>；库欣→高血糖、高血钠、低血钾；肾上腺皮质减退→低血钠、高血钾、空腹低血糖；原发甲旁亢→高钙、低磷、尿钙增；甲旁减→低钙血症。</li>
+          <li><strong>血/尿激素及代谢产物测定（直接证据）</strong>：如血 TSH/TH、24h UFC、血 <span class="k">MN/NMN</span>（儿茶酚胺代谢物）、尿 17-OHCS/17-KS。检测历经 RIA（一代）→ IRMA（二代）→ ICMA/CLIA（三代）。<strong>结果分析 6 大注意事项</strong>：①年龄与性别参考范围差异；②节律限定时间（皮质醇查<span class="k">8 时、16 时、0 时</span>；女性性激素一般于<span class="k">月经来潮第 2～3 天</span>采血）；③脉冲性须<span class="k">至少重复测定 1 次</span>；④不同检测方法灵敏度/特异度误差；⑤结合调节轴上下游综合判断；⑥受睡眠、饮食、药物、应激（升 ACTH/皮质醇/儿茶酚胺）、抗体干扰——<span class="k">过量生物素</span>可干扰抗体结合，影响 TH、TSH、FSH、LH 测定。</li>
+          <li><strong>激素分泌动态试验（核心考点）</strong>：
+            <ul>
+              <li><strong>兴奋试验</strong>：查内分泌腺<span class="k">激素储备量</span>，用于怀疑<span class="k">内分泌功能减退</span>（如 <span class="k">ACTH 兴奋试验</span>查肾上腺皮质储备、<span class="k">胰岛素低血糖试验</span>查腺垂体 GH 储备）。</li>
+              <li><strong>抑制试验</strong>：查腺体合成释放是否<span class="k">不受反馈调节（自主分泌）</span>，用于怀疑<span class="k">内分泌功能亢进</span>（如<span class="k">小剂量地塞米松抑制试验</span>查皮质醇过度分泌、<span class="k">OGTT</span> 查腺垂体 GH 分泌自主性）。</li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+      <li><strong>第二层：定位诊断（解剖诊断）</strong>
+        <ul>
+          <li><strong>影像学</strong>：垂体病变优选 <span class="k">MRI</span>，甲状腺/甲状旁腺优选<span class="k">超声</span>；微小灶须行 <span class="k">&lt;3mm 薄层动态增强</span> CT/MRI。</li>
+          <li><strong>核素显像与特异 PET-CT</strong>：甲状腺核素（¹²³I/¹³¹I/⁹⁹ᵐTc）评结节功能；甲状旁腺 <span class="k">⁹⁹ᵐTc-MIBI</span>；特异示踪 PET-CT：<span class="k">¹⁸F-DOPA</span>（嗜铬/副神经节瘤）、<span class="k">⁶⁸Ga-Exendin-4</span>（胰岛素瘤）、<span class="k">⁶⁸Ga-DOTATATE</span>（表达 SSTR 神经内分泌肿瘤）、<span class="k">⁶⁸Ga-Pentixafor</span>（原醛症）、<span class="k">¹⁸F-Fluorocholine</span>（甲状旁腺增生/腺瘤）。</li>
+          <li><strong>静脉插管采血</strong>：<span class="k">肾上腺静脉采血（AVS）</span>辨原醛单/双侧；<span class="k">岩下窦采血（IPSS）</span>鉴库欣病与异位 ACTH 综合征。</li>
+        </ul>
+      </li>
+      <li><strong>第三层：病因诊断</strong>：①免疫学自身抗体（<span class="k">GADA</span>→T1DM、<span class="k">TRAb</span>→Graves、<span class="k">TPOAb/TgAb</span>→桥本）；②病理学（甲状腺 <span class="k">FNA</span>；内分泌肿瘤良恶性往往须结合<span class="k">包膜侵犯、血管侵犯</span>等生物学行为；免疫组化）；③染色体（<span class="k">Turner</span> 缺 X、<span class="k">Klinefelter</span> 多 X）；④分子生物学（MODY→<span class="k">GCK</span>、CAH→<span class="k">CYP21A2</span>、甲状腺激素抵抗→<span class="k">TRβ</span>、MEN1→<span class="k">MEN1</span>；全外显子或目标单基因测序）。</li>
+    </ul>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">三、内分泌腺功能亢进与功能减退的防治原则</h3><span class="badge badge-m">掌握</span></div>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>一、内分泌腺功能亢进（7 大治法）</h4>
+        <ol>
+          <li><strong>药物治疗</strong>：①抑制合成/分泌：咪唑/硫脲类（甲亢）、多巴胺受体激动剂（PRL 瘤）、米托坦/美替拉酮（库欣）；②受体拮抗剂：螺内酯（原醛）、环丙孕酮（中枢性性早熟）；③激素间拮抗：<span class="k">生长抑素</span>（GH 瘤、胰岛素瘤、胰高血糖素瘤、胃泌素瘤、VIP 瘤）；④激素类似物：GnRH 类似物（性早熟、PCOS、内异症）。</li>
+          <li><strong>手术切除</strong>：垂体瘤、GD、甲状腺自主高功能腺瘤、甲旁腺瘤、肾上腺皮质腺瘤、嗜铬等；围术期稳生命体征，术后评估腺体功能必要时替代。</li>
+          <li><strong>核素治疗</strong>：¹³¹I（GD）、¹³¹I-MIBG（嗜铬）、<span class="k">PRRT</span>（肽受体放射性核素疗法，核素标记生长抑素类似物靶向 SSTR 肿瘤）。</li>
+          <li><strong>放射治疗</strong>：X/γ/电子/质子/重离子，作手术与药物辅助（如 GH 瘤术后残存）。</li>
+          <li><strong>介入栓塞与消融</strong>：适常规手术无法切除且不耐受药物的肾上腺/甲状腺/甲旁腺/胰岛肿瘤。</li>
+          <li><strong>分子靶向治疗</strong>：TKI、BRAF/RET 抑制剂（晚期甲状腺癌）；mTOR 抑制剂（进展/转移 NET）。</li>
+          <li><strong>免疫治疗</strong>：免疫检查点抑制剂（ICI）用于内分泌腺癌探索。</li>
+        </ol>
+      </div>
+      <div class="mini-box">
+        <h4>二、内分泌腺功能减退（4 大治法）</h4>
+        <p style="font-size:12px;color:var(--muted-foreground)">病因：自身免疫、手术/核素破坏、肿瘤、感染、腺体发育异常、酶/基因/受体或受体后缺陷。</p>
+        <ol>
+          <li><strong>激素替代治疗（5 项注意）</strong>（如胰岛素治 T1DM、L-T₄ 治甲减）：①<span class="k">疗效监测</span>（L-T₄ 治原发甲减测 <span class="k">TSH</span>）；②依药理特点选途径并<span class="k">模拟生理节律给药</span>；③依生理/病理状态调量（<span class="k">应激时糖皮质激素成倍增加</span>）；④注意药物相互作用（<span class="k">卡马西平诱导 CYP450 加快糖皮质激素代谢</span>）；⑤监测不良反应（胰岛素低血糖/增重）。</li>
+          <li><strong>药物刺激/增敏与辅因子补充</strong>：磺酰脲/增敏剂治 T2DM；先天酶缺陷补辅因子维生素（如胱硫醚 β 合成酶缺乏高胱氨酸尿症→低甲硫氨酸饮食 + 大剂量 VitB₆ 及叶酸）。</li>
+          <li><strong>器官/组织/细胞移植</strong>：胰腺/胰岛/人多能干细胞分化胰岛细胞（T1DM）；甲状旁腺碎片移植至前臂肌肉（原发甲旁减）。</li>
+          <li><strong>病因治疗</strong>：基因工程酶替代；避免诱发物（G6PD 缺乏禁蚕豆/阿司匹林/磺胺；PKU 限苯丙氨酸）。</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 内分泌系统范围及激素分类、合成释放、转运代谢与作用机制</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">内分泌系统组成与激素生化生理精要表</h3><span class="badge badge-f">熟悉</span></div>
+    <p><strong>内分泌系统范围</strong>：由传统<span class="k">内分泌腺</span>（垂体、甲状腺、甲状旁腺、胰岛、肾上腺、性腺等）及广泛分布于脑（尤其下丘脑）、脂肪、心血管、呼吸道、消化道、泌尿生殖系统等处的<span class="k">内分泌组织和细胞</span>共同构成。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>知识维度</th><th>第 10 版原文核心要点</th></tr></thead>
+        <tbody>
+          <tr><td><strong>四类化学结构</strong></td><td>①<strong>肽类/蛋白质</strong>：小分子神经肽（GnRH/TRH/生长抑素）与大分子蛋白（胰岛素/PTH/GH/PRL），前体经裂解加工活化（如胰岛素原在高尔基体水解为<span class="k">胰岛素 + C 肽</span>）；<br />②<strong>胺类与氨基酸衍生物</strong>：酪氨酸→E/NE/DA，色氨酸→5-HT；活化的碘+甲状腺球蛋白酪氨酸残基在 <span class="k">TPO</span> 作用下成 T₄/T₃；<br />③<strong>类固醇（脂溶性）</strong>：以<span class="k">胆固醇</span>为前体（皮质醇、醛固酮、睾酮/DHT、雌二醇、孕酮）；维生素 D₃（皮肤 7-脱氢胆固醇→肝 25-羟化→肾 1α-羟化→活性<span class="k">骨化三醇 1,25-(OH)₂D₃</span>）；<br />④<strong>脂肪酸衍生物</strong>：花生四烯酸→前列腺素、血栓素、白三烯。</td></tr>
+          <tr><td><strong>合成释放 2 形式</strong></td><td>①<span class="k">囊泡储存、胞吐释放</span>（肽类激素）；②<span class="k">无囊泡直接释放</span>（类固醇、脂肪酸衍生物）。多数激素储备少，唯<span class="k">甲状腺激素储于滤泡可满足 2 个月生理需要</span>。</td></tr>
+          <tr><td><strong>6 种分泌方式</strong></td><td>①<span class="k">内分泌</span>（血运至靶组织）；②<span class="k">旁分泌</span>（邻近细胞，如睾丸间质细胞睾酮作用生精细胞）；③<span class="k">自分泌</span>（作用于自身细胞，如乳腺 IGF-1）；④<span class="k">胞内分泌</span>（胞内直接作用于自身，如乳腺雌激素）；⑤<span class="k">神经内分泌</span>（视上核/室旁核 AVP/ADH 借轴浆流动至垂体后叶入血）；⑥<span class="k">腔分泌</span>（作用于管道内膜，如胃泌素）。</td></tr>
+          <tr><td><strong>转运、活化与半衰期</strong></td><td><strong>游离激素</strong>发挥作用，<strong>结合激素</strong>（白蛋白及特异载体 TBG/SHBG/CBG/IGFBP/GHBP）起储备转运作用（肽类较少结合，胺/氨基酸衍生物/类固醇主要结合故半衰期长）。<br />• <strong>活化</strong>：GH/胰岛素入血即具活性；睾酮须经 <span class="k">5α-还原酶</span>→双氢睾酮，VitD₃ 须肝肾羟化。<br />• <strong>半衰期</strong>：肽类 3～7min（<span class="k">PTH 仅 2min</span>，术中测定判腺瘤是否切净）；<span class="k">T₄ 为 7 天</span>（甲减替代需 <span class="k">&gt;1 个月</span>达稳态）；25-(OH)D₃ 为 2～3 周 vs 1,25-(OH)₂D₃ 为 6～8h。肝肾功能减退影响灭活（如肝重损雌激素降解慢致男性女性化）。</td></tr>
+          <tr><td><strong>两类受体作用原理</strong></td><td>①<strong>胞内（核/胞质）受体激素</strong>：类固醇、1,25-(OH)₂D₃、维 A 酸、甲状腺激素→穿膜形成活性复合物→结合靶基因 DNA 调控转录（具激动剂/拮抗剂，受体可再循环）；<br />②<strong>膜受体激素</strong>：亲水性肽类/神经递质/生长因子/PG→结合膜受体经<span class="k">第二信使</span>与级联扩增（具高亲和-低容量、低亲和-高容量两位点；4 类膜受体：<span class="k">GPCR、RK、RLK、RLGIC</span>；4 大胞内通路：cAMP-PKA/PI-Ca²⁺/DAG-PKC/cGMP/NO、RTK-MAPK、细胞因子-STAT、第二信使-PK-DNA；结合后经<span class="k">小窝内化</span>形成内体降解或再循环）。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MODULE 2 ==================== -->
+<section class="module-section" id="mod-2" data-mod-title="Ⅱ、第五章（第一节）甲状腺功能亢进症（Graves病）">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅱ、甲状腺功能亢进症（Graves 病）</h1>
+      <span class="mod-source">第10版 第五章《甲状腺疾病》第一节（课本 P686–692 / PDF P717–723）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>（目标栏“记忆”）Graves 病的临床表现（含特殊临床表现）、诊断要点及鉴别诊断；抗甲状腺药物（ATD）的适应证与副作用（含实用支撑：机制、分期用法疗程及一般/β阻滞辅助）；甲状腺功能亢进症危象的诱因、临床表现及处理原则。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>大纲本讲【对应课程目标】仅设“记忆”与“了解”两档，未设“理解/熟悉”项。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">¹³¹I 同位素治疗与手术治疗（适应证/禁忌/剂量/术前准备/并发症）、Graves 病病因分类与自身免疫发病机制、病理改变与病理生理改变（均标“了解”）；目标栏未列之 GO 专项治疗与妊娠期甲亢治疗专述；同章第 2～5 节（甲减、甲状腺炎、甲状腺肿、结节与甲状腺癌）。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 2 -->
+  <div class="svg-card">
+    <div class="svg-hd">
+      <span>图解 2 · Graves 病两步诊断鉴别流程（含分离现象与 GTT）及甲状腺危象六步抢救时序</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 370" width="100%" role="img" aria-label="Graves病两步诊断鉴别流程与甲状腺危象六步抢救方案图解">
+        <defs>
+          <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr2r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+        <!-- Top half: 2-Step Diagnosis & Differential -->
+        <rect x="10" y="10" width="860" height="186" rx="10" fill="var(--card)" stroke="var(--border)" stroke-width="1.2" />
+        <text x="440" y="32" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--foreground)">一、Graves 病两步诊断与甲状腺毒症病因鉴别路径</text>
+
+        <rect x="24" y="48" width="196" height="62" rx="8" fill="var(--primary)" fill-opacity="0.12" stroke="var(--primary)" stroke-width="1.4" />
+        <text x="122" y="68" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--foreground)">一线筛查：敏感 TSH ↓</text>
+        <text x="122" y="86" text-anchor="middle" font-size="11" fill="var(--foreground)">FT4/FT3 ↑ → 临床甲亢</text>
+        <text x="122" y="102" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">T3·T4 正常 → 亚临床甲亢</text>
+
+        <line x1="220" y1="79" x2="250" y2="79" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr2)" />
+
+        <rect x="254" y="48" width="206" height="62" rx="8" fill="var(--chart-1)" fill-opacity="0.12" stroke="var(--chart-1)" stroke-width="1.4" />
+        <text x="357" y="68" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--foreground)">鉴真性甲亢 vs 破坏性</text>
+        <text x="357" y="86" text-anchor="middle" font-size="11" fill="var(--foreground)">RAIU ↑ + 高峰前移 / 超声血流↑</text>
+        <text x="357" y="102" text-anchor="middle" font-size="11" fill="var(--error)">RAIU ↓（分离现象）→ 甲状腺炎</text>
+
+        <line x1="460" y1="79" x2="490" y2="79" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr2)" />
+
+        <rect x="494" y="42" width="362" height="74" rx="8" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" stroke-width="1.5" />
+        <text x="675" y="62" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--error)">确诊 Graves 病（必备 ①+② 且具 ③/④/⑤ 之一）</text>
+        <text x="504" y="82" font-size="10.8" fill="var(--foreground)">必备：① 甲亢确立 ＋ ② 甲状腺弥漫性肿大（少数可无）</text>
+        <text x="504" y="100" font-size="10.5" fill="var(--foreground)">三选一：③ GO眼病 ｜ ④ 胫前黏液水肿/指端粗厚 ｜ ⑤ TRAb↑</text>
+
+        <!-- Bottom Differential strip -->
+        <rect x="24" y="124" width="268" height="58" rx="7" fill="var(--background)" stroke="var(--card-border)" />
+        <text x="36" y="143" font-size="11.5" font-weight="700" fill="var(--chart-2)">结节/肿瘤鉴别（核素扫描）</text>
+        <text x="36" y="160" font-size="11" fill="var(--foreground)">• 毒性结节甲肿：核素灶状分布不均</text>
+        <text x="36" y="175" font-size="11" fill="var(--foreground)">• 高功能腺瘤：热结节＋外围组织受抑</text>
+
+        <rect x="306" y="124" width="268" height="58" rx="7" fill="var(--background)" stroke="var(--card-border)" />
+        <text x="318" y="143" font-size="11.5" font-weight="700" fill="var(--chart-3)">妊娠期一过性甲状腺毒症（GTT）</text>
+        <text x="318" y="160" font-size="11" fill="var(--foreground)">• 孕早期高HCG刺激，伴妊娠剧吐/多胎</text>
+        <text x="318" y="175" font-size="11" fill="var(--error)">• 孕中晚期自行缓解，无须ATD治疗</text>
+
+        <rect x="588" y="124" width="268" height="58" rx="7" fill="var(--background)" stroke="var(--card-border)" />
+        <text x="600" y="143" font-size="11.5" font-weight="700" fill="var(--warning)">ATD 严重不良反应红线</text>
+        <text x="600" y="160" font-size="11" fill="var(--foreground)">• 粒缺(&lt;0.5×10⁹/L)：急救且禁换另种ATD</text>
+        <text x="600" y="175" font-size="11" fill="var(--foreground)">• 肝损：PTU肝细胞型 ｜ MMI胆汁淤积型</text>
+
+        <!-- Bottom half: Thyroid Storm 6-Step Sequence -->
+        <rect x="10" y="208" width="860" height="152" rx="10" fill="var(--card)" stroke="var(--error)" stroke-width="1.4" />
+        <text x="440" y="230" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--error)">二、甲状腺危象（高热 · HR&gt;140 · 谵妄/休克/昏迷）六步急救顺序</text>
+
+        <rect x="24" y="246" width="130" height="98" rx="7" fill="var(--error)" fill-opacity="0.12" stroke="var(--error)" stroke-width="1.3" />
+        <text x="89" y="264" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--error)">① 最先抑合成</text>
+        <text x="89" y="283" text-anchor="middle" font-size="11" fill="var(--foreground)">首选大剂量PTU</text>
+        <text x="89" y="299" text-anchor="middle" font-size="11" fill="var(--foreground)">600mg/d(最大1200)</text>
+        <text x="89" y="316" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">兼抑外周T4→T3</text>
+        <text x="89" y="332" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">过敏改MMI 60mg/d</text>
+
+        <line x1="154" y1="295" x2="168" y2="295" stroke="var(--error)" stroke-width="1.6" marker-end="url(#arr2r)" />
+
+        <rect x="172" y="246" width="130" height="98" rx="7" fill="var(--warning)" fill-opacity="0.14" stroke="var(--warning)" stroke-width="1.3" />
+        <text x="237" y="264" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--warning)">② 1~2h后抑释放</text>
+        <text x="237" y="283" text-anchor="middle" font-size="11" fill="var(--foreground)">卢戈碘液</text>
+        <text x="237" y="299" text-anchor="middle" font-size="11" fill="var(--foreground)">4~8滴 q6~8h</text>
+        <text x="237" y="316" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">连用3~7天停药</text>
+        <text x="237" y="332" text-anchor="middle" font-size="10.5" fill="var(--error)">严禁先于PTU给碘</text>
+
+        <line x1="302" y1="295" x2="316" y2="295" stroke="var(--error)" stroke-width="1.6" marker-end="url(#arr2r)" />
+
+        <rect x="320" y="246" width="144" height="98" rx="7" fill="var(--primary)" fill-opacity="0.12" stroke="var(--primary)" stroke-width="1.3" />
+        <text x="392" y="264" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--primary)">③ 抑T4→T3转化</text>
+        <text x="392" y="283" text-anchor="middle" font-size="11" fill="var(--foreground)">普萘洛尔 60~80mg</text>
+        <text x="392" y="299" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">q4~6h 口服(哮喘禁)</text>
+        <text x="392" y="316" text-anchor="middle" font-size="11" fill="var(--foreground)">氢考 50~100mg 或</text>
+        <text x="392" y="332" text-anchor="middle" font-size="10.5" fill="var(--foreground)">地米2mg q6~8h静滴</text>
+
+        <line x1="464" y1="295" x2="478" y2="295" stroke="var(--primary)" stroke-width="1.6" marker-end="url(#arr2)" />
+
+        <rect x="482" y="246" width="116" height="98" rx="7" fill="var(--chart-3)" fill-opacity="0.12" stroke="var(--chart-3)" stroke-width="1.3" />
+        <text x="540" y="264" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--chart-3)">④ 清除血TH</text>
+        <text x="540" y="286" text-anchor="middle" font-size="11" fill="var(--foreground)">常规效果不佳时</text>
+        <text x="540" y="305" text-anchor="middle" font-size="11" fill="var(--foreground)">血浆置换 或</text>
+        <text x="540" y="323" text-anchor="middle" font-size="11" fill="var(--foreground)">血液透析</text>
+
+        <line x1="598" y1="295" x2="612" y2="295" stroke="var(--primary)" stroke-width="1.6" marker-end="url(#arr2)" />
+
+        <rect x="616" y="246" width="114" height="98" rx="7" fill="var(--chart-2)" fill-opacity="0.12" stroke="var(--chart-2)" stroke-width="1.3" />
+        <text x="673" y="264" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--chart-2)">⑤ 支持治疗</text>
+        <text x="673" y="286" text-anchor="middle" font-size="11" fill="var(--foreground)">心肾脑监护</text>
+        <text x="673" y="305" text-anchor="middle" font-size="11" fill="var(--foreground)">纠水电酸碱失衡</text>
+        <text x="673" y="323" text-anchor="middle" font-size="11" fill="var(--foreground)">补糖/热量/维B</text>
+
+        <line x1="730" y1="295" x2="744" y2="295" stroke="var(--primary)" stroke-width="1.6" marker-end="url(#arr2)" />
+
+        <rect x="748" y="246" width="108" height="98" rx="7" fill="var(--background)" stroke="var(--border)" stroke-width="1.3" />
+        <text x="802" y="264" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--foreground)">⑥ 对症降温</text>
+        <text x="802" y="286" text-anchor="middle" font-size="11" fill="var(--foreground)">吸氧·抗感染</text>
+        <text x="802" y="305" text-anchor="middle" font-size="11" fill="var(--foreground)">物理降温</text>
+        <text x="802" y="326" text-anchor="middle" font-size="10.8" font-weight="700" fill="var(--error)">避用阿司匹林!</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier (Module 2 only has Mastery goals) -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心必背</span> Graves 病临床表现、诊断鉴别、ATD 用药与甲状腺危象抢救</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">一、Graves 病临床表现（甲状腺毒症 + 特征体征 + 特殊临床类型）</h3><span class="badge badge-m">掌握</span></div>
+    <p>Graves 病（GD）女性发病为男性 <span class="k">4 倍</span>，平均发病年龄 47 岁。临床由<strong>甲状腺毒症表现</strong>与 <strong>GD 特征性表现</strong>两部分组成：</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>系统 / 类型</th><th>核心症状与体征（第 10 版原文）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>高代谢症群</strong></td><td>多汗、不耐热、食欲增加、体重下降、乏力、糖耐量异常或原有糖尿病加重。</td></tr>
+          <tr><td><strong>精神神经系统</strong></td><td>烦躁、易激动、失眠、好动、注意力不集中，重者妄想；伸舌/双手向前平举<span class="k">细颤</span>；腱反射活跃、深反射恢复期缩短。</td></tr>
+          <tr><td><strong>心血管与甲亢性心脏病</strong></td><td>持续性心悸（休息不缓解）、心率快、S₁ 亢进、收缩期杂音；心律失常以<span class="k">窦速、房早最常见</span>，其次阵发/持续<span class="k">房颤</span>，偶见 AVB；收缩压升、舒张压降→<span class="k">脉压增大</span>、水冲脉/毛细血管搏动征；<span class="k">高动力高排出量性心衰</span>（甲亢控制可好转）。<br /><strong>甲状腺毒症性心脏病</strong>（长期未控甲亢所致，除外冠心/高心/风心等，具以下 4 项之一）：①<span class="k">严重心律失常</span>（房颤/房扑/频发室早/二三度 AVB）；②<span class="k">心力衰竭</span>；③<span class="k">心脏扩大</span>；④<span class="k">心绞痛或心肌梗死</span>。</td></tr>
+          <tr><td><strong>消化系统</strong></td><td>易饥、多食、消瘦，肠蠕动加快、大便次数增加；可现肝功异常（转氨酶/ALP 升、低白蛋白、偶黄疸）。</td></tr>
+          <tr><td><strong>肌肉骨骼（含 TPP）</strong></td><td>①<strong>甲状腺毒性肌病</strong>：急性数周现吞咽困难/呼吸肌麻痹；慢性累及肩、髋近端肌群进行性肌无力伴萎缩；<br />②<strong>甲状腺毒性周期性瘫痪（TPP）</strong>：四肢瘫痪<span class="k">下肢为主</span>、常伴<span class="k">低钾血症</span>（钾向胞内转移）、自限或补钾好转，多见亚洲/拉美<span class="k">年轻男性</span>；<br />③胸腺增大（甲亢控制后缩小），可伴重症肌无力；骨转换增加致骨量减少/骨质疏松（血 25-(OH)D₃ 降）。</td></tr>
+          <tr><td><strong>造血 / 生殖 / 皮肤</strong></td><td>造血：<span class="k">WBC 与中性粒降低、淋巴比例增</span>、RBC 增、PLT/凝血正常，偶伴 ITP/恶性贫血。生殖：女月经稀少/闭经/不孕；男阳痿、偶乳腺发育。皮肤：温暖潮湿、色素脱失/白癜风/脱毛。</td></tr>
+          <tr><td><strong>单纯性眼征</strong></td><td>交感兴奋所致：轻度突眼、上睑挛缩、眼裂增宽、凝视、瞬目减少、<span class="k">眼睑迟落征</span>（下视上睑不随下移）、眼球滞后、<span class="k">Mobius 征</span>（集合不能内聚或不充分）。</td></tr>
+          <tr><td><strong>淡漠型甲亢（特殊型）</strong></td><td>多见<span class="k">老年患者</span>，起病隐袭，高代谢症状不明显，以<span class="k">充血性心衰伴心律失常、不明原因消瘦</span>突出，易误诊肿瘤/冠心病。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>GD 三大特征性表现</strong>：①<span class="k">弥漫性甲状腺肿</span>（质软或韧、无压痛，上下极可触细震颤、闻及<span class="k">血管杂音</span>）；②<span class="k">Graves 眼病（GO/TAO/TED，第 10 版替代“浸润性突眼”）</span>：见于 25%～50% GD（10%～20% 单眼，5% 甲功正常型 EGO；女多男重），有异物感、胀痛、畏光流泪、复视斜视、视力下降、睑退缩/红肿、结膜水肿、眼球受限固定，重者暴露性角膜病变或<span class="k">甲状腺相关眼病视神经病变（DON）</span>致失明；③<span class="k">Graves 皮肤病变</span>：<span class="k">胫前黏液性水肿</span>（胫前下 1/3 对称性，红褐色斑块→橘皮/树皮样→象皮腿）及指端粗厚（杵状）。</p>
+    <p><strong>GO 临床活动度评分（表 7-5-2，EUGOGO 2021）</strong>：初诊 7 项（各 1 分）：①自发性球后疼痛、②眼球运动时疼痛、③眼睑充血、④结膜充血、⑤眼睑肿胀、⑥球结膜水肿、⑦泪阜肿胀；随诊加 3 项（共 10 分）：⑧突眼度增加 ≥2mm、⑨任一方向眼球运动减少 ≥8°、⑩视力下降 ≥1 行。判断：<span class="k">初诊 7 分法 CAS ≥ 3 分</span>或<span class="k">随诊 10 分法 CAS ≥ 4 分</span>为<strong>活动期</strong>，否则非活动期。</p>
+    <div class="grid-2">
+      <div class="mini-box">
+        <h4>表 7-5-3 GO 严重度（ATA 0–6 级）</h4>
+        <ul>
+          <li><strong>0 级</strong>：无症状或体征；<strong>1 级</strong>：仅体征无症状（上睑挛缩/凝视，突眼 ≤18mm）；</li>
+          <li><strong>2 级</strong>：软组织受累；<strong>3 级</strong>：眼球突出；<strong>4 级</strong>：眼外肌受累；</li>
+          <li><strong>5 级</strong>：角膜受累；<strong>6 级</strong>：视力丧失。</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h4>表 7-5-4 GO 严重度（EUGOGO 2021）</h4>
+        <ul>
+          <li><strong>轻度</strong>（≥1 项）：睑退缩 &lt;2mm、轻软组织受累、突眼超上限 ≤3mm、无/一过性复视、润滑眼药可缓解角膜暴露；</li>
+          <li><strong>中重度</strong>（≥2 项）：睑退缩 <span class="k">≥2mm</span>、中重度软组织受累、突眼超上限 <span class="k">≥3mm</span>、间歇/持续复视；</li>
+          <li><strong>极重度（威胁视力，立即干预）</strong>：<span class="k">DON</span> 或严重暴露性角膜病变。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">二、检查要点、两步诊断标准与四大类鉴别诊断</h3><span class="badge badge-m">掌握</span></div>
+    <div class="callout info">
+      <strong>第 10 版版次更新说明：</strong>大纲内容栏提及“基础代谢率（BMR）”，但第 10 版第五章第一节已彻底删除 BMR 检查，现以敏感 TSH 为一线筛查指标。
+    </div>
+    <ul>
+      <li><strong>关键检查</strong>：①<span class="k">血清 TSH</span>（反映甲功最敏感、<span class="k">筛查甲亢第一线指标</span>，可诊亚临床甲亢）；②<span class="k">FT₄/FT₃</span>（诊临床甲亢主要指标，FT₃ 升高可早于 FT₄；仅 FT₃ 升为 T₃ 型，见于早期/治疗中/复发；总激素 TT₄/TT₃ 受 TBG 影响——妊娠/雌激素/急性病毒性肝炎升 TBG，雄激素/糖皮质激素降 TBG）；③<span class="k">TRAb</span>（未治 GD 阳性率 <span class="k">80%～100%</span>，用于诊 GD、鉴病因、判活动、指导停药与预测复发）；④<span class="k">TRH 兴奋试验</span>（已被敏感 TSH 取代，甲状腺性甲亢无反应）；⑤<span class="k">¹³¹I 摄取率（RAIU）</span>（正常 3h 5%～25%、24h 20%～45%、24h 达峰；现主要用于鉴别——真甲亢增高/高峰前移 vs 破坏性甲状腺毒症降低即<span class="k">分离现象</span>；妊娠/哺乳期禁忌）；⑥核素扫描（热结节诊高功能腺瘤）、超声（血流显著增多、动脉峰值流速增快）、眼眶 CT/MRI（评 GO 眼外肌及排其他突眼）。</li>
+      <li><strong>两步诊断标准</strong>：
+        <ol>
+          <li><strong>确定甲状腺毒症与甲亢</strong>：FT₄ 或 FT₃ 升高 + 症状 → 甲状腺毒症；<span class="k">TSH 降低 + FT₄ 或 FT₃ 升高</span> → <strong>临床甲亢</strong>；<span class="k">TSH 降低 + T₃/T₄ 正常</span> → <strong>亚临床甲亢</strong>（RAIU 升高/核素摄取增强提示真性甲亢）。</li>
+          <li><strong>确诊 Graves 病</strong>：必备 <span class="k">①甲亢确立 ＋ ②甲状腺弥漫性肿大</span>（少数可无），同时具备 <span class="k">③GO、④胫前黏液性水肿或指端粗厚、⑤TRAb 升高</span> 三项之一。</li>
+        </ol>
+      </li>
+      <li><strong>四类鉴别诊断</strong>：
+        <div class="tbl-wrap">
+          <table class="med-tbl">
+            <thead><tr><th>鉴别类别</th><th>鉴别对象与核心鉴别点（第 10 版原文）</th></tr></thead>
+            <tbody>
+              <tr><td><strong>与破坏性甲状腺毒症鉴别</strong></td><td>亚急性甲状腺炎、无痛性甲状腺炎：虽有高代谢及血 TH 升高，但 <span class="k">RAIU 减低（分离现象）</span>，超声血流不增。</td></tr>
+              <tr><td><strong>与其他甲亢病因鉴别</strong></td><td>• <strong>毒性结节性甲状腺肿</strong>：超声见结节，核素扫描增强与减弱区呈<span class="k">灶状不均分布</span>；<br />• <strong>甲状腺自主高功能腺瘤</strong>：核素见<span class="k">“热”结节</span>，结节外正常组织摄取受抑制；<br />• <strong>桥本甲亢</strong>：需穿刺病理或随访转变；<strong>HCG 相关性甲亢</strong>：血 HCG 显著升高；<strong>碘甲亢</strong>：过量碘摄入史且 <span class="k">RAIU 降低</span>。</td></tr>
+              <tr><td><strong>与妊娠期一过性甲状腺毒症（GTT）鉴别</strong></td><td>孕早期高浓度 HCG 刺激 TSHR 所致，病情轻、一过性，常伴<span class="k">妊娠剧吐、多胎</span>，孕中晚期随 HCG 下降自缓，<span class="k">无须抗甲状腺药物治疗</span>。</td></tr>
+              <tr><td><strong>与症状/体征相似疾病鉴别</strong></td><td>症状相似：围绝经期综合征、糖尿病、结核/慢性感染/恶性肿瘤、原发性肌病、常规治疗欠佳之心衰/顽固性房颤（均查甲功）。<br />体征相似：<span class="k">单纯性甲状腺肿</span>（无甲亢症状、TSH/T₄/T₃ 正常、RAIU 可升但<span class="k">高峰不前移</span>）；突眼需 CT/MRI 排除颅内肿瘤、海绵窦动静脉瘘、眶周炎、眼眶肿瘤。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">三、抗甲状腺药物（ATD）的适应证、副作用及规范用法</h3><span class="badge badge-m">掌握</span></div>
+    <ul>
+      <li><strong>药物分类、机制与首选原则</strong>：硫代酰胺类包括咪唑类（<span class="k">甲巯咪唑 MMI</span>、卡比马唑）与硫脲类（<span class="k">丙硫氧嘧啶 PTU</span>、甲硫氧嘧啶）。作用机制为<span class="k">抑制甲状腺过氧化物酶（TPO）活性</span>，阻断碘有机化及碘化酪氨酸偶联（并具一定免疫抑制降 TRAb）。治愈率 ~50%，复发率 40%～60%。<strong>一般首选 MMI</strong>；<strong>优先用 PTU 的 3 种情况</strong>：①<span class="k">妊娠早期</span>；②<span class="k">甲状腺危象</span>；③对 MMI 反应差又不愿行核素/手术者。</li>
+      <li><strong>适应证</strong>：所有甲亢初始治疗、术前、核素前后；<span class="k">缓解可能性较高者</span>（轻度甲亢、甲状腺较小、TRAb 阴性或轻度升高）；<span class="k">优先选择者</span>（老年/体弱不能耐受手术、预期生存期短、术后复发或颈部手术史不宜核素、需短期迅速控甲功、中重度活动期 GO）。</li>
+      <li><strong>三期用法、疗程与停药/复发标准</strong>：
+        <ul>
+          <li><strong>初治期</strong>：MMI <span class="k">10～30mg/d</span>（t₁/₂ 6h，qd 或 tid）；PTU <span class="k">100～300mg/d</span>（t₁/₂ 1.5h，tid）；每 4 周查甲功，T₃/T₄ 接近或正常时减量。</li>
+          <li><strong>减量期</strong>：每 2～4 周减 1 次（MMI 每次减 5～10mg，PTU 每次减 50～100mg），每 4 周查甲功，待 TSH 正常后减至最小维持量。</li>
+          <li><strong>维持期与疗程</strong>：MMI <span class="k">5～10mg/d</span>，PTU <span class="k">50～100mg/d</span> 或更少，3～6 个月查甲功（治疗中现甲减则减 ATD 或酌加 L-T₄）。总疗程 <span class="k">18～24 个月</span>；<strong>停药 3 条件</strong>：<span class="k">足疗程 + TRAb 正常 + 最小剂量维持 TSH 正常</span>。缓解 = 停药 1 年 TSH/TH 正常；复发危险因素：男性、吸烟、TRAb 高、甲状腺显著肿大、血流丰富。</li>
+        </ul>
+      </li>
+      <li><strong>ATD 四大副作用与临床处理（核心必背）</strong>：
+        <div class="tbl-wrap">
+          <table class="med-tbl">
+            <thead><tr><th>副作用</th><th>发生率与高发期</th><th>核心特征与处理原则（第 10 版原文）</th></tr></thead>
+            <tbody>
+              <tr><td><strong>皮疹</strong></td><td>约 5%</td><td>轻度用抗组胺药；重度须停药，改用另一种 ATD 或选择其他疗法。</td></tr>
+              <tr><td><strong>粒细胞减少与粒细胞缺乏症</strong></td><td>减少 ~5%<br />粒缺 ~0.37%<br />多见用药后 <span class="k">2～3 个月内</span></td><td>• 外周血 <span class="k">WBC &lt; 3×10⁹/L 或中性粒 &lt; 1.5×10⁹/L</span> → 考虑停药＋升白细胞药；<br />• <span class="k">中性粒 &lt; 0.5×10⁹/L</span> → <strong>粒细胞缺乏症</strong>，紧急救治；<span class="k">因交叉反应绝不能换用另一种 ATD</span>；<br />• 治疗前后定期查血常规，密切观察发热、咽痛。</td></tr>
+              <tr><td><strong>肝损伤</strong></td><td>重度 0.1%～0.2%</td><td>• <strong>PTU</strong>：以<span class="k">肝细胞损伤为主，与剂量无关</span>，重者致急性肝衰竭；<br />• <strong>MMI</strong>：以<span class="k">胆汁淤积为主，与剂量有关</span>；用药前后须监测肝功。</td></tr>
+              <tr><td><strong>血管炎</strong></td><td>少见</td><td><span class="k">ANCA 相关血管炎</span>，主要见于长期用 <span class="k">PTU</span> 的女性（发热、关节/肌肉痛，重者咯血、呼吸困难、血尿）。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </li>
+      <li><strong>一般辅助治疗与 β 受体拮抗剂</strong>：适当休息、高热量蛋白及 B 族维生素、限碘（复方碘化钠溶液仅用于术前准备与甲状腺危象）；<span class="k">β 受体拮抗剂</span>解除儿茶酚胺效应（大剂量普萘洛尔兼阻外周 T₄→T₃），<strong>支气管哮喘或喘息型支气管炎禁用非选择性 β 阻滞剂</strong>。</li>
+    </ul>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">四、甲状腺危象（甲亢危象）的诱因、表现与六步抢救原则</h3><span class="badge badge-m">掌握</span></div>
+    <ul>
+      <li><strong>诱因</strong>：较重甲亢未治或治疗不充分者，受<span class="k">感染、创伤、精神刺激</span>诱发，亦可发生于 ¹³¹I 治疗、甲状腺手术或分娩后。</li>
+      <li><strong>临床表现</strong>：甲状腺毒症急性加重——<span class="k">高热或超高热</span>、大汗、心悸（心率常 <span class="k">&gt;140 次/分</span>）、烦躁焦虑、谵妄、恶心呕吐腹泻，重者心力衰竭、休克及昏迷。主要靠临床综合判断，<strong>临床有危象前兆即按甲亢危象处理</strong>。</li>
+      <li><strong>六步抢救处理原则（严格按先后顺序与原文剂量）</strong>：
+        <ol>
+          <li><strong>抑制甲状腺激素合成（最先进行）</strong>：首选大剂量 <span class="k">PTU 600mg/d</span> 分次口服或胃管注入（最大 <span class="k">1 200mg/d</span>，兼抑外周 T₄→T₃）；无 PTU 或过敏用 MMI 60mg/d（最大 120mg/d）。</li>
+          <li><strong>抑制甲状腺激素释放</strong>：服 PTU 后 <span class="k">1～2 小时</span>加用无机碘化物（<span class="k">卢戈碘液 4～8 滴，每 6～8 小时 1 次</span>），视情减量，一般用 3～7 天停药（大剂量碘亦能抑制合成）。</li>
+          <li><strong>抑制外周 T₄ 向 T₃ 转化</strong>：大剂量 PTU、碘剂、<span class="k">普萘洛尔（60～80mg q4～6h 口服）</span>与<span class="k">糖皮质激素（氢化可的松 50～100mg 或地塞米松 2mg q6～8h 静滴）</span>均有此作用，无禁忌可联用。</li>
+          <li><strong>降低血甲状腺激素浓度</strong>：常规治疗效果不满意时选用<span class="k">血浆置换或血液透析</span>。</li>
+          <li><strong>支持治疗</strong>：监护心、肾、脑功能，纠正水电解质酸碱平衡紊乱，补充足够葡萄糖、热量和多种维生素。</li>
+          <li><strong>对症治疗</strong>：吸氧、防治感染；高热予物理降温，<span class="k">避免使用乙酰水杨酸类药物</span>（阿司匹林）。</li>
+        </ol>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== MODULE 3 ==================== -->
+<section class="module-section" id="mod-3" data-mod-title="Ⅲ、第八章 糖尿病（含糖尿病酮症酸中毒）">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅲ、糖尿病与糖尿病酮症酸中毒（DKA）</h1>
+      <span class="mod-source">第10版 第八章《糖尿病》第一、二节（课本 P724–745 / PDF P755–776）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>糖尿病的诊断标准（含 WHO 糖代谢分类、OGTT、HbA1c 及 GDM）；糖尿病酮症酸中毒（DKA）的诊断依据（含最小临床线索与酸中毒分级）和治疗原则。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>糖尿病的分型（2019 WHO 6 类）、病因和发病机制；临床表现和常见并发症（含 CKD-GA 分期与 DR 两型六期）；口服降糖药物（7 大类）的种类、适应证与禁忌证，以及胰岛素的种类、适应证、治疗原则和方法（附注注射剂 GLP-1RA 精要）。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">糖尿病基本概念与流行病学数据、糖尿病综合治疗原则专节（五驾马车/健康教育/医学营养 MNT/运动/TIR监测/代谢手术/移植/慢性并发症防治/妊娠及围术期管理/预防）、高渗高血糖综合征（HHS，第八章第三节 P746–747 / PDF P777–778）诊断与治疗（以上在目标栏均标“了解”，仅 DKA 鉴别诊断保留 HHS 病名）。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 3 -->
+  <div class="svg-card">
+    <div class="svg-hd">
+      <span>图解 3 · 糖尿病 4 项诊断阈值与 WHO 血糖分层 ＋ DKA 急救四维关键红线</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 375" width="100%" role="img" aria-label="糖尿病诊断阈值与WHO糖代谢分类及DKA四维急救阈值图解">
+        <defs>
+          <marker id="arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr3r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+        <!-- Top: DM Diagnosis & WHO States -->
+        <rect x="10" y="10" width="860" height="162" rx="10" fill="var(--card)" stroke="var(--border)" stroke-width="1.2" />
+        <text x="440" y="32" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--foreground)">一、糖尿病诊断标准（静脉血浆葡萄糖 / HbA1c）与 WHO 糖代谢状态分层</text>
+
+        <!-- 4 Criteria boxes -->
+        <rect x="24" y="46" width="194" height="58" rx="7" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" stroke-width="1.4" />
+        <text x="121" y="66" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">随机血糖 ≥ 11.1 mmol/L</text>
+        <text x="121" y="84" text-anchor="middle" font-size="10.8" fill="var(--foreground)">伴典型“三多一少”症状</text>
+        <text x="121" y="98" text-anchor="middle" font-size="10.2" fill="var(--muted-foreground)">随机血糖不用于诊IFG/IGT</text>
+
+        <rect x="230" y="46" width="194" height="58" rx="7" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" stroke-width="1.4" />
+        <text x="327" y="66" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">空腹 FPG ≥ 7.0 mmol/L</text>
+        <text x="327" y="84" text-anchor="middle" font-size="10.8" fill="var(--foreground)">至少 8h 无热量摄入</text>
+        <text x="327" y="98" text-anchor="middle" font-size="10.2" fill="var(--muted-foreground)">IFG：6.1 ~ &lt;7.0 mmol/L</text>
+
+        <rect x="436" y="46" width="204" height="58" rx="7" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" stroke-width="1.4" />
+        <text x="538" y="66" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">OGTT 2hPG ≥ 11.1 mmol/L</text>
+        <text x="538" y="84" text-anchor="middle" font-size="10.8" fill="var(--foreground)">75g无水葡萄糖(5~10min饮完)</text>
+        <text x="538" y="98" text-anchor="middle" font-size="10.2" fill="var(--muted-foreground)">IGT：7.8 ~ &lt;11.1 mmol/L</text>
+
+        <rect x="652" y="46" width="204" height="58" rx="7" fill="var(--primary)" fill-opacity="0.12" stroke="var(--primary)" stroke-width="1.4" />
+        <text x="754" y="66" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">HbA1c ≥ 6.5%（补充）</text>
+        <text x="754" y="84" text-anchor="middle" font-size="10.8" fill="var(--foreground)">反映近 8~12 周平均血糖</text>
+        <text x="754" y="98" text-anchor="middle" font-size="10.2" fill="var(--muted-foreground)">贫血/异常Hb干扰时改静脉血糖</text>
+
+        <!-- Bottom note bar in Top -->
+        <rect x="24" y="114" width="832" height="46" rx="7" fill="var(--background)" stroke="var(--card-border)" />
+        <text x="38" y="133" font-size="11.5" font-weight="700" fill="var(--foreground)">关键细则：无典型症状须改日复查确认 ｜ 应激性高血糖须应激消除后复查 ｜ 正常血糖(NGR)：FPG &lt;6.1 且 2hPG &lt;7.8</text>
+        <text x="38" y="151" font-size="11.5" font-weight="700" fill="var(--chart-1)">妊娠糖尿病(GDM)孕24~28周 75g OGTT 任达一项：FPG ≥ 5.1 ｜ 1hPG ≥ 10.0 ｜ 2hPG ≥ 8.5 mmol/L</text>
+
+        <!-- Bottom: DKA 4-Pillar Emergency Flowchart -->
+        <rect x="10" y="184" width="860" height="181" rx="10" fill="var(--card)" stroke="var(--error)" stroke-width="1.4" />
+        <text x="440" y="206" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--error)">二、DKA 确诊（血糖&gt;11 + 血酮≥3/尿酮≥++ + pH&lt;7.3或HCO₃⁻&lt;18）与急救四维红线</text>
+
+        <!-- Pillar 1: Fluids -->
+        <rect x="24" y="220" width="200" height="132" rx="8" fill="var(--primary)" fill-opacity="0.11" stroke="var(--primary)" stroke-width="1.3" />
+        <text x="124" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">① 补液（关键首要）</text>
+        <text x="34" y="260" font-size="11" fill="var(--foreground)">• 先快后慢，先盐后糖</text>
+        <text x="34" y="278" font-size="11" fill="var(--foreground)">• 1~2h 0.9%NS 1000~2000ml</text>
+        <text x="34" y="296" font-size="11" fill="var(--foreground)">• 前 4h 补计算失水量 1/3</text>
+        <text x="34" y="314" font-size="11" font-weight="700" fill="var(--error)">• 血糖≤13.9 → 改含糖液</text>
+        <text x="34" y="332" font-size="10.5" fill="var(--muted-foreground)">  (每2~4g糖配1U短效胰岛素)</text>
+
+        <!-- Pillar 2: Insulin -->
+        <rect x="236" y="220" width="200" height="132" rx="8" fill="var(--chart-1)" fill-opacity="0.11" stroke="var(--chart-1)" stroke-width="1.3" />
+        <text x="336" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-1)">② 小剂量短效胰岛素</text>
+        <text x="246" y="260" font-size="11" fill="var(--foreground)">• 另建通路持续静滴</text>
+        <text x="246" y="278" font-size="11" font-weight="700" fill="var(--foreground)">• 0.1 U/(kg·h)</text>
+        <text x="246" y="296" font-size="11" fill="var(--foreground)">• 重症先静注 0.1 U/kg</text>
+        <text x="246" y="314" font-size="11" fill="var(--foreground)">• 降糖速 2.8~4.2 mmol/(L·h)</text>
+        <text x="246" y="332" font-size="10.5" fill="var(--muted-foreground)">• 血酮降&lt;0.5或1h糖降&lt;10%加量</text>
+
+        <!-- Pillar 3: Potassium -->
+        <rect x="448" y="220" width="200" height="132" rx="8" fill="var(--warning)" fill-opacity="0.13" stroke="var(--warning)" stroke-width="1.3" />
+        <text x="548" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="var(--warning)">③ 补钾四档红线</text>
+        <text x="458" y="260" font-size="11" font-weight="700" fill="var(--error)">• K⁺ &lt;3.3：先补钾，后胰岛素</text>
+        <text x="458" y="278" font-size="11" fill="var(--foreground)">• K⁺偏低(≥3.3)：立即补钾</text>
+        <text x="458" y="296" font-size="11" fill="var(--foreground)">• K⁺正常+尿&gt;40ml/h：立即补</text>
+        <text x="458" y="314" font-size="11" fill="var(--foreground)">• K⁺正常+尿&lt;30ml/h：暂缓补</text>
+        <text x="458" y="332" font-size="10.5" fill="var(--muted-foreground)">• 高血钾暂缓；恢复后口服数天</text>
+
+        <!-- Pillar 4: Bicarb & Brain Edema -->
+        <rect x="660" y="220" width="196" height="132" rx="8" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" stroke-width="1.3" />
+        <text x="758" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">④ 严控补碱与防并发症</text>
+        <text x="670" y="260" font-size="11" font-weight="700" fill="var(--error)">• 仅 pH ≤ 6.9 时补等渗碱</text>
+        <text x="670" y="278" font-size="11" fill="var(--foreground)">• 1.25%~1.4% NaHCO₃ 慢滴&gt;1h</text>
+        <text x="670" y="296" font-size="11" fill="var(--foreground)">• pH ≥ 7.0 即停；先纠低钾</text>
+        <text x="670" y="314" font-size="11" fill="var(--foreground)">• 警惕SGLT-2i正常血糖DKA</text>
+        <text x="670" y="332" font-size="10.5" font-weight="700" fill="var(--error)">• 脑水肿：地米/呋塞米，慎甘露醇</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心必背</span> 糖尿病诊断标准与糖尿病酮症酸中毒（DKA）诊断及抢救</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">一、糖尿病诊断标准、WHO 糖代谢分类与 GDM / HbA1c 判读细则</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>诊断线索</strong>：①“三多一少”症状；②以急慢性并发症或伴发病首诊；③高危人群（IGR 史、年龄 <span class="k">≥35 岁</span>、超重/肥胖、T2DM 一级亲属、GDM 史、缺乏体力活动、PCOS、长期抗抑郁药或类固醇史）。<strong>诊断必须用静脉血测定血糖</strong>（血细胞比容正常时，血浆/血清血糖较全血高 15%；便携末梢血糖仅用于随访监测）。</p>
+    <div class="grid-2">
+      <div class="tbl-wrap">
+        <table class="med-tbl">
+          <thead><tr><th colspan="2">表 7-8-2 糖尿病诊断标准（静脉血浆葡萄糖 / HbA1c）</th></tr></thead>
+          <tbody>
+            <tr><td><strong>典型糖尿病症状</strong>（烦渴多饮、多尿、多食、不明原因体重下降）<strong>＋ 以下任一项</strong></td><td><strong>切点值</strong></td></tr>
+            <tr><td>随机血糖（任意时间，不考虑进餐）</td><td><span class="k">≥ 11.1 mmol/L</span></td></tr>
+            <tr><td>空腹血糖（FPG，至少 8h 无热量摄入）</td><td><span class="k">≥ 7.0 mmol/L</span></td></tr>
+            <tr><td>OGTT 2 小时血糖（2hPG）</td><td><span class="k">≥ 11.1 mmol/L</span></td></tr>
+            <tr><td>糖化血红蛋白（HbA1c，补充诊断标准）</td><td><span class="k">≥ 6.5%</span></td></tr>
+            <tr><td colspan="2"><strong>无糖尿病典型症状者，须<span class="k">改日复查确认</span></strong>。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tbl-wrap">
+        <table class="med-tbl">
+          <thead><tr><th>糖代谢状态（表 7-8-3 WHO）</th><th>FPG (mmol/L)</th><th>OGTT 2hPG (mmol/L)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>正常血糖（NGR）</strong></td><td><span class="k">&lt; 6.1</span></td><td><span class="k">&lt; 7.8</span></td></tr>
+            <tr><td><strong>空腹血糖受损（IFG）</strong></td><td><span class="k">6.1 ～ &lt; 7.0</span></td><td>&lt; 7.8</td></tr>
+            <tr><td><strong>糖耐量减低（IGT）</strong></td><td>&lt; 7.0</td><td><span class="k">7.8 ～ &lt; 11.1</span></td></tr>
+            <tr><td><strong>糖尿病（DM）</strong></td><td><span class="k">≥ 7.0</span></td><td><span class="k">≥ 11.1</span></td></tr>
+            <tr><td colspan="3" style="font-size:11.5px;color:var(--muted-foreground)">注：国际糖尿病专委会建议 IFG 界限值为 5.6～6.9mmol/L；随机血糖不能用于诊断 IFG 或 IGT。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <ul>
+      <li><strong>OGTT 规范</strong>：空腹 ≥8h 清晨行，成人口服 <span class="k">75g 无水葡萄糖</span>（溶于 250～300ml 水，<span class="k">5～10min</span> 内饮完；儿童 1.75g/kg，总量 ≤75g），测空腹及服糖后 2h 静脉血糖；试验前 3 天足量碳水化合物、停影响药（噻嗪类/糖皮质激素）3～7 天，急性病或应激时不宜行。</li>
+      <li><strong>5 条特殊判读细则</strong>：①严重疾病/应激所致<span class="k">应激性高血糖</span>为暂时性自限性，不能据此时血糖确诊，须<span class="k">应激消除后复查</span>；②儿童诊断标准与成人相同；③<strong>妊娠期首次发现高血糖</strong>区分两类：达普通标准者为<strong>妊娠期间的糖尿病</strong>；初检正常者于<span class="k">孕 24～28 周</span>行 75g OGTT，满足以下 ≥1 项诊断<strong>妊娠糖尿病（GDM）</strong>：<span class="k">FPG ≥ 5.1、1hPG ≥ 10.0、2hPG ≥ 8.5 mmol/L</span>；④<strong>HbA1c</strong>（正常 3%～6%）反映近 <span class="k">8～12 周</span>平均血糖，若存在贫血/血红蛋白异常/红细胞更新异常干扰，须用无干扰方法或静脉血糖诊断；⑤辅助参考：<strong>糖化白蛋白（GA）</strong>正常 11%～17%，反映近 <span class="k">2～3 周</span>平均血糖（肾病综合征/肝硬化受影响）；尿糖阳性仅提示超肾糖阈（约 <span class="k">10mmol/L</span>），阴性不能排除糖尿病；鉴别其他尿糖阳性原因。</li>
+    </ul>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">二、糖尿病酮症酸中毒（DKA）的诊断依据与严重程度分级</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>临床识别线索（早期诊断是成败关键）</strong>：早期三多一少加重→疲乏、厌食、恶心呕吐、多尿口干、头痛嗜睡、<span class="k">呼吸深快、呼气烂苹果味（丙酮）</span>；后期严重脱水、血压下降而尿量多、四肢厥冷、意识障碍昏迷；少数腹痛酷似急腹症；感染表现常被掩盖，体温不高甚至偏低（预后不良）。凡遇原因不明恶心呕吐、酸中毒、失水、休克或昏迷者，无论有无 DM 史，均立即查血糖、血酮/β-羟丁酸、尿酮、电解质、肾功及血气分析。</p>
+    <ul>
+      <li><strong>DKA 确诊 3 项硬性实验室依据</strong>：
+        <ol>
+          <li><strong>高血糖</strong>：血糖 <span class="k">&gt; 11 mmol/L</span>（一般 11.1～33.3mmol/L；≥33.3 多伴高渗状态或肾损）。<strong>关键陷阱（正常血糖 DKA）</strong>：部分患者血糖可 &lt;11.1mmol/L（见于就诊前用胰岛素、进食少、妊娠、晚期肝病及<span class="k">服用 SGLT-2i</span>），仔细询问用药史是诊断关键。</li>
+          <li><strong>酮症（酮血症 / 酮尿症）</strong>：血清 <span class="k">β-羟丁酸（血酮体）≥ 3 mmol/L</span> 或<span class="k">尿酮体阳性 ++ 以上</span>（酮体含 β-羟丁酸、乙酰乙酸和丙酮）。</li>
+          <li><strong>高阴离子间隙代谢性酸中毒</strong>：<span class="k">血 pH &lt; 7.3</span> 和/或 <span class="k">血 HCO₃⁻（AB/SB）&lt; 18 mmol/L</span>，CO₂ 结合力降、BE 负值增大、AG 增大与 HCO₃⁻ 降大致相等。</li>
+        </ol>
+      </li>
+      <li><strong>检验干扰陷阱</strong>：治疗前血钾可正常、偏低或偏高（不反映真实严重失钾）；无胰腺炎亦可淀粉酶/脂肪酶升高；无感染亦可 WBC 及中性粒升高。</li>
+      <li><strong>DKA 酸中毒严重程度 3 级</strong>（判断 DKA 严重度重要指标）：
+        <div class="tbl-wrap">
+          <table class="med-tbl">
+            <thead><tr><th>分级</th><th>血 pH</th><th>或 血 HCO₃⁻ 浓度</th></tr></thead>
+            <tbody>
+              <tr><td><strong>轻度酸中毒</strong></td><td><span class="k">&lt; 7.3</span></td><td><span class="k">&lt; 18 mmol/L</span></td></tr>
+              <tr><td><strong>中度酸中毒</strong></td><td><span class="k">&lt; 7.25</span></td><td><span class="k">&lt; 15 mmol/L</span></td></tr>
+              <tr><td><strong>重度酸中毒</strong></td><td><span class="k">&lt; 7.0</span></td><td><span class="k">&lt; 10 mmol/L</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </li>
+      <li><strong>鉴别诊断</strong>：①其他糖尿病昏迷：低血糖昏迷、高渗高血糖综合征、乳酸性酸中毒；②其他昏迷：尿毒症、脑血管意外（注意可共存）。</li>
+    </ul>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">三、糖尿病酮症酸中毒（DKA）急救治疗原则与关键数值红线</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>总原则</strong>：尽快补液恢复血容量与纠失水、小剂量胰岛素降糖消酮、纠电解质及酸碱失调、积极寻除诱因（<span class="k">感染最常见</span>，其他含胰岛素中断/不适当减量、应激、酗酒及糖皮质激素/ICI/抗精神病药/SGLT-2i）、防治并发症。</p>
+    <ol>
+      <li><strong>补液（治疗的关键环节）</strong>：有效组织灌注恢复后胰岛素效应才能充分发挥。轻度不伴酸中毒可口服；中重度须静脉补液（失水量可达体重 <span class="k">10% 以上</span>）。
+        <ul>
+          <li>基本原则：<span class="k">先快后慢，先盐后糖</span>；首选 0.9% NaCl，前 <span class="k">1～2 小时输入 1 000～2 000 ml</span>，前 <span class="k">4 小时输入计算失水量的 1/3</span>；休克快补无效加胶体及抗休克；心肾不全/老人据 CVP 调整。</li>
+          <li><strong>换液切点</strong>：当血糖降至 <span class="k">13.9 mmol/L</span> 左右时改输含糖液（5% GS 或 GNS），按每 <span class="k">2～4 g 葡萄糖加入 1 U 短效胰岛素</span>，直至血酮、血糖均控制。</li>
+        </ul>
+      </li>
+      <li><strong>小剂量短效胰岛素治疗</strong>：轻度可皮下+补液；中重度须另建通路持续静滴短效胰岛素 <span class="k">0.1 U/(kg·h)</span>（使血胰岛素维持 100～200mU/L，最大抑制脂解生酮且促钾内移弱）；重症可先首剂静注 <span class="k">0.1 U/kg</span>。
+        <ul>
+          <li>理想降糖速度：<span class="k">2.8～4.2 mmol/(L·h)</span>；若第 1h 血糖降 &lt;10% 或血酮降 &lt;0.5 mmol/(L·h) 且补液充分，酌增胰岛素量；降至 13.9mmol/L 按比例配糖液输注，进食加皮下注射，稳定后过渡常规皮下。</li>
+        </ul>
+      </li>
+      <li><strong>补钾（四档决策红线，至关重要）</strong>：
+        <div class="tbl-wrap">
+          <table class="med-tbl">
+            <thead><tr><th>治疗前血钾与尿量状态</th><th>补钾决策（第 10 版原文）</th></tr></thead>
+            <tbody>
+              <tr><td><strong>血钾 &lt; 3.3 mmol/L</strong></td><td><span class="k">优先补钾治疗</span>，待血钾升至 <span class="k">≥ 3.3 mmol/L</span> 时再开始胰岛素治疗（防致死心律失常、心搏骤停、呼吸肌麻痹）。</td></tr>
+              <tr><td><strong>血钾低于正常（≥3.3）</strong></td><td>开始胰岛素和补液治疗时<span class="k">立即开始补钾</span>。</td></tr>
+              <tr><td><strong>血钾正常 ＋ 尿量 &gt; 40 ml/h</strong></td><td>开始胰岛素及补液治疗时<span class="k">立即开始补钾</span>（<span class="k">尿量 &lt; 30 ml/h 暂缓</span>，待尿量增加后再补）。</td></tr>
+              <tr><td><strong>血钾高于正常</strong></td><td><span class="k">暂缓补钾</span>；全程定期查血钾与尿量调整；病情恢复后继续口服钾盐数天。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </li>
+      <li><strong>补碱（严格限定指征）</strong>：经补液与胰岛素治疗酸中毒多可自纠，<span class="k">一般不必补碱</span>。仅当<span class="k">血 pH ≤ 6.9</span> 时给<span class="k">等渗碳酸氢钠（1.25%～1.4%</span>，如 5% NaHCO₃ 84ml 加注射用水至 300ml 成 1.4%）缓慢静滴（&gt;1h），一般 1～2 次，每 2h 测 pH 至 <span class="k">≥ 7.0</span> 即停；<strong>补碱前须先纠正低钾血症</strong>（过快过多补碱致低钾、反常性脑脊液酸中毒加重、组织缺氧及脑水肿）。</li>
+      <li><strong>处理诱因与防治 6 大并发症</strong>：休克（查隐匿感染/AMI）；严重感染（不能凭有无发热或血象排除）；心衰与心律失常；肾衰竭（主要死因之一）；<span class="k">脑水肿</span>（病死率甚高，血糖降/酸中毒改善但昏迷加重或烦躁、心率慢血压偏高、肌张力增高→予地塞米松、呋塞米或白蛋白，<span class="k">慎用甘露醇</span>）；低血糖（13.9mmol/L 及时改糖液）。</li>
+    </ol>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 分型与病因机制、临床表现及并发症、7 类口服药与胰岛素</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">一、糖尿病分型（2019 WHO 6 类）、病因与发病机制</h3><span class="badge badge-f">熟悉</span></div>
+    <ul>
+      <li><strong>2019 年 WHO 六大分型</strong>：①<span class="k">T1DM</span>（免疫介导 β 细胞破坏致胰岛素绝对缺乏，占我国 &lt;5%）；②<span class="k">T2DM</span>（胰岛素抵抗为主伴进行性分泌不足，或反之，占 90%～95%）；③<span class="k">混合型糖尿病</span>（含缓慢进展的免疫介导成人糖尿病［具代谢综合征特征、更多残余 β 细胞、单一 GAD65 抗体及 TCF7L2 多态性］和酮症倾向的 T2DM［非免疫介导、缓解后不依赖胰岛素］）；④<span class="k">其他特殊类型</span>（7 亚类：单基因 β 细胞缺陷［MODY/线粒体/新生儿］、单基因胰岛素作用缺陷、胰腺外分泌病、内分泌病、药物/化学品、感染、不常见免疫介导［僵人综合征/抗胰岛素受体抗体］、遗传综合征）；⑤<span class="k">未分类糖尿病</span>；⑥<span class="k">妊娠期首次发现高血糖</span>（妊娠期间 DM vs GDM；不含孕前已确诊之“糖尿病合并妊娠”）。</li>
+      <li><strong>自然进程</strong>：病理生理异常（糖耐量正常）→ <span class="k">糖调节受损（IGR，含 IFG/IGT，糖尿病前期）</span> → 糖尿病。</li>
+      <li><strong>T1DM 病因机制</strong>：①遗传（同卵同病 30%～40%；6 号染色体短臂 <span class="k">HLA</span> 主效基因贡献 ~50%，以 <span class="k">HLA-DR、HLA-DQ</span> 相关性最高）；②环境（病毒［风疹/腮腺炎/柯萨奇/肠道病毒］、化学毒物、肠道菌群）；③自身免疫：<span class="k">细胞免疫</span>起更重要作用（致病/保护 T 细胞失衡→胰岛炎）；体液免疫 90% 新诊阳性（<span class="k">ICA、IAA、GAD65、IA-2A/IA-2βA、ZnT8A</span>；≥2 种阳性发病可能达 70%）；儿童起病残存 10%～20% β 细胞，成人可达 40%。</li>
+      <li><strong>T2DM 病因与六大机制</strong>：遗传（同卵近 100%，&gt;100 个易感位点）+ 环境（年龄/营养过剩/中心性肥胖等）。①<span class="k">胰岛素抵抗</span>（肝/肌/脂敏感性降，脂质超载与炎症学说）与<span class="k">胰岛 β 细胞功能缺陷</span>（失代偿为最后共同机制：量降、模式异常［第一时相减弱消失、晚时相峰移］、质异常［胰岛素原/胰岛素比升］；糖脂毒性、氧化应激、内质网应激促去分化/凋亡）；②<span class="k">胰岛 α 细胞异常与 GLP-1 分泌缺陷</span>（胰高血糖素升、肝糖输出增）；③胃肠与菌群异常；④大脑下丘脑糖感应调控受损；⑤免疫失衡与慢性低度炎症；⑥<span class="k">肾排糖减少</span>（肾糖阈升高）。</li>
+    </ul>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">二、糖尿病临床表现与常见急慢性并发症（含 CKD-GA 分期 &amp; DR 分期）</h3><span class="badge badge-f">熟悉</span></div>
+    <ul>
+      <li><strong>各型临床特点</strong>：代谢紊乱“三多一少”、皮肤/外阴瘙痒、屈光改变视物模糊。<strong>T1DM</strong> 青少年急起、易 DKA 首诊、初治后可有数周至数月小剂量“<span class="k">蜜月期</span>”、70%～90% 抗体阳。<strong>T2DM</strong> 多 &gt;40 岁、隐匿、半数无症状，早期肥胖者可有<span class="k">餐后 3～5h 反应性低血糖</span>，常伴肥胖/高血压/血脂异常。<strong>MODY</strong>（≥14 亚型）：①≥3 代常染色体显性；②<span class="k">&lt;25 岁</span>起病；③无酮症倾向、至少 5 年无须胰岛素。<strong>线粒体基因突变 DM</strong>：①<span class="k">母系遗传</span>；②早发、抗体阴；③消瘦；④常伴<span class="k">神经性耳聋</span>。<strong>糖皮质激素所致 DM</strong>：首选<span class="k">胰岛素</span>控糖。</li>
+      <li><strong>感染性疾病</strong>：女性反复肾盂肾炎/膀胱炎（重者肾乳头坏死）、皮肤疖痈/足癣体癣、白念珠菌阴道炎、合并肺结核高发且影像不典型易播散。</li>
+      <li><strong>慢性并发症（氧化应激为多元醇/AGEs/PKC/己糖胺 4 通路共同机制）</strong>：
+        <ul>
+          <li><strong>① 糖尿病肾脏病（DKD，微血管病变）</strong>：肾小球肥大、基底膜增厚、系膜增宽→中晚期特异性<span class="k">结节性肾小球硬化（K-W 结节）</span>→终末期最常见弥漫性肾小球硬化；入出球小动脉玻璃样变。<span class="k">肾活检</span>为鉴别 DKD 与 NDKD 金标准。临床采用 <strong>CKD-GA 分期（表 7-8-1）</strong>：
+            <div class="tbl-wrap">
+              <table class="med-tbl">
+                <thead><tr><th>CKD 分期</th><th>eGFR [ml/(min·1.73m²)]</th><th>A1 (UACR &lt;30mg/g)</th><th>A2 (30～&lt;300mg/g)</th><th>A3 (≥300mg/g)</th></tr></thead>
+                <tbody>
+                  <tr><td>G1（正常）</td><td>≥90</td><td>低风险</td><td>中风险</td><td>高风险</td></tr>
+                  <tr><td>G2（轻度下降）</td><td>60～89</td><td>低风险</td><td>中风险</td><td>高风险</td></tr>
+                  <tr><td>G3a（轻中度下降）</td><td>45～59</td><td>中风险</td><td>高风险</td><td>极高风险</td></tr>
+                  <tr><td>G3b（中重度下降）</td><td>30～44</td><td>高风险</td><td>极高风险</td><td>极高风险</td></tr>
+                  <tr><td>G4（重度下降）</td><td>15～29</td><td>极高风险</td><td>极高风险</td><td>极高风险</td></tr>
+                  <tr><td>G5（肾衰竭）</td><td>&lt;15</td><td>极高风险</td><td>极高风险</td><td>极高风险</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li><strong>② 糖尿病视网膜病变（DR，2014 眼底病学组两大型六期）</strong>：<strong>非增生型（NPDR）</strong>：Ⅰ期仅毛细血管瘤样膨出；Ⅱ期视网膜出血、硬性渗出和/或棉绒斑；Ⅲ期（重度）每象限视网膜内出血 ≥20 个出血点，或 ≥2 象限静脉“串珠样”改变，或 ≥1 象限 IRMA（同具 ≥2 条为极重度 NPDR）。<strong>增生型（PDR）</strong>：Ⅳ期视网膜或视盘新生血管；Ⅴ期纤维血管膜±视网膜前/玻璃体积血；Ⅵ期牵拉性视网膜脱离。另有<strong>糖尿病黄斑水肿（DME）</strong>影响中心视力。</li>
+          <li><strong>③ 糖尿病心肌病 &amp; ASCVD</strong>：心脑血管疾病是糖尿病患者致残致死主要原因（增加心脑外周血管病风险 2～7 倍）。</li>
+          <li><strong>④ 神经病变与糖尿病足</strong>：最常见<span class="k">远端对称性多发性神经病变</span>（手套/袜套样感觉异常、下肢重、Charcot 关节、振动觉减退）；<span class="k">自主神经病变</span>（胃轻瘫、直立性低血压、无痛性心梗、神经源膀胱）；单神经（动眼/正中/腘神经）；腰段神经根丛病变。<strong>糖尿病足</strong>为下肢神经+周围血管病变所致溃疡/坏疽，是非创伤性截肢最主要原因。</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">三、7 大类口服降糖药物与胰岛素制剂及应用（附注射剂 GLP-1RA）</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>口服降糖药类别</th><th>核心机制与降 HbA1c</th><th>代表药与用法</th><th>适应证</th><th>禁忌证 / 不适应证与主要不良反应</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. 双胍类</strong><br />（二甲双胍）</td><td>激活 <span class="k">AMPK</span>，抑肝糖输出、增外周敏感性、升 GLP-1；降 <span class="k">1%～2%</span>，不增重</td><td>最佳 <span class="k">2000mg/d</span>，最大 2550mg/d（进餐服）</td><td>T2DM <span class="k">一线基础用药</span>；≥10 岁儿童青少年可用</td><td><strong>禁</strong>：<span class="k">eGFR &lt;30ml/min 禁用</span>（&lt;45 评估减量）；急性代谢紊乱/肝不全/缺氧/感染/大手术/孕哺/酗酒/T1DM 单用。<strong>碘造影</strong>：GFR&gt;60 用时停、45～60 前 48h 停，均检后 48h 查肾功复服。<br /><strong>副</strong>：胃肠道为主；最重<span class="k">乳酸性酸中毒</span>；长期缺 VitB₁₂。</td></tr>
+          <tr><td><strong>2a. 磺酰脲类（SU）</strong></td><td>非糖依赖促 β 细胞泌胰岛素；降 <span class="k">1%～2%</span></td><td>格列本脲、格列吡嗪、格列齐特、格列喹酮、格列美脲（餐前半小时）</td><td>新诊非肥胖 T2DM；β 细胞衰竭时无效</td><td><strong>禁</strong>：T1DM、β 细胞很差、儿童/孕哺、大手术围术、全胰切。<br /><strong>用/副</strong>：低血糖（格列本脲最强，老人慎）、增重；<span class="k">中度肾不全宜用格列喹酮</span>（重度不宜）；不宜联用两种促泌剂。</td></tr>
+          <tr><td><strong>2b. 格列奈类</strong></td><td>促早时相分泌控餐后；降 0.5%～1.5%</td><td>瑞格列奈 0.5～4mg、那格列奈 60～120mg、米格列奈钙 10mg tid 餐前</td><td>T2DM 早期或老年餐后高血糖为主</td><td><strong>禁</strong>：同 SU。<br /><strong>副</strong>：低血糖和增重，较 SU 轻。</td></tr>
+          <tr><td><strong>3a. TZD</strong></td><td>激活 <span class="k">PPARγ</span> 增敏；降 0.7%～1.0%</td><td>罗格列酮 4～8mg/d；吡格列酮 15～30mg qd</td><td>肥胖、胰岛素抵抗明显 T2DM</td><td><strong>禁</strong>：T1DM/孕哺/儿童；<span class="k">NYHA ≥Ⅱ级心衰</span>、活动肝病或转氨酶 &gt;2.5×ULN、严重骨松/骨折史；<span class="k">吡格列酮禁用于膀胱癌/不明肉眼血尿</span>。<br /><strong>副</strong>：水肿、增重、骨折、心衰风险。</td></tr>
+          <tr><td><strong>3b. 西格列他钠</strong></td><td>PPAR α/γ/δ 全激活；降 1.4%</td><td>32～48mg qd</td><td>肥胖、胰岛素抵抗或血脂异常 T2DM</td><td><strong>禁</strong>：T1DM、DKA。<strong>副</strong>：较轻水肿/增重。</td></tr>
+          <tr><td><strong>4. α-糖苷酶抑制剂（AGI）</strong></td><td>抑小肠刷状缘酶延碳水吸收；降 0.5%～0.8%，不增重</td><td>阿卡波糖/米格列醇/桑枝总生物碱 50～100mg、伏格列波糖 0.2～0.3mg tid（<span class="k">第一口饭后即服</span>）</td><td>碳水为主、餐后高血糖；T1DM 可联用</td><td><strong>禁</strong>：胃肠紊乱/孕哺/儿童、T1DM 单用；肝肾不全慎用。<br /><strong>副</strong>：胃肠胀气；合用致低血糖<span class="k">须直接补葡萄糖，吃双糖/淀粉无效</span>。</td></tr>
+          <tr><td><strong>5. DPP-4 抑制剂</strong></td><td>抑 DPP-4 升内源 GLP-1；降 0.5%～1.0%，不增重</td><td>沙格/利格 5mg、西格 100mg、阿格 25mg qd；维格 50mg qd/bid</td><td>单用或联用治 T2DM</td><td><strong>禁</strong>：T1DM/DKA/孕/儿童/超敏。肾不全依 eGFR 调量（<span class="k">利格列汀除外</span>）。<br /><strong>副</strong>：单用不致低血糖；沙格/阿格可能增心衰住院风险。</td></tr>
+          <tr><td><strong>6. SGLT-2i</strong></td><td>抑近端肾小管重吸收排糖；降 0.5%～1.2%，减重降压护心肾降尿酸</td><td>达格/恒格 5～10mg、卡格 100～300mg、恩格 10～25mg、艾托 5mg qd</td><td>T2DM（尤合并 ASCVD/心衰/CKD 获益）</td><td><strong>禁</strong>：T1DM、慢性营养不良；注意各药 eGFR 要求。<br /><strong>副</strong>：泌尿生殖道感染；<span class="k">可致正常血糖 DKA</span>（确诊立即停用）；部分药增截肢/骨折风险。</td></tr>
+          <tr><td><strong>7. GKA</strong></td><td>激活葡萄糖激酶；降 ~1%</td><td>多格列艾汀 75mg bid 早晚餐前 1h 内</td><td>单用或联二甲双胍治 T2DM</td><td><strong>禁</strong>：T1DM、DKA、HHS。<strong>副</strong>：转氨酶升高、血脂异常。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>胰岛素 8 大适应证</strong>：①T1DM；②严重急/慢性并发症；③手术、妊娠、分娩；④新诊难与 T1DM 鉴别的消瘦患者；⑤新诊 T2DM 伴明显高血糖；⑥病程中无因体重显著下降；⑦T2DM β 细胞功能明显减退；⑧某些特殊类型（如糖皮质激素所致 DM）。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>表 7-8-5 胰岛素与类似物（皮下注射）</th><th>起效时间</th><th>峰值时间</th><th>持续时间</th><th>临床定位</th></tr></thead>
+        <tbody>
+          <tr><td>短效人胰岛素（RI）</td><td>15～60min</td><td>2～4h</td><td>5～8h</td><td>餐前 20～30min 控餐后；<span class="k">唯一可静脉用于 DKA</span></td></tr>
+          <tr><td>中效胰岛素（NPH）</td><td>2.5～3h</td><td>5～7h</td><td>13～16h</td><td>提供基础胰岛素，控两餐后</td></tr>
+          <tr><td>长效胰岛素（PZI）</td><td>3～4h</td><td>8～10h</td><td>长达 20h</td><td>提供基础胰岛素</td></tr>
+          <tr><td>预混人胰岛素（30R / 50R）</td><td>0.5h</td><td>2～12h / 2～3h</td><td>14～24h / 10～24h</td><td>比例固定，适波动小易控者；T1DM 不宜长期用</td></tr>
+          <tr><td>速效类似物（门冬 / 赖脯 / 谷赖）</td><td><span class="k">10～15min</span></td><td>1～2h（1.0～1.5h）</td><td>3～6h</td><td>餐前即时注射，模拟生理、降餐后低血糖</td></tr>
+          <tr><td>长效类似物（甘精 / 地特 / 德谷）</td><td>2～3h / 3～4h / 1h</td><td><span class="k">无峰</span> / 3～14h / <span class="k">无峰</span></td><td>30h / 24h / <span class="k">42h</span></td><td>平稳基础，显著降夜间低血糖</td></tr>
+          <tr><td>预混类似物（门冬 30·50 / 赖脯 25R·50R）</td><td>10～20min / 15min</td><td>1～4h / 30～70min</td><td>14～24h / 16～24h</td><td>T2DM 每日 2～3 次替代方案</td></tr>
+          <tr><td>德谷门冬双胰岛素</td><td>10～15min</td><td>1.2h</td><td>&gt;24h</td><td>基础+餐时双效</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li><strong>胰岛素使用原则与关键鉴别</strong>：模拟生理、小剂量起始调整；不可冷冻。<strong>T1DM</strong> 终身替代，初始 <span class="k">0.2～0.4 U/(kg·d)</span>（40%～60% 基础 + 餐前短/速效；CSII 最模拟生理）。<strong>T2DM</strong> 每日 2 次注射时应<span class="k">停用促胰岛素分泌剂</span>。<strong>晨空腹高血糖 3 原因鉴别</strong>：①夜间剂量不足；②<span class="k">黎明现象</span>（夜间无低血糖，清晨皮质醇/GH 增致高血糖）；③<span class="k">Somogyi 现象</span>（夜间未察觉低血糖→拮抗激素反跳性高血糖；查夜间血糖鉴别）。<strong>强化胰岛素禁忌</strong>：&lt;2 岁幼儿、老年、严重并发症、低血糖高危者。急性应激均用胰岛素（危重目标 <span class="k">7.8～10.0mmol/L</span>）。<strong>不良反应</strong>：低血糖为主、初期轻水肿、晶状体屈光模糊、过敏、注射部位脂肪萎缩/增生（须轮换部位）。</li>
+      <li><strong>附注（同章注射降糖剂）GLP-1 受体激动剂（GLP-1RA）</strong>：糖依赖促泌、抑胰高血糖素、延胃排空、中枢减食，降 HbA1c 1.0%～1.5% 且显著减重（部分具心血管获益）；分日制剂（艾塞那肽/利拉鲁肽/贝那鲁肽等）、周制剂（司美格鲁肽/度拉糖肽/洛塞那肽等）及双激动剂替尔泊肽。<span class="k">禁用于 T1DM、DKA、MEN2 及甲状腺髓样癌史/家族史</span>；胃肠道反应最常见，司美格鲁肽慎用于 PDR。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== MODULE 4 ==================== -->
+<section class="module-section" id="mod-4" data-mod-title="Ⅳ、第七章（第一节）皮质醇增多症（库欣综合征）">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅳ、皮质醇增多症（库欣综合征）</h1>
+      <span class="mod-source">第10版 第七章《肾上腺疾病》第一节（课本 P709–711 / PDF P740–742）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>（目标栏“记忆”）库欣综合征的诊断步骤、实验室检查的要点及鉴别诊断（含定性三联、表 7-7-1 病因鉴别、大/小剂量地塞米松抑制试验、IPSS 与 3 类假性库欣鉴别）。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>（目标栏“理解”）库欣综合征的病因分类及发病机制（两大类 6 亚型）；病理生理及临床表现（7 大系统）；治疗原则（按病因分治、4 种合成阻滞药与围术期激素替代）。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">大纲本讲目标栏无“了解”项；同章未列入大纲之第 3～5 节（Addison 病、先天性肾上腺皮质增生症、嗜铬细胞瘤）全部剔除（第二节原醛单列模块 Ⅴ）。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 4 -->
+  <div class="svg-card">
+    <div class="svg-hd">
+      <span>图解 4 · 库欣综合征三步诊断（定性 → ACTH/大剂量地塞米松/IPSS 定位定因 → 分型治疗）</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 355" width="100%" role="img" aria-label="库欣综合征三步诊断与病因定位治疗路径图解">
+        <defs>
+          <marker id="arr4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr4r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+        <!-- Step 1: Qualitative Diagnosis -->
+        <rect x="14" y="12" width="852" height="82" rx="9" fill="var(--error)" fill-opacity="0.09" stroke="var(--error)" stroke-width="1.5" />
+        <text x="440" y="34" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--error)">第一步：定性/功能确诊（糖皮质激素分泌过多 ＋ 昼夜节律消失 ＋ 小剂量地塞米松不被抑制）</text>
+        <text x="32" y="57" font-size="11.5" fill="var(--foreground)">① 午夜血皮质醇 &gt; 200 nmol/L（节律消失） ｜ ② 24h UFC &gt; 304 nmol/24h ｜ ③ LDDST（2日法或1mg过夜）不被抑制至&lt;50%（&lt;50 nmol/L排除）</text>
+        <text x="32" y="79" font-size="11.2" fill="var(--muted-foreground)">先排假性库欣：单纯肥胖（UFC正常、节律在）｜ 酗酒伴肝损（戒酒1周生化恢复）｜ 抑郁症（无库欣临床表现）</text>
+
+        <!-- Branch arrows down to ACTH -->
+        <line x1="250" y1="94" x2="250" y2="122" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr4)" />
+        <line x1="650" y1="94" x2="650" y2="122" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr4)" />
+
+        <!-- Step 2 Left: ACTH Dependent -->
+        <rect x="14" y="126" width="466" height="50" rx="8" fill="var(--primary)" fill-opacity="0.13" stroke="var(--primary)" stroke-width="1.4" />
+        <text x="247" y="147" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--primary)">血浆 ACTH 升高或正常 → ACTH 依赖型（~85%）</text>
+        <text x="247" y="166" text-anchor="middle" font-size="11" fill="var(--foreground)">大剂量地塞米松抑制试验（HDDST：2mg q6h × 2d）＋ 垂体 MRI ＋ 胸部薄层 CT</text>
+
+        <!-- Step 2 Right: ACTH Independent -->
+        <rect x="498" y="126" width="368" height="50" rx="8" fill="var(--chart-2)" fill-opacity="0.13" stroke="var(--chart-2)" stroke-width="1.4" />
+        <text x="682" y="147" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--chart-2)">血浆 ACTH 降低 → ACTH 非依赖型（~15%）</text>
+        <text x="682" y="166" text-anchor="middle" font-size="11" fill="var(--foreground)">HDDST 不能抑制 → 肾上腺 CT / MRI 定位肿瘤或增生</text>
+
+        <!-- Down arrows to 4 etiology boxes -->
+        <line x1="126" y1="176" x2="126" y2="206" stroke="var(--primary)" stroke-width="1.6" marker-end="url(#arr4)" />
+        <line x1="364" y1="176" x2="364" y2="206" stroke="var(--error)" stroke-width="1.6" marker-end="url(#arr4r)" />
+        <line x1="590" y1="176" x2="590" y2="206" stroke="var(--primary)" stroke-width="1.6" marker-end="url(#arr4)" />
+        <line x1="778" y1="176" x2="778" y2="206" stroke="var(--primary)" stroke-width="1.6" marker-end="url(#arr4)" />
+
+        <text x="72" y="196" font-size="10.8" font-weight="700" fill="var(--primary)">HDDST 多数抑制</text>
+        <text x="304" y="196" font-size="10.8" font-weight="700" fill="var(--error)">HDDST 多不抑制</text>
+
+        <!-- Box 1: Cushing Disease -->
+        <rect x="14" y="210" width="224" height="132" rx="8" fill="var(--card)" stroke="var(--primary)" stroke-width="1.4" />
+        <text x="126" y="230" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">库欣病（~70%，最常见）</text>
+        <text x="24" y="250" font-size="11" fill="var(--foreground)">• 80%垂体微腺瘤(&lt;10mm)</text>
+        <text x="24" y="268" font-size="11" fill="var(--foreground)">• 肾上腺双侧弥漫增生</text>
+        <text x="24" y="286" font-size="11" font-weight="700" fill="var(--error)">• 难鉴缓进异位→行 IPSS</text>
+        <text x="24" y="305" font-size="11" fill="var(--foreground)">• 首选：经蝶窦垂体瘤切除</text>
+        <text x="24" y="324" font-size="10.5" fill="var(--muted-foreground)">• 二线放疗/双侧切(防Nelson)</text>
+
+        <!-- Box 2: Ectopic ACTH -->
+        <rect x="252" y="210" width="228" height="132" rx="8" fill="var(--card)" stroke="var(--error)" stroke-width="1.4" />
+        <text x="366" y="230" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">异位 ACTH 综合征（~15%）</text>
+        <text x="262" y="250" font-size="11" fill="var(--foreground)">• 小细胞肺癌/类癌(胸部60%)</text>
+        <text x="262" y="268" font-size="11" fill="var(--foreground)">• ACTH/皮质醇极高，常低钾碱中毒</text>
+        <text x="262" y="286" font-size="11" fill="var(--foreground)">• 迅速进展型外貌可不典型</text>
+        <text x="262" y="305" font-size="11" fill="var(--foreground)">• 治原发瘤(手术/放化疗)</text>
+        <text x="262" y="324" font-size="10.5" fill="var(--muted-foreground)">• 不能根治→合成阻滞药</text>
+
+        <!-- Box 3: Adrenal Adenoma / Carcinoma -->
+        <rect x="498" y="210" width="184" height="132" rx="8" fill="var(--card)" stroke="var(--chart-2)" stroke-width="1.4" />
+        <text x="590" y="230" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-2)">肾上腺腺瘤 / 皮质癌</text>
+        <text x="508" y="250" font-size="11" fill="var(--foreground)">• 腺瘤(10~15%)：3~4cm</text>
+        <text x="508" y="268" font-size="11" fill="var(--foreground)">  无低钾，腹腔镜切根治</text>
+        <text x="508" y="286" font-size="11" font-weight="700" fill="var(--error)">• 癌(&lt;5%)：≥5~6cm、低钾</text>
+        <text x="508" y="304" font-size="11" fill="var(--foreground)">  碱中毒＋女明显男性化</text>
+        <text x="508" y="324" font-size="10.5" fill="var(--muted-foreground)">• 癌：早手术＋米托坦等</text>
+
+        <!-- Box 4: PPNAD / AIMAH -->
+        <rect x="694" y="210" width="172" height="132" rx="8" fill="var(--card)" stroke="var(--chart-3)" stroke-width="1.4" />
+        <text x="780" y="230" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-3)">PPNAD / 大结节增生</text>
+        <text x="704" y="250" font-size="11" fill="var(--foreground)">• PPNAD：≤5mm棕黑结节</text>
+        <text x="704" y="268" font-size="11" fill="var(--foreground)">  PRKAR1A突变/Carney</text>
+        <text x="704" y="286" font-size="11" fill="var(--foreground)">• 大结节(&gt;5mm)：异位</text>
+        <text x="704" y="304" font-size="11" fill="var(--foreground)">  GIP / LH-HCG 受体</text>
+        <text x="704" y="324" font-size="10.5" fill="var(--muted-foreground)">• 双侧肾上腺切除＋替代</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心必背</span> 库欣综合征三步诊断流程、实验室检查要点与鉴别诊断</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">一、第一步功能定性确诊与第三步假性库欣鉴别</h3><span class="badge badge-m">掌握</span></div>
+    <ul>
+      <li><strong>各型库欣综合征共有的 3 项糖皮质激素分泌异常（核心切点）</strong>：
+        <ol>
+          <li><strong>血浆皮质醇昼夜节律消失</strong>：正常成人早晨 6:00～8:00 最高、午夜最低；患者节律消失，<span class="k">午夜血皮质醇 &gt; 200 nmol/L</span>。</li>
+          <li><strong>24 小时尿游离皮质醇（UFC）</strong>：多在 <span class="k">&gt; 304 nmol/24h</span> 以上（反映血游离皮质醇、受色素干扰少，诊断价值高）。</li>
+          <li><strong>小剂量地塞米松抑制试验（LDDST）</strong>：
+            <ul>
+              <li>经典 2 日法：每 6h 口服 0.5mg 或每 8h 服 0.75mg 连服 2 天，第 2 天尿 17-OHCS <span class="k">不能被抑制到对照值 50% 以下</span>，或 UFC <span class="k">不能抑制到 55 nmol/24h 以下</span>；</li>
+              <li>1mg 过夜法：测第 1 日对照值，午夜服 1mg，次晨血皮质醇不能抑制到对照值 50% 以下；</li>
+              <li><strong>排除标准</strong>：LDDST 血皮质醇被抑制到 <span class="k">50 nmol/L 以下</span>可排除库欣综合征。</li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+      <li><strong>三大相似/假性疾病的鉴别诊断</strong>：
+        <ol>
+          <li><strong>单纯性肥胖症</strong>：可有高血压、糖耐量减低、闭经及腹部条纹（多为白色或较细淡红色），但 <span class="k">UFC 不高、血皮质醇昼夜节律正常</span>。</li>
+          <li><strong>酗酒伴肝损伤（假性库欣综合征）</strong>：可有临床表现、血尿皮质醇增高且不被 LDDST 抑制，但<span class="k">戒酒 1 周后生化异常即消失</span>。</li>
+          <li><strong>抑郁症</strong>：UFC、17-OHCS、17-KS 可增高且不被地塞米松正常抑制，但<span class="k">无库欣综合征的临床表现</span>。</li>
+        </ol>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">二、第二步定位与病因诊断（表 7-7-1 完整鉴别矩阵 + IPSS）</h3><span class="badge badge-m">掌握</span></div>
+    <p>血浆 <span class="k">ACTH 增高或处于正常范围</span>提示 ACTH 依赖型；ACTH 降低提示 ACTH 非依赖型。<strong>大剂量地塞米松抑制试验（HDDST）</strong>：每次 <span class="k">2mg q6h × 2 天</span>，第 2 天尿 17-OHCS 或 UFC 降至对照值 <span class="k">50% 以下</span>为被抑制。<strong>最难鉴别</strong>为库欣病与缓慢发展型异位 ACTH 综合征，若仍难区分须行<span class="k">岩下窦静脉采血（IPSS）</span>比较岩下窦与外周静脉血 ACTH 比值；胸部病变占异位 ACTH 约 <span class="k">60%</span>，常规先查薄层胸部 CT，阴性再查腹部影像。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>检查项目（表 7-7-1）</th><th>垂体性库欣病</th><th>肾上腺皮质腺瘤</th><th>肾上腺皮质癌</th><th>异位 ACTH 综合征</th></tr></thead>
+        <tbody>
+          <tr><td><strong>尿 17-OHCS</strong></td><td>中度增（55～83μmol/24h）</td><td>同库欣病</td><td>明显增（110～138μmol/24h）</td><td>较肾上腺癌更高</td></tr>
+          <tr><td><strong>尿 17-KS</strong></td><td>中度增（~69μmol/24h）</td><td>正常或增高</td><td>明显增（&gt;173μmol/24h）</td><td>明显增（&gt;173μmol/24h）</td></tr>
+          <tr><td><strong>血、尿皮质醇</strong></td><td>轻中度升高</td><td>轻中度升高</td><td>重度升高</td><td>较肾上腺癌更高</td></tr>
+          <tr><td><strong>大剂量地塞米松抑制试验</strong></td><td><span class="k">多数能被抑制</span>，少数不能</td><td><span class="k">不能被抑制</span></td><td><span class="k">不能被抑制</span></td><td><span class="k">不能被抑制</span>（少数可抑制）</td></tr>
+          <tr><td><strong>血浆 ACTH 测定</strong></td><td>清晨略高于正常，晚不下降</td><td><span class="k">降低</span></td><td><span class="k">降低</span></td><td><span class="k">明显增高</span>（低度恶性可轻增）</td></tr>
+          <tr><td><strong>低血钾性碱中毒</strong></td><td>严重者可有</td><td><span class="k">无</span></td><td><span class="k">常有</span></td><td><span class="k">常有</span></td></tr>
+          <tr><td><strong>蝶鞍 X 线片</strong></td><td>小部分蝶鞍扩大</td><td>不扩大</td><td>不扩大</td><td>不扩大</td></tr>
+          <tr><td><strong>蝶鞍区 CT / MRI</strong></td><td>大多示微腺瘤，少数大腺瘤</td><td>无垂体瘤表现</td><td>无垂体瘤表现</td><td>无垂体瘤表现</td></tr>
+          <tr><td><strong>肾上腺超声 / CT / MRI</strong></td><td>两侧肾上腺增大</td><td>显示肿瘤</td><td>显示肿瘤</td><td>两侧肾上腺增大</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 病因分类（6 亚型）、临床表现与治疗原则</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">一、病因分类（两大类 6 亚型）与各型特点</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>大类</th><th>具体类型与占比</th><th>病变与发病机制特点（第 10 版原文）</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="3"><strong>依赖 ACTH 型</strong></td><td><strong>1. 库欣病（~70%）</strong></td><td>最常见；80% 为垂体 <span class="k">ACTH 微腺瘤（直径 &lt;10mm）</span>，非完全自主（可被大剂量外源激素抑制、受 CRH 兴奋）；~10% 大腺瘤；双侧肾上腺束状带弥漫增生（有时网状带亦增生）。</td></tr>
+          <tr><td><strong>2. 异位 ACTH 综合征（~15%）</strong></td><td>垂体外肿瘤（小细胞肺癌、支气管/胸腺类癌、胰腺肿瘤）泌 ACTH。分两型：①缓慢发展型（类癌，病史数年，酷似库欣病）；②迅速进展型（高恶性，无典型外貌，ACTH 与血尿皮质醇极高）。</td></tr>
+          <tr><td><strong>3. 异位 CRH 综合征</strong></td><td>肿瘤异位分泌 CRH 刺激垂体 ACTH 细胞增生。</td></tr>
+          <tr><td rowspan="4"><strong>不依赖 ACTH 型</strong></td><td><strong>4. 肾上腺皮质腺瘤（10%～15%）</strong></td><td>多见成人，圆/椭圆、直径 3～4cm、包膜完整；起病缓、中度病情、多毛/雄激素表现少见。</td></tr>
+          <tr><td><strong>5. 肾上腺皮质癌（&lt;5%）</strong></td><td>病情重进展快，直径 <span class="k">≥5～6cm</span>，浸润包膜并转移；重度库欣 + 显著高血压/低血钾碱中毒 + 过量雄激素致女性明显男性化 + 腹痛/触及肿块。</td></tr>
+          <tr><td><strong>6. 原发性色素沉着结节性肾上腺皮质病（PPNAD）</strong></td><td>儿童/青年双侧小结节（≤5mm、棕黑色、结节间萎缩）；<span class="k">PRKAR1A 突变</span>激活 PKA 通路；家族常显伴皮肤斑点色素沉着、蓝痣、心房/皮肤/乳房黏液瘤等称 <span class="k">Carney 综合征</span>。</td></tr>
+          <tr><td><strong>7. ACTH 非依赖性肾上腺大结节性增生</strong></td><td>双侧多发良性大结节（&gt;5mm）、无色素沉着；因皮质细胞异位表达 <span class="k">GIP</span>（餐后皮质醇升、空腹不高）、<span class="k">LH/HCG</span>（妊娠/绝经后发）、AVP、5-HT 受体所致。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">二、七大系统临床表现（含病理生理基础）</h3><span class="badge badge-f">熟悉</span></div>
+    <p style="font-size:12px;color:var(--muted-foreground)">注：第 10 版未设独立【病理生理】小节，糖脂蛋白及电解质代谢紊乱机制均融于下述【临床表现】各条目（皮质癌与异位 ACTH 起病急重，腺瘤与库欣病较缓轻）。</p>
+    <ul>
+      <li><strong>1. 体型外貌</strong>：向心性肥胖、<span class="k">满月脸、鲤鱼嘴、水牛背、锁骨上窝脂肪垫、悬垂腹</span>、四肢相对瘦小；<span class="k">多血质外貌</span>（皮肤菲薄微血管透见 + RBC/Hb 增多）。</li>
+      <li><strong>2. 肌肉与神经精神</strong>：近端肌无力（<span class="k">下蹲后起立困难</span>）；情绪不稳、烦躁失眠，重者精神变态、类偏狂。</li>
+      <li><strong>3. 皮肤</strong>：菲薄、瘀斑；下腹/大腿内外侧宽大<span class="k">紫纹（宽度 &gt;1cm）</span>；真菌感染；异位 ACTH 及重症库欣病见<span class="k">皮肤色素沉着</span>。</li>
+      <li><strong>4. 心血管</strong>：高血压常见（潴钠排钾、激活 RAAS、增强加压反应、抑血管舒张、激活盐皮质受体），致左室肥大/心衰/脑卒中；凝血与脂代谢紊乱易致动静脉血栓。</li>
+      <li><strong>5. 感染抵抗力降</strong>：肺部感染多见；化脓感染不易局限（蜂窝织炎/菌血症），且<span class="k">炎症反应与发热不显著易漏诊</span>。</li>
+      <li><strong>6. 性功能障碍</strong>：女多毛、痤疮、闭经（<span class="k">明显男性化［乳房萎缩/生须/喉结大/阴蒂肥大］警惕肾上腺皮质癌</span>）；男性欲降、阴茎缩小、睾丸变软。</li>
+      <li><strong>7. 代谢与骨骼</strong>：促肝糖异生+拮抗胰岛素→糖耐量减低/糖尿病；<span class="k">明显低血钾性碱中毒主见于肾上腺皮质癌和异位 ACTH</span>；骨质疏松/椎体压缩变矮；儿童生长受抑。</li>
+    </ul>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">三、病因导向治疗原则、合成阻滞药物与围手术期处理</h3><span class="badge badge-f">熟悉</span></div>
+    <ul>
+      <li><strong>按病因治疗</strong>：①<strong>库欣病</strong>：<span class="k">首选经蝶窦垂体瘤手术</span>（术后暂补糖皮质激素）；二线<span class="k">放疗</span>（3～5 年控制 50%～60%，主副垂体功能减退）；难治者行<span class="k">双侧肾上腺切除术</span>（终身糖+盐皮质替代，监测垂体 MRI/ACTH 警惕 <span class="k">Nelson 综合征</span>——皮肤色素渐加深提示）；辅助垂体靶向药（卡麦角林、帕瑞肽）；②<strong>肾上腺皮质腺瘤</strong>：腹腔镜单侧切除根治（术后因垂体及健侧受抑须长期替代：氢化可的松 20～30mg/d 或可的松 25～37.5mg/d，多于 6 个月～1 年+ 递减停药）；③<strong>皮质癌</strong>：尽早手术，未根治/转移用合成阻滞药；④<strong>PPNAD / 大结节增生</strong>：双侧肾上腺切除+替代；⑤<strong>异位 ACTH</strong>：治原发恶性肿瘤，不能根治用合成阻滞药。</li>
+      <li><strong>4 种肾上腺皮质激素合成阻滞药</strong>：①<span class="k">米托坦（o,p'-DDD）</span>：使束状/网状带萎缩坏死，主治<span class="k">肾上腺癌</span>（始 2～6g/d 可至 8～10g/d，须补糖皮质激素）；②<span class="k">美替拉酮</span>：抑 <span class="k">11β-羟化酶</span>（2～6g/d）；③<span class="k">氨鲁米特</span>：抑胆固醇→孕烯醇酮（0.75～1.0g/d）；④<span class="k">酮康唑</span>（始 1000～1200mg/d，维 600～800mg/d，注意严重肝损）。</li>
+      <li><strong>围手术期处理（防急性肾上腺皮质功能不全）</strong>：麻醉前静注<span class="k">氢化可的松 100mg</span>，之后每 6h 一次 100mg，次日起渐减，<span class="k">5～7 天</span>后改口服生理维持量。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== MODULE 5 ==================== -->
+<section class="module-section" id="mod-5" data-mod-title="Ⅴ、第七章（第二节）原发性醛固酮增多症">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">Ⅴ、原发性醛固酮增多症（原醛症）</h1>
+      <span class="mod-source">第10版 第七章《肾上腺疾病》第二节（课本 P712–714 / PDF P743–745）· 2学时</span>
+    </div>
+    <div class="syllabus-box">
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>（目标栏“记忆”）原发性醛固酮增多症的病因（5 大类）；原发性醛固酮增多症的治疗原则（单侧腹腔镜手术与术前螺内酯准备、特醛症与 GRA 药物方案、醛固酮癌处理）。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>（目标栏“理解”）原发性醛固酮增多症的病理生理（含盐皮质激素“脱逸”现象）及临床表现；诊断（筛查 ARR、盐水确诊、卧立位动态试验、影像及 AVS 分型）及三类低钾高血压鉴别诊断。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">大纲本讲目标栏无“了解”项；大纲内容栏提及的卡托普利试验、依普利酮及“醛固酮瘤约占 80%”在第 10 版原文未载录，严格忠实教材不予外部补写；同章第 3～5 节（Addison 病、CAH、嗜铬细胞瘤）全部剔除。</span></div>
+    </div>
+  </div>
+
+  <!-- SVG 5 -->
+  <div class="svg-card">
+    <div class="svg-hd">
+      <span>图解 5 · 原发性醛固酮增多症诊断分型治疗路径 ＋ 低钾高血压四象限鉴别图（肾素 × 醛固酮）</span>
+      <button class="svg-zoom-btn" type="button">放大查看</button>
+    </div>
+    <div class="svg-stage">
+      <svg viewBox="0 0 880 365" width="100%" role="img" aria-label="原发性醛固酮增多症诊断分型治疗流程与低钾高血压肾素醛固酮鉴别图解">
+        <defs>
+          <marker id="arr5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
+          </marker>
+          <marker id="arr5r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--error)" />
+          </marker>
+        </defs>
+        <!-- Left Panel: PA Diagnostic & Treatment Flow -->
+        <rect x="10" y="10" width="490" height="345" rx="10" fill="var(--card)" stroke="var(--border)" stroke-width="1.2" />
+        <text x="255" y="33" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--foreground)">一、原醛症诊断 → 分型定位 → 分型治疗路径</text>
+
+        <rect x="26" y="46" width="458" height="46" rx="7" fill="var(--primary)" fill-opacity="0.12" stroke="var(--primary)" stroke-width="1.4" />
+        <text x="255" y="65" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">① 最佳筛查试验：ARR（醛固酮 ng/dl ÷ 肾素活性 ng/(ml·h)）&gt; 30</text>
+        <text x="255" y="83" text-anchor="middle" font-size="11" fill="var(--foreground)">原醛症血醛固酮常 &gt;15 ng/dl；低钾(&lt;3.5)时尿钾仍 &gt;25 mmol/24h</text>
+
+        <line x1="255" y1="92" x2="255" y2="110" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr5)" />
+
+        <rect x="26" y="114" width="458" height="46" rx="7" fill="var(--chart-1)" fill-opacity="0.12" stroke="var(--chart-1)" stroke-width="1.4" />
+        <text x="255" y="133" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-1)">② 确诊试验：静卧 4h 静滴 2000ml 生理盐水负荷试验</text>
+        <text x="255" y="151" text-anchor="middle" font-size="11" fill="var(--foreground)">正常人抑制至 &lt;5 ng/dl ｜ 原醛症 &gt;10 ng/dl（第10版未载卡托普利试验）</text>
+
+        <line x1="255" y1="160" x2="255" y2="178" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr5)" />
+
+        <rect x="26" y="182" width="458" height="54" rx="7" fill="var(--warning)" fill-opacity="0.12" stroke="var(--warning)" stroke-width="1.4" />
+        <text x="255" y="201" text-anchor="middle" font-size="12" font-weight="700" fill="var(--warning)">③ 分型与定位：上午 8~12时卧立位 ＋ 高分辨 CT ＋ 双侧 AVS</text>
+        <text x="255" y="219" text-anchor="middle" font-size="10.8" fill="var(--foreground)">立位醛固酮：特醛症明显上升 vs 醛固酮瘤反下降 ｜ CT可检5mm ｜ AVS定单/双侧</text>
+
+        <line x1="115" y1="236" x2="115" y2="256" stroke="var(--error)" stroke-width="1.6" marker-end="url(#arr5r)" />
+        <line x1="278" y1="236" x2="278" y2="256" stroke="var(--primary)" stroke-width="1.6" marker-end="url(#arr5)" />
+        <line x1="422" y1="236" x2="422" y2="256" stroke="var(--primary)" stroke-width="1.6" marker-end="url(#arr5)" />
+
+        <rect x="24" y="260" width="176" height="82" rx="7" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" stroke-width="1.3" />
+        <text x="112" y="279" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--error)">单侧腺瘤 / 单侧增生</text>
+        <text x="34" y="297" font-size="10.8" fill="var(--foreground)">• 首选单侧腹腔镜切除</text>
+        <text x="34" y="314" font-size="10.8" fill="var(--foreground)">• 术前低盐＋螺内酯</text>
+        <text x="34" y="331" font-size="10.8" fill="var(--foreground)">  120~240mg/d 备术</text>
+
+        <rect x="210" y="260" width="146" height="82" rx="7" fill="var(--chart-2)" fill-opacity="0.11" stroke="var(--chart-2)" stroke-width="1.3" />
+        <text x="283" y="279" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--chart-2)">双侧特醛症(手术差)</text>
+        <text x="220" y="297" font-size="10.8" fill="var(--foreground)">• 首选螺内酯</text>
+        <text x="220" y="314" font-size="10.8" fill="var(--foreground)">• 不耐受改氨苯蝶啶</text>
+        <text x="220" y="331" font-size="10.8" fill="var(--foreground)">  /阿米洛利；加CCB/ACEI</text>
+
+        <rect x="366" y="260" width="120" height="82" rx="7" fill="var(--chart-3)" fill-opacity="0.11" stroke="var(--chart-3)" stroke-width="1.3" />
+        <text x="426" y="279" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--chart-3)">GRA（嵌合基因）</text>
+        <text x="376" y="297" font-size="10.8" fill="var(--foreground)">• 糖皮质激素</text>
+        <text x="376" y="314" font-size="10.8" fill="var(--foreground)">• 成人地米</text>
+        <text x="376" y="331" font-size="10.8" fill="var(--foreground)">  0.5~1mg/d</text>
+
+        <!-- Right Panel: Low-K Hypertension 3-Profile Matrix -->
+        <rect x="514" y="10" width="356" height="345" rx="10" fill="var(--card)" stroke="var(--border)" stroke-width="1.2" />
+        <text x="692" y="33" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--foreground)">二、高血压伴低血钾鉴别（肾素 × 醛固酮）</text>
+
+        <!-- Profile 1: Low Renin, High Aldo -->
+        <rect x="530" y="50" width="324" height="72" rx="8" fill="var(--error)" fill-opacity="0.11" stroke="var(--error)" stroke-width="1.4" />
+        <text x="544" y="70" font-size="12" font-weight="700" fill="var(--error)">肾素活性 ↓ ＋ 醛固酮 ↑</text>
+        <text x="544" y="90" font-size="11.5" font-weight="700" fill="var(--foreground)">→ 原发性醛固酮增多症（原醛症）</text>
+        <text x="544" y="108" font-size="10.8" fill="var(--muted-foreground)">呋塞米(0.7mg/kg)+立位2h肾素仅微升或无反应</text>
+
+        <!-- Profile 2: High Renin, High Aldo -->
+        <rect x="530" y="134" width="324" height="82" rx="8" fill="var(--warning)" fill-opacity="0.12" stroke="var(--warning)" stroke-width="1.4" />
+        <text x="544" y="154" font-size="12" font-weight="700" fill="var(--warning)">肾素活性 ↑ ＋ 醛固酮 ↑</text>
+        <text x="544" y="174" font-size="11.5" font-weight="700" fill="var(--foreground)">→ 继发性醛固酮增多症</text>
+        <text x="544" y="192" font-size="10.8" fill="var(--foreground)">• 泌肾素瘤（肾小球旁细胞瘤、Wilms/卵巢瘤）</text>
+        <text x="544" y="208" font-size="10.8" fill="var(--foreground)">• 肾缺血：肾动脉狭窄、恶性高血压、一侧肾萎缩</text>
+
+        <!-- Profile 3: Low Renin, Low Aldo -->
+        <rect x="530" y="228" width="324" height="114" rx="8" fill="var(--chart-1)" fill-opacity="0.11" stroke="var(--chart-1)" stroke-width="1.4" />
+        <text x="544" y="248" font-size="12" font-weight="700" fill="var(--chart-1)">肾素活性 ↓ ＋ 醛固酮 ↓（非醛固酮盐皮质效应）</text>
+        <text x="544" y="268" font-size="11" fill="var(--foreground)">• 17α-羟化酶缺陷：DOC↑＋性幼稚/男假两性</text>
+        <text x="544" y="286" font-size="11" fill="var(--foreground)">• 11β-羟化酶缺陷：DOC↑＋男早熟/女男性化</text>
+        <text x="544" y="304" font-size="11" fill="var(--foreground)">• 表象性 AME（11β-HSD缺陷）：螺内酯有效</text>
+        <text x="544" y="324" font-size="11" font-weight="700" fill="var(--error)">• Liddle综合征(ENaC激活)：螺内酯无效，阿米洛利有效</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Master Tier -->
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心必背</span> 原发性醛固酮增多症五大病因分类与分型治疗原则</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">一、原发性醛固酮增多症五大病因分类（第 10 版原文）</h3><span class="badge badge-m">掌握</span></div>
+    <p>原醛症是由肾上腺皮质病变致醛固酮分泌增多、潴钠排钾、体液容量扩增、RAAS 受抑制，表现为高血压和低血钾的临床综合征；在高血压患者中患病率约 <span class="k">10%</span>。</p>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>病因类型（第 10 版 5 类）</th><th>病理与发病机制特点（第 10 版原文）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. 醛固酮瘤</strong></td><td>多见，大多为一侧腺瘤，直径大多 <span class="k">1～2cm</span>。血浆醛固酮浓度与血浆 <span class="k">ACTH 昼夜节律平行</span>，对血浆肾素变化无明显反应。少数站立位因肾素升高而致醛固酮增多者，称<span class="k">肾素反应性腺瘤</span>。</td></tr>
+          <tr><td><strong>2. 特发性醛固酮增多症（特醛症）</strong></td><td>亦多见，为双侧肾上腺球状带增生（有时伴结节）。病因可能与对<span class="k">血管紧张素Ⅱ敏感性增强</span>有关，ACEI 可使其醛固酮减少、血压及血钾改善。</td></tr>
+          <tr><td><strong>3. 糖皮质激素可治性醛固酮增多症（GRA）</strong></td><td>多于青少年起病，可家族性（常染色体显性遗传）或散发，呈大、小结节增生。<strong>机制</strong>：<span class="k">11β-羟化酶基因 5′端调控序列</span>与<span class="k">醛固酮合成酶基因编码序列</span>融合形成<span class="k">嵌合基因</span>，在束状带表达，<span class="k">受 ACTH 而不受 AngⅡ 调控</span>；生理替代量糖皮质激素数周可恢复正常。</td></tr>
+          <tr><td><strong>4. 醛固酮癌</strong></td><td>少见，常兼分泌糖皮质激素、雄激素；体积大，直径多在 <span class="k">5cm 以上</span>，切面常有出血坏死，CT/超声常见<span class="k">钙化</span>。</td></tr>
+          <tr><td><strong>5. 异位醛固酮分泌性腺瘤或腺癌</strong></td><td>极罕见，发生于肾内肾上腺残余组织或卵巢内。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout warn">
+      <strong>教材边界核对：</strong>大纲【教学内容和要求】提及“醛固酮瘤约占 80%”并将“继发性醛固酮增多症”列于病因段；第 10 版原文未载录“80%”比例（仅称醛固酮瘤与特醛症均多见），且将继发性醛固酮增多症归入【鉴别诊断】呈现。
+    </div>
+  </div>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">二、原发性醛固酮增多症分型治疗原则与规范用药</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>核心决策</strong>：<span class="k">醛固酮瘤根治方法为手术切除</span>；<span class="k">特发性增生者手术效果差，采用药物治疗</span>。若一时难以区分腺瘤或特发性增生，可先药物治疗并定期影像随访（原未显现之小腺瘤可逐渐显露）。</p>
+    <ol>
+      <li><strong>手术治疗（单侧原醛首选）</strong>：<span class="k">单侧腹腔镜肾上腺切除术</span>是单侧原醛（醛固酮瘤和单侧肾上腺结节性增生）首先推荐的方法。
+        <ul>
+          <li><strong>术前准备</strong>：低盐饮食 + 口服<span class="k">螺内酯 120～240 mg/d</span> 分次，待血钾正常、血压下降后减至维持量再手术。术后电解质紊乱纠正、多尿多饮消失、大部分血压恢复正常或接近正常。</li>
+        </ul>
+      </li>
+      <li><strong>药物治疗（特醛症 / 不能手术肿瘤 / GRA / 癌）</strong>：
+        <ul>
+          <li><strong>特醛症与不能手术肿瘤</strong>：首选<span class="k">螺内酯</span>（用法同术前准备）。长期应用出现<span class="k">男子乳腺发育、阳痿，女子月经不调</span>等不良反应时，改用<span class="k">氨苯蝶啶或阿米洛利</span>排钠潴钾。必要时联用降压药：<span class="k">钙通道阻滞剂（CCB）</span>可使部分患者醛固酮减少、血钾血压恢复；对特醛症，<span class="k">ACEI</span> 亦可奏效。</li>
+          <li><strong>GRA 治疗</strong>：糖皮质激素——成人<span class="k">地塞米松 0.5～1 mg/d</span>（3～4 周缓解；血钾升快而血压难纠时加 CCB 等）；儿童地塞米松 0.05～0.1 mg/(kg·d) 或<span class="k">氢化可的松 12～15 mg/m² 体表面积</span>分 3 次（对生长发育影响小）。</li>
+          <li><strong>醛固酮癌</strong>：预后不良，常失手术根治机会，化疗药<span class="k">米托坦、氨鲁米特、酮康唑</span>可暂减轻症状但难改善病程。</li>
+        </ul>
+      </li>
+    </ol>
+    <div class="callout info">
+      <strong>教材未载项声明：</strong>大纲内容栏提及醛固酮受体拮抗剂“依普利酮”，但第 10 版第七章第二节原文未载录依普利酮，本指南严格遵循第 10 版原文不予外部补写。
+    </div>
+  </div>
+
+  <!-- Familiar Tier -->
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点</span> 病理生理与临床表现、四步诊断分型与三类低钾高血压鉴别</h2>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">一、病理生理机制（含“脱逸”现象）与三阶段临床表现</h3><span class="badge badge-f">熟悉</span></div>
+    <ul>
+      <li><strong>病理生理核心机制</strong>：
+        <ul>
+          <li>高血压机制：潴钠排钾→细胞外液及血容量增加、血管壁及血循环 Na⁺ 增多、血管对去甲肾上腺素反应增强。</li>
+          <li><span class="k">盐皮质激素“脱逸”现象</span>：细胞外液增多触发排钠反应（近曲小管重吸收钠减少 + ANP 分泌增多），使钠代谢近于平衡（故典型原醛多无明显水肿）。</li>
+          <li>碱中毒与搐搦机制：细胞内失钾后 Na⁺、H⁺ 入胞→细胞内 pH 降、细胞外 H⁺ 减呈<span class="k">碱血症</span>→游离钙减少 + 醛固酮促尿镁排出→肢端麻木与手足搐搦。</li>
+        </ul>
+      </li>
+      <li><strong>三阶段演进</strong>：①早期：仅高血压，无低血钾，ARR 升；②轻度钾缺乏期：轻度/间歇低钾或利尿药诱发低钾；③严重钾缺乏期。</li>
+      <li><strong>五大系统表现</strong>：①<strong>高血压</strong>（最常见，常规降压差/难治性，易并发心脑卒中）；②<strong>神经肌肉</strong>：肌无力与周期性瘫痪（劳累或氢氯噻嗪/呋塞米诱发，重者呼吸吞咽困难）；肢端麻木与手足搐搦（<span class="k">重度低钾时兴奋性降反轻或不显，补钾后变得明显</span>）；③<strong>肾脏</strong>：慢性失钾致肾小管上皮<span class="k">空泡样变性</span>、浓缩减退→<span class="k">多尿、夜尿多</span>、继发口渴多饮，易尿感与蛋白尿；④<strong>心脏</strong>：低钾 ECG（<span class="k">QT 间期延长、T 波增宽低平/倒置、U 波明显、TU 相连成驼峰状</span>）；心律失常较常见<span class="k">阵发性室上速</span>，最重室颤；⑤<strong>其他</strong>：儿童生长发育障碍；缺钾致胰岛素释放减少→糖耐量减低。</li>
+    </ul>
+  </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">二、四步诊断分型体系与三类高血压低血钾鉴别诊断</h3><span class="badge badge-f">熟悉</span></div>
+    <ul>
+      <li><strong>基础实验室特征</strong>：①低血钾（常 2～3mmol/L，早期可正常）、血钠正常高限/略高、碱血症（pH 与 CO₂ 结合力偏高）、<span class="k">低血钾（&lt;3.5mmol/L）条件下尿钾仍 &gt;25 mmol/24h</span>、尿 pH 中性或偏碱；②血、尿醛固酮增高（正常成人血醛固酮卧位 50～250pmol/L、立位 80～970pmol/L，换算 ng/dl 除以 <span class="k">27.7</span>；<strong>严重低血钾可抑制醛固酮分泌使其增高不显著</strong>）；③血浆肾素活性与 AngⅡ 基础值降低，肌注<span class="k">呋塞米 0.7mg/kg + 立位 2h</span> 激发试验仅微增或无反应。</li>
+      <li><strong>四步诊断与分型定位</strong>：
+        <ol>
+          <li><strong>最佳筛查试验</strong>：血浆醛固酮(ng/dl) / 血浆肾素活性[ng/(ml·h)] 比值 <span class="k">ARR &gt; 30</span> 考虑原醛（血醛固酮常 <span class="k">&gt;15 ng/dl</span>）。</li>
+          <li><strong>确诊试验（证实试验）</strong>：<span class="k">静卧位 4h 静滴 2 000ml 生理盐水</span>——正常人血醛固酮抑制至 <span class="k">&lt;5 ng/dl</span>，原醛症 <span class="k">&gt;10 ng/dl</span>（<em>第 10 版原文未载录大纲内容栏提及的卡托普利试验，不予补写</em>）。</li>
+          <li><strong>卧立位动态试验（初步鉴别瘤 vs 特醛）</strong>：隔夜卧床上午 8 时至中午 12 时取立位——<span class="k">特醛症血醛固酮明显上升（超过正常人）</span>；<span class="k">醛固酮瘤不升反降</span>（随 ACTH 下降）。</li>
+          <li><strong>影像与金标准分型</strong>：B 超可显 &gt;1.3cm 腺瘤；<span class="k">高分辨率 CT</span> 可检小至 <span class="k">5mm</span>（特醛正常或双侧弥漫增大；≥5cm 示癌）；MRI 灵敏度高于 CT 但特异度低；上述无法确定时行<span class="k">双侧肾上腺静脉采血（AVS）</span>测醛固酮/皮质醇比值定单/双侧。</li>
+        </ol>
+      </li>
+      <li><strong>三类高血压伴低血钾鉴别诊断表</strong>：
+        <div class="tbl-wrap">
+          <table class="med-tbl">
+            <thead><tr><th>鉴别大类与疾病</th><th>肾素 / 醛固酮</th><th>核心机制、表现与治疗鉴别点（第 10 版原文）</th></tr></thead>
+            <tbody>
+              <tr><td><strong>1a. 真性非醛固酮盐皮质过多</strong><br />（17α-羟化酶 / 11β-羟化酶缺陷）</td><td>肾素 ↓<br />醛固酮 ↓</td><td>皮质醇低、ACTH 高、双侧肾上腺增大（易误为特醛误切！），大量<span class="k">脱氧皮质酮（DOC）</span>致高血压低钾碱中毒；均用<span class="k">糖皮质激素补充</span>。<br />• <strong>17α 缺陷</strong>：性激素受阻→女性幼稚、男假两性畸形；<br />• <strong>11β 缺陷</strong>：雄激素增多→男不完全性早熟、女男性化假两性畸形。</td></tr>
+              <tr><td><strong>1b. 表象性盐皮质过多（AME）</strong></td><td>肾素 ↓<br />醛固酮 ↓</td><td>先天 <span class="k">11β-HSD 缺陷</span>，皮质醇不转为无活性皮质素而激活盐皮质受体；血皮质醇正常、尿游离皮质醇低；<span class="k">螺内酯有效</span>，部分地塞米松有效。</td></tr>
+              <tr><td><strong>2. Liddle 综合征</strong></td><td>肾素 ↓<br />醛固酮 ↓</td><td>常显遗传，肾小管上皮<span class="k">钠通道基因激活突变</span>致钠重吸收过多、排钾泌氢；<span class="k">螺内酯无效，阿米洛利/氨苯蝶啶有效</span>。</td></tr>
+              <tr><td><strong>3. 继发性醛固酮增多症</strong></td><td><span class="k">肾素 ↑</span><br /><span class="k">醛固酮 ↑</span></td><td>①<strong>泌肾素肿瘤</strong>（青年重度高 BP/低钾/肾素极高：肾小球旁细胞瘤、Wilms 瘤、卵巢瘤）；<br />②<strong>肾缺血继发肾素高</strong>：恶性高血压（进展快伴氮质血症）、<span class="k">肾动脉狭窄</span>（上腹中/肋脊角血管杂音、核素肾图异常、肾动脉造影确诊）、一侧肾萎缩。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== APPENDIX: AUDIT ==================== -->
+<section class="module-section" id="mod-audit" data-mod-title="大纲边界与差异审计表">
+  <div class="mod-header">
+    <div class="mod-title-row">
+      <h1 class="mod-title">大纲-教材边界与内部差异审计表</h1>
+      <span class="mod-source">透明度与溯源记录</span>
+    </div>
+    <p style="margin:8px 0 0;font-size:13px;color:var(--muted-foreground)">
+      本学习页严格执行用户确认的两项权威红线与三项裁决口径：① 以《内科学-理论课程教学大纲.docx》“内科学-内分泌与代谢病学”<strong>【对应课程目标】</strong>栏为唯一权威，将非标准动词按 <strong>记忆 → 掌握（核心）</strong>、<strong>理解 → 熟悉（次重点）</strong>、<strong>了解 → 彻底剔除</strong> 严格映射，杜绝“了解”项与非大纲章节泄露；② 知识内容 100% 忠实人卫第 10 版《内科学》<strong>07-第七篇 内分泌和代谢性疾病</strong>原文（全篇 18 章偏移严格恒定：<strong>PDF 物理页 = 课本印刷页 + 31</strong>），绝不从外部记忆补写教材未载条目。
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="card-hd"><h3 class="card-title">一、非标准动词映射与大纲内部跨栏口径冲突明细（共 6 处）</h3><span class="badge badge-note">决策记录</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>模块 / 疾病</th><th>【对应课程目标】原文</th><th>大纲内其他栏目原文</th><th>已确认执行结果</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Ⅰ、总论</strong></td><td>1. <strong>理解</strong>范围及重要性，<strong>了解</strong>临床各科相关性；2. <strong>记忆</strong>神经内分泌生理病理基础；3. <strong>记忆</strong>常用诊断与防治原则；4. <strong>了解</strong>国内外发展状况。</td><td>【教学内容和要求】一、2 内嵌：<strong>熟悉</strong>激素种类/分泌途径/作用原理，<strong>了解</strong>发病机制与药物基因学，<strong>掌握</strong>节律/反馈调节及功能诊断意义。</td><td>目标 2/3 及节律反馈归【掌握】；目标 1 前半及激素种类/分泌/受体原理归【熟悉】；临床各科相关性、国内外进展、药物基因学及总论“三、代谢”彻底剔除。</td></tr>
+          <tr><td><strong>Ⅱ、甲亢（GD）</strong></td><td>1. <strong>记忆</strong>临床表现（含特殊）、诊断及鉴别；2. <strong>记忆</strong>抗甲药适应证与副作用，<strong>了解</strong>同位素与手术适应证；3. <strong>了解</strong>病因分类、发病机制与病理生理；4. <strong>记忆</strong>危象诱因、表现及处理。</td><td>【教学内容和要求】仍展开病因分类、免疫机制、病理、¹³¹I、手术、GO 防治及妊娠甲亢。</td><td>彻底剔除 ¹³¹I、手术、病因分类/自身免疫机制、病理及 GO/妊娠甲亢专节；保留 ATD 实用支撑（机制/用法疗程/一般辅助），全部核心条目置【掌握】。</td></tr>
+          <tr><td><strong>Ⅲ、糖尿病（冲突 A）</strong></td><td>5. <strong>了解</strong>糖尿病综合治疗原则，<strong>熟悉</strong>口服降糖药与胰岛素。</td><td>【教学难点重点】第 3 条写“糖尿病综合治疗的原则”。</td><td>以目标栏为唯一权威：剔除五驾马车/MNT/运动/TIR/代谢手术/移植/慢性并发症防治/妊娠围术期管理专节；保留 7 类口服药与胰岛素完整体系，并附注同章注射降糖剂 GLP-1RA（熟悉层）。</td></tr>
+          <tr><td><strong>Ⅲ、糖尿病（冲突 B）</strong></td><td>6. <strong>掌握</strong> DKA 诊断依据和治疗原则；7. <strong>了解</strong>高渗高血糖综合征（HHS）诊断依据和治疗原则。</td><td>【支撑关系表】漏写第 6、7 条；【教学内容和要求】列 DKA 诱因/病理生理/临床表现/鉴别。</td><td>以目标栏为准：DKA 诊断依据（含最小临床线索）与治疗原则归【掌握】；第八章第三节 HHS 整节彻底剔除（仅 DKA 鉴别留病名）。</td></tr>
+          <tr><td><strong>Ⅳ、库欣综合征</strong></td><td>3. <strong>记忆</strong>诊断步骤、实验室要点及鉴别；1/2/4. <strong>理解</strong>病因分类机制、病理生理与临床表现、治疗原则。</td><td>【教学难点重点】将“病理生理及临床表现”与“诊断及鉴别诊断”并列。</td><td>严格按动词映射：诊断步骤/实验室/鉴别归【掌握】；病因分类、临床表现与治疗原则归【熟悉】精要写全。</td></tr>
+          <tr><td><strong>Ⅴ、原醛症</strong></td><td>1. <strong>记忆</strong>病因；4. <strong>记忆</strong>治疗原则；2. <strong>理解</strong>病理生理及临床表现；3. <strong>理解</strong>诊断及鉴别诊断。</td><td>【教学难点重点】列“诊断及鉴别诊断、治疗选择”；【教学内容】把继发原醛放病因段。</td><td>严格按动词映射：五大病因与分型治疗归【掌握】；病理生理临床表现与四步诊断鉴别归【熟悉】；继发性醛固酮增多症按教材归入鉴别诊断。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hd"><h3 class="card-title">二、第 10 版《07-第七篇 内分泌和代谢性疾病》教材缺项、未设专节与版次更新溯源</h3><span class="badge badge-note">溯源说明</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>模块 / 条目</th><th>第 10 版内分泌篇原文实况</th><th>本指南执行方式</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Ⅰ、第一章《总论》</strong></td><td>①<strong>未设专节</strong>逐一分述各种具体激素的生理作用与病理变化，也未设“内分泌病分类”与“药物基因学”专节；②大纲写“功能诊断、<strong>病理诊断</strong>、病因诊断”，第 10 版规范为“<strong>功能诊断、定位诊断（解剖诊断）、病因诊断</strong>”。</td><td>严格忠实第 10 版结构并显式声明未设分激素专节，采用“定位诊断（解剖诊断）”并标注与大纲“病理诊断”对应关系。</td></tr>
+          <tr><td><strong>Ⅱ、第五章第一节《甲亢》</strong></td><td>①第 10 版已<strong>删除基础代谢率（BMR）</strong>；②大纲旧称“浸润性突眼”，第 10 版全面更新为 <strong>Graves 眼病（GO）</strong>并引入 <strong>EUGOGO 2021 CAS 活动度评分</strong>及 ATA/EUGOGO 严重度分级。</td><td>完整 Text-First 收录表 7-5-2/3/4 评分分级，显式声明 BMR 已删，不回填过时指标。</td></tr>
+          <tr><td><strong>Ⅲ、第八章《糖尿病》</strong></td><td>①全面采用 <strong>2019 WHO 六大分型</strong>与 <strong>HbA1c ≥ 6.5%</strong> 补充诊断标准；②DKD 更新为 <strong>CKD-GA 分期</strong>，DR 采用 2014 两型六期；③口服药扩至 <strong>7 大类</strong>（新增西格列他钠、桑枝总生物碱片、GKA 多格列艾汀、恒格列净等），注射剂并列胰岛素与 <strong>GLP-1RA</strong>；④本章未设乳酸酸中毒与低血糖症专节（低血糖在未列大纲的第九章）。</td><td>100% 忠实第 10 版新分型、新分期与全部 7 类口服药/胰岛素表，将 GLP-1RA 作为熟悉层附注收录，不跨章补写第九章低血糖症。</td></tr>
+          <tr><td><strong>Ⅳ、第七章第一节《库欣综合征》</strong></td><td>第 10 版未设独立【病理生理】小节，糖脂蛋白与电解质紊乱机制融于【临床表现】各条目。</td><td>如实保留机制内容并显式注明版式结构。</td></tr>
+          <tr><td><strong>Ⅴ、第七章第二节《原醛症》</strong></td><td>大纲内容栏提及的<strong>卡托普利试验</strong>、<strong>依普利酮</strong>及“醛固酮瘤约占 80%”比例在<strong>第 10 版原文中均未载录</strong>（确诊试验仅载 4h 静滴 2000ml 生理盐水试验；药物仅载螺内酯、氨苯蝶啶/阿米洛利、CCB、ACEI、GRA 糖皮质激素、醛固酮癌化疗药）。</td><td>严格忠实第 10 版原文，<strong>零外部记忆补写</strong>，并在模块正文中显式标注“第 10 版未载录”。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hd"><h3 class="card-title">三、第 10 版内分泌篇 18 章全景范围核对（剔除 14 整章 + 8 同章未选/了解子节）</h3><span class="badge badge-note">范围核对</span></div>
+    <p>第 10 版《07-第七篇 内分泌和代谢性疾病》全篇共 18 章（偏移严格恒定：PDF = 课本 + 31），大纲 5 讲映射其中 <strong>4 章的对应节</strong>（第 1 章、第 5 章第一节、第 7 章第一/二节、第 8 章第一/二节），以下 <strong>14 整章未列入大纲，全部彻底剔除</strong>：</p>
+    <p style="color:var(--muted-foreground)">第二章 下丘脑疾病（P663–667 / PDF P694–698）｜ 第三章 垂体前叶疾病（P668–679 / PDF P699–710）｜ 第四章 垂体后叶疾病（P680–685 / PDF P711–716）｜ 第六章 甲状旁腺疾病（P704–708 / PDF P735–739）｜ 第九章 低血糖症与胰岛素瘤（P748–753 / PDF P779–784）｜ 第十章 血脂异常性疾病（P754–761 / PDF P785–792）｜ 第十一章 肥胖症（P762–767 / PDF P793–798）｜ 第十二章 水、电解质代谢和酸碱平衡失常（P768–782 / PDF P799–813）｜ 第十三章 高尿酸血症（P783–786 / PDF P814–817）｜ 第十四章 骨质疏松症（P787–790 / PDF P818–821）｜ 第十五章 性发育异常疾病（P791–794 / PDF P822–825）｜ 第十六章 多内分泌腺体疾病（P795–799 / PDF P826–830）｜ 第十七章 神经内分泌肿瘤（P800–802 / PDF P831–833）｜ 第十八章 异位激素分泌综合征（P803–805 / PDF P834–836）。</p>
+    <p><strong>同章剔除的 8 个子节</strong>：第五章第二节《甲状腺功能减退症》（P693–695）、第三节《甲状腺炎》（P696–697）、第四节《甲状腺肿》（P698）、第五节《甲状腺结节和甲状腺癌》（P699–703）；第七章第三节《原发性慢性肾上腺皮质功能减退症》（P715–716）、第四节《先天性肾上腺皮质增生症》（P717–720）、第五节《嗜铬细胞瘤》（P720–723）；第八章第三节《高渗高血糖综合征》（P746–747 / PDF P777–778，大纲标“了解”）。</p>
+  </div>
+</section>
+
+    </main>
+  </div>
+</div>
+
+<!-- SVG Zoom Lightbox Modal -->
+<div class="modal-backdrop" id="svgModal" role="dialog" aria-modal="true" aria-label="SVG 图解放大预览">
+  <div class="modal-panel">
+    <div class="modal-top">
+      <span id="modalTitle">图解放大查看</span>
+      <button class="tool-btn" id="modalClose" type="button">关闭 (ESC)</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const navItems = Array.from(document.querySelectorAll(".nav-item"));
+  const sections = Array.from(document.querySelectorAll(".module-section"));
+  const sidebar = document.getElementById("sidebar");
+  const menuBtn = document.getElementById("menuBtn");
+  const sidebarCloseBtn = document.getElementById("sidebarCloseBtn");
+  const filterBtns = Array.from(document.querySelectorAll(".filter-btn"));
+  const clozeBtn = document.getElementById("clozeBtn");
+  const clozeState = document.getElementById("clozeState");
+  const viewAllBtn = document.getElementById("viewAllBtn");
+  const viewAllState = document.getElementById("viewAllState");
+  const svgModal = document.getElementById("svgModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalBody = document.getElementById("modalBody");
+  const modalClose = document.getElementById("modalClose");
+
+  function isMobile() {
+    return window.matchMedia("(max-width: 860px)").matches;
+  }
+
+  function updateSidebarBtnLabel() {
+    const collapsed = isMobile()
+      ? !sidebar.classList.contains("open")
+      : document.body.classList.contains("sidebar-collapsed");
+    menuBtn.textContent = collapsed ? "☰ 展开侧边栏" : "☰ 收起侧边栏";
+  }
+
+  function toggleSidebar() {
+    if (isMobile()) {
+      sidebar.classList.toggle("open");
+    } else {
+      document.body.classList.toggle("sidebar-collapsed");
+    }
+    updateSidebarBtnLabel();
+  }
+
+  function closeSidebar() {
+    if (isMobile()) {
+      sidebar.classList.remove("open");
+    } else {
+      document.body.classList.add("sidebar-collapsed");
+    }
+    updateSidebarBtnLabel();
+  }
+
+  menuBtn.addEventListener("click", toggleSidebar);
+  if (sidebarCloseBtn) sidebarCloseBtn.addEventListener("click", closeSidebar);
+  window.addEventListener("resize", updateSidebarBtnLabel);
+  updateSidebarBtnLabel();
+
+  function activateModule(id, scrollTop) {
+    navItems.forEach((btn) => btn.classList.toggle("active", btn.dataset.target === id));
+    sections.forEach((sec) => sec.classList.toggle("active", sec.id === id));
+    if (isMobile()) {
+      sidebar.classList.remove("open");
+      updateSidebarBtnLabel();
+    }
+    if (document.body.classList.contains("view-all")) {
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else if (scrollTop !== false) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+
+  navItems.forEach((btn) => {
+    btn.addEventListener("click", () => activateModule(btn.dataset.target, true));
+  });
+
+  // Filter: all / master / familiar
+  function setFilter(mode) {
+    document.body.classList.remove("filter-master", "filter-familiar");
+    if (mode === "master") document.body.classList.add("filter-master");
+    if (mode === "familiar") document.body.classList.add("filter-familiar");
+    filterBtns.forEach((b) => b.classList.toggle("active", b.dataset.filter === mode));
+  }
+  filterBtns.forEach((btn) => btn.addEventListener("click", () => setFilter(btn.dataset.filter)));
+
+  // Cloze self-test mode
+  let clozeOn = false;
+  clozeBtn.addEventListener("click", () => {
+    clozeOn = !clozeOn;
+    document.body.classList.toggle("cloze-on", clozeOn);
+    clozeBtn.classList.toggle("active", clozeOn);
+    if (clozeState) clozeState.textContent = clozeOn ? "开（点词翻开）" : "关";
+    if (!clozeOn) {
+      document.querySelectorAll(".k.revealed").forEach((el) => el.classList.remove("revealed"));
+    }
+  });
+  document.addEventListener("click", (e) => {
+    if (!clozeOn) return;
+    const span = e.target.closest(".k");
+    if (span) span.classList.toggle("revealed");
+  });
+
+  // View all / Print toggle
+  let viewAll = false;
+  viewAllBtn.addEventListener("click", () => {
+    viewAll = !viewAll;
+    document.body.classList.toggle("view-all", viewAll);
+    viewAllBtn.classList.toggle("active", viewAll);
+    if (viewAllState) viewAllState.textContent = viewAll ? "开" : "关";
+  });
+
+  // SVG zoom lightbox
+  function openSvgModal(svgCard) {
+    const titleEl = svgCard.querySelector(".svg-hd span");
+    const svgEl = svgCard.querySelector("svg");
+    if (!svgEl) return;
+    modalTitle.textContent = titleEl ? titleEl.textContent : "SVG 图解";
+    modalBody.innerHTML = "";
+    const clone = svgEl.cloneNode(true);
+    clone.querySelectorAll("[id]").forEach((n) => {
+      const oldId = n.getAttribute("id");
+      const newId = "m_" + oldId;
+      n.setAttribute("id", newId);
+      clone.querySelectorAll(`[marker-end="url(#${oldId})"]`).forEach((el) => el.setAttribute("marker-end", `url(#${newId})`));
+      clone.querySelectorAll(`[marker-start="url(#${oldId})"]`).forEach((el) => el.setAttribute("marker-start", `url(#${newId})`));
+    });
+    modalBody.appendChild(clone);
+    svgModal.classList.add("open");
+  }
+  document.querySelectorAll(".svg-card").forEach((card) => {
+    const btn = card.querySelector(".svg-zoom-btn");
+    const stage = card.querySelector(".svg-stage");
+    if (btn) btn.addEventListener("click", () => openSvgModal(card));
+    if (stage) stage.addEventListener("click", () => openSvgModal(card));
+  });
+  function closeModal() {
+    svgModal.classList.remove("open");
+    modalBody.innerHTML = "";
+  }
+  modalClose.addEventListener("click", closeModal);
+  svgModal.addEventListener("click", (e) => { if (e.target === svgModal) closeModal(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+})();
+</script>
+
+<script>
+(function () {
+  const root = document.documentElement;
+  const btn = document.getElementById("themeToggleBtn");
+  const state = document.getElementById("themeState");
+  const saved = (function () { try { return localStorage.getItem("study_guide_theme"); } catch (e) { return null; } })();
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  let theme = saved || (prefersDark ? "dark" : "light");
+  function apply(t) {
+    root.setAttribute("data-theme", t);
+    if (btn) btn.classList.toggle("active", t === "dark");
+    if (state) state.textContent = t === "dark" ? "开" : "关";
+    try { localStorage.setItem("study_guide_theme", t); } catch (e) {}
+  }
+  apply(theme);
+  if (btn) {
+    btn.addEventListener("click", function () {
+      theme = theme === "dark" ? "light" : "dark";
+      apply(theme);
+    });
+  }
+})();
+</script>
+
+
+<script>
+(function () {
+  function syncFromHash() {
+    var raw = (window.location.hash || "").replace(/^#/, "");
+    if (!raw) return;
+    var btn = document.querySelector('.nav-item[data-target="' + raw + '"]');
+    if (btn) btn.click();
+  }
+  window.addEventListener("hashchange", syncFromHash);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", syncFromHash);
+  } else {
+    syncFromHash();
+  }
+})();
+</script>
+
+</body>
+</html>
