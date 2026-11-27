@@ -620,6 +620,8 @@
   @media print {
     .sidebar, .topbar, .svg-zoom-btn { display: none !important; }
     .module-section { display: block !important; page-break-after: always; }
+    .tier-heading[data-tier] { display: flex !important; }
+    .card[data-tier], .svg-card[data-tier] { display: block !important; }
     .card, .svg-card { break-inside: avoid; }
     body.cloze-on .k { background: transparent !important; color: inherit !important; }
   }
@@ -700,10 +702,10 @@
     <nav class="nav-list" id="navList">
       <button class="nav-item active" data-target="mod-1"><span class="nav-num">Ⅰ</span><span><strong>心功能不全（心力衰竭）</strong><span class="nav-meta">第2章 · 课本P176-189 / PDF P207-220</span></span></button>
       <button class="nav-item" data-target="mod-2"><span class="nav-num">Ⅱ</span><span><strong>心律失常</strong><span class="nav-meta">第3章 · 课本P190-226 / PDF P221-257</span></span></button>
-      <button class="nav-item" data-target="mod-3"><span class="nav-num">Ⅲ</span><span><strong>动脉粥样硬化及冠心病</strong><span class="nav-meta">第4章 · 课本P227-259 / PDF P258-290</span></span></button>
+      <button class="nav-item" data-target="mod-3"><span class="nav-num">Ⅲ</span><span><strong>动脉粥样硬化及冠心病</strong><span class="nav-meta">第4章(1-4节) · 课本P227-257 / 全章P259</span></span></button>
       <button class="nav-item" data-target="mod-4"><span class="nav-num">Ⅳ</span><span><strong>高血压</strong><span class="nav-meta">第5章 · 课本P260-274 / PDF P291-305</span></span></button>
       <button class="nav-item" data-target="mod-5"><span class="nav-num">Ⅴ</span><span><strong>心肌疾病</strong><span class="nav-meta">第6章 · 课本P275-287 / PDF P306-318</span></span></button>
-      <button class="nav-item" data-target="mod-6"><span class="nav-num">Ⅵ</span><span><strong>心脏瓣膜病</strong><span class="nav-meta">第8章 · 课本P299-314 / PDF P330-345</span></span></button>
+      <button class="nav-item" data-target="mod-6"><span class="nav-num">Ⅵ</span><span><strong>心脏瓣膜病</strong><span class="nav-meta">第8章(1-5节) · 课本P299-313 / 全章P314</span></span></button>
       <button class="nav-item" data-target="mod-7"><span class="nav-num">Ⅶ</span><span><strong>心包疾病</strong><span class="nav-meta">第9章 · 课本P315-320 / PDF P346-351</span></span></button>
       <button class="nav-item" data-target="mod-8"><span class="nav-num">Ⅷ</span><span><strong>感染性心内膜炎</strong><span class="nav-meta">第10章 · 课本P321-327 / PDF P352-358</span></span></button>
       <button class="nav-item" data-target="mod-9"><span class="nav-num">Ⅸ</span><span><strong>心脏骤停与心肺复苏</strong><span class="nav-meta">第11章 · 课本P328-334 / PDF P359-365</span></span></button>
@@ -811,7 +813,7 @@
 
         <rect x="460" y="154" width="184" height="44" rx="6" fill="var(--warning)" fill-opacity="0.12" stroke="var(--warning)" />
         <text x="552" y="172" text-anchor="middle" font-size="12" font-weight="700" fill="var(--warning)">C 期：症状性心衰</text>
-        <text x="552" y="189" text-anchor="middle" font-size="11" fill="var(--foreground)">结构异常 + 既往或现有症状</text>
+        <text x="552" y="189" text-anchor="middle" font-size="9.8" fill="var(--foreground)">结构/功能异常+既往/现有症状体征</text>
 
         <line x1="646" y1="176" x2="672" y2="176" stroke="var(--error)" stroke-width="2" marker-end="url(#arr1r)" />
 
@@ -883,7 +885,7 @@
       <div class="mini-box">
         <h4>左心衰竭（肺循环淤血 + 心排血量降低）</h4>
         <ul>
-          <li><strong>不同程度呼吸困难</strong>：①<span class="k">劳力性呼吸困难（最早出现）</span>；②夜间阵发性呼吸困难（平卧回心血增多+夜间迷走兴奋支气管收缩+横膈抬高）；③端坐呼吸；④<span class="k">急性肺水肿（最严重，“心源性哮喘”）</span>。</li>
+          <li><strong>不同程度呼吸困难</strong>：①<span class="k">劳力性呼吸困难（最早出现）</span>；②夜间阵发性呼吸困难（平卧回心血增多+夜间迷走兴奋支气管收缩+横膈抬高）；③端坐呼吸；④<span class="k">急性肺水肿（最严重形式</span>，可有哮鸣音，称为“<span class="k">心源性哮喘</span>”；急性左心衰病人亦常出现“心源性哮喘”）。</li>
           <li><strong>咳嗽/咳痰/咯血</strong>：夜间多发，白色浆液性泡沫痰；急性左心衰为<span class="k">粉红色泡沫样痰</span>；支气管黏膜下侧支静脉破裂可大咯血。</li>
           <li><strong>灌注不足</strong>：乏力、头晕、心悸、少尿及肾损害。</li>
           <li><strong>体征</strong>：肺底→全肺湿啰音（侧卧下垂侧多）；心脏扩大、心率快、相对性二尖瓣反流杂音、<span class="k">P₂ 亢进</span>、<span class="k">S₃ 或 S₄ 奔马律</span>；中央型发绀。</li>
@@ -922,7 +924,7 @@
       <li><strong>肌钙蛋白</strong>：重度/失代偿心衰可轻度升高，更主要目的是排查 <span class="k">ACS</span>；与脑钠肽同升为强不良预后因子。常规检查含铁蛋白与转铁蛋白饱和度。</li>
       <li><strong>超声心动图（最主要影像学检查）</strong>：收缩功能推荐<span class="k">改良双平面 Simpson 法</span>测 EF；舒张功能多普勒指标含 <span class="k">E/e' ≥ 15</span>（可确诊 HFpEF）、<span class="k">E/A &lt; 1.2</span>（提示舒张减退）、e'、三尖瓣反流峰值速度、PASP、GLS 及形态学指标（LAVI、LVMI、RWT）。</li>
       <li><strong>X 线胸片 / CMR / 核素 / CAG</strong>：X 线见肺门血管影增强、上肺血管影增多、肺动脉增宽、间质性肺水肿、<span class="k">Kerley B 线</span>、肺门呈蝴蝶状、胸腔积液；CMR（LGE）精确测容积并鉴别缺血/非缺血及心肌炎/ARVC/淀粉样变/结节病；<sup>99m</sup>Tc-DPD/PYP/HMDP SPECT 检出 ATTR 淀粉样变，<sup>18</sup>F-FDG PET 鉴别心脏结节病。</li>
-      <li><strong>有创血流动力学（Swan-Ganz 导管）与运动评估</strong>：无创难确诊 HFpEF 时，静息 <span class="k">PCWP ≥ 15mmHg</span> 或 <span class="k">LVEDP ≥ 16mmHg</span>、负荷 <span class="k">PCWP ≥ 25mmHg</span> 可确诊 HFpEF。<span class="k">6 分钟步行试验</span>：<span class="k">&lt; 150m 重度</span>、<span class="k">150～450m 中度</span>、<span class="k">&gt; 450m 轻度</span>；心-肺运动试验测最大耗氧量与无氧阈值（仅限慢性稳定心衰）。</li>
+      <li><strong>有创血流动力学（Swan-Ganz 导管）与运动评估</strong>：对存在劳力性呼吸困难、无创检查不能确诊 HFpEF 但临床仍高度怀疑的病人，静息 <span class="k">PCWP ≥ 15mmHg</span> 或 <span class="k">LVEDP ≥ 16mmHg</span>、负荷 <span class="k">PCWP ≥ 25mmHg</span> 可确诊 HFpEF。<span class="k">6 分钟步行试验</span>：<span class="k">&lt; 150m 重度</span>、<span class="k">150～450m 中度</span>、<span class="k">&gt; 450m 轻度</span>；心-肺运动试验测最大耗氧量与无氧阈值（仅限慢性稳定心衰）。</li>
       <li><strong>诊断 4 步与鉴别诊断</strong>：①病史症状体征+ECG+胸片判可能性 → ②脑钠肽+超声明确心衰及类型 → ③明确病因诱因 → ④评估严重度/预后/合并症。需鉴别：肺部疾病（COPD/哮喘/肺栓塞）、心包积液/缩窄性心包炎（类似右心衰）、肾性/肝性/低蛋白/甲减/静脉水肿（无颈静脉怒张）、贫血/肥胖/衰老所致乏力（避免过度诊断 HFpEF）。</li>
     </ul>
   </div>
@@ -962,7 +964,7 @@
             <td><strong>5. SGLT2i</strong></td>
             <td><strong>达格列净</strong> 或 <strong>恩格列净</strong>：<span class="k">10mg qd</span></td>
             <td>促尿糖排钠、改善代谢与纤维化，降低各 EF 型心血管死亡和住院，推荐用于<span class="k">所有 EF 类型心衰</span>。</td>
-            <td><strong>禁用</strong>：达格列净 <span class="k">eGFR &lt; 30</span>、恩格列净 <span class="k">eGFR &lt; 20</span>、1型糖尿病（教材写作“糖尿病”并提示警惕血糖正常酮症酸中毒）、<span class="k">SBP &lt; 95mmHg</span>；警惕泌尿生殖感染及低血容量。</td>
+            <td><strong>禁用</strong>：达格列净 <span class="k">eGFR &lt; 30ml/(min·1.73m²)</span>、恩格列净 <span class="k">eGFR &lt; 20ml/(min·1.73m²)</span>、糖尿病（注：教材前段推荐用于 2 型糖尿病及各 EF 型心衰，禁忌段原文径列“糖尿病”并提示警惕血糖正常酮症酸中毒，存在前后表述张力，须依原句掌握）、<span class="k">SBP &lt; 95mmHg</span>；警惕生殖器和软组织感染及低血容量状态。</td>
           </tr>
           <tr>
             <td><strong>6. 洋地黄类</strong></td>
@@ -993,13 +995,13 @@
     <ul>
       <li><strong>临床表现与核心诊断标准</strong>：
         <ul>
-          <li><strong>急性肺水肿</strong>：突发严重呼吸困难、端坐呼吸、烦躁恐惧窒息感、呼吸 <span class="k">30～50次/分</span>、发绀大汗、咳<span class="k">大量粉红色泡沫样痰</span>、心尖舒张早期奔马律、两肺满布湿啰音和哮鸣音。与支气管哮喘鉴别靠心脏病史、体位、湿啰音/粉红泡沫痰及 <span class="k">BNP/NT-proBNP</span>。</li>
-          <li><strong>心源性休克诊断标准</strong>：血容量充足下持续低血压 <span class="k">SBP ≤ 90mmHg（持续&gt;30min）</span>、<span class="k">PCWP ≥ 18mmHg</span>、<span class="k">CI ≤ 2.2L/(min·m²)</span>，伴组织低灌注（少尿 <span class="k">&lt; 0.5ml/(kg·h)</span> 或无尿、苍白发绀、四肢湿冷、意识障碍、血清乳酸 <span class="k">&gt; 2mmol/L</span>、代谢性酸中毒 <span class="k">pH &lt; 7.35</span>）。</li>
+          <li><strong>急性肺水肿</strong>：突发严重呼吸困难、端坐呼吸、烦躁恐惧窒息感、呼吸 <span class="k">30～50次/分</span>、发绀大汗、咳<span class="k">大量粉红色泡沫样痰</span>、心尖舒张早期奔马律、两肺满布湿啰音和哮鸣音。应与支气管哮喘、<span class="k">喘息性支气管炎急性加重</span>鉴别，主要靠器质性心脏病史、体位、肺部干湿啰音/粉红泡沫痰及 <span class="k">BNP/NT-proBNP</span>。</li>
+          <li><strong>心源性休克诊断标准</strong>：血容量充足下持续低血压 <span class="k">SBP ≤ 90mmHg（持续 30 分钟以上）</span>、<span class="k">PCWP ≥ 18mmHg</span>、<span class="k">CI ≤ 2.2L/(min·m²)</span>，伴组织低灌注（少尿 <span class="k">&lt; 0.5ml/(kg·h)</span> 或无尿、苍白发绀、四肢湿冷、意识障碍、血清乳酸 <span class="k">&gt; 2mmol/L</span>、代谢性酸中毒 <span class="k">pH &lt; 7.35</span>）。</li>
           <li><strong>急性右心衰竭</strong>：常由右室梗死、急性大面积肺栓塞所致，表现为体循环急性淤血（颈静脉充盈、肝颈回流阳性、肝脾大、水肿）+ 低血压、少尿、肢冷。</li>
         </ul>
       </li>
-      <li><strong>初始评估与一般急救（1 小时内纠正休克与呼衰）</strong>：①快速评估休克（及早血管收缩剂/正性肌力药→无效早行机械支持）与呼衰（<span class="k">CPAP/BiPAP</span> 无创通气→不能纠早行有创通气）；②紧急处理可逆病因（ACS 急诊血运重建、高血压急症快降压、严重心律失常电复律、机械并发症外科、肺栓塞溶栓取栓、压塞穿刺）；③一般处理：高流量吸氧、<span class="k">半卧/端坐双腿下垂</span>、急性肺水肿<span class="k">吗啡 3～5mg iv</span>（必要15min重复，共2–3次，老年减量或肌注）、24h 出入量负平衡管理。</li>
-      <li><strong>干/湿 × 暖/冷四分型方案</strong>：干暖（调口服药）；干冷（先扩容→无效正性肌力）；湿暖（高血压再分布首选扩血管次利尿；淤血潴留首选静脉利尿次扩血管，利尿剂抵抗超滤）；湿冷（SBP≥90扩血管+利尿→无效正性肌力；<span class="k">SBP&lt;90首选正性肌力→无效血管收缩剂</span>，低灌注纠正后再利尿，药物无效尽早机械支持）。</li>
+      <li><strong>初始评估与一般急救（建议 1 小时内纠正休克与呼衰）</strong>：①快速评估休克（及早血管收缩剂/正性肌力药→无效早行机械支持）与呼衰（<span class="k">CPAP/BiPAP</span> 无创通气→不能纠早行有创通气）；②紧急处理可逆病因（ACS 急诊血运重建、高血压急症快速降压、严重心律失常电复律、心脏急性机械并发症紧急外科手术、急性肺栓塞取栓或溶栓、重症感染抗感染、心脏压塞心包穿刺）；③一般处理：尽快开放静脉通道、留置导尿管、心电/血压/血氧监测（心源性休克必要时有创血流动力学监测）；高流量鼻管吸氧、<span class="k">半卧/端坐双腿下垂</span>；镇静：建议急性肺水肿病人用<span class="k">吗啡 3～5mg iv</span>（必要时每间隔 15min 重复 1 次，共 2–3 次，老年可减量或改为肌注）；容量管理：监测 24h 出入液量（容量超负荷严重者严格限盐限水保持液体负平衡，肺淤血水肿明显消退后减少负平衡量渐过渡至平衡；存在低容量状态者适当扩容至平衡）。</li>
+      <li><strong>干/湿 × 暖/冷四分型方案</strong>：干暖（无明显淤血及低灌注，最轻，调口服药）；干冷（无明显淤血但有组织低灌注，<strong>约占 5%，多数合并低血容量</strong>，首先适当扩容→低灌注无法纠正加正性肌力）；湿暖（最常见；高血压再分布首选扩血管次利尿；淤血潴留首选静脉利尿次扩血管，严重利尿剂抵抗超滤）；湿冷（最危重；SBP≥90扩血管+利尿→无效正性肌力；<span class="k">SBP&lt;90首选正性肌力→无效血管收缩剂</span>，低灌注纠正后再利尿，药物无反应尽早机械支持）。</li>
     </ul>
     <div class="tbl-wrap">
       <table class="med-tbl">
@@ -1008,22 +1010,22 @@
           <tr>
             <td><strong>静脉利尿剂</strong>（核心）</td>
             <td><strong>呋塞米</strong>：未用过口服者 <span class="k">20～40mg iv</span>（托拉塞米10–20mg iv），或 5～40mg/h 静滴；前6h ≤80mg、前24h ≤160mg；长期口服者首剂 ≥ 每日口服量。</td>
-            <td>有液体潴留且无未纠正低灌注尽早用；一般负平衡 500–1000ml/d，重度肺水肿 1000–2000ml/d（甚 3000–5000ml/d）。</td>
+            <td>有液体潴留且无未纠正低灌注尽早用；对无大出血或严重脱水等明显低血容量因素者，一般负平衡 500–1000ml/d，严重肺水肿 1000–2000ml/d（甚 3000–5000ml/d）。</td>
           </tr>
           <tr>
             <td><strong>血管扩张剂</strong><br />（<span class="k">SBP&lt;90 禁用</span>）</td>
-            <td><strong>硝普钠</strong>（动+静脉）：0.2–0.3μg/(kg·min)起，每5–10min增0.5，最大10；<strong>不超过72h</strong>（防氰化物中毒）<br /><strong>硝酸甘油</strong>（主扩小静脉）：5–10μg/min起，最大200μg/min；硝酸异山梨酯1–2mg/h起，最大10mg/h<br /><strong>乌拉地尔</strong>（α阻滞扩动脉）：100–400μg/min iv<br /><strong>rhBNP</strong>（动+静脉+排钠）：1.5μg/kg冲击后 0.0075–0.01μg/(kg·min)</td>
+            <td><strong>硝普钠</strong>（动+静脉）：0.2–0.3μg/(kg·min) 静滴起，每 5–10min 增 0.5μg/(kg·min)，不超过 10μg/(kg·min)；<strong>不超过 72h</strong>（防氰化物中毒）<br /><strong>硝酸甘油</strong>（主扩小静脉）：5–10μg/min起，最大200μg/min；硝酸异山梨酯1–2mg/h起，最大10mg/h<br /><strong>乌拉地尔</strong>（α阻滞扩动脉）：100–400μg/min iv<br /><strong>rhBNP</strong>（动+静脉+排钠）：1.5μg/kg冲击后 0.0075–0.01μg/(kg·min) 静滴</td>
             <td>无低灌注/低血压者小剂量慢速使用。硝普钠适重度心衰/后负荷高/肺水肿；硝酸酯适高血压/冠心病缺血/二尖瓣反流（持续易耐药）；乌拉地尔适高血压/主动脉夹层；rhBNP 降 PCWP 改善呼吸困难。</td>
           </tr>
           <tr>
             <td><strong>正性肌力药</strong><br />（SBP&lt;90/低灌注）</td>
-            <td><strong>多巴胺</strong>：低剂量扩肾/肠系膜促利尿；3–10μg/(kg·min)激动β₁强心；中高剂量激动α缩血管<br /><strong>多巴酚丁胺</strong>（β₁）：2.5→20μg/(kg·min)<br /><strong>磷酸二酯酶抑制剂</strong>：强心+扩外周/肺血管（防低血压/心律失常）<br /><strong>左西孟旦</strong>（钙增敏+K<sub>ATP</sub>扩血管）：6–12μg/kg推(&gt;10min)后0.05–0.2维持24h，活性产物持续7–9天<br /><strong>毛花苷丙</strong>：0.2–0.4mg缓推10min，2–4h可再0.2mg</td>
-            <td>不改善远期预后，低灌注纠后尽早停。长期大剂量用 β 阻滞剂失代偿者<span class="k">不推荐多巴胺/多巴酚丁胺</span>（受体受抑）。毛花苷丙主用于<span class="k">房颤伴快心室率（&gt;110次/分）</span>，心梗24h内/重症心肌炎早期避免，防低钾低镁中毒。</td>
+            <td><strong>多巴胺</strong>：低剂量扩肾/肠系膜促利尿；3–10μg/(kg·min)激动β₁强心；中高剂量激动α缩血管<br /><strong>多巴酚丁胺</strong>（β₁）：2.5→20μg/(kg·min)<br /><strong>磷酸二酯酶抑制剂</strong>：强心+扩外周/肺血管（防低血压/心律失常）<br /><strong>左西孟旦</strong>（钙增敏+K<sub>ATP</sub>扩血管）：6–12μg/kg 静推(&gt;10min) 后 0.05–0.2μg/(kg·min) 静滴维持 24h，活性产物持续 7–9 天<br /><strong>毛花苷丙</strong>：0.2–0.4mg缓推10min，2–4h可再0.2mg</td>
+            <td>不改善远期预后，低灌注纠后尽早停。长期大剂量用 β 阻滞剂失代偿者<span class="k">不推荐多巴胺/多巴酚丁胺</span>（受体受抑）。毛花苷丙主用于<span class="k">房颤伴快心室率（&gt;110次/分）</span>，急性心梗后 24h 内、严重心肌缺血、重症心肌炎伴严重心肌损伤疾病早期尽量避免使用，监测血钾/血镁防中毒。</td>
           </tr>
           <tr>
             <td><strong>血管收缩剂</strong></td>
             <td><strong>去甲肾上腺素（心源性休克首选）</strong>、肾上腺素</td>
-            <td>升后负荷为代价保脏器灌注；用于正性肌力药仍无效之低灌注/低血压，防心律失常与缺血，灌注恢复尽早停用；高危住院病人加用抗凝防 DVT/PE。</td>
+            <td>升后负荷为代价保脏器灌注；用于正性肌力药仍无效之低灌注/低血压，防心律失常与缺血，灌注恢复尽早停用；<strong>抗凝治疗</strong>适用于 DVT/PE 发生风险较高且无抗凝禁忌证的急性心衰住院病人。</td>
           </tr>
         </tbody>
       </table>
@@ -1038,14 +1040,14 @@
     <ul>
       <li><strong>心脏本身机制</strong>：①<strong>Frank-Starling 机制</strong>：前负荷增加→心室舒张末容积增加→心肌收缩力增强；②<strong>收缩功能不全</strong>：压力-容积曲线右移，收缩/舒张末容积明显增大伴舒张末压升高；③<strong>舒张功能不全</strong>：压力-容积曲线左移，容积略减而舒张末压升高为主，分两类——主动舒张障碍（缺血/衰老致 Ca²⁺ 回摄入肌质网耗能受阻）与顺应性减退（高血压/HCM 肥厚纤维化）。</li>
       <li><strong>神经体液代偿与恶性循环</strong>：①<strong>交感-肾上腺髓质系统</strong>：NE 经 β₁ 强心增率、α 缩血管保心脑灌注，但增耗氧、直接心肌毒性促凋亡、促心律失常；②<strong>RAAS 过度激活</strong>：ATⅡ 缩血管 + 醛固酮水钠潴留，并促心肌/非心肌细胞肥大增殖及成纤维细胞胶原合成纤维化；③<strong>钠尿肽系统</strong>：心室壁张力增高促 BNP 分泌，利钠排水、抑醛固酮/AVP/肾素、拮抗 ATⅡ；④<strong>AVP</strong>：经 V₁ 缩血管、V₂ 减少游离水清除加重负荷；另有内皮素、NO、缓激肽及炎性细胞因子参与。</li>
-      <li><strong>心室重塑（基本病理机制）</strong>：第10版教材称“心室重塑”（大纲称“心室重构”），指心肌细胞、非心肌细胞及胞外基质/胶原纤维网在代偿过程中的结构与分子演变；能量供利用障碍致心肌细胞坏死减少（收缩力降）+ 纤维化增加（顺应性降），形成不可逆恶性循环。</li>
+      <li><strong>心室重塑（基本病理机制）</strong>：第 10 版教材将“（三）心室重塑”单列为发病机制独立小项（大纲称“心室重构的分子机制”，教材未单设分子信号通路专节），指心肌细胞、非心肌细胞及胞外基质/胶原纤维网在代偿过程中的变化；能量供利用障碍致心肌细胞坏死减少（收缩力降）+ 纤维化增加（顺应性降），形成不可逆恶性循环。</li>
     </ul>
   </div>
 
   <div class="card tier-familiar" data-tier="familiar">
     <div class="card-hd"><h3 class="card-title">2. 慢/急性心衰非药物治疗、机械支持与 AMI 合并心衰溯源</h3><span class="badge badge-f">熟悉</span></div>
     <ul>
-      <li><strong>慢性心衰非药物治疗</strong>：①<strong>CRT</strong>：优化药物 ≥3 个月仍有症状、窦律、NYHA Ⅱ–Ⅳ 级、<span class="k">LVEF ≤ 35%</span>、<span class="k">QRS &gt; 130ms</span>；有普通起搏指征且 LVEF ≤ 50% 可考虑；②<strong>ICD</strong>：一级预防为优化药物 ≥3 个月 LVEF ≤ 35%、NYHA Ⅱ–Ⅲ 级，或心梗 40 天后/血运重建 90 天后 LVEF ≤ 30%、NYHA Ⅰ 级；二级预防用于骤停幸存或血流动力学不稳定持续性室速；③<strong>LVAD</strong>（移植过渡或终末替代）；④<strong>心脏移植</strong>（终末期最终手段）。</li>
+      <li><strong>慢性心衰非药物治疗</strong>：①<strong>CRT</strong>：优化药物 ≥3 个月仍有症状、窦律、NYHA Ⅱ–Ⅳ 级、<span class="k">LVEF ≤ 35%</span>、<span class="k">QRS &gt; 130ms</span>；有普通起搏指征且 LVEF ≤ 50% 可考虑；②<strong>ICD</strong>：一级预防为优化药物 ≥3 个月 LVEF ≤ 35%、NYHA Ⅱ–Ⅲ 级，或心梗 40 天后及血运重建 90 天后、优化药物治疗后 LVEF ≤ 30%、NYHA Ⅰ 级者；二级预防用于骤停幸存或血流动力学不稳定持续性室速；③<strong>LVAD</strong>（移植过渡或终末替代）；④<strong>心脏移植</strong>（终末期最终手段）。</li>
       <li><strong>急性心衰非药物支持与长期管理</strong>：①机械通气（无创/气管插管）；②<strong>CRRT</strong>（高容量利尿剂抵抗、严重肾损、高钾）；③机械循环支持：<strong>IABP</strong>（冠心病急性左心衰改善冠脉灌注/降耗氧/增心排）、<strong>ECMO</strong>（心源性休克/暴发心肌炎/AMI/体外复苏）、<strong>LVAD</strong>（难治心衰/休克桥接移植）；④稳定后尽早恢复/启动慢性优化药物治疗并评估器械指征。</li>
       <li><strong>急性心梗合并心衰溯源</strong>：本章仅在病因/诱因及急诊干预提及 ACS 需尽早血运重建，AMI 合并心衰的 Killip/Forrester 分级、吗啡/利尿/右室心梗扩容禁利尿等具体处理详见本指南<strong>模块 Ⅲ（第四章 STEMI）</strong>。</li>
     </ul>
@@ -1101,8 +1103,8 @@
         <line x1="220" y1="132" x2="220" y2="146" stroke="var(--primary)" stroke-width="1.8" marker-end="url(#arr2)" />
 
         <rect x="20" y="148" width="400" height="30" rx="6" fill="var(--card)" stroke="var(--chart-2)" />
-        <text x="32" y="167" font-size="11.5" font-weight="700" fill="var(--chart-2)">希氏束 → 左右束支/浦肯野（&lt;40次/分）</text>
-        <text x="280" y="167" font-size="11" fill="var(--foreground)">LAD + RCA 后降支</text>
+        <text x="32" y="167" font-size="11.5" font-weight="700" fill="var(--chart-2)">希氏束 → 左右束支 / 浦肯野纤维网</text>
+        <text x="275" y="167" font-size="11" fill="var(--foreground)">血供：LAD + RCA 后降支</text>
 
         <!-- Right: Mechanisms -->
         <rect x="444" y="8" width="428" height="178" rx="10" fill="var(--error)" fill-opacity="0.05" stroke="var(--border)" />
@@ -1142,14 +1144,14 @@
         <text x="334" y="267" font-size="11" fill="var(--foreground)">• 无器质心病：普罗帕酮 / 伊布利特</text>
         <text x="334" y="283" font-size="11" fill="var(--foreground)">• 严重器质心病：胺碘酮（防肺/甲功毒性）</text>
         <text x="334" y="299" font-size="11" fill="var(--foreground)">• 血流动力学不稳定：紧急同步电复律</text>
-        <text x="334" y="314" font-size="11" fill="var(--foreground)">• 症状阵发AF/LVEF↓：首选导管消融</text>
+        <text x="334" y="314" font-size="10.2" fill="var(--foreground)">• 症状阵发AF首选消融；药效差/LVEF↓应选</text>
 
         <rect x="602" y="230" width="258" height="92" rx="7" fill="var(--chart-1)" fill-opacity="0.10" stroke="var(--chart-1)" />
         <text x="614" y="249" font-size="12.5" font-weight="700" fill="var(--chart-1)">3. 控制心室率（室率控制）</text>
         <text x="614" y="267" font-size="11" fill="var(--foreground)">• 无症状且LVEF正常：静息 &lt;110次/分</text>
-        <text x="614" y="283" font-size="11" fill="var(--foreground)">• 症状明显/心肌病：静息 &lt;80, 运动 &lt;110</text>
+        <text x="614" y="283" font-size="10" fill="var(--foreground)">• 症状明显/心动过速心肌病：静&lt;80,动&lt;110</text>
         <text x="614" y="299" font-size="11" fill="var(--foreground)">• HFpEF：β阻滞或非二氢吡啶CCB</text>
-        <text x="614" y="314" font-size="11" fill="var(--foreground)">• HFrEF：首选β阻滞 → 洋地黄/胺碘酮</text>
+        <text x="614" y="314" font-size="10.2" fill="var(--foreground)">• HFrEF：首选β→不达标/忌β选洋/胺碘酮</text>
 
         <!-- Band 3: Emergency Cardioversion / Wide QRS -->
         <rect x="8" y="344" width="864" height="112" rx="10" fill="var(--warning)" fill-opacity="0.06" stroke="var(--border)" />
@@ -1157,18 +1159,18 @@
 
         <rect x="20" y="376" width="268" height="68" rx="7" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" />
         <text x="32" y="395" font-size="12" font-weight="700" fill="var(--error)">室扑 / 室颤（无 R 波可辨）</text>
-        <text x="32" y="413" font-size="11.5" fill="var(--foreground)">即刻【非同步】直流电除颤（1–3min内）</text>
-        <text x="32" y="431" font-size="11" fill="var(--muted-foreground)">双相波 200J / 单相波 200–360J</text>
+        <text x="32" y="413" font-size="11" fill="var(--foreground)">即刻【非同步】电除颤（VF宜1–3min内）</text>
+        <text x="32" y="431" font-size="10.2" fill="var(--muted-foreground)">表3-3-6：单向200–360J / 双向200J</text>
 
         <rect x="304" y="376" width="276" height="68" rx="7" fill="var(--card)" stroke="var(--primary)" />
         <text x="316" y="395" font-size="12" font-weight="700" fill="var(--primary)">有 R 波且血流动力学不稳定</text>
         <text x="316" y="413" font-size="11.5" fill="var(--foreground)">【同步】直流电复律（避开T波易损期）</text>
-        <text x="316" y="431" font-size="10" fill="var(--muted-foreground)">AFL 50–100J｜PSVT 100–150J｜AF/VT 100–200J</text>
+        <text x="316" y="431" font-size="9.5" fill="var(--muted-foreground)">表3-3-6单向：AFL50-100｜PSVT100-150｜AF/VT100-200J</text>
 
         <rect x="596" y="376" width="264" height="68" rx="7" fill="var(--card)" stroke="var(--warning)" />
-        <text x="608" y="395" font-size="12" font-weight="700" fill="var(--warning)">电复律三大禁忌 &amp; 预激房颤警报</text>
-        <text x="608" y="413" font-size="10" fill="var(--error)" font-weight="600">忌电复律：洋地黄中毒/慢快综合征/未抗凝血栓</text>
-        <text x="608" y="431" font-size="10" fill="var(--foreground)">预激+AF：电复律/伊布利特/普罗帕酮(禁β/维/洋/胺)</text>
+        <text x="608" y="395" font-size="11.5" font-weight="700" fill="var(--warning)">房颤电复律禁忌 &amp; 预激房颤警报</text>
+        <text x="608" y="413" font-size="9.8" fill="var(--error)" font-weight="600">AF忌紧急电复律：洋地黄中毒/慢快/未抗凝血栓</text>
+        <text x="608" y="431" font-size="9.8" fill="var(--foreground)">预激+AF：首选电复律/伊布利特/普罗(禁β/维/洋/胺)</text>
       </svg>
     </div>
   </div>
@@ -1206,7 +1208,7 @@
           <tr>
             <td><strong>房性心动过速（房速）</strong></td>
             <td><strong>局灶性</strong>：房率 <span class="k">150～200次/分</span>，异形 P 波，可伴 2:1 AVB 且心动过速不受影响，<span class="k">P 波间等电线存在</span>，刺激迷走不能终止仅加重 AVB，起始逐渐加速。<br /><strong>多源/紊乱性</strong>（重度肺病常见）：≥3 种形态 P 波、PR 间期各异、房率 100–130次/分、心室率不齐。</td>
-            <td>治病因（肺病纠低氧；洋地黄中毒立停并补钾）；控室率用静脉 β 阻滞/非二氢吡啶 CCB；转复首选<span class="k">腺苷</span>，无效选普罗帕酮(无器质病)或胺碘酮/伊布利特；血流动力学不稳定立同步电复律；反复局灶房速首选<span class="k">导管消融</span>。</td>
+            <td>治病因（肺病纠低氧/控感染；洋地黄中毒引起者立停并纠正可能伴随的电解质紊乱，尤警惕低钾血症）；急性期血流动力学稳定且无失代偿性心衰时可静脉用 β 阻滞/非二氢吡啶 CCB 控室率；转复首选<span class="k">腺苷</span>，无效选普罗帕酮(无器质病)或胺碘酮/伊布利特；血流动力学不稳定立同步电复律；反复局灶房速首选<span class="k">导管消融</span>。</td>
           </tr>
           <tr>
             <td><strong>心房扑动（房扑）</strong></td>
@@ -1223,9 +1225,9 @@
     </div>
     <p><strong>房颤抗凝、复律与心室率控制核心细则</strong>：</p>
     <ul>
-      <li><strong>抗凝策略与评分表</strong>：栓子多源于<span class="k">左心耳</span>。合并<span class="k">中重度二尖瓣狭窄或机械瓣置换术后</span>的瓣膜性房颤，无需评分直接首选<span class="k">华法林（INR 2.0～3.0</span>，严重出血给维生素 K₁）。非瓣膜性房颤行 <span class="k">CHA₂DS₂-VASc 评分</span>：<span class="k">男 ≥ 2 分或女 ≥ 3 分应抗凝</span>（男 1 / 女 2 权衡考虑，男 0 / 女 1 无需），首选 <span class="k">NOAC</span>（达比加群[逆转剂依达赛珠单抗]、利伐沙班/阿哌沙班[逆转剂 Andexanet α]）。抗凝前常规评估 <span class="k">HAS-BLED 评分（≥ 3 分高出血风险）</span>，需纠可逆因素，<span class="k">不作为抗凝禁忌证</span>；不适合长期抗凝或规范抗凝仍卒中且 HAS-BLED ≥ 3 分可考虑<span class="k">经皮左心耳封堵术</span>。</li>
+      <li><strong>抗凝策略与评分表</strong>：栓子多源于<span class="k">左心耳</span>。合并<span class="k">中重度二尖瓣狭窄或机械瓣置换术后</span>的瓣膜性房颤，无需评分直接首选<span class="k">华法林（INR 2.0～3.0</span>；华法林导致严重出血者可给予维生素 K₁）。非瓣膜性房颤行 <span class="k">CHA₂DS₂-VASc 评分</span>：<span class="k">男 ≥ 2 分或女 ≥ 3 分应抗凝</span>（男 1 / 女 2 权衡考虑，男 0 / 女 1 <strong>通常</strong>无需抗凝），首选 <span class="k">NOAC</span>（达比加群[逆转剂依达赛珠单抗]、利伐沙班/阿哌沙班[逆转剂 Andexanet α]）。抗凝前常规评估 <span class="k">HAS-BLED 评分（≥ 3 分高出血风险）</span>，需纠可逆因素，<span class="k">不作为抗凝禁忌证</span>；不适合长期抗凝或规范抗凝仍卒中且 HAS-BLED ≥ 3 分可考虑<span class="k">经皮左心耳封堵术</span>。</li>
       <li><strong>复律抗凝规则</strong>：房颤持续 <span class="k">&gt; 48 小时</span>复律前抗凝 <span class="k">3 周</span>（或 TEE 除外血栓），转复后继续抗凝 <span class="k">4 周</span>（“前3后4”）；紧急复律用静注肝素或皮下低分子肝素。</li>
-      <li><strong>转复/维持窦律与控室率</strong>：无器质性心脏病选普罗帕酮、伊布利特（维持选普罗帕酮/决奈达隆/索他洛尔）；有严重器质性心脏病选<span class="k">胺碘酮</span>；血流动力学障碍或急性心衰紧急电复律；有症状阵发 AF 首选<span class="k">导管消融</span>（药效差/不耐受/LVEF 下降亦选消融）。心室率目标：无症状且 LVEF 正常静息 <span class="k">&lt; 110次/分</span>；症状明显或心肌病静息 <span class="k">&lt; 80次/分</span>且中等运动 <span class="k">&lt; 110次/分</span>；HFpEF 用 β 阻滞/非二氢吡啶 CCB，HFrEF 首选 β 阻滞，不足加洋地黄/胺碘酮；药效差可行房室结消融+永久起搏。</li>
+      <li><strong>转复/维持窦律与控室率</strong>：无器质性心脏病选普罗帕酮、伊布利特（维持选普罗帕酮/决奈达隆/索他洛尔）；有严重器质性心脏病选<span class="k">胺碘酮</span>；血流动力学障碍或急性心衰紧急电复律；<strong>有症状的阵发性房颤首选<span class="k">导管消融</span></strong>，有症状房颤药物治疗无效或不能耐受以及 LVEF 下降者应选择导管消融。心室率目标：无症状且 LVEF 正常静息 <span class="k">&lt; 110次/分</span>；症状明显或出现<span class="k">心动过速性心肌病</span>时静息 <span class="k">&lt; 80次/分</span>且中等运动 <span class="k">&lt; 110次/分</span>；HFpEF 用 β 阻滞或/和非二氢吡啶 CCB，HFrEF 首选 β 阻滞，控制不达标或 β 阻滞有使用禁忌时考虑洋地黄或/和胺碘酮；<strong>达严格心室率控制目标后应行 24 小时 Holter 监测评估心动过缓和心脏停搏</strong>；药效差可行房室结消融+永久起搏。</li>
     </ul>
     <div class="grid-2">
       <div class="tbl-wrap">
@@ -1265,7 +1267,7 @@
     <ul>
       <li><strong>室性期前收缩（室早）</strong>：
         <ul>
-          <li><strong>ECG 特征</strong>：①提前出现的<span class="k">宽大畸形 QRS 波群（时限 &gt; 0.12s）</span>，其前无相关 P 波；②T 波与 QRS 主波方向相反；③配对间期恒定，后多为<span class="k">完全性代偿间歇</span>。类型：二联律、三联律、成对室早、间位性室早（无代偿间歇）、单形/多形性室早。</li>
+          <li><strong>ECG 特征</strong>：①提前出现的<span class="k">宽大畸形 QRS 波群（时限常 &gt; 0.12s）</span>，其前无相关 P 波；②T 波与 QRS 主波方向相反；③配对间期恒定，后多为<span class="k">完全性代偿间歇</span>。类型：二联律、三联律、成对室早、间位性室早（无代偿间歇）、单形/多形性室早。</li>
           <li><strong>治疗原则</strong>：无器质性心脏病且无明显症状无需用药；症状明显解释安抚去诱因，可用 β 阻滞、非二氢吡啶 CCB、普罗帕酮。器质性心脏病伴心功能不全原则上治原发病，症状明显用<span class="k">β 阻滞剂或胺碘酮</span>；急性心肌缺血首选再灌注+纠低钾低镁，不主张预防性用抗心律失常药，<span class="k">避免 Ia 与 Ic 类（致心律失常增死亡率）</span>。右室流出道/左室后间隔频发症状性单形室早药物无效可选导管消融。</li>
         </ul>
       </li>
@@ -1273,7 +1275,7 @@
         <ul>
           <li><strong>分类与 ECG</strong>：非持续性（&lt;30s自止）vs 持续性（&gt;30s需干预）；心室率 100–250次/分，节律规则或略不齐，特征性见<span class="k">房室分离</span>、<span class="k">心室夺获</span>与<span class="k">室性融合波</span>（确立室速重要依据）。形态分单形、多形、双向性室速。电生理鉴别：室速 HV 间期小于窦律或为负值。</li>
           <li><strong>宽 QRS 心动过速鉴别（表 3-3-4）</strong>：支持 <strong>SVT</strong>——房早促发、P 与 QRS 呈 1:1 相关、刺激迷走减慢或终止；支持 <strong>VT</strong>——<span class="k">室性融合波、心室夺获、房室分离、全胸导联 QRS 主波同向性</span>。</li>
-          <li><strong>治疗</strong>：无明显血流动力学障碍静注<span class="k">胺碘酮、利多卡因或普鲁卡因胺</span>；药效差或低血压/休克/心绞痛/心衰/脑灌注不足立即<span class="k">同步直流电复律</span>（洋地黄中毒致室速<span class="k">不宜电复律</span>）。预防复发：纠缺血/低钾、心梗后用 β 阻滞降猝死；心梗 48h 后非可逆 VF/不稳定 VT 植入 ICD。</li>
+          <li><strong>治疗</strong>：无明显血流动力学障碍静注<span class="k">胺碘酮、利多卡因或普鲁卡因胺</span>；药效差或低血压/休克/心绞痛/心衰/脑灌注不足立即<span class="k">同步直流电复律</span>（洋地黄中毒致室速<span class="k">不宜电复律</span>）。预防复发：纠缺血/低钾、心梗后用 β 阻滞降猝死；心梗 48h 后非可逆原因所致室颤或血流动力学不稳定室速病人可予植入 ICD。</li>
           <li><strong>三大特殊类型室速</strong>：①<span class="k">尖端扭转型室速（TdP）</span>：多形性，QRS 围绕等电位线周期扭转，200–250次/分，常由 R-on-T 及长 QT（低钾低镁、Ia/Ⅲ类药、三度 AVB）诱发；停诱因药物，<span class="k">首选静脉注射镁盐</span>，<span class="k">忌用 Ia 与 Ⅲ 类药</span>。②<strong>加速性室性自主心律</strong>（缓慢型室速，60–110次/分，见于 AMI 再灌注期，常无需特殊抗心律失常药）。③<strong>特发性室速</strong>（无结构心病，RVOT 最常见，β 阻滞/维拉帕米/普罗帕酮，有症状选导管消融）。</li>
         </ul>
       </li>
@@ -1356,8 +1358,8 @@
           <tr>
             <td><strong>Ⅲ 类</strong><br />阻 K⁺ 通道延长复极</td>
             <td><span class="k">胺碘酮</span>、伊布利特、索他洛尔、决奈达隆、尼非卡兰、维纳卡兰</td>
-            <td><strong>胺碘酮</strong>：伴器质病室上/室性快速心律失常、AF复律与维持（静负荷 150–300mg <span class="k">葡萄糖液稀释</span>缓推10min，维持1–2→0.5mg/min，24h静≤1.2g；口服200mg tid→bid→qd）。<strong>伊布利特</strong>：AF/AFL及预激伴AF急性转复。</td>
-            <td>胺碘酮半衰期极长（9–55天），致<span class="k">不可逆肺间质纤维化</span>、甲亢/甲减、转氨酶升、增高华法林/NOAC浓度，禁预激伴AF；伊布利特致 QT 延长/TdP（监护≥6h）；决奈达隆禁 HFrEF/永久AF。</td>
+            <td><strong>胺碘酮</strong>：伴器质病室上/室性快速心律失常、AF复律与维持（一般静负荷 150–300mg <span class="k">葡萄糖液稀释</span>缓推 10min，维持 1–2→0.5mg/min；终止房颤时负荷量同前、静滴 30–60min；24h 静脉用量一般不超过 1.2g，每日总最大量一般不超过 2.2g；口服 200mg tid→bid→长期维持一般 200–400mg/d 或更小有效剂量）。<strong>伊布利特</strong>：AF/AFL及预激伴AF急性转复。</td>
+            <td>胺碘酮半衰期极长（9–55天），致<span class="k">不可逆肺间质纤维化</span>、甲亢/甲减、转氨酶升、增高华法林/NOAC浓度，禁预激伴AF/AFL；伊布利特致 QT 延长/TdP（监护≥6h）；决奈达隆禁 HFrEF/永久AF。</td>
           </tr>
           <tr>
             <td><strong>Ⅳ 类</strong><br />阻慢 Ca²⁺ 通道</td>
@@ -1369,12 +1371,12 @@
             <td><strong>其他常用</strong></td>
             <td><span class="k">腺苷</span>、洋地黄（地高辛/西地兰）</td>
             <td><strong>腺苷</strong>：6mg 弹丸快速静推→无效12mg（最大18mg），终止 AVNRT/AVRT 首选。<strong>西地兰</strong>：0.2–0.4mg缓推（总&lt;1.2mg/d）控伴心衰快房颤。</td>
-            <td>腺苷禁 SSS/二度以上 AVB/气道高反应/预激伴 AF；地高辛中毒浓度 &gt;2ng/ml，禁中毒/预激伴 AF/HOCM/室速室颤/窦律 MS。</td>
+            <td>腺苷禁 SSS/二度以上 AVB/气道高反应/预激伴 AF/AFL；地高辛禁用于任何洋地黄制剂中毒、<strong>预激伴房颤/房扑</strong>、HOCM、室速或室颤、<strong>缩窄性心包炎</strong>或窦律 MS（中毒浓度 &gt;2ng/ml 可致各种心律失常，须立即停药）。</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p><strong>心脏电复律与电除颤核心技术要点</strong>：机制为强直流电使心肌瞬间同时除极、打断折返由窦房结重新主导。<strong>同步电复律</strong>与 R 波同步（落在 R 降支或起后 30ms 绝对不应期，避开 T 波顶前 20–30ms 易损期），用于有 R 波的快速异位心律失常；<strong>非同步电除颤</strong>仅用于无 R 波可辨的<span class="k">室颤/室扑（1–3分钟内实施）</span>。电极板置<span class="k">胸骨右缘第 2、3 肋间 + 左腋前线第 5 肋间（间距 ≥ 10cm）</span>，复律后监护 24h。单向波能量（表 3-3-6）：<span class="k">房扑 50～100J、室上速 100～150J、房颤/室速 100～200J、室颤 200～360J（双向波 200J）</span>。房颤不适于紧急电复律三情形：①慢-快综合征；②洋地黄中毒；③未抗凝近期栓塞或心房血栓。</p>
+    <p><strong>心脏电复律与电除颤核心技术要点</strong>：机制为强直流电使心肌瞬间同时除极、打断折返由窦房结重新主导。<strong>同步电复律</strong>与 R 波同步（落在 R 降支或起后 30ms 绝对不应期，避开 T 波顶前 20–30ms 易损期），用于有 R 波的快速异位心律失常；<strong>非同步电除颤</strong>用于 R 波不能分辨的<span class="k">室颤或室扑</span>（应即刻于任何时间放电，室颤救治目标为 <span class="k">1～3 分钟内</span>有效电除颤；心脏骤停时无脉室速亦按第十一章除颤流程处置）。电极板置<span class="k">胸骨右缘第 2、3 肋间 + 左腋前线第 5 肋间（间距 ≥ 10cm）</span>，复律后监护 24h。第三章表 3-3-6 经胸体外电复律常用能量（单向波复律）：<span class="k">房扑 50～100J、室上速 100～150J、房颤/室速 100～200J、室颤 200～360J（双向波 200J）</span>（心脏骤停首次除颤按设备推荐能量见模块 Ⅸ 第十一章）。房颤不适于紧急电复律三情形：①慢-快综合征；②洋地黄中毒；③未抗凝近期栓塞或心房血栓。</p>
   </div>
 
   <!-- Familiar Tier -->
@@ -1398,7 +1400,7 @@
         <ul>
           <li><strong>交界早/逸搏</strong>：逆行 P 波在 QRS 前(PR&lt;0.12s)/中/后(RP&lt;0.20s)，交界逸搏律 40–60次/分；<strong>非阵发性交界速</strong>（70–150，渐起渐止）最常见病因为<span class="k">洋地黄中毒</span>（停药补钾，忌电复律）。</li>
           <li><strong>AVNRT（约90%慢快型）</strong>：突发突止，150–200次/分，窄 QRS 规则，逆行 P 埋于 QRS 内或终末；电生理见双径跳跃（<span class="k">AH 突延 &gt; 50ms</span>）。急性期先 Valsalva/单侧颈动脉窦按摩 → 首选<span class="k">静脉腺苷</span>（无效维拉帕米/胺碘酮/β阻滞）→ 不稳定电复律；根治首选<span class="k">导管消融</span>。</li>
-          <li><strong>AVRT 与 WPW 预激</strong>：Kent 束旁道，窦律 <span class="k">PR &lt; 0.12s + δ 波</span>（A型胸导主波全向上，B型 V₁–₂ 向下）。顺向型（&gt;90%，窄QRS）处理同 AVNRT；逆向型（宽QRS）用伊布利特/普罗帕酮。<strong>预激伴 AF/AFL</strong> 首选电复律或伊布利特/普罗帕酮，<span class="k">禁用 β 阻滞、维拉帕米、地尔硫䓬、洋地黄、胺碘酮</span>（促旁道快传致室颤）。</li>
+          <li><strong>AVRT 与 WPW 预激</strong>：Kent 束旁道，窦律 <span class="k">PR &lt; 0.12s + δ 波</span>（A型胸导主波全向上，B型 V₁–₂ 向下）。顺向型（&gt;90%，窄QRS）处理同 AVNRT；逆向型（宽QRS）如刺激迷走神经和用腺苷无效，应考虑静注伊布利特、普鲁卡因胺、氟卡尼或普罗帕酮。<strong>预激伴 AF/AFL</strong> 终止心动过速<strong>首选<span class="k">电复律</span></strong>，或静注伊布利特、普罗帕酮，<span class="k">不应使用 β 阻滞、维拉帕米、地尔硫䓬、洋地黄、胺碘酮</span>（促旁道快传致室颤）。</li>
         </ul>
       </div>
     </div>
@@ -1421,11 +1423,11 @@
   <div class="mod-header">
     <div class="mod-title-row">
       <h1 class="mod-title">Ⅲ、动脉粥样硬化及冠心病</h1>
-      <span class="mod-source">第10版 第四章《动脉粥样硬化和冠状动脉粥样硬化性心脏病》（课本 P227–259 / PDF P258–290）· 4学时（稳2+心梗2）</span>
+      <span class="mod-source">第10版 第四章《动脉粥样硬化和冠状动脉粥样硬化性心脏病》（全章 课本 P227–259 / PDF P258–290；正文取材第1–4节：课本 P227–257 / PDF P258–288）· 4学时（稳2+心梗2）</span>
     </div>
     <div class="syllabus-box">
       <div class="syl-row"><span class="syl-tag m">掌握</span><span>冠心病临床分型与供需失衡/冠脉血流储备基础；稳定型心绞痛病因、典型症状、负荷试验/CTA/造影诊断、鉴别、药物治疗及预防；急性冠脉综合征（UA/NSTEMI 与急性 STEMI）定义、危险分层、心肌坏死标志物动态、STEMI 心电图演变与定位、并发症（含心源性休克与心衰处理）及溶栓 vs PCI 再灌注策略。</span></div>
-      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>动脉粥样硬化的主要危险因素、内皮损伤与炎症假说机制、AHA 6型病理演变、稳定 vs 易损斑块特征、全身受累临床表现与综合防治原则；再灌注损伤临床表现与右室心肌梗死特殊处理。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>动脉粥样硬化的主要危险因素、内皮损伤与炎症假说机制、AHA 6型病理演变、稳定 vs 易损斑块特征及综合防治原则；再灌注损伤临床表现与右室心肌梗死特殊处理。</span></div>
       <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">第三节二/三《缺血性心肌病》《隐匿型冠心病》专节及第五节《冠状动脉痉挛》《心肌桥》《微血管疾病》专节（仅保留心绞痛/ACS 鉴别与分型所需最小标签）。</span></div>
     </div>
   </div>
@@ -1461,14 +1463,14 @@
         <!-- STEMI Branch -->
         <rect x="206" y="40" width="654" height="64" rx="7" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" stroke-width="1.5" />
         <text x="220" y="59" font-size="12.5" font-weight="700" fill="var(--error)">STEMI（持续 ST 弓背向上抬高 / 新发 LBBB，起病 ≤ 12h，12–48h 仍缺血亦可 PCI）</text>
-        <text x="220" y="77" font-size="11.5" fill="var(--foreground)">• 预计 ≤120min 可达 PCI：首选【直接 PCI】（有 PCI 医院 ≤60min；转运力争 ≤90min）</text>
-        <text x="220" y="94" font-size="11.5" fill="var(--foreground)">• 预计 &gt;120min 才达 PCI：首选【静脉溶栓】（ECG 确诊后 ≤10min 给药）→ 未通补救 PCI；通后 2–24h 造影</text>
+        <text x="220" y="77" font-size="11" fill="var(--foreground)">• 预计转运并完成 PCI ≤120min：首选【直接 PCI】（有 PCI 医院 ≤60min；转运力争 ≤90min）</text>
+        <text x="220" y="94" font-size="11" fill="var(--foreground)">• 预计直接 PCI &gt;120min：首选【静脉溶栓】（ECG 确诊后 ≤10min 给药）→ 未通补救 PCI；通后 2–24h 造影</text>
 
         <!-- NSTE-ACS Branch -->
         <rect x="206" y="112" width="654" height="64" rx="7" fill="var(--card)" stroke="var(--chart-1)" stroke-width="1.5" />
         <text x="220" y="131" font-size="12.5" font-weight="700" fill="var(--chart-1)">NSTE-ACS（UA cTn阴性 / NSTEMI cTn&gt;99th，无持续 ST 抬高 — 严禁溶栓！）</text>
         <text x="220" y="149" font-size="10.5" fill="var(--foreground)">• 极高危（休克/顽固胸痛/心衰/室颤/机械并发症）：紧急侵入 &lt; 2h｜高危（NSTEMI / GRACE&gt;140）：早期侵入 &lt; 24h</text>
-        <text x="220" y="166" font-size="11.5" fill="var(--muted-foreground)">• 中危（DM / eGFR&lt;60 / LVEF&lt;40% / GRACE 109–140）：择期侵入 &lt; 72h｜低危：先无创影像查缺血</text>
+        <text x="220" y="166" font-size="10.2" fill="var(--muted-foreground)">• 中危（DM/eGFR&lt;60/LVEF&lt;40%/GRACE 109–140[表&gt;109且≤140]）：择期侵入 &lt;72h｜低危：先无创影像</text>
 
         <!-- Band 2: STEMI ECG 4-Stage Evolution -->
         <rect x="8" y="196" width="864" height="106" rx="10" fill="var(--card)" stroke="var(--border)" />
@@ -1506,7 +1508,7 @@
 
         <rect x="20" y="346" width="200" height="114" rx="7" fill="var(--card)" stroke="var(--warning)" />
         <text x="120" y="366" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--warning)">肌红蛋白（最早出现）</text>
-        <text x="32" y="387" font-size="11.5" fill="var(--foreground)">• 升高：起病 &lt; 2 小时</text>
+        <text x="32" y="387" font-size="11.5" fill="var(--foreground)">• 升高：起病 2 小时内</text>
         <text x="32" y="405" font-size="11.5" fill="var(--foreground)">• 达峰：12 小时内</text>
         <text x="32" y="423" font-size="11.5" fill="var(--foreground)">• 恢复：24～48 小时</text>
         <text x="32" y="444" font-size="11" fill="var(--muted-foreground)">敏感性高但特异性不强</text>
@@ -1550,10 +1552,10 @@
     <div class="card-hd"><h3 class="card-title">2. 稳定型心绞痛：临床特征、分级、无创/有创检查与治疗预防</h3><span class="badge badge-m">掌握</span></div>
     <ul>
       <li><strong>典型症状五大特点</strong>：①诱因：劳力/情绪激动/饱食/寒冷当时（非劳累后）；②部位：胸骨体后、手掌大小、界限不清，放射至左肩/左臂内侧达无名指和小指，或颈咽下颌；③性质：压迫/发闷/紧缩感（非针刺刀扎锐痛），迫使停止活动；④时间：多为 <span class="k">3～5 分钟</span>，不超过半小时；⑤缓解：休息或舌下含服硝酸甘油几分钟内缓解。体征平时正常，发作时可闻 S₄/S₃ 奔马律及乳头肌缺血所致暂时性心尖收缩期杂音。</li>
-      <li><strong>CCS 心绞痛严重程度四级</strong>：Ⅰ 级（一般活动不受限，强/快/持续用力发作）；Ⅱ 级（轻度受限，平地步行 <span class="k">&gt; 200m</span> 或登楼 &gt; 1 层）；Ⅲ 级（明显受限，平地步行 <span class="k">200m 内</span>或登楼 1 层）；Ⅳ 级（轻微活动或休息时发作）。</li>
+      <li><strong>CCS 心绞痛严重程度四级</strong>：Ⅰ 级（一般活动不受限，强/快/持续用力发作）；Ⅱ 级（轻度受限，平地步行 <span class="k">200m 以上</span>或登楼一层以上受限）；Ⅲ 级（明显受限，平地步行 <span class="k">200m 内</span>或登楼一层引起心绞痛）；Ⅳ 级（轻微活动或休息时发作）。</li>
       <li><strong>核心辅助检查</strong>：
         <ul>
-          <li><strong>ECG 与平板运动负荷试验</strong>：静息约半数正常；发作时常见心内膜下缺血致 <span class="k">ST 段压低 ≥ 0.1mV</span>（缓解恢复）或 T 波倒置/假性正常化。<strong>平板运动试验</strong>目标达最大心率或亚极量（85%～90% HR<sub>max</sub>），阳性标准：<span class="k">运动中典型心绞痛，或 ST 段水平型/下斜型压低 ≥ 0.1mV（J 点后 60～80ms）持续 2 分钟</span>；出现心绞痛、步态不稳、室速、血压下降立即终止。<span class="k">禁忌证：AMI 急性期、UA、明显心衰、严重心律失常、急性疾病</span>。</li>
+          <li><strong>ECG 与平板运动负荷试验</strong>：静息约半数正常；发作时常见心内膜下缺血致 <span class="k">ST 段压低 ≥ 0.1mV</span>（缓解恢复）或 T 波倒置/假性正常化。<strong>平板运动试验</strong>目标达最大心率或亚极量（85%～90% HR<sub>max</sub>），阳性标准：<span class="k">运动中典型心绞痛，或 ST 段水平型/下斜型压低 ≥ 0.1mV（J 点后 60～80ms）持续 2 分钟</span>；出现心绞痛、步态不稳、室速、血压下降立即终止。<span class="k">禁忌证：AMI 急性期、UA、明显心衰、严重心律失常、急性疾病</span>。<strong>诊断限度</strong>：本试验有一定比例假阳性和假阴性，单纯结果不能作为诊断或排除冠心病的依据。</li>
           <li><strong>冠脉 CTA 与核素检查</strong>：CTA 阴性预测价值高（未见狭窄一般免有创），钙化影响狭窄判读；<span class="k">CT-FFR &lt; 0.80</span> 诊断心肌缺血。<sup>99m</sup>Tc-MIBI 负荷灌注显像见负荷缺损、静息再分布充填；PET 是目前唯一直接评价心肌存活性的影像技术。</li>
           <li><strong>选择性冠脉造影（诊断“金标准”）</strong>：管腔直径狭窄 <span class="k">≥ 70%～75%</span> 严重影响血供（左主干年病死率最高可达 30%）；临界病变以 <span class="k">FFR 或 QFR &lt; 0.80</span> 判定缺血并指导 PCI；IVUS/OCT 评估斑块性状。</li>
         </ul>
@@ -1563,7 +1565,7 @@
         <ul>
           <li><strong>发作期</strong>：立休息 + <span class="k">硝酸甘油 0.5mg</span> 舌下含化（1–2min 起效、维持约半小时；首服防直立低血压）或硝酸异山梨酯 5–10mg 舌下（2–5min 起效、维持 2–3h）。</li>
           <li><strong>缓解期两类药物</strong>：①<strong>改善缺血减轻症状</strong>：选择性 <span class="k">β₁ 阻滞剂</span>（美托洛尔/比索洛尔，静息心率控 <span class="k">55～60次/分</span>，重者可 50）；长效硝酸酯（留足够无药间期防耐药）；CCB（非二氢吡啶维拉帕米/地尔硫䓬慎与 β 联用且禁缓/阻滞/心衰；二氢吡啶氨氯地平/硝苯地平控释适伴高血压）；其他（曲美他嗪、尼可地尔、伊伐布雷定、雷诺嗪）。②<strong>改善预后预防心梗</strong>：<span class="k">阿司匹林 75～150mg/d</span>（不耐受换氯吡格雷 75mg/d 或吲哚布芬 100mg bid）；<span class="k">他汀类</span>（无论血脂水平，目标 <span class="k">LDL-C &lt; 1.8mmol/L [70mg/dl]</span>，不达标联依折麦布/海博麦布或 PCSK9 抑制剂/英克司兰）；合并高血压/DM/心衰用 ACEI/ARB/ARNI；心梗后用 β 阻滞。</li>
-          <li><strong>血运重建与预防</strong>：PCI（提升生活质量，临界病变 FFR/QFR&lt;0.80）vs <span class="k">CABG 首选指征</span>（左主干伴 ≥2 支病变且 SYNTAX 高分、多支病变合并糖尿病、重度扭曲钙化）。二级预防 <span class="k">ABCDE 方案</span>：A 抗血小板/抗心绞痛/ACEI·ARB；B β阻滞/控血压；C 控血脂/戒烟；D 饮食/控糖尿病；E 教育/运动。</li>
+          <li><strong>血运重建与预防</strong>：有血运重建适应证者须综合冠脉解剖特点、病人对开胸手术的耐受程度及意愿选择 PCI（提升生活质量，临界病变 FFR/QFR&lt;0.80）或 CABG；对全身情况能耐受开胸手术者，<span class="k">CABG 应为首选</span>：左主干合并 ≥2 支病变（<strong>尤其</strong> SYNTAX 等复杂程度评分较高者）、多支血管病变合并糖尿病、病变严重扭曲伴重度钙化者。二级预防 <span class="k">ABCDE 方案</span>：A 抗血小板/抗心绞痛/ACEI·ARB；B β阻滞/控血压；C 控血脂/戒烟；D 饮食/控糖尿病；E 教育/运动。</li>
         </ul>
       </li>
     </ul>
@@ -1576,9 +1578,9 @@
       <table class="med-tbl">
         <thead><tr><th>危险分层（表 3-4-3）</th><th>核心临床标准（含 GRACE 评分）</th><th>侵入治疗策略时机</th></tr></thead>
         <tbody>
-          <tr><td><strong>极高危</strong></td><td>血流动力学不稳定/心源性休克；药物无效反复/持续胸痛；缺血致急性心衰；致命性心律失常/骤停；心梗机械并发症；反复 ST-T 动态改变伴间歇 ST 抬高。</td><td><span class="k">紧急侵入（&lt; 2 小时）</span></td></tr>
+          <tr><td><strong>极高危</strong></td><td>血流动力学不稳定/心源性休克；药物无效反复/持续胸痛；缺血致急性心衰；致命性心律失常/骤停；心梗机械并发症；反复 ST-T 波动态改变，<strong>尤其是</strong>伴随间歇性 ST 段抬高，提示心肌缺血。</td><td><span class="k">紧急侵入（&lt; 2 小时）</span></td></tr>
           <tr><td><strong>高危</strong></td><td>肌钙蛋白动态变化诊断 NSTEMI；<span class="k">GRACE 评分 &gt; 140 分</span>（院内死亡 &gt;3%）；ST/T 动态改变；一过性 ST 抬高。</td><td><span class="k">早期侵入（&lt; 24 小时）</span></td></tr>
-          <tr><td><strong>中危</strong></td><td>糖尿病；eGFR &lt; 60；LVEF &lt; 40% 或慢性心衰；早期心梗后心绞痛；PCI/CABG 史；<span class="k">109 &lt; GRACE ≤ 140 分</span>。</td><td><span class="k">选择性侵入（&lt; 72 小时）</span></td></tr>
+          <tr><td><strong>中危</strong></td><td>糖尿病；eGFR &lt; 60；LVEF &lt; 40% 或慢性心衰；早期心梗后心绞痛；PCI/CABG 史；<span class="k">GRACE 109～140 分（正文） / 109 &lt; GRACE ≤ 140（表 3-4-3，教材内部 109 分归属口径并列）</span>。</td><td><span class="k">选择性侵入（&lt; 72 小时）</span></td></tr>
           <tr><td><strong>低危</strong></td><td>无上述标准（GRACE ≤ 108 分）且症状无反复发作。</td><td>先行无创影像学查缺血</td></tr>
         </tbody>
       </table>
@@ -1596,7 +1598,7 @@
       <li><strong>症状、心律失常与泵衰竭分级</strong>：最先出现剧烈持久胸痛（数小时，休息/硝酸甘油不缓解）；24–48h 坏死吸收热（约 38℃，持续约 1 周）；胃肠道症状。<strong>心律失常（75%～95%，24h 内最多）</strong>：室性最多，频发（&gt;5次/分）/成对/短阵室速/多源/<span class="k">R-on-T</span> 为<span class="k">室颤先兆</span>（院前主死因）；前壁伴 AVB 示梗死广泛。<strong>休克（约 20%）</strong>：心肌坏死 &gt;40%，疼痛缓仍 SBP&lt;80mmHg 伴尿量 &lt;20ml/h 等。<strong>急性左心衰（32%～48%）</strong>：
         <br />• <strong>Killip 分级</strong>：Ⅰ 级无心衰；Ⅱ 级左心衰肺啰音 <span class="k">&lt; 50% 肺野</span>；Ⅲ 级急性肺水肿（全肺啰音）；Ⅳ 级<span class="k">心源性休克</span>。
         <br />• <strong>Forrester 血流动力学分类</strong>：Ⅰ 类无淤血无低灌注；Ⅱ 类单肺淤血（<span class="k">PCWP ≥ 18mmHg</span>，CI 正常 &gt;2.2）；Ⅲ 类单低灌注（PCWP&lt;18，<span class="k">CI ≤ 2.2</span>，容量不足/心动过缓）；Ⅳ 类淤血+低灌注（PCWP≥18 且 CI≤2.2，最重）。</li>
-      <li><strong>ECG 特征、四期动态与定位表（表 3-4-4）</strong>：面向坏死区周围损伤区见 <span class="k">ST 弓背向上抬高</span>、坏死区见<span class="k">宽深病理性 Q 波</span>、缺血区见 T 波倒置；背向导联镜像改变。动态 4 期：超急性期（高大不对称 T 波）→ 急性期（数小时–2日单相曲线 + Q 波，3–4天稳定，70%–80%永久存）→ 亚急性期（数日–2周 ST 回基线，持续抬高虑室壁瘤）→ 慢性期（对称 V 形倒置 T）。</li>
+      <li><strong>ECG 特征、四期动态与定位表（表 3-4-4）</strong>：面向坏死区周围损伤区见 <span class="k">ST 弓背向上抬高</span>、坏死区见<span class="k">宽深病理性 Q 波</span>、缺血区见 T 波倒置；背向导联镜像改变。动态 4 期：超急性期（起病数小时内<strong>可尚无异常</strong>或出现异常高大两肢不对称 T 波）→ 急性期（数小时–2日单相曲线 + Q 波，3–4天稳定，70%–80%永久存）→ 亚急性期（数日–2周 ST 回基线，持续抬高虑室壁瘤）→ 慢性期（对称 V 形倒置 T）。</li>
     </ul>
     <div class="tbl-wrap">
       <table class="med-tbl">
@@ -1611,7 +1613,7 @@
         </tbody>
       </table>
     </div>
-    <p><strong>心肌坏死标志物动态与鉴别诊断（表 3-4-5）</strong>：肌红蛋白（<span class="k">&lt;2h 升、12h 峰、24–48h 复常</span>，最早但特异差）；<span class="k">cTnI（3–4h 升、11–24h 峰、7–10d 复常）</span>；<span class="k">cTnT（3–4h 升、24–48h 峰、10–14d 复常）</span>；<span class="k">CK-MB（&lt;4h 升、16–24h 峰、3–4d 复常</span>，再升判再梗死，峰值提前≤14h判溶栓通）。CK/AST/LDH 已不再用于诊断 AMI。<strong>心绞痛 vs AMI 核心鉴别（表 3-4-5）</strong>：心绞痛诱因明确、时限 1–5min（&lt;15min）、硝酸甘油显著缓解、无坏死吸收（发热/WBC↑/ESR↑/坏死标志物）及 ECG 动态演变；AMI 反之。还需鉴别：主动脉夹层（撕裂痛即高峰、双上肢血压差、A型可累及冠脉口）、急性肺栓塞（S<sub>I</sub>Q<sub>III</sub>T<sub>III</sub>、D-二聚体两者均可升鉴别价值不大）、急腹症、急性心包炎（广泛 ST 弓背向下无 Q 波）、嗜铬细胞瘤。</p>
+    <p><strong>心肌坏死标志物动态与鉴别诊断（表 3-4-5）</strong>：肌红蛋白（<span class="k">2h 内升、12h 内达峰、24–48h 复常</span>，最早但特异差）；<span class="k">cTnI（3–4h 后升、11–24h 峰、7–10d 复常）</span>；<span class="k">cTnT（3–4h 后升、24–48h 峰、10–14d 复常）</span>（症状出现后 6h 内 cTn 测定阴性建议 1–2h 后复查，仍阴性可排除 AMI，持续胸痛者应再次复查）；<span class="k">CK-MB（4h 内升、16–24h 峰、3–4d 复常</span>，恢复正常后若再次升高提示再发新的梗死，峰值提前≤14h 助判溶栓成功）。CK/AST/LDH 已不再用于诊断 AMI。<strong>老年不典型 AMI 警示</strong>：老年突发原因未明严重心律失常、休克、心衰或较重持久胸闷/胸痛/呼吸困难者，应考虑 AMI，宜先按 AMI 处理并短期内动态复查 ECG 与标志物。<strong>心绞痛 vs AMI 核心鉴别（表 3-4-5）</strong>：心绞痛诱因明确、时限 1–5min（&lt;15min）、硝酸甘油显著缓解、无坏死吸收（发热/WBC↑/ESR↑/坏死标志物）及 ECG 动态演变；AMI 反之。还需鉴别：主动脉夹层（撕裂痛即高峰、双上肢血压差、A型可累及冠脉口）、急性肺栓塞（S<sub>I</sub>Q<sub>III</sub>T<sub>III</sub>、D-二聚体两者均可升鉴别价值不大）、急腹症、急性心包炎（广泛 ST 弓背向下无 Q 波）、嗜铬细胞瘤。</p>
   </div>
 
   <div class="card tier-master" data-tier="master">
@@ -1630,9 +1632,9 @@
       <div class="mini-box">
         <h4>再灌注策略（起病 3–6h、最多 12h 内核心）</h4>
         <ul>
-          <li><strong>直接 PCI（首选）</strong>：有 PCI 医院力争 <span class="k">≤ 60 分钟</span>；转运预计 <span class="k">≤ 120 分钟</span>可行 PCI 则首选转运并力争 <span class="k">≤ 90 分钟</span>。适应证：≤12h 持续 ST 抬高或新发 LBBB；12–48h 仍有胸痛/ECG 缺血证据亦可。溶栓后未通（TIMI 0–II级）行<strong>补救性 PCI</strong>；溶栓通后稳定者 <span class="k">2–24h 造影</span>。</li>
-          <li><strong>静脉溶栓（预计直接 PCI &gt; 120min 首选）</strong>：ECG 确诊后 <span class="k">≤ 10 分钟内给药</span>。适应证：≥2 相邻导联 ST 抬高（胸 ≥0.2mV、肢 ≥0.1mV）或伴 LBBB、&lt;12h、&lt;75岁（&gt;75岁权衡半量；12–24h仍缺血可考虑）。</li>
-          <li><strong>溶栓 9 条绝对/核心禁忌</strong>：①既往出血性脑卒中、6个月内缺血性卒中；②CNS 受损/肿瘤/畸形；③近 2–4 周活动性内脏出血；④未排除主动脉夹层；⑤入院未控制重度高血压（&gt;180/110）；⑥正在用治疗量抗凝药或出血倾向；⑦近 2–4 周创伤/头外伤/长时 CPR(&gt;10min)；⑧近 &lt;3 周大手术；⑨近 &lt;2 周不可压迫大血管穿刺。</li>
+          <li><strong>直接 PCI（首选）</strong>：有 PCI 医院力争 <span class="k">≤ 60 分钟</span>；预计 <span class="k">≤ 120 分钟</span>可转运并完成 PCI 则首选转运并力争 <span class="k">≤ 90 分钟</span>。适应证：≤12h 持续新发 ST 抬高或新发 LBBB；12–48h 内仍有心肌缺血证据（仍有胸痛<strong>和</strong> ECG 变化）亦可尽早 PCI。溶栓后仍有明显胸痛且抬高 ST 段无明显降低者尽快冠脉造影，示 TIMI 0–Ⅱ 级血流说明未再通，宜立即<strong>补救性 PCI</strong>（注：教材补救 PCI 结合临床未缓解判 TIMI 0–Ⅱ 未通，与一般造影再通标准 TIMI Ⅱ/Ⅲ 存在 TIMI Ⅱ 表述重叠）；溶栓通后稳定者 <span class="k">2–24h 造影</span>。</li>
+          <li><strong>静脉溶栓（预计直接 PCI &gt; 120min 首选）</strong>：ECG 确诊后 <span class="k">≤ 10 分钟内给药</span>。适应证：①≥2 相邻导联 ST 抬高（胸 ≥0.2mV、肢 ≥0.1mV），或<strong>病史提示 AMI 伴左束支传导阻滞</strong>、&lt;12h、&lt;75 岁；②<strong>ST 段显著抬高</strong>且年龄 &gt;75 岁经慎重权衡利弊仍可考虑（建议半量）；③STEMI 发病 12–24h 仍有<strong>进行性缺血性胸痛、广泛 ST 段抬高</strong>者也可考虑。</li>
+          <li><strong>溶栓 9 条绝对/核心禁忌</strong>：①既往出血性脑卒中、6 个月内缺血性脑卒中<strong>或脑血管事件</strong>；②CNS 受损/肿瘤/畸形；③近 2–4 周活动性内脏出血；④未排除主动脉夹层；⑤入院时严重且未控制高血压（&gt;180/110mmHg）<strong>或慢性严重高血压病史</strong>；⑥正在用治疗量抗凝药或出血倾向；⑦近 2–4 周创伤史（含头部外伤、<strong>创伤性心肺复苏</strong>或较长时间 [&gt;10min] CPR）；⑧近 &lt;3 周大手术；⑨近 &lt;2 周不可压迫大血管穿刺。</li>
           <li><strong>溶栓再通 4 项间接标准</strong>（造影直接标准 TIMI II/III级）：①<span class="k">2h 内 ST 回降 &gt; 50%</span>；②2h 内胸痛基本消失；③2h 内再灌注心律失常；④<span class="k">CK-MB 峰值提前至 14h 内</span>。</li>
         </ul>
       </div>
@@ -1661,8 +1663,8 @@
       <li><strong>7 大主要危险因素</strong>：年龄(&gt;40岁)/性别(男早于女约10年，女绝经后急升)、<strong>血脂异常</strong>（最重要，首要干预靶点 <span class="k">LDL-C</span>，次要非 HDL-C；Lp(a)/TG 亦相关）、高血压（60%–70%冠脉硬化合并）、糖尿病（“冠心病等危症”，高 sdLDL/高凝）、吸烟（增2–6倍）、肥胖（BMI 24–27.9超重，≥28肥胖）、早发家族史（一级亲属男&lt;55、女&lt;65岁）；另有 A 型性格、口服避孕药、失眠(&lt;6h/d)。</li>
       <li><strong>炎症假说发病机制</strong>：以<span class="k">内皮损伤为始动因素</span> → 表达 P 选择素/VCAM-1 募集单核/淋巴细胞 → 巨噬细胞经清道夫受体吞噬 ox-LDL 变<span class="k">泡沫细胞</span>（最早脂质条纹）→ 释放 MCP-1/PDGF/FGF/TNF-α/IL-1 促中膜平滑肌迁入内膜增殖并分泌基质成纤维帽 → 后期炎症细胞释放 <span class="k">MMPs</span> 降解纤维帽胶原致斑块破裂。</li>
       <li><strong>AHA 6 型病理演变与易损斑块</strong>：累及体循环大中型肌弹力动脉（肺动脉极少）。Ⅰ脂质点 → Ⅱ脂质条纹 → Ⅲ斑块前期 → Ⅳ粥样斑块(脂质池) → Ⅴ<span class="k">纤维粥样斑块（最具特征）</span> → Ⅵ复合病变（出血/坏死/溃疡/钙化/附壁血栓）。<strong>稳定斑块</strong>（厚纤维帽、小脂质池）vs <strong>易损/不稳定斑块</strong>（薄纤维帽、大脂质池，破裂释放组织因子/PAF→先血小板聚集成<span class="k">白色血栓</span>→上调 PAI-1 演变为<span class="k">红色血栓</span>致急性闭塞）。</li>
-      <li><strong>全身受累与防治</strong>：主动脉（脉压增宽/动脉瘤/夹层）、冠脉、脑动脉、肾动脉（&gt;55岁突发顽固高血压）、肠系膜动脉、下肢动脉（间歇性跛行/坏疽）。综合防治：控危因（腰围男&lt;85/女&lt;80cm、每周150min中等运动）、调脂（他汀首选）、抗血小板、溶栓抗凝、血运重建。</li>
-      <li><strong>再灌注损伤（大纲难点）</strong>：第 10 版第四章原文阐述：急性缺血心肌再灌注时常表现为<span class="k">再灌注性心律失常</span>（各种快/缓型均可出现），最常见为一过性非阵发性室性心动过速（加速性室性自主心律），通常无需特殊处理，但需备好抢救措施（教材未展开单独分子通路专节）。</li>
+      <li><strong>综合防治原则（服务冠心病预防）</strong>：控制危险因素（合理膳食、腰围男 &lt;85/女 &lt;80cm、每周 150min 中等运动、戒烟控压控糖）、他汀首选调脂、抗血小板、溶栓抗凝、血运重建（全身外周动脉受累详述属大纲外第十二章，本页不展开）。</li>
+      <li><strong>再灌注损伤（大纲难点）</strong>：第 10 版第四章原文阐述：急性缺血心肌再灌注时，<strong>可出现再灌注损伤</strong>，常表现为<span class="k">再灌注性心律失常</span>（各种快、缓型心律失常均可出现，应做好抢救准备，但出现严重心律失常少见），最常见为一过性非阵发性室性心动过速（加速性室性自主心律），对此不必行特殊处理（教材未单设分子通路专节）。</li>
     </ul>
   </div>
 </section>
@@ -1676,7 +1678,7 @@
     </div>
     <div class="syllabus-box">
       <div class="syl-row"><span class="syl-tag m">掌握</span><span>高血压诊断标准（诊室/家庭/ABPM）与血压分级；心血管危险分层与靶器官损害评估；原发性高血压治疗原则、降压目标值及六大类降压药特点与个体化联合用药方案；继发性高血压筛查指征与 6 大常见继发高血压筛查流程。</span></div>
-      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>我国人群高血压流行病学与特点；高血压五大发病机制及年龄血流动力学特点；特殊类型高血压（老年、儿童青少年、难治性高血压、高血压急症与亚急症分级处理及 4 大静脉降压药、合并脑卒中/心梗/CKD/糖尿病降压策略）。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>我国人群高钠低钾/高 Hcy 与卒中风险特点；高血压五大发病机制及年龄血流动力学特点；特殊类型高血压（老年、儿童青少年、难治性高血压、高血压急症与亚急症分级处理及 4 大静脉降压药、合并脑卒中/心梗/CKD/糖尿病降压策略）。</span></div>
       <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">妊娠高血压（教材注明参见《妇产科学》，本章未设专节）；基因治疗等前沿展望（课程目标4“了解”项）。</span></div>
     </div>
   </div>
@@ -1701,9 +1703,9 @@
         <rect x="8" y="8" width="420" height="142" rx="10" fill="var(--primary)" fill-opacity="0.06" stroke="var(--border)" />
         <text x="22" y="29" font-size="13" font-weight="700" fill="var(--primary)">① 高血压多场景诊断阈值（mmHg）</text>
         <text x="22" y="51" font-size="11.5" fill="var(--foreground)">• <tspan font-weight="700" fill="var(--error)">诊室血压（非同日3次）</tspan>：≥ 140 和/或 ≥ 90</text>
-        <text x="22" y="70" font-size="11.5" fill="var(--foreground)">• 家庭自测血压（HBPM）：≥ 135 和/或 ≥ 85</text>
-        <text x="22" y="89" font-size="11.5" fill="var(--foreground)">• 24h 动态血压（ABPM）：≥ 130 和/或 ≥ 80</text>
-        <text x="22" y="108" font-size="11.5" fill="var(--muted-foreground)">  └ 白天均值 ≥ 135/85｜夜间均值 ≥ 120/70</text>
+        <text x="22" y="70" font-size="11.2" fill="var(--foreground)">• 家庭自测（HBPM）：收缩压≥135 和/或 舒张压≥85</text>
+        <text x="22" y="89" font-size="11.2" fill="var(--foreground)">• 24h 动态均值（ABPM）：SBP≥130 和/或 DBP≥80</text>
+        <text x="22" y="108" font-size="10.8" fill="var(--muted-foreground)">  └ 白天均值≥135/85｜夜间均值≥120/70（均和/或）</text>
         <text x="22" y="132" font-size="11.5" fill="var(--primary)" font-weight="600">分级：1级 140–159/90–99｜2级 160–179/100–109｜3级 ≥180/110</text>
 
         <rect x="440" y="8" width="432" height="142" rx="10" fill="var(--error)" fill-opacity="0.05" stroke="var(--border)" />
@@ -1711,35 +1713,35 @@
         <text x="454" y="51" font-size="11.5" fill="var(--foreground)">• <tspan font-weight="700" fill="var(--error)">高危 / 很高危</tspan>：立即启动药物治疗（2级或高危可起始联合）</text>
         <text x="454" y="70" font-size="11.5" fill="var(--foreground)">• 中危：生活方式观察数周不达标启动；低危：观察1–3月</text>
         <text x="454" y="92" font-size="11.5" fill="var(--primary)" font-weight="700">目标值：一般 &lt;140/90｜DM/CKD/心衰/稳冠心病 &lt;130/80</text>
-        <text x="454" y="111" font-size="11.5" fill="var(--foreground)">老年(含≥80岁)：先 &lt;150/90，如耐受可降至 &lt;140/90</text>
-        <text x="454" y="132" font-size="11.5" fill="var(--warning)" font-weight="600">高血压急症(&gt;180/120+急性靶损)：1h降MAP≤25%→2–6h 160/100</text>
+        <text x="454" y="111" font-size="11" fill="var(--foreground)">老年 &lt;150/90(耐受可&lt;140/90)｜≥80岁高龄目标 &lt;150/90</text>
+        <text x="454" y="132" font-size="10.5" fill="var(--warning)" font-weight="600">急症(一般&gt;180/120+急性靶损)：一般1h降MAP≤25%(缺血宜更小)</text>
 
         <!-- Band 2: Preferred Combinations -->
         <rect x="8" y="162" width="864" height="130" rx="10" fill="var(--card)" stroke="var(--border)" />
-        <text x="22" y="183" font-size="13" font-weight="700" fill="var(--foreground)">③ 我国临床 4 大优化联合降压方案（不同机制互补 · 三药联合一般含利尿剂）</text>
+        <text x="22" y="183" font-size="13" font-weight="700" fill="var(--foreground)">③ 我国临床 4 大优化联合降压方案（不同机制联合 · 三药联合一般含利尿剂）</text>
 
         <rect x="20" y="196" width="198" height="82" rx="7" fill="var(--success)" fill-opacity="0.10" stroke="var(--success)" />
         <text x="119" y="216" text-anchor="middle" font-size="12" font-weight="700" fill="var(--success)">ACEI / ARB + D-CCB</text>
-        <text x="119" y="236" text-anchor="middle" font-size="11" fill="var(--foreground)">最经典高效联合</text>
-        <text x="119" y="253" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">兼减轻 CCB 踝部水肿</text>
+        <text x="119" y="236" text-anchor="middle" font-size="11" fill="var(--foreground)">不同机制协同增强降压</text>
+        <text x="119" y="253" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">适伴糖尿病/冠心病/靶损</text>
         <text x="119" y="269" text-anchor="middle" font-size="10.5" fill="var(--primary)">常用单片复方(SPC)</text>
 
         <rect x="234" y="196" width="198" height="82" rx="7" fill="var(--chart-1)" fill-opacity="0.10" stroke="var(--chart-1)" />
         <text x="333" y="216" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-1)">ACEI / ARB + 噻嗪利尿剂</text>
-        <text x="333" y="236" text-anchor="middle" font-size="11" fill="var(--foreground)">显著增强 RASi 疗效</text>
-        <text x="333" y="253" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">血钾效应相互抵消</text>
+        <text x="333" y="236" text-anchor="middle" font-size="11" fill="var(--foreground)">联用利尿剂增强 RASi 疗效</text>
+        <text x="333" y="253" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">适伴容量负荷/老年/心衰</text>
         <text x="333" y="269" text-anchor="middle" font-size="10.5" fill="var(--primary)">常用单片复方(SPC)</text>
 
         <rect x="448" y="196" width="198" height="82" rx="7" fill="var(--warning)" fill-opacity="0.10" stroke="var(--warning)" />
         <text x="547" y="216" text-anchor="middle" font-size="12" font-weight="700" fill="var(--warning)">D-CCB + 噻嗪利尿剂</text>
-        <text x="547" y="236" text-anchor="middle" font-size="11" fill="var(--foreground)">适老年单纯收缩期高血压</text>
-        <text x="547" y="253" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">高盐敏感人群降压显著</text>
-        <text x="547" y="269" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">不依赖低盐饮食</text>
+        <text x="547" y="236" text-anchor="middle" font-size="11" fill="var(--foreground)">老年/单纯收缩期疗效好</text>
+        <text x="547" y="253" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">适合盐敏感高血压人群</text>
+        <text x="547" y="269" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">三药联合一般应含利尿剂</text>
 
         <rect x="662" y="196" width="198" height="82" rx="7" fill="var(--chart-3)" fill-opacity="0.10" stroke="var(--chart-3)" />
         <text x="761" y="216" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-3)">D-CCB + β 受体拮抗剂</text>
-        <text x="761" y="236" text-anchor="middle" font-size="11" fill="var(--foreground)">适合并冠心病/心绞痛</text>
-        <text x="761" y="253" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">β阻滞抵消 CCB 反射心动过速</text>
+        <text x="761" y="236" text-anchor="middle" font-size="11" fill="var(--foreground)">适合合并心绞痛/冠心病</text>
+        <text x="761" y="253" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">适用心率较快中青年</text>
         <text x="761" y="269" text-anchor="middle" font-size="10.5" fill="var(--primary)">常用单片复方(SPC)</text>
 
         <!-- Band 3: Secondary Hypertension Screening -->
@@ -1747,8 +1749,8 @@
         <text x="22" y="325" font-size="13" font-weight="700" fill="var(--warning)">④ 继发性高血压 6 大线索快速筛查分流（年轻中重度 / 联合无效 / 恶化 / 恶性高血压 / 典型线索）</text>
 
         <rect x="20" y="336" width="272" height="48" rx="6" fill="var(--card)" stroke="var(--border)" />
-        <text x="32" y="355" font-size="11.5" font-weight="700" fill="var(--foreground)">1. 肾实质性（最常见继发）</text>
-        <text x="32" y="373" font-size="11" fill="var(--muted-foreground)">蛋白尿/血尿/GFR↓早现→首选含ACEI/ARB</text>
+        <text x="32" y="355" font-size="11.5" font-weight="700" fill="var(--foreground)">1. 肾实质性（常见继发高血压）</text>
+        <text x="32" y="373" font-size="10.5" fill="var(--muted-foreground)">蛋白尿/血尿/GFR↓早现→无禁忌含ACEI/ARB</text>
 
         <rect x="304" y="336" width="272" height="48" rx="6" fill="var(--card)" stroke="var(--border)" />
         <text x="316" y="355" font-size="11.5" font-weight="700" fill="var(--foreground)">2. 肾血管性（上腹/肋脊角杂音）</text>
@@ -1778,7 +1780,7 @@
 
   <div class="card tier-master" data-tier="master">
     <div class="card-hd"><h3 class="card-title">1. 高血压诊断标准、血压分类分级与心血管危险分层</h3><span class="badge badge-m">掌握</span></div>
-    <p><strong>诊断标准</strong>：安静坐位上臂肱动脉<span class="k">非同日测量 3 次</span>，均 <span class="k">SBP ≥ 140mmHg 和/或 DBP ≥ 90mmHg</span>（既往确诊正服降压药即使正常仍诊高血压）。诊室外标准：家庭自测 <span class="k">≥ 135/85mmHg</span>；ABPM <span class="k">24h ≥ 130/80</span>、白天 <span class="k">≥ 135/85</span>、夜间 <span class="k">≥ 120/70mmHg</span>（正常昼夜节律呈双峰一谷：上午 6–10 时、下午 4–8 时高峰，夜间明显降低）。左右上臂差通常 &lt;10–20mmHg，差大虑一侧锁骨下动脉阻塞。</p>
+    <p><strong>诊断标准</strong>：安静坐位上臂肱动脉<span class="k">非同日测量 3 次</span>，均 <span class="k">SBP ≥ 140mmHg 和/或 DBP ≥ 90mmHg</span>（既往确诊正服降压药即使正常仍诊高血压）。诊室外标准：家庭自测血压 <span class="k">收缩压 ≥ 135mmHg 和/或舒张压 ≥ 85mmHg</span>；24 小时动态血压（ABPM）<span class="k">24h 收缩压平均值 ≥ 130mmHg 和/或舒张压平均值 ≥ 80mmHg</span>、白天收缩压平均值 <span class="k">≥ 135mmHg 和/或舒张压平均值 ≥ 85mmHg</span>、夜间收缩压平均值 <span class="k">≥ 120mmHg 和/或舒张压平均值 ≥ 70mmHg</span>（正常昼夜节律呈双峰一谷：上午 6–10 时、下午 4–8 时高峰，夜间明显降低）。左右上臂差通常 &lt;10–20mmHg，差大虑一侧锁骨下动脉阻塞。</p>
     <div class="grid-2">
       <div class="tbl-wrap">
         <table class="med-tbl">
@@ -1812,46 +1814,46 @@
   <div class="card tier-master" data-tier="master">
     <div class="card-hd"><h3 class="card-title">2. 原发性高血压治疗原则、降压目标与六大类降压药物个体化方案</h3><span class="badge badge-m">掌握</span></div>
     <ul>
-      <li><strong>治疗原则（4 项）</strong>：①<strong>生活方式干预（全员适用）</strong>：减重 BMI <span class="k">&lt; 24kg/m²</span>、每日食盐 <span class="k">≤ 6g</span>、补钾(蔬果)、减脂、戒烟限酒、运动、减压、必要时补叶酸；②<strong>药物启动时机</strong>：高危/很高危立即启动，中危观察数周、低危观察 1–3 月不达标启动；③<strong>降压目标（4–12 周渐达标）</strong>：一般 <span class="k">&lt; 140/90mmHg</span>；合并糖尿病、CKD、心衰或稳定冠心病 <span class="k">&lt; 130/80mmHg</span>；老年收缩期高血压（含 ≥80 岁）<span class="k">&lt; 150/90mmHg</span>，耐受可降至 &lt; 140/90；④多重危险因素协同控制。</li>
+      <li><strong>治疗原则（4 项）</strong>：①<strong>生活方式干预（全员适用）</strong>：减重 BMI <span class="k">&lt; 24kg/m²</span>、每日食盐 <span class="k">≤ 6g</span>、补钾(蔬果)、减脂、戒烟限酒、运动、减压、必要时补叶酸；②<strong>药物启动时机</strong>：高危/很高危立即启动，中危观察数周、低危观察 1–3 月不达标启动；③<strong>降压目标（4–12 周渐达标）</strong>：一般 <span class="k">&lt; 140/90mmHg</span>；合并糖尿病、CKD、心衰或稳定冠心病 <span class="k">&lt; 130/80mmHg</span>；老年收缩期高血压收缩压控 <span class="k">&lt; 150mmHg</span>（能耐受可降至 &lt; 140mmHg）；一般老年高血压应降至 <span class="k">&lt; 150/90mmHg</span>，如能耐受可降至 &lt; 140/90mmHg；<span class="k">80 岁以上高龄老年人降压目标值为 &lt; 150/90mmHg</span>；④多重危险因素协同控制。</li>
       <li><strong>用药四大基本原则</strong>：个体化、起始剂量选择（老年宜小）、优先长效制剂（1次/日控夜间及晨峰）、联合用药（BP ≥160/100 或高于目标 20/10 或高危以上起始即可自由联合或单片固定复方 SPC；三药联合一般应含利尿剂）。经皮去肾神经术（RDN）可用于药物控制不佳及难治性高血压。</li>
     </ul>
     <div class="tbl-wrap">
       <table class="med-tbl">
-        <thead><tr><th>六大类降压药</th><th>核心机制与代表药（表 3-5-4）</th><th>强势适用人群</th><th>禁忌证与主要不良反应</th></tr></thead>
+        <thead><tr><th>六大类降压药</th><th>核心机制与代表药（表 3-5-4，均为每日剂量 mg/日）</th><th>强势适用人群</th><th>禁忌证与主要不良反应</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>1. 利尿剂</strong></td>
-            <td>排钠减容量降外周阻力。噻嗪类（氢氯噻嗪 25–100mg、吲达帕胺 0.625–2.5mg）、袢利尿剂（呋塞米）、保钾/MRA（螺内酯）。</td>
+            <td>排钠减容量降外周阻力。噻嗪类（氢氯噻嗪 25–100mg/日[1–2次/日]、吲达帕胺片 0.625–2.5mg/日[1次/日]）、袢利尿剂（呋塞米 40–80mg/日[1–2次/日]）、保钾/MRA（螺内酯 40–80mg/日[1–3次/日]）。</td>
             <td>老年、单纯收缩期高血压、盐敏感、肥胖/糖尿病、心衰；袢利尿剂用于合并肾功能不全。</td>
             <td><span class="k">痛风禁用</span>；低钾血症，大剂量影响糖/脂/尿酸代谢（推荐小剂量）；保钾类防高钾（慎联 ACEI/ARB）。</td>
           </tr>
           <tr>
             <td><strong>2. β 受体拮抗剂</strong></td>
-            <td>抑中枢/外周 RAAS、降心肌收缩力与心率。选 β₁ 选择性（比索洛尔 2.5–10mg、美托洛尔缓释 47.5–95mg）或 α/β 阻滞（卡维地洛、拉贝洛尔）。</td>
+            <td>抑中枢/外周 RAAS、降心肌收缩力与心率。选 β₁ 选择性（比索洛尔 2.5–10mg/日[1次/日]、琥珀酸美托洛尔缓释 47.5–95mg/日[1次/日]）或 α/β 阻滞（卡维地洛 12.5–50mg/日[1–2次/日]、拉贝洛尔 200–2400mg/日[2次/日]）。</td>
             <td>心率较快中青年、合并心绞痛、心肌梗死、慢性心衰；抑制体力应激血压骤升。</td>
             <td><span class="k">禁用：急性心衰、病窦综合征、严重 AVB</span>、支气管哮喘；增胰岛素抵抗并掩盖低血糖；大剂量忌骤停（撤药综合征）。</td>
           </tr>
           <tr>
             <td><strong>3. 钙通道阻滞剂（CCB）</strong></td>
-            <td>阻 L 型 Ca²⁺ 通道扩阻力血管。二氢吡啶类（长效氨氯地平 2.5–10mg、左氨氯地平、硝苯地平控释 30–60mg、非洛地平缓释）；非二氢吡啶类（维拉帕米、地尔硫䓬）。</td>
+            <td>阻 L 型 Ca²⁺ 通道扩阻力血管。二氢吡啶类（氨氯地平 2.5–10mg/日[1次/日]、左旋氨氯地平 2.5–5mg/日[1次/日]、硝苯地平控释 30–60mg/日[1次/日]、非洛地平缓释 2.5–10mg/日[1次/日]）；非二氢吡啶类（维拉帕米、地尔硫䓬）。</td>
             <td>老年疗效好、不受高钠/NSAIDs 影响、嗜酒者佳、合并 DM/冠心病/外周血管病、抗动脉粥样硬化。</td>
             <td>二氢吡啶：反射性心率快、面红、头痛、下肢水肿；<span class="k">非二氢吡啶不宜用于 HFrEF、窦房结功能低下、严重传导阻滞</span>。</td>
           </tr>
           <tr>
             <td><strong>4. ACEI</strong></td>
-            <td>抑 ACE 减 ATⅡ 并减少缓激肽降解（3–4周达峰）。卡托普利、依那普利、贝那普利、培哚普利、雷米普利、福辛普利。</td>
+            <td>抑 ACE 减 ATⅡ 并减少缓激肽降解（3–4周达峰）。卡托普利（25–150mg/日[2–3次/日]）、依那普利（10–40mg/日[2次/日]）、贝那普利（10–40mg/日[1–2次/日]）、培哚普利（4–8mg/日[1次/日]）、雷米普利（2.5–10mg/日[1次/日]）、福辛普利（10–40mg/日[1次/日]）。</td>
             <td>改善胰岛素抵抗与降尿蛋白；肥胖/糖尿病/心肾靶损/心衰/心梗/房颤/蛋白尿/糖尿病肾病。</td>
             <td><span class="k">禁用：妊娠、双侧肾动脉狭窄、高钾血症、血管神经性水肿</span>；干咳（10%–20%，缓激肽所致）。</td>
           </tr>
           <tr>
             <td><strong>5. ARB</strong></td>
-            <td>阻滞 AT₁ 受体并激活 AT₂ 受体；氯沙坦 25–100mg、缬沙坦 80–160mg、厄贝沙坦 150–300mg、替米沙坦、坎地沙坦、奥美沙坦。</td>
+            <td>阻滞 AT₁ 受体并激活 AT₂ 受体；氯沙坦 25–100mg/日[1次/日]、缬沙坦 80–160mg/日[1次/日]、厄贝沙坦 150–300mg/日[1次/日]、替米沙坦 20–80mg/日[1次/日]、坎地沙坦 4–12mg/日[1次/日]、奥美沙坦 20–40mg/日[1次/日]。</td>
             <td>同 ACEI；不引起刺激性干咳，治疗依从性高。</td>
             <td>禁忌证同 ACEI（妊娠、双侧肾动脉狭窄、高血钾、血管性水肿）。</td>
           </tr>
           <tr>
             <td><strong>6. ARNI</strong></td>
-            <td>沙库巴曲缬沙坦（1:1 共晶体，50–400mg qd）：阻 AT₁ + 抑脑啡肽酶增利钠肽。</td>
+            <td>沙库巴曲缬沙坦（1:1 共晶体，50–400mg/日，1次/日）：阻 AT₁ + 抑脑啡肽酶增利钠肽。</td>
             <td>同 ACEI/ARB，尤适伴心衰或容量偏高者。</td>
             <td>禁忌证类似 ACEI（注意血管性水肿与血钾/妊娠）。</td>
           </tr>
@@ -1869,16 +1871,16 @@
         <thead><tr><th>疾病</th><th>病因与核心临床线索</th><th>首选筛查与确诊检查</th><th>治疗要点</th></tr></thead>
         <tbody>
           <tr>
-            <td><strong>1. 肾实质性高血压</strong>（最常见继发）</td>
+            <td><strong>1. 肾实质性高血压</strong>（常见继发）</td>
             <td>急慢性肾炎、糖尿病肾病、多囊肾等；发现高血压时即有<span class="k">蛋白尿、血尿及 GFR 下降</span>（区别于原发先损肾小管浓缩功能）。</td>
             <td>尿检、肾功、肾超声，必要时肾穿刺活检。</td>
-            <td>限钠 + 联合降压，无禁忌应含 <span class="k">ACEI 或 ARB</span>。</td>
+            <td>限钠 + 联合降压，无使用禁忌时一般应含 <span class="k">ACEI 或 ARB</span>。</td>
           </tr>
           <tr>
             <td><strong>2. 肾血管性高血压</strong></td>
             <td>大动脉炎、纤维肌发育不良、动脉粥样硬化致肾动脉狭窄→缺血激活 RAAS；进展迅速，<span class="k">上腹或背部肋脊角血管杂音</span>。</td>
             <td>肾动脉彩超/核素肾图/CTA/MRA；<span class="k">肾动脉造影确诊</span>。</td>
-            <td>单侧非开口局限狭窄行经皮成形+支架；外科重建；<span class="k">双侧狭窄或肾损慎用 ACEI/ARB</span>。</td>
+            <td>可根据病情和条件选经皮肾动脉成形及支架植入术（<strong>单侧非开口处局限性狭窄效果较好</strong>）、外科手术（重建/移植/切除）或降压药联合治疗；<span class="k">双侧狭窄、肾功能已受损或非狭窄侧肾功较差者慎用 ACEI/ARB</span>。</td>
           </tr>
           <tr>
             <td><strong>3. 原发性醛固酮增多症</strong></td>
@@ -1913,19 +1915,19 @@
   <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 次重点与急症管理</span> 发病机制、我国特点、难治性高血压与高血压急症</h2>
 
   <div class="card tier-familiar" data-tier="familiar">
-    <div class="card-hd"><h3 class="card-title">1. 流行病学特点、五大发病机制与特殊人群血压管理</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="card-hd"><h3 class="card-title">1. 五大发病机制、我国膳食与卒中风险特征及特殊人群管理</h3><span class="badge badge-f">熟悉</span></div>
     <ul>
-      <li><strong>我国高血压特点</strong>：2015 年成人患病率 <span class="k">27.9%</span>（农村首次超城市），知晓率 51.6%、治疗率 45.8%、控制率仅 <span class="k">16.8%</span>；典型特点为<span class="k">高钠低钾</span>（24h尿钠/钾&gt;6，普遍盐敏感）、叶酸缺乏致高同型半胱氨酸，脑卒中/心梗比值约 <span class="k">(5～8):1</span>（西方约 1:1）。</li>
+      <li><strong>我国人群危险特征（指导限钠补钾叶酸干预）</strong>：膳食呈<span class="k">高钠低钾</span>（24h 尿钠/钾 &gt; 6，盐敏感普遍）、叶酸缺乏致高同型半胱氨酸，脑卒中/心梗比值约 <span class="k">(5～8):1</span>（西方约 1:1），强化限盐、补钾、必要时补叶酸及卒中防控。</li>
       <li><strong>五大发病机制与年龄血流动力学</strong>：①神经机制（交感亢进）；②肾脏机制（排钠障碍/压力-利尿钠）；③激素机制（循环与组织 RAAS 激活；Ang-(1～7)经 MAS 受体扩血管抗增殖）；④血管机制（内皮功能障碍最早期，大动脉硬化致脉搏波传导加快、反射波提前至收缩期→脉压增大）；⑤胰岛素抵抗（约 50% 原发存在）。血流动力学随年龄演变：青年（心排血量增+交感亢进）→ 中年（外周阻力增、舒张压高）→ 老年（中心动脉硬化、单纯收缩期高血压最常见）。</li>
-      <li><strong>特殊类型与合并症要点</strong>：<strong>儿童青少年</strong>采用同年龄性别 <span class="k">90/95 百分位</span>（≥120/80 视正常高值），继发以肾性居首，首选用药 ACEI/CCB；<strong>难治性高血压</strong>定义：改善生活方式+足量合理 <span class="k">3 种药（含利尿剂）≥4 周</span>仍未达标或需 ≥4 种药达标，排查 7 大原因（假性难治[测压错/白大衣/钙化假性高血压]、生活方式未改、方案缺利尿剂、药物干扰[NSAIDs/甘草/避孕药/激素/环孢素/EPO]、容量超负荷、胰岛素抵抗、继发性高血压）。<strong>合并脑卒中</strong>：急性缺血卒中拟溶栓控 <span class="k">&lt; 180/110</span>；急性脑出血 SBP&gt;220 积极静降，&gt;180 可静降参考目标 160/90。</li>
+      <li><strong>特殊类型与合并症要点</strong>：<strong>儿童与青少年</strong>采用同年龄性别 <span class="k">90/95 百分位</span>诊断正常高值血压与高血压（≥120/80mmHg <strong>但未达到高血压标准</strong>也视为正常高值）；目标：无靶器官损害降至 <span class="k">&lt; 95 百分位</span>，合并肾病/糖尿病或靶器官损害降至 <span class="k">&lt; 90 百分位</span>；绝大多数非药物可达标，<strong>仅当生活方式治疗无效，或出现症状、靶器官损害、合并糖尿病或继发性高血压时</strong>考虑用药（首选用药 ACEI/CCB，继发以肾性居首）。<strong>难治性高血压</strong>定义：改善生活方式+足量合理 <span class="k">3 种药（含利尿剂）≥4 周</span>仍未达标或需 ≥4 种药达标，排查 7 大原因（假性难治[测压错/白大衣/钙化假性高血压]、生活方式未改、方案缺利尿剂、药物干扰[NSAIDs/甘草/避孕药/激素/环孢素/EPO]、容量超负荷、胰岛素抵抗、继发性高血压）。<strong>合并脑卒中</strong>：急性缺血卒中拟溶栓控 <span class="k">&lt; 180/110</span>；急性脑出血 SBP&gt;220 积极静降，&gt;180 可静降参考目标 160/90。</li>
     </ul>
   </div>
 
   <div class="card tier-familiar" data-tier="familiar">
     <div class="card-hd"><h3 class="card-title">2. 高血压急症 vs 亚急症与四大静脉降压药</h3><span class="badge badge-f">熟悉</span></div>
     <ul>
-      <li><strong>唯一鉴别标准</strong>：<span class="k">有无新近发生的急性进行性靶器官损害</span>（非血压绝对值）。高血压急症（常 &gt;180/120mmHg，含脑病、卒中、急性左心衰、ACS、主动脉夹层、子痫、嗜铬危象等；舒张压持续 ≥130 伴眼底出血渗出视盘水肿及突出肾损称<strong>恶性高血压</strong>）需立即静脉控制性降压；亚急症无急性靶损，24–48h 口服降压。</li>
-      <li><strong>急症控制性降压节奏与禁忌</strong>：<span class="k">初始 1 小时内平均动脉压（MAP）降幅 ≤ 25%</span> → 随后 2–6h 降至约 <span class="k">160/100mmHg</span> → 24–48h 渐降正常。<strong>避免药物</strong>：肌注利血平（蓄积低血压嗜睡干扰神志）、初始无心衰/容量超负荷时忌用强力利尿剂。</li>
+      <li><strong>唯一鉴别标准</strong>：<span class="k">有无新近发生的急性进行性靶器官损害</span>（非血压绝对值）。高血压急症（血压突然和明显升高，<strong>一般超过 180/120mmHg</strong>，含脑病、卒中、急性左心衰、ACS、主动脉夹层、子痫、嗜铬危象等；舒张压持续 ≥130 伴眼底出血渗出视盘水肿及突出肾损称<strong>恶性高血压</strong>）需立即静脉控制性降压；亚急症无急性靶损，24–48h 口服降压。</li>
+      <li><strong>急症逐步控制性降压节奏与禁忌</strong>：一般情况下，<span class="k">初始 1 小时内平均动脉压（MAP）降幅 ≤ 25%</span> → 随后 2–6h 降至较安全水平（一般约 <span class="k">160/100mmHg</span>）→ 如果可耐受且临床情况稳定，在随后 24–48h 逐步降至正常；<strong>若降压后发现有重要器官缺血表现，降压幅度应更小，在随后 1–2 周内再逐步降至正常</strong>。<strong>避免药物</strong>：肌注利血平（蓄积低血压嗜睡干扰神志）、初始无心衰/容量超负荷时忌用强力利尿剂。</li>
       <li><strong>四大静脉降压药</strong>：①<strong>硝普钠</strong>（动+静脉，0.3–0.5→最大10μg/kg·min，停后2–10min失效，适各类急症，防长期/肾损硫氰酸中毒）；②<strong>硝酸甘油</strong>（5–10→100–200μg/min，适伴急性心衰或 ACS）；③<strong>尼卡地平</strong>（0.5→10μg/kg·min，改善脑血流，适伴急性脑血管病）；④<strong>拉贝洛尔</strong>（α+β阻滞，20–80mg 缓推后 0.5–2mg/min，适伴妊娠或肾功能不全）。</li>
     </ul>
   </div>
@@ -1939,8 +1941,8 @@
       <span class="mod-source">第10版 第六章《心肌疾病》（课本 P275–287 / PDF P306–318）· 2学时</span>
     </div>
     <div class="syllabus-box">
-      <div class="syl-row"><span class="syl-tag m">掌握</span><span>肥厚型心肌病（HCM）与扩张型心肌病（DCM）的病理/超声/CMR 鉴别特征、诊断标准、猝死风险评估（ICD）与治疗原则；病毒性心肌炎（VM）的诊断依据、三大特殊类型（拟 ACS 鉴别要点、暴发性心肌炎）与治疗原则。</span></div>
-      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>2023 年 ESC 心肌病 5 大临床表型分类框架与 5 步规范化诊疗径路；限制型心肌病（RCM，含心肌淀粉样变性）特征及其与缩窄性心包炎的血流动力学核心鉴别。</span></div>
+      <div class="syl-row"><span class="syl-tag m">掌握</span><span>2023 年 ESC 心肌病 5 大临床表型分类与总定义；肥厚型心肌病（HCM）与扩张型心肌病（DCM）的病理/超声并列鉴别特征、诊断标准、家系筛查意义、猝死风险评估（ICD）与治疗原则；病毒性心肌炎（VM）的诊断依据、三大特殊类型（拟 ACS 鉴别要点、暴发性心肌炎）与治疗原则。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>心肌病 5 步规范化临床诊疗径路；限制型心肌病（RCM）分类、影像特征及其与缩窄性心包炎的血流动力学核心鉴别。</span></div>
       <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">第三节《非扩张型左心室心肌病（NDLVC）》与第四节《致心律失常性右心室心肌病（ARVC）》独立专节（仅在 2023 ESC 五表型分类总表保留名称）；基因治疗前沿（课程目标4“了解”项）。</span></div>
     </div>
   </div>
@@ -1972,11 +1974,11 @@
         <text x="22" y="139" font-size="11" fill="var(--foreground)">• LVOTO(≥30mmHg) + 二尖瓣 SAM 征</text>
         <text x="22" y="155" font-size="11" fill="var(--foreground)">• ECG：深而不宽 q 波/心尖固定倒 T</text>
         <text x="22" y="176" font-size="11.5" font-weight="700" fill="var(--error)">治疗与红线禁忌：</text>
-        <text x="22" y="193" font-size="11" fill="var(--foreground)">• 一线：β阻滞(HR 55–60)/玛伐凯泰</text>
-        <text x="22" y="209" font-size="11" fill="var(--error)" font-weight="600">• 忌正性肌力药及静脉扩血管(加重梗阻)</text>
-        <text x="22" y="225" font-size="11" fill="var(--foreground)">• 伴 AF 直接抗凝(不看 CHA₂DS₂-VASc)</text>
-        <text x="22" y="241" font-size="11" fill="var(--foreground)">• SRT 指征：NYHA III–IV + 压差≥50</text>
-        <text x="22" y="257" font-size="11" fill="var(--warning)" font-weight="600">• 猝死高危(壁≥30/LGE≥15%) → ICD</text>
+        <text x="22" y="193" font-size="11" fill="var(--foreground)">• 一线：β 阻滞剂（静息 HR 55–60）</text>
+        <text x="22" y="209" font-size="10.2" fill="var(--foreground)">• 玛伐凯泰：NYHA II–III 梗阻且 LVEF≥55%</text>
+        <text x="22" y="225" font-size="11" fill="var(--error)" font-weight="600">• 忌正性肌力药及静脉扩血管(加重梗阻)</text>
+        <text x="22" y="241" font-size="10" fill="var(--foreground)">• 伴AF直接抗凝｜SRT：NYHA III–IV+压差≥50</text>
+        <text x="22" y="257" font-size="10" fill="var(--warning)" font-weight="600">• 猝死评估(意愿/生存≥1年/分层)→一/二级ICD</text>
 
         <rect x="300" y="8" width="280" height="270" rx="10" fill="var(--primary)" fill-opacity="0.06" stroke="var(--primary)" stroke-width="1.5" />
         <text x="440" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="var(--primary)">扩张型心肌病（DCM · 掌握）</text>
@@ -1990,8 +1992,8 @@
         <text x="314" y="176" font-size="11.5" font-weight="700" fill="var(--success)">核心治疗原则：</text>
         <text x="314" y="193" font-size="11" fill="var(--foreground)">• 尽早联用 HFrEF“新四联”</text>
         <text x="314" y="209" font-size="11" fill="var(--foreground)">  (ACEI/ARB/ARNI + β + SGLT2i + MRA)</text>
-        <text x="314" y="225" font-size="11" fill="var(--foreground)">• 伊伐布雷定 / 维立西呱 / 伴AF抗凝</text>
-        <text x="314" y="241" font-size="11" fill="var(--foreground)">• 器械：CRT + ICD（LVEF≤35%）</text>
+        <text x="314" y="225" font-size="10.2" fill="var(--foreground)">• 伊伐/维立/伴AF抗凝；CRT 按心衰指征</text>
+        <text x="314" y="241" font-size="10.2" fill="var(--foreground)">• ICD：LVEF≤35%+NYHA II–III+生存≥1年</text>
         <text x="314" y="257" font-size="11" fill="var(--warning)" font-weight="600">• 高危基因(LMNA等)即使&gt;35%亦虑ICD</text>
 
         <rect x="592" y="8" width="280" height="270" rx="10" fill="var(--chart-1)" fill-opacity="0.06" stroke="var(--chart-1)" stroke-width="1.5" />
@@ -2007,8 +2009,8 @@
         <text x="606" y="193" font-size="11" fill="var(--foreground)">① RCM 肺动脉收缩压常 &gt; 50mmHg</text>
         <text x="606" y="209" font-size="11" fill="var(--foreground)">② RCM 右室舒张压 &lt; 1/3 收缩压峰值</text>
         <text x="606" y="225" font-size="11" fill="var(--foreground)">③ RCM 左右室舒张末压差 &gt; 5mmHg</text>
-        <text x="606" y="241" font-size="11" fill="var(--muted-foreground)">• 金标准：心肌活检(刚果红苹果绿)</text>
-        <text x="606" y="257" font-size="11" fill="var(--muted-foreground)">• ATTR-CA 稳定剂：氯苯唑酸降死亡30%</text>
+        <text x="606" y="241" font-size="11" fill="var(--muted-foreground)">• 病因金标准：心肌活检(刚果红苹果绿)</text>
+        <text x="606" y="257" font-size="10.5" fill="var(--muted-foreground)">• 鉴别重点：心包无钙化 + 心导管 3 项</text>
 
         <!-- Band 2: Viral Myocarditis vs ACS -->
         <rect x="8" y="290" width="864" height="146" rx="10" fill="var(--warning)" fill-opacity="0.06" stroke="var(--border)" />
@@ -2034,7 +2036,7 @@
 
         <rect x="636" y="324" width="224" height="100" rx="7" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" />
         <text x="648" y="343" font-size="12" font-weight="700" fill="var(--error)">暴发性心肌炎与治疗原则</text>
-        <text x="648" y="361" font-size="11" fill="var(--foreground)">• 卧床休息(轻3月/重&gt;3月)</text>
+        <text x="648" y="361" font-size="10" fill="var(--foreground)">• 卧床时长酌情；轻3月/重&gt;3月至心衰好转</text>
         <text x="648" y="378" font-size="11" fill="var(--foreground)">• 激素不常规早用；休克/重症早用</text>
         <text x="648" y="395" font-size="11" fill="var(--foreground)">• 心律失常：胺碘酮/β阻滞/临时起搏</text>
         <text x="648" y="412" font-size="10.5" fill="var(--error)" font-weight="600">• 暴发性关键：IABP/ECMO/机械通气</text>
@@ -2043,18 +2045,23 @@
   </div>
 
   <!-- Master Tier -->
-  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心考点</span> 肥厚型心肌病、扩张型心肌病与病毒性心肌炎</h2>
+  <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心考点</span> 心肌病 5 表型总分类、HCM/DCM 诊治与超声鉴别及病毒性心肌炎</h2>
+
+  <div class="card tier-master" data-tier="master">
+    <div class="card-hd"><h3 class="card-title">0. 心肌病总定义与 2023 年 ESC 五大临床表型分类</h3><span class="badge badge-m">掌握</span></div>
+    <p><strong>总定义</strong>：一组病因和表型异质性高的心肌疾病，其心肌结构和/或功能异常无法以前/后负荷增加或心肌缺血等疾病诠释（可为遗传性或获得性，多常染色体显性遗传，编码肌节、骨架和桥粒蛋白的基因突变分别导致肥厚、扩张和心律失常表型）。<strong>2023 ESC 五大临床表型</strong>：①<span class="k">肥厚型心肌病（HCM）</span>；②<span class="k">扩张型心肌病（DCM）</span>；③<span class="k">非扩张型左心室心肌病（NDLVC，新增类型）</span>；④<span class="k">致心律失常性右心室心肌病（ARVC）</span>；⑤<span class="k">限制型心肌病（RCM）</span>。</p>
+  </div>
 
   <div class="card tier-master" data-tier="master">
     <div class="card-hd"><h3 class="card-title">1. 肥厚型心肌病（HCM）：病理超声特征、诊断分型、药物/手术与猝死评估</h3><span class="badge badge-m">掌握</span></div>
     <ul>
-      <li><strong>概述与病因病理</strong>：以左室和/或右室肥厚伴舒张障碍为特征（排除后负荷增加或系统性疾病），是<span class="k">青少年和运动猝死的重要原因</span>。常染色体显性遗传，约 60% 有致病变异，其中 <span class="k">MYH7 和 MYBPC3 占 70%</span>（8 个一线肌小节基因，基因型阳性表型阴性一级亲属每 2–3 年复查至 50 岁）。解剖以<span class="k">室间隔不对称肥厚</span>为主；病理为<span class="k">心肌细胞排列紊乱</span>、纤维化瘢痕、小血管病变。</li>
+      <li><strong>概述与病因病理</strong>：以左室和/或右室肥厚伴舒张障碍为特征（排除后负荷增加或系统性疾病），是<span class="k">青少年和运动猝死的重要原因</span>。常染色体显性遗传，约 60% 有致病变异，其中 <span class="k">MYH7 和 MYBPC3 占 70%</span>。<strong>家系筛查与基因检测意义</strong>：对<span class="k">鉴别诊断、预后评估和生育决策</span>均有重要价值；8 个一线肌小节基因应作为一线检测，<strong>一级亲属基因筛查适合于任何年龄</strong>，基因型阳性、表型阴性者应每 2–3 年重复筛查直到 50 岁。解剖以<span class="k">室间隔不对称肥厚</span>为主；病理为<span class="k">心肌细胞排列紊乱</span>、纤维化瘢痕、小血管病变。</li>
       <li><strong>病理生理与临床体征</strong>：核心为<span class="k">左室流出道梗阻（LVOTO）</span>（结构性室间隔厚+二尖瓣前移，加射血虹吸致<span class="k">收缩期二尖瓣前叶前向运动 SAM</span>）和心室僵硬舒张障碍。症状：劳力呼吸困难、胸痛（1/3）、心律失常（AF/VT/VF）、心衰、运动性晕厥（1/6）甚至猝死首发。体征：S₄、胸骨左缘 3–4 肋间收缩期喷射性杂音与心尖吹风样杂音；<strong>杂音动态变化</strong>：<span class="k">增加心肌收缩或减轻前负荷（正性肌力药、站立、含硝酸甘油、Valsalva）使杂音增强</span>；反之（下蹲、β阻滞）减弱。</li>
       <li><strong>辅助检查与诊断标准</strong>：
         <ul>
           <li><strong>ECG</strong>：QRS 高电压、<span class="k">固定性 ST 压低及 T 波倒置</span>（心尖肥厚见固定深对称倒置 T 波）、<span class="k">深而不宽的异常 q 波</span>（与冠脉分布不符）。</li>
           <li><strong>TTE（首选）</strong>：室间隔不对称肥厚、LVOTO、SAM、舒张障碍；静息无梗阻行半仰卧位瓦氏动作激发，仍未达压差 ≥50mmHg 行运动而非药物负荷试验。<strong>CMR</strong> 精准测厚度及纤维化，<span class="k">广泛 LGE ≥ 15% 左室质量</span>提示高猝死风险。</li>
-          <li><strong>诊断标准</strong>：排除继发肥厚（高血压/AS/运动员心/淀粉样变/Fabry 等）后，成人任意左室舒张末室壁厚 <span class="k">≥ 15mm</span>（有家族史或基因阳性 <span class="k">≥ 13mm</span>；成人一级亲属 &gt;13mm）；儿童 z 值 &gt;2.5（家族史/基因阳性 &gt;2）。<strong>血流动力学分型</strong>：梗阻型（静息或激发峰压差 <span class="k">≥ 30mmHg</span>）vs 非梗阻型（&lt;30mmHg）。</li>
+          <li><strong>诊断标准（三类人群）</strong>：排除继发肥厚（高血压/AS/运动员心/淀粉样变/Fabry 等）后：①<strong>成人</strong>：无其他原因可稽，影像发现左室任意部位舒张末室壁厚度 <span class="k">≥ 15mm</span> 可诊断；有家族史或基因检测阳性者 <span class="k">≥ 13mm</span> 也可诊断；②<strong>儿童</strong>：<strong>无家族史且无症状的儿童</strong>左室厚度 z 值 <span class="k">&gt; 2.5</span> 可诊断；有家族史或基因型阳性者 z 值 <span class="k">&gt; 2</span> 也可诊断；③<strong>先证者一级亲属</strong>：成年一级亲属左室壁厚 <span class="k">&gt; 13mm</span> 可诊断；儿童一级亲属 z 值 &lt; 2 但有形态或心电异常，<strong>仅可疑诊不能单独诊断</strong>。<strong>血流动力学分型</strong>：梗阻型（静息或激发峰压差 <span class="k">≥ 30mmHg</span>）vs 非梗阻型（&lt;30mmHg）。</li>
         </ul>
       </li>
       <li><strong>治疗原则与猝死风险评估</strong>：
@@ -2062,40 +2069,51 @@
           <li><strong>症状性梗阻型药物</strong>：①一线 <span class="k">β 受体拮抗剂</span>（美托洛尔/比索洛尔，静息心率滴定至 <span class="k">55～60次/分</span>）；②心肌肌球蛋白抑制剂 <span class="k">玛伐凯泰</span>（适症状性 NYHA II–III 梗阻型成人，<span class="k">不适合 LVEF &lt; 55%</span>）；③替代药非二氢吡啶 CCB（维拉帕米/地尔硫䓬）；④充分治疗仍重加 Ia 类丙吡胺/西苯唑啉。<span class="k">忌用正性肌力药及静脉扩张剂</span>，慎用动脉扩张剂（D-CCB）与大量利尿剂，避免脱水过量饮酒。</li>
           <li><strong>合并房颤</strong>：无禁忌<span class="k">均应抗凝而不必考虑 CHA₂DS₂-VASc 评分</span>。</li>
           <li><strong>室间隔减容术（SRT，含无水乙醇间隔消融 ASA 与外科心肌切除）适应证</strong>：①充分药物后仍 NYHA Ⅲ–Ⅳ 级或活动相关反复晕厥；②静息/激发 LVOTO 峰压差 <span class="k">≥ 50mmHg</span> 且与间隔肥厚/SAM 相关（无症状或药效好不推荐）。严重梗阻型避免竞技体育。</li>
-          <li><strong>猝死预防（ICD）</strong>：应用 <span class="k">HCM Risk-SCD 模型</span>分层；8 项临床高危因素：早发猝死家族史、心脏骤停/不稳定 SVT 史、运动或不明原因晕厥、<span class="k">左室肥厚 ≥ 30mm</span>、心尖室壁瘤、<span class="k">LVEF &lt; 50%</span>、反复 NSVT、<span class="k">CMR-LGE ≥ 15% 左室质量</span>。</li>
+          <li><strong>猝死预防（ICD）</strong>：ICD 是猝死幸存者的<strong>绝对适应证（二级预防）</strong>和猝死高危者的<strong>相对适应证（一级预防）</strong>，但是否植入取决于<span class="k">病人意愿、预测生存期（≥ 1 年）及危险分层</span>（原则上适用于各表型 CM）。应用 <span class="k">HCM Risk-SCD 模型</span>分层；8 项临床高危因素：早发猝死家族史、心脏骤停/不稳定 SVT 史、运动或不明原因晕厥、<span class="k">左室肥厚 ≥ 30mm</span>、心尖室壁瘤、<span class="k">LVEF &lt; 50%</span>、反复 NSVT、<span class="k">CMR-LGE ≥ 15% 左室质量</span>。</li>
         </ul>
       </li>
     </ul>
   </div>
 
   <div class="card tier-master" data-tier="master">
-    <div class="card-hd"><h3 class="card-title">2. 扩张型心肌病（DCM）：超声/CMR 特征、诊断与综合治疗</h3><span class="badge badge-m">掌握</span></div>
+    <div class="card-hd"><h3 class="card-title">2. 扩张型心肌病（DCM）与 HCM vs DCM 超声鉴别对照</h3><span class="badge badge-m">掌握</span></div>
     <ul>
       <li><strong>病因与病理</strong>：左室或双室扩大伴收缩障碍（除外负荷异常/心肌缺血），5 年/10 年生存率约 50%/25%。约 50% 家族性、30% 散发性可检出致病基因，最重要为心肌骨架蛋白<span class="k">肌联蛋白基因（TTN）截短突变</span>；获得性包括病毒感染免疫、嗜酒（我国常见）、蒽环类抗肿瘤药、内分泌代谢/硒缺乏、Duchenne/Becker 肌营养不良。肉眼心室扩张、室壁变薄、瘢痕、附壁血栓，瓣膜及冠脉无明显病变。</li>
       <li><strong>临床表现与辅助检查</strong>：劳力呼吸困难渐进至左心衰/全心衰、心律失常、终末持续顽固低血压；心界扩大、心音减弱、S₃/S₄ 奔马律、心尖收缩期杂音。<strong>TTE（首选）</strong>：左室扩大、LVEF 降低、<span class="k">室壁运动弥漫性减弱</span>（区别于缺血性心肌病的节段性减弱）。<strong>CMR-LGE</strong> 协助鉴别心梗（心内膜下/透壁）及特异病因（心肌炎心外膜下、结节病斑片状、LMNA 室间隔中部、DSP/FLNC 环状），且预测全因死亡与 SCD。</li>
-      <li><strong>诊断与治疗</strong>：除外获得性病因后心腔扩大伴 LVEF 降低可拟诊。治疗：①祛病因（戒酒/控感染/纠内分泌）；②尽早联用<span class="k">心衰“新四联”</span>（ACEI/ARB/ARNI + β 阻滞剂 + SGLT2i + MRA）渐增至目标/最大耐受量，视指征加伊伐布雷定（LVEF≤35%、窦律 HR≥70）、利尿剂、洋地黄、维立西呱；③并发 AF 长期华法林或 NOAC 抗凝；④CRT、LVAD、心脏移植；⑤<strong>ICD 猝死防治</strong>：骤停史、持续 VT、LVEF≤35% 且 NYHA II–III；<span class="k">携带高危致病基因（LMNA、EMD、TMEM43、DSP、RBM20、PLN、FLNC 截短等）即使 LVEF &gt; 35% 亦应考虑 ICD 一级预防</span>。</li>
+      <li><strong>诊断与治疗</strong>：除外获得性病因后心腔扩大伴 LVEF 降低可拟诊。治疗：①祛病因（戒酒/控感染/纠内分泌）；②尽早联用<span class="k">心衰“新四联”</span>（ACEI/ARB/ARNI + β 阻滞剂 + SGLT2i + MRA）渐增至目标/最大耐受量，视指征加伊伐布雷定（LVEF≤35%、窦律 HR≥70）、利尿剂、洋地黄、维立西呱；③并发 AF 长期华法林或 NOAC 抗凝；④CRT（适应证详见心力衰竭章）、LVAD、心脏移植；⑤<strong>ICD 猝死防治</strong>：①心脏骤停史；②持续性室速伴或不伴晕厥史；③<span class="k">LVEF ≤ 35%、NYHA II–III 级且预期生存 ≥ 1 年</span>；<span class="k">携带高危致病基因（LMNA、EMD、TMEM43、DSP、RBM20、PLN、FLNC 截短等）即使 LVEF &gt; 35% 亦应考虑 ICD 一级预防</span>。</li>
       <li><strong>5 种病因明确的 DCM</strong>：酒精性心肌病（女&gt;40g/d、男&gt;80g/d，&gt;5年，早戒酒可逆）；围生期心肌病（妊娠最后1个月至产后5个月，再孕常复发）；心肌致密化不全（CMR 最有效）；心脏气球样变/心碎综合征（胸痛 ST 改变、冠脉无狭窄、心尖收缩期膨出、预后好）；心动过速性心肌病（控室率/射频消融关键）。</li>
     </ul>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>超声心动图（TTE）鉴别要点（大纲重点）</th><th>肥厚型心肌病（HCM）</th><th>扩张型心肌病（DCM）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>室壁厚度</strong></td><td>左室室壁显著增厚（成人舒张末 <span class="k">≥ 15mm</span>），典型为<span class="k">室间隔不对称肥厚</span></td><td>室壁正常或相对变薄</td></tr>
+          <tr><td><strong>心腔大小</strong></td><td>左室腔正常或偏小（晚期失代偿可扩大）</td><td><span class="k">左室或双心室显著扩大</span>（呈球形）</td></tr>
+          <tr><td><strong>室壁运动与心功能</strong></td><td>早期收缩功能正常/增强，突出表现为<span class="k">左室舒张功能障碍</span></td><td><span class="k">室壁运动弥漫性减弱</span>（区别于缺血的节段性），<span class="k">LVEF 明显降低</span></td></tr>
+          <tr><td><strong>特征性征象</strong></td><td><span class="k">LVOTO（压差 ≥ 30mmHg）</span>与<span class="k">收缩期二尖瓣前叶前向运动（SAM）</span>、继发 MR</td><td>无 LVOTO/SAM；常见瓣环扩张致相对性二/三尖瓣反流、心腔附壁血栓</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <div class="card tier-master" data-tier="master">
     <div class="card-hd"><h3 class="card-title">3. 心肌炎（重点病毒性心肌炎 VM）：诊断依据、特殊类型与 ACS 鉴别</h3><span class="badge badge-m">掌握</span></div>
     <ul>
       <li><strong>病因与临床表现</strong>：嗜心肌病毒以胃肠道病毒（<span class="k">柯萨奇病毒 B3</span>、埃可）与呼吸道病毒（腺病毒、流感、细小 B19、SARS-CoV）为主；病毒直接损心肌 + T 细胞免疫间接损伤。过半病人发病前 <span class="k">1～3 周</span>有发热/上感/腹泻前驱症状；心脏表现轻者无症状，重者急性左心衰/肺水肿/心源性休克；体征见<span class="k">心率增快与体温不平行</span>、S₁ 低钝、S₃/S₄ 奔马律、心包摩擦音、各类室性心律失常与 AVB。</li>
-      <li><strong>辅助检查与诊断依据</strong>：WBC/ESR/CRP 升高；<span class="k">CK-MB 与肌钙蛋白升高（诊断必要条件，持续时间较心梗更长）</span>；ECG 示 ST-T 改变/室性心律失常/AVB/偶见 q 波；TTE 重症见左室增大与室壁运动普遍减弱；<strong>CMR</strong> 示急性期 T₂ 信号增高（水肿）、早期钆增强（充血）、<span class="k">延迟钆增强（心外膜下或心肌中层片状强化）</span>；病毒血清学仅提示病因不能确诊；<strong>EMB</strong> 检出病毒颗粒/抗原/基因片段确诊（用于急重/效差/不明原因）。</li>
+      <li><strong>辅助检查与诊断依据（区分综合拟诊与 EMB 病毒学确证）</strong>：WBC/ESR/CRP 升高；<span class="k">CK-MB 与肌钙蛋白升高（诊断必要条件，持续时间较心梗更长）</span>；ECG 示 ST-T 改变/室性心律失常/AVB/偶见 q 波；TTE 重症见左室增大与室壁运动普遍减弱；<strong>CMR</strong> 示急性期 T₂ 信号增高（水肿）、早期钆增强（充血）、<span class="k">延迟钆增强（心外膜下或心肌中层片状强化）</span>；病毒血清学仅提示病因不能确诊。<strong>综合临床拟诊</strong>：据病毒感染前驱症状、心脏相关表现，结合 ECG、TTE、CMR、心肌损伤标志物升高（必要条件）及病原学等证据，排除其他疾病后可考虑 VM；<strong>EMB 病毒学确证</strong>：用于病情急重、治疗反应差、原因不明者，确诊有赖检出<span class="k">病毒颗粒、抗原、基因片段或蛋白</span>。</li>
       <li><strong>三大特殊类型与鉴别（大纲难点）</strong>：①<span class="k">拟急性冠脉综合征型</span>：ECG 酷似 AMI，但“缺血改变”导联<span class="k">不符合冠脉分布范围</span>、肌钙蛋白升高时间更长、<span class="k">冠脉造影阴性</span>；②<strong>拟心力衰竭型</strong>：近 2 周至 3 月新发/加重心衰、收缩受损但冠脉造影阴性；③<strong>暴发性重症心肌炎</strong>：短暂前驱后迅速进展至泵衰竭/心源性休克/骤停死亡。还需鉴别缺血性心肌病、应激性心肌病、β 受体功能亢进症等。</li>
-      <li><strong>治疗</strong>：无特效药，对症支持为主。①卧床休息（轻症 3 月内不重体力活动，重症限制 &gt;3 月至心衰好转）；②抗病毒/免疫：丙球/干扰素-α 疗效不确切；<span class="k">糖皮质激素不主张早期常规应用，但出现严重心律失常及心源性休克应尽早使用</span>；③心肌保护（VitC、辅酶 Q）；④心律失常选胺碘酮/β 阻滞，缓慢/AVB 予临时起搏；⑤暴发性心肌炎降死亡率关键为积极机械支持（<span class="k">气管插管通气、IABP、ECMO</span>）。</li>
+      <li><strong>治疗</strong>：无特效药，对症支持为主。①一般治疗：卧床休息、避免劳累（<strong>休息时长酌情而定</strong>）；活动限制：轻症者 3 个月内不参加重体力活动，重症者限制活动 3 个月以上<strong>直至心力衰竭好转</strong>；②抗病毒/免疫：丙球/干扰素-α 疗效不确切；<span class="k">糖皮质激素不主张早期常规应用，但出现严重心律失常及心源性休克应尽早使用</span>；③心肌保护（VitC、辅酶 Q）；④心律失常选胺碘酮/β 阻滞，缓慢/AVB 予临时起搏；⑤暴发性心肌炎降死亡率关键为积极机械支持（<span class="k">气管插管通气、IABP、ECMO</span>）。</li>
     </ul>
   </div>
 
   <!-- Familiar Tier -->
-  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 分类总框架与鉴别支撑</span> 2023 ESC 心肌病分类与限制型心肌病（RCM）</h2>
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 诊疗径路与鉴别支撑</span> 心肌病五步规范化径路与限制型心肌病（RCM）</h2>
 
   <div class="card tier-familiar" data-tier="familiar">
-    <div class="card-hd"><h3 class="card-title">2023 ESC 心肌病 5 表型分类框架 &amp; 限制型心肌病（RCM）要点</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="card-hd"><h3 class="card-title">心肌病 5 步规范化诊疗径路 &amp; 限制型心肌病（RCM）鉴别要点</h3><span class="badge badge-f">熟悉</span></div>
     <ul>
-      <li><strong>2023 ESC 五大临床表型与五步诊疗径路</strong>：肥厚型心肌病（HCM）、扩张型心肌病（DCM）、非扩张型左心室心肌病（NDLVC，新增）、致心律失常性右心室心肌病（ARVC）、限制型心肌病（RCM）。规范化径路：①识别心衰/心律失常的 CM 病因 → ②先 TTE 初定表型，再 CMR 界定组织特征 → ③家系筛查/基因/病理查因 → ④按表型基因型全周期管理 → ⑤评估猝死风险指导 ICD 预防。</li>
-      <li><strong>限制型心肌病（RCM，5 年生存率约 30%）</strong>：以限制性心室充盈障碍为特征，分心肌型（浸润/贮积性以<span class="k">心肌淀粉样变性 CA [AL-CA 与 ATTR-CA] 最常见</span>；非浸润家族性）与心内膜心肌型（闭塞性如高嗜酸/放射性；非闭塞性）。病理：心内膜纤维化钙化附壁血栓，CA 刚果红染色砖红、偏振光呈<span class="k">苹果绿双折光</span>。临床以突出<span class="k">右心衰体征</span>及 HFpEF 症状为主。检查：ECG 全导低电压与影像心肌肥厚不相称；TTE 双心房显著扩大、限制充盈、心肌毛玻璃样及<span class="k">心尖保留征</span>；CMR-LGE（AL 心内膜下、ATTR 透壁）；<span class="k"><sup>99m</sup>Tc-PYP 扫描 2–3 级 + 血尿单克隆免疫球蛋白阴性可无创诊断 ATTR-CA</span>；EMB 为病因金标准。心导管舒张期呈早期下陷-晚期高原波，<strong>与缩窄性心包炎三大导管鉴别</strong>：①<span class="k">肺动脉收缩压常 &gt; 50mmHg</span>；②右室舒张压相对较低（缩窄达 ≥1/3 收缩压峰值）；③<span class="k">左右心室舒张末压差 &gt; 5mmHg</span>。治疗：AL-CA 首选自体造血干细胞移植/化疗；ATTR-CA 首选 TTR 稳定剂<span class="k">氯苯唑酸</span>（降全因死亡 30%）；Fabry 病首选酶替代治疗（阿加糖酶 α/β）；小剂量利尿/扩血管避免降充盈。</li>
+      <li><strong>心肌病 5 步规范化诊疗径路</strong>：①将 CM 视为心衰/心律失常的常见原因 → ②先 TTE 评估形态功能初定表型，再 CMR 评估心肌组织特征界定表型并提供病因线索 → ③必要时作临床及家系筛查、基因及病理检测查因 → ④按表型基因型实行全生命周期综合管理与优化治疗 → ⑤评估表型/基因型猝死风险指导 SCD 预防。</li>
+      <li><strong>限制型心肌病（RCM · 支撑第七章缩窄性心包炎鉴别）</strong>：以限制性心室充盈障碍为特征，分心肌型（浸润/贮积性以<span class="k">心肌淀粉样变性 CA [AL-CA 与 ATTR-CA] 最常见</span>；非浸润家族性）与心内膜心肌型（闭塞性如高嗜酸/放射性；非闭塞性）。病理：心内膜纤维化钙化附壁血栓，CA 刚果红染色砖红、偏振光呈<span class="k">苹果绿双折光</span>。临床以突出<span class="k">右心衰体征</span>及 HFpEF 症状为主。检查：ECG 全导低电压与影像心肌肥厚不相称；TTE 双心房显著扩大、限制充盈、心肌毛玻璃样及<span class="k">心尖保留征</span>；CMR-LGE（AL 心内膜下、ATTR 透壁）；<span class="k"><sup>99m</sup>Tc-PYP 扫描 2–3 级 + 血尿单克隆免疫球蛋白阴性可无创诊断 ATTR-CA</span>；EMB 为病因诊断金标准。心导管舒张期呈早期下陷-晚期高原波，<strong>与缩窄性心包炎三大导管鉴别</strong>：①<span class="k">肺动脉收缩压常 &gt; 50mmHg</span>；②右室舒张压相对较低（缩窄达 ≥1/3 收缩压峰值）；③<span class="k">左右心室舒张末压差 &gt; 5mmHg</span>（注：RCM 各类病因特异药物治疗超纲故不展开）。</li>
     </ul>
   </div>
 </section>
@@ -2105,7 +2123,7 @@
   <div class="mod-header">
     <div class="mod-title-row">
       <h1 class="mod-title">Ⅵ、心脏瓣膜病</h1>
-      <span class="mod-source">第10版 第八章《心脏瓣膜病》（课本 P299–314 / PDF P330–345）· 2学时</span>
+      <span class="mod-source">第10版 第八章《心脏瓣膜病》（全章 课本 P299–314 / PDF P330–345；正文取材第1–5节：课本 P299–313 / PDF P330–344，截于第六节标题前）· 2学时</span>
     </div>
     <div class="syllabus-box">
       <div class="syl-row"><span class="syl-tag m">掌握</span><span>二尖瓣狭窄（MS）、二尖瓣反流（MR，大纲称关闭不全）、主动脉瓣狭窄（AS）、主动脉瓣反流（AR，大纲称关闭不全）的病因病理、血流动力学、临床表现与听诊杂音、超声定量分度、并发症及药物/介入/外科治疗原则。</span></div>
@@ -2141,7 +2159,7 @@
         <text x="22" y="141" font-size="11.5" fill="var(--foreground)">• TTE：城墙样/鱼钩样｜重度：<tspan font-weight="700" fill="var(--error)">MVA&lt;1.5(表&lt;1.6), 压差&gt;9, PAP≥50</tspan></text>
         <text x="22" y="160" font-size="11.5" fill="var(--error)" font-weight="600">• 抗凝红线：中重度MS+AF 仅用 VKA(INR 2–3)，禁用 NOAC</text>
         <text x="22" y="178" font-size="11" fill="var(--foreground)">• 肺水肿：扩静脉(硝酸酯)，避扩小动脉；快AF用毛花苷丙</text>
-        <text x="22" y="196" font-size="11" fill="var(--foreground)">• 介入：<tspan font-weight="700">PBMV</tspan>(重度单纯/Wilkins≤8/无血栓/无中重MR)</text>
+        <text x="22" y="196" font-size="10.2" fill="var(--foreground)">• 介入：<tspan font-weight="700">PBMV</tspan>(重度单纯/Wilkins≤8/无血栓/仅轻MR无LV大)</text>
         <text x="22" y="214" font-size="11" fill="var(--muted-foreground)">• 外科：人工换瓣(不适合PBMV/复发血栓/合并其他需手术)</text>
 
         <rect x="448" y="8" width="424" height="222" rx="10" fill="var(--chart-1)" fill-opacity="0.06" stroke="var(--chart-1)" stroke-width="1.5" />
@@ -2153,7 +2171,7 @@
         <text x="462" y="123" font-size="11.5" fill="var(--foreground)">• X线：慢性 LA+LV 增大；急性心影正常伴重肺水肿</text>
         <text x="462" y="141" font-size="11.5" fill="var(--foreground)">• TTE重度：<tspan font-weight="700" fill="var(--error)">缩流颈&gt;0.7cm, EROA≥0.40cm², 反流≥60ml, 分数≥50%</tspan></text>
         <text x="462" y="160" font-size="11.5" fill="var(--foreground)">• 急性过渡：Swan-Ganz监测+硝普钠/硝酸酯/利尿/IABP→紧急手术</text>
-        <text x="462" y="178" font-size="10.5" fill="var(--foreground)">• 慢性原发手术：有症状；无症状 <tspan font-weight="700">LVEF≤60%/LVESD≥40/PAMP&gt;50/新AF</tspan></text>
+        <text x="462" y="178" font-size="9.2" fill="var(--foreground)">• 重度原发MR手术：有症状；无症状LVEF≤60%/LVESD≥40mm/PAMP&gt;50mmHg/新AF</text>
         <text x="462" y="196" font-size="11" fill="var(--foreground)">• 继发MR：先优化心衰“新四联” + 符合指征行 CRT</text>
         <text x="462" y="214" font-size="11" fill="var(--chart-1)" font-weight="600">• 介入：外科高危/禁忌解剖合适首选 TEER（缘对缘修复）</text>
 
@@ -2164,22 +2182,22 @@
         <text x="22" y="305" font-size="11.5" fill="var(--foreground)">• 路径：正常3–4cm²→≤1.0cm²→LV向心肥厚→耗氧↑冠脉灌注↓</text>
         <text x="22" y="323" font-size="11.5" fill="var(--error)" font-weight="700">• 典型三联征：呼吸困难(2年死50%) / 晕厥(3年50%) / 心绞痛(5年50%)</text>
         <text x="22" y="341" font-size="11.5" fill="var(--primary)" font-weight="700">• 杂音：胸骨右缘1–2肋间粗糙递增-递减收缩期射流音向颈部传导</text>
-        <text x="22" y="359" font-size="11" fill="var(--muted-foreground)">  A₂减弱/S₂逆分裂/S₄/脉压小迟脉｜合并消化道出血=Heyde综合征</text>
+        <text x="22" y="359" font-size="10" fill="var(--muted-foreground)">  A₂↓/S₂逆分裂/S₄/迟脉｜伴胃肠血管发育不良出血=Heyde综合征</text>
         <text x="22" y="377" font-size="11.5" fill="var(--foreground)">• TTE重度：<tspan font-weight="700" fill="var(--error)">射流≥4m/s, 平均压差≥40mmHg, 瓣口≤1.0cm²</tspan></text>
         <text x="22" y="396" font-size="11.5" fill="var(--error)" font-weight="600">• 用药禁忌：避免扩血管药(硝酸酯/硝苯地平)；他汀无明确防治效</text>
-        <text x="22" y="414" font-size="11" fill="var(--foreground)">• 外科换瓣：有症状即手术；无症状伴 LVEF&lt;50%/&gt;5m/s/压差&gt;60/年增&gt;0.3</text>
-        <text x="22" y="432" font-size="11" fill="var(--foreground)">• 介入：<tspan font-weight="700">TAVR（&gt;65岁老龄重度AS主要手段）</tspan>｜PBAV 仅作过渡</text>
+        <text x="22" y="414" font-size="9.8" fill="var(--foreground)">• 外科：重度有症状；无症状LVEF&lt;50%/&gt;5m/s/压差&gt;60/年增≥0.3亦考虑</text>
+        <text x="22" y="432" font-size="9.8" fill="var(--foreground)">• 介入：<tspan font-weight="700">TAVR(&gt;65岁重度AS指征明确+解剖合适可考虑)</tspan>｜PBAV过渡</text>
         <text x="22" y="450" font-size="11" fill="var(--muted-foreground)">• 鉴别 HOCM：HOCM 在左缘4肋间不向颈部传，室间隔/后壁≥1.3</text>
 
         <rect x="448" y="244" width="424" height="222" rx="10" fill="var(--primary)" fill-opacity="0.06" stroke="var(--primary)" stroke-width="1.5" />
         <text x="462" y="266" font-size="13" font-weight="700" fill="var(--primary)">④ 主动脉瓣反流（AR · 左室容量负荷↑）</text>
         <text x="462" y="287" font-size="10.5" fill="var(--foreground)">• 病因：慢性(风湿2/3、二叶瓣、IE、Marfan、梅毒)；急性(IE/夹层/创伤)</text>
-        <text x="462" y="305" font-size="11.5" fill="var(--foreground)">• 路径：慢性LV显著扩张代偿&gt;20年；急性二尖瓣早闭→S₁↓+肺水肿</text>
+        <text x="462" y="305" font-size="10.8" fill="var(--foreground)">• 路径：慢性轻症一般无症状&gt;20年；急性二尖瓣早闭→S₁↓+肺水肿</text>
         <text x="462" y="323" font-size="11.5" fill="var(--primary)" font-weight="700">• 杂音：主动脉瓣区舒张早期高调递减叹气样(坐位前倾呼气末最响)</text>
         <text x="462" y="341" font-size="11" fill="var(--foreground)">  心尖区相对MS：<tspan font-weight="700">Austin-Flint 杂音</tspan>(紧随S₃后, S₁减弱, 无开瓣音)</text>
         <text x="462" y="359" font-size="10.5" fill="var(--error)" font-weight="600">• 周围血管征(脉压宽)：点头征/水冲脉/枪击音/毛细血管搏动/Duroziez双重音</text>
         <text x="462" y="377" font-size="10.5" fill="var(--foreground)">• X线：<tspan font-weight="700">靴形心</tspan>(主动脉型心)｜TTE重度：<tspan font-weight="700" fill="var(--error)">射流&gt;65%LVOT, &gt;60ml, 分数&gt;50%</tspan></text>
-        <text x="462" y="396" font-size="11" fill="var(--foreground)">• 药物：高血压/心衰选 ACEI/ARB/D-CCB；Marfan 术前后用 β 阻滞</text>
+        <text x="462" y="396" font-size="9.8" fill="var(--foreground)">• 药物：合并高血压，或伴心衰但手术禁忌→ACEI/ARB/D-CCB；Marfan用β</text>
         <text x="462" y="414" font-size="11" fill="var(--foreground)">• 外科换瓣(首选)：有症状重度；无症状 <tspan font-weight="700">LVEF&lt;55% 或 LVESD&gt;50mm</tspan></text>
         <text x="462" y="432" font-size="11" fill="var(--error)">• 手术禁忌：LVEF≤15–20%, LVEDD≥80mm, LVEDVI≥300ml/m²</text>
         <text x="462" y="450" font-size="11" fill="var(--muted-foreground)">• TAVR 非 AR 一线(缺乏钙化定位难)；急性重度尽早外科手术</text>
@@ -2197,14 +2215,14 @@
         <ul>
           <li><strong>病因病理与血流动力学</strong>：主因<span class="k">风湿热</span>（20–40岁，70%女性，50%无急性风湿热史，至少 2 年形成），漏斗形与<span class="k">鱼嘴样瓣口</span>。正常 MVA <span class="k">4.0～6.0cm²</span>；正文中轻度 &gt;2.5、中度 1.6–2.5、重度 &lt;1.5cm²（表 3-8-3 列重度 &lt;1.6cm²、平均跨瓣压差 &gt;9mmHg、肺动脉压 ≥50mmHg）。左房压升 → 肺静脉高压/肺淤血 → 肺动脉高压 → 右心衰（右心衰后肺淤血症状反而减轻）。</li>
           <li><strong>临床表现与体征</strong>：①呼吸困难最早（劳力→端坐→夜间阵发→肺水肿）；②咯血（早期支气管静脉破裂大咯血可首发、血痰、肺水肿粉红泡沫痰、肺梗死）；③咳嗽、声音嘶哑（左房/肺动脉压迫左侧喉返神经）、吞咽困难；④体征：<span class="k">二尖瓣面容</span>；<span class="k">心尖区低调舒张中晚期隆隆样杂音</span>（局限不传导、左侧卧位最明显、常伴震颤），瓣叶柔顺见<span class="k">S₁ 亢进（拍击样）与开瓣音（紧随 S₂ 呼气明显）</span>，钙化僵硬则减弱消失；肺动脉扩张致胸骨左缘 2–4 肋间舒张早期吹风样 <span class="k">Graham-Steell 杂音</span>。</li>
-          <li><strong>辅助检查与并发症</strong>：X 线见<span class="k">梨形心</span>（左缘变直、右缘双心房影、肺动脉段隆起、主动脉结缩小、Kerley B 线、食管压迹）；ECG 见<span class="k">二尖瓣型 P 波（&gt;0.12s 有切迹）</span>、Ptf-V₁ 负性增大、右室肥厚；M 型超声前叶<span class="k">城墙样</span>、EF 斜率降、前后叶同向；二维呈穹顶状/鱼钩样/鱼嘴样；TEE 检出左心耳血栓敏特度 &gt;98%。六大并发症：房颤（心排降 20%–25%）、急性肺水肿、体循环血栓栓塞（20%，80%伴AF，2/3为脑栓塞）、右心衰、肺部感染、IE（少见）。</li>
-          <li><strong>治疗要点</strong>：①防风湿复发用苄星青霉素；②<strong>合并房颤抗凝</strong>：中重度 MS <span class="k">必须使用 VKA（华法林，INR 2～3）而非 NOAC</span>；窦律伴栓塞史/左房血栓/左房 &gt;50mm 或 &gt;60ml/m²/自发显影亦抗凝；③<strong>并发肺水肿</strong>：<span class="k">选扩张静脉的硝酸酯，避免扩张小动脉药；正性肌力药无益，仅快房颤静注毛花苷丙控室率</span>（大咯血取坐位+镇静+静注利尿剂）；④<strong>PBMV（介入首选）</strong>：适应证为重度单纯 MS、瓣叶柔顺无明显钙化（<span class="k">Wilkins 评分 ≤ 8 分</span>）、无血栓、无中重度 MR、无风湿活动、NYHA II–III；禁忌包括近 3 月栓塞史、中重度 MR、双侧交界重度钙化、左房血栓（抗凝 2–6 月复查 TEE 消失仍可做）；⑤<strong>外科人工瓣膜置换</strong>：适应证为不适合/失败 PBMV 重度症状性 MS、中度合并其他需手术心病、充分抗凝仍复发栓塞；<strong>4 禁忌</strong>：近期脑栓塞（宜 2–3 月后）、全身差高危、风湿活动（控制后 3–6 月）、小左心室。</li>
+          <li><strong>辅助检查、超声形态判读、诊断鉴别与并发症</strong>：X 线见<span class="k">梨形心</span>（左缘变直、右缘双心房影、肺动脉段隆起、主动脉结缩小、Kerley B 线、食管压迹）；ECG 见<span class="k">二尖瓣型 P 波（&gt;0.12s 有切迹）</span>、Ptf-V₁ 负性增大、右室肥厚；M 型超声前叶<span class="k">城墙样</span>、EF 斜率降、前后叶同向；二维示穹顶状/鱼钩样/鱼嘴样，重点评估<strong>瓣叶活动度与钙化、交界粘连融合及瓣下腱索增厚融合</strong>（Wilkins 超声评分指导 PBMV 选择；教材未另设独立“超声分型”表）；TEE 检出左心耳血栓敏特度 &gt;98%。<strong>诊断与鉴别</strong>：依据典型心脏杂音及超声心动图确诊；超声助鉴别相对性二尖瓣狭窄、左房黏液瘤、三尖瓣狭窄和原发性肺动脉高压。六大并发症：房颤（心排降 20%–25%）、急性肺水肿、体循环血栓栓塞（20%，80%伴AF，2/3为脑栓塞）、右心衰、肺部感染、IE（少见）。</li>
+          <li><strong>治疗要点</strong>：①防风湿复发用苄星青霉素；②<strong>合并房颤抗凝</strong>：中重度 MS <span class="k">必须使用 VKA（华法林，INR 2～3）而非 NOAC</span>；窦律伴栓塞史/左房血栓/左房 &gt;50mm 或 &gt;60ml/m²/自发显影亦抗凝；③<strong>并发肺水肿</strong>：<span class="k">选扩张静脉的硝酸酯，避免扩张小动脉药；正性肌力药无益，仅快房颤静注毛花苷丙控室率</span>（大咯血取坐位+镇静+静注利尿剂）；④<strong>PBMV（介入首选）</strong>：适应证为重度单纯 MS、瓣叶柔软活动好无明显钙化及瓣下无明显增厚（<span class="k">Wilkins 评分 ≤ 8 分</span>）、心腔无血栓、不合并 MR 及其他瓣膜病、无风湿活动、NYHA II–III；<strong>伴 MR 仅限于轻度且无左室增大者</strong>；<strong>经验丰富中心例外</strong>：MVA &gt; 1.5cm² 症状性 MS 若 PAWP &gt; 25mmHg 或运动平均跨瓣压差 &gt; 15mmHg 亦可行 PBMV；禁忌包括中重度 MR、左房血栓（抗凝 2–6 月复查 TEE 消失可考虑）、双侧交界重度钙化、其他严重瓣膜病或需冠脉旁路移植术、近 3 月栓塞史等；⑤<strong>外科人工瓣膜置换</strong>：适应证为不适合/失败 PBMV 重度症状性 MS、中度合并其他需手术心病、充分抗凝仍复发栓塞；<strong>4 禁忌</strong>：近期脑栓塞（宜 2–3 月后）、全身差高危、风湿活动（控制后 3–6 月）、小左心室。</li>
         </ul>
       </li>
       <li><strong>二尖瓣反流（MR）</strong>：
         <ul>
           <li><strong>病因与分类（表 3-8-4）</strong>：累及瓣叶（风湿30%/黏液样变脱垂/IE穿孔）、瓣环扩大钙化、腱索（断裂）、乳头肌（心梗缺血/断裂）；分急性与慢性（慢性原发/退化性 vs 慢性继发/功能性）。</li>
-          <li><strong>临床表现与定量分级（表 3-8-5）</strong>：急性突发肺水肿与休克，心尖高动力型、杂音短促于 S₂ 前终止（可闻 S₄/乐音性）；慢性代偿 &gt;20 年，心尖抬举向左下移、S₁ 减弱、<span class="k">心尖全收缩期吹风样杂音 ≥ 3/6 级</span>（前叶受损向左腋/左肩胛下传，后叶向心底传），脱垂有收缩中期喀喇音、腱索断裂似海鸥鸣。超声定性/定量重度标准：<span class="k">彩色反流束 &gt;50% 左房面积、缩流颈 &gt;0.7cm、肺静脉收缩期逆流、二尖瓣 E 峰 &gt;1.2m/s、EROA ≥ 0.40cm²、反流容积 ≥ 60ml、反流分数 ≥ 50%</span>。</li>
+          <li><strong>临床表现、辅助检查、定量分级（表 3-8-5）与并发症</strong>：<strong>急性</strong>轻度仅轻微劳力性呼吸困难，<strong>严重反流</strong>（如腱索/乳头肌断裂）很快发生急性左心衰、急性肺水肿或心源性休克，心尖高动力型、杂音短促于 S₂ 前终止（可闻 S₄/乐音性）；<strong>慢性</strong>轻度可终身无症状，<strong>较重风湿性 MR 从罹患风湿热至出现症状一般 &gt; 20 年</strong>，一旦心衰进展常较迅速，体征见心尖抬举向左下移、S₁ 减弱、<span class="k">心尖全收缩期吹风样杂音 ≥ 3/6 级</span>（前叶受损向左腋/左肩胛下传，后叶向心底传），脱垂有收缩中期喀喇音、腱索断裂似海鸥鸣。<strong>X 线与 ECG</strong>：急性心影正常或左房轻大伴重肺淤血/水肿、ECG 正常多窦速；慢性重度 X 线示左房左室大（二尖瓣环钙化侧位/右前斜位呈致密粗 C 形影），ECG 见双峰增宽 P 波、LVH、非特异 ST-T 变及常伴房颤。超声重度标准：<span class="k">彩色反流束 &gt;50% 左房面积、缩流颈 &gt;0.7cm、肺静脉收缩期逆流、二尖瓣 E 峰 &gt;1.2m/s、EROA ≥ 0.40cm²、反流容积 ≥ 60ml、反流分数 ≥ 50%</span>。<strong>并发症</strong>：常有房颤；<strong>IE 较 MS 常见</strong>；<strong>体循环栓塞较 MS 少见</strong>；心衰急性早期现、慢性晚期现（急性可肺水肿）。</li>
           <li><strong>治疗</strong>：急性用 Swan-Ganz 监测下硝酸酯/利尿/硝普钠/正性肌力/IABP/ECMO 过渡后尽早外科换瓣或修复（心梗后若药控稳定宜 4–6 周手术）。慢性原发药物无效（血压正常无症状不用扩血管药），外科适应证：①有症状重度原发 MR；②无症状重度伴<span class="k">肺动脉平均压 &gt;50mmHg、新发 AF、LVEF ≤ 60% 或 LVESD ≥ 40mm</span>；③重度继发需同时行 CABG/心外手术。非风湿/非感染/非缺血（如脱垂）优先二尖瓣修复。慢性继发第一步为最优心衰药物治疗+CRT；外科高危/禁忌解剖合适选<span class="k">经导管缘对缘修复（TEER）</span>。</li>
         </ul>
       </li>
@@ -2217,14 +2235,15 @@
       <li><strong>主动脉瓣狭窄（AS）</strong>：
         <ul>
           <li><strong>病因与病理生理</strong>：老年退行性钙化（成人最常见，&gt;65 岁主因）、先天畸形（二叶瓣人群 1–2%、&lt;65 岁孤立 AS 常见、易并发 IE）、风湿性（常伴反流及二尖瓣病）。正常瓣口 3–4cm²，≤1.0cm² 出现明显压差 → 左室向心肥厚 → 心肌耗氧增 + 心内膜下压迫与冠脉灌注压降 → 缺血。</li>
-          <li><strong>典型三联征与体征</strong>：①劳力性呼吸困难（95%，晚期首发，不手术 2 年死 50%）；②心绞痛（60%，重度最早最常见，5 年死 50%）；③晕厥（15–30%，多劳力当时，3 年死 50%）。体征：心尖抬举搏动、脉压小、颈动脉搏动延迟；A₂ 减弱消失、<span class="k">S₂ 逆分裂</span>、S₄；<span class="k">胸骨右缘 1–2 肋间粗糙响亮递增-递减收缩期射流杂音（≥3/6 级）向颈部传导</span>（与 HOCM 鉴别：HOCM 胸骨左缘 4 肋间不向颈传、室间隔/后壁 ≥1.3）。并发症含房颤、猝死（有症状年 8–34%）、心衰、IE、栓塞、<span class="k">Heyde 综合征（合并胃肠道血管发育不良慢性出血，换瓣后停止）</span>。</li>
-          <li><strong>检查与治疗</strong>：X 线心影不大、75%–85% 升主动脉扩张；ECG 左室肥厚劳损；心电门控增强 CT 评估根部钙化/冠脉口高度/通路以指导 TAVR。<strong>药物</strong>：无特效药，他汀无明确防治效，<span class="k">避免使用血管扩张药（硝酸酯、硝苯地平）以防降冠脉灌注压</span>。<strong>外科换瓣（成人主要）</strong>：凡重度伴症状即手术；无症状伴以下之一亦手术：<span class="k">LVEF &lt; 50%、运动耐量降/血压降、极重度（速度 &gt;5m/s 或平均压差 &gt;60mmHg）、进展快（年流速增 &gt;0.3m/s）</span>。<strong>介入</strong>：<span class="k">TAVR 已成为 &gt;65 岁老龄重度 AS 主要治疗手段</span>；PBAV 再狭窄高仅作过渡。</li>
+          <li><strong>典型三联征与体征</strong>：①劳力性呼吸困难（95%，晚期首发，不手术 2 年死 50%）；②心绞痛（60%，重度最早最常见，5 年死 50%）；③晕厥（15–30%，多劳力当时，3 年死 50%）。体征：心尖抬举搏动、脉压小、颈动脉搏动延迟；A₂ 减弱消失、<span class="k">S₂ 逆分裂</span>、S₄；<span class="k">胸骨右缘 1–2 肋间粗糙响亮递增-递减收缩期射流杂音（≥3/6 级）向颈部传导</span>（与 HOCM 鉴别：HOCM 胸骨左缘 4 肋间不向颈传、室间隔/后壁 ≥1.3）。并发症含房颤、猝死（有症状年 8–34%）、心衰、IE、栓塞、<span class="k">Heyde 综合征（存在胃肠道血管发育不良者可合并隐匿慢性消化道出血，人工瓣膜置换术后出血可停止）</span>。</li>
+          <li><strong>检查与治疗</strong>：X 线心影不大、75%–85% 升主动脉扩张；ECG 左室肥厚劳损；心电门控增强 CT 评估根部钙化/冠脉口高度/通路以指导 TAVR。<strong>药物</strong>：无特效药，他汀无明确防治效，<span class="k">避免使用血管扩张药（硝酸酯、硝苯地平）以防降冠脉灌注压</span>。<strong>外科换瓣（成人主要）</strong>：凡重度伴症状即手术；无症状伴以下之一<strong>也应考虑手术</strong>：<span class="k">LVEF &lt; 50%、运动耐量降/血压降、极重度（速度 &gt;5m/s 或平均压差 &gt;60mmHg）、进展快（跨瓣流速年增加 0.3m/s 以上）</span>。<strong>介入</strong>：TAVR 已成为重度 AS 主要治疗手段，对<span class="k">&gt; 65 岁老龄重度 AS 病人，若瓣膜置换适应证明确、解剖学结构合适可考虑行 TAVR</span>；PBAV 再狭窄高仅作过渡。</li>
         </ul>
       </li>
       <li><strong>主动脉瓣反流（AR）</strong>：
         <ul>
-          <li><strong>病因与临床</strong>：急性（IE、胸伤、主动脉夹层、人工瓣撕裂）；慢性（瓣叶本身：我国 2/3 风湿性、二叶瓣、IE、退行、脱垂；主动脉根部扩张：Marfan 综合征、梅毒性主动脉炎、高血压/强直脊柱炎）。急性舒张压骤升致二尖瓣提前关闭（S₁ 弱、杂音短促、无周围血管征、迅速肺水肿休克）；慢性代偿 &gt;20 年，心悸搏动感，体征见<span class="k">主动脉瓣区舒张早期高调递减叹气样杂音（坐位前倾呼气末最响）</span>、心尖区相对 MS <span class="k">Austin-Flint 杂音</span>（紧随 S₃、S₁ 减弱，借以与器质性 MS 紧随开瓣音、S₁ 亢进鉴别）及典型<span class="k">周围血管征（De Musset 点头征、水冲脉、Traube 股动脉枪击音、毛细血管搏动征、Duroziez 股动脉双重音）</span>。X 线呈<span class="k">靴形心</span>。</li>
-          <li><strong>治疗</strong>：慢性高血压/心衰选 ACEI/ARB/D-CCB；Marfan 术前后用 β 阻滞；梅毒全疗程青霉素。<strong>外科换瓣（首选）指征</strong>：有症状重度 AR；无症状重度伴 <span class="k">LVEF &lt; 55%</span>、或 LVEF 正常但 <span class="k">LVESD &gt; 50mm（LVESDI &gt; 25mm/m²）</span>、或中度以上需行其他心脏外科手术。<strong>禁忌证</strong>：<span class="k">LVEF ≤ 15%～20%、LVEDD ≥ 80mm 或 LVEDVI ≥ 300ml/m²</span>。<strong>TAVR 仍非重度 AR 一线</strong>（缺钙化难固定）。急性重度 AR 药物过渡（硝普钠/利尿/多巴酚丁胺）后尽早外科手术。</li>
+          <li><strong>病因与急慢性血流动力学机制</strong>：急性（IE、胸伤、主动脉夹层、人工瓣撕裂）；慢性（瓣叶本身：我国 2/3 风湿性、二叶瓣、IE、退行、脱垂；主动脉根部扩张：Marfan 综合征、梅毒性主动脉炎、高血压/强直脊柱炎）。<strong>急性</strong>舒张期大量反流致 LVEDP 迅速升高、前向搏出降，舒张压骤升致二尖瓣提前关闭（虽防 LV 压过度升高，但致 LA 排空受限→肺淤血/肺水肿，常血压明显下降甚心源性休克；听诊 S₁ 弱、杂音短促、无周围血管征）；<strong>慢性</strong>舒张期反流致 LV 舒张末容积增加、LV 扩张代偿（Frank-Starling 曲线上升段，EDP 暂维持正常），<strong>轻症者一般可无症状维持 20 年以上</strong>，后期失代偿并因舒张压降致冠脉灌注减少、心肌缺血加速恶化。</li>
+          <li><strong>临床表现、辅助检查与并发症</strong>：慢性见心悸搏动感、劳力呼吸困难，体征见<span class="k">主动脉瓣区舒张早期高调递减叹气样杂音（坐位前倾呼气末最响）</span>、心尖区相对 MS <span class="k">Austin-Flint 杂音</span>（紧随 S₃、S₁ 减弱，借以与器质性 MS 紧随开瓣音、S₁ 亢进鉴别）及典型<span class="k">周围血管征（De Musset 点头征、水冲脉、Traube 股动脉枪击音、毛细血管搏动征、Duroziez 股动脉双重音）</span>。<strong>辅助检查</strong>：X 线慢性呈<span class="k">靴形心</span>（主动脉型心，左室向左下大、心腰深、升主动脉扩），急性多正常伴肺淤血/水肿；ECG 慢性见 LVH 劳损伴电轴左偏，急性多窦速伴非特异 ST-T 变；TTE M 型示舒张期二尖瓣前叶高频振动、多普勒探 LVOT 全舒张期反流定量（表 3-8-2）；TTE 欠佳行 CMR 量化；无创不定或术前评冠脉行心导管。<strong>并发症</strong>：<strong>IE 较常见</strong>（常加速心衰）；充血性心衰（急性早现、慢性晚现）；室性心律失常常见但心脏性猝死少见。</li>
+          <li><strong>治疗</strong>：合并高血压者积极控压推荐 ACEI/ARB/D-CCB；<strong>合并心衰但有手术禁忌者</strong>可使用 ACEI/ARB/D-CCB；术后仍心功能不全或高血压用 β 阻滞/ACEI/ARB；Marfan 术前后均用 β 阻滞；二叶瓣伴升主动脉/根部扩张建议 ACEI/ARB/β 阻滞；梅毒全疗程青霉素。<strong>外科换瓣（首选）指征</strong>：有症状重度 AR；无症状重度伴 <span class="k">LVEF &lt; 55%</span>、或 LVEF 正常但 <span class="k">LVESD &gt; 50mm（LVESDI &gt; 25mm/m²）</span>、或中度以上需行其他心脏外科手术。<strong>禁忌证</strong>：<span class="k">LVEF ≤ 15%～20%、LVEDD ≥ 80mm 或 LVEDVI ≥ 300ml/m²</span>。<strong>TAVR 仍非重度 AR 一线</strong>（缺钙化难固定）。急性重度 AR 药物过渡（硝普钠/利尿/多巴酚丁胺）后尽早外科手术。</li>
         </ul>
       </li>
     </ul>
@@ -2279,11 +2298,11 @@
   <!-- SVG 7 -->
   <div class="svg-card" data-tier="master">
     <div class="svg-hd">
-      <span>图解 7 · 心包疾病三阶段演进（纤维蛋白性急性心包炎 → 心包积液与心脏压塞 → 缩窄性心包炎）及核心鉴别</span>
+      <span>图解 7 · 心包疾病三大常见表现与可发生的演进（急性心包炎 / 心包积液与压塞 / 缩窄性心包炎）及核心鉴别</span>
       <button class="svg-zoom-btn" type="button">放大查看</button>
     </div>
     <div class="svg-stage">
-      <svg viewBox="0 0 880 420" width="100%" role="img" aria-label="心包疾病三阶段演进与核心鉴别图">
+      <svg viewBox="0 0 880 420" width="100%" role="img" aria-label="心包疾病三大表现与核心鉴别图">
         <defs>
           <marker id="arr7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
             <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
@@ -2299,12 +2318,12 @@
         <text x="20" y="73" font-size="11.5" fill="var(--foreground)">• 胸痛：心前区刀割痛，随咳嗽/</text>
         <text x="28" y="89" font-size="11" fill="var(--muted-foreground)">深呼吸/变换体位/吞咽加重</text>
         <text x="20" y="109" font-size="11.5" fill="var(--error)" font-weight="700">• 最具诊断价值：三相心包摩擦音</text>
-        <text x="28" y="125" font-size="11" fill="var(--muted-foreground)">左缘3–4肋间，前倾坐位/深吸增强</text>
+        <text x="28" y="125" font-size="10.5" fill="var(--muted-foreground)">左缘3–4肋间，前倾坐/深吸可能增强</text>
         <text x="20" y="145" font-size="11.5" fill="var(--primary)" font-weight="700">• ECG(60–90%阳性)：</text>
         <text x="28" y="162" font-size="11" fill="var(--foreground)">除 aVR/V₁ 外广泛 ST 弓背向下抬高</text>
         <text x="28" y="178" font-size="11" fill="var(--foreground)">+ PR 段压低 + 无病理性 Q 波</text>
         <text x="20" y="198" font-size="11.5" fill="var(--foreground)">• 治疗：卧床 + NSAIDs(阿司匹林/</text>
-        <text x="28" y="214" font-size="11" fill="var(--foreground)">布洛芬) / 秋水仙碱；效差用激素</text>
+        <text x="28" y="214" font-size="10.2" fill="var(--foreground)">布洛芬)/秋水仙碱；他药积液差可予激素</text>
         <text x="20" y="236" font-size="11" fill="var(--muted-foreground)">与AMI鉴别：弓背向下 vs 向上+定位+Q波</text>
 
         <line x1="278" y1="136" x2="304" y2="136" stroke="var(--error)" stroke-width="2" marker-end="url(#arr7r)" />
@@ -2318,11 +2337,11 @@
         <text x="320" y="109" font-size="11.5" fill="var(--foreground)">• <tspan font-weight="700">奇脉</tspan>：吸气时 SBP 降 ≥ 10mmHg</text>
         <text x="320" y="128" font-size="11.5" fill="var(--foreground)">• Ewart 征：左肩胛下浊音+支气管呼吸音</text>
         <text x="320" y="147" font-size="11.5" fill="var(--foreground)">• X线：<tspan font-weight="700">烧瓶心</tspan>(肺野清晰)｜ECG电交替</text>
-        <text x="320" y="166" font-size="11.5" fill="var(--primary)" font-weight="700">• TTE确诊：右房舒张末+右室舒张早塌陷</text>
+        <text x="320" y="166" font-size="10" fill="var(--primary)" font-weight="700">• TTE确诊积液；压塞见RA舒末+RV舒早塌陷</text>
         <text x="328" y="182" font-size="11" fill="var(--muted-foreground)">定量：小&lt;10 / 中10–20 / 大&gt;20mm</text>
-        <text x="320" y="204" font-size="11.5" fill="var(--error)" font-weight="700">• 急救核心：紧急心包穿刺或开窗引流</text>
+        <text x="320" y="204" font-size="10.2" fill="var(--error)" font-weight="700">• 血流动力学不稳急性压塞：急穿刺/开窗</text>
         <text x="328" y="220" font-size="11" fill="var(--foreground)">+ 伴休克立即扩容、升压（解除压塞）</text>
-        <text x="320" y="242" font-size="11" fill="var(--muted-foreground)">渗出增多→胸痛转呼吸困难、摩擦音消失</text>
+        <text x="320" y="242" font-size="10.2" fill="var(--muted-foreground)">积液增多→可由胸痛转呼吸困难、摩擦音可消失</text>
 
         <line x1="578" y1="136" x2="604" y2="136" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr7)" />
 
@@ -2337,7 +2356,7 @@
         <text x="628" y="144" font-size="11" fill="var(--foreground)">CT 查心包钙化最敏感；MRI 查炎症粘连</text>
         <text x="620" y="164" font-size="11.5" fill="var(--foreground)">• 右心导管：各腔舒张压趋同、M/W波、</text>
         <text x="628" y="180" font-size="11" fill="var(--foreground)">早期下陷高原波、左右室压呼吸矛盾性</text>
-        <text x="620" y="202" font-size="11.5" fill="var(--error)" font-weight="700">• 唯一有效根治：外科心包切除术</text>
+        <text x="620" y="202" font-size="11.5" fill="var(--error)" font-weight="700">• 慢性缩窄唯一有效：外科心包切除术</text>
         <text x="628" y="218" font-size="11" fill="var(--foreground)">近期稳定可试抗炎2–3月；结核术后抗痨1年</text>
         <text x="620" y="242" font-size="11" fill="var(--muted-foreground)">TTE可见室间隔抖动征+E峰随呼吸变</text>
 
@@ -2347,7 +2366,7 @@
 
         <rect x="20" y="310" width="412" height="88" rx="7" fill="var(--warning)" fill-opacity="0.08" stroke="var(--warning)" />
         <text x="34" y="330" font-size="12" font-weight="700" fill="var(--warning)">支持【慢性缩窄性心包炎】</text>
-        <text x="34" y="349" font-size="11.5" fill="var(--foreground)">• 影像：CT/X 线见明显心包增厚/钙化；TTE 室间隔抖动征</text>
+        <text x="34" y="349" font-size="10.2" fill="var(--foreground)">• 影像：X线可有钙化，CT查增厚/钙化更敏感；TTE 室间隔抖动</text>
         <text x="34" y="368" font-size="11.5" fill="var(--foreground)">• 导管：PCWP/PAPd/RVEDP/RAP 升高且趋于同一水平</text>
         <text x="34" y="387" font-size="11.5" fill="var(--foreground)">• RVEDP ≥ 1/3 右室收缩压峰值；左右室压变化呈呼吸矛盾性</text>
 
@@ -2367,8 +2386,9 @@
     <div class="card-hd"><h3 class="card-title">1. 急性心包炎：表现、心电图 4 阶段演变、鉴别诊断与治疗</h3><span class="badge badge-m">掌握</span></div>
     <p>正常心包腔含 <span class="k">15～50ml</span> 浆膜液。急性心包炎最常见病因为<span class="k">病毒感染</span>（不明病因称特发性/急性非特异性心包炎，自限预后好），病理可为浆液性、纤维素性、出血性或化脓性。</p>
     <ul>
-      <li><strong>症状与体征</strong>：纤维蛋白期以<span class="k">胸骨后/心前区刀割样剧痛</span>为特征，随<span class="k">咳嗽、深呼吸、变换体位或吞咽加重</span>；渗出期转为呼吸困难为主。<span class="k">最具诊断价值体征为心包摩擦音</span>（抓刮样高频、典型呈三相：房缩/室缩/室舒），胸骨左缘 3–4 肋间明显，<span class="k">身体前倾坐位、俯卧位、深吸气或听诊器加压增强</span>；积液增多后浊音界扩大、摩擦音消失、心音低弱遥远（部分粘连时大量积液仍可闻及）。</li>
-      <li><strong>ECG 关键改变（60%～90% 出现）</strong>：①<span class="k">除 aVR 和 V₁ 外所有常规导联 ST 段呈弓背向下型抬高</span>（aVR、V₁ 压低），常伴 <span class="k">PR 段压低</span>与窦速；②数天后 ST 回基线；③渐出现 T 波倒置；④T 波恢复直立；大量积液可见 QRS 波电交替。<strong>X 线</strong>：成人积液 &lt;250ml（儿童 &lt;150ml）难以检出；<strong>TTE</strong> 确诊并定量（<span class="k">少量 &lt;10mm、中等量 10～20mm、大量 &gt;20mm</span>）及引导穿刺；<strong>CMR</strong> 延迟增强见心包强化且判心肌受累。</li>
+      <li><strong>症状与体征</strong>：纤维蛋白期以<span class="k">胸骨后/心前区刀割样剧痛</span>为特征，随<span class="k">咳嗽、深呼吸、变换体位或吞咽加重</span>；随病程发展症状<strong>可</strong>由胸痛为主转为渗出期的呼吸困难为主。<span class="k">最具诊断价值体征为心包摩擦音</span>（抓刮样高频、典型呈三相：房缩/室缩/室舒），胸骨左缘 3–4 肋间明显，<span class="k">身体前倾坐位、俯卧位、深吸气或听诊器加压<strong>可能</strong>听到摩擦音增强</span>；积液增多将两层心包分开时浊音界扩大、摩擦音消失、心音低弱遥远（部分粘连时大量积液仍可闻及）。</li>
+      <li><strong>ECG 关键改变（60%～90% 出现）</strong>：①<span class="k">除 aVR 和 V₁ 外所有常规导联 ST 段呈弓背向下型抬高</span>（aVR、V₁ 压低），常伴 <span class="k">PR 段压低</span>与窦速；②数天后 ST 回基线；③渐出现 T 波倒置；④T 波恢复直立；大量积液可见 QRS 波电交替。<strong>X 线</strong>：成人积液 &lt;250ml（儿童 &lt;150ml）难以检出；<strong>TTE</strong> 可确诊有无心包积液并定量（<span class="k">少量 &lt;10mm、中等量 10～20mm、大量 &gt;20mm</span>）及引导穿刺；<strong>CMR</strong> 延迟增强见心包强化且判心肌受累。</li>
+      <li><strong>诊断标准</strong>：急性起病、典型胸痛、心包摩擦音、ECG 改变（典型 ST 段抬高和/或 PR 段压低）；TTE 可确诊并判断积液量；实验室炎性标志物升高；结合病史、全身表现及相应辅助检查助定病因。</li>
       <li><strong>鉴别诊断</strong>：与 AMI（相邻导联 ST 弓背向上+动态演变+Q 波）、主动脉夹层（撕裂痛放射背/下肢、增强 CT 示破口）、肺栓塞（S<sub>I</sub>Q<sub>III</sub>T<sub>III</sub>、D-二聚体高、肺动脉 CTA 确诊）鉴别；常见病因鉴别如下表：</li>
     </ul>
     <div class="tbl-wrap">
@@ -2377,22 +2397,26 @@
         <tbody>
           <tr><td><strong>病史</strong></td><td>上感史、起病急、常反复</td><td>伴原发结核</td><td>伴原发感染/败血症</td><td>转移肿瘤多见</td><td>手术/心梗史、可反复</td></tr>
           <tr><td><strong>发热 / 胸痛</strong></td><td>持续发热 / 常剧烈</td><td>无或低热 / 常无</td><td>高热 / 常有</td><td>常无 / 常无</td><td>常有 / 常有</td></tr>
-          <tr><td><strong>积液量与性质</strong></td><td>较少 / 草黄或血性</td><td>常大量 / 多血性</td><td>较多 / 脓性</td><td>大量 / 多血性</td><td>中量 / 常浆液性</td></tr>
-          <tr><td><strong>细胞与病原</strong></td><td>淋巴多 / 阴性</td><td>淋巴多 / 可找结核菌</td><td>中性多 / 血培养(+)</td><td>淋巴多 / 阴性</td><td>淋巴多 / 阴性</td></tr>
-          <tr><td><strong>核心治疗</strong></td><td>非甾体抗炎药</td><td>抗结核药</td><td>抗生素+心包切开</td><td>原发病+穿刺</td><td>糖皮质激素</td></tr>
+          <tr><td><strong>心包摩擦音</strong></td><td>明显，出现早</td><td>有</td><td>常有</td><td>少有</td><td>少有</td></tr>
+          <tr><td><strong>白细胞计数</strong></td><td>正常或增高</td><td>正常或轻度增高</td><td>明显增高</td><td>正常或轻度增高</td><td>正常或轻度增高</td></tr>
+          <tr><td><strong>血培养</strong></td><td>阴性</td><td>阴性</td><td>阳性</td><td>阴性</td><td>阴性</td></tr>
+          <tr><td><strong>积液量与性质</strong></td><td>较少 / 草黄或血性</td><td>常大量 / 多血性</td><td>较多 / 脓性</td><td>大量 / 多血性</td><td>一般中量 / 常浆液性</td></tr>
+          <tr><td><strong>细胞分类</strong></td><td>淋巴细胞较多</td><td>淋巴细胞较多</td><td>中性粒细胞较多</td><td>淋巴细胞较多</td><td>淋巴细胞较多</td></tr>
+          <tr><td><strong>积液细菌</strong></td><td>无</td><td>有时找到结核分枝杆菌</td><td>化脓性细菌</td><td>无</td><td>无</td></tr>
+          <tr><td><strong>核心治疗</strong></td><td>非甾体抗炎药</td><td>抗结核药</td><td>抗生素+心包切开</td><td>原发病+心包穿刺</td><td>糖皮质激素</td></tr>
         </tbody>
       </table>
     </div>
-    <p><strong>急性心包炎治疗</strong>：卧床至胸痛发热消退；止痛抗炎首选 <span class="k">NSAIDs</span>（阿司匹林 750–1000mg tid，无效布洛芬 300–800mg tid 或吲哚美辛 25–50mg tid）或<span class="k">秋水仙碱 0.6mg bid</span>（疗程 1–2 周渐减量）；效差用<span class="k">泼尼松 40–80mg qd</span>；急性心脏压塞立即心包穿刺引流；顽固复发 &gt;2 年激素/穿刺无效虑外科心包切除。</p>
+    <p><strong>急性心包炎治疗</strong>：卧床至胸痛发热消退；疼痛时用 <span class="k">NSAIDs</span>（阿司匹林 750–1000mg tid，效不佳改布洛芬 300–800mg tid 或吲哚美辛 25–50mg tid）或<span class="k">秋水仙碱 0.6mg bid</span>（或按体重调整）；<strong>治疗有效后阿司匹林每 1–2 周减量 250–500mg、布洛芬每 1–2 周减量 200–400mg</strong>，使用时间 1–2 周或直至症状好转、实验室指标恢复正常（剧痛可用吗啡类）；<strong>对其他药物治疗积液吸收效果不佳者可给予</strong><span class="k">糖皮质激素（泼尼松 40–80mg qd）</span>；渗液多致急性心脏压塞立即心包穿刺引流；顽固复发 &gt;2 年/反复穿刺不缓解/激素无法控制/重痛可虑外科心包切除。</p>
   </div>
 
   <div class="card tier-master" data-tier="master">
     <div class="card-hd"><h3 class="card-title">2. 心脏压塞急救 &amp; 慢性缩窄性心包炎诊疗与鉴别</h3><span class="badge badge-m">掌握</span></div>
     <ul>
-      <li><strong>心脏压塞（紧急危重症）</strong>：液体迅速增多时仅 <span class="k">200ml</span> 即可致心包压骤升、舒张充盈受阻、休克（慢性伸展达 2000ml 可无障碍）。核心临床特征为 <span class="k">Beck 三联征（低血压、心音低弱、颈静脉怒张）</span>；亚急/慢性压塞见 <span class="k">Kussmaul 征</span>（吸气时颈静脉充盈更明显）与<span class="k">奇脉</span>（吸气时桡动脉搏动显著减弱/消失，或吸气动脉收缩压较吸气前下降 <span class="k">≥ 10mmHg</span>）。<strong>急救治疗</strong>：血流动力学不稳定急性压塞<span class="k">紧急行心包穿刺引流（最简单有效）或外科心包开窗引流</span>，伴休克者紧急扩容、升压。</li>
+      <li><strong>心脏压塞（紧急危重症）</strong>：液体迅速增多时仅 <span class="k">200ml</span> 即可致心包压骤升、舒张充盈受阻、休克（慢性伸展达 2000ml 可无障碍）。核心临床特征为 <span class="k">Beck 三联征（低血压、心音低弱、颈静脉怒张）</span>；亚急/慢性压塞见 <span class="k">Kussmaul 征</span>（吸气时颈静脉充盈更明显）与<span class="k">奇脉</span>（吸气时桡动脉搏动显著减弱/消失，或吸气动脉收缩压较吸气前下降 <span class="k">≥ 10mmHg</span>）。<strong>急救治疗</strong>：对所有血流动力学不稳定的急性心脏压塞病人均应<span class="k">紧急行心包穿刺引流（最简单有效）或外科心包开窗引流</span>，伴休克者紧急扩容、升压；血流动力学稳定者设法查因并监测血流动力学。</li>
       <li><strong>慢性缩窄性心包炎</strong>：心脏被致密纤维化/钙化心包包裹，舒张中晚期充盈突受限。我国以<span class="k">结核性最常见</span>（次为特发、化脓、创伤、放疗/心外科术后）。表现：心排降+突出体循环淤血（颈静脉怒张、肝大、腹水、下肢水肿）、脉压小（奇脉不常见）、<span class="k">Kussmaul 征阳性</span>、收缩期<span class="k">负性心尖搏动</span>、胸骨左缘 3–4 肋间闻及 S₂ 后拍击样<span class="k">心包叩击音</span>。</li>
-      <li><strong>辅助检查与鉴别</strong>：X 线心影三角形/球形、左右心缘变直、<span class="k">心包钙化</span>；ECG 见低电压/T 波低平倒置/房颤；TTE 见心包增厚粘连、<span class="k">室间隔抖动征（舒张矛盾运动）</span>、二/三尖瓣 E 峰随呼吸变化；<strong>CT 和 MRI 诊断价值优于 TTE</strong>（<span class="k">CT 查心包钙化敏感性更高</span>，MRI 识别渗出粘连炎症）；右心导管见 PCWP/肺动脉舒张压/RVEDP/RAP/腔静脉压均显著升高且趋于同一水平，右房压呈 M/W 波，右室压呈舒张早期下陷-高原形曲线，呼吸时左右室压变化呈矛盾性（与 RCM 核心鉴别见模块 Ⅴ）。</li>
-      <li><strong>外科手术指征与抗结核</strong>：慢性缩窄性心包炎<span class="k">唯一有效治疗方法为心包切除术</span>（需彻底剥离，防心肌萎缩与心源性肝硬化）；近期诊断且病情稳定、无恶病质/肝硬化/心肌萎缩者，可试抗炎治疗 2–3 月（可逆期）；结核性推荐规范抗结核延缓进展，且<span class="k">术后应继续抗结核治疗 1 年</span>。</li>
+      <li><strong>辅助检查与限制型心肌病（RCM）核心鉴别（大纲难点）</strong>：X 线心影三角形/球形、左右心缘变直，<strong>部分病人可有心包钙化</strong>；ECG 见低电压/T 波低平倒置/房颤；TTE 见心包增厚粘连、<span class="k">室间隔抖动征（舒张矛盾运动）</span>、二/三尖瓣 E 峰随呼吸变化；<strong>CT 和 MRI 诊断价值优于 TTE</strong>（<span class="k">CT 检测心包钙化敏感性更高</span>，MRI 识别渗出粘连炎症）；右心导管见 PCWP/肺动脉舒张压/RVEDP/RAP/腔静脉压均显著升高且趋于同一水平，右房压呈 M/W 波，右室压呈舒张早期下陷-高原形曲线，呼吸时左右室压变化呈矛盾性。<strong>与 RCM 并列鉴别</strong>：缩窄性心包炎影像可见心包增厚/钙化与室间隔抖动，导管示四腔舒张压趋同、RVEDP ≥ 1/3 右室收缩压峰值、呼吸时左右室压变化矛盾；RCM 心包无增厚钙化而双房显著扩大（心内膜/心肌异常，CA 见毛玻璃样/心尖保留征、<sup>99m</sup>Tc-PYP 2–3 级、EMB 确诊病因），导管示肺动脉收缩压常 <span class="k">&gt; 50mmHg</span>、RVEDP 相对较低（&lt; 1/3 收缩压峰值）、左右心室舒张末压差 <span class="k">&gt; 5mmHg</span>（RCM 详见模块 Ⅴ 延伸）。</li>
+      <li><strong>外科手术指征与抗结核（大纲与教材口径并列）</strong>：教学大纲明列“<strong>外科治疗指征：<span class="k">心包钙化伴心室舒张受限</span></strong>”；第 10 版教材定义为致密增厚的纤维化或钙化心包使心室舒张充盈受限，临床决策按慢性缩窄与可逆期分流（未将心包钙化单列为唯一硬性手术阈值）——多数发展为慢性缩窄性心包炎时，<span class="k">唯一有效治疗方法为心包切除术</span>（需彻底剥离，防心肌萎缩与心源性肝硬化）；少部分近期诊断且病情稳定、无恶病质/肝硬化/心肌萎缩者，可试抗炎治疗 2–3 月（可逆期）；结核性推荐规范抗结核延缓进展，且<span class="k">术后应继续抗结核治疗 1 年</span>。</li>
     </ul>
   </div>
 
@@ -2417,8 +2441,8 @@
     </div>
     <div class="syllabus-box">
       <div class="syl-row"><span class="syl-tag m">掌握</span><span>感染性心内膜炎（IE）的病因病原谱与临床表现（含急/亚急性鉴别及周围体征/并发症）；血培养与多模态影像学规范；2023 版 ESC 感染性心内膜炎诊断标准（表 3-10-1）；抗生素治疗五大原则、经验与特定治疗方案及紧急（&lt;24h）/择期（&lt;7d）外科手术时机。</span></div>
-      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>特殊类型 IE——人工瓣膜心内膜炎（PVE，早/晚期病原、加庆大与利福平及 6 条再置换手术指征）与静脉药物成瘾者心内膜炎（DAIE，三尖瓣/脓毒性肺栓塞、2周短程 vs 4–6周标准方案）。</span></div>
-      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">无大纲外排除子节；第 10 版已将经典 Duke 标准更新为 2023 版 ESC 诊断标准，本页严格按第 10 版原文呈现。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>特殊类型 IE——人工瓣膜心内膜炎（PVE，大纲伦理案例点名：早/晚期病原、加庆大与利福平及 6 条再置换手术指征）与静脉药物成瘾者心内膜炎（DAIE，依方案 A 保留于熟悉支撑层：右心三尖瓣/脓毒性肺栓塞、2周短程 6 项条件 vs 4–6周标准方案）。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">无大纲外排除子节；在 Duke 诊断标准基础上，第 10 版第十章表 3-10-1 采用 2023 版 ESC 诊断标准，本页严格按原文呈现。</span></div>
     </div>
   </div>
 
@@ -2470,8 +2494,8 @@
 
         <rect x="20" y="159" width="290" height="102" rx="7" fill="var(--error)" fill-opacity="0.08" stroke="var(--error)" />
         <text x="32" y="178" font-size="12" font-weight="700" fill="var(--error)">主要标准（2 大项）</text>
-        <text x="32" y="197" font-size="11" fill="var(--foreground)">1. <tspan font-weight="700">血培养阳性</tspan>：2次典型菌 / 持续菌血症</text>
-        <text x="40" y="213" font-size="10.5" fill="var(--muted-foreground)">   (≥12h×2；全3次；≥4次多数) / Q热IgG&gt;1:800</text>
+        <text x="32" y="197" font-size="10" fill="var(--foreground)">1. <tspan font-weight="700">血培养阳性</tspan>：2次典型菌 / 持续菌血症(≥12h×2；全3次；</text>
+        <text x="36" y="213" font-size="9.2" fill="var(--muted-foreground)">≥4次多数且首末间隔≥1h) / Q热1次血培+或I期IgG&gt;1:800</text>
         <text x="32" y="232" font-size="11" fill="var(--foreground)">2. <tspan font-weight="700">影像学阳性</tspan>：TTE/TEE(赘生物/脓肿/穿孔/</text>
         <text x="36" y="248" font-size="10" fill="var(--muted-foreground)">人工瓣裂) | 心脏CT/CTA | FDG-PET | SPECT</text>
 
@@ -2498,7 +2522,7 @@
         <text x="32" y="338" font-size="12" font-weight="700" fill="var(--success)">抗生素治疗 5 原则</text>
         <text x="32" y="356" font-size="11" fill="var(--foreground)">① 早期：采血培养 3–6 次后即开始</text>
         <text x="32" y="372" font-size="11" fill="var(--foreground)">② 联合：2种协同【杀菌剂】(非抑菌)</text>
-        <text x="32" y="388" font-size="11" fill="var(--foreground)">③ 长程足量：NVE 2–6周 / PVE 6–8周</text>
+        <text x="32" y="388" font-size="10.5" fill="var(--foreground)">③ 长程足量：NVE 2–6周 / PVE 6–8周或更长</text>
         <text x="32" y="404" font-size="11" fill="var(--foreground)">④ 静脉给药保持稳定有效血药浓度</text>
         <text x="32" y="419" font-size="11" fill="var(--muted-foreground)">⑤ 合理选药(经验覆盖→药敏MIC精准)</text>
 
@@ -2510,11 +2534,11 @@
 
         <rect x="582" y="319" width="278" height="106" rx="7" fill="var(--warning)" fill-opacity="0.10" stroke="var(--warning)" />
         <text x="594" y="338" font-size="12" font-weight="700" fill="var(--warning)">择期手术（&lt; 7 天，7 条指征）</text>
-        <text x="594" y="356" font-size="11" fill="var(--foreground)">• 急性重度反流/阻塞致症状性心衰</text>
+        <text x="594" y="356" font-size="10.5" fill="var(--foreground)">• 主/二尖瓣急性重度反流/阻塞致症状心衰</text>
         <text x="594" y="372" font-size="11" fill="var(--foreground)">• 感染难控：脓肿/假动脉瘤/瘘/增大</text>
-        <text x="594" y="388" font-size="11" fill="var(--foreground)">• 真菌/多重耐药菌；规范治仍血培阳性</text>
-        <text x="594" y="404" font-size="11" fill="var(--foreground)">• 栓塞高危：≥1栓塞+&gt;10mm / 重反流+&gt;10mm</text>
-        <text x="594" y="419" font-size="11" fill="var(--error)" font-weight="600">• 单个巨大赘生物（&gt; 30mm）</text>
+        <text x="594" y="388" font-size="9.8" fill="var(--foreground)">• 真菌/多耐菌；规范抗感染及转移灶仍血培+</text>
+        <text x="594" y="404" font-size="9.8" fill="var(--foreground)">• 主/二尖瓣：≥1栓塞+&gt;10mm / 重狭反+&gt;10mm</text>
+        <text x="594" y="419" font-size="10.2" fill="var(--error)" font-weight="600">• 主/二尖瓣 IE 伴单个巨大赘生物(&gt;30mm)</text>
       </svg>
     </div>
   </div>
@@ -2525,8 +2549,9 @@
   <div class="card tier-master" data-tier="master">
     <div class="card-hd"><h3 class="card-title">1. IE 病因、急/亚急性临床表现、周围体征与并发症</h3><span class="badge badge-m">掌握</span></div>
     <ul>
-      <li><strong>病原谱演变</strong>：社区获得性约 90% 为链球菌、葡萄球菌、肠球菌；医院获得性或静脉毒瘾多为金黄色葡萄球菌。<strong>急性 IE</strong> 主要由<span class="k">金黄色葡萄球菌</span>引起（起病急、数天毁瓣膜、暴发败血症高热寒战、感染迁移多见）；<strong>亚急性 IE</strong> 多由<span class="k">草绿色链球菌</span>引起（次为肠球菌；起病缓数周至数月、不规则低热、中毒轻、迁移少）。</li>
-      <li><strong>五大临床症候群</strong>：①<strong>发热</strong>（几乎所有病人，典型<span class="k">弛张热，一般 &lt;39℃</span>）；②<strong>心脏杂音（高达 85%）</strong>：杂音强度增加、性质变化（<span class="k">海鸥音</span>）或新发杂音具特征性（多见急性主动脉瓣 IE）；③<strong>周围体征</strong>：瘀点（锁骨上/口腔黏膜/睑结膜）、指(趾)甲下线状出血、<span class="k">Roth 斑</span>（视网膜中心白色卵圆出血斑，亚急性多）、<span class="k">Osler 结节</span>（指/趾垫豌豆大红紫<strong>痛性</strong>结节，亚急性多）、<span class="k">Janeway 损害</span>（掌跖 1–4mm <strong>无痛性</strong>出血红斑，急性多）；④<strong>动脉栓塞（有症状约 25%）</strong>：左心致体循环栓塞（<span class="k">脑栓塞最常见 15%～20%</span>，累及大脑中动脉为主），右心致肺循环栓塞；⑤脾大、贫血、杵状指。</li>
+      <li><strong>发病机制</strong>：典型过程遵循<span class="k">心内膜损伤 → 血小板和纤维蛋白聚集形成无菌性赘生物 → 菌血症病原体种植形成感染性赘生物 → 赘生物碎片脱落随血流远处播散</span>（亚急性常循此链；急性起病急骤，短期即可致瓣膜结构破坏乃至死亡）。</li>
+      <li><strong>病原谱与急/亚急性临床特点</strong>：社区获得性约 90% 为链球菌、葡萄球菌、肠球菌；医院获得性或静脉毒瘾多为金黄色葡萄球菌。<strong>急性 IE</strong> 主要由<span class="k">金黄色葡萄球菌</span>引起（起病急、数天毁瓣膜、中毒明显、感染迁移多见）；<strong>亚急性 IE</strong> 多由<span class="k">草绿色链球菌</span>引起（次为肠球菌；起病缓数周至数月、中毒轻、迁移少）；<strong>临床上两者常有重叠、难以完全分开</strong>。</li>
+      <li><strong>五大临床症候群</strong>：①<strong>发热</strong>（几乎所有病人，典型<span class="k">弛张热，一般 &lt;39℃</span>）；②<strong>心脏杂音（高达 85%）</strong>：杂音强度增加、性质变化（<span class="k">海鸥音</span>）或新发杂音具特征性（多见急性主动脉瓣 IE）；③<strong>周围体征（现已少见，为非特异性）</strong>：瘀点（锁骨上/口腔黏膜/睑结膜）、指(趾)甲下线状出血、<span class="k">Roth 斑</span>（视网膜中心白色卵圆出血斑，亚急性多）、<span class="k">Osler 结节</span>（指/趾垫豌豆大红紫<strong>痛性</strong>结节，亚急性多）、<span class="k">Janeway 损害</span>（掌跖 1–4mm <strong>无痛性</strong>出血红斑，急性多）；④<strong>动脉栓塞（有症状约 25%）</strong>：左心致体循环栓塞（<span class="k">脑栓塞最常见 15%～20%</span>，累及大脑中动脉为主），右心致肺循环栓塞；⑤脾大、贫血、杵状指。</li>
       <li><strong>六大并发症（急性高发，致死致残主因）</strong>：①<strong>心脏</strong>：<span class="k">心力衰竭最常见</span>（主动脉瓣穿孔/腱索断裂最多，次二/三尖瓣）、心肌脓肿（主动脉瓣周致新发传导阻滞）、菌栓心梗、心肌炎；②<strong>脑部</strong>（脑栓塞占半数、细菌性脑动脉瘤、脑出血、脑膜炎/脑脓肿）；③<strong>肾脏</strong>（肾梗死肉眼血尿、亚急性免疫复合物肾小球肾炎见红细胞管型与补体降）；④脾梗死；⑤肺坏死/空洞/脓气胸（右心 IE）；⑥细菌性动脉瘤（3–5%，主动脉近端最多）。</li>
     </ul>
   </div>
@@ -2535,7 +2560,7 @@
     <div class="card-hd"><h3 class="card-title">2. 血培养规范、多模态影像学与 2023 版 ESC 诊断标准（表 3-10-1）</h3><span class="badge badge-m">掌握</span></div>
     <ul>
       <li><strong>血培养规范（诊断主要方法）</strong>：本病为持续性菌血症，<span class="k">无需发热时采血</span>；每次换部位严格消毒，取周围静脉血 <span class="k">20ml</span> 等分作需氧和厌氧培养<span class="k">至少 3 周</span>。<strong>采血频率</strong>：亚急性未用抗生素入院首日每 1h 采 1 次共 3 次（次日阴性再采 3 次后用药；已用药且病情允许停药 2–7 天后采）；急性入院立即每 1h 采 1 次共 3 次后即开始抗生素。血培养阴性（2.5%–31%）主因为近期用抗生素、次真菌/苛养菌（Q热/巴尔通体/布鲁氏菌等），可用血清学、PCR 或 <span class="k">mNGS</span> 快速查病原。</li>
-      <li><strong>影像学检查</strong>：<strong>TEE 检出赘生物显著优于 TTE</strong>（敏感性：NVE <span class="k">96% vs 75%</span>，PVE <span class="k">92% vs 50%</span>，特异均约 90%；尤适 &lt;3mm 赘生物、人工瓣/器械、透声差），TTE 阴性/不确定应行 TEE；<strong>心脏 CT</strong> 查<span class="k">瓣周病变优于 TEE</span>（查 &lt;10mm 赘生物与穿孔劣于 TEE），且已纳入主要/次要标准；MRI 优查神经/脊柱并发症；<sup>18</sup>F-FDG PET-CT 与白细胞 SPECT-CT 查人工瓣周及心外隐蔽病灶。</li>
+      <li><strong>影像学检查</strong>：<strong>TEE 检出赘生物显著优于 TTE</strong>（敏感性：NVE <span class="k">96% vs 75%</span>，PVE <span class="k">92% vs 50%</span>，特异均约 90%；尤适 &lt;3mm 赘生物、人工瓣/器械、透声差），TTE 阴性/不确定时应行 TEE <strong>或多次复检</strong>；<strong>心脏 CT</strong> 查<span class="k">瓣周病变优于 TEE</span>（对 &lt;10mm 赘生物、瓣膜穿孔和<strong>瘘管</strong>等病变检测劣于 TEE），且已纳入主要/次要标准；MRI 优查神经/脊柱并发症；<sup>18</sup>F-FDG PET-CT 与白细胞 SPECT-CT 查人工瓣周及心外隐蔽病灶。</li>
     </ul>
     <div class="tbl-wrap">
       <table class="med-tbl">
@@ -2566,21 +2591,21 @@
   <div class="card tier-master" data-tier="master">
     <div class="card-hd"><h3 class="card-title">3. IE 抗感染治疗原则/方案、外科手术时机与预防</h3><span class="badge badge-m">掌握</span></div>
     <ul>
-      <li><strong>抗生素五大具体原则</strong>：①<span class="k">早期治疗</span>（采血培养 3–6 次后即用）；②<span class="k">联合用药</span>（2 种具协同作用的繁殖期+静止期<strong>杀菌剂</strong>，非抑菌剂）；③<span class="k">长程足量</span>（NVE <span class="k">2～6 周</span>，PVE <span class="k">6～8 周</span>）；④<span class="k">静脉用药</span>；⑤合理选药（病原明后据药敏/MIC 窄谱降阶）。</li>
+      <li><strong>抗生素五大具体原则</strong>：①<span class="k">早期治疗</span>（采血培养 3–6 次后即用）；②<span class="k">联合用药</span>（2 种具协同作用的繁殖期+静止期<strong>杀菌剂</strong>，非抑菌剂）；③<span class="k">长程足量</span>（NVE <span class="k">2～6 周</span>，PVE <span class="k">6～8 周或更长</span>）；④<span class="k">静脉用药</span>；⑤合理选药（病原明后据药敏/MIC 窄谱降阶）。</li>
       <li><strong>经验与特定抗感染方案</strong>：
         <ul>
-          <li><strong>经验治疗</strong>：社区 NVE 与晚期 PVE → <span class="k">氨苄西林 + 耐酶青霉素 + 庆大霉素</span>三联（青霉素/β-内酰胺过敏改头孢唑林或万古霉素+庆大）；早期 PVE 或医源性 NVE → <span class="k">万古霉素（或达托霉素）+ 庆大霉素 + 利福平</span>三联。</li>
+          <li><strong>经验治疗</strong>（综合病人特点、感染途径及当地耐药情况）：社区 NVE 与晚期 PVE 可选 <span class="k">氨苄西林 + 耐酶青霉素 + 庆大霉素</span>三联（若青霉素类或 β-内酰胺类过敏，<strong>分别以头孢唑林或万古霉素联合庆大霉素</strong>作为替代）；早期 PVE 或医源性 NVE 可选 <span class="k">万古霉素（或达托霉素）+ 庆大霉素 + 利福平</span>三联。</li>
           <li><strong>特定病原治疗</strong>：①<strong>葡萄球菌</strong>：MSSA 选氯唑西林或头孢唑林单药；MRSA 选<span class="k">万古霉素</span>单药（或达托霉素联用）；PVE 首选<span class="k">万古霉素 + 利福平 + 庆大霉素</span>三联；②<strong>链球菌</strong>：敏感株青霉素 G/阿莫西林/头孢曲松单药，耐药株加庆大霉素，过敏用万古霉素；③<strong>肠球菌</strong>：氨苄西林/阿莫西林 + 头孢曲松或氨基糖苷（高耐氨基糖苷联头孢曲松；耐万古选达托霉素联用）；④<strong>革兰阴性菌</strong>：HACEK 不产酶氨苄+庆大、产酶头孢曲松/氟喹诺酮；非 HACEK 尽早手术或 ≥6 周 β-内酰胺+氨基糖苷；⑤<strong>真菌</strong>：降低手术门槛，假丝酵母两性霉素 B ± 氟胞嘧啶，曲霉首选伏立康唑，术后长期/终身口服唑类抑制。</li>
         </ul>
       </li>
       <li><strong>NVE 外科手术时机与适应证</strong>：
         <ul>
           <li><strong>紧急手术（&lt; 24 小时）</strong>：主动脉瓣或二尖瓣 IE 伴急性重度反流、阻塞或瓣周瘘致<span class="k">难治性心衰、肺水肿、心源性休克</span>。</li>
-          <li><strong>择期手术（&lt; 7 天，7 条）</strong>：①急性重度反流/阻塞致症状性心衰或 UCG 示血流动力学异常；②未控局部感染灶（脓肿、假性动脉瘤、瘘、赘生物增大）；③真菌或多重耐药菌感染；④规范抗感染下血培养仍阳性；⑤左心 IE 规范治疗下有 ≥1 次栓塞且赘生物 <span class="k">&gt; 10mm</span>；⑥左心赘生物 &gt;10mm 伴严重狭窄/反流；⑦左心单个巨大赘生物 <span class="k">&gt; 30mm</span>。</li>
+          <li><strong>择期手术（&lt; 7 天，7 条）</strong>：①主动脉瓣或二尖瓣 IE 伴急性重度反流/阻塞致症状性心衰或 UCG 示血流动力学异常；②未控局部感染灶（脓肿、假性动脉瘤、瘘、赘生物增大）；③真菌或多重耐药菌感染；④规范抗感染及<strong>抗脓毒血症转移灶</strong>治疗下血培养仍阳性；⑤<strong>二尖瓣或主动脉瓣 IE</strong> 在规范抗感染下有过 ≥1 次栓塞且赘生物 <span class="k">&gt; 10mm</span>；⑥<strong>二尖瓣或主动脉瓣</strong>赘生物 &gt;10mm 伴严重瓣膜狭窄或反流；⑦<strong>二尖瓣或主动脉瓣 IE</strong> 伴单个巨大赘生物 <span class="k">&gt; 30mm</span>。</li>
           <li><strong>右心 IE 手术指征</strong>：难治感染（如真菌）或菌血症持续 &gt;7 天、复发肺栓塞伴三尖瓣赘生物 <span class="k">&gt; 20mm</span>、继发右心衰。</li>
         </ul>
       </li>
-      <li><strong>预防与预后</strong>：最有效预防为<span class="k">良好口腔卫生与定期牙科检查</span>及无菌操作。高危病人行高危牙科操作前 <span class="k">30～60 分钟</span>单剂预防：<span class="k">阿莫西林或氨苄西林 2g</span>（过敏改<span class="k">克林霉素 600mg</span>）。院内死亡率 15%～30%。</li>
+      <li><strong>预防（两层次）与预后</strong>：①<strong>一般预防措施（最有效）</strong>：预防 IE 的最有效措施是<span class="k">良好的口腔卫生习惯和定期牙科检查</span>，且任何静脉导管插入或其他有创操作必须严格无菌操作；②<strong>高危人群高危牙科操作抗生素预防</strong>（靶标口腔链球菌）：操作开始前 <span class="k">30～60 分钟</span>内单剂口服或静脉予<span class="k">阿莫西林或氨苄西林 2g</span>（两药过敏改<span class="k">克林霉素 600mg</span>，其他可选头孢唑林、头孢曲松、头孢氨苄）。院内死亡率 15%～30%。</li>
     </ul>
   </div>
 
@@ -2588,13 +2613,13 @@
   <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 特殊类型 IE</span> 人工瓣膜心内膜炎（PVE）与静脉药物成瘾者 IE（DAIE）</h2>
 
   <div class="card tier-familiar" data-tier="familiar">
-    <div class="card-hd"><h3 class="card-title">PVE 与 DAIE 临床特点、疗程与手术适应证对照</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="card-hd"><h3 class="card-title">PVE（大纲伦理案例）与 DAIE（方案 A 熟悉支撑）对照</h3><span class="badge badge-f">熟悉</span></div>
     <div class="grid-2">
       <div class="mini-box">
         <h4>人工瓣膜心内膜炎（PVE · 最严重，死亡率 20%～40%）</h4>
         <ul>
           <li>风险为常人 50 倍，最常累及主动脉瓣；按术后 <span class="k">1 年</span>界定早期（葡萄球菌、G⁻ 杆菌、真菌）与晚期（同 NVE）；TAVR-IE 以肠球菌与葡萄球菌多见。</li>
-          <li>表现常不典型/无热，诊断最依赖 TEE 或 CT；疗程延长至 <span class="k">6～8 周</span>，且任何联合方案均应加<span class="k">庆大霉素和利福平</span>。</li>
+          <li>表现常不典型/无热，诊断最依赖 TEE 或 CT；疗程需延长至 <span class="k">6～8 周或更长</span>，且任何联合方案均应加<span class="k">庆大霉素和利福平</span>。</li>
           <li><strong>再置换手术 6 条指征</strong>：①瓣周漏/反流致中重度心衰；②真菌感染；③充分抗感染仍持续菌血症；④急性瓣膜阻塞；⑤人工瓣位置不稳定；⑥新发心脏传导阻滞。</li>
         </ul>
       </div>
@@ -2602,8 +2627,8 @@
         <h4>静脉药物成瘾者 IE（DAIE · 右心为主）</h4>
         <ul>
           <li>最常累及正常<span class="k">三尖瓣</span>（常无心脏杂音），<span class="k">金葡菌占 60%～90%（MRSA 多）</span>，急性发病伴多发脓毒性肺栓塞（X 线多发小片浸润）。</li>
-          <li>单纯三尖瓣 MSSA 且无转移/无并发症/无左心受累/赘生物 &lt;20mm/CD4 &gt;200/μl 可用苯唑/氯唑西林 <span class="k">2 周</span>不联庆大；否则标准 <span class="k">4～6 周</span>（反应慢 &gt;96h、赘生物 &gt;20mm、CD4 &lt;200、左心受累等）。</li>
-          <li>尽量避免手术，3 指征：难治右心衰、真菌或充分抗感染 ≥7 天持续菌血症、三尖瓣赘生物 &gt;20mm 致反复肺栓塞。</li>
+          <li><strong>2 周短程条件（须同时满足全部 6 项）</strong>：单纯三尖瓣 DAIE 须同时满足 MSSA 感染、无转移性感染灶或脓肿、无心内和心外并发症、<span class="k">无人工瓣膜或左心瓣膜感染</span>、赘生物 &lt;20mm、无严重免疫功能低下（CD4 &gt;200/μl），可用苯唑西林（或氯唑西林）<span class="k">2 周</span>而不联庆大霉素。</li>
+          <li><strong>4～6 周标准方案（出现任一即须用）</strong>：①抗感染后临床反应慢（&gt;96h）；②右心 IE 合并右心衰、急性呼衰、赘生物 &gt;20mm、肺外迁移感染或心外并发症；③严重免疫功能低下（CD4 &lt;200/μl）；④出现左心系统 IE。尽量避免手术（3 指征：重度三尖瓣反流致利尿效差右心衰；真菌或充分抗感染 ≥7 天持续菌血症；三尖瓣赘生物 &gt;20mm 致反复肺栓塞）。</li>
         </ul>
       </div>
     </div>
@@ -2619,8 +2644,8 @@
     </div>
     <div class="syllabus-box">
       <div class="syl-row"><span class="syl-tag m">掌握</span><span>心脏骤停（CA）与心脏性猝死（SCD）定义、病因、病理生理与临床 4 期；心脏骤停快速识别与呼救；基础生命支持（BLS · C-A-B 高质量胸外按压参数、气道开放、人工呼吸比例与早期 AED）；高级生命支持（ALS/ACLS 通气频率、电除颤能量与电极位置、肾上腺素与抗心律失常药应用流程）。</span></div>
-      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>ECPR（ECMO）适应原则与伦理考量；复苏后处理（心脏骤停后综合征、5H5T 可逆病因排查、急诊冠脉造影指征、循环目标与脑复苏 5 大措施）；CA 预后与 SCD 预防（ICD 最有效）。</span></div>
-      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">大纲难点“CPR 期间药物代谢的关系”在教材第 11 章未设药代动力学专节，本页严格按原文收录胸泵/心泵血流动力学与外周静推后 20ml 生理盐水冲管规范并显式留痕，绝不凭记忆补写。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>ECPR（ECMO）适应原则与伦理考量；复苏后处理（心脏骤停后综合征、5H5T 可逆病因排查、急诊冠脉造影指征、循环目标与脑复苏 5 大措施）；心脏骤停复苏预后背景。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">独立【SCD 的预防】药物/手术预防专段（含 LQTS 左侧颈胸交感神经切断术，超纲且与模块 Ⅱ 排除边界一致）；大纲难点“CPR 期间药物代谢的关系”在教材第 11 章未设药代动力学专节，本页严格按原文收录胸泵/心泵血流动力学与外周静推后 20ml 生理盐水冲管规范并显式留痕。</span></div>
     </div>
   </div>
 
@@ -2680,11 +2705,11 @@
 
         <!-- Left Branch: Shockable -->
         <rect x="20" y="176" width="420" height="150" rx="8" fill="var(--error)" fill-opacity="0.08" stroke="var(--error)" stroke-width="1.5" />
-        <text x="34" y="196" font-size="12.5" font-weight="700" fill="var(--error)">可除颤心律：室颤（VF） / 无脉室速（pVT · 最常见）</text>
+        <text x="34" y="196" font-size="12.5" font-weight="700" fill="var(--error)">可除颤心律：室颤（VF，最常见） / 无脉室速（pVT）</text>
         <text x="34" y="216" font-size="11.5" fill="var(--foreground)">1. <tspan font-weight="700" fill="var(--error)">立即电除颤</tspan>（每延迟1min成功率降 7%–10%）：</text>
-        <text x="44" y="233" font-size="11" fill="var(--foreground)">   双相波 <tspan font-weight="700">120–200J</tspan> ｜ 单相波 <tspan font-weight="700">360J</tspan>（右锁骨下+左胸下外侧）</text>
-        <text x="34" y="252" font-size="11.5" fill="var(--foreground)">2. 电击后<tspan font-weight="700">立即继续 CPR 5 周期（约 2 分钟）</tspan>再评估心律</text>
-        <text x="34" y="271" font-size="11.5" fill="var(--foreground)">3. 首选药：<tspan font-weight="700" fill="var(--primary)">肾上腺素 1mg iv q3–5min</tspan>（+20ml NS 冲管）</text>
+        <text x="44" y="233" font-size="10.2" fill="var(--foreground)">   双相按设备推荐(一般120–200J)｜单相360J(右锁下+左下外)</text>
+        <text x="34" y="252" font-size="10.2" fill="var(--foreground)">2. 电击后<tspan font-weight="700">立即 CPR 5 周期(约2min)</tspan>再评自主循环/呼吸脉搏血压</text>
+        <text x="34" y="271" font-size="10.2" fill="var(--foreground)">3. 首选药：<tspan font-weight="700" fill="var(--primary)">肾上腺素 1mg iv q3–5min</tspan>（外周静推后20ml NS冲管）</text>
         <text x="34" y="290" font-size="11.5" fill="var(--foreground)">4. 2次除颤+CPR+肾上腺素仍 VF/pVT → <tspan font-weight="700">胺碘酮</tspan> 或 利多卡因</text>
         <text x="34" y="309" font-size="11" fill="var(--muted-foreground)">   （硫酸镁仅适用于尖端扭转型室速 TdP）</text>
 
@@ -2693,10 +2718,10 @@
         <text x="468" y="196" font-size="12.5" font-weight="700" fill="var(--chart-1)">不可除颤心律：心脏停搏（Asystole） / 无脉电活动（PEA）</text>
         <text x="468" y="216" font-size="11.5" fill="var(--error)" font-weight="700">1. 电除颤无益！心搏停止亦不推荐起搏治疗！</text>
         <text x="468" y="236" font-size="11.5" fill="var(--foreground)">2. 立即持续高质量 CPR + 尽早开通静脉/骨髓腔通路</text>
-        <text x="468" y="256" font-size="11.5" fill="var(--foreground)">3. 尽早给予<tspan font-weight="700" fill="var(--primary)">肾上腺素 1mg iv q3–5min</tspan>（+20ml NS 冲管）</text>
+        <text x="468" y="256" font-size="10.2" fill="var(--foreground)">3. 尽早给予<tspan font-weight="700" fill="var(--primary)">肾上腺素 1mg iv q3–5min</tspan>（外周静推后20ml NS冲管）</text>
         <text x="468" y="276" font-size="11.5" fill="var(--foreground)">4. 每 2 分钟复查心律；积极排查并纠正可逆病因 <tspan font-weight="700">5H + 5T</tspan></text>
         <text x="468" y="296" font-size="11" fill="var(--muted-foreground)">   （仅症状性严重心动过缓/希氏束下高度 AVB 立即起搏）</text>
-        <text x="468" y="313" font-size="11" fill="var(--muted-foreground)">   （碳酸氢钠不常规积极补，仅高钾/酸中毒/三环中毒/长时无效）</text>
+        <text x="468" y="313" font-size="9.5" fill="var(--muted-foreground)">   （碳酸氢钠不积极常规补；原有代酸/高钾/三环/长时全法无效可虑）</text>
 
         <!-- Band 3: Post-ROSC & Brain Resuscitation -->
         <rect x="8" y="350" width="864" height="106" rx="10" fill="var(--success)" fill-opacity="0.06" stroke="var(--border)" />
@@ -2710,11 +2735,11 @@
         <rect x="304" y="382" width="256" height="62" rx="6" fill="var(--card)" stroke="var(--primary)" />
         <text x="316" y="401" font-size="11.5" font-weight="700" fill="var(--primary)">循环与呼吸靶标</text>
         <text x="316" y="418" font-size="11" fill="var(--foreground)">• 维持 <tspan font-weight="700">SBP ≥ 90mmHg</tspan> / <tspan font-weight="700">MAP ≥ 65</tspan></text>
-        <text x="316" y="434" font-size="11" fill="var(--muted-foreground)">• ROSC 后尽快做 12/18 导 ECG；PEEP 护肺</text>
+        <text x="316" y="434" font-size="9.5" fill="var(--muted-foreground)">• 尽早12/18导ECG；呼衰伴左心衰慎用PEEP(稳循环)</text>
 
         <rect x="572" y="382" width="288" height="62" rx="6" fill="var(--success)" fill-opacity="0.10" stroke="var(--success)" />
         <text x="584" y="401" font-size="11.5" font-weight="700" fill="var(--success)">脑复苏（最后成功关键 · 5 措施）</text>
-        <text x="584" y="418" font-size="11" fill="var(--foreground)">• <tspan font-weight="700">目标低温 32～36℃ 维持 ≥ 24h</tspan></text>
+        <text x="584" y="418" font-size="10.5" fill="var(--foreground)">• <tspan font-weight="700">复苏后昏迷者：低温 32～36℃ 维持 ≥24h</tspan></text>
         <text x="584" y="434" font-size="10.5" fill="var(--foreground)">• 渗透脱水 + 冬眠防抽搐 + 高压氧 + 促微循环</text>
       </svg>
     </div>
@@ -2728,14 +2753,14 @@
     <ul>
       <li><strong>定义与时间窗</strong>：<strong>心脏骤停（CA）</strong>为心脏射血突然终止致循环中断、呼吸停止、意识丧失（脑血流中断 <span class="k">10 秒</span>左右意识丧失，<span class="k">4～6 分钟</span>黄金时段内及时救治存活概率较高，否则生物学死亡）。分院外（OHCA，我国 EMS 接诊年发病率 95.7/10 万，超 75 万例）与院内（IHCA）。<strong>心脏性猝死（SCD）</strong>指急性症状发作后 <span class="k">1 小时内</span>以意识突然丧失为特征的心脏原因自然死亡（我国 41.84/10 万，约 54.4 万/年）。</li>
       <li><strong>病因与病理生理</strong>：西方 SCD 约 <span class="k">80% 由冠心病及其并发症</span>引起（心梗后 LVEF 降低为主危因）；各种心肌病占 5%～15%，是 <span class="k">&lt; 35 岁</span> SCD 主因（HOCM、ARVC）；此外为离子通道病（LQTS、Brugada 等）。<strong>病理生理机制</strong>：最常见为<span class="k">快速型室性心律失常（室颤和室速）</span> &gt; 缓慢型心律失常/心脏停搏 &gt; 较少见的<span class="k">无脉性电活动（PEA，旧称电机械分离 EMD</span>，见于 AMI 心室破裂、大面积肺梗死） &gt; 少数非心律失常性（心脏破裂、流出道阻塞、急性压塞）。</li>
-      <li><strong>SCD 临床 4 期</strong>：①<strong>前驱期</strong>（数天至数月非特异胸痛气促心悸，亦可无）；②<strong>终末事件期</strong>（急剧变化至骤停 <span class="k">≤ 1 小时</span>）；③<strong>心脏骤停</strong>（意识突失、抽搐、叹息/痉挛呼吸后停止、发绀、瞳孔散大、二便失禁）；④<strong>生物学死亡</strong>（<span class="k">4～6 分钟</span>始不可逆脑损害；复苏成功后死亡最常见原因为<span class="k">中枢神经系统损伤</span>）。</li>
+      <li><strong>SCD 临床 4 期</strong>：①<strong>前驱期</strong>（数天至数月非特异胸痛气促心悸，亦可无）；②<strong>终末事件期</strong>（急剧变化至骤停 <span class="k">≤ 1 小时</span>）；③<strong>心脏骤停</strong>（意识突失、抽搐、叹息/痉挛呼吸后停止、发绀、瞳孔散大、二便失禁）；④<strong>生物学死亡</strong>（发生时长取决于原发病性质及骤停至复苏开始的时间，<span class="k">大部分病人 4～6 分钟内</span>开始发生不可逆脑损害；复苏成功后死亡最常见原因为<span class="k">中枢神经系统损伤</span>）。</li>
     </ul>
   </div>
 
   <div class="card tier-master" data-tier="master">
     <div class="card-hd"><h3 class="card-title">2. 快速识别与基础生命支持（BLS · C-A-B 高质量操作参数）</h3><span class="badge badge-m">掌握</span></div>
     <ol>
-      <li><strong>识别与呼救</strong>：判断反应，快速查无呼吸或不能正常呼吸（停止/过缓/喘息）并同时判有无脉搏（<span class="k">5～10 秒内完成</span>）。确诊即刻启动 BLS，同时通知 EMS 并取用 <span class="k">AED</span>。</li>
+      <li><strong>识别与呼救</strong>：判断反应，快速查无呼吸或不能正常呼吸（停止/过缓/喘息）并同时判有无脉搏（<span class="k">5～10 秒内完成</span>）。确诊即刻启动 BLS，<strong>在不延缓实施心肺复苏的同时</strong>通知并启动 EMS，<strong>有条件时</strong>寻找并使用 <span class="k">AED</span>。</li>
       <li><strong>C — 人工胸外按压（最重要）与早期除颤</strong>：
         <ul>
           <li><strong>血流产生机制</strong>：基于<span class="k">胸泵机制和心泵机制</span>（增胸膜腔内压+直接按压心脏维持含氧血流）。</li>
@@ -2744,20 +2769,20 @@
         </ul>
       </li>
       <li><strong>A — 开通气道</strong>：先 30 次按压后开气道；无颈伤用<span class="k">仰头抬颏法</span>（下颌尖-耳垂连线与地面垂直），清除口腔异物/呕吐物/松动义齿。</li>
-      <li><strong>B — 人工呼吸</strong>：先吹气 2 次，每次持续 <span class="k">&gt; 1 秒</span>见胸廓起伏（正常吸气即可，防过度通气），2 次通气后立刻按压。按压:通气比例：<span class="k">成人单/双人均为 30:2</span>；<span class="k">儿童与婴儿 ≥2 名施救者为 15:2</span>。气管插管为最佳通气方式。</li>
+      <li><strong>B — 人工呼吸</strong>：先吹气 2 次，每次持续 <span class="k">&gt; 1 秒</span>见胸廓起伏（正常吸气即可，防过度通气），2 次通气后立刻按压。按压:通气比例：<span class="k">成人单/双人均为 30:2</span>；<span class="k">儿童与婴儿 ≥2 名施救者为 15:2</span>。气管插管是建立人工通气的最好方法；<strong>当时间或条件不允许时可采用口对口、口对鼻或口对通气防护装置呼吸</strong>（临时抢救措施，应争取马上气管插管）。</li>
     </ol>
   </div>
 
   <div class="card tier-master" data-tier="master">
     <div class="card-hd"><h3 class="card-title">3. 高级生命支持（ALS / ACLS）：通气、电除颤能量与抢救药物</h3><span class="badge badge-m">掌握</span></div>
     <ul>
-      <li><strong>通气与氧供</strong>：尽早气管插管；球囊面罩挤压 1L 球囊 1/2～2/3（或 2L 球囊 1/3）；<span class="k">气管插管后通气频率统一为每 6 秒 1 次（10 次/分）</span>；持续监测 ECG、BP、SpO₂、呼气末 CO₂ 分压。</li>
-      <li><strong>电除颤与起搏</strong>：终止室颤最有效方法，<span class="k">每延迟除颤 1 分钟复苏成功率下降 7%～10%</span>。<span class="k">心脏停搏与 PEA 电除颤均无益</span>。电极片位置：胸骨片置<span class="k">右锁骨下方</span>，心尖片置<span class="k">左乳头齐平左胸下外侧部</span>（避开起搏器）。首击能量：<span class="k">双相波 120～200J</span>，<span class="k">单相波 360J</span>（后续相当或提高）；一次除颤后立即 CPR <span class="k">5 周期（约 2 分钟）</span>再评估循环恢复征象。起搏不推荐用于心搏停止，仅用于有症状严重心动过缓（尤希氏束下高度 AVB）。</li>
+      <li><strong>通气与氧供</strong>：<strong>如果病人自主呼吸没有恢复</strong>，应尽早行气管插管；球囊面罩挤压 1L 球囊 1/2～2/3（或 2L 球囊 1/3）；<span class="k">气管插管后通气频率统一为每 6 秒 1 次（10 次/分）</span>；持续监测 ECG、BP、SpO₂、呼气末 CO₂ 分压。</li>
+      <li><strong>电除颤与起搏</strong>：心脏骤停时最常见的心律失常是室颤，终止室颤最有效方法为电除颤，<span class="k">每延迟除颤 1 分钟复苏成功率下降 7%～10%</span>。<span class="k">心脏停搏与 PEA 电除颤均无益</span>。电极片位置：胸骨片置<span class="k">右锁骨下方</span>，心尖片置<span class="k">左乳头齐平左胸下外侧部</span>（避开起搏器）。首击能量（第十一章心脏骤停算法）：<span class="k">双相波可根据除颤仪品牌或型号推荐，一般为 120～200J</span>，<span class="k">单相波 360J</span>（第二次及后续能量应相当且可考虑提高；第三章表 3-3-6 经胸体外复律单向波列 200～360J / 双向波 200J）；一次除颤后立即 CPR <span class="k">5 周期（约 2 分钟）</span>再评估自主循环是否恢复或有无呼吸、脉搏、血压等明显循环恢复征象。起搏不推荐用于心搏停止，仅用于有症状严重心动过缓（尤希氏束下高度 AVB）。</li>
       <li><strong>抢救药物与通路</strong>：
         <ul>
           <li><strong>给药途径</strong>：周围静脉选肘前/颈外，中心静脉选颈内/锁骨下/股，穿刺失败建骨髓腔通路；可经气管给药者：<span class="k">肾上腺素、阿托品、利多卡因</span>。</li>
           <li><strong>肾上腺素（CPR 首选药物）</strong>：用于除颤无效 VF/pVT、停搏或 PEA；<span class="k">1mg 静脉推注，每 3～5 分钟重复 1 次</span>，每次经外周静脉给药后用 <span class="k">20ml 生理盐水冲管</span>以保证药物到达心脏发挥作用。血管升压素可作一线但<span class="k">不推荐与肾上腺素联用</span>；严重低血压用去甲肾上腺素/多巴胺/多巴酚丁胺。</li>
-          <li><strong>抗心律失常药与酸碱纠正</strong>：<span class="k">2 次除颤 + CPR + 肾上腺素后仍为 VF/pVT</span>，予<span class="k">胺碘酮</span>（或利多卡因）；<span class="k">硫酸镁仅适用于尖端扭转型室速（TdP）</span>；难治多形 VT/TdP/快单形 VT(&gt;260)/难治 VF 可试用静脉 β 阻滞；心动过缓及药物诱发 TdP 可用异丙肾上腺素或心室起搏。<strong>碳酸氢钠</strong>不应过分积极常规补（靠改善通气纠代酸），仅适用于原有代酸/高钾/三环或苯巴比妥过量、或长时 CPR 常规无效时（起始 <span class="k">1mmol/kg</span>，持续 CPR 每 15min 给 1/2 量并按血气调整）。</li>
+          <li><strong>抗心律失常药与酸碱纠正</strong>：<span class="k">2 次除颤 + CPR + 肾上腺素后仍为 VF/pVT</span>，予<span class="k">胺碘酮</span>（或利多卡因）；<span class="k">硫酸镁仅适用于尖端扭转型室速（TdP）</span>；难治多形 VT/TdP/快单形 VT(&gt;260)/难治 VF 可试用静脉 β 阻滞；心动过缓及药物诱发 TdP 可用异丙肾上腺素或心室起搏。<strong>碳酸氢钠</strong>：复苏过程中产生的代谢性酸中毒通过改善通气通常可改善，不应过分积极补充；<strong>早已存在的代谢性酸中毒、高钾血症、三环类或苯巴比妥类药物过量病人可适当补充</strong>；对心脏骤停时间较长病人，须在<strong>胸外按压、除颤、气管插管、机械通气和血管收缩药物治疗均无效时</strong>方可考虑使用（起始 <span class="k">1mmol/kg</span>，持续 CPR 每 15min 给 1/2 量并按血气调整防碱中毒）。</li>
         </ul>
       </li>
     </ul>
@@ -2767,21 +2792,21 @@
   </div>
 
   <!-- Familiar Tier -->
-  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 复苏进阶与预后预防</span> ECPR、复苏后脑复苏、5H5T 查因与 SCD 预防</h2>
+  <h2 class="tier-heading familiar-hd" data-tier="familiar"><span class="badge badge-f">熟悉 · 复苏进阶与预后</span> ECPR、复苏后脑复苏、5H5T 查因与预后</h2>
 
   <div class="card tier-familiar" data-tier="familiar">
-    <div class="card-hd"><h3 class="card-title">ECPR、复苏后综合处理（心脏骤停后综合征）与 SCD 预防</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="card-hd"><h3 class="card-title">ECPR、复苏后综合处理（心脏骤停后综合征）与复苏预后</h3><span class="badge badge-f">熟悉</span></div>
     <ul>
       <li><strong>ECPR（体外心肺复苏）</strong>：CPR 中经股动/静脉启动 ECMO；目前无足够证据常规使用，仅对疑似病因可逆或待心脏移植者酌情考虑（须权衡成本效益、资源分配与医学伦理）。</li>
       <li><strong>复苏后处理（防治心脏骤停后综合征，重点是脑复苏）</strong>：
         <ol>
-          <li><strong>原发病治疗与 5H/5T 排查</strong>：<span class="k">5H</span>（低血容量、缺氧、酸中毒、低钾血症、高钾血症）与 <span class="k">5T</span>（张力性气胸、心脏压塞、中毒、肺栓塞、冠脉血栓形成）。ROSC 后尽快做 12/18 导 ECG；无论昏迷清醒，疑心源性或 ST 抬高 OHCA 均尽快行急诊冠脉造影（非 ST 抬高伴血流动力学/心电不稳定亦考虑）。</li>
-          <li><strong>维持循环与呼吸</strong>：维持 <span class="k">SBP ≥ 90mmHg、MAP ≥ 65mmHg</span>（容量复苏→血管活性药；床旁超声排压塞）；呼吸不全伴左心衰适度 PEEP。</li>
-          <li><strong>脑复苏（最终成功关键，5 措施）</strong>：①<span class="k">目标体温管理（低温 32～36℃，至少维持 24 小时</span>，最重要神经与心脏保护策略）；②渗透性利尿剂脱水降颅压；③冬眠药物防治抽搐与寒战；④高压氧改善脑缺氧；⑤抗凝+CCB 促早期脑微循环灌注。</li>
+          <li><strong>原发病治疗与 5H/5T 排查</strong>：<span class="k">5H</span>（低血容量、缺氧、酸中毒、低钾血症、高钾血症）与 <span class="k">5T</span>（张力性气胸、心脏压塞、中毒、肺栓塞、冠脉血栓形成）。ROSC 后尽快做 12/18 导 ECG；无论昏迷清醒，疑心源性或 ST 抬高院外心脏骤停（OHCA）均尽快行急诊冠脉造影；对<strong>怀疑有心脏性病因但 ST 段未见抬高的院外心脏骤停（OHCA）病人</strong>，若存在血流动力学不稳定或心电不稳定也可考虑行急诊冠脉造影。</li>
+          <li><strong>维持循环与呼吸</strong>：维持 <span class="k">SBP ≥ 90mmHg、MAP ≥ 65mmHg</span>（容量复苏→血管活性药；床旁超声排压塞）；呼气末正压（PEEP）对<strong>呼吸功能不全合并左心衰竭病人可能很有帮助，但需注意此时血流动力学是否稳定</strong>。</li>
+          <li><strong>脑复苏（最终成功关键，5 措施）</strong>：①<span class="k">目标体温管理（复苏后昏迷病人应将体温降至 32～36℃，并至少维持 24 小时</span>，最重要神经与心脏保护策略）；②渗透性利尿剂脱水降颅压；③冬眠药物防治抽搐与寒战；④高压氧改善脑缺氧；⑤抗凝+CCB 促早期脑微循环灌注。</li>
           <li><strong>防治急性肾衰竭与其他</strong>：避免肾损药（注射呋塞米仍无尿/少尿提示 AKI）；纠电解质酸碱、防感染；肠鸣音消失/机械通气昏迷者留置胃管尽早胃肠营养。</li>
         </ol>
       </li>
-      <li><strong>预后与 SCD 预防</strong>：我国存活出院率 <span class="k">OHCA 1.2%、IHCA 9%</span>；AMI 早期原发室颤易除颤成功，继发大面积心梗血流动力学异常骤停即时死亡率 59%～89%。预防：β 阻滞剂减少器质病 SCD；胺碘酮减心律失常死亡但不降总死亡率；<span class="k">ICD 是目前防治 SCD 最有效的方法</span>；LQTS 足量 β 阻滞仍晕厥可行左侧颈胸交感神经切断术。</li>
+      <li><strong>复苏预后背景</strong>：我国存活出院率 <span class="k">OHCA 1.2%、IHCA 9%</span>；AMI 早期原发室颤易除颤成功，继发大面积心梗血流动力学异常骤停即时死亡率 59%～89%（注：原教材末段独立【SCD 的预防】含药物与 LQTS 交感神经切断术超出大纲第九章“心脏骤停与心肺复苏”边界，本页按大纲范围剔除）。</li>
     </ul>
   </div>
 </section>
@@ -2806,18 +2831,18 @@
         <tbody>
           <tr>
             <td><strong>新版栏目无传统“掌握/熟悉/了解”三栏</strong></td>
-            <td>循环系统大纲改用【对应课程目标】【教学内容和要求】【思政要素和案例】【教学难点重点】结构，仅课程总目标列出目标 1/2 掌握核心、目标 3 熟悉影像学、目标 4 了解前沿。</td>
+            <td>循环系统大纲改用【对应课程目标】【教学内容和要求】【思政要素和案例】【教学难点重点】结构。课程总目标中：目标 1 掌握核心知识体系，目标 2 培养临床思维与诊疗能力，目标 3 掌握心电图解读、心脏听诊、动态血压监测等基础技能并熟悉冠脉造影、心脏超声等影像报告的临床意义，目标 4 了解学科前沿整合；并结合各章知识点细目判定深度。</td>
             <td>严格划分两级：大纲明示掌握/核心/重点 → <strong>掌握（红标）</strong>；同章支撑子节及难点辅助 → <strong>熟悉（蓝标）</strong>；课程目标 4 前沿展望（基因治疗等）与非大纲内容彻底剔除。</td>
           </tr>
           <tr>
             <td><strong>大纲表头学时 vs 知识点学时和 vs 教学日历</strong></td>
-            <td>大纲表头写“总学时 16 学时”；9 个知识点括号学时之和 = <strong>18 学时</strong>（心肌疾病 2 + 心包 1 + IE 1 = 4 学时）；《附件1 教学日历》实际排课 8 次×2 = <strong>16 学时</strong>（将心肌疾病/急性心包炎/IE 合为 1 次 2 学时课）。</td>
+            <td>大纲表头写“总学时 16 学时”；9 个知识点括号学时之和 = <strong>18 学时</strong>（心肌疾病 2 + 心包 1 + IE 1 = 4 学时）；本地配套表《附件1 2026-2027-1 内科学（双语）教学日历（含3个子表）.xlsx》实际排课 8 次×2 = <strong>16 学时</strong>（将心肌疾病/急性心包炎/IE 合为 1 次 2 学时课）。</td>
             <td>按大纲 9 大知识点 1:1 设 9 模块（mod-1..mod-9），模块头如实标注大纲括号学时，侧边栏标明“表头16学时”，并在此表透明留痕。</td>
           </tr>
           <tr>
             <td><strong>大纲章号与第 10 版教材章号错位</strong></td>
             <td>大纲未列“总论”与“先心病”，故大纲第一～九章实际对应第 10 版教材第三篇第 2、3、4、5、6、8、9、10、11 章。</td>
-            <td>各模块头及侧边栏均显式标明第 10 版准确章号与双页码（课本印刷页 / PDF 物理页，偏移恒定 +31）。</td>
+            <td>各模块头及侧边栏均显式标明第 10 版准确章号与双页码（课本印刷页 / PDF 物理页，偏移恒定 +31），其中第 4、8 章同时标明全章范围与正文实际取材节页码。</td>
           </tr>
         </tbody>
       </table>
@@ -2825,40 +2850,40 @@
   </div>
 
   <div class="card">
-    <div class="card-hd"><h3 class="card-title">二、第 10 版《03-第三篇 循环系统疾病》原文边界、未设专节与版次术语更新</h3><span class="badge badge-note">溯源说明</span></div>
+    <div class="card-hd"><h3 class="card-title">二、第 10 版《03-第三篇 循环系统疾病》原文边界、内部口径与版次术语溯源</h3><span class="badge badge-note">溯源说明</span></div>
     <div class="tbl-wrap">
       <table class="med-tbl">
-        <thead><tr><th>大纲条目 / 难点</th><th>第 10 版循环篇原文实况</th><th>本学习页执行方式</th></tr></thead>
+        <thead><tr><th>大纲条目 / 难点 / 内部口径</th><th>第 10 版循环篇原文实况</th><th>本学习页执行方式</th></tr></thead>
         <tbody>
           <tr>
-            <td><strong>第一章：心室重构分子机制、急性心梗合并心衰</strong></td>
-            <td>第 2 章原文采用“<strong>心室重塑</strong>”（无“重构”字样）并简述于神经体液代偿机制中；AMI 合并心衰仅在病因/诱因简提，详细 Killip/Forrester 分级与处理位于第 4 章 STEMI 节。</td>
-            <td>第 1 模块忠实采用“心室重塑”及第 2 章原文内容，AMI 合并心衰详述于第 3 模块（第四章 STEMI）并作双向溯源标注。</td>
+            <td><strong>第一章：心室重构分子机制、急性心梗合并心衰、SGLT2i 禁忌</strong></td>
+            <td>第 2 章将“<strong>（三）心室重塑</strong>”单列为发病机制独立小项（无“重构”字样，未单设分子通路专节）；AMI 合并心衰在第 2 章病因/诱因及急性心衰“初始评估和紧急干预”已列 ACS 需急诊血运重建，详细 Killip/Forrester 分级与处理位于第 4 章 STEMI 节；SGLT2i 推荐段涵 2 型糖尿病及全 EF 心衰，禁忌段原文径列“糖尿病”。</td>
+            <td>第 1 模块忠实呈现“（三）心室重塑”、急诊 ACS 血运重建及 SGLT2i 教材前后张力原貌，AMI 合并心衰详述于第 3 模块并作双向溯源。</td>
           </tr>
           <tr>
-            <td><strong>第三章：再灌注损伤的分子机制</strong></td>
-            <td>第 4 章 STEMI 节对“再灌注损伤”以独立段落阐述再灌注性心律失常（最常见一过性非阵发性室速），未设单独分子通路专节。</td>
-            <td>如实完整摘录第 4 章原文，未凭记忆增补课外自由基/钙超载分子通路。</td>
+            <td><strong>第三章：再灌注损伤、GRACE 109 与 TIMI Ⅱ 重叠</strong></td>
+            <td>第 4 章 STEMI 节对“再灌注损伤”以独立段落阐述再灌注性心律失常（最常见一过性非阵发性室速），未设单独分子通路专节；GRACE 中危正文写 <strong>109～140</strong> 而表 3-4-3 写 <strong>109&lt;GRACE≤140</strong>；TIMI Ⅱ 级在补救 PCI（结合未缓解胸痛/ST 未降）与一般造影再通标准（Ⅱ/Ⅲ）间存在重叠。</td>
+            <td>如实完整摘录原文并并列标注两处教材内部口径差异，不私改亦不脑补课外分子通路。</td>
           </tr>
           <tr>
             <td><strong>第六章：二尖瓣/主动脉瓣“关闭不全”</strong></td>
-            <td>第 10 版第 8 章已统一改称“<strong>二尖瓣反流</strong>”、“<strong>主动脉瓣反流</strong>”，第五节称“<strong>多瓣膜病</strong>”（又称联合瓣膜病）。</td>
-            <td>采用第 10 版规范名称，并在模块大纲摘要中加注大纲旧称对照。</td>
+            <td>第 10 版第 8 章已统一改称“<strong>二尖瓣反流</strong>”、“<strong>主动脉瓣反流</strong>”，第五节称“<strong>多瓣膜病</strong>”（又称联合瓣膜病）；未另设 MS 独立“超声分型”表。</td>
+            <td>采用第 10 版规范名称，保留大纲旧称对照，并在 MS 正文补足瓣叶/交界/瓣下超声形态判读与诊断鉴别。</td>
           </tr>
           <tr>
-            <td><strong>第七章：急性心包炎（渗出性 Beck 三联征）</strong></td>
-            <td>第 10 版第 9 章将“心包积液及心脏压塞”单列为第二节，Beck 三联征、奇脉、Ewart 征均位于第二节。</td>
-            <td>整合归入第 7 模块，将心脏压塞急救置于掌握层，心包积液完整体征影像置于熟悉层。</td>
+            <td><strong>第七章：心包积液与缩窄性心包炎手术指征</strong></td>
+            <td>第 10 版第 9 章将“心包积液及心脏压塞”单列为第二节（含 Beck 三联征/奇脉/Ewart 征）；缩窄性心包炎按慢性缩窄（唯一有效心包切除术）与近期可逆期分流，未将大纲原句“心包钙化伴心室舒张受限”单列为唯一手术阈值。</td>
+            <td>整合归入第 7 模块，并列保留大纲考点原句与教材临床分流规则，并在本模块正文就地补齐与 RCM 并列鉴别。</td>
           </tr>
           <tr>
-            <td><strong>第八章：感染性心内膜炎诊断标准</strong></td>
-            <td>第 10 版第 10 章已将传统 Duke 标准全面更新为 <strong>2023 版 ESC 感染性心内膜炎诊断标准</strong>（表 3-10-1，纳入 CT/PET/SPECT）。</td>
-            <td>100% 按 2023 版 ESC 标准逐项完整列出，不混入过时旧标准。</td>
+            <td><strong>第八章：IE 诊断标准与特殊类型（PVE / DAIE）</strong></td>
+            <td>在 Duke 诊断标准基础上，第 10 版第 10 章表 3-10-1 采用 <strong>2023 版 ESC 感染性心内膜炎诊断标准</strong>（纳入 CT/PET/SPECT）；大纲思政案例点名 PVE，DAIE 属同章【特殊类型 IE】。</td>
+            <td>100% 按 2023 版 ESC 标准逐项完整列出；PVE 与 DAIE 依用户确认的方案 A 保留于熟悉层，并完整核准 PVE 疗程（6～8 周或更长）与 DAIE 短程 6 项前提。</td>
           </tr>
           <tr>
-            <td><strong>第九章：CPR 期间血流动力学变化与药物代谢的关系</strong></td>
-            <td>第 11 章详述了胸泵/心泵血流动力学机制、外周静脉给肾上腺素后 20ml 生理盐水冲管及气管给药途径，但<strong>未设 CPR 药代动力学专节</strong>。</td>
-            <td>如实完整覆盖原文要点并在第 9 模块显式声明未设药代动力学专节，绝不跨源脑补。</td>
+            <td><strong>第九章：CPR 药代动力学与独立 SCD 预防</strong></td>
+            <td>第 11 章详述了胸泵/心泵血流动力学机制、外周静脉给肾上腺素后 20ml 生理盐水冲管及气管给药途径，但<strong>未设 CPR 药代动力学专节</strong>；文末【SCD 的预防】含药物与 LQTS 交感神经切断术。</td>
+            <td>如实完整覆盖原文要点并声明未设药代动力学专节；依大纲第九章“心脏骤停与心肺复苏”边界剔除独立 SCD 预防及 LQTS 交感神经切断术，仅留复苏预后背景。</td>
           </tr>
         </tbody>
       </table>
@@ -2870,7 +2895,7 @@
     <p><strong>1. 整章未列入大纲、完全剔除（共 6 章 / 全篇 15 章）</strong>：</p>
     <p style="color:var(--muted-foreground)">第一章 总论（课本 P170–175 / PDF P201–206）｜ 第七章 先天性心血管病（课本 P288–298 / PDF P319–329）｜ 第十二章 主动脉和周围血管病（课本 P335–341 / PDF P366–372）｜ 第十三章 心血管神经症（课本 P342–343 / PDF P373–374）｜ 第十四章 肿瘤心脏病学（课本 P344–349 / PDF P375–380）｜ 第十五章 其他心血管疾病（课本 P350–353 / PDF P381–384）。</p>
     <p><strong>2. 大纲映射章内未纳入展开的边缘子节（彻底剔除专节）</strong>：</p>
-    <p style="color:var(--muted-foreground)">第三章 [附] 遗传性心律失常综合征（LQTS/Brugada/CPVT/SQTS/ERS 专节）｜ 第四章 第三节二《缺血性心肌病》、三《隐匿型冠心病》及第五节《冠状动脉痉挛/心肌桥/微血管疾病》｜ 第五章 妊娠高血压（教材提示参见《妇产科学》）｜ 第六章 第三节《非扩张型左心室心肌病（NDLVC）》、第四节《致心律失常性右心室心肌病（ARVC）》专节｜ 第八章 第六节《风湿热》（Jones 诊断标准专节）。</p>
+    <p style="color:var(--muted-foreground)">第三章 [附] 遗传性心律失常综合征（LQTS/Brugada/CPVT/SQTS/ERS 专节）｜ 第四章 第三节二《缺血性心肌病》、三《隐匿型冠心病》、第五节《冠状动脉痉挛/心肌桥/微血管疾病》及动脉粥样硬化外周动脉器官速记｜ 第五章 独立流行病学统计表与妊娠高血压（教材提示参见《妇产科学》）｜ 第六章 第三节《非扩张型左心室心肌病（NDLVC）》、第四节《致心律失常性右心室心肌病（ARVC）》专节及 RCM 病因特异药物治疗｜ 第八章 第六节《风湿热》（Jones 诊断标准专节）｜ 第十一章 【SCD 的预防】独立药物/手术预防段（含 LQTS 左侧颈胸交感神经切断术）。</p>
   </div>
 </section>
 

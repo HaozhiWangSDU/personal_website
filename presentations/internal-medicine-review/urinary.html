@@ -620,6 +620,12 @@
   @media print {
     .sidebar, .topbar, .svg-zoom-btn { display: none !important; }
     .module-section { display: block !important; page-break-after: always; }
+    body.filter-master .tier-heading[data-tier="familiar"],
+    body.filter-familiar .tier-heading[data-tier="master"] { display: flex !important; }
+    body.filter-master .card[data-tier="familiar"],
+    body.filter-master .svg-card[data-tier="familiar"],
+    body.filter-familiar .card[data-tier="master"],
+    body.filter-familiar .svg-card[data-tier="master"] { display: block !important; }
     .card, .svg-card { break-inside: avoid; }
     body.cloze-on .k { background: transparent !important; color: inherit !important; }
   }
@@ -698,8 +704,8 @@
       <button class="sidebar-close-btn" id="sidebarCloseBtn" type="button" title="收起侧边栏">✕</button>
     </div>
     <nav class="nav-list" id="navList">
-      <button class="nav-item active" data-target="mod-1"><span class="nav-num">Ⅰ</span><span><strong>总论与肾小球疾病概述</strong><span class="nav-meta">第1章+第2章第1节 · P466-475 / PDF P497-506</span></span></button>
-      <button class="nav-item" data-target="mod-2"><span class="nav-num">Ⅱ</span><span><strong>肾病综合征（NS）</strong><span class="nav-meta">第2章第5节 · 课本P480-485 / PDF P511-516</span></span></button>
+      <button class="nav-item active" data-target="mod-1"><span class="nav-num">Ⅰ</span><span><strong>总论与肾小球疾病概述</strong><span class="nav-meta">第1章+第2章第1节 · P466-476 / PDF P497-507</span></span></button>
+      <button class="nav-item" data-target="mod-2"><span class="nav-num">Ⅱ</span><span><strong>肾病综合征（NS）</strong><span class="nav-meta">第2章第5节 · 课本P480-486 / PDF P511-517</span></span></button>
       <button class="nav-item" data-target="mod-3"><span class="nav-num">Ⅲ</span><span><strong>急性肾损伤（AKI）</strong><span class="nav-meta">第9章 · 课本P518-524 / PDF P549-555</span></span></button>
       <button class="nav-item" data-target="mod-4"><span class="nav-num">Ⅳ</span><span><strong>慢性肾衰竭（CRF/CKD）</strong><span class="nav-meta">第10章 · 课本P525-532 / PDF P556-563</span></span></button>
       <button class="nav-item" data-target="mod-audit"><span class="nav-num">审</span><span><strong>大纲边界与差异审计表</strong><span class="nav-meta">剔除清单 · 5处冲突与缺节溯源</span></span></button>
@@ -739,7 +745,7 @@
   <div class="mod-header">
     <div class="mod-title-row">
       <h1 class="mod-title">Ⅰ、泌尿系统总论与肾小球疾病概述</h1>
-      <span class="mod-source">第10版 第一章《总论》（课本 P466–472 / PDF P497–503）+ 第二章第一节《肾小球疾病概述》（课本 P473–475 / PDF P504–506）· 2学时</span>
+      <span class="mod-source">第10版 第一章《总论》（课本 P466–472 / PDF P497–503）+ 第二章第一节《肾小球疾病概述》（课本 P473–476 止于第二节前 / PDF P504–507）· 2学时</span>
     </div>
     <div class="syllabus-box">
       <div class="syl-row"><span class="syl-tag m">掌握</span><span>肾脏疾病的基本临床表现与四大检查方法（尿液检查、肾功能检查与 eGFR 公式、影像学、病理学）；肾脏疾病四维诊断要点与防治原则；原发性肾小球疾病的分类（临床与病理分型）、发病机制（免疫反应、炎症反应、非免疫因素）及临床表现。</span></div>
@@ -819,7 +825,7 @@
 
         <!-- Band 2: Glomerular Pathogenesis & Classification -->
         <rect x="8" y="216" width="864" height="221" rx="10" fill="var(--card)" stroke="var(--border)" />
-        <text x="22" y="237" font-size="13" font-weight="700" fill="var(--error)">② 原发性肾小球疾病：三环节发病机制与临床-病理分型关系（第二章第一节 P473–475 / PDF P504–506）</text>
+        <text x="22" y="237" font-size="13" font-weight="700" fill="var(--error)">② 原发性肾小球疾病：三环节发病机制与临床-病理分型关系（第二章第一节 P473–476 / PDF P504–507）</text>
 
         <!-- Step A: Immune -->
         <rect x="20" y="250" width="234" height="104" rx="8" fill="var(--error)" fill-opacity="0.08" stroke="var(--error)" />
@@ -862,7 +868,7 @@
   <h2 class="tier-heading master-hd" data-tier="master"><span class="badge badge-m">掌握 · 核心考点</span> 临床表现、四大检查与 eGFR 公式、诊断防治原则及原发性肾小球疾病概述</h2>
 
   <div class="card tier-master" data-tier="master">
-    <div class="card-hd"><h3 class="card-title">一、肾脏疾病核心临床表现（第一章 P467–468 + 第二章第一节 P474–475）</h3><span class="badge badge-m">掌握</span></div>
+    <div class="card-hd"><h3 class="card-title">一、肾脏疾病核心临床表现（第一章 P467–468 + 第二章第一节 P474–476）</h3><span class="badge badge-m">掌握</span></div>
     <p>肾脏疾病的表现包括肾脏本身症状（尿色/尿量异常、水肿、乏力等）及肾功能受损引起各系统症状；继发性肾病尚可见皮疹、关节痛、口腔溃疡、脱发等原发病表现。</p>
     <div class="tbl-wrap">
       <table class="med-tbl">
@@ -881,7 +887,7 @@
           <tr>
             <td><strong>3. 水肿</strong></td>
             <td>基本病理生理：<span class="k">水、钠潴留</span>；好发眼睑、脚踝/胫前、长期卧床者骶尾部</td>
-            <td>• <strong>肾病性水肿</strong>：大量蛋白尿→低白蛋白血症→<span class="k">血浆胶体渗透压降低</span>→液体入组织间隙；有效血容量减激活 RAAS 与 ADH 加重水钠潴留（亦存在独立于 RAAS 的原发于远端肾单位水钠潴留机制）。组织间隙蛋白含量低，多从<span class="k">下肢</span>开始。<br />• <strong>肾炎性水肿</strong>：GFR 下降而小管重吸收基本正常→<span class="k">“球-管失衡”</span>与肾小球滤过分数下降；血容量常增加，伴 RAAS 活性抑制、ADH 减少，高血压与毛细血管通透性增使其加重。组织间隙蛋白含量高，多从<span class="k">眼睑、颜面部</span>开始。</td>
+            <td>• <strong>肾病性水肿</strong>：大量蛋白尿→低白蛋白血症→<span class="k">血浆胶体渗透压降低</span>→液体入组织间隙；有效血容量减激活 RAAS 与 ADH 加重水钠潴留（研究提示，某些原发于远端肾单位且独立于 RAAS 的水、钠潴留因素可能在肾病性水肿上起一定作用）。组织间隙蛋白含量低，多从<span class="k">下肢</span>开始。<br />• <strong>肾炎性水肿</strong>：GFR 下降而小管重吸收基本正常→<span class="k">“球-管失衡”</span>与肾小球滤过分数下降；血容量常增加，伴 RAAS 活性抑制、ADH 减少，高血压与毛细血管通透性增使其加重。组织间隙蛋白含量高，多从<span class="k">眼睑、颜面部</span>开始。</td>
           </tr>
           <tr>
             <td><strong>4. 高血压</strong></td>
@@ -1046,8 +1052,8 @@
           <tr><td><strong>1. 肾病综合征（NS）</strong></td><td>大量蛋白尿（&gt;3.5g/d）、低白蛋白血症（&lt;30g/L），常伴水肿和/或高脂血症。</td><td>原发：MCD、MN、FSGS 等；继发：糖尿病肾脏病、狼疮性肾炎等。</td></tr>
           <tr><td><strong>2. 肾炎综合征</strong></td><td>以肾小球源性血尿为主，常伴蛋白尿，可有水肿、高血压和/或肾损。分 3 型：①<strong>急性</strong>（急起、多见儿童、前驱扁桃体/皮肤感染）；②<strong>急进性</strong>（短时进行性肾损）；③<strong>慢性</strong>（缓起迁延，渐现高血压/肾损）。</td><td>急性典型：链球菌感染后急性肾小球肾炎；急进性：抗 GBM 病、ANCA 相关血管炎、重症 LN、IgA 肾病等。</td></tr>
           <tr><td><strong>3. 无症状性血尿和/或蛋白尿</strong></td><td>血尿和/或轻、中度蛋白尿，不伴水肿、高血压等症状。</td><td>多种原发性肾小球疾病（如 IgA 肾病等）和肾小管-间质病变。</td></tr>
-          <tr><td><strong>4. 急性肾损伤（AKI）</strong></td><td>48h 内 Scr 绝对升 ≥26.5μmol/L 或较基础值升 ≥50%，或尿量 &lt;0.5ml/(kg·h) 持续 &gt;6h；少/无尿、氮质潴留、水电酸碱紊乱。</td><td>最重要区分<strong>肾前性、肾性、肾后性</strong>病因。</td></tr>
-          <tr><td><strong>5. 慢性肾脏病（CKD）</strong></td><td>肾脏损伤（病理/血尿损伤标志/小管电解质异常/影像异常/肾移植史）或 GFR &lt;60ml/(min·1.73m²)，时间 &gt;3 个月；ESRD 累及消化/心血管/贫血/肾性骨病。</td><td>多种原发与继发慢性肾病进展所致。</td></tr>
+          <tr><td><strong>4. 急性肾损伤（AKI）</strong></td><td>第一章概述口径：48h 内 Scr 绝对升 ≥26.5μmol/L 或较基础值升 ≥50%，或尿量 &lt;0.5ml/(kg·h) 持续 &gt;6h；少/无尿、氮质潴留、水电酸碱紊乱。<br /><span style="color:var(--muted-foreground);font-size:11.5px;">（交叉口径提示：第九章 2012 KDIGO 标准详列为 48h 内绝对升高 ≥26.5μmol/L、<strong>7 天内</strong>较基础值相对升高 ≥50%、尿量持续 <strong>≥6 小时</strong>，临床诊断与分期以第九章为准。）</span></td><td>最重要区分<strong>肾前性、肾性、肾后性</strong>病因。</td></tr>
+          <tr><td><strong>5. 慢性肾脏病（CKD）</strong></td><td>第一章概述口径：肾脏损伤（病理/血尿损伤标志/小管电解质异常/影像异常/肾移植史）或 GFR &lt;60ml/(min·1.73m²)，时间 &gt;3 个月；ESRD 累及消化/心血管/贫血/肾性骨病。<br /><span style="color:var(--muted-foreground);font-size:11.5px;">（交叉口径提示：第十章 K/DOQI 详述为结构或功能异常/不明原因 GFR 下降 <strong>≥3 个月</strong>，且单纯 GFR 60–89 无肾损害不诊 CKD。）</span></td><td>多种原发与继发慢性肾病进展所致。</td></tr>
         </tbody>
       </table>
     </div>
@@ -1059,12 +1065,12 @@
   <div class="mod-header">
     <div class="mod-title-row">
       <h1 class="mod-title">Ⅱ、肾病综合征（NS）</h1>
-      <span class="mod-source">第10版 第二章第五节《肾病综合征》（课本 P480–485 / PDF P511–516）· 2学时</span>
+      <span class="mod-source">第10版 第二章第五节《肾病综合征》（课本 P480–486 止于第六节前 / PDF P511–517）· 2学时</span>
     </div>
     <div class="syllabus-box">
       <div class="syl-row"><span class="syl-tag m">掌握</span><span>肾病综合征的概念、必备诊断条件与病因分类（表 5-2-1）；原发性肾病综合征 5 种病理类型（光镜/免疫荧光/电镜）及其临床特征；4 大常见并发症；诊断（3 方面）与 6 大继发性疾病鉴别诊断；总体治疗原则（一般/利尿/降尿蛋白/并发症防治）及糖皮质激素三大使用原则。</span></div>
-      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>难治性/激素依赖及抵抗型肾病综合征常用免疫抑制剂（细胞毒药物、钙调神经蛋白抑制剂、吗替麦考酚酯、利妥昔单抗）的适应定位、剂量疗程与主要不良反应。</span></div>
-      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">了解项：肾病综合征【病理生理】专节（据《支撑关系表》目标 2 剔除）；【预后】专节（大纲目标与支撑表未列）；大纲教学内容提及的“肾活检适应证、相对禁忌证及并发症”在第 10 版对应章节未设专节，严守原文不补写。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>难治性/激素依赖及抵抗型肾病综合征常用免疫抑制剂（细胞毒药物、钙调神经蛋白抑制剂、吗替麦考酚酯、利妥昔单抗）的适应定位、剂量疗程与主要不良反应；决定肾病综合征预后的四大因素（大纲【教学内容】明列且未标“了解”）。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">了解项：肾病综合征【病理生理】专节（据《支撑关系表》目标 2 剔除）；大纲教学内容提及的“肾活检完整适应证、相对禁忌证及并发症清单”在第 10 版映射章未设专节，严守原文不补写。</span></div>
     </div>
   </div>
 
@@ -1075,7 +1081,7 @@
       <button class="svg-zoom-btn" type="button">放大查看</button>
     </div>
     <div class="svg-stage">
-      <svg viewBox="0 0 880 465" width="100%" role="img" aria-label="肾病综合征五大病理类型鉴别及糖皮质激素与并发症处理图">
+      <svg viewBox="0 0 880 515" width="100%" role="img" aria-label="肾病综合征五大病理类型鉴别及糖皮质激素与并发症处理图">
         <defs>
           <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
             <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
@@ -1160,7 +1166,7 @@
         <text x="710" y="212" font-size="10" fill="var(--muted-foreground)">• 肾移植术后常复发</text>
 
         <!-- Band 2: Glucocorticoid 3-Step Ladder -->
-        <rect x="8" y="246" width="526" height="211" rx="10" fill="var(--card)" stroke="var(--error)" stroke-width="1.5" />
+        <rect x="8" y="246" width="526" height="261" rx="10" fill="var(--card)" stroke="var(--error)" stroke-width="1.5" />
         <text x="22" y="268" font-size="13" font-weight="700" fill="var(--error)">② 糖皮质激素三大核心使用原则（泼尼松首选；水肿重/肝损改甲泼尼龙）</text>
 
         <rect x="20" y="280" width="150" height="92" rx="7" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" />
@@ -1185,28 +1191,33 @@
         <text x="453" y="338" text-anchor="middle" font-size="11" fill="var(--foreground)">再维持半年左右</text>
         <text x="453" y="356" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">两日量隔日一次顿服</text>
 
-        <rect x="20" y="384" width="502" height="62" rx="7" fill="var(--secondary)" stroke="var(--border)" />
-        <text x="32" y="403" font-size="11" font-weight="700" fill="var(--foreground)">二线协同免疫抑制剂（激素依赖/抵抗/难治性，无激素禁忌一般不单用或首选）：</text>
-        <text x="32" y="421" font-size="10.5" fill="var(--foreground)">CTX(6–8g)｜CsA(100–200)｜FK506(5–8)｜MMF(1.5–2g)｜利妥昔单抗(CD20)</text>
-        <text x="32" y="438" font-size="10.5" fill="var(--muted-foreground)">优质蛋白 0.8–1.0g/(kg·d)（禁高蛋白）·低盐 &lt;2g/d｜ACEI/ARB(高量)+SGLT2i</text>
+        <rect x="20" y="384" width="502" height="112" rx="7" fill="var(--secondary)" stroke="var(--border)" />
+        <text x="30" y="402" font-size="10.5" font-weight="700" fill="var(--foreground)">二线协同免疫抑制剂（激素依赖/抵抗/难治性，无激素禁忌一般不单用或首选）：</text>
+        <text x="30" y="420" font-size="10.5" fill="var(--foreground)">• CTX（累积量 6–8g 停药）｜ CsA（血药谷浓度 100–200ng/ml）</text>
+        <text x="30" y="437" font-size="10.5" fill="var(--foreground)">• FK506（血药浓度 5–8ng/ml）｜ MMF（日量 1.5–2g/d）｜ 利妥昔（抗 CD20）</text>
+        <text x="30" y="456" font-size="10.5" fill="var(--foreground)">• 饮食：正常优质蛋白 0.8–1.0g/(kg·d)（不主张高蛋白）；明显水肿低盐 &lt;2g/d</text>
+        <text x="30" y="474" font-size="10.5" fill="var(--primary)">• 减蛋白尿：ACEI/ARB（一般高于常规降压量），可在此基础上联用 SGLT2i</text>
+        <text x="30" y="490" font-size="10" fill="var(--muted-foreground)">（完整用法、疗程与不良反应详见下方正文及【熟悉】免疫抑制剂表）</text>
 
         <!-- Band 2 Right: Complications Red Lines -->
-        <rect x="546" y="246" width="326" height="211" rx="10" fill="var(--card)" stroke="var(--chart-1)" stroke-width="1.5" />
+        <rect x="546" y="246" width="326" height="261" rx="10" fill="var(--card)" stroke="var(--chart-1)" stroke-width="1.5" />
         <text x="560" y="268" font-size="13" font-weight="700" fill="var(--chart-1)">③ 四大并发症防治临床红线</text>
 
-        <text x="560" y="292" font-size="11.5" font-weight="700" fill="var(--error)">1. 感染（复发与效差主因）</text>
-        <text x="568" y="308" font-size="11" fill="var(--foreground)">• 激素期<tspan font-weight="700">无需抗生素预防</tspan>(防真菌二重感染)</text>
-        <text x="568" y="323" font-size="10.5" fill="var(--muted-foreground)">• 确诊即选敏感无肾毒抗生素，重者减/停激素</text>
+        <text x="558" y="292" font-size="11" font-weight="700" fill="var(--error)">1. 感染（复发与效差主因）</text>
+        <text x="564" y="308" font-size="10.5" fill="var(--foreground)">• 激素期<tspan font-weight="700">通常无需抗生素预防</tspan>(防真菌二重感染)</text>
+        <text x="564" y="324" font-size="10.5" fill="var(--muted-foreground)">• 感染用敏感无肾毒药；严重难控视情况考虑减/停</text>
 
-        <text x="560" y="344" font-size="11.5" font-weight="700" fill="var(--primary)">2. 血栓与栓塞（肾静脉血栓最常见）</text>
-        <text x="568" y="360" font-size="11" fill="var(--foreground)">• <tspan font-weight="700" fill="var(--error)">血清白蛋白 &lt;20g/L</tspan> → 预防抗凝(肝素/华法林)</text>
-        <text x="568" y="375" font-size="11" fill="var(--foreground)">• 已栓塞：<tspan font-weight="700">6h内最佳(3d内有效)</tspan>溶栓+抗凝≥半年</text>
+        <text x="558" y="346" font-size="11" font-weight="700" fill="var(--primary)">2. 血栓与栓塞（肾静脉血栓最常见）</text>
+        <text x="564" y="362" font-size="10.5" fill="var(--foreground)">• <tspan font-weight="700" fill="var(--error)">血清白蛋白 &lt;20g/L</tspan> → 预防抗凝(肝素/华法林)</text>
+        <text x="564" y="378" font-size="10.5" fill="var(--foreground)">• 已栓塞：<tspan font-weight="700">6h内最佳(3d内仍可望有效)</tspan>溶栓+抗凝≥半年</text>
 
-        <text x="560" y="396" font-size="11.5" font-weight="700" fill="var(--warning)">3. 并发 AKI（尿量 &lt;400ml/d 慎渗透利尿）</text>
-        <text x="568" y="412" font-size="10.5" fill="var(--foreground)">• 大剂量袢利尿冲管型 + 碳酸氢钠碱化 + 血透脱水</text>
+        <text x="558" y="400" font-size="11" font-weight="700" fill="var(--warning)">3. 并发 AKI（尿量 &lt;400ml/d 慎渗透利尿）</text>
+        <text x="564" y="416" font-size="10.5" fill="var(--foreground)">• 袢利尿仍有效→较大剂量冲管型；碳酸氢钠碱化</text>
+        <text x="564" y="432" font-size="10.5" fill="var(--foreground)">• 利尿无效且达指征→血透，补血浆制品后适当脱水</text>
+        <text x="564" y="448" font-size="10.5" fill="var(--muted-foreground)">• 积极治疗原发病（多为微小病变型肾病）</text>
 
-        <text x="560" y="433" font-size="11.5" font-weight="700" fill="var(--success)">4. 代谢紊乱：他汀 / 氯贝丁酯；NS缓解即停</text>
-        <text x="568" y="448" font-size="10.5" fill="var(--muted-foreground)">• 利尿原则：不宜过快过猛，防高黏诱发血栓</text>
+        <text x="558" y="472" font-size="11" font-weight="700" fill="var(--success)">4. 代谢紊乱：他汀 / 氯贝丁酯；NS 缓解即停</text>
+        <text x="564" y="490" font-size="10.5" fill="var(--muted-foreground)">• 利尿原则：不宜过快过猛，防高黏诱发血栓</text>
       </svg>
     </div>
   </div>
@@ -1293,7 +1304,7 @@
       <li><strong>诊断 3 个方面</strong>：①明确是否为 NS（必备大量蛋白尿 + 低白蛋白血症）；②确认病因（<span class="k">必须首先除外继发性病因和遗传性疾病</span>才能诊原发性 NS，最好行肾活检作病理诊断）；③判定有无并发症。</li>
     </ol>
     <div class="callout info">
-      <strong>原文边界声明（大纲教学内容：肾活检适应证、相对禁忌证及并发症）</strong>：第 10 版第一章《总论》（P469）与第二章第五节《肾病综合征》（P483）仅阐述肾活检的常规三项检查与诊断/指导治疗/评估预后价值，<strong>未设肾活检适应证、相对禁忌证及并发症列表专节</strong>，严守原文不凭课外记忆补写。
+      <strong>原文边界声明（大纲教学内容：肾活检适应证、相对禁忌证及并发症）</strong>：第 10 版第一章《总论》（P469–470）已载明肾活检常规三项检查与诊断/指导治疗/预后价值，并明确列举对<strong>肾炎、肾病综合征、急性肾损伤及原因不明蛋白尿和/或血尿</strong>可通过肾穿刺明确病理类型；第二章第五节（P483）亦提示最好行肾活检作病理诊断。但<strong>上述映射章均未设完整的肾活检适应证、相对禁忌证及并发症清单专节</strong>，严守原文不凭课外记忆补写。
     </div>
     <div class="tbl-wrap">
       <table class="med-tbl">
@@ -1311,7 +1322,7 @@
   </div>
 
   <div class="card tier-master" data-tier="master">
-    <div class="card-hd"><h3 class="card-title">四、一般治疗、对症治疗、糖皮质激素三大原则与并发症防治（P484–485）</h3><span class="badge badge-m">掌握</span></div>
+    <div class="card-hd"><h3 class="card-title">四、一般治疗、对症治疗、糖皮质激素三大原则与并发症防治（P484–486）</h3><span class="badge badge-m">掌握</span></div>
     <ul>
       <li><strong>（一）一般治疗</strong>：休息避公共场所防感染，病情稳定适当活动防静脉血栓；<span class="k">正常量优质蛋白 0.8～1.0g/(kg·d)</span>（富含必需氨基酸动物蛋白；<span class="k">不主张高蛋白饮食</span>，因加重肾小球高滤过和蛋白尿）；热量足量（<span class="k">≥30～35kcal/(kg·d)</span>）；明显水肿<span class="k">低盐（&lt;2g/d）</span>；少饱和脂肪酸，多不饱和脂肪酸（植物油/鱼油）及可溶性纤维（燕麦/米糠/豆类）。</li>
       <li><strong>（二）对症治疗</strong>：
@@ -1338,9 +1349,9 @@
       </li>
       <li><strong>（四）四大并发症防治</strong>：
         <ul>
-          <li><strong>感染</strong>：<span class="k">激素治疗时无需抗生素预防感染</span>（反诱发真菌二重感染）；已感染及时用敏感强效无肾毒抗生素并除灶，严重难控考虑减/停激素。</li>
+          <li><strong>感染</strong>：<span class="k">通常在激素治疗时无需抗生素预防感染</span>（反诱发真菌二重感染）；一旦发现感染，及时选用敏感、强效且无肾毒性的抗生素积极治疗并尽快去除明确感染灶；严重感染难以控制时应视病人具体情况考虑减少或停用激素。</li>
           <li><strong>血栓栓塞</strong>：<span class="k">血清白蛋白 &lt;20g/L</span> 提示高凝即启预防性抗凝：肝素钠 1875～3750U 皮下 q6h 或低分子肝素 4000～5000U 皮下 qd/bid（维试管法凝血时间于正常 1 倍），或华法林（维 <span class="k">INR 1.5～2.5</span>），可辅抗血小板药（双嘧达莫、利伐沙班、阿司匹林）。已发血栓尽早（<span class="k">6 小时内最佳，3 天内仍可望有效</span>）尿激酶/链激酶溶栓 + 抗凝持续<span class="k">半年以上</span>。</li>
-          <li><strong>并发 AKI</strong>：①较大剂量袢利尿剂冲刷堵塞管型；②达透析指征行血液透析并在补血浆制品后脱水减间质水肿；③积极治疗原发病（多 MCD）；④口服碳酸氢钠碱化尿液减少管型。</li>
+          <li><strong>并发 AKI</strong>：①对袢利尿剂仍有效者予较大剂量冲刷堵塞的肾小管管型；②利尿无效并已达透析指征者行血液透析以维持生命，并在补充血浆制品后适当脱水减轻肾间质水肿；③积极治疗原发病（多为 MCD）；④口服碳酸氢钠碱化尿液减少管型形成。</li>
           <li><strong>代谢紊乱</strong>：调饮食结构；降脂选他汀类（HMG-CoA 还原酶抑制剂，降胆固醇）或氯贝丁酯类（降甘油三酯）；NS 缓解后高脂自然缓解即无需续药。</li>
         </ul>
       </li>
@@ -1367,6 +1378,21 @@
       </table>
     </div>
   </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">六、决定肾病综合征预后的四大因素（P486，大纲教学内容明列）</h3><span class="badge badge-f">熟悉</span></div>
+    <div class="tbl-wrap">
+      <table class="med-tbl">
+        <thead><tr><th>影响预后因素</th><th>第 10 版原文要点（第二章第五节 P486）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. 病理类型</strong></td><td><span class="k">微小病变型肾病</span>和<span class="k">轻度系膜增生性肾小球肾炎</span>预后较好；<span class="k">系膜毛细血管性肾炎、FSGS 及重度系膜增生性肾小球肾炎</span>预后较差。早期膜性肾病有一定缓解率，晚期难于缓解。</td></tr>
+          <tr><td><strong>2. 临床表现</strong></td><td>大量蛋白尿、严重高血压及肾功能损害者预后较差。</td></tr>
+          <tr><td><strong>3. 激素治疗效果</strong></td><td><span class="k">激素敏感者</span>预后相对较好，<span class="k">激素抵抗者</span>预后差。</td></tr>
+          <tr><td><strong>4. 并发症</strong></td><td><span class="k">反复感染</span>导致 NS 经常复发者预后差。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </section>
 
 <!-- ==================== MODULE 3 ==================== -->
@@ -1378,8 +1404,8 @@
     </div>
     <div class="syllabus-box">
       <div class="syl-row"><span class="syl-tag m">掌握</span><span>AKI 定义与 2012 KDIGO 分期标准（表 5-9-1）；临床表现（ATN 临床三期与全身尿毒症表现）及实验室/辅助检查（血、尿、FE<sub>Na</sub> 公式、影像、肾活检）；四步诊断思路与系统鉴别诊断（含表 5-9-2、PLR 与补液试验、与 CKD 鉴别）；治疗原则、营养与液体管理、高钾/代酸/心衰/感染急症处理及 RRT 紧急透析指征。</span></div>
-      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>AKI 肾前性（约 55%）、肾性（约 40%，以 ATN 最常见）、肾后性（约 5%）三大解剖分类及常见病因谱。</span></div>
-      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">了解项：AKI【发病机制和病理生理】专节（含缺血性 ATN 机制演变与肾内病理生理）及【病理】专节（大纲目标栏与《支撑关系表》双方一致定为“了解”）；大纲目标与支撑表未列的【预后】与【预防】专节。</span></div>
+      <div class="syl-row"><span class="syl-tag f">熟悉</span><span>AKI 肾前性（约 55%）、肾性（约 40%，以 ATN 最常见）、肾后性（约 5%）三大解剖分类及常见病因谱；AKI 预防概要（大纲【教学内容】明列“概述急性肾损伤的预防”且未标“了解”）。</span></div>
+      <div class="syl-row"><span class="syl-tag x">已剔除</span><span class="syl-excluded">了解项：AKI【发病机制和病理生理】专节（含缺血性 ATN 机制演变与肾内病理生理）及【病理】专节（【对应课程目标】与《支撑关系表》均明确定为“了解”）；大纲未要求的【预后】专节与非大纲流行病学/远期结局统计。</span></div>
     </div>
   </div>
 
@@ -1390,7 +1416,7 @@
       <button class="svg-zoom-btn" type="button">放大查看</button>
     </div>
     <div class="svg-stage">
-      <svg viewBox="0 0 880 465" width="100%" role="img" aria-label="急性肾损伤KDIGO分期、四步鉴别与并发症急救流程图">
+      <svg viewBox="0 0 880 510" width="100%" role="img" aria-label="急性肾损伤KDIGO分期、四步鉴别与并发症急救流程图">
         <defs>
           <marker id="arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
             <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
@@ -1401,75 +1427,79 @@
         </defs>
 
         <!-- Band 1: KDIGO Staging -->
-        <rect x="8" y="8" width="864" height="122" rx="10" fill="var(--primary)" fill-opacity="0.06" stroke="var(--border)" />
-        <text x="22" y="29" font-size="13" font-weight="700" fill="var(--primary)">① 2012 KDIGO AKI 诊断与分期标准（满足任一即可诊断：48h Scr↑≥26.5μmol/L ｜ 7d Scr↑≥50% ｜ 尿量&lt;0.5ml/kg/h ≥6h）</text>
+        <rect x="8" y="8" width="864" height="128" rx="10" fill="var(--primary)" fill-opacity="0.06" stroke="var(--border)" />
+        <text x="22" y="29" font-size="13" font-weight="700" fill="var(--primary)">① 2012 KDIGO AKI 诊断与分期标准（满足任一：48h Scr↑≥26.5μmol/L ｜ 7d Scr↑≥50% ｜ 尿量&lt;0.5ml/(kg·h) ≥6h）</text>
 
-        <rect x="20" y="40" width="256" height="80" rx="8" fill="var(--card)" stroke="var(--warning)" stroke-width="1.5" />
-        <text x="148" y="59" text-anchor="middle" font-size="12" font-weight="700" fill="var(--warning)">AKI 1 期</text>
-        <text x="30" y="79" font-size="11" fill="var(--foreground)">• Scr：↑≥0.3mg/dl(26.5μmol/L)</text>
-        <text x="38" y="95" font-size="11" fill="var(--foreground)">或相对升高 ≥50%，但 &lt;1 倍</text>
-        <text x="30" y="112" font-size="11" fill="var(--primary)">• 尿量：&lt;0.5ml/(kg·h) (6–12h)</text>
+        <rect x="18" y="40" width="254" height="86" rx="8" fill="var(--card)" stroke="var(--warning)" stroke-width="1.5" />
+        <text x="145" y="59" text-anchor="middle" font-size="12" font-weight="700" fill="var(--warning)">AKI 1 期</text>
+        <text x="28" y="78" font-size="10.5" fill="var(--foreground)">• Scr：↑≥0.3mg/dl(≥26.5μmol/L)</text>
+        <text x="36" y="95" font-size="10.5" fill="var(--foreground)">或相对升高 ≥50%，但 &lt;1 倍</text>
+        <text x="28" y="114" font-size="10.5" fill="var(--primary)">• 尿量：&lt;0.5ml/(kg·h) (≥6且&lt;12h)</text>
 
-        <line x1="278" y1="80" x2="304" y2="80" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr3)" />
+        <line x1="274" y1="83" x2="294" y2="83" stroke="var(--primary)" stroke-width="2" marker-end="url(#arr3)" />
 
-        <rect x="308" y="40" width="232" height="80" rx="8" fill="var(--card)" stroke="var(--chart-4)" stroke-width="1.5" />
-        <text x="424" y="59" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-4)">AKI 2 期</text>
-        <text x="318" y="81" font-size="11" fill="var(--foreground)">• Scr：相对升高 <tspan font-weight="700">≥1 倍，&lt;2 倍</tspan></text>
-        <text x="318" y="103" font-size="11" fill="var(--primary)">• 尿量：&lt;0.5ml/(kg·h) (12–24h)</text>
+        <rect x="298" y="40" width="234" height="86" rx="8" fill="var(--card)" stroke="var(--chart-4)" stroke-width="1.5" />
+        <text x="415" y="59" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-4)">AKI 2 期</text>
+        <text x="308" y="82" font-size="10.5" fill="var(--foreground)">• Scr：相对升高 <tspan font-weight="700">≥1 倍，但 &lt;2 倍</tspan></text>
+        <text x="308" y="106" font-size="10.5" fill="var(--primary)">• 尿量：&lt;0.5ml/(kg·h) (≥12且&lt;24h)</text>
 
-        <line x1="542" y1="80" x2="568" y2="80" stroke="var(--error)" stroke-width="2" marker-end="url(#arr3r)" />
+        <line x1="534" y1="83" x2="554" y2="83" stroke="var(--error)" stroke-width="2" marker-end="url(#arr3r)" />
 
-        <rect x="572" y="40" width="288" height="80" rx="8" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" stroke-width="1.5" />
-        <text x="716" y="59" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">AKI 3 期（危重）</text>
-        <text x="582" y="78" font-size="11" fill="var(--foreground)">• Scr ≥4.0mg/dl(353.6) / ≥2倍 / 启RRT</text>
-        <text x="590" y="94" font-size="10.5" fill="var(--muted-foreground)">或 &lt;18岁 eGFR &lt;35ml/(min·1.73m²)</text>
-        <text x="582" y="112" font-size="11" fill="var(--error)" font-weight="700">• 尿量 &lt;0.3(≥24h) 或 无尿 ≥12h</text>
+        <rect x="558" y="40" width="304" height="86" rx="8" fill="var(--error)" fill-opacity="0.10" stroke="var(--error)" stroke-width="1.5" />
+        <text x="710" y="59" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">AKI 3 期（危重）</text>
+        <text x="568" y="77" font-size="10.5" fill="var(--foreground)">• Scr ≥4.0mg/dl(≥353.6μmol/L) 或相对↑≥2倍</text>
+        <text x="576" y="94" font-size="10" fill="var(--muted-foreground)">或开始 RRT 或 &lt;18岁 eGFR&lt;35ml/(min·1.73m²)</text>
+        <text x="568" y="114" font-size="10.5" fill="var(--error)" font-weight="700">• 尿量 &lt;0.3ml/(kg·h)(≥24h) 或 无尿 ≥12h</text>
 
         <!-- Band 2: Differential Matrix -->
-        <rect x="8" y="142" width="864" height="156" rx="10" fill="var(--card)" stroke="var(--border)" />
-        <text x="22" y="163" font-size="13" font-weight="700" fill="var(--foreground)">② 四步诊断思路：确认肾损 → 排危重并发症 → 辨急性/CKD(双肾正常或大) → 肾前 / 肾性 / 肾后鉴别</text>
+        <rect x="8" y="146" width="864" height="156" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="22" y="167" font-size="13" font-weight="700" fill="var(--foreground)">② 四步诊断思路：确认肾损 → 排危重并发症 → 辨急性/CKD(双肾正常或大) → 肾前 / 肾性 / 肾后鉴别</text>
 
-        <rect x="20" y="175" width="276" height="112" rx="8" fill="var(--success)" fill-opacity="0.08" stroke="var(--success)" />
-        <text x="158" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="var(--success)">肾前性 AKI（约 55%）</text>
-        <text x="30" y="213" font-size="11" fill="var(--foreground)">• 尿比重 <tspan font-weight="700">&gt;1.018</tspan> ｜ 尿渗 <tspan font-weight="700">&gt;500</tspan></text>
-        <text x="30" y="230" font-size="11" fill="var(--foreground)">• 尿钠 <tspan font-weight="700">&lt;10</tspan> ｜ BUN/Scr <tspan font-weight="700">&gt;20</tspan> ｜ U/PCr &gt;40</text>
-        <text x="30" y="247" font-size="11" fill="var(--success)" font-weight="700">• FE_Na &lt;1% ｜ 肾衰指数 &lt;1 ｜ 透明管型</text>
-        <text x="30" y="264" font-size="10.5" fill="var(--muted-foreground)">• PLR(SV↑&gt;10%) / 补液试验阳性支持</text>
-        <text x="30" y="280" font-size="10.5" fill="var(--muted-foreground)">• 输液及用利尿剂前留尿！</text>
+        <rect x="20" y="179" width="276" height="112" rx="8" fill="var(--success)" fill-opacity="0.08" stroke="var(--success)" />
+        <text x="158" y="198" text-anchor="middle" font-size="12" font-weight="700" fill="var(--success)">肾前性 AKI（约 55%）</text>
+        <text x="30" y="217" font-size="11" fill="var(--foreground)">• 尿比重 <tspan font-weight="700">&gt;1.018</tspan> ｜ 尿渗 <tspan font-weight="700">&gt;500</tspan></text>
+        <text x="30" y="234" font-size="11" fill="var(--foreground)">• 尿钠 <tspan font-weight="700">&lt;10</tspan> ｜ BUN/Scr <tspan font-weight="700">&gt;20</tspan> ｜ U/PCr &gt;40</text>
+        <text x="30" y="251" font-size="11" fill="var(--success)" font-weight="700">• FE_Na &lt;1% ｜ 肾衰指数 &lt;1 ｜ 透明管型</text>
+        <text x="30" y="268" font-size="10.5" fill="var(--muted-foreground)">• PLR(SV↑&gt;10%) / 补液试验阳性支持</text>
+        <text x="30" y="284" font-size="10.5" fill="var(--muted-foreground)">• 输液及用利尿剂前留尿！</text>
 
-        <rect x="308" y="175" width="286" height="112" rx="8" fill="var(--error)" fill-opacity="0.08" stroke="var(--error)" />
-        <text x="451" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">肾性 AKI（约 40%，ATN 最常见）</text>
-        <text x="318" y="213" font-size="11" fill="var(--foreground)">• ATN：比重 <tspan font-weight="700">&lt;1.012</tspan> ｜ 尿渗 <tspan font-weight="700">&lt;250</tspan></text>
-        <text x="318" y="230" font-size="11" fill="var(--foreground)">• 尿钠 <tspan font-weight="700">&gt;20</tspan> ｜ BUN/Scr &lt;10–15 ｜ U/PCr &lt;20</text>
-        <text x="318" y="247" font-size="11" fill="var(--error)" font-weight="700">• FE_Na ≥1% ｜ 肾衰指数 ≥1 ｜ 棕色颗粒管型</text>
-        <text x="318" y="264" font-size="10.5" fill="var(--foreground)">• AIN：嗜酸细胞尿 &gt;5%、FE_Na &gt;1%、皮疹</text>
-        <text x="318" y="280" font-size="10.5" fill="var(--muted-foreground)">• 肾小球病：畸形RBC/大量蛋白、FE_Na &lt;1%</text>
+        <rect x="308" y="179" width="286" height="112" rx="8" fill="var(--error)" fill-opacity="0.08" stroke="var(--error)" />
+        <text x="451" y="198" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">肾性 AKI（约 40%，ATN 最常见）</text>
+        <text x="318" y="217" font-size="11" fill="var(--foreground)">• ATN：比重 <tspan font-weight="700">&lt;1.012</tspan> ｜ 尿渗 <tspan font-weight="700">&lt;250</tspan></text>
+        <text x="318" y="234" font-size="11" fill="var(--foreground)">• 尿钠 <tspan font-weight="700">&gt;20</tspan> ｜ BUN/Scr &lt;10–15 ｜ U/PCr &lt;20</text>
+        <text x="318" y="251" font-size="11" fill="var(--error)" font-weight="700">• FE_Na ≥1% ｜ 肾衰指数 ≥1 ｜ 棕色颗粒管型</text>
+        <text x="318" y="268" font-size="10.5" fill="var(--foreground)">• AIN：嗜酸细胞尿 &gt;5%、FE_Na &gt;1%、皮疹</text>
+        <text x="318" y="284" font-size="10.5" fill="var(--muted-foreground)">• 肾小球病：畸形RBC/大量蛋白、FE_Na &lt;1%</text>
 
-        <rect x="606" y="175" width="254" height="112" rx="8" fill="var(--chart-1)" fill-opacity="0.08" stroke="var(--chart-1)" />
-        <text x="733" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-1)">肾后性 AKI（约 5%）</text>
-        <text x="616" y="214" font-size="11" fill="var(--foreground)">• 结石/盆腔肿瘤/手术史</text>
-        <text x="616" y="232" font-size="11" fill="var(--error)" font-weight="600">• 突发完全无尿 / 间歇无尿 / 绞痛</text>
-        <text x="616" y="250" font-size="11" fill="var(--foreground)">• 尿检多不明显，FE_Na &lt;1%</text>
-        <text x="616" y="268" font-size="11" fill="var(--primary)" font-weight="700">• 首选超声 + 导尿(兼诊治)解除梗阻</text>
-        <text x="616" y="283" font-size="10.5" fill="var(--muted-foreground)">• 肿瘤压迫：输尿管支架/肾盂造瘘</text>
+        <rect x="606" y="179" width="254" height="112" rx="8" fill="var(--chart-1)" fill-opacity="0.08" stroke="var(--chart-1)" />
+        <text x="733" y="198" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-1)">肾后性 AKI（约 5%）</text>
+        <text x="616" y="218" font-size="11" fill="var(--foreground)">• 结石/盆腔肿瘤/手术史</text>
+        <text x="616" y="236" font-size="11" fill="var(--error)" font-weight="600">• 突发完全无尿 / 间歇无尿 / 绞痛</text>
+        <text x="616" y="254" font-size="11" fill="var(--foreground)">• 尿检多不明显，FE_Na &lt;1%</text>
+        <text x="616" y="271" font-size="10.5" fill="var(--primary)" font-weight="700">• 超声助鉴别；膀胱导尿兼诊治</text>
+        <text x="616" y="286" font-size="10" fill="var(--muted-foreground)">• 按部位解梗阻(导尿/支架/肾盂造瘘)</text>
 
         <!-- Band 3: Emergency Management & RRT -->
-        <rect x="8" y="310" width="864" height="147" rx="10" fill="var(--error)" fill-opacity="0.05" stroke="var(--border)" />
-        <text x="22" y="331" font-size="13" font-weight="700" fill="var(--error)">③ AKI 急症抢救（高钾血症四步 + 代酸/心衰）与 RRT 紧急透析指征</text>
+        <rect x="8" y="314" width="864" height="188" rx="10" fill="var(--error)" fill-opacity="0.05" stroke="var(--border)" />
+        <text x="22" y="335" font-size="13" font-weight="700" fill="var(--error)">③ AKI 急症抢救（高钾血症四步 + 严重代酸/心衰）与 RRT 紧急透析指征</text>
 
-        <rect x="20" y="343" width="440" height="102" rx="8" fill="var(--card)" stroke="var(--error)" />
-        <text x="32" y="362" font-size="12" font-weight="700" fill="var(--error)">高钾血症紧急处理（血钾 &gt;6mmol/L 或 ECG/神经肌肉表现）</text>
-        <text x="32" y="381" font-size="11" fill="var(--foreground)">① <tspan font-weight="700">停钾</tspan>：停用一切含钾药物及食物</text>
-        <text x="32" y="398" font-size="11" fill="var(--foreground)">② <tspan font-weight="700">稳心肌</tspan>：10% 葡萄糖酸钙稀释后静推</text>
-        <text x="32" y="415" font-size="11" fill="var(--foreground)">③ <tspan font-weight="700">促入胞</tspan>：GS+胰岛素(糖:胰岛素≈4:1) + 5% NaHCO₃ 250ml</text>
-        <text x="32" y="432" font-size="11" fill="var(--primary)" font-weight="700">④ 排钾：降钾树脂 / 袢利尿 / 急诊血透(降钾最有效)</text>
+        <rect x="20" y="346" width="416" height="144" rx="8" fill="var(--card)" stroke="var(--error)" />
+        <text x="32" y="365" font-size="11.5" font-weight="700" fill="var(--error)">高钾血症紧急处理（血钾 &gt;6mmol/L 或 ECG/神经肌肉表现）</text>
+        <text x="32" y="385" font-size="10.5" fill="var(--foreground)">① <tspan font-weight="700">停钾</tspan>：停用一切含钾药物及食物</text>
+        <text x="32" y="403" font-size="10.5" fill="var(--foreground)">② <tspan font-weight="700">稳心肌</tspan>：10% 葡萄糖酸钙稀释后静推</text>
+        <text x="32" y="421" font-size="10.5" fill="var(--foreground)">③ <tspan font-weight="700">促入胞</tspan>：GS+胰岛素（糖:胰岛素 ≈ 4:1）静滴</text>
+        <text x="32" y="439" font-size="10.5" fill="var(--foreground)">   <tspan font-weight="700" fill="var(--primary)">伴代谢性酸中毒者</tspan>：5% NaHCO₃ 250ml 静滴</text>
+        <text x="32" y="458" font-size="10.5" fill="var(--primary)" font-weight="700">④ 排钾：降钾树脂 / 袢利尿 / 急诊血透(降钾最有效)</text>
+        <text x="32" y="478" font-size="10" fill="var(--muted-foreground)">（严重代酸：静脉HCO₃⁻&lt;12 或 动脉pH&lt;7.15–7.2 纠酸同时急透）</text>
 
-        <rect x="474" y="343" width="386" height="102" rx="8" fill="var(--card)" stroke="var(--primary)" />
-        <text x="486" y="362" font-size="12" font-weight="700" fill="var(--primary)">RRT 紧急透析 4 大指征 &amp; 营养补液要点</text>
-        <text x="486" y="381" font-size="11" fill="var(--error)" font-weight="600">• 紧急透析：pH&lt;7.2(或静脉HCO₃⁻&lt;12) ｜ K⁺&gt;6.5mmol/L</text>
-        <text x="494" y="397" font-size="11" fill="var(--error)" font-weight="600">利尿无效肺水肿 ｜ 尿毒症脑病/心包炎/癫痫发作</text>
-        <text x="486" y="415" font-size="11" fill="var(--foreground)">• 血流动力学不稳 / 急性脑损伤：<tspan font-weight="700" fill="var(--primary)">CRRT 更具优势</tspan></text>
-        <text x="486" y="432" font-size="11" fill="var(--foreground)">• 补液 ≈ 前日尿量+500ml；危重血糖 6.11–8.27mmol/L</text>
+        <rect x="448" y="346" width="412" height="144" rx="8" fill="var(--card)" stroke="var(--primary)" />
+        <text x="460" y="365" font-size="11.5" font-weight="700" fill="var(--primary)">RRT 紧急透析 4 大指征（预计内科保守无效）与营养补液</text>
+        <text x="460" y="385" font-size="10.5" fill="var(--error)" font-weight="600">① 严重代谢性酸中毒（动脉血 pH &lt;7.2）</text>
+        <text x="460" y="402" font-size="10.5" fill="var(--error)" font-weight="600">② 高钾血症（K⁺ &gt;6.5mmol/L 或出现严重心律失常等）</text>
+        <text x="460" y="419" font-size="10.5" fill="var(--error)" font-weight="600">③ 积极利尿治疗无效的严重肺水肿</text>
+        <text x="460" y="436" font-size="10.5" fill="var(--error)" font-weight="600">④ 严重尿毒症症状（脑病 / 心包炎 / 癫痫发作等）</text>
+        <text x="460" y="457" font-size="10.5" fill="var(--foreground)">• 血流动力学<tspan font-weight="700">严重</tspan>不稳定 / 合并急性脑损伤：<tspan font-weight="700" fill="var(--primary)">CRRT 更具优势</tspan></text>
+        <text x="460" y="476" font-size="10.5" fill="var(--foreground)">• 补液 ≈ 前日尿量+500ml；危重血糖 6.11–8.27mmol/L</text>
       </svg>
     </div>
   </div>
@@ -1479,7 +1509,7 @@
 
   <div class="card tier-master" data-tier="master">
     <div class="card-hd"><h3 class="card-title">一、AKI 定义与 2012 KDIGO 分期标准（表 5-9-1，P518、P521）</h3><span class="badge badge-m">掌握</span></div>
-    <p><strong>急性肾损伤（AKI）</strong>是各种病因引起短时间内肾功能快速减退的临床综合征（GFR 下降，伴 Scr/BUN 潴留、水电酸碱紊乱及多系统并发症）。住院发病率 10%～15%，ICU 高达 50%，约 10% 需 RRT，住院相关死亡率 23%，存活者远期 CKD/ESRD 风险显著增加。</p>
+    <p><strong>急性肾损伤（AKI）</strong>是由各种病因引起短时间内肾功能快速减退而导致的临床综合征，表现为肾小球滤过率（GFR）下降，伴有肌酐、尿素氮等潴留，水、电解质和酸碱平衡紊乱，重者出现多系统并发症。</p>
     <p><strong>临床诊断标准（符合以下任一即可）</strong>：①<span class="k">48 小时内 Scr 升高 ≥0.3mg/dl（≥26.5μmol/L）</span>；②<span class="k">7 天内 Scr 较基础值升高 ≥50%</span>；③<span class="k">尿量减少 [&lt;0.5ml/(kg·h)，持续时间 ≥6 小时]</span>。</p>
     <div class="tbl-wrap">
       <table class="med-tbl">
@@ -1544,7 +1574,7 @@
     </div>
     <ul>
       <li><strong>容量反应性床旁试验</strong>：①<strong>补液试验</strong>：输 5% 葡萄糖 200～250ml 并静注呋塞米 40～100mg，补容后血压复常、尿量增支持肾前性 AKI（低血压过长/老年心衰补液尿量不增疑已转 ATN）；②<strong>被动抬腿试验（PLR）</strong>：模拟内源快补液，基础 45° 半卧位→上身放平+双下肢被动抬高 <span class="k">45° 持续 1 分钟</span>，回心血量增 250～450ml，<span class="k">每搏输出量增加 &gt;10%</span> 为容量有反应性。</li>
-      <li><strong>与其他 4 类鉴别</strong>：①<strong>肾后性 AKI</strong>：结石/盆腔肿瘤/手术史，突发完全或间歇无尿、肾绞痛，膀胱导尿兼诊治+超声确诊；②<strong>肾小球/微血管病</strong>：肾炎/NS 表现、光过敏/咯血/免疫异常、重蛋白尿/血尿管型、数周进展少完全无尿→尽早肾活检；③<strong>AIN</strong>：药敏/感染史、肾区痛、发热皮疹关节痛、血嗜酸性粒细胞增→尽早肾活检；④<strong>急性肾动脉闭塞与肾静脉血栓</strong>：动脉闭塞多见动脉粥样硬化/心附壁血栓脱落/主动脉夹层；急性肾静脉血栓见于成人 NS/肾癌/外伤/脱水患儿，多伴下腔静脉阻塞综合征、严重腰痛与血尿→肾血管影像确诊。</li>
+      <li><strong>与其他 4 类鉴别</strong>：①<strong>肾后性 AKI</strong>：结石/盆腔肿瘤/手术史，突发完全或间歇无尿、肾绞痛，膀胱导尿兼诊治，超声等影像学检查协助鉴别；②<strong>肾小球/微血管病</strong>：肾炎/NS 表现、光过敏/咯血/免疫异常、重蛋白尿/血尿管型、数周进展少完全无尿→尽早肾活检；③<strong>AIN</strong>：药敏/感染史、肾区痛、发热皮疹关节痛、血嗜酸性粒细胞增→尽早肾活检；④<strong>急性肾动脉闭塞与肾静脉血栓</strong>：动脉闭塞多见动脉粥样硬化/心附壁血栓脱落/主动脉夹层；急性肾静脉血栓见于成人 NS/肾癌/外伤/脱水患儿，多伴下腔静脉阻塞综合征、严重腰痛与血尿→肾血管影像确诊。</li>
     </ul>
   </div>
 
@@ -1598,6 +1628,15 @@
       </table>
     </div>
   </div>
+
+  <div class="card tier-familiar" data-tier="familiar">
+    <div class="card-hd"><h3 class="card-title">六、急性肾损伤的预防概要（P524，大纲教学内容明列）</h3><span class="badge badge-f">熟悉</span></div>
+    <ul>
+      <li><strong>总体关键</strong>：积极治疗原发病，及时去除 AKI 发病诱因，纠正发病危险因素。</li>
+      <li><strong>高危人群分期针对性预防</strong>：高危病人即将或已受 AKI 病因打击时，及时纠正肾前性因素并维持血流动力学稳定；<span class="k">出血性休克扩容首选等张晶体溶液</span>，血管源性休克扩容同时适当用缩血管药物，腹腔间隔室综合征及时纠正腹腔内高压。</li>
+      <li><strong>肾毒性暴露管理</strong>：全面评估高危病人暴露于肾毒性药物或诊疗操作的必要性，尽量避免使用肾毒性药物；必须使用时，按肾功能调整剂型、剂量、用法并密切监测肾功能。</li>
+    </ul>
+  </div>
 </section>
 
 <!-- ==================== MODULE 4 ==================== -->
@@ -1621,7 +1660,7 @@
       <button class="svg-zoom-btn" type="button">放大查看</button>
     </div>
     <div class="svg-stage">
-      <svg viewBox="0 0 880 465" width="100%" role="img" aria-label="慢性肾脏病K/DOQI分期、营养阶梯与核心并发症靶标管理图">
+      <svg viewBox="0 0 880 520" width="100%" role="img" aria-label="慢性肾脏病K/DOQI分期、营养阶梯与核心并发症靶标管理图">
         <defs>
           <marker id="arr4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
             <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--primary)" />
@@ -1632,8 +1671,8 @@
         </defs>
 
         <!-- Band 1: CKD 1-5 Stages & Protein / RRT Ladder -->
-        <rect x="8" y="8" width="864" height="148" rx="10" fill="var(--primary)" fill-opacity="0.06" stroke="var(--border)" />
-        <text x="22" y="29" font-size="13" font-weight="700" fill="var(--primary)">① K/DOQI CKD 1～5 期分期（GFR 单位：ml/(min·1.73m²)）、饮食蛋白阶梯与 RRT 时机（CRF 多等同 CKD 4～5 期）</text>
+        <rect x="8" y="8" width="864" height="170" rx="10" fill="var(--primary)" fill-opacity="0.06" stroke="var(--border)" />
+        <text x="22" y="29" font-size="13" font-weight="700" fill="var(--primary)">① K/DOQI CKD 1～5 期分期（GFR 单位：ml/(min·1.73m²)）、营养阶梯与 RRT 时机（CRF 多等同 CKD 4～5 期）</text>
 
         <rect x="18" y="40" width="128" height="72" rx="7" fill="var(--card)" stroke="var(--success)" />
         <text x="82" y="58" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--success)">1 期：≥90</text>
@@ -1656,70 +1695,74 @@
         <rect x="436" y="40" width="132" height="72" rx="7" fill="var(--card)" stroke="var(--warning)" />
         <text x="502" y="58" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--warning)">3b 期：30–44</text>
         <text x="502" y="75" text-anchor="middle" font-size="10.5" fill="var(--foreground)">评估/治疗并发症</text>
-        <text x="502" y="92" text-anchor="middle" font-size="10" fill="var(--primary)" font-weight="600">0.6+α-酮酸｜限钾</text>
+        <text x="502" y="92" text-anchor="middle" font-size="10" fill="var(--primary)" font-weight="600">蛋白0.6–0.8·适限钾</text>
         <text x="502" y="106" text-anchor="middle" font-size="10" fill="var(--muted-foreground)">磷 &lt;800mg/d</text>
 
         <rect x="578" y="40" width="136" height="72" rx="7" fill="var(--error)" fill-opacity="0.08" stroke="var(--chart-4)" stroke-width="1.5" />
         <text x="646" y="58" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--chart-4)">4 期：15–29</text>
         <text x="646" y="75" text-anchor="middle" font-size="10.5" fill="var(--foreground)">综合治·<tspan font-weight="700">RRT准备</tspan></text>
-        <text x="646" y="92" text-anchor="middle" font-size="10" fill="var(--error)" font-weight="600">&lt;30 餐中磷结合剂</text>
+        <text x="646" y="92" text-anchor="middle" font-size="10" fill="var(--error)" font-weight="600">&lt;30可用磷结合剂</text>
         <text x="646" y="106" text-anchor="middle" font-size="10" fill="var(--muted-foreground)">&lt;25高AG代酸/高钾</text>
 
         <rect x="724" y="40" width="138" height="72" rx="7" fill="var(--error)" fill-opacity="0.14" stroke="var(--error)" stroke-width="1.5" />
         <text x="793" y="58" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--error)">5 期：&lt;15(ESRD)</text>
         <text x="793" y="75" text-anchor="middle" font-size="10.5" fill="var(--error)" font-weight="700">适时 RRT 启动</text>
-        <text x="793" y="92" text-anchor="middle" font-size="10" fill="var(--foreground)">非糖&lt;10｜糖&lt;15</text>
+        <text x="793" y="92" text-anchor="middle" font-size="10" fill="var(--foreground)">时机尚不定(详下方)</text>
         <text x="793" y="106" text-anchor="middle" font-size="10" fill="var(--primary)" font-weight="600">透析蛋白 1.0–1.2</text>
 
-        <text x="22" y="142" font-size="11" fill="var(--foreground)">• 热量恒足：<tspan font-weight="700">30–35kcal/(kg·d)</tspan> ｜ 尿蛋白靶标：<tspan font-weight="700">&lt;0.5g/24h</tspan> ｜ GFR 降速 &lt;4/年 ｜ 护肾新药：<tspan font-weight="700" fill="var(--primary)">ACEI/ARB(不联用) + SGLT2i + 非奈利酮/GLP-1RA</tspan></text>
+        <text x="20" y="133" font-size="10.5" fill="var(--foreground)">• 营养：CKD 3期起非透析 0.6–0.8g/(kg·d)（有条件可在 0.6 基础上补 α-酮酸）；热量 <tspan font-weight="700">30–35kcal/(kg·d)</tspan>；尿蛋白 &lt;0.5g/24h</text>
+        <text x="20" y="150" font-size="10.5" fill="var(--foreground)">• RRT 启动（时机尚不确定）：非糖尿病通常 <tspan font-weight="700">GFR &lt;10ml/(min·1.73m²)</tspan> 并有明显尿毒症表现；糖尿病<tspan font-weight="700">可适当提前至 &lt;15</tspan></text>
+        <text x="20" y="167" font-size="10.5" fill="var(--primary)">• 护肾药类（分人群选用，非普遍联用）：ACEI/ARB（不联用）｜ SGLT2i（糖/非糖均可）｜ 非奈利酮、GLP-1RA（限糖尿病相关/合并 CKD）</text>
 
         <!-- Band 2: 4 Core Complications Targets -->
-        <rect x="8" y="168" width="864" height="172" rx="10" fill="var(--card)" stroke="var(--border)" />
-        <text x="22" y="189" font-size="13" font-weight="700" fill="var(--error)">② 慢性肾衰竭四大重点并发症靶标与用药红线（心血管病为第一死因 45%–60%，感染为第二死因）</text>
+        <rect x="8" y="188" width="864" height="206" rx="10" fill="var(--card)" stroke="var(--border)" />
+        <text x="22" y="209" font-size="13" font-weight="700" fill="var(--error)">② 慢性肾衰竭四大重点并发症靶标与用药红线（心血管病为第一死因 45%–60%，感染为第二死因）</text>
 
-        <rect x="20" y="201" width="204" height="126" rx="8" fill="var(--primary)" fill-opacity="0.07" stroke="var(--primary)" />
-        <text x="122" y="220" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">1. 肾性高血压</text>
-        <text x="30" y="239" font-size="11" fill="var(--foreground)">• 非透析：<tspan font-weight="700">&lt;130/80mmHg</tspan></text>
-        <text x="30" y="256" font-size="11" fill="var(--foreground)">• 维持透析：<tspan font-weight="700">≤140/90mmHg</tspan></text>
-        <text x="30" y="273" font-size="11" fill="var(--foreground)">• 广泛用：ACEI/ARB/CCB</text>
-        <text x="30" y="290" font-size="10.5" fill="var(--error)" font-weight="600">• 慎用：双肾动狭/Scr&gt;256</text>
-        <text x="30" y="306" font-size="10.5" fill="var(--error)" font-weight="600">• 不推荐 ACEI+ARB 联用</text>
-        <text x="30" y="321" font-size="10" fill="var(--muted-foreground)">限钠≤2g/d(NaCl≤5g/d)</text>
+        <rect x="20" y="221" width="204" height="162" rx="8" fill="var(--primary)" fill-opacity="0.07" stroke="var(--primary)" />
+        <text x="122" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="var(--primary)">1. 肾性高血压</text>
+        <text x="30" y="262" font-size="10.5" fill="var(--foreground)">• 非透析：<tspan font-weight="700">&lt;130/80mmHg</tspan></text>
+        <text x="30" y="281" font-size="10.5" fill="var(--foreground)">• 维持透析：<tspan font-weight="700">≤140/90mmHg</tspan></text>
+        <text x="30" y="300" font-size="10.5" fill="var(--foreground)">• 广泛用：ACEI / ARB / CCB</text>
+        <text x="30" y="319" font-size="10.5" fill="var(--error)" font-weight="600">• 慎用：双肾动狭/Scr&gt;256</text>
+        <text x="30" y="338" font-size="10.5" fill="var(--error)" font-weight="600">• 不推荐 ACEI+ARB 联用</text>
+        <text x="30" y="357" font-size="10" fill="var(--muted-foreground)">• 限钠 ≤2g/d (NaCl ≤5g/d)</text>
 
-        <rect x="234" y="201" width="204" height="126" rx="8" fill="var(--error)" fill-opacity="0.07" stroke="var(--error)" />
-        <text x="336" y="220" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">2. 肾性贫血（EPO缺乏）</text>
-        <text x="244" y="239" font-size="11" fill="var(--foreground)">• 启动：Hb <tspan font-weight="700">&lt;100g/L</tspan>(防&lt;90)</text>
-        <text x="244" y="256" font-size="11" fill="var(--error)" font-weight="700">• 靶标：110–120(忌&gt;130)</text>
-        <text x="244" y="273" font-size="11" fill="var(--foreground)">• rHuEPO 皮下省量 1/4–1/3</text>
-        <text x="244" y="290" font-size="11" fill="var(--primary)" font-weight="600">• 口服新药：罗沙司他</text>
-        <text x="244" y="306" font-size="10.5" fill="var(--foreground)">• 查铁蛋白/TSAT·静脉蔗糖铁</text>
-        <text x="244" y="321" font-size="10" fill="var(--muted-foreground)">• 通常不输红细胞(防致敏)</text>
+        <rect x="234" y="221" width="204" height="162" rx="8" fill="var(--error)" fill-opacity="0.07" stroke="var(--error)" />
+        <text x="336" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">2. 肾性贫血（EPO缺乏）</text>
+        <text x="242" y="259" font-size="10" fill="var(--foreground)">• 排除失血及造血原料缺乏后：</text>
+        <text x="244" y="275" font-size="10" fill="var(--foreground)">  透析 Hb&lt;100可虑rHuEPO(防&lt;90)</text>
+        <text x="244" y="291" font-size="10" fill="var(--foreground)">  非透析 Hb&lt;100个体化评估</text>
+        <text x="242" y="309" font-size="10.5" fill="var(--error)" font-weight="700">• 靶标：110–120g/L(不建议&gt;130)</text>
+        <text x="242" y="326" font-size="10" fill="var(--foreground)">• 皮下省量 1/4–1/3；口服罗沙司他</text>
+        <text x="242" y="343" font-size="10" fill="var(--foreground)">• 查铁蛋白/TSAT·静脉蔗糖铁</text>
+        <text x="242" y="360" font-size="10" fill="var(--muted-foreground)">• 通常不输红细胞（防致敏）</text>
 
-        <rect x="448" y="201" width="204" height="126" rx="8" fill="var(--warning)" fill-opacity="0.08" stroke="var(--warning)" />
-        <text x="550" y="220" text-anchor="middle" font-size="12" font-weight="700" fill="var(--warning)">3. 钙磷紊乱与 CKD-MBD</text>
-        <text x="458" y="239" font-size="11" fill="var(--foreground)">• 低钙：骨化三醇 0.25–0.5μg</text>
-        <text x="458" y="256" font-size="11" fill="var(--primary)" font-weight="700">• 透析 iPTH：150–300pg/ml</text>
-        <text x="458" y="273" font-size="10.5" fill="var(--foreground)">• &gt;500 冲击；高钙磷用<tspan font-weight="700">西那卡塞</tspan></text>
-        <text x="458" y="290" font-size="10.5" fill="var(--error)" font-weight="600">• &gt;1000 警惕甲状旁腺腺瘤</text>
-        <text x="458" y="306" font-size="10.5" fill="var(--foreground)">• 磷结合剂餐中服(司维拉姆/镧)</text>
-        <text x="458" y="321" font-size="10" fill="var(--error)">• 血磷&gt;2.26或高钙暂停钙剂</text>
+        <rect x="448" y="221" width="204" height="162" rx="8" fill="var(--warning)" fill-opacity="0.08" stroke="var(--warning)" />
+        <text x="550" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="var(--warning)">3. 钙磷紊乱与 CKD-MBD</text>
+        <text x="456" y="259" font-size="10" fill="var(--foreground)">• 明显低钙：骨化三醇 0.25μg/d</text>
+        <text x="458" y="274" font-size="10" fill="var(--muted-foreground)">  连服2–4周无改善增至0.5μg/d</text>
+        <text x="456" y="291" font-size="10" fill="var(--primary)" font-weight="700">• 维持透析 iPTH：150–300pg/ml</text>
+        <text x="456" y="308" font-size="10" fill="var(--foreground)">• &gt;500 无高磷高钙可考虑冲击</text>
+        <text x="456" y="325" font-size="10" fill="var(--foreground)">• 继发甲旁亢伴高钙磷：西那卡塞</text>
+        <text x="456" y="342" font-size="10" fill="var(--error)" font-weight="600">• &gt;1000 警惕腺瘤；磷&gt;2.26停钙</text>
+        <text x="456" y="359" font-size="10" fill="var(--foreground)">• GFR&lt;30 可用磷结合剂(餐中佳)</text>
 
-        <rect x="662" y="201" width="198" height="126" rx="8" fill="var(--chart-1)" fill-opacity="0.08" stroke="var(--chart-1)" />
-        <text x="761" y="220" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-1)">4. 酸中毒与高钾血症</text>
-        <text x="672" y="239" font-size="11" fill="var(--foreground)">• 代酸：口服 NaHCO₃</text>
-        <text x="680" y="254" font-size="10.5" fill="var(--muted-foreground)">轻1.5–3g/d｜中重3–15g/d</text>
-        <text x="672" y="271" font-size="11" fill="var(--foreground)">• 避噻嗪/保钾利尿/含镁药</text>
-        <text x="672" y="288" font-size="10.5" fill="var(--foreground)">• 高钾：纠酸+袢利尿+G-I</text>
-        <text x="680" y="303" font-size="10.5" fill="var(--primary)" font-weight="600">+聚苯乙烯磺酸钙(不增钠)</text>
-        <text x="672" y="320" font-size="11" fill="var(--error)" font-weight="700">• 血钾 &gt;6.5 内科无效→血透</text>
+        <rect x="662" y="221" width="198" height="162" rx="8" fill="var(--chart-1)" fill-opacity="0.08" stroke="var(--chart-1)" />
+        <text x="761" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="var(--chart-1)">4. 酸中毒与高钾血症</text>
+        <text x="672" y="261" font-size="10.5" fill="var(--foreground)">• 代酸：口服 NaHCO₃</text>
+        <text x="680" y="278" font-size="10" fill="var(--muted-foreground)">轻1.5–3g/d｜中重3–15g/d</text>
+        <text x="672" y="298" font-size="10.5" fill="var(--foreground)">• 避噻嗪/保钾利尿/含镁药</text>
+        <text x="672" y="317" font-size="10.5" fill="var(--foreground)">• 高钾：纠酸+袢利尿+G-I</text>
+        <text x="680" y="334" font-size="10" fill="var(--primary)" font-weight="600">+聚苯乙烯磺酸钙(不增钠)</text>
+        <text x="672" y="355" font-size="10.5" fill="var(--error)" font-weight="700">• 血钾 &gt;6.5 内科无效→血透</text>
 
         <!-- Band 3: Differential & Progression -->
-        <rect x="8" y="352" width="864" height="105" rx="10" fill="var(--secondary)" stroke="var(--border)" />
-        <text x="22" y="373" font-size="12.5" font-weight="700" fill="var(--foreground)">③ CKD vs AKI 鉴别关键 &amp; 进展机制速览（熟悉层）</text>
-        <text x="22" y="394" font-size="11.5" fill="var(--foreground)">• <tspan font-weight="700">支持 CKD</tspan>：贫血、低钙、高磷、PTH↑、肾图慢性变、<tspan font-weight="700" fill="var(--primary)">双肾缩小</tspan>；<tspan font-weight="700" fill="var(--error)">双肾不缩小 4 特例：DKD / 淀粉样变 / 多囊肾 / 双肾多发囊肿</tspan></text>
-        <text x="22" y="413" font-size="11.5" fill="var(--foreground)">• <tspan font-weight="700">与肾前性氮质血症鉴别</tspan>：补足有效血容量后 <tspan font-weight="700">48–72 小时</tspan>肾前性可恢复，CKD 难恢复；区分 CRF 急性加重 vs CRF 基础上 AKI</text>
-        <text x="22" y="432" font-size="11" fill="var(--muted-foreground)">• <tspan font-weight="700">CKD 进展 5 机制</tspan>：残余肾单位高灌注高滤过 ｜ 小管高代谢 ｜ 上皮表型转化(TGF-β₁→肌成纤维细胞) ｜ ECM 增生 ｜ 固有细胞凋亡与醛固酮↑</text>
-        <text x="22" y="449" font-size="11" fill="var(--muted-foreground)">• <tspan font-weight="700">尿毒症毒素 3 类</tspan>：小分子(&lt;500Da：尿素氮/K/P/胍/胺/酚) ｜ 中分子(500–5000Da：PTH 最常见) ｜ 大分子(&gt;5000Da：β₂-MG/VitA)</text>
+        <rect x="8" y="406" width="864" height="106" rx="10" fill="var(--secondary)" stroke="var(--border)" />
+        <text x="22" y="427" font-size="12.5" font-weight="700" fill="var(--foreground)">③ CKD vs AKI 鉴别关键 &amp; 进展机制速览（熟悉层）</text>
+        <text x="22" y="448" font-size="11.5" fill="var(--foreground)">• <tspan font-weight="700">支持 CKD</tspan>：贫血、低钙、高磷、PTH↑、肾图慢性变、<tspan font-weight="700" fill="var(--primary)">双肾缩小</tspan>；<tspan font-weight="700" fill="var(--error)">双肾不缩小 4 特例：DKD / 淀粉样变 / 多囊肾 / 双肾多发囊肿</tspan></text>
+        <text x="22" y="467" font-size="11.5" fill="var(--foreground)">• <tspan font-weight="700">与肾前性氮质血症鉴别</tspan>：补足有效血容量后 <tspan font-weight="700">48–72 小时</tspan>肾前性可恢复，CKD 难恢复；区分 CRF 急性加重 vs CRF 基础上 AKI</text>
+        <text x="22" y="486" font-size="11" fill="var(--muted-foreground)">• <tspan font-weight="700">CKD 进展 5 机制</tspan>：残余肾单位高灌注高滤过 ｜ 小管高代谢 ｜ 上皮表型转化(TGF-β₁→肌成纤维细胞) ｜ ECM 增生 ｜ 固有细胞凋亡与醛固酮↑</text>
+        <text x="22" y="503" font-size="11" fill="var(--muted-foreground)">• <tspan font-weight="700">尿毒症毒素 3 类</tspan>：小分子(&lt;500Da：尿素氮/K/P/胍/胺/酚) ｜ 中分子(500–5000Da：PTH 最常见) ｜ 大分子(&gt;5000Da：β₂-MG/VitA)</text>
       </svg>
     </div>
   </div>
@@ -1860,7 +1903,7 @@
         </ul>
       </li>
       <li><strong>感染、高脂、吸附导泻与其他</strong>：感染为 CKD <span class="k">第二主要死因</span>，按 GFR 调剂量选肾毒最小抗生素；<span class="k">&gt;50 岁非透析 CKD</span> 即使血脂正常可虑他汀防 CVD，维持透析放宽（胆固醇 6.5～7.8、TG 1.7～2.3mmol/L，一般不预防性用他汀）；非透析可辅口服氧化淀粉/活性炭/大黄排毒（防营养不良/电解质乱）；糖尿病肾衰随 GFR 降<span class="k">胰岛素用量应渐减</span>；皮肤瘙痒用抗组胺、控磷、强化透析。</li>
-      <li><strong>肾脏替代治疗时机（第十章原文小节，P532）</strong>：CKD 4 期以上或预计 6 个月内需透析即行准备；启动时机：<span class="k">非糖尿病 GFR &lt;10ml/(min·1.73m²)</span> 伴明显尿毒症表现，<span class="k">糖尿病可提前至 GFR &lt;15ml/(min·1.73m²)</span>。血透与腹透疗效相近，但仅部分替代排泄功能（对小分子溶质清除仅相当于正常肾脏 <span class="k">10%～15%</span>），不能替代内分泌/代谢功能；<span class="k">肾移植是最佳替代疗法</span>。</li>
+      <li><strong>肾脏替代治疗时机（第十章原文小节，P532）</strong>：CKD 4 期以上或预计 6 个月内需透析即行准备；<span class="k">肾脏替代治疗时机目前尚不确定</span>，通常对<span class="k">非糖尿病肾脏病 GFR &lt;10ml/(min·1.73m²)</span> 并有明显尿毒症症状和体征应行 RRT，对<span class="k">糖尿病肾脏病可适当提前至 GFR &lt;15ml/(min·1.73m²)</span>。血透与腹透疗效相近，但仅部分替代排泄功能（对小分子溶质清除仅相当于正常肾脏 <span class="k">10%～15%</span>），不能替代内分泌/代谢功能；<span class="k">肾移植是最佳替代疗法</span>。</li>
     </ol>
   </div>
 
@@ -1912,7 +1955,7 @@
       <span class="mod-source">透明度与溯源记录</span>
     </div>
     <p style="margin:8px 0 0;font-size:13px;color:var(--muted-foreground)">
-      本学习页严格执行用户审定通过的<strong>方案 A</strong> 与原文边界红线：① 以《内科学-理论课程教学大纲.docx》“内科学-泌尿系统”表之<strong>【教学内容对课程目标的支撑关系】</strong>为分级主口径（4 讲 / 8 学时，与《教学日历》完全一致），彻底剔除全部标为“了解”的内容及未列入大纲的 7 整章 + 第二章其余 5 节；② 知识内容 100% 忠实于人卫第 10 版《内科学》<strong>05-第五篇 泌尿系统疾病</strong>映射章原文（全篇页码偏移恒定：<strong>PDF 物理页 = 课本印刷页 + 31</strong>），绝不跨章或凭外部记忆补写未设专节条目。
+      本学习页严格执行用户审定通过的<strong>方案 A</strong> 与原文边界红线：① 以《内科学-理论课程教学大纲.docx》“内科学-泌尿系统”表之<strong>【教学内容对课程目标的支撑关系】</strong>为分级主口径（据 DOCX 核实共 4 讲、每讲 2 学时、合计 8 学时，并与本校附件 1《教学日历》4 次泌尿授课相符），彻底剔除全部标为“了解”的内容及未列入大纲的 7 整章 + 第二章其余 5 节，同时按独立审计复核将教学内容明列且未标“了解”的 NS 预后因素与 AKI 预防概要纳入【熟悉】层；② 知识内容 100% 忠实于人卫第 10 版《内科学》<strong>05-第五篇 泌尿系统疾病</strong>映射章原文（全篇页码偏移恒定：<strong>PDF 物理页 = 课本印刷页 + 31</strong>，且第二章相邻节的共享尾页已据原始 PDF 物理版面精确校正），绝不跨章或凭外部记忆补写未设专节条目。
     </p>
   </div>
 
@@ -1920,12 +1963,12 @@
     <div class="card-hd"><h3 class="card-title">一、泌尿系统大纲内部跨栏口径冲突与方案 A 裁决明细（共 5 处）</h3><span class="badge badge-note">决策记录</span></div>
     <div class="tbl-wrap">
       <table class="med-tbl">
-        <thead><tr><th>模块 / 冲突点</th><th>【支撑关系表】原文</th><th>【对应课程目标】/【教学内容】/【难点重点】原文</th><th>方案 A 执行结果</th></tr></thead>
+        <thead><tr><th>模块 / 冲突点</th><th>【支撑关系表】原文</th><th>【对应课程目标】/【教学内容】/【难点重点】原文</th><th>方案 A + 审计复核执行结果</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>Ⅰ、总论：临床表现与解剖生理分级</strong></td>
             <td>目标 1“复习肾脏的结构与生理功能”（无分级动词），目标 2–4 明确掌握检查/诊断防治/原发肾小球病，熟悉常见综合征，目标 5 了解学科进展。</td>
-            <td>目标栏泛写“讲解结构和功能、临床表现，增进对各种肾脏疾病的了解”；教学内容写“重点讲述临床表现、症状”；难点重点列蛋白尿/血尿等概念。</td>
+            <td>目标栏写“讲解结构和功能、临床表现，增进对各种肾脏疾病的了解”；教学内容写“重点讲述临床表现、症状”；难点重点列蛋白尿/血尿等概念。</td>
             <td>解剖生理与 5 大综合征归【熟悉】；检查/诊断防治/原发肾小球病归【掌握】并整合第一章基本临床表现；剔除“学科进展动态”。</td>
           </tr>
           <tr>
@@ -1936,21 +1979,21 @@
           </tr>
           <tr>
             <td><strong>Ⅱ、肾病综合征：免疫抑制剂与预后</strong></td>
-            <td>目标 4“重点掌握诊断、鉴别诊断及治疗原则”；目标 5“掌握糖皮质激素治疗原则”（未单提免疫抑制剂与预后）。</td>
-            <td>目标栏与难点重点均明确要求“常用免疫抑制剂的使用”；教学内容末尾列有【预后】。</td>
-            <td>糖皮质激素三大原则与总体治疗归【掌握】，常用免疫抑制剂具体方案归【熟悉】；剔除【预后】专节。</td>
+            <td>目标 4“重点掌握诊断、鉴别诊断及治疗原则”；目标 5“掌握糖皮质激素治疗原则”（未单提免疫抑制剂与预后，但均未标“了解”）。</td>
+            <td>目标栏与难点重点明确要求“常用免疫抑制剂的使用”；教学内容明列“预后：决定肾病综合征预后的因素”。</td>
+            <td>糖皮质激素三大原则与总体治疗归【掌握】，常用免疫抑制剂具体方案及决定预后的 4 因素归【熟悉】精炼覆盖。</td>
           </tr>
           <tr>
-            <td><strong>Ⅲ、急性肾损伤：发病机制、病理与预后/预防</strong></td>
-            <td>目标 4 明确写“<strong>了解</strong>急性肾损伤的发病机制及病理表现”；未列预后/预防。</td>
-            <td>目标栏同样写“增进对发病机制及病理表现的<strong>了解</strong>”；教学内容却写“重点讲解 ATN 病因、病理、临床表现……概述预防”。</td>
-            <td>双方一致定为“了解”，彻底剔除【发病机制和病理生理】机制演变、【病理】专节及【预后】【预防】专节；仅在【熟悉】保留肾前/肾性/肾后性病因分类清单。</td>
+            <td><strong>Ⅲ、急性肾损伤：发病机制、病理、预防与预后</strong></td>
+            <td>目标 4 明确写“<strong>了解</strong>急性肾损伤的发病机制及病理表现”；未列预防/预后。</td>
+            <td>【对应课程目标】亦写“增进对发病机制及病理表现的<strong>了解</strong>”；【教学内容】却写“重点讲解 ATN 病因、病理……概述急性肾损伤的预防”（未提预后）。</td>
+            <td>【对应课程目标】与【支撑关系表】均将发病机制及病理定为“了解”，按方案 A 彻底剔除【发病机制和病理生理】【病理】及未要求的【预后】；【教学内容】明列且未标了解的“AKI 预防”纳入【熟悉】概述；【熟悉】同步保留三大病因谱。</td>
           </tr>
           <tr>
             <td><strong>Ⅳ、慢性肾衰竭：病因、危险因素与发病机制</strong></td>
             <td>目标 1“熟悉慢性肾脏病的病因”，目标 4“熟悉病因、疾病进展危险因素及发病机制”；定义分期/表现/诊鉴/防治并发症均标“掌握”。</td>
-            <td>目标栏写“增进对病因、危险因素及发病机制认识”；各栏与支撑关系表完全一致。</td>
-            <td>直接按《支撑关系表》精准分层：病因/危险因素/发病与尿毒症机制归【熟悉】，其余全部归【掌握】。</td>
+            <td>【对应课程目标】写“增进对病因、危险因素及发病机制认识”；【教学内容】写“重点讲授致病因素及肾功能恶化的机制”（覆盖范围重叠但强调层级有差异）。</td>
+            <td>按方案 A 以《支撑关系表》精准分层：病因、危险因素、进展机制及尿毒症发生机制归【熟悉】，其余全部归【掌握】。</td>
           </tr>
         </tbody>
       </table>
@@ -1965,13 +2008,13 @@
         <tbody>
           <tr>
             <td><strong>Ⅰ、白细胞尿、管型尿、菌尿基本概念</strong></td>
-            <td>第 10 版第一章《总论》（P466–472）仅定义血尿、蛋白尿、水肿、高血压及红细胞管型，<strong>未设白细胞尿、管型尿分类及菌尿定义专节</strong>（菌尿/白细胞尿位于未列大纲的第五章《尿路感染》）。</td>
-            <td>仅忠实收录第一章及第二章第一节原文，在模块 Ⅰ 显式声明缺节，不跨章至第五章补写。</td>
+            <td>第 10 版第一章《总论》（P467–468）及第二章第一节（P474）已载血尿、蛋白尿、水肿、高血压及红细胞管型提示肾小球源性血尿，<strong>未设白细胞尿、管型尿系统分类及菌尿定义专节</strong>（白细胞尿/菌尿定义位于未列大纲的第五章《尿路感染》）。</td>
+            <td>忠实收录映射章已有管型提示与概念，显式声明缺载范围，不跨章至第五章补写。</td>
           </tr>
           <tr>
             <td><strong>Ⅰ/Ⅱ、肾活检适应证、相对禁忌证及并发症</strong></td>
-            <td>第一章（P469）仅载经皮肾穿刺活检为有创检查、含光镜/免疫荧光/电镜及刚果红等特染；第二章第五节（P483）仅写“最好能进行肾活检”，<strong>两处均未设适应证、相对禁忌证及并发症专节</strong>。</td>
-            <td>如实摘录原文并在模块 Ⅱ 显式声明未设专节，严禁凭外部记忆补写禁忌证列表。</td>
+            <td>第一章（P469–470）已载经皮肾穿刺活检三项检查与临床价值，并明列<strong>肾炎、肾病综合征、急性肾损伤及原因不明蛋白尿/血尿</strong>等临床适用场景；第二章第五节（P483）亦载最好行肾活检。但<strong>映射章均未设完整的适应证、相对禁忌证及并发症清单专节</strong>。</td>
+            <td>完整保留第一章已载临床场景，并将“未设专节”精确限定为系统适应证、相对禁忌证与并发症清单，严禁凭课外记忆补写。</td>
           </tr>
           <tr>
             <td><strong>Ⅰ、本学科进展动态</strong></td>
@@ -1990,11 +2033,11 @@
 
   <div class="card">
     <div class="card-hd"><h3 class="card-title">三、第 10 版泌尿篇 11 章全景范围核对（恒定偏移 PDF = 课本 + 31；剔除 7 整章 + 第二章其余 5 节）</h3><span class="badge badge-note">范围核对</span></div>
-    <p>第 10 版《05-第五篇 泌尿系统疾病》全篇共 11 章（课本 P466–537 / PDF P497–568），大纲 4 讲（8 学时）映射其中 <strong>4 章（含第二章仅 2 节）</strong>：第一章《总论》（P466–472 / PDF P497–503）、第二章第一节《肾小球疾病概述》（P473–475 / PDF P504–506）与第五节《肾病综合征》（P480–485 / PDF P511–516）、第九章《急性肾损伤》（P518–524 / PDF P549–555）、第十章《慢性肾衰竭》（P525–532 / PDF P556–563）。</p>
+    <p>第 10 版《05-第五篇 泌尿系统疾病》全篇共 11 章（课本 P466–537 / PDF P497–568），大纲 4 讲（8 学时）映射其中 <strong>4 章（含第二章仅 2 节，相邻节可共享同一物理页）</strong>：第一章《总论》（P466–472 / PDF P497–503）、第二章第一节《肾小球疾病概述》（P473–476 止于第二节前 / PDF P504–507）与第五节《肾病综合征》（P480–486 止于第六节前 / PDF P511–517）、第九章《急性肾损伤》（P518–524 / PDF P549–555）、第十章《慢性肾衰竭》（P525–532 / PDF P556–563）。</p>
     <p><strong>1. 未列入大纲、整章剔除（共 7 章）</strong>：</p>
-    <p style="color:var(--muted-foreground)">第三章 继发性肾病（课本 P490–495 / PDF P521–526）｜ 第四章 间质性肾炎（课本 P496–498 / PDF P527–529）｜ 第五章 尿路感染（课本 P499–504 / PDF P530–535）｜ 第六章 肾小管疾病（课本 P505–508 / PDF P536–539）｜ 第七章 肾血管疾病（课本 P509–512 / PDF P540–543）｜ 第八章 遗传性肾病（课本 P513–517 / PDF P544–548）｜ 第十一章 肾脏替代治疗（课本 P533–537 / PDF P564–568）。（注：《课程描述》宏观提及继发性肾病、泌尿系感染及肾脏替代治疗，但实际 8 学时教学内容、教学日历与支撑关系表均未单设对应章节，故仅保留映射章原文内自带的继发鉴别与 RRT 概述段落。）</p>
-    <p><strong>2. 第二章《原发性肾小球疾病》内未列入大纲的 5 节（同步剔除）</strong>：</p>
-    <p style="color:var(--muted-foreground)">第二节 急性肾小球肾炎（P476 / PDF P507）｜ 第三节 急进性肾小球肾炎（P477 / PDF P508）｜ 第四节 IgA 肾病（P478–479 / PDF P509–510）｜ 第六节 无症状性血尿和/或蛋白尿（P486 / PDF P517）｜ 第七节 慢性肾小球肾炎（P487–489 / PDF P518–520）。</p>
+    <p style="color:var(--muted-foreground)">第三章 继发性肾病（课本 P490–495 / PDF P521–526）｜ 第四章 间质性肾炎（课本 P496–498 / PDF P527–529）｜ 第五章 尿路感染（课本 P499–504 / PDF P530–535）｜ 第六章 肾小管疾病（课本 P505–508 / PDF P536–539）｜ 第七章 肾血管疾病（课本 P509–512 / PDF P540–543）｜ 第八章 遗传性肾病（课本 P513–517 / PDF P544–548）｜ 第十一章 肾脏替代治疗（课本 P533–537 / PDF P564–568）。（注：《课程描述》宏观提及继发性肾病、泌尿系感染及肾脏替代治疗，但实际 8 学时教学内容与支撑关系表均未单设对应章节，故仅保留映射章原文内自带的继发鉴别与 RRT 概述段落。）</p>
+    <p><strong>2. 第二章《原发性肾小球疾病》内未列入大纲的 5 节（同步剔除；共享交界页按原始 PDF 物理版面精确标出）</strong>：</p>
+    <p style="color:var(--muted-foreground)">第二节 急性肾小球肾炎（P476–477 / PDF P507–508）｜ 第三节 急进性肾小球肾炎（P477–478 / PDF P508–509）｜ 第四节 IgA 肾病（P478–479 / PDF P509–510）｜ 第六节 无症状性血尿和/或蛋白尿（P486–487 / PDF P517–518）｜ 第七节 慢性肾小球肾炎（P487–489 / PDF P518–520）。</p>
   </div>
 </section>
 
