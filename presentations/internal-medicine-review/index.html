@@ -143,7 +143,6 @@ a { color: var(--link); }
   max-width: 900px;
 }
 .disclaimer-en { display: block; margin-top: 5px; color: var(--muted-foreground); font-size: 12px; }
-.disclaimer-status { padding: 2px 8px; border-radius: 999px; background: var(--background); color: var(--chart-1); border: 1px solid var(--chart-1); font-size: 10px; font-weight: 400; }
 .disclaimer-close { flex: 0 0 auto; padding: 5px 10px; border-radius: 7px; border: 1px solid var(--border); background: var(--card); color: var(--foreground); font-size: 12px; font-weight: 600; cursor: pointer; }
 .disclaimer-close:hover { border-color: var(--primary); color: var(--primary); }
 .audit-stamp {
@@ -698,10 +697,10 @@ body.syl-mode-raw .syl-view-curated { display: none; }
 
   <div class="audit-banner" id="hubDisclaimer" role="note" aria-label="资料声明">
     <div class="audit-banner-main">
-      <div class="audit-banner-title">资料声明 / Disclaimer <span class="disclaimer-status">✓ Audited by gpt-6.1-sol</span></div>
+      <div class="audit-banner-title">资料声明 / Disclaimer</div>
       <p class="audit-banner-text">
-        本资料基于人民卫生出版社《内科学》（第10版）及《内科学》课程教学大纲整理，由 SI 制作。内容不保证完全正确；请以《内科学》（第10版）为准。
-        <span class="disclaimer-en">This material was prepared by SI based on <em>Internal Medicine</em> (10th ed., People's Medical Publishing House) and the Internal Medicine course syllabus. Accuracy is not guaranteed; refer to <em>Internal Medicine</em> (10th ed.) as the authoritative source.</span>
+        本资料基于人民卫生出版社《内科学》（第10版）及《内科学》课程教学大纲整理，由 gemini-4-neon 制作，gpt-6.1-sol 校对。内容不保证完全正确；请以《内科学》（第10版）为准。
+        <span class="disclaimer-en">This material was prepared by gemini-4-neon and reviewed by gpt-6.1-sol, based on <em>Internal Medicine</em> (10th ed., People's Medical Publishing House) and the Internal Medicine course syllabus. Accuracy is not guaranteed; refer to <em>Internal Medicine</em> (10th ed.) as the authoritative source.</span>
       </p>
     </div>
     <button class="disclaimer-close" id="hubDisclaimerClose" type="button" aria-label="关闭资料声明 / Close disclaimer">关闭 / Close</button>
@@ -933,7 +932,7 @@ body.syl-mode-raw .syl-view-curated { display: none; }
 
   <section class="syllabus-section" id="syllabus-explorer" aria-label="内科学七大系统教学大纲">
     <div class="sec-hd" style="margin-top:0;">
-      <h2>二、《内科学》教学大纲原文</h2>
+      <h2>《内科学》教学大纲原文</h2>
     </div>
 
     <div class="syl-controls">
