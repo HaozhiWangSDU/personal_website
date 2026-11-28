@@ -1,93 +1,94 @@
-# 王浩智 · 个人学术主页 / Personal Academic Website
+# Haozhi Wang — Personal Academic Website
 
-> 王浩智 (Haozhi Wang) 的个人学术主页 —— 山东大学基础医学院。
-> Personal academic homepage of Haozhi Wang — School of Basic Medical Sciences, Shandong University.
+> Personal academic homepage of Haozhi Wang — First Clinical College, Shandong University.
 
-本仓库是一个**纯静态、零依赖**的个人学术网站，包含主页、学习演示/复习材料合集，以及山东大学信息日报归档。网站通过 [Cloudflare Workers](https://developers.cloudflare.com/workers/) 静态资源托管部署。
+This repository hosts a **dependency-free, static** personal academic website — including a homepage, a collection of study presentations and review decks, and an archive of the Shandong University daily info feed. It is served as static assets via [Cloudflare Workers](https://developers.cloudflare.com/workers/).
 
-This repository hosts a **dependency-free, static** personal academic website — including a homepage, a collection of study presentations/review decks, and an archive of the Shandong University daily info feed. It is served as static assets via [Cloudflare Workers](https://developers.cloudflare.com/workers/).
-
-🔗 在线访问 / Live site: **https://72092035.xyz**
+Live site: **https://72092035.xyz**
 
 ---
 
-## ✨ 特性 / Features
+## Features
 
-- **🌐 中英双语 / Bilingual (CN / EN)** — 通过 `class="lang-cn"` / `class="lang-en"` 标注语言块，自动检测浏览器语言偏好，并可手动切换；选择会保存到 `localStorage`。
-- **🌓 深色 / 浅色主题 / Dark & Light Theme** — 跟随系统偏好，可手动切换，偏好持久化。
-- **🪟 玻璃拟态 UI / Glassmorphic UI** — 半透明卡片、柔和阴影，采用医疗/生命科学主题配色（海军蓝 + 薄荷绿）。
-- **📱 响应式布局 / Responsive Layout** — 侧边栏 + 主内容区，移动端自适应。
-- **✨ 滚动渐显 / Scroll Reveal** — 基于 `IntersectionObserver` 的入场动画，零外部库。
-- **⚡ 零构建 / Zero Build** — 原生 HTML / CSS / JavaScript，无需 `npm install`，无需打包。
-- **☁️ Cloudflare Workers 部署 / One-command Deploy** — 通过 `wrangler` 一键发布。
+- **Bilingual (CN / EN)** — Marks language blocks with `class="lang-cn"` and `class="lang-en"`, auto-detects browser language preferences, supports manual toggling, and persists the choice in `localStorage`.
+- **Dark & Light Theme** — Follows system color-scheme preference by default with manual toggle and persistent `localStorage` state.
+- **Glassmorphic UI** — Translucent cards and soft shadows with a clinical/life-science palette (navy blue and mint green).
+- **Responsive Layout** — Sticky profile sidebar paired with main content cards, adapting cleanly to mobile viewports.
+- **Scroll Reveal** — Entry animations powered by `IntersectionObserver` with zero external libraries.
+- **Zero Build** — Plain HTML, CSS, and JavaScript with no `npm install` or bundler required.
+- **Cloudflare Workers Deploy** — Deployed directly via `wrangler`.
 
 ---
 
-## 🗂 项目结构 / Project Structure
+## Project Structure
 
-```
-personal_website/
-├── index.html              # 主页（关于 / 教育背景 / 研究经历 / 联系方式）
-├── presentations.html      # 演示与复习材料合集入口
-├── styles.css              # 全站样式、主题变量、响应式布局
-├── script.js               # 主题切换、语言切换、滚动渐显逻辑
-├── avatar.png              # 头像
-├── wrangler.jsonc          # Cloudflare Workers 部署配置
+```text
+personal-website/
+├── index.html              # Homepage (About / Education / Research Experience / Contact)
+├── presentations.html      # Portal index for study presentations and review decks
+├── 404.html                # Custom 404 page matching the global theme
+├── styles.css              # Global stylesheet, theme variables, and responsive layout
+├── script.js               # Theme toggle, language switch, and scroll-reveal logic
+├── avatar.png              # Profile portrait
+├── favicon.svg             # Site favicon (Neuro-Pulse Squircle)
+├── wrangler.jsonc          # Cloudflare Workers static-assets configuration
 ├── .gitignore
-├── CONTRIBUTING.md         # 贡献指南（面向作者本人与 AI 助手）
+├── CONTRIBUTING.md         # Contribution guide (for human contributors and AI agents)
 │
-├── daily/                  # 山大信息日报归档
-│   ├── index.html          #   历史归档索引页
-│   ├── latest.html         #   最新一期
-│   └── YYYY-MM-DD.html     #   每日单页（共 25+ 期）
+├── daily/                  # Shandong University daily info archive
+│   ├── index.html          #   Archive index page
+│   ├── latest.html         #   Latest daily digest
+│   ├── page/               #   Paginated archive pages
+│   └── YYYY-MM-DD.html     #   Individual daily digests
 │
-└── presentations/          # 演示 / 复习材料
-    ├── *.html              #   单篇演示页（医学专题复习）
-    ├── assets/             #   共享脚本与样式
-    ├── images/             #   图片资源
-    ├── infectious-diseases-site/   # 传染病专题子站
-    └── parasite-site/              # 寄生虫专题子站
+└── presentations/          # Study presentations and review decks
+    ├── *.html              #   Standalone presentation and medical review pages
+    ├── assets/             #   Shared presentation assets
+    ├── images/             #   Presentation images
+    ├── infectious-diseases-site/   # Infectious diseases study sub-site
+    ├── internal-medicine-review/   # Internal medicine review sub-site
+    └── parasite-site/              # Parasitology study sub-site
 ```
 
 ---
 
-## 🛠 技术栈 / Tech Stack
+## Tech Stack
 
-| 层级 / Layer     | 技术 / Technology                          |
-| ---------------- | ------------------------------------------ |
-| 标记 / Markup    | 原生 HTML5                                 |
-| 样式 / Styling   | 原生 CSS3（CSS 变量、`@media` 响应式）     |
-| 交互 / Scripting | 原生 JavaScript（ES6+，`IntersectionObserver`、`localStorage`） |
-| 字体 / Fonts     | Google Fonts（`Inter` + `Outfit`）         |
-| 部署 / Hosting   | Cloudflare Workers（静态资源模式）         |
+| Layer     | Technology |
+| --------- | ---------- |
+| Markup    | Vanilla HTML5 |
+| Styling   | Vanilla CSS3 (CSS custom properties, `@media` queries) |
+| Scripting | Vanilla JavaScript (ES6+, `IntersectionObserver`, `localStorage`) |
+| Fonts     | Google Fonts (`Inter` + `Outfit`) |
+| Hosting   | Cloudflare Workers (Static Assets) |
 
 ---
 
-## 🚀 本地预览 / Local Preview
+## Local Preview
 
-无需任何构建步骤。任选其一 / No build step required — pick any of the following:
+No build step is required — pick either option:
 
-**方式一 / Option 1 — 直接打开 / Just open it**
+**Option 1 — Open directly**
 
-双击 `index.html` 即可在浏览器中查看。
+Double-click `index.html` to view it in your browser.
 
-**方式二 / Option 2 — 本地静态服务器 / Local static server（推荐 / recommended）**
+**Option 2 — Local static server (recommended)**
 
 ```bash
 # Python
 python -m http.server 8000
 
-# 或 Node
+# Or Node
 npx serve .
 ```
 
-然后访问 / Then visit: http://localhost:8000
+Then visit: `http://localhost:8000`
 
 ---
 
-## ☁️ 部署 / Deployment
+## Deployment
 
-本项目通过 [Cloudflare Workers 静态资源](https://developers.cloudflare.com/workers/static-assets/)托管，配置见 `wrangler.jsonc`：
+This project is hosted with [Cloudflare Workers Static Assets](https://developers.cloudflare.com/workers/static-assets/), configured in `wrangler.jsonc`:
 
 ```jsonc
 {
@@ -98,45 +99,42 @@ npx serve .
 }
 ```
 
-发布步骤 / To deploy:
+To deploy:
 
 ```bash
-# 1. 安装 wrangler（如未安装）
+# 1. Install wrangler if not already installed
 npm install -g wrangler
 
-# 2. 登录 Cloudflare
+# 2. Authenticate with Cloudflare
 wrangler login
 
-# 3. 在仓库根目录执行发布
+# 3. Deploy from the repository root
 wrangler deploy
 ```
 
 ---
 
-## 🤝 贡献 / Contributing
+## Contributing
 
-欢迎通过 Pull Request 提交新的演示或复习材料。详细的提交流程（**同时面向人类作者与 AI 助手**）请阅读：
+Contributions of new presentations or review materials are welcome via Pull Request. Please read the submission workflow (written for both human contributors and AI assistants) in:
 
-👉 **[CONTRIBUTING.md](./CONTRIBUTING.md)**
+**[CONTRIBUTING.md](./CONTRIBUTING.md)**
 
-流程概览 / Workflow overview:
+Workflow overview:
 
-```
-制作网页 → 提交 PR → 王浩智 review → 合并 → 网站上线
+```text
+Create page -> Open PR -> Review by Haozhi Wang -> Merge -> Site goes live
 ```
 
 ---
 
-## 📮 联系 / Contact
+## Contact
 
-- **邮箱 / Email:** wanghaozhi@mail.sdu.edu.cn
-- **单位 / Affiliation:** 山东大学 基础医学院 / School of Basic Medical Sciences, Shandong University
+- **Email:** `wanghaozhi@mail.sdu.edu.cn`
+- **Affiliation:** First Clinical College, Shandong University
 
 ---
 
-## 📄 许可 / License
+## License
 
-- **代码、设计与配置 / Code, design & config**：[MIT License](./LICENSE)。
-- **医学内容 / Medical content**：`presentations/` 与 `daily/` 下的演示、复习材料与日报为作者原创内容，版权归原作者所有，转载前请联系作者。
-
-Source code, design, and configuration are licensed under the [MIT License](./LICENSE). The medical study materials and review decks under `presentations/` and `daily/` are authored content; please contact the author before reproducing them.
+Source code, design, and configuration are licensed under the [MIT License](./LICENSE). The medical study materials, review decks, and daily archives under `presentations/` and `daily/` are authored content; please contact the author before reproducing them.
